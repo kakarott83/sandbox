@@ -1,0 +1,790 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BFC08EA1-456C-41AE-B1AA-E1EF212BBF35}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cic.OpenOne.GateBANKNOW.Service</RootNamespace>
+    <AssemblyName>Cic.OpenOne.GateBANKNOW.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress>true</Use64BitIISExpress>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Cic.OpenOne.GateBANKNOW.Service.XML</DocumentationFile>
+    <DesktopBuildPackageLocation>obj\Debug\Package\OFiSWebServices.zip</DesktopBuildPackageLocation>
+    <DeployIisAppPath>Default Web Site/OFiSWebServices</DeployIisAppPath>
+    <UseHostCompilerIfAvailable>false</UseHostCompilerIfAvailable>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <NoWarn>1591</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>1591</NoWarn>
+    <UseHostCompilerIfAvailable>false</UseHostCompilerIfAvailable>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Cic.OpenOne.GateBANKNOW.Service.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Bas.Infrastructure">
+      <HintPath>..\..\libs\CIC.Bas.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Database.DE.EF6, Version=4.481.228.392, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Database.DE.EF6.4.481.228.392\lib\net45\CIC.Database.DE.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Database.IC.EF6, Version=4.479.226.388, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Database.IC.EF6.4.479.226.388\lib\net45\CIC.Database.IC.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Database.OL.EF6, Version=4.479.226.388, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Database.OL.EF6.4.479.226.388\lib\net45\CIC.Database.OL.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Database.OW.EF6, Version=4.479.226.388, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Database.OW.EF6.4.479.226.388\lib\net45\CIC.Database.OW.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Database.PRISMA.EF6, Version=4.479.226.388, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Database.PRISMA.EF6.4.479.226.388\lib\net45\CIC.Database.PRISMA.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Monitoring, Version=1.0.1.999, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Monitoring.1.0.2\lib\net46\CIC.Monitoring.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Unity.DatabaseConnection, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Unity.DatabaseConnection.2.9.8.838\lib\net46\CIC.Unity.DatabaseConnection.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data, Version=5.0.2262.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Unity.DatabaseConnection.2.9.8.838\lib\net46\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Oracle, Version=9.8.838.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Unity.DatabaseConnection.2.9.8.838\lib\net46\Devart.Data.Oracle.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Oracle.Entity.EF6, Version=9.8.838.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Unity.DatabaseConnection.2.9.8.838\lib\net46\Devart.Data.Oracle.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net.Ext.Json, Version=1.2.15.4228, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\log4net.Ext.Json.1.2.15.14586\lib\net45-full\log4net.Ext.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel">
+      <HintPath>..\..\libs\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\Nancy.1.4.1\lib\net40\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Hosting.Self, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\Nancy.Hosting.Self.1.4.1\lib\net40\Nancy.Hosting.Self.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="eaiService.svc" />
+    <Content Include="DecisionService.svc" />
+    <Content Include="AuskunftService.svc" />
+    <Content Include="IBANKernel.svc" />
+    <Content Include="log4net.Ext.Json.LICENSE.txt" />
+    <Content Include="log4net.Ext.Json.README.txt" />
+    <Content Include="oemService.svc" />
+    <Content Include="b2xService.svc" />
+    <Content Include="CarConfigurator.svc" />
+    <Content Include="changeAngebotService.svc" />
+    <Content Include="changeAntragService.svc" />
+    <Content Include="createOrUpdateAngebotService.svc" />
+    <Content Include="createOrUpdateAntragService.svc" />
+    <Content Include="createOrUpdateKundeService.svc" />
+    <Content Include="createOrUpdateSchnellkalkulationService.svc" />
+    <Content Include="Default.aspx" />
+    <Content Include="dmsService.svc" />
+    <Content Include="documentService.svc" />
+    <Content Include="FibuService.svc" />
+    <Content Include="getBuchwertService.svc" />
+    <Content Include="getPartnerZusatzdatenService.svc" />
+    <Content Include="Global.asax" />
+    <Content Include="mTanService.svc" />
+    <EmbeddedResource Include="Properties\cic.openone.gatebanknow.service.dll.licenses" />
+    <Content Include="ScoreService.svc" />
+    <Content Include="StreamService.svc" />
+    <Content Include="StateService.svc" />
+    <Content Include="loginPartnerService.svc" />
+    <Content Include="printAngebotService.svc" />
+    <Content Include="printAntragService.svc" />
+    <Content Include="searchAngebotService.svc" />
+    <Content Include="searchAntragService.svc" />
+    <Content Include="searchKundeService.svc" />
+    <Content Include="searchVertragService.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <ContentWithTargetPath Include="..\..\libs\IBANKernel64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>IBANKernel64.dll</TargetPath>
+    </ContentWithTargetPath>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contract\IeaiService.cs" />
+    <Compile Include="Contract\IScoreService.cs" />
+    <Compile Include="DTO\icreateDisclaimerDto.cs" />
+    <Compile Include="DTO\igetVSLinkDto.cs" />
+    <Compile Include="DTO\irisikoSimIODto.cs" />
+    <Compile Include="DTO\icalculateProvisionsDto.cs" />
+    <Compile Include="DTO\KremoBudgetDto.cs" />
+    <Compile Include="DTO\igetKremoBudgetDto.cs" />
+    <Compile Include="DTO\KneDto.cs" />
+    <Compile Include="DTO\ocreateDisclaimerDto.cs" />
+    <Compile Include="DTO\orisikoSimulationDto.cs" />
+    <Compile Include="DTO\ogetVSLinkDto.cs" />
+    <Compile Include="DTO\ogetControlPersonBusinessDto.cs" />
+    <Compile Include="DTO\igetControlPersonBusinessDto.cs" />
+    <Compile Include="DTO\igetDocumentDto.cs" />
+    <Compile Include="DTO\isetCustomerCheckResult.cs" />
+    <Compile Include="DTO\ogetLiabilityChainDto.cs" />
+    <Compile Include="DTO\ifindKontoNrByIBANDto.cs" />
+    <Compile Include="DTO\iFinVariantenDruckenDto.cs" />
+    <Compile Include="DTO\igetLiabilityChainDto.cs" />
+    <Compile Include="DTO\igetListItemsDto.cs" />
+    <Compile Include="DTO\isearchKundeExternDto.cs" />
+    <Compile Include="DTO\KundeExternDto.cs" />
+    <Compile Include="DTO\KundeExternGUIDto.cs" />
+    <Compile Include="DTO\ofindKontoNrByIBANDto.cs" />
+    <Compile Include="DTO\ogetCreditLimitsDto.cs" />
+    <Compile Include="DTO\igetCreditLimitsDto.cs" />
+    <Compile Include="DTO\oFinVariantenDruckenDto.cs" />
+    <Compile Include="DTO\ogetListItemsDto.cs" />
+    <Compile Include="DTO\ogetKremoBudget.cs" />
+    <Compile Include="DTO\orisikoSimIODto.cs" />
+    <Compile Include="DTO\osearchKundeExternDto.cs" />
+    <Compile Include="DTO\osetCustomerCheckResult.cs" />
+    <Compile Include="DTO\ocalculateProvisionsDto.cs" />
+    <Compile Include="DTO\Score\ScoreAddressDto.cs" />
+    <Compile Include="DTO\Score\ScoreArrangementDto.cs" />
+    <Compile Include="DTO\Score\ScoreContractDto.cs" />
+    <Compile Include="DTO\Score\ScoreCustomerDto.cs" />
+    <Compile Include="DTO\Score\ScoreDDebitDto.cs" />
+    <Compile Include="DTO\Score\ScoreDunningLevelDto.cs" />
+    <Compile Include="DTO\Score\ScoreEmailDto.cs" />
+    <Compile Include="DTO\Score\ScoreInsolvencyDto.cs" />
+    <Compile Include="DTO\Score\ScoreInvoiceDto.cs" />
+    <Compile Include="DTO\Score\ScorePhoneDto.cs" />
+    <Compile Include="DTO\Score\ScorePostingDto.cs" />
+    <Compile Include="DTO\Score\ScoreVehicleDto.cs" />
+    <Compile Include="DTO\Score\ScoreWriteOffDto.cs" />
+    <Compile Include="eaiService.svc.cs">
+      <DependentUpon>eaiService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\IDecisionService.cs" />
+    <Compile Include="DecisionService.svc.cs">
+      <DependentUpon>DecisionService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="AuskunftService.svc.cs">
+      <DependentUpon>AuskunftService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\IoemService.cs" />
+    <Compile Include="DTO\getAggregationDto.cs" />
+    <Compile Include="DTO\icheckTrRiskByIdDto.cs" />
+    <Compile Include="DTO\icreateOrUpdateDocumentDto.cs" />
+    <Compile Include="DTO\igetAggregationDto.cs" />
+    <Compile Include="DTO\isetDecisionResultDto.cs" />
+    <Compile Include="DTO\ocheckTrRiskByIdDto.cs" />
+    <Compile Include="DTO\ocreateOrUpdateDocumentDto.cs" />
+    <Compile Include="DTO\osetDecisionResultDto.cs" />
+    <Compile Include="DTO\icreateAntragFromNkkDto.cs" />
+    <Compile Include="DTO\ocreateAntragFromNkkDto.cs" />
+    <Compile Include="DTO\isearchKundeExternNonGenericDto.cs" />
+    <Compile Include="IBANKernel.svc.cs">
+      <DependentUpon>IBANKernel.svc</DependentUpon>
+    </Compile>
+    <Compile Include="MonitoringCheck.cs" />
+    <Compile Include="oemService.svc.cs">
+      <DependentUpon>oemService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="b2xService.svc.cs">
+      <DependentUpon>b2xService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="BO\CSPKIConstants.cs" />
+    <Compile Include="BO\FilterSearchTransformer.cs" />
+    <Compile Include="BO\ServiceHandler.cs" />
+    <Compile Include="BO\StatusEPOSBo.cs" />
+    <Compile Include="BO\KalkulationServicesBo.cs" />
+    <Compile Include="BO\StateServiceBo.cs" />
+    <Compile Include="changeAngebotService.svc.cs">
+      <DependentUpon>changeAngebotService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="CarConfigurator.svc.cs">
+      <DependentUpon>CarConfigurator.svc</DependentUpon>
+    </Compile>
+    <Compile Include="changeAntragService.svc.cs">
+      <DependentUpon>changeAntragService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\IAuskunftService.cs" />
+    <Compile Include="Contract\IchangeAngebotService.cs" />
+    <Compile Include="Contract\IchangeAntragService.cs" />
+    <Compile Include="Contract\IcreateOrUpdateAngebotService.cs" />
+    <Compile Include="Contract\IcreateOrUpdateAntragService.cs" />
+    <Compile Include="Contract\IcreateOrUpdateKundeService.cs" />
+    <Compile Include="Contract\IcreateOrUpdateSchnellkalkulationService.cs" />
+    <Compile Include="Contract\IdmsService.cs" />
+    <Compile Include="Contract\IFibuService.cs" />
+    <Compile Include="Contract\IgetBuchwertService.cs" />
+    <Compile Include="Contract\IgetPartnerZusatzdatenService.cs" />
+    <Compile Include="Contract\IloginPartnerService.cs" />
+    <Compile Include="Contract\IprintAngebotService.cs" />
+    <Compile Include="Contract\IprintAntragService.cs" />
+    <Compile Include="Contract\IsearchAngebotService.cs" />
+    <Compile Include="Contract\IsearchAntragService.cs" />
+    <Compile Include="Contract\IsearchKundeService.cs" />
+    <Compile Include="Contract\IsearchVertragService.cs" />
+    <Compile Include="Contract\IStateService.cs" />
+    <Compile Include="Contract\IStreamService.cs" />
+    <Compile Include="createOrUpdateAngebotService.svc.cs">
+      <DependentUpon>createOrUpdateAngebotService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="createOrUpdateAntragService.svc.cs">
+      <DependentUpon>createOrUpdateAntragService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="createOrUpdateKundeService.svc.cs">
+      <DependentUpon>createOrUpdateKundeService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="createOrUpdateSchnellkalkulationService.svc.cs">
+      <DependentUpon>createOrUpdateSchnellkalkulationService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="dmsService.svc.cs">
+      <DependentUpon>dmsService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="documentService.svc.cs">
+      <DependentUpon>documentService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\AdresseDto.cs" />
+    <Compile Include="DTO\AngAntAblDto.cs" />
+    <Compile Include="DTO\AngAntDto.cs" />
+    <Compile Include="DTO\AngAntKalkDto.cs" />
+    <Compile Include="DTO\AngAntObAustDto.cs" />
+    <Compile Include="DTO\AngAntObBriefDto.cs" />
+    <Compile Include="DTO\AngAntObDto.cs" />
+    <Compile Include="DTO\AngAntObSmallDto.cs" />
+    <Compile Include="DTO\AngAntProvDto.cs" />
+    <Compile Include="DTO\AngAntSichDto.cs" />
+    <Compile Include="DTO\AngAntSubvDto.cs" />
+    <Compile Include="DTO\AngAntVarDto.cs" />
+    <Compile Include="DTO\AngAntVsDto.cs" />
+    <Compile Include="DTO\AngebotDto.cs" />
+    <Compile Include="DTO\AngebotZustand.cs" />
+    <Compile Include="DTO\AntragDto.cs" />
+    <Compile Include="DTO\AttachmentDto.cs" />
+    <Compile Include="DTO\AvailableAlertsDto.cs" />
+    <Compile Include="DTO\AvailableNewsDto.cs" />
+    <Compile Include="DTO\AvailableProduktInfoDto.cs" />
+    <Compile Include="DTO\BankNowModelProfileServices.cs" />
+    <Compile Include="DTO\BlzDto.cs" />
+    <Compile Include="DTO\BuchwertDto.cs" />
+    <Compile Include="DTO\BudgetDto.cs" />
+    <Compile Include="DTO\ConfigInfo.cs" />
+    <Compile Include="DTO\DmsDataDto.cs" />
+    <Compile Include="DTO\DmsDocDto.cs" />
+    <Compile Include="DTO\DMSField.cs" />
+    <Compile Include="DTO\DocumentTypeDto.cs" />
+    <Compile Include="DTO\ExtraValueDto.cs" />
+    <Compile Include="DTO\iautomatischePruefungDto.cs" />
+    <Compile Include="DTO\icheckTrRiskDto.cs" />
+    <Compile Include="DTO\icreateExtendedContract.cs" />
+    <Compile Include="DTO\icreateExtraValueDto.cs" />
+    <Compile Include="DTO\iCreateOrUpdateDMSAkteDto.cs" />
+    <Compile Include="DTO\icreateOrUpdateDMSDokumentDto.cs" />
+    <Compile Include="DTO\iExecEventDto.cs" />
+    <Compile Include="DTO\igetDMSUrlDto.cs" />
+    <Compile Include="DTO\ifinVorEinreichungDto.cs" />
+    <Compile Include="DTO\igetMyPocketDataDto.cs" />
+    <Compile Include="DTO\igetZusatzDatenAktivDto.cs" />
+    <Compile Include="DTO\iisAllowed.cs" />
+    <Compile Include="DTO\ikremoGetBudgetDto.cs" />
+    <Compile Include="DTO\ilistAvailableDocumentTypes.cs" />
+    <Compile Include="DTO\ilistAvailableProduktInfoDto.cs" />
+    <Compile Include="DTO\IncentivierungParameterDto.cs" />
+    <Compile Include="DTO\IncentivierungStatusDto.cs" />
+    <Compile Include="DTO\iPreisschildDruckDto.cs" />
+    <Compile Include="DTO\irisikoSimDto.cs" />
+    <Compile Include="DTO\isearchDmsDocDto.cs" />
+    <Compile Include="DTO\isetmTanUserPasswordDto.cs" />
+    <Compile Include="DTO\iDMSUploadDto.cs" />
+    <Compile Include="DTO\oDMSUploadDto.cs" />
+    <Compile Include="DTO\isolveKalkVariantenDto.cs" />
+    <Compile Include="DTO\oautomatischePruefungDto.cs" />
+    <Compile Include="DTO\ocheckTrRiskDto.cs" />
+    <Compile Include="DTO\igetVTProvDto.cs" />
+    <Compile Include="DTO\MyPocketDto.cs" />
+    <Compile Include="DTO\ocreateExtendedContract.cs" />
+    <Compile Include="DTO\ocreateExtraValueDto.cs" />
+    <Compile Include="DTO\oCreateOrUpdateDMSAkteDto.cs" />
+    <Compile Include="DTO\ocreateOrUpdateDMSDokumentDto.cs" />
+    <Compile Include="DTO\odeleteDocumentDto.cs" />
+    <Compile Include="DTO\oEAIExecDto.cs" />
+    <Compile Include="DTO\ofinVorEinreichungDto.cs" />
+    <Compile Include="DTO\oExecEventDto.cs" />
+    <Compile Include="DTO\ogetDMSUrlDto.cs" />
+    <Compile Include="DTO\ogetDealerDto.cs" />
+    <Compile Include="DTO\ogetDocumentDto.cs" />
+    <Compile Include="DTO\ogetMyPocketDataDto.cs" />
+    <Compile Include="DTO\ogetVTProvDto.cs" />
+    <Compile Include="DTO\ogetZusatzDatenAktivDto.cs" />
+    <Compile Include="DTO\oisAllowed.cs" />
+    <Compile Include="DTO\okremoGetBudget.cs" />
+    <Compile Include="DTO\olistAvailableDocumentTypes.cs" />
+    <Compile Include="DTO\olistAvailableProduktInfoDto.cs" />
+    <Compile Include="DTO\olistQuoteInfoDto.cs" />
+    <Compile Include="DTO\oPreisschildDruckDto.cs" />
+    <Compile Include="DTO\orisikoSimDto.cs" />
+    <Compile Include="DTO\osearchDmsDocDto.cs" />
+    <Compile Include="DTO\osetPasswordDto.cs" />
+    <Compile Include="DTO\FileDto.cs" />
+    <Compile Include="DTO\icreateUploadDto.cs" />
+    <Compile Include="DTO\igetUploadDetailDto.cs" />
+    <Compile Include="DTO\imTanUserDto.cs" />
+    <Compile Include="DTO\mTanStatusDto.cs" />
+    <Compile Include="DTO\mTanUserDto.cs" />
+    <Compile Include="DTO\ocreatemTanUserDto.cs" />
+    <Compile Include="DTO\ocreateUploadDto.cs" />
+    <Compile Include="DTO\ogetmTanUserDataDto.cs" />
+    <Compile Include="DTO\ogetUploadDetailDto.cs" />
+    <Compile Include="DTO\FileattDto.cs" />
+    <Compile Include="DTO\operformKaufofferte.cs" />
+    <Compile Include="DTO\osearchUploadDto.cs" />
+    <Compile Include="DTO\isearchUploadDto.cs" />
+    <Compile Include="DTO\ochangeRRReceiverDto.cs" />
+    <Compile Include="DTO\ichangeRRReceiverDto.cs" />
+    <Compile Include="DTO\iperformKaufofferteDto.cs" />
+    <Compile Include="DTO\ELOutDto.cs" />
+    <Compile Include="DTO\icreateListenExportDto.cs" />
+    <Compile Include="DTO\ideleteListeExportDto.cs" />
+    <Compile Include="DTO\iFibuAccountDTO.cs" />
+    <Compile Include="DTO\iFibuAccountMasterDTO.cs" />
+    <Compile Include="DTO\igetListeExportDto.cs" />
+    <Compile Include="DTO\ilistInboxServicesDto.cs" />
+    <Compile Include="DTO\ogetELDto.cs" />
+    <Compile Include="DTO\osetmTanUserDataDto.cs" />
+    <Compile Include="DTO\osolveKalkVariantenDto.cs" />
+    <Compile Include="DTO\PeroleActiveStatus.cs" />
+    <Compile Include="DTO\S1InputData.cs" />
+    <Compile Include="DTO\ocreateListenExportDto.cs" />
+    <Compile Include="DTO\odeleteListeExportDto.cs" />
+    <Compile Include="DTO\ogetListeExportDto.cs" />
+    <Compile Include="DTO\olistFremdBankenDto.cs" />
+    <Compile Include="DTO\olistInboxServicesDto.cs" />
+    <Compile Include="DTO\oVertragsartenDto.cs" />
+    <Compile Include="DTO\ideleteAvailableAlertsDto.cs" />
+    <Compile Include="DTO\olistVerwendungszweckDto.cs" />
+    <Compile Include="DTO\ifindBankByBlzDto.cs" />
+    <Compile Include="DTO\icheckKalkulationDto.cs" />
+    <Compile Include="DTO\InsuranceDto.cs" />
+    <Compile Include="DTO\olistAvailableInsuranceDto.cs" />
+    <Compile Include="DTO\olistAvailableLenkerDto.cs" />
+    <Compile Include="DTO\olistMitantStatiDto.cs" />
+    <Compile Include="DTO\ofindBankByBlzDto.cs" />
+    <Compile Include="DTO\ofindIBANByBlzDto.cs" />
+    <Compile Include="DTO\olistBerufsauslagenartenDto.cs" />
+    <Compile Include="DTO\ifindBlzDto.cs" />
+    <Compile Include="DTO\ifindOrtByPlzDto.cs" />
+    <Compile Include="DTO\ofindBlzDto.cs" />
+    <Compile Include="DTO\ofindOrtByPlzDto.cs" />
+    <Compile Include="DTO\olistAusweisartenDto.cs" />
+    <Compile Include="DTO\ocheckAntAngDto.cs" />
+    <Compile Include="DTO\icheckAntragDto.cs" />
+    <Compile Include="DTO\icheckAngebotDto.cs" />
+    <Compile Include="DTO\DatabaseConnectionInfo.cs" />
+    <Compile Include="DTO\DatabaseInstanceInfo.cs" />
+    <Compile Include="DTO\docKontextDto.cs" />
+    <Compile Include="DTO\DocumentArea.cs" />
+    <Compile Include="DTO\DokumenteDto.cs" />
+    <Compile Include="DTO\EurotaxGetForecastDto.cs" />
+    <Compile Include="DTO\EurotaxGetValuationDto.cs" />
+    <Compile Include="DTO\icopyAdresseDto.cs" />
+    <Compile Include="DTO\icopyAngebotDto.cs" />
+    <Compile Include="DTO\icopyAntragDto.cs" />
+    <Compile Include="DTO\icopyKalkulationDto.cs" />
+    <Compile Include="DTO\icopyKontoDto.cs" />
+    <Compile Include="DTO\icopyKundeDto.cs" />
+    <Compile Include="DTO\icopyZusatzdatenDto.cs" />
+    <Compile Include="DTO\icreateAdresseDto.cs" />
+    <Compile Include="DTO\icreateAngebotDto.cs" />
+    <Compile Include="DTO\icreateAntragDto.cs" />
+    <Compile Include="DTO\icreateKalkulationDto.cs" />
+    <Compile Include="DTO\icreateKontoDto.cs" />
+    <Compile Include="DTO\icreateKundeDto.cs" />
+    <Compile Include="DTO\icreateZusatzdatenDto.cs" />
+    <Compile Include="DTO\ideleteAdresseDto.cs" />
+    <Compile Include="DTO\ideleteAngebotDto.cs" />
+    <Compile Include="DTO\ideleteAntragDto.cs" />
+    <Compile Include="DTO\ideleteKalkulationDto.cs" />
+    <Compile Include="DTO\ideleteKontoDto.cs" />
+    <Compile Include="DTO\ideleteKundeDto.cs" />
+    <Compile Include="DTO\ideleteZusatzdatenDto.cs" />
+    <Compile Include="DTO\iEurotaxGetForecastDto.cs" />
+    <Compile Include="DTO\iEurotaxGetValuationDto.cs" />
+    <Compile Include="DTO\iExtendedUserDto.cs" />
+    <Compile Include="DTO\igetAngebotDetailDto.cs" />
+    <Compile Include="DTO\igetAntragDetailDto.cs" />
+    <Compile Include="DTO\igetBuchwertDto.cs" />
+    <Compile Include="DTO\igetKundeDetailDto.cs" />
+    <Compile Include="DTO\igetNeupreisDto.cs" />
+    <Compile Include="DTO\igetParameterDto.cs" />
+    <Compile Include="DTO\igetRestwertDto.cs" />
+    <Compile Include="DTO\igetVertragDetailDto.cs" />
+    <Compile Include="DTO\ilistAvailableDokumenteDto.cs" />
+    <Compile Include="DTO\ilistAvailableProdukteDto.cs" />
+    <Compile Include="DTO\ilistAvailableServicesDto.cs" />
+    <Compile Include="DTO\iprintCheckedDokumenteDto.cs" />
+    <Compile Include="DTO\iprocessAngebotToAntragDto.cs" />
+    <Compile Include="DTO\iprocessAntragToVertragDto.cs" />
+    <Compile Include="DTO\isaveAdresseDto.cs" />
+    <Compile Include="DTO\isaveAngebotDto.cs" />
+    <Compile Include="DTO\isaveAntragDto.cs" />
+    <Compile Include="DTO\isaveKalkulationDto.cs" />
+    <Compile Include="DTO\isaveKontoDto.cs" />
+    <Compile Include="DTO\isaveKundeDto.cs" />
+    <Compile Include="DTO\isaveZusatzdatenDto.cs" />
+    <Compile Include="DTO\isearchAngebotDto.cs" />
+    <Compile Include="DTO\isearchAntragDto.cs" />
+    <Compile Include="DTO\isearchKundeDto.cs" />
+    <Compile Include="DTO\isearchVertragDto.cs" />
+    <Compile Include="DTO\isetAblieferdatumDto.cs" />
+    <Compile Include="DTO\isetChassisnummerDto.cs" />
+    <Compile Include="DTO\isetFarbeDto.cs" />
+    <Compile Include="DTO\isetGeschaeftsartDto.cs" />
+    <Compile Include="DTO\isetKontrollschildDto.cs" />
+    <Compile Include="DTO\isetStammnummerDto.cs" />
+    <Compile Include="DTO\isolveKalkulationDto.cs" />
+    <Compile Include="DTO\KalkulationDto.cs" />
+    <Compile Include="DTO\KontoDto.cs" />
+    <Compile Include="DTO\ilistAvailableNewsDto.cs" />
+    <Compile Include="DTO\isolveSchnellkalkulationDto.cs" />
+    <Compile Include="DTO\ObTypDto.cs" />
+    <Compile Include="DTO\ogetNeupreisDto.cs" />
+    <Compile Include="DTO\ogetrestwerDatenDto.cs" />
+    <Compile Include="DTO\osolveSchnellkalkulationDto.cs" />
+    <Compile Include="DTO\olistAvailableUserDto.cs" />
+    <Compile Include="DTO\oTranslationDto.cs" />
+    <Compile Include="DTO\olistAuslagenartenDto.cs" />
+    <Compile Include="DTO\olistBranchenDto.cs" />
+    <Compile Include="DTO\olistRechtsformenDto.cs" />
+    <Compile Include="DTO\olistUnterstuetzungsartenDto.cs" />
+    <Compile Include="DTO\olistZusatzeinkommenDto.cs" />
+    <Compile Include="DTO\oprocessAngebotToAntragByIdDto.cs" />
+    <Compile Include="DTO\KundeDto.cs" />
+    <Compile Include="DTO\LogInfo.cs" />
+    <Compile Include="DTO\Message.cs" />
+    <Compile Include="DTO\ObjektDto.cs" />
+    <Compile Include="DTO\ocopyAdresseDto.cs" />
+    <Compile Include="DTO\ocopyAngebotDto.cs" />
+    <Compile Include="DTO\ocopyAntragDto.cs" />
+    <Compile Include="DTO\ocopyKalkulationDto.cs" />
+    <Compile Include="DTO\ocopyKontoDto.cs" />
+    <Compile Include="DTO\ocopyKundeDto.cs" />
+    <Compile Include="DTO\ocopyZusatzdatenDto.cs" />
+    <Compile Include="DTO\ocreateAdresseDto.cs" />
+    <Compile Include="DTO\ocreateAngebotDto.cs" />
+    <Compile Include="DTO\ocreateAntragDto.cs" />
+    <Compile Include="DTO\ocreateKalkulationDto.cs" />
+    <Compile Include="DTO\ocreateKontoDto.cs" />
+    <Compile Include="DTO\ocreateKundeDto.cs" />
+    <Compile Include="DTO\ocreateZusatzdatenDto.cs" />
+    <Compile Include="DTO\odeleteAdresseDto.cs" />
+    <Compile Include="DTO\odeleteAngebotDto.cs" />
+    <Compile Include="DTO\odeleteAntragDto.cs" />
+    <Compile Include="DTO\odeleteKalkulationDto.cs" />
+    <Compile Include="DTO\odeleteKontoDto.cs" />
+    <Compile Include="DTO\odeleteKundeDto.cs" />
+    <Compile Include="DTO\odeleteZusatzdatenDto.cs" />
+    <Compile Include="DTO\oMessagingDto.cs" />
+    <Compile Include="DTO\oEurotaxGetForecastDto.cs" />
+    <Compile Include="DTO\oEurotaxGetValuationDto.cs" />
+    <Compile Include="DTO\ogetAbwicklungsortDto.cs" />
+    <Compile Include="DTO\ogetAngebotDetailDto.cs" />
+    <Compile Include="DTO\ogetAntragDetailDto.cs" />
+    <Compile Include="DTO\ogetBuchwertDto.cs" />
+    <Compile Include="DTO\ogetKamDto.cs" />
+    <Compile Include="DTO\ogetKundeDetailDto.cs" />
+    <Compile Include="DTO\oGetObjektDatenDto.cs" />
+    <Compile Include="DTO\ogetParameterDto.cs" />
+    <Compile Include="DTO\ogetProfilDto.cs" />
+    <Compile Include="DTO\ogetVertragDetailDto.cs" />
+    <Compile Include="DTO\olistAnredenDto.cs" />
+    <Compile Include="DTO\olistAvailableAlertsDto.cs" />
+    <Compile Include="DTO\olistAvailableBrandsDto.cs" />
+    <Compile Include="DTO\olistAvailableChannelsDto.cs" />
+    <Compile Include="DTO\olistAvailableDokumenteDto.cs" />
+    <Compile Include="DTO\olistAvailableKundentypenDto.cs" />
+    <Compile Include="DTO\olistAvailableNewsDto.cs" />
+    <Compile Include="DTO\olistAvailableNutzungsartenDto.cs" />
+    <Compile Include="DTO\olistAvailableObjektartenDto.cs" />
+    <Compile Include="DTO\olistAvailableObjekttypenDto.cs" />
+    <Compile Include="DTO\olistAvailableProdukteDto.cs" />
+    <Compile Include="DTO\olistAvailableServicesDto.cs" />
+    <Compile Include="DTO\olistBeruflicheSituationenDto.cs" />
+    <Compile Include="DTO\olistKantoneDto.cs" />
+    <Compile Include="DTO\olistLaenderDto.cs" />
+    <Compile Include="DTO\olistNationalitaetenDto.cs" />
+    <Compile Include="DTO\olistSprachenDto.cs" />
+    <Compile Include="DTO\olistWohnSituationenDto.cs" />
+    <Compile Include="DTO\olistZivilstaendeDto.cs" />
+    <Compile Include="DTO\oprintCheckedDokumenteDto.cs" />
+    <Compile Include="DTO\oprocessAngebotToAntragDto.cs" />
+    <Compile Include="DTO\oprocessAntragToVertragDto.cs" />
+    <Compile Include="DTO\osaveAdresseDto.cs" />
+    <Compile Include="DTO\osaveAngebotDto.cs" />
+    <Compile Include="DTO\osaveAntragDto.cs" />
+    <Compile Include="DTO\osaveKalkulationDto.cs" />
+    <Compile Include="DTO\osaveKontoDto.cs" />
+    <Compile Include="DTO\osaveKundeDto.cs" />
+    <Compile Include="DTO\osaveZusatzdatenDto.cs" />
+    <Compile Include="DTO\osearchAngebotDto.cs" />
+    <Compile Include="DTO\osearchAntragDto.cs" />
+    <Compile Include="DTO\osearchKundeDto.cs" />
+    <Compile Include="DTO\osearchVertragDto.cs" />
+    <Compile Include="DTO\osetAblieferdatumDto.cs" />
+    <Compile Include="DTO\osetChassisnummerDto.cs" />
+    <Compile Include="DTO\osetFarbeDto.cs" />
+    <Compile Include="DTO\osetGeschaeftsartDto.cs" />
+    <Compile Include="DTO\osetKontrollschildDto.cs" />
+    <Compile Include="DTO\osetStammnummerDto.cs" />
+    <Compile Include="DTO\osolveKalkulationDto.cs" />
+    <Compile Include="DTO\ParamDto.cs" />
+    <Compile Include="DTO\ParsetDto.cs" />
+    <Compile Include="DTO\PkzDto.cs" />
+    <Compile Include="DTO\PlzDto.cs" />
+    <Compile Include="DTO\S1AnswerInputData.cs" />
+    <Compile Include="DTO\SearchDto.cs" />
+    <Compile Include="DTO\ServiceInformation.cs" />
+    <Compile Include="DTO\UkzDto.cs" />
+    <Compile Include="DTO\VertragDto.cs" />
+    <Compile Include="DTO\VTProvDto.cs" />
+    <Compile Include="DTO\ZusatzdatenDto.cs" />
+    <Compile Include="DTO\ZusatzinformationDto.cs" />
+    <Compile Include="DTO\ZusatzinformationType.cs" />
+    <Compile Include="FibuService.svc.cs">
+      <DependentUpon>FibuService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="getBuchwertService.svc.cs">
+      <DependentUpon>getBuchwertService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="getPartnerZusatzdatenService.svc.cs">
+      <DependentUpon>getPartnerZusatzdatenService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\ImTanService.cs" />
+    <Compile Include="Contract\Ib2xService.cs" />
+    <Compile Include="Contract\IdocumentService.cs" />
+    <Compile Include="mTanService.svc.cs">
+      <DependentUpon>mTanService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\osearchKundeExternNonGenericDto.cs" />
+    <Compile Include="ScoreService.svc.cs">
+      <DependentUpon>ScoreService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="StreamService.svc.cs">
+      <DependentUpon>StreamService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="StateService.svc.cs">
+      <DependentUpon>StateService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="loginPartnerService.svc.cs">
+      <DependentUpon>loginPartnerService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="printAngebotService.svc.cs">
+      <DependentUpon>printAngebotService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="printAntragService.svc.cs">
+      <DependentUpon>printAntragService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="searchAngebotService.svc.cs">
+      <DependentUpon>searchAngebotService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="searchAntragService.svc.cs">
+      <DependentUpon>searchAntragService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="searchKundeService.svc.cs">
+      <DependentUpon>searchKundeService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="searchVertragService.svc.cs">
+      <DependentUpon>searchVertragService.svc</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.ssl.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\BankNow.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Cic.Utils\Cic.One.Utils\Cic.One.Utils.csproj">
+      <Project>{d1f653f9-3d9e-4486-89cc-4b0044307750}</Project>
+      <Name>Cic.One.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CIC.OpenOneCarConfigurator\Cic.OpenOne.CarConfigurator\Cic.OpenOne.CarConfigurator.csproj">
+      <Project>{c50e4898-5a07-475f-ae79-137611353f51}</Project>
+      <Name>Cic.OpenOne.CarConfigurator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CIC.OpenOne\Cic.OpenOne.Common\Cic.OpenOne.Common.csproj">
+      <Project>{fc4049ac-617c-4233-ba92-287674e30b35}</Project>
+      <Name>Cic.OpenOne.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cic.OpenOne.GateBANKNOW.Common\Cic.OpenOne.GateBANKNOW.Common.csproj">
+      <Project>{9DB4A50F-0651-4299-A6B8-B43C0B37B6B8}</Project>
+      <Name>Cic.OpenOne.GateBANKNOW.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IBANKernel64.dll" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>50664</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <EnableWcfTestClientForSVCDefaultValue>False</EnableWcfTestClientForSVCDefaultValue>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Import Project="..\..\libs\Microsoft.WebApplication.targets" Condition="'$(HUDSON)' == 'YES'" />
+  <Import Project="..\..\libs\MSBuild.Community.Tasks.Targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.-->
+  <Target Name="BeforeBuild" Condition="'$(HUDSON)'=='YESOFF'">
+    <FileUpdate Files="Properties\AssemblyInfo.cs" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.$(SVN_REVISION)" />
+  </Target>
+  <Target Name="AfterBuild" Condition="'$(HUDSON)'=='YESOFF'">
+    <ItemGroup>
+      <!-- Ziel zum Kopieren für Revision -->
+      <binDir Include="\\w1\work\buildqueue\OpenOneGateBankNow\Service\$(SVN_REVISION)\bin" />
+      <!-- Ziel zum Kopieren für Revision -->
+      <svcDir Include="\\w1\work\buildqueue\OpenOneGateBankNow\Service\$(SVN_REVISION)\" />
+      <BinFiles Include="$(OutputPath)\*.*" />
+      <!-- Aktueller Build-Ordner auf cicdbs13 jobs workspace -->
+      <SvcFiles Include="*.svc" />
+      <SvcFiles Include="*.asax" />
+      <SvcFiles Include="*.aspx" />
+    </ItemGroup>
+    <MakeDir Directories="@(binDir)" ContinueOnError="true" />
+    <MakeDir Directories="@(CurrentBin)" ContinueOnError="true" />
+    <Copy SourceFiles="@(BinFiles)" DestinationFolder="@(binDir)" />
+    <Copy SourceFiles="@(SvcFiles)" DestinationFolder="@(svcDir)" />
+  </Target>
+</Project>

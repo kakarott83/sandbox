@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+    <metadata>
+    <id>$id$</id>
+    <version>$version$-0</version>
+    <title>$title$</title>
+    <authors>C.I.C. Software GmbH</authors>
+    <owners>C.I.C. Software GmbH</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>CIC BOS</description>
+    <releaseNotes>Initial POC release.</releaseNotes>
+    <copyright>Copyright © C.I.C. Software GmbH 2015</copyright>
+  </metadata>
+  <files>
+	<file src="..\..\libs\IBANKernel64.dll" target="content\bin" />
+	<file src="..\..\libs\Financial.dll" target="lib\net46" />
+  </files>
+</package>

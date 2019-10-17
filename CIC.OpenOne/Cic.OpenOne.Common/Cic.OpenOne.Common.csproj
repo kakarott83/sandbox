@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FC4049AC-617C-4233-BA92-287674E30B35}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cic.OpenOne.Common</RootNamespace>
+    <AssemblyName>Cic.OpenOne.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Cic.OpenOne.Common.XML</DocumentationFile>
+    <UseHostCompilerIfAvailable>false</UseHostCompilerIfAvailable>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <NoWarn>1591</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>5</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseHostCompilerIfAvailable>false</UseHostCompilerIfAvailable>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=1.1.0.188, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\AutoMapper.1.1.0.118\lib\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Bas.Framework.Evaluate">
+      <HintPath>..\..\libs\CIC.Bas.Framework.Evaluate.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Bas.Infrastructure, Version=1.0.0.3171, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\CIC.Bas.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Database.OL.EF4, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Database.OL.EF4.4.430.136.221\lib\net45\CIC.Database.OL.EF4.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Monitoring">
+      <HintPath>..\..\libs\Monitoring\CIC.Monitoring.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data, Version=5.0.1095.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Oracle, Version=8.4.303.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Devart.Data.Oracle.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Oracle.Entity, Version=8.4.303.6, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Devart.Data.Oracle.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel">
+      <HintPath>..\..\libs\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Monitoring\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BO\AbstractCASBo.cs" />
+    <Compile Include="BO\AbstractDictionaryListsBo.cs" />
+    <Compile Include="BO\AbstractHtmlReportBo.cs" />
+    <Compile Include="BO\AbstractKorrekturBo.cs" />
+    <Compile Include="BO\AbstractMwStBo.cs" />
+    <Compile Include="BO\AbstractRightsMapBo.cs" />
+    <Compile Include="BO\AbstractTranslateBo.cs" />
+    <Compile Include="BO\AbstractZinsBo.cs" />
+    <Compile Include="BO\AppSettingsBo.cs" />
+    <Compile Include="BO\CASBo.cs" />
+    <Compile Include="BO\CommonBOFactory.cs" />
+    <Compile Include="BO\DictionaryListsBo.cs" />
+    <Compile Include="BO\HtmlExpanderBo.cs" />
+    <Compile Include="BO\HtmlReportBo.cs" />
+    <Compile Include="BO\ICASBo.cs" />
+    <Compile Include="BO\IDictionaryListsBo.cs" />
+    <Compile Include="BO\IHtmlReportBo.cs" />
+    <Compile Include="BO\IKorrekturBo.cs" />
+    <Compile Include="BO\IMwStBo.cs" />
+    <Compile Include="BO\IRightsMapBo.cs" />
+    <Compile Include="BO\IRounding.cs" />
+    <Compile Include="BO\ITranslateBo.cs" />
+    <Compile Include="BO\IZinsBo.cs" />
+    <Compile Include="BO\KorrekturBo.cs" />
+    <Compile Include="BO\MwStBo.cs" />
+    <Compile Include="BO\NkBuilder.cs" />
+    <Compile Include="BO\NotificationGatewayBo.cs" />
+    <Compile Include="BO\Prisma\AbstractPrismaNewsBO.cs" />
+    <Compile Include="BO\Prisma\AbstractPrismaParameterBO.cs" />
+    <Compile Include="BO\Prisma\AbstractPrismaProductBO.cs" />
+    <Compile Include="BO\Prisma\AbstractPrismaServiceBo.cs" />
+    <Compile Include="BO\Prisma\AbstractProvisionBo.cs" />
+    <Compile Include="BO\Prisma\AbstractSortTreeBo.cs" />
+    <Compile Include="BO\Prisma\AbstractSubventionBo.cs" />
+    <Compile Include="BO\Prisma\ConditionLink.cs" />
+    <Compile Include="BO\Prisma\ConditionLinkType.cs" />
+    <Compile Include="BO\Prisma\InterestConditionLink.cs" />
+    <Compile Include="BO\Prisma\IPrismaNewsBo.cs" />
+    <Compile Include="BO\Prisma\IPrismaParameterBo.cs" />
+    <Compile Include="BO\Prisma\IPrismaProductBo.cs" />
+    <Compile Include="BO\Prisma\IPrismaServiceBo.cs" />
+    <Compile Include="BO\Prisma\IProvisionBo.cs" />
+    <Compile Include="BO\Prisma\ISortTreeBo.cs" />
+    <Compile Include="BO\Prisma\ISubventionBo.cs" />
+    <Compile Include="BO\Prisma\NewsConditionLink.cs" />
+    <Compile Include="BO\Prisma\ParameterConditionLink.cs" />
+    <Compile Include="BO\Prisma\ProvisionConditionLink.cs" />
+    <Compile Include="BO\Prisma\ParameterSetConditionLink.cs" />
+    <Compile Include="BO\Prisma\PrismaBoFactory.cs" />
+    <Compile Include="BO\Prisma\PrismaNewsBo.cs" />
+    <Compile Include="BO\Prisma\PrismaParameterBo.cs" />
+    <Compile Include="BO\Prisma\PrismaParameters.cs" />
+    <Compile Include="BO\Prisma\PrismaProductBo.cs" />
+    <Compile Include="BO\Prisma\PrismaServiceBo.cs" />
+    <Compile Include="BO\Prisma\ProductConditionLink.cs" />
+    <Compile Include="BO\Prisma\ProvisionAdjustConditionLink.cs" />
+    <Compile Include="BO\Prisma\ProvisionBo.cs" />
+    <Compile Include="BO\Prisma\ServiceConditionLink.cs" />
+    <Compile Include="BO\Prisma\SortTreeBo.cs" />
+    <Compile Include="BO\Prisma\SubventionBo.cs" />
+    <Compile Include="BO\RightsMapBo.cs" />
+    <Compile Include="BO\Rounding.cs" />
+    <Compile Include="BO\RoundingFactory.cs" />
+    <Compile Include="BO\Search\SearchCache.cs" />
+    <Compile Include="BO\TranslateBo.cs" />
+    <Compile Include="BO\Versicherung\AbstractInsuranceBo.cs" />
+    <Compile Include="BO\Versicherung\AbstractVSCalculator.cs" />
+    <Compile Include="BO\Versicherung\DefaultCalculator.cs" />
+    <Compile Include="BO\Versicherung\IInsuranceBo.cs" />
+    <Compile Include="BO\Versicherung\IVSCalculator.cs" />
+    <Compile Include="BO\ZinsBo.cs" />
+    <Compile Include="DAO\AppSettingsDao.cs" />
+    <Compile Include="DAO\Auskunft\SoapLogDumpDao.cs" />
+    <Compile Include="DAO\CachedKorrekturDao.cs" />
+    <Compile Include="DAO\CachedMwStDao.cs" />
+    <Compile Include="DAO\CachedObTypDao.cs" />
+    <Compile Include="DAO\CachedQuoteDao.cs" />
+    <Compile Include="DAO\CachedRightsMapDao.cs" />
+    <Compile Include="DAO\CachedTranslateDao.cs" />
+    <Compile Include="DAO\CachedVGDao.cs" />
+    <Compile Include="DAO\CachedZinsDao.cs" />
+    <Compile Include="DAO\CommonDaoFactory.cs" />
+    <Compile Include="DAO\ContextFactory.cs" />
+    <Compile Include="DAO\DictionaryListsDao.cs" />
+    <Compile Include="DAO\IDictionaryListsDao.cs" />
+    <Compile Include="DAO\IHtmlTemplateDao.cs" />
+    <Compile Include="DAO\IKorrekturDao.cs" />
+    <Compile Include="DAO\IMwStDao.cs" />
+    <Compile Include="DAO\IObTypDao.cs" />
+    <Compile Include="DAO\IQuoteDao.cs" />
+    <Compile Include="DAO\IRightsMapDao.cs" />
+    <Compile Include="DAO\ITranslateDao.cs" />
+    <Compile Include="DAO\IVGDao.cs" />
+    <Compile Include="DAO\IZinsDao.cs" />
+    <Compile Include="DAO\KorrekturDao.cs" />
+    <Compile Include="DAO\MwStDao.cs" />
+    <Compile Include="DAO\NotificationGatewayDbDAO.cs" />
+    <Compile Include="DAO\ObTypDao.cs" />
+    <Compile Include="DAO\PermissionDao.cs" />
+    <Compile Include="DAO\Prisma\CachedPrismaDao.cs" />
+    <Compile Include="DAO\Prisma\CachedPrismaServiceDao.cs" />
+    <Compile Include="DAO\Prisma\CachedProvisionDao.cs" />
+    <Compile Include="DAO\Prisma\CachedSubventionDao.cs" />
+    <Compile Include="DAO\Prisma\FlatSortableDto.cs" />
+    <Compile Include="DAO\Prisma\IFlatSortableDto.cs" />
+    <Compile Include="DAO\Prisma\IPrismaDao.cs" />
+    <Compile Include="DAO\Prisma\IPrismaServiceDao.cs" />
+    <Compile Include="DAO\Prisma\IProvisionDao.cs" />
+    <Compile Include="DAO\Prisma\ISortTreeDao.cs" />
+    <Compile Include="DAO\Prisma\ISubventionDao.cs" />
+    <Compile Include="DAO\Prisma\PrismaDao.cs" />
+    <Compile Include="DAO\Prisma\PrismaDaoFactory.cs" />
+    <Compile Include="DAO\Prisma\PrismaServiceDao.cs" />
+    <Compile Include="DAO\Prisma\ProvisionDao.cs" />
+    <Compile Include="DAO\Prisma\SortTreeDao.cs" />
+    <Compile Include="DAO\Prisma\SubventionDao.cs" />
+    <Compile Include="DAO\QuoteDao.cs" />
+    <Compile Include="DAO\ResourceTemplateDao.cs" />
+    <Compile Include="DAO\RightsMapDao.cs" />
+    <Compile Include="DAO\SampleDao.cs" />
+    <Compile Include="DAO\Sms\SwisscomSmsClient.cs" />
+    <Compile Include="DAO\Sms\SwisscomSmsDao.cs" />
+    <Compile Include="DAO\Sms\SwisscomSmsClientGenerated.cs" />
+    <Compile Include="DAO\StringHtmlTemplateDao.cs" />
+    <Compile Include="DAO\TranslateDAO.cs" />
+    <Compile Include="DAO\ValueGroupDao.cs" />
+    <Compile Include="DAO\Versicherung\CachedInsuranceDao.cs" />
+    <Compile Include="DAO\Versicherung\IInsuranceDao.cs" />
+    <Compile Include="DAO\Versicherung\InsuranceDao.cs" />
+    <Compile Include="DAO\VGDao.cs" />
+    <Compile Include="DAO\ZinsDao.cs" />
+    <Compile Include="DTO\AngAntProvDto.cs" />
+    <Compile Include="DTO\AngAntSubvDto.cs" />
+    <Compile Include="DTO\AngAntVsDto.cs" />
+    <Compile Include="DTO\AttachmentDto.cs" />
+    <Compile Include="DTO\AvailableNewsDto.cs" />
+    <Compile Include="DTO\AvailableProduktDto.cs" />
+    <Compile Include="DTO\AvailableServiceDto.cs" />
+    <Compile Include="DTO\CASEvaluateResult.cs" />
+    <Compile Include="DTO\CicLogDto.cs" />
+    <Compile Include="DTO\CTLUT_Data.cs" />
+    <Compile Include="DTO\DdlkpcolDto.cs" />
+    <Compile Include="DTO\DDLKPPOSData.cs" />
+    <Compile Include="DTO\DDLKPPOSDomain.cs" />
+    <Compile Include="DTO\DdlkpposDto.cs" />
+    <Compile Include="DTO\DDLKPPOSType.cs" />
+    <Compile Include="DTO\DdlkprubDto.cs" />
+    <Compile Include="DTO\DdlkpsposDto.cs" />
+    <Compile Include="DTO\EaihfileDto.cs" />
+    <Compile Include="DTO\EaihotDto.cs" />
+    <Compile Include="DTO\FremdbankDto.cs" />
+    <Compile Include="DTO\IBANInfoDto.cs" />
+    <Compile Include="DTO\IBANValidationError.cs" />
+    <Compile Include="DTO\IborDto.cs" />
+    <Compile Include="DTO\iCASEvaluateDto.cs" />
+    <Compile Include="DTO\igetRubDto.cs" />
+    <Compile Include="DTO\ImageDescriptionDto.cs" />
+    <Compile Include="DTO\InsuranceDto.cs" />
+    <Compile Include="DTO\MessageTranslateDto.cs" />
+    <Compile Include="DTO\MwStDataDTO.cs" />
+    <Compile Include="DTO\ObtypDataRestwertDto.cs" />
+    <Compile Include="DTO\oCASEvaluateDto.cs" />
+    <Compile Include="DTO\PeroleDto.cs" />
+    <Compile Include="DTO\Prisma\AbstractTreeNode.cs" />
+    <Compile Include="DTO\Prisma\DefaultTreeNode.cs" />
+    <Compile Include="DTO\Prisma\EigenAblInfo.cs" />
+    <Compile Include="DTO\Prisma\IntsDto.cs" />
+    <Compile Include="DTO\Prisma\IntstrctDto.cs" />
+    <Compile Include="DTO\Prisma\iProvisionDto.cs" />
+    <Compile Include="DTO\Prisma\iSubventionDto.cs" />
+    <Compile Include="DTO\Prisma\ITreeNode.cs" />
+    <Compile Include="DTO\Prisma\KontextDto.cs" />
+    <Compile Include="DTO\Prisma\KundenzinsDto.cs" />
+    <Compile Include="DTO\Prisma\oProvisionDto.cs" />
+    <Compile Include="DTO\Prisma\ParamDto.cs" />
+    <Compile Include="DTO\Prisma\ParsetDto.cs" />
+    <Compile Include="DTO\Prisma\PrBildweltVDto.cs" />
+    <Compile Include="DTO\Prisma\PRCLPRINTSETDto.cs" />
+    <Compile Include="DTO\Prisma\PRINTSETDto.cs" />
+    <Compile Include="DTO\Prisma\prKontextDto.cs" />
+    <Compile Include="DTO\Prisma\ProvisionCalcComponent.cs" />
+    <Compile Include="DTO\Prisma\provKontextDto.cs" />
+    <Compile Include="DTO\Prisma\PROVSHAREDATA.cs" />
+    <Compile Include="DTO\Prisma\PROVSTRCTDATA.cs" />
+    <Compile Include="DTO\Prisma\Prprodtype.cs" />
+    <Compile Include="DTO\Prisma\PrProvTypeCode.cs" />
+    <Compile Include="DTO\Prisma\PrSubvTriggerDto.cs" />
+    <Compile Include="DTO\Prisma\PRVSDto.cs" />
+    <Compile Include="DTO\Prisma\SortTreeNode.cs" />
+    <Compile Include="DTO\Prisma\srvKontextDto.cs" />
+    <Compile Include="DTO\Prisma\WfTableCode.cs" />
+    <Compile Include="DTO\ProvKalkDto.cs" />
+    <Compile Include="DTO\QuoteInfoDto.cs" />
+    <Compile Include="DTO\Rightsmap.cs" />
+    <Compile Include="DTO\ServiceType.cs" />
+    <Compile Include="DTO\StaticTranslateDto.cs" />
+    <Compile Include="DTO\SteplistDto.cs" />
+    <Compile Include="DTO\TranslationDto.cs" />
+    <Compile Include="DTO\Versicherung\iInsuranceDto.cs" />
+    <Compile Include="DTO\Versicherung\InsuranceCalcComponent.cs" />
+    <Compile Include="DTO\Versicherung\InsuranceResultComponent.cs" />
+    <Compile Include="DTO\Versicherung\oInsuranceDto.cs" />
+    <Compile Include="DTO\VgDto.cs" />
+    <Compile Include="DTO\VGValuesDto.cs" />
+    <Compile Include="Model\DdCcCm\DdCcCmExtended.cs" />
+    <Compile Include="Model\DdCt\DdCtExtended.cs" />
+    <Compile Include="Model\DdEurotax\DdEurotaxExtended.cs" />
+    <Compile Include="Model\DdIc\DdIcExtended.cs" />
+    <Compile Include="Model\DdOd\DdOdExtended.cs" />
+    <Compile Include="Model\DdOiqueue\DdOiqueueExtended.cs" />
+    <Compile Include="Model\DdOl\DdOlExtended.cs" />
+    <Compile Include="Model\DdOl\PeRoleUtil.cs" />
+    <Compile Include="Model\DdOw\DdOwExtended.cs" />
+    <Compile Include="Model\DdOw\PUserUtil.cs" />
+    <Compile Include="Model\IAlteredSession.cs" />
+    <Compile Include="Model\Prisma\PrismaExtended.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Config.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Config.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ExceptionMessages.Designer.cs" />
+    <Compile Include="Service References\CASKernel\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\MediatorService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Util\Behaviour\SOAPLogging.cs" />
+    <Compile Include="Util\Behaviour\SoapLoggingAuskunft.cs" />
+    <Compile Include="Util\Behaviour\ISOAPMessageHandler.cs" />
+    <Compile Include="Util\Behaviour\SOAPMessageInspection.cs" />
+    <Compile Include="Util\Collection\CacheDao.cs" />
+    <Compile Include="Util\Collection\CacheDelegator.cs" />
+    <Compile Include="Util\Config\AppConfig.cs" />
+    <Compile Include="Util\Config\CfgDate.cs" />
+    <Compile Include="Util\Config\Configuration.cs" />
+    <Compile Include="Util\Config\ConnectionStringBuilder.cs" />
+    <Compile Include="Util\Config\ProcessUpdater.cs" />
+    <Compile Include="Util\Config\ServiceSetup.cs" />
+    <Compile Include="Util\Extension\EFContextExtension.cs" />
+    <Compile Include="Util\Extension\SoapLoggingAttribute.cs" />
+    <Compile Include="Util\Extension\SoapLoggingExtension.cs" />
+    <Compile Include="Util\IBANValidator.cs" />
+    <Compile Include="Util\Logging\LogUtil.cs" />
+    <Compile Include="Util\Security\CredentialContext.cs" />
+    <Compile Include="Util\Security\MembershipProvider.cs" />
+    <Compile Include="Util\Security\UserPasswordValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Config.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Config.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\CASKernel\CASKernel1.wsdl" />
+    <None Include="Service References\CASKernel\CASKernel3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CASKernel\CASService1.wsdl" />
+    <None Include="Service References\CASKernel\CIC.Bas.Services.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CASKernel\Cic.OpenOne.Common.CASKernel.CASEvaluateOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CASKernel\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Cic.OpenOne.Common.dll.settings.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Resources\ExceptionMessages.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CASKernel\" />
+    <WCFMetadataStorage Include="Service References\MediatorService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CASKernel\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CASKernel\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CASKernel\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Cic.Utils\Cic.One.Utils\Cic.One.Utils.csproj">
+      <Project>{d1f653f9-3d9e-4486-89cc-4b0044307750}</Project>
+      <Name>Cic.One.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cic.OpenOne.Common.Model\Cic.OpenOne.Common.Model.csproj">
+      <Project>{1fef8f25-bbaa-453c-a249-f1733bbb0b3c}</Project>
+      <Name>Cic.OpenOne.Common.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MediatorService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MediatorService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MediatorService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\libs\MSBuild.Community.Tasks.Targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets. -->
+  <Target Name="BeforeBuild" Condition="'$(HUDSON)'=='YESOFF'">
+    <FileUpdate Files="Properties\AssemblyInfo.cs" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.$(SVN_REVISION)" />
+  </Target>
+  <!--
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

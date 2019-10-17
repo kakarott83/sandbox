@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://guardean.net/webservices/workflow/wkf_control_interface/types" targetNamespace="http://guardean.net/webservices/workflow/wkf_control_interface/types" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="executeRequest" type="tns:executeRequest" />
+  <xs:element name="executeResponse" type="tns:executeResponse" />
+  <xs:element name="systemMessage" type="tns:systemMessageType" />
+  <xs:complexType name="systemMessageType">
+    <xs:annotation>
+      <xs:documentation>
+                Represents a message to the user.
+                This type is similar to systemMessageType but has additionally a cause chain.
+            </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="message" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+                        A text that can be displayed to an end user without any further
+                        processing.  The producer of this element is responsible for
+                        performing locale dependend processing, parameter replacements
+                        and so on.  The consumer has to use as is.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="code" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+                        A unique identification of the message.  This element is to be
+                        used for programmatic processing of a system message.  It is
+                        intended to be used as a key for message dependent processing.
+                        Systems that produce this element have to offer a list of
+                        possible error codes.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="parameter" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+                        An additional information that is part of this system message.
+                        Used in programmatic processing of the message.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="cause" type="tns:systemMessageType">
+        <xs:annotation>
+          <xs:documentation>
+                        The system message that caused this system message.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ApplicantEmploymentStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="employerCity" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="employerCountry" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="employerHousenumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="employerName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="employerPostalCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="employerStreet" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="employmentEndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="employmentStartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="employmentType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="isSelfEmployed" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ApplicantFinancialsStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="expense" type="tns:ExpenseStruct" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="income" type="tns:IncomeStruct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ApplicantIdentityStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="documentIssueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="documentValidTill" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="identityNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="identityType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="isVerified" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="issuingAuthority" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="residencePermition" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="residencePermitionUntil" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="residencyStatus" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="validatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="validatedFrom" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ApplicationReducedStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:long" />
+      <xs:element minOccurs="1" maxOccurs="1" name="applicationDate" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="applicationId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="applicationStatus" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="applicationType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="applicationVersion" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="1" name="bankGrants" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="contract" type="tns:ContractStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="dealer" type="tns:DealerStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="externalReference" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="vatPercentage" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="vehicle" type="tns:VehicleStruct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BankAccountInformationStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="BIC" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IBAN" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="bankAccountOwner" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="bankName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="directDebitDay" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="1" name="paymentMethod" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ComplementaryApplicantCompanyStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="VATNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="businessIdentificationNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="companyName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="crefoID" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="foundationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="industrialSector" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="legalCourt" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="legalForm" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="numberOfEmployees" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="1" name="registerEntry" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="registerNumber" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ComplementaryApplicantPrivateStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="applicantEmployment" type="tns:ApplicantEmploymentStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="applicantFinancials" type="tns:ApplicantFinancialsStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="applicantIdentity" type="tns:ApplicantIdentityStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="birthName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="citizenship" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="countryOfBirth" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="curEmploymentMonth" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="1" name="dateOfBirth" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="driversLicense" type="tns:DriversLicenseStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="educationType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="employee" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="firstName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="gender" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="jointHousehold" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="lastName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="maritalStatus" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="numberOfChildUndEighteen" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pepInformation" type="tns:PepInformationStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="placeOfBirth" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="residencyMonthsSince" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="1" name="residencySince" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="residencyStatus" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="salutation" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="schufaID" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="schufaRequired" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="taxId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="title" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ComplementaryApplicantReduStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="1" name="amountForeclosure" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="applicantID" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="applicantRole" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="applicantType" type="tns:applicantType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="authorizedRepresentativeType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="bankAccountInformation" type="tns:BankAccountInformationStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="bankEnquiryStatus" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="complementaryApplicantCompany" type="tns:ComplementaryApplicantCompanyStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="complementaryApplicantPrivate" type="tns:ComplementaryApplicantPrivateStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="contact" type="tns:ContactStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="customerId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="customerSince" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="extendedAddress" type="tns:ExtendedAddressStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="foreclosure" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="language" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="securityType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="state" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ContactStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="contactPerson" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="emailPrivate" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="faxPrivate" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="mobilePrivate" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="phoneBusiness" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="phonePrivate" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="website" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ContractStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="baseInterestRate" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="contractType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="debit" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="discountAmountGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="discountGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="downPaymentNet" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="downPaymentNetGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="downpaymentGrossPercentage" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="effInterestRate" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="financedAmountGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="financedAmountNet" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="interestIncome" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="interestRate" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="monthlyFinancingRatetGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="monthlyFinancingRatetNet" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="overallCreditCostsGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="overallCreditCostsNet" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="premiums" type="tns:PremiumsStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="productType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="replaceInformation" type="tns:ReplaceInformationStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="replacement" type="tns:replacementStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="residualValueExternalGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="residualValueExternalGrossPer" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="residualValueExternalNet" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="term" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="totalLoanAmountGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="totalLoanAmountNet" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="totalMonthlyPaymentGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="totalMonthlyPaymentNet" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DealerStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="contact" type="tns:ContactStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="dealerAddress" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="dealerGroup" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="dealerLimit" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="dealerName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="dealerNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="dealerRating" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="dealerType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="salesmanName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="salesmanNumber" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DriversLicenseStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="documentID" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="documentIssueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="documentValidTill" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="driversLicenseBusiness" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ErrorStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="code" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="component" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="text" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="trace" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="type" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExpenseStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="expenseAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="expenseType" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtendedAddressStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="additionalAddressInfo" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="addressSince" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="city" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="country" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="housenumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="postalCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="street" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="typeOfLiving" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtendedApplicantCompanyStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="businessIdentificationNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="companyName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="complementaryApplicantRedu" type="tns:ComplementaryApplicantReduStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="foundationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="industrialSector" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="legalCourt" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="legalForm" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="registerNumber" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtendedApplicantPrivateStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="applicantEmployment" type="tns:ApplicantEmploymentStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="applicantFinancials" type="tns:ApplicantFinancialsStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="applicantIdentity" type="tns:ApplicantIdentityStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="birthName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="citizenship" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="curEmploymentMonth" type="xs:long" />
+      <xs:element minOccurs="1" maxOccurs="1" name="dateOfBirth" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="firstName" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="gender" type="tns:gender" />
+      <xs:element minOccurs="0" maxOccurs="1" name="jointHousehold" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="lastName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="maritalStatus" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="numberOfChildUndEighteen" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pepInformation" type="tns:PepInformationStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="placeOfBirth" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="salutation" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="taxId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="title" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtendedApplicantReducedStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:long" />
+      <xs:element minOccurs="1" maxOccurs="1" name="applicantID" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="applicantRole" type="tns:applicantRole" />
+      <xs:element minOccurs="1" maxOccurs="1" name="applicantType" type="tns:applicantType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="bankAccountInformation" type="tns:BankAccountInformationStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="contact" type="tns:ContactStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="customerId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="customerSince" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="extendedAddress" type="tns:ExtendedAddressStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="extendedApplicantCompany" type="tns:ExtendedApplicantCompanyStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="extendedApplicantPrivate" type="tns:ExtendedApplicantPrivateStruct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IncomeStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="grossIncome" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="incomeSince" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="incomeTerm" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="incomeType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="netIncome" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PepInformationStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="country" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="employmentTitle" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="since" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="till" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PremiumsStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="code" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="type" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ReplaceInformationStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="replacementMonthlyRate" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="replacementPreContract" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResidualValueTableStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="400" name="months" type="tns:monthsStruct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SchwackeStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="fairMarketValue" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="residualValueInternal" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="residualValueTable" type="tns:ResidualValueTableStruct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VehicleStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="brand" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="buyPriceAfterDiscountGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="buyPriceAfterDiscountNet" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="buyPriceBeforeDiscountGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="buyPriceBeforeDiscountNet" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="buyPriceGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="buyPriceNet" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="carColour" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="carOwner" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="carRegistrationsCostsGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="carTransmission" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="dealerEquiAfterDiscountGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="dealerEquipment" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="dealerEquipmentGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="eurotaxCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="listPriceAfterDiscountGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="listPriceAfterDiscountNet" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="listPriceGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="listPriceNet" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="manuEquipGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="manufEquiAfterDiscGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="mileage" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="mileagePerYear" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="1" name="model" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="modelLine" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="modelType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="powerKW" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="powerPS" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="registrationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="residualValueExternal" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="schwacke" type="tns:SchwackeStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="specialEquipmentGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="transportionCostsGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="vehiPackAfterDiscountGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="vehiSpecEquipAfterDiscGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="vehicleChassisNo" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="vehiclePackagesGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="vehicleSpecialEquipmentGross" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="vehicleStatus" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="applicantRole">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="mainApplicant" />
+      <xs:enumeration value="CoApplicant" />
+      <xs:enumeration value="Guarantor" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="applicantType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="private" />
+      <xs:enumeration value="company" />
+      <xs:enumeration value="self-employed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="executeRequest">
+    <xs:annotation>
+      <xs:documentation>
+                Workflow request
+            </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="application" type="tns:ApplicationReducedStruct" />
+      <xs:element minOccurs="0" maxOccurs="2" name="extendedApplicant" type="tns:ExtendedApplicantReducedStruct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="executeResponse">
+    <xs:annotation>
+      <xs:documentation>
+                Workflow response
+            </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="error" type="tns:ErrorStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="executionID" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="gender">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="M" />
+      <xs:enumeration value="F" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="monthsStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="milageKey" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="1" name="monthKey" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="replacementStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="amount" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="amountper" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="bankname" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="iban" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="precontract" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="rate" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="replacementDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="type" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

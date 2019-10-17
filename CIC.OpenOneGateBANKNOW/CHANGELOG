@@ -1,0 +1,202 @@
+BETA8.r862 28.06.2011
+---------------------
+Fixed solveKalkulation
+Fixed Prisma Parameter Availability
+
+Fixed
+printAngebotService / printAntragService
+	listAvailableDokumente
+	printCheckedDokumente
+	
+BETA7.r840 20.06.2011
+---------------------
+
+Fixed Car Configurator Model Search
+
+Added new functions in Webservices:
+
+createOrUpdateAngebotService 		
+	checkAntragById
+
+createOrUpdateAntragService 		
+	checkAntragById
+
+BETA6.r823 14.06.2011
+---------------------
+
+Fixed Auskunft Services
+Fixed Product availability
+
+printAngebotService / printAntragService
+	listAvailableDokumente
+	printCheckedDokumente
+	
+BETA5.r799
+----------
+Changed
+createOrUpdateAngebotService
+"Mitantragssteller" added in all save and update Services
+
+Fixed
+listavailableproducts
+listavailableservices
+listavailableparameters
+
+Added new Auskunftservices for Adressidentification
+Added new Servicemethod listAvailableUser
+
+
+BETA4.r721
+----------
+createOrUpdateAngebotService
+		new method processAngebotToAntragById for INTEROP-Interface
+
+changeAntragService
+		setter Methods attached to database
+
+createOrUpdateKundeService
+		added new DropList Methods for Kunde GUI
+
+AuskunftService
+		new method sendDbNotification
+		
+solveKalkulation-Methods
+		kalkKontext added. AngAntSubv added. Provisions applied.
+	
+Translations added for
+		createOrUpdateAngebotService
+		createOrUpdateAntragService
+		createOrUpdateKundeService
+		createOrUpdateSchnellkalkulationService
+		getPartnerZusatzdatenService
+
+loginPartnerService
+		getTranslation Method added for GUI Translation of static fields
+
+getPartnerZusatzdatenService
+		listAvailableNews attached to database
+		listAvailableAlerts attached to database
+		
+getBuchwertService
+		getBuchwert attached to database
+		
+searchVertragService
+		searchVertrag attached to database
+		getVertragDetail attached to database
+		
+BETA3.r635
+----------
+changed Webservicesignature
+create in createOrUpdate for
+	createOrUpdateKundeService 
+	createOrUpdateAdresse
+	createOrUpdateKonto
+	createOrUpdateZusatzdaten
+
+Integrated CarConfigurator Services and Configuration into main library
+	
+Fixed functions in Webservices:
+searchAntragService 		
+	searchAntrag	
+	
+createOrUpdateKundeService
+	createOrUpdateZusatzdaten
+	createOrUpdateKunde
+	createOrUpdateKonto
+	createOrUpdateAdresse
+	
+Implemented additional functions in Webservices:
+	Default-Page to display and validate Service state
+
+Updated DevArt DB Layer libraries to 6.10
+
+BETA2.r411 25.03.2010 
+---------------------
+Implemented additional functions in Webservices:
+createOrUpdateKundeService 		
+	createOrUpdateKunde	
+	createOrUpdateAdresse	
+	createOrUpdateKonto	
+	saveKunde	
+
+createOrUpdateAntragService 		
+	getParameter	
+	createOrUpdateAntrag	
+	saveAntrag	
+		
+changeAntragService 		
+	deleteAntrag	
+
+createOrUpdateAngebotService 		
+	getParameter	
+	createOrUpdateAngebot	
+	saveAngebot	
+	processAngebotToAntrag	
+
+getPartnerZusatzdatenService 		
+	getProfil	
+	getKam	
+	getAbwicklungsort	
+	listAvailableChannels	
+	listAvailableBrands	
+	
+searchAngebotService 		
+	searchAngebot	
+	getAngebotDetail	
+
+searchVertragService 		
+	searchVertrag	
+
+searchAntragService 		
+	searchAntrag	
+	getAntragDetail	
+
+searchKundeService 		
+	getKundeDetail	
+
+createOrUpdateSchnellkalkulationService 		
+	getParameter	
+
+Fixed Testfunctions for ZEK and Deltavista in TestUI
+
+
+BETA1.r329 10.03.2010
+---------------------
+Implemented additional functions in Webservices:
+loginPartnerService 		
+	extendedValidateUser	
+
+createOrUpdateAntragService 		
+	listAvailableObjekttypen	
+	listAvailableObjektarten	
+	listAvailableProdukte	
+	listAvailableKundentypen	
+	listAvailableNutzungarten	
+	listAvailableServices	
+
+createOrUpdateAngebotService 		
+	listAvailableObjekttypen	
+	listAvailableObjektarten	
+	listAvailableProdukte	
+	listAvailableKundentypen	
+	listAvailableNutzungarten	
+
+createOrUpdateKundeService 		
+	listAvailableKundentypen	
+	listAnreden	
+	listLaender	
+	listKantone	
+	listSprachen	
+	listZivilstaende	
+	listNationalitaeten	
+	listBeruflicheSituationen	
+	listWohnSituationen	
+
+searchKundeService 		
+	searchKunde	
+
+createOrUpdateSchnellkalkulationService 		
+	listAvailableProdukte	
+	listAvailableServices	
+
+Implemented Testfunctions for AuskunftBOs in TestUI

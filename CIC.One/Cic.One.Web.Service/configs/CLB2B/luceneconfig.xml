@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LuceneConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<tables>
+		
+	
+		<IndexedTable>
+			<id>B2BANGEBOT</id>
+			<query>select  angebot.sysid id,angebot.angebot title,angebot.objektvt description1, it.vorname || it.name description2,objektvt description3,'' peuni from angebot, CIC.IT IT where  ANGEBOT.SYSIT=IT.SYSIT(+)</query>
+			<keyField>sysid</keyField>
+			<indexid>ANGEBOT</indexid>
+			<positiveId>true</positiveId>
+			<peroleFilter>false</peroleFilter>
+		</IndexedTable>
+		
+		<IndexedTable>
+			<id>INT</id>
+			<query>select  sysit id,name||' '||vorname title,strasse description1, plz||' '||ort description2, telefon description3, '' peuni from it where 1=1</query>
+			<keyField>sysit</keyField>
+			<indexid>INT</indexid>
+			<positiveId>true</positiveId>
+			<peroleFilter>false</peroleFilter>
+		</IndexedTable>
+		<IndexedTable>
+			<id>IT</id>
+			<query>select  sysit id,name||' '||vorname title,strasse description1, plz||' '||ort description2, telefon description3, '' peuni from it where 1=1</query>
+			<keyField>sysit</keyField>
+			<indexid>IT</indexid>
+			<positiveId>true</positiveId>
+			<peroleFilter>false</peroleFilter>
+		</IndexedTable>
+	</tables>
+</LuceneConfig>

@@ -1,0 +1,2306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9DB4A50F-0651-4299-A6B8-B43C0B37B6B8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cic.OpenOne.GateBANKNOW.Common</RootNamespace>
+    <AssemblyName>Cic.OpenOne.GateBANKNOW.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Cic.OpenOne.GateBANKNOW.Common.XML</DocumentationFile>
+    <UseHostCompilerIfAvailable>false</UseHostCompilerIfAvailable>
+    <NoWarn>1591,1572,1573</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseHostCompilerIfAvailable>false</UseHostCompilerIfAvailable>
+    <NoWarn>1591,1572,1573</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Cic.OpenOne.GateBANKNOW.Common.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Database.CRIF.EF6, Version=4.479.226.388, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Database.CRIF.EF6.4.479.226.388\lib\net45\CIC.Database.CRIF.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Database.CT.EF6, Version=4.479.226.388, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Database.CT.EF6.4.479.226.388\lib\net45\CIC.Database.CT.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Database.DE.EF6, Version=4.481.228.392, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Database.DE.EF6.4.481.228.392\lib\net45\CIC.Database.DE.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Database.IC.EF6, Version=4.479.226.388, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Database.IC.EF6.4.479.226.388\lib\net45\CIC.Database.IC.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Database.OD.EF6, Version=4.479.226.388, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Database.OD.EF6.4.479.226.388\lib\net45\CIC.Database.OD.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Database.OIQUEUE.EF6, Version=4.479.226.388, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Database.OIQUEUE.EF6.4.479.226.388\lib\net45\CIC.Database.OIQUEUE.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Database.OL.EF6, Version=4.479.226.388, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Database.OL.EF6.4.479.226.388\lib\net45\CIC.Database.OL.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Database.OW.EF6, Version=4.479.226.388, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Database.OW.EF6.4.479.226.388\lib\net45\CIC.Database.OW.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Database.PRISMA.EF6, Version=4.479.226.388, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Database.PRISMA.EF6.4.479.226.388\lib\net45\CIC.Database.PRISMA.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Unity.DatabaseConnection, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Unity.DatabaseConnection.2.9.8.838\lib\net46\CIC.Unity.DatabaseConnection.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\Dapper.1.50.2\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data, Version=5.0.2262.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Unity.DatabaseConnection.2.9.8.838\lib\net46\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Oracle, Version=9.8.838.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Unity.DatabaseConnection.2.9.8.838\lib\net46\Devart.Data.Oracle.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Oracle.Entity.EF6, Version=9.8.838.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Unity.DatabaseConnection.2.9.8.838\lib\net46\Devart.Data.Oracle.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Financial">
+      <HintPath>..\..\libs\Financial.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ParallelExtensionsExtras, Version=1.2.3.0, Culture=neutral, PublicKeyToken=665f4d61f853b5a9, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\ParallelExtensionsExtras.1.2.0.0\lib\net40\ParallelExtensionsExtras.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BO\AbstractAdresseBo.cs" />
+    <Compile Include="BO\AbstractAngAntBo.cs" />
+    <Compile Include="BO\AbstractBankNowCalculator.cs" />
+    <Compile Include="BO\AbstractBuchwertBo.cs" />
+    <Compile Include="BO\AbstractDocumentServiceBo.cs" />
+    <Compile Include="BO\AbstractFileattBo.cs" />
+    <Compile Include="BO\AbstractFileBo.cs" />
+    <Compile Include="BO\AbstractKalkulationBo.cs" />
+    <Compile Include="BO\AbstractKontoBo.cs" />
+    <Compile Include="BO\AbstractKundeBo.cs" />
+    <Compile Include="BO\AbstractPeuserBo.cs" />
+    <Compile Include="BO\AbstractPrintAngAntBo.cs" />
+    <Compile Include="BO\AbstractPruefungBo.cs" />
+    <Compile Include="BO\AbstractSchnellKalkulation.cs" />
+    <Compile Include="BO\AbstractKundenRisikoBo.cs" />
+    <Compile Include="BO\AbstractTransactionRisikoBo.cs" />
+    <Compile Include="BO\AbstractVertragBo.cs" />
+    <Compile Include="BO\AbstractZusatzdatenBo.cs" />
+    <Compile Include="BO\AconsoHTTPImportBo.cs" />
+    <Compile Include="BO\AdresseBo.cs" />
+    <Compile Include="BO\Affinity\AffinityIntegration.cs" />
+    <Compile Include="BO\Affinity\VSLinkBo.cs" />
+    <Compile Include="BO\AngAntBo.cs" />
+    <Compile Include="BO\Auskunft\AbstractDecisionEngineGuardeanBo.cs" />
+    <Compile Include="BO\Auskunft\AbstractRISKEWBS1Bo.cs" />
+    <Compile Include="BO\Auskunft\AbstractZekBatchBo.cs" />
+    <Compile Include="BO\Auskunft\AuskunftBoFactoryFactory.cs" />
+    <Compile Include="BO\Auskunft\CRIF\CrifKontrollinhaberBo.cs" />
+    <Compile Include="BO\Auskunft\CRIF\ObjectQueryExtension.cs" />
+    <Compile Include="BO\Auskunft\CRIF\CrifGetReportBo.cs" />
+    <Compile Include="BO\Auskunft\CRIF\CrifBo.cs" />
+    <Compile Include="BO\Auskunft\CRIF\CrifGetArchivedReportBo.cs" />
+    <Compile Include="BO\Auskunft\CRIF\CrifGetDebtDetailsBo.cs" />
+    <Compile Include="BO\Auskunft\CRIF\CrifGetListOfReadyOfflineReportsBo.cs" />
+    <Compile Include="BO\Auskunft\CRIF\CrifIdentifyAddressBo.cs" />
+    <Compile Include="BO\Auskunft\CRIF\CrifOrderOfflineReportBo.cs" />
+    <Compile Include="BO\Auskunft\CRIF\CrifPollOfflineReportBO.cs" />
+    <Compile Include="BO\Auskunft\DecisionEngineGuardeanBo.cs" />
+    <Compile Include="BO\Auskunft\DecisionEngineGuardeanSql.cs" />
+    <Compile Include="BO\Auskunft\DecisionEngineInteressentBo.cs" />
+    <Compile Include="BO\Auskunft\EQUIFAX\EQUIFAXBo.cs" />
+    <Compile Include="BO\Auskunft\PST\FoodasBo.cs" />
+    <Compile Include="BO\Auskunft\PST\FoodasEaiBOSAdapterFactory.cs" />
+    <Compile Include="BO\Auskunft\PST\Input_Output.cs" />
+    <Compile Include="BO\Auskunft\IDecisionEngineGuardeanBo.cs" />
+    <Compile Include="BO\Auskunft\PST\Input_Output_manual.cs" />
+    <Compile Include="BO\Auskunft\S1Bo.cs" />
+    <Compile Include="BO\Auskunft\IRISKEWBS1Bo.cs" />
+    <Compile Include="BO\Auskunft\IZekBatchBo.cs" />
+    <Compile Include="BO\Auskunft\RISKEWBS1Bo.cs" />
+    <Compile Include="BO\Auskunft\Santander\InvoiceBo.cs" />
+    <Compile Include="BO\Auskunft\Santander\INVOICE_Request.cs" />
+    <Compile Include="BO\Auskunft\Santander\INVOICE_Response.cs" />
+    <Compile Include="BO\Auskunft\Schufa\AbstractSchufaBo.cs" />
+    <Compile Include="BO\Auskunft\Schufa\SchufaAbrufManuelleWeiterverarbeitung.cs" />
+    <Compile Include="BO\Auskunft\Schufa\SchufaAbrufNachmeldung.cs" />
+    <Compile Include="BO\Auskunft\Schufa\SchufaAnfrageBonitaetsauskunft.cs" />
+    <Compile Include="BO\Auskunft\SF\DecisionEngineGuardeanStatusUpdateExecute.cs" />
+    <Compile Include="BO\CRIFBo.cs" />
+    <Compile Include="BO\DisclaimerBo.cs" />
+    <Compile Include="BO\Extensions\IEnumerableExtensions.cs" />
+    <Compile Include="BO\Auskunft\SHS\W002.cs" />
+    <Compile Include="BO\Auskunft\SHS\W006.cs" />
+    <Compile Include="BO\Auskunft\SHS\W007.cs" />
+    <Compile Include="BO\B2CBOSAdapterFactory.cs" />
+    <Compile Include="BO\BCAVINBOSAdapterFactory.cs" />
+    <Compile Include="BO\ConfigurationBO.cs" />
+    <Compile Include="BO\DMRBo.cs" />
+    <Compile Include="BO\IBANKernel\IBANInfo.cs" />
+    <Compile Include="BO\IBANKernel\IBANKernel.cs" />
+    <Compile Include="BO\IBANKernel\IBANKernelAccess.cs" />
+    <Compile Include="BO\IDisclaimerBo.cs" />
+    <Compile Include="DAO\Auskunft\EQUIFAXDao.cs" />
+    <Compile Include="DAO\Auskunft\IEQUIFAXDao.cs" />
+    <Compile Include="DAO\DbMappingService.cs" />
+    <Compile Include="DAO\DisclaimerDao.cs" />
+    <Compile Include="DTO\AconsoBatchReturn.cs" />
+    <Compile Include="DTO\AconsoBatch.cs" />
+    <Compile Include="DTO\Auskunft\AuskunftCFGDto.cs" />
+    <Compile Include="DTO\Auskunft\Crif\AuskunftModelCrifProfile.cs" />
+    <Compile Include="DTO\Auskunft\EQUIFAX\InterConnectInputDto.cs" />
+    <Compile Include="DTO\Enums\DisclaimerType.cs" />
+    <Compile Include="DTO\ExtidentDto.cs" />
+    <Compile Include="DTO\irisikoSimIODto.cs" />
+    <Compile Include="DTO\KneDto.cs" />
+    <Compile Include="BO\Score\CreateColCaseBo.cs" />
+    <Compile Include="BO\Score\CreateColCaseInDto.cs" />
+    <Compile Include="BO\Score\CreateColCaseOutDto.cs" />
+    <Compile Include="BO\Score\SCOREEaiBOSAdapterFactory.cs" />
+    <Compile Include="BO\Score\ScoreContractBO.cs" />
+    <Compile Include="BO\Score\ScorePersonBO.cs" />
+    <Compile Include="DAO\Score\AddressDao.cs" />
+    <Compile Include="DAO\Score\ArrangementDao.cs" />
+    <Compile Include="DAO\Score\ContractDao.cs" />
+    <Compile Include="DAO\Score\DDebitDao.cs" />
+    <Compile Include="DAO\Score\DunningLevelDao.cs" />
+    <Compile Include="DAO\Score\EmailDao.cs" />
+    <Compile Include="DAO\Score\InsolvencyDao.cs" />
+    <Compile Include="DAO\Score\InvoiceDao.cs" />
+    <Compile Include="DAO\Score\LateInterestDao.cs" />
+    <Compile Include="DAO\Score\PersonDao.cs" />
+    <Compile Include="DAO\Score\PhoneDao.cs" />
+    <Compile Include="DAO\Score\PostingDao.cs" />
+    <Compile Include="DAO\Score\ScoreEntityDao.cs" />
+    <Compile Include="DAO\Score\VehicleDao.cs" />
+    <Compile Include="DAO\Score\WriteOffDao.cs" />
+    <Compile Include="DTO\DMRConfig.cs" />
+    <Compile Include="BO\DMREaiBOSAdapterFactory.cs" />
+    <Compile Include="DTO\DMRInputDto.cs" />
+    <Compile Include="DTO\DMRInputFieldDto.cs" />
+    <Compile Include="DTO\DMRInputMediaDto.cs" />
+    <Compile Include="DTO\DMRMetadataDto.cs" />
+    <Compile Include="DTO\DMROutputDto.cs" />
+    <Compile Include="BO\IDMRBo.cs" />
+    <Compile Include="BO\IKundenRisikoBo.cs" />
+    <Compile Include="BO\KundenRisikoBO.cs" />
+    <Compile Include="BO\SearchKundeBo.cs" />
+    <Compile Include="DAO\Auskunft\DecisionEngineGuardeanStatusUpdateWSDao.cs" />
+    <Compile Include="DAO\Auskunft\IDecisionEngineGuardeanStatusUpdateWSDao.cs" />
+    <Compile Include="DAO\Auskunft\ServiceFaultHandler.cs" />
+    <Compile Include="DAO\Auskunft\CrifDBDao.cs" />
+    <Compile Include="DAO\Auskunft\CrifWSDao.cs" />
+    <Compile Include="DAO\DMRDao.cs" />
+    <Compile Include="DAO\IKundenRisikoDao.cs" />
+    <Compile Include="DAO\ILandDao.cs" />
+    <Compile Include="DAO\KundenRisikoDao.cs" />
+    <Compile Include="DAO\LandDao.cs" />
+    <Compile Include="DTO\Auskunft\Crif\CrifInDto.cs" />
+    <Compile Include="DTO\Auskunft\Crif\CrifOutDto.cs" />
+    <Compile Include="DTO\Auskunft\OEM\SaldoInfo.cs" />
+    <Compile Include="DTO\Auskunft\OEM\CreditLimit.cs" />
+    <Compile Include="DTO\Auskunft\OEM\ogetSaldoListDto.cs" />
+    <Compile Include="DTO\Auskunft\OEM\ogetCreditLimitDto.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\AuskunftModelProfileBase.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\AuskunftModelSchufaProfile.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\SchufaAbrufManuelleWeiterverarbeitungInDto.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\SchufaAbrufNachmeldungInDto.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\SchufaAbrufNachmeldungOutDto.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\SchufaAnfrageBonitaetsauskunftInDto.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\SchufaAnfrageBonitaetsauskunftOutDto.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\SchufaTAbrufManuelleWeiterverarbeitung.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\Type\SchufaTAnfrageBonitaetsauskunft.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\Type\SchufaTAbrufNachmeldungPI.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\Type\SchufaTProduktinformationen.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\Type\SchufaTAktionsHeader.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\Type\SchufaTAdresse.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\Type\SchufaTAusnahmeDto.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\Type\SchufaTFehler.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\Type\SchufaTMeldung.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\Type\SchufaTMerkmal.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\Type\SchufaTPerson.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\Type\SchufaTSachbearbeiter.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\Type\SchufaTSterbedaten.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\Type\SchufaTVerbraucherDaten.cs" />
+    <Compile Include="BO\Auskunft\Schufa\SchufaKorrekturAdresse.cs" />
+    <Compile Include="BO\Auskunft\Schufa\AbstractSchufaMeldungBo.cs" />
+    <Compile Include="BO\Auskunft\Schufa\SchufaMeldungVertragsdaten.cs" />
+    <Compile Include="BO\Auskunft\Schufa\SchufaNamensAenderung.cs" />
+    <Compile Include="BO\Auskunft\Schufa\SchufaKorrekturVerbraucherdaten.cs" />
+    <Compile Include="BO\Auskunft\Schufa\SchufaNeumeldungTodesfall.cs" />
+    <Compile Include="BO\Auskunft\Schufa\SchufaLoeschungTodesfall.cs" />
+    <Compile Include="BO\Auskunft\Schufa\SchufaNeumeldungAdresse.cs" />
+    <Compile Include="BO\Auskunft\ServiceClientFactory.cs" />
+    <Compile Include="BO\Auskunft\SF\DecisionEngineGuardeanExecute.cs" />
+    <Compile Include="BO\Auskunft\SF\RISKEWBS1sendData.cs" />
+    <Compile Include="BO\Auskunft\SF\ZEKBatchCloseContracts.cs" />
+    <Compile Include="BO\Auskunft\SF\ZEKBatchUpdateContracts.cs" />
+    <Compile Include="BO\Auskunft\SF\ZEKCloseFestkredit.cs" />
+    <Compile Include="BO\Auskunft\SF\ZEKCloseTeilzahlungskredit.cs" />
+    <Compile Include="BO\Auskunft\SF\ZEKCloseKontokorrentkredit.cs" />
+    <Compile Include="BO\Auskunft\SF\ZEKCloseLeasingMietvertrag.cs" />
+    <Compile Include="BO\Auskunft\SF\ZEKCloseBardarlehen.cs" />
+    <Compile Include="BO\Auskunft\SF\EurotaxGetRemo.cs" />
+    <Compile Include="BO\Auskunft\SF\ZekCloseTeilzahlungsvertrag.cs" />
+    <Compile Include="BO\Auskunft\SF\ZekeCode178Abfrage.cs" />
+    <Compile Include="BO\Auskunft\SF\ZekeCode178Abmelden.cs" />
+    <Compile Include="BO\Auskunft\SF\ZekeCode178Anmelden.cs" />
+    <Compile Include="BO\Auskunft\SF\ZekeCode178Mutieren.cs" />
+    <Compile Include="BO\Auskunft\SF\ZekGetARMs.cs" />
+    <Compile Include="BO\Auskunft\SF\ZekRegisterTeilzahlungsvertrag.cs" />
+    <Compile Include="BO\Auskunft\SF\ZekUpdateTeilzahlungskredit.cs" />
+    <Compile Include="BO\Auskunft\SF\ZekUpdateLeasingMietvertrag.cs" />
+    <Compile Include="BO\Auskunft\SF\ZekUpdateKontokorrentkredit.cs" />
+    <Compile Include="BO\Auskunft\SF\ZekUpdateFestkredit.cs" />
+    <Compile Include="BO\Auskunft\SF\ZekUpdateBardarlehen.cs" />
+    <Compile Include="BO\Auskunft\SF\ZekUpdateTeilzahlungsvertrag.cs" />
+    <Compile Include="BO\Auskunft\SHS\ValidatableDataContract.cs" />
+    <Compile Include="BO\Auskunft\SHS\W003.cs" />
+    <Compile Include="BO\Auskunft\ZekBatchBo.cs" />
+    <Compile Include="BO\B2BOLBo.cs" />
+    <Compile Include="BO\BPEBo.cs" />
+    <Compile Include="BO\CalculatorException.cs" />
+    <Compile Include="BO\AbstractVertragsListenBo.cs" />
+    <Compile Include="BO\DMSBo.cs" />
+    <Compile Include="BO\DMSEaiBOSAdapterFactory.cs" />
+    <Compile Include="BO\DocumentServiceBo.cs" />
+    <Compile Include="BO\EaihotBo.cs" />
+    <Compile Include="BO\FileattBo.cs" />
+    <Compile Include="BO\FileBo.cs" />
+    <Compile Include="BO\IB2BOLBo.cs" />
+    <Compile Include="BO\IDMSBo.cs" />
+    <Compile Include="BO\IDocumentServiceBo.cs" />
+    <Compile Include="BO\IEaiBOSAdapter.cs" />
+    <Compile Include="BO\IEaihotBo.cs" />
+    <Compile Include="BO\IFileattBo.cs" />
+    <Compile Include="BO\IFileBo.cs" />
+    <Compile Include="BO\IEaiBOSAdapterFactory.cs" />
+    <Compile Include="BO\IIncentivierungBo.cs" />
+    <Compile Include="BO\IncentivierungBO.cs" />
+    <Compile Include="BO\IPruefungBo.cs" />
+    <Compile Include="BO\ITransactionRisikoBo.cs" />
+    <Compile Include="BO\IVertragsListenBo.cs" />
+    <Compile Include="BO\PruefungBo.cs" />
+    <Compile Include="BO\QueryInfoData.cs" />
+    <Compile Include="BO\QueryInfoDataExt.cs" />
+    <Compile Include="BO\TransactionRisikoBO.cs" />
+    <Compile Include="BO\TransactionRisikoGUIBo.cs" />
+    <Compile Include="BO\Versicherung\InsuranceBo.cs" />
+    <Compile Include="BO\Versicherung\VSCalcFactory.cs" />
+    <Compile Include="BO\VertragsListenBo.cs" />
+    <Compile Include="BO\IBankNowCalculator.cs" />
+    <Compile Include="BO\SecurityException.cs" />
+    <Compile Include="BO\NkBuilderFactory.cs" />
+    <Compile Include="BO\Versicherung\AUKCalculator.cs" />
+    <Compile Include="BO\Auskunft\AbstractAggregationBo.cs" />
+    <Compile Include="BO\Auskunft\AggregationBo.cs" />
+    <Compile Include="BO\Auskunft\IAggregationBo.cs" />
+    <Compile Include="BO\Auskunft\SF\AggregationCallByValues.cs" />
+    <Compile Include="BO\Auskunft\SF\DVaddressIdentificationArb.cs" />
+    <Compile Include="BO\BankNowCalculator.cs" />
+    <Compile Include="BO\BOFactory.cs" />
+    <Compile Include="BO\BuchwertBo.cs" />
+    <Compile Include="BO\IBuchwertBo.cs" />
+    <Compile Include="BO\IPeuserBo.cs" />
+    <Compile Include="BO\IPrintAngAntBo.cs" />
+    <Compile Include="BO\IVertragBo.cs" />
+    <Compile Include="BO\Auskunft\SF\ZekUpdateAddress.cs" />
+    <Compile Include="BO\IZusatzdatenBo.cs" />
+    <Compile Include="BO\Kalkulator.cs" />
+    <Compile Include="BO\PeuserBo.cs" />
+    <Compile Include="BO\PrintAngAntBo.cs" />
+    <Compile Include="BO\Versicherung\AUCalculator.cs" />
+    <Compile Include="BO\Versicherung\RSVCalculator.cs" />
+    <Compile Include="BO\Versicherung\TodesfallCalculator.cs" />
+    <Compile Include="DAO\Auskunft\DecisionEngineGuardeanDBDao.cs" />
+    <Compile Include="DAO\Auskunft\DecisionEngineGuardeanWSDao.cs" />
+    <Compile Include="DAO\Auskunft\IDecisionEngineGuardeanDBDao.cs" />
+    <Compile Include="DAO\Auskunft\IDecisionEngineGuardeanWSDao.cs" />
+    <Compile Include="DAO\Auskunft\IRISKEWBS1DBDao.cs" />
+    <Compile Include="DAO\Auskunft\IRISKEWBS1WSDao.cs" />
+    <Compile Include="DAO\Auskunft\ISchufaDBDao.cs" />
+    <Compile Include="DAO\Auskunft\ISchufaWSDao.cs" />
+    <Compile Include="DAO\Auskunft\RISKEWBS1DBDao.cs" />
+    <Compile Include="DAO\Auskunft\RISKEWBS1WSDao.cs" />
+    <Compile Include="DAO\Auskunft\SchufaDBDao.cs" />
+    <Compile Include="DAO\Auskunft\SchufaWSDao.cs" />
+    <Compile Include="DAO\Auskunft\ZekBatchWSDao.cs" />
+    <Compile Include="DAO\Auskunft\ZekBatchDBDao.cs" />
+    <Compile Include="DAO\Auskunft\IZekBatchDBDao.cs" />
+    <Compile Include="DAO\Auskunft\IZekBatchWSDao.cs" />
+    <Compile Include="DAO\BlzType.cs" />
+    <Compile Include="DAO\CachedSimpleGetterDao.cs" />
+    <Compile Include="DAO\CommonDaoFactory.cs" />
+    <Compile Include="DAO\CachedAngAntDao.cs" />
+    <Compile Include="DAO\DMSDao.cs" />
+    <Compile Include="DAO\DocumentServiceDao.cs" />
+    <Compile Include="DAO\FileattDao.cs" />
+    <Compile Include="DAO\FileDao.cs" />
+    <Compile Include="DAO\IDMSDao.cs" />
+    <Compile Include="DAO\IDocumentServiceDao.cs" />
+    <Compile Include="DAO\IEaiParDao.cs" />
+    <Compile Include="DAO\EaiParDao.cs" />
+    <Compile Include="DAO\EaihotDao.cs" />
+    <Compile Include="DAO\IEaihotDao.cs" />
+    <Compile Include="DAO\IFileattDao.cs" />
+    <Compile Include="DAO\IFileDao.cs" />
+    <Compile Include="DAO\IIncentivierungDao.cs" />
+    <Compile Include="DAO\IncentivierungDao.cs" />
+    <Compile Include="DAO\IPeuserDao.cs" />
+    <Compile Include="DAO\IPruefungDao.cs" />
+    <Compile Include="DAO\ITaxDao.cs" />
+    <Compile Include="DAO\ITransactionRisikoDao.cs" />
+    <Compile Include="DAO\PeuserDao.cs" />
+    <Compile Include="BO\VertragBo.cs" />
+    <Compile Include="BO\AuthenticationBo.cs" />
+    <Compile Include="BO\IAdresseBo.cs" />
+    <Compile Include="BO\IAngAntBo.cs" />
+    <Compile Include="BO\IKalkulationBo.cs" />
+    <Compile Include="BO\IKontoBo.cs" />
+    <Compile Include="BO\IKundeBo.cs" />
+    <Compile Include="BO\ISchnellKalkulationBo.cs" />
+    <Compile Include="BO\ItBo.cs" />
+    <Compile Include="BO\AbstractItBo.cs" />
+    <Compile Include="BO\IItBo.cs" />
+    <Compile Include="BO\KalkulationBo.cs" />
+    <Compile Include="BO\KontoBo.cs" />
+    <Compile Include="BO\KundeBo.cs" />
+    <Compile Include="BO\Auskunft\AbstractDecisionEngineBo.cs" />
+    <Compile Include="BO\AbstractRoleContextListsBo.cs" />
+    <Compile Include="BO\AbstractSimpleGetterBo.cs" />
+    <Compile Include="BO\AbstractSimpleSetterBo.cs" />
+    <Compile Include="BO\Auskunft\AbstractDeltavistaBo.cs" />
+    <Compile Include="BO\Auskunft\AbstractEurotaxBo.cs" />
+    <Compile Include="BO\Auskunft\AbstractKREMOBo.cs" />
+    <Compile Include="BO\Auskunft\AbstractZekBo.cs" />
+    <Compile Include="BO\Auskunft\AuskunftBoFactory.cs" />
+    <Compile Include="BO\Auskunft\DecisionEngineBo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\Auskunft\DEBodyRecord.cs" />
+    <Compile Include="BO\Auskunft\DeltavistaBo.cs" />
+    <Compile Include="BO\Auskunft\EurotaxBo.cs" />
+    <Compile Include="BO\Auskunft\IDecisionEngineBo.cs" />
+    <Compile Include="BO\Auskunft\IDeltavistaBo.cs" />
+    <Compile Include="BO\Auskunft\IEurotaxBo.cs" />
+    <Compile Include="BO\Auskunft\IKREMOBo.cs" />
+    <Compile Include="BO\Auskunft\IZekBo.cs" />
+    <Compile Include="BO\Auskunft\KREMOBo.cs" />
+    <Compile Include="BO\Auskunft\SF\AbstractAuskunftBo.cs" />
+    <Compile Include="BO\Auskunft\SF\DecisionEngineExecute.cs" />
+    <Compile Include="BO\Auskunft\SF\DVaddressIdentification.cs" />
+    <Compile Include="BO\Auskunft\SF\DVgetCompanyDetails.cs" />
+    <Compile Include="BO\Auskunft\SF\DVgetReport.cs" />
+    <Compile Include="BO\Auskunft\SF\DVorderCresuraReport.cs" />
+    <Compile Include="BO\Auskunft\SF\DVgetDebtDetails.cs" />
+    <Compile Include="BO\Auskunft\SF\EurotaxGetForecast.cs" />
+    <Compile Include="BO\Auskunft\SF\EurotaxGetValuation.cs" />
+    <Compile Include="BO\Auskunft\SF\IAuskunftBo.cs" />
+    <Compile Include="BO\Auskunft\SF\KREMOcallByValues.cs" />
+    <Compile Include="BO\Auskunft\SF\KREMOgetVersion.cs" />
+    <Compile Include="BO\Auskunft\SF\ZekMeldungKartenengagement.cs" />
+    <Compile Include="BO\Auskunft\SF\ZekMeldungUeberziehungskredit.cs" />
+    <Compile Include="BO\Auskunft\SF\ZekRegisterBardarlehen.cs" />
+    <Compile Include="BO\Auskunft\SF\ZekRegisterFestkredit.cs" />
+    <Compile Include="BO\Auskunft\SF\ZekRegisterKontokorrentkredit.cs" />
+    <Compile Include="BO\Auskunft\SF\ZekRegisterLeasingMietvertrag.cs" />
+    <Compile Include="BO\Auskunft\SF\ZekRegisterTeilzahlungskredit.cs" />
+    <Compile Include="BO\Auskunft\SF\ZekInformativabfrage.cs" />
+    <Compile Include="BO\Auskunft\SF\ZekKreditgesuchAblehnen.cs" />
+    <Compile Include="BO\Auskunft\SF\ZekKreditgesuchNeu.cs" />
+    <Compile Include="BO\Auskunft\ZekBo.cs" />
+    <Compile Include="BO\ISearch.cs" />
+    <Compile Include="BO\SchnellKalkulationBo.cs" />
+    <Compile Include="BO\SearchBo.cs" />
+    <Compile Include="BO\ZusatzdatenBo.cs" />
+    <Compile Include="DAO\AdresseDao.cs" />
+    <Compile Include="DAO\AngAntDao.cs" />
+    <Compile Include="DAO\Auskunft\AggregationDao.cs" />
+    <Compile Include="DAO\Auskunft\DeltavistaDBDao.cs" />
+    <Compile Include="DAO\Auskunft\IAggregationDao.cs" />
+    <Compile Include="DAO\Auskunft\IDeltavistaDBDao.cs" />
+    <Compile Include="DAO\Conversion.cs" />
+    <Compile Include="DAO\IAdresseDao.cs" />
+    <Compile Include="DAO\IAngAntDao.cs" />
+    <Compile Include="DAO\IKontoDao.cs" />
+    <Compile Include="DAO\IKundeDao.cs" />
+    <Compile Include="DAO\IKalkulationDao.cs" />
+    <Compile Include="BO\IRoleContextListsBo.cs" />
+    <Compile Include="BO\ISimpleGetterBo.cs" />
+    <Compile Include="BO\ISimpleSetterBo.cs" />
+    <Compile Include="DAO\Auskunft\AuskunfttypDao.cs" />
+    <Compile Include="DAO\Auskunft\AuskunftDao.cs" />
+    <Compile Include="DAO\Auskunft\DecisionEngineDBDao.cs" />
+    <Compile Include="DAO\Auskunft\DecisionEngineWSDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\RoleContextListsBo.cs" />
+    <Compile Include="BO\SimpleGetterBo.cs" />
+    <Compile Include="BO\SimpleSetterBo.cs" />
+    <Compile Include="DAO\Auskunft\DeltavistaWSDao.cs" />
+    <Compile Include="DAO\Auskunft\EurotaxDBDao.cs" />
+    <Compile Include="DAO\Auskunft\EurotaxWSDao.cs" />
+    <Compile Include="DAO\Auskunft\IAuskunftDao.cs" />
+    <Compile Include="DAO\Auskunft\IDecisionEngineDBDao.cs" />
+    <Compile Include="DAO\Auskunft\IDecisionEngineWSDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\Auskunft\IDeltavistaWSDao.cs" />
+    <Compile Include="DAO\Auskunft\IEurotaxDBDao.cs" />
+    <Compile Include="DAO\Auskunft\IEurotaxWSDao.cs" />
+    <Compile Include="DAO\Auskunft\IKREMODBDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\Auskunft\IKREMOWSDao.cs" />
+    <Compile Include="DAO\Auskunft\IZekDBDao.cs" />
+    <Compile Include="DAO\Auskunft\IZekWSDao.cs" />
+    <Compile Include="DAO\Auskunft\KREMODBDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\Auskunft\KREMOWSDao.cs" />
+    <Compile Include="DAO\Auskunft\ZekDBDao.cs" />
+    <Compile Include="DAO\Auskunft\ZekWSDao.cs" />
+    <Compile Include="DAO\IRoleContextListsDao.cs" />
+    <Compile Include="DAO\ISchnellkalkulationDao.cs" />
+    <Compile Include="DAO\ISimpleGetterDao.cs" />
+    <Compile Include="DAO\ISimpleSetterDao.cs" />
+    <Compile Include="DAO\IVertragDao.cs" />
+    <Compile Include="DAO\IItDao.cs" />
+    <Compile Include="DAO\ItDao.cs" />
+    <Compile Include="DAO\IZusatzdatenDao.cs" />
+    <Compile Include="DAO\KalkulationDao.cs" />
+    <Compile Include="DAO\KontoDao.cs" />
+    <Compile Include="DAO\KundeDao.cs" />
+    <Compile Include="DAO\PruefungDao.cs" />
+    <Compile Include="DAO\SchnellkalkulationDao.cs" />
+    <Compile Include="DAO\TransactionRisikoDao.cs" />
+    <Compile Include="DAO\VertragDao.cs" />
+    <Compile Include="DAO\roleContextListsDao.cs" />
+    <Compile Include="DAO\SearchDao.cs" />
+    <Compile Include="DAO\SimpleGetterDao.cs" />
+    <Compile Include="DAO\simpleSetterDao.cs" />
+    <Compile Include="DAO\ZusatzdatenDao.cs" />
+    <Compile Include="DTO\AbwicklungsortDto.cs" />
+    <Compile Include="DTO\AconsoDocument.cs" />
+    <Compile Include="DTO\AconsoResult.cs" />
+    <Compile Include="DTO\AdresseDto.cs" />
+    <Compile Include="DTO\AdresseRefDto.cs" />
+    <Compile Include="DTO\AngAntAblDto.cs" />
+    <Compile Include="DTO\AngAntDto.cs" />
+    <Compile Include="DTO\AngAntKalkDto.cs" />
+    <Compile Include="DTO\AngAntObAustDto.cs" />
+    <Compile Include="DTO\AngAntObBriefDto.cs" />
+    <Compile Include="DTO\AngAntObDto.cs" />
+    <Compile Include="DTO\AngAntObSmallDto.cs" />
+    <Compile Include="DTO\AngAntOptionDto.cs" />
+    <Compile Include="DTO\AngAntSichDto.cs" />
+    <Compile Include="DTO\AngAntVarDto.cs" />
+    <Compile Include="DTO\AngebotDto.cs" />
+    <Compile Include="DTO\AngebotZustand.cs" />
+    <Compile Include="DTO\AntragDto.cs" />
+    <Compile Include="DTO\Attribute4UI\AttributeFilter.cs" />
+    <Compile Include="DTO\Attribute4UI\AttributeRequired.cs" />
+    <Compile Include="DTO\AttributeMap.cs" />
+    <Compile Include="DTO\Attribute4UI\AttributeLabel.cs" />
+    <Compile Include="DTO\Auskunft\AuskunftDto.cs" />
+    <Compile Include="DTO\Auskunft\AggregationInDto.cs" />
+    <Compile Include="DTO\Auskunft\AggregationOutDto.cs" />
+    <Compile Include="DTO\Auskunft\AggregationDVOutDto.cs" />
+    <Compile Include="DTO\Auskunft\AggregationZekOutDto.cs" />
+    <Compile Include="DTO\Auskunft\AggregationVPOutDto.cs" />
+    <Compile Include="DTO\Auskunft\AuskunftOLDto.cs" />
+    <Compile Include="DTO\Auskunft\DecisionEngineGuardeanInDto.cs" />
+    <Compile Include="DTO\Auskunft\DecisionEngineGuardeanOutDto.cs" />
+    <Compile Include="DTO\Auskunft\ELInDto.cs" />
+    <Compile Include="DTO\Auskunft\ELOutDto.cs" />
+    <Compile Include="DTO\Auskunft\EurotaxVinInDto.cs" />
+    <Compile Include="DTO\Auskunft\EurotaxVinOutDto.cs" />
+    <Compile Include="DTO\Auskunft\FoodasBeauftragungOutDto.cs" />
+    <Compile Include="DTO\Auskunft\FoodasBeauftragungInDto.cs" />
+    <Compile Include="DTO\Auskunft\FoodasEventOutDataDto.cs" />
+    <Compile Include="DTO\Auskunft\FoodasEventOutDto.cs" />
+    <Compile Include="DTO\Auskunft\FoodasGetDokumentOutDto.cs" />
+    <Compile Include="DTO\Auskunft\FoodasGrunddatenInDto.cs" />
+    <Compile Include="DTO\Auskunft\FoodasGrunddatenOutDto.cs" />
+    <Compile Include="DTO\Auskunft\FoodasOutDto.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\SchufaBaseAuskunftOutDto.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\SchufaBaseOutDto.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\SchufaInDto.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\SchufaMeldungInDto.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\SchufaMeldungOutDto.cs" />
+    <Compile Include="DTO\Auskunft\Schufa\SchufaOutDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekArmItemDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekArmResponseDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekBatchInstructionResponseDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekBatchOutDto.cs" />
+    <Compile Include="DTO\Auskunft\RISKEWBS1DBDto.cs" />
+    <Compile Include="DTO\Auskunft\RISKEWBS1DataDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekBatchStatusResponseDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekDto.cs" />
+    <Compile Include="DTO\Auskunft\DecisionEngineInDto.cs" />
+    <Compile Include="DTO\Auskunft\DecisionEngineOutDto.cs" />
+    <Compile Include="DTO\Auskunft\DeltavistaInDto.cs" />
+    <Compile Include="DTO\Auskunft\DeltavistaOutDto.cs" />
+    <Compile Include="DTO\Auskunft\DVAddressCorrectionDto.cs" />
+    <Compile Include="DTO\Auskunft\DVAddressDescriptionDto.cs" />
+    <Compile Include="DTO\Auskunft\DVAddressMatchDto.cs" />
+    <Compile Include="DTO\Auskunft\DVContactDescriptionDto.cs" />
+    <Compile Include="DTO\Auskunft\DVDebtEntryDto.cs" />
+    <Compile Include="DTO\Auskunft\DVKeyValuePairDto.cs" />
+    <Compile Include="DTO\Auskunft\DVManagementMemberDto.cs" />
+    <Compile Include="DTO\Auskunft\DVOrderDescriptionDto.cs" />
+    <Compile Include="DTO\Auskunft\DVTransactionErrorDto.cs" />
+    <Compile Include="DTO\Auskunft\EurotaxInDto.cs" />
+    <Compile Include="DTO\Auskunft\EurotaxListOutDto.cs" />
+    <Compile Include="DTO\Auskunft\EurotaxOutDto.cs" />
+    <Compile Include="DTO\Auskunft\KREMOInDto.cs" />
+    <Compile Include="DTO\Auskunft\KREMOOutDto.cs" />
+    <Compile Include="DTO\Auskunft\AggregationOpenLeaseOutDto.cs" />
+    <Compile Include="DTO\Auskunft\RecordRRDto.cs" />
+    <Compile Include="DTO\Auskunft\RecordRRResponseDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekAddressDescriptionDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekAmtsinformationDescriptionDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekBardarlehenDescriptionDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekBatchContractClosureInstructionDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekBatchContractUpdateInstructionDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekBatchInstructionErrorDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekCommonMultiResponseDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekCreditClaimRejectionResponseDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekeCode178Dto.cs" />
+    <Compile Include="DTO\Auskunft\ZekFestkreditDescriptionDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekFoundContractsDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekInDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekInfoResponseDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekOLInDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekKartenengagementDescriptionDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekKarteninformationDescriptionDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekKontokorrentkreditDescriptionDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekKreditgesuchDescriptionDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekLeasingMietvertragDescriptionDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekOLContract.cs" />
+    <Compile Include="DTO\Auskunft\ZekOLFoundContractsDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekOutDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekOLOutDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekRequestEntityDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekResponseDescriptionDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekReturnCodeDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekSolidarschuldnerDescriptionDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekTeilzahlungskreditDescriptionDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekTeilzahlungsvertragDescriptionDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DTO\Auskunft\ZekTransactionErrorDto.cs" />
+    <Compile Include="DTO\Auskunft\ZekUeberziehungskreditDescriptionDto.cs" />
+    <Compile Include="DTO\AntragZustand.cs" />
+    <Compile Include="DTO\BankNowModelProfile.cs" />
+    <Compile Include="DTO\BankNowModelProfileBase.cs" />
+    <Compile Include="DTO\BankNowModelProfileGeneral.cs" />
+    <Compile Include="DTO\BlzDto.cs" />
+    <Compile Include="DTO\Budget4DESimDto.cs" />
+    <Compile Include="DTO\DmsDocDto.cs" />
+    <Compile Include="DTO\DMSExportDataDto.cs" />
+    <Compile Include="DTO\DMSField.cs" />
+    <Compile Include="DTO\DocumentTypeDto.cs" />
+    <Compile Include="DTO\EaiParDto.cs" />
+    <Compile Include="DTO\EaiqoutDto.cs" />
+    <Compile Include="DTO\FaktorenDto.cs" />
+    <Compile Include="DTO\FileattDto.cs" />
+    <Compile Include="DTO\FileDto.cs" />
+    <Compile Include="DTO\GebietInfoDto.cs" />
+    <Compile Include="DTO\icheckTrRiskByIdDto.cs" />
+    <Compile Include="DTO\icheckTrRiskDto.cs" />
+    <Compile Include="DTO\icreateListenExportDto.cs" />
+    <Compile Include="DTO\iCreateOrUpdateDMSAkteDto.cs" />
+    <Compile Include="DTO\icreateOrUpdateDMSDokmentDto.cs" />
+    <Compile Include="DTO\iDMSUploadDto.cs" />
+    <Compile Include="DTO\iFinVariantenDruckenDto.cs" />
+    <Compile Include="DTO\igetCreditLimitsGUIDto.cs" />
+    <Compile Include="DTO\igetDMSUrlDto.cs" />
+    <Compile Include="DTO\ifinVorEinreichungDto.cs" />
+    <Compile Include="DTO\imTanUserDto.cs" />
+    <Compile Include="DTO\IncentivierungParameterDto.cs" />
+    <Compile Include="DTO\IncentivierungStatusDto.cs" />
+    <Compile Include="DTO\InsertParamDto.cs" />
+    <Compile Include="DTO\iperformKaufofferteDto.cs" />
+    <Compile Include="DTO\iPreisschildDruckDto.cs" />
+    <Compile Include="DTO\irisikoSimDto.cs" />
+    <Compile Include="DTO\iS1GetResponseDto.cs" />
+    <Compile Include="DTO\isetmTanUserPasswordDto.cs" />
+    <Compile Include="DTO\isolveKalkVariantenDto.cs" />
+    <Compile Include="DTO\JokerProductMap.cs" />
+    <Compile Include="DTO\JokerPruefungDto.cs" />
+    <Compile Include="DTO\KontrollinhaberStatus.cs" />
+    <Compile Include="DTO\KremoBudgetDto.cs" />
+    <Compile Include="DTO\KundeExternDto.cs" />
+    <Compile Include="DTO\KundeExternGUIDto.cs" />
+    <Compile Include="DTO\KundePlusDto.cs" />
+    <Compile Include="DTO\CalculateDataDto.cs" />
+    <Compile Include="DTO\LandDto.cs" />
+    <Compile Include="DTO\mTanStatusDto.cs" />
+    <Compile Include="DTO\mTanUserDto.cs" />
+    <Compile Include="DTO\MyPocketDto.cs" />
+    <Compile Include="DTO\ochangeRRReceiverDto.cs" />
+    <Compile Include="DTO\ocheckAntAngDto.cs" />
+    <Compile Include="DTO\EaiqinDto.cs" />
+    <Compile Include="DTO\Enums\Eaihot.cs" />
+    <Compile Include="DTO\kalkKontext.cs" />
+    <Compile Include="DTO\KontoRefDto.cs" />
+    <Compile Include="DTO\NeupreisRequestDto.cs" />
+    <Compile Include="DTO\NeuwertSettingsDto.cs" />
+    <Compile Include="DTO\ocheckKrRiskByIdDto.cs" />
+    <Compile Include="DTO\ocheckTrRiskByIdDto.cs" />
+    <Compile Include="DTO\ocheckTrRiskDto.cs" />
+    <Compile Include="DTO\ocreateListenExportDto.cs" />
+    <Compile Include="DTO\ocreatemTanUserDto.cs" />
+    <Compile Include="DTO\oFinVariantenDruckenDto.cs" />
+    <Compile Include="DTO\ofindBankByBlzDto.cs" />
+    <Compile Include="DTO\ofindIBANByBlzDto.cs" />
+    <Compile Include="DTO\ofinVorEinreichungDto.cs" />
+    <Compile Include="DTO\ogetControlPersonBusinessDto.cs" />
+    <Compile Include="DTO\ogetCreditLimitsGUIDto.cs" />
+    <Compile Include="DTO\ogetKremoBudget.cs" />
+    <Compile Include="DTO\ogetmTanUserDataDto.cs" />
+    <Compile Include="DTO\operformKaufofferte.cs" />
+    <Compile Include="DTO\oPreisschildDruckDto.cs" />
+    <Compile Include="DTO\orisikoSimIODto.cs" />
+    <Compile Include="DTO\orisikoSimDto.cs" />
+    <Compile Include="DTO\osearchKundeExternNonGenericDto.cs" />
+    <Compile Include="DTO\osetmTanUserDataDto.cs" />
+    <Compile Include="DTO\osolveKalkVariantenDto.cs" />
+    <Compile Include="DTO\PeroleActiveStatus.cs" />
+    <Compile Include="DTO\PkzDto.cs" />
+    <Compile Include="DTO\PlzDto.cs" />
+    <Compile Include="DTO\PrkGroupIdentDto.cs" />
+    <Compile Include="DTO\ProductCreditInfoDto.cs" />
+    <Compile Include="DTO\RestwertRequestDto.cs" />
+    <Compile Include="DTO\RestWertSettingsDto.cs" />
+    <Compile Include="DTO\RisikoklDto.cs" />
+    <Compile Include="DTO\Score\igetContractDto.cs" />
+    <Compile Include="DTO\Score\igetPartnerDto.cs" />
+    <Compile Include="DTO\Score\irequestLateInterestDto.cs" />
+    <Compile Include="DTO\Score\iset2ndDDDto.cs" />
+    <Compile Include="DTO\Score\isetArrangementDto.cs" />
+    <Compile Include="DTO\Score\isetDunningLevelDto.cs" />
+    <Compile Include="DTO\Score\isetPostingDto.cs" />
+    <Compile Include="DTO\Score\isetWritewOffDto.cs" />
+    <Compile Include="DTO\Score\ogetContractDto.cs" />
+    <Compile Include="DTO\Score\ogetPartnerDto.cs" />
+    <Compile Include="DTO\Score\orequestLateInterestDto.cs" />
+    <Compile Include="DTO\Score\oset2ndDDDto.cs" />
+    <Compile Include="DTO\Score\osetArrangementDto.cs" />
+    <Compile Include="DTO\Score\osetDunningLevelDto.cs" />
+    <Compile Include="DTO\Score\osetPostingDto.cs" />
+    <Compile Include="DTO\Score\osetWritewOffDto.cs" />
+    <Compile Include="DTO\Score\ScoreAddressDto.cs" />
+    <Compile Include="DTO\Score\ScoreArrangementDto.cs" />
+    <Compile Include="DTO\Score\ScoreColCaseContractDto.cs" />
+    <Compile Include="DTO\Score\ScoreContractDto.cs" />
+    <Compile Include="DTO\Score\ScoreCustomerDto.cs" />
+    <Compile Include="DTO\Score\ScoreDDebitDto.cs" />
+    <Compile Include="DTO\Score\ScoreDunningLevelDto.cs" />
+    <Compile Include="DTO\Score\ScoreEmailDto.cs" />
+    <Compile Include="DTO\Score\ScoreInsolvencyDto.cs" />
+    <Compile Include="DTO\Score\ScoreInvoiceDto.cs" />
+    <Compile Include="DTO\Score\ScoreLateInterestDto.cs" />
+    <Compile Include="DTO\Score\ScorePhoneDto.cs" />
+    <Compile Include="DTO\Score\ScorePostingDto.cs" />
+    <Compile Include="DTO\Score\ScoreVehicleDto.cs" />
+    <Compile Include="DTO\Score\ScoreWriteOffDto.cs" />
+    <Compile Include="DTO\SearchResultMapper.cs" />
+    <Compile Include="DTO\Search\Filter.cs" />
+    <Compile Include="DTO\Search\Grouping.cs" />
+    <Compile Include="DTO\iSearchDto.cs" />
+    <Compile Include="DTO\KamDto.cs" />
+    <Compile Include="DTO\oSearchDto.cs" />
+    <Compile Include="DTO\ProfilDto.cs" />
+    <Compile Include="DTO\Search\Enums.cs" />
+    <Compile Include="DTO\Search\GroupResult.cs" />
+    <Compile Include="DTO\Search\Sorting.cs" />
+    <Compile Include="DTO\ServiceListDto.cs" />
+    <Compile Include="DTO\StateDefDto.cs" />
+    <Compile Include="DTO\StrategyOne.cs">
+      <DependentUpon>StrategyOne.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\UkzDto.cs" />
+    <Compile Include="DTO\VarianteDto.cs" />
+    <Compile Include="DTO\VartDto.cs" />
+    <Compile Include="DTO\VClusterDto.cs" />
+    <Compile Include="DTO\VClusterParamDto.cs" />
+    <Compile Include="DTO\VertragExtDto.cs" />
+    <Compile Include="DTO\VTIncentivierungDataDto.cs" />
+    <Compile Include="DTO\ZustandDto.cs" />
+    <Compile Include="DTO\AvailableAlertsDto.cs" />
+    <Compile Include="DTO\BuchwertDto.cs" />
+    <Compile Include="DTO\DokumenteDto.cs" />
+    <Compile Include="DTO\icopyAdresseDto.cs" />
+    <Compile Include="DTO\icopyAngebotDto.cs" />
+    <Compile Include="DTO\icopyAntragDto.cs" />
+    <Compile Include="DTO\icopyKontoDto.cs" />
+    <Compile Include="DTO\icopyKundeDto.cs" />
+    <Compile Include="DTO\icopyZusatzdatenDto.cs" />
+    <Compile Include="DTO\icreateAdresseDto.cs" />
+    <Compile Include="DTO\icreateKontoDto.cs" />
+    <Compile Include="DTO\icreateKundeDto.cs" />
+    <Compile Include="DTO\icreateZusatzdatenDto.cs" />
+    <Compile Include="DTO\ideleteAdresseDto.cs" />
+    <Compile Include="DTO\ideleteAngebotDto.cs" />
+    <Compile Include="DTO\ideleteAntragDto.cs" />
+    <Compile Include="DTO\ideleteKontoDto.cs" />
+    <Compile Include="DTO\ideleteKundeDto.cs" />
+    <Compile Include="DTO\ideleteZusatzdatenDto.cs" />
+    <Compile Include="DTO\iExtendedUserDto.cs" />
+    <Compile Include="DTO\igetAngebotDetailDto.cs" />
+    <Compile Include="DTO\igetAntragDetailDto.cs" />
+    <Compile Include="DTO\igetBuchwertDto.cs" />
+    <Compile Include="DTO\igetVertragDetailDto.cs" />
+    <Compile Include="DTO\iprintCheckedDokumenteDto.cs" />
+    <Compile Include="DTO\isaveAdresseDto.cs" />
+    <Compile Include="DTO\isaveKontoDto.cs" />
+    <Compile Include="DTO\isaveKundeDto.cs" />
+    <Compile Include="DTO\isaveZusatzdatenDto.cs" />
+    <Compile Include="DTO\KalkulationDto.cs" />
+    <Compile Include="DTO\KontoDto.cs" />
+    <Compile Include="DTO\KundeDto.cs" />
+    <Compile Include="DTO\Message.cs" />
+    <Compile Include="DTO\ObjektDto.cs" />
+    <Compile Include="DTO\ocopyAdresseDto.cs" />
+    <Compile Include="DTO\ocopyAngebotDto.cs" />
+    <Compile Include="DTO\ocopyAntragDto.cs" />
+    <Compile Include="DTO\ocopyKontoDto.cs" />
+    <Compile Include="DTO\ocopyKundeDto.cs" />
+    <Compile Include="DTO\ocopyZusatzdatenDto.cs" />
+    <Compile Include="DTO\ocreateAdresseDto.cs" />
+    <Compile Include="DTO\ocreateKontoDto.cs" />
+    <Compile Include="DTO\ocreateKundeDto.cs" />
+    <Compile Include="DTO\ocreateZusatzdatenDto.cs" />
+    <Compile Include="DTO\odeleteAdresseDto.cs" />
+    <Compile Include="DTO\odeleteAngebotDto.cs" />
+    <Compile Include="DTO\odeleteAntragDto.cs" />
+    <Compile Include="DTO\odeleteKontoDto.cs" />
+    <Compile Include="DTO\odeleteKundeDto.cs" />
+    <Compile Include="DTO\odeleteZusatzdatenDto.cs" />
+    <Compile Include="DTO\oExtendedUserDto.cs" />
+    <Compile Include="DTO\ogetAbwicklungsortDto.cs" />
+    <Compile Include="DTO\ogetAngebotDetailDto.cs" />
+    <Compile Include="DTO\ogetAntragDetailDto.cs" />
+    <Compile Include="DTO\ogetBuchwertDto.cs" />
+    <Compile Include="DTO\ogetKamDto.cs" />
+    <Compile Include="DTO\ogetProfilDto.cs" />
+    <Compile Include="DTO\ogetVertragDetailDto.cs" />
+    <Compile Include="DTO\olistAvailableDokumenteDto.cs" />
+    <Compile Include="DTO\oprintCheckedDokumenteDto.cs" />
+    <Compile Include="DTO\osaveAdresseDto.cs" />
+    <Compile Include="DTO\osaveKontoDto.cs" />
+    <Compile Include="DTO\osaveKundeDto.cs" />
+    <Compile Include="DTO\osaveZusatzdatenDto.cs" />
+    <Compile Include="DTO\RoleMap.cs" />
+    <Compile Include="DTO\SearchDto.cs" />
+    <Compile Include="DTO\VertragDto.cs" />
+    <Compile Include="DTO\ZusatzdatenDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\ExceptionMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ch.bn.iamws\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CrifSoapService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Service References\DAO.Auskunft.DecisionEngineRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DAO.Auskunft.DeltavistaRef2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DAO.Auskunft.DeltavistaRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DAO.Auskunft.EurotaxRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DAO.Auskunft.EurotaxValuationRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DAO.Auskunft.EurotaxVinRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DAO.Auskunft.KREMORef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DAO.Auskunft.RISKEWBS1Ref\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DAO.Auskunft.VinSearch\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DAO.Auskunft.ZEKBatchRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DAO.Auskunft.ZEKRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\FoodasLoginServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\FoodasServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\GuardeanServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\GuardeanStatusUpdateServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\IBANService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SchufaSiml2AuskunfteiWorkflow\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ScoreCaseMgmt\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DTO\icheckKrRiskByIdDto.cs" />
+    <None Include="DTO\StrategyOne.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Cic.OpenOne.GateBANKNOW.Common.Model.DdIc.IcEntities.datasource" />
+    <None Include="Service References\ch.bn.iamws\B2BOL1.wsdl" />
+    <None Include="Service References\ch.bn.iamws\B2BOL11.wsdl" />
+    <None Include="Service References\ch.bn.iamws\B2BOL3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ch.bn.iamws\B2BOL31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ch.bn.iamws\B2BOL32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ch.bn.iamws\Cic.OpenOne.GateBANKNOW.Common.ch.bn.iamws.B2BResponseContract1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ch.bn.iamws\Cic.OpenOne.GateBANKNOW.Common.ch.bn.iamws.B2BStatusContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\Cic.OpenOne.GateBANKNOW.Common.CrifSoapService.aiOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\Cic.OpenOne.GateBANKNOW.Common.CrifSoapService.cdiOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\Cic.OpenOne.GateBANKNOW.Common.CrifSoapService.garOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\Cic.OpenOne.GateBANKNOW.Common.CrifSoapService.gddOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\Cic.OpenOne.GateBANKNOW.Common.CrifSoapService.gdisOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\Cic.OpenOne.GateBANKNOW.Common.CrifSoapService.glotorOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\Cic.OpenOne.GateBANKNOW.Common.CrifSoapService.grOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\Cic.OpenOne.GateBANKNOW.Common.CrifSoapService.iaOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\Cic.OpenOne.GateBANKNOW.Common.CrifSoapService.ivrOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\Cic.OpenOne.GateBANKNOW.Common.CrifSoapService.oorOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\Cic.OpenOne.GateBANKNOW.Common.CrifSoapService.porrOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\Cic.OpenOne.GateBANKNOW.Common.CrifSoapService.sdiOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\Cic.OpenOne.GateBANKNOW.Common.CrifSoapService.TypeAddressInvestigationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\Cic.OpenOne.GateBANKNOW.Common.CrifSoapService.TypeCancelDataIssueResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\Cic.OpenOne.GateBANKNOW.Common.CrifSoapService.TypeGetArchivedReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\Cic.OpenOne.GateBANKNOW.Common.CrifSoapService.TypeGetDataIssueStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\Cic.OpenOne.GateBANKNOW.Common.CrifSoapService.TypeGetDebtDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\Cic.OpenOne.GateBANKNOW.Common.CrifSoapService.TypeGetListOfReadyOfflineReportsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\Cic.OpenOne.GateBANKNOW.Common.CrifSoapService.TypeGetReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\Cic.OpenOne.GateBANKNOW.Common.CrifSoapService.TypeIdentifyAddressResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\Cic.OpenOne.GateBANKNOW.Common.CrifSoapService.TypeIdVerificationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\Cic.OpenOne.GateBANKNOW.Common.CrifSoapService.TypeOrderOfflineReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\Cic.OpenOne.GateBANKNOW.Common.CrifSoapService.TypePollOfflineReportResponseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\Cic.OpenOne.GateBANKNOW.Common.CrifSoapService.TypeSubmitDataIssueResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrifSoapService\crif-soap-service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CrifSoapService\CrifSoapServiceV1_01.wsdl" />
+    <None Include="Service References\DAO.Auskunft.DecisionEngineRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.DecisionEngineRef.StrategyOneResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.DecisionEngineRef\configuration91.svcinfo" />
+    <None Include="Service References\DAO.Auskunft.DecisionEngineRef\S1Public1.wsdl" />
+    <None Include="Service References\DAO.Auskunft.DecisionEngineRef\S1Public1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DAO.Auskunft.DeltavistaRef2\DVSOAPService1.wsdl" />
+    <None Include="Service References\DAO.Auskunft.DeltavistaRef\DVSOAPServiceV41.wsdl" />
+    <None Include="Service References\DAO.Auskunft.EurotaxVinRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.EurotaxVinRef.ETGHeaderType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.EurotaxVinRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.EurotaxVinRef.ETGsettingType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.EurotaxVinRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.EurotaxVinRef.ETGversionInformationType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.EurotaxVinRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.EurotaxVinRef.GetCacheResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.EurotaxVinRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.EurotaxVinRef.VinDecodeOutputType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.EurotaxVinRef\item.wsdl" />
+    <None Include="Service References\DAO.Auskunft.KREMORef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.KREMORef.ArrayOfDouble.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.KREMORef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.KREMORef.ArrayOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.KREMORef\Service.wsdl" />
+    <None Include="Service References\DAO.Auskunft.RISKEWBS1Ref\Message.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DAO.Auskunft.RISKEWBS1Ref\service1.wsdl" />
+    <None Include="Service References\DAO.Auskunft.RISKEWBS1Ref\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DAO.Auskunft.RISKEWBS1Ref\service21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DAO.Auskunft.VinSearch\item.wsdl" />
+    <None Include="Service References\DAO.Auskunft.ZEKBatchRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.ZEKBatchRef.BatchInstructionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.ZEKBatchRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.ZEKBatchRef.BatchStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.ZEKBatchRef\ZekBatchServiceAnonymousV3.wsdl" />
+    <None Include="Service References\DAO.Auskunft.ZEKRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.ZEKRef.ArmResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.ZEKRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.ZEKRef.CommonMultiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.ZEKRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.ZEKRef.CreditClaimRejectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.ZEKRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.ZEKRef.ExtendedCommonMultiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.ZEKRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.ZEKRef.ExtendedInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.ZEKRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.ZEKRef.InfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.ZEKRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.ZEKRef.UpdateAddressResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.ZEKRef\ZEKTransactionServiceAnonymousV3.wsdl" />
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMCallWME_WebMethodExecuteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMChangePasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMCheckAnwendungResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMCheckAnwendung_WithVersionCheckResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMClearApplicationStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMDeleteAppSettingEventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMDeleteAppSettingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMDeleteErrorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMDeleteFieldSettingsEventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMDeleteFieldSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMDeleteSystemParameterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMGetAppSettingAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMGetAppSettingEventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMGetAppSettingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMGetErrorAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMGetErrorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMGetFieldSettingsAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMGetFieldSettingsEventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMGetFieldSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMGetSystemParameterAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMGetSystemParameterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMGetWME_WebMethodExecuteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMGetWML_WebMethodCallLogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMInsertAppSettingEventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMInsertAppSettingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMInsertErrorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMInsertFieldSettingsEventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMInsertFieldSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMInsertSystemParameterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMInsertWME_WebMethodExecuteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMLoginInternalAppResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMLoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMLoginSessionInternalAppResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMLoginSessionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMLogoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMPrepareAutoLoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMResetPasswordInternalAppResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMResetPasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMUpdateAppSettingEventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMUpdateAppSettingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMUpdateErrorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMUpdateFieldSettingsEventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMUpdateFieldSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasLoginServiceReference.WMUpdateSystemParameterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasLoginServiceReference\wslogin1.wsdl" />
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMBeauftragungSpeichernResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMBeauftragungStornierenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMCallWME_WebMethodExecuteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMChangePasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMCheckAnwendungResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMCheckAnwendung_WithVersionCheckResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMClearApplicationStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteAnschreiben_TypResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteAppSettingEventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteAppSettingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteASP_AnsprechpartnerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteBewegung_AuftragResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteDokumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteEmpfaengerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteEmpfaenger_Gruppe_4APResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteErrorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteEVT_EventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteExport_EKFOResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteFahrzeugResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteFahrzeug_BemerkungResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteFieldSettingsEventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteFieldSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteFreigabe_GruppeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteGPS_Geschaeftspartner_SettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteGrundDatenImportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteHaendlerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteLandResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteSystemParameterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteTIL_TitelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteVersand_ArtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteVGA_Versandgrund_AnschreibenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMDeleteVGR_VersandgrundResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMExecuteIBA_Import_Bewegung_AuftragResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMExecuteUeberwachungResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetAbgemeldeteFahrzeugeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetAFF_AuftragsfreigabeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetAnschreiben_AnredeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetAnschreiben_TypResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetAppSettingAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetAppSettingEventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetAppSettingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetArchivOrtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetASP_AnsprechpartnerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetAufbietungResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetAuftrag_StatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetBeauftragungsDokument_VersandregelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetBenutzerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetBEWEGUNGS_HISTORIE_ClassicResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetBewegung_AuftragResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetBewegung_Auftrag_DokumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetBewegung_Auftrag_Dokument_PartnerdatenbankResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetBewegung_TypResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetDatenbankResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetDokumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetDokument_PartnerdatenbankResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetDokument_StatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetDokument_typResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetDokument_Typ_Versand_RegelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetEmpfaengerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetEmpfaenger_AnsprechpartnerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetEmpfaenger_Gruppe_4APResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetEmpfaenger_HistorieResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetENV_EntnahmeversuchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetErrorAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetErrorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetEVA_Event_ArtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetEVT_EventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetExport_EKFOResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetFahrzeugResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetFahrzeugStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetFahrzeugUndDokumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetFahrzeug_BemerkungResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetFahrzeug_HistorieResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetFahrzeug_PartnerdatenbankResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetFahrzeug_PruefungslisteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetFahrzeug_Zusatz_InfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetFahrzeug_Zusatz_Info_HistorieResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetFieldSettingsAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetFieldSettingsEventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetFieldSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetFreigabe_GruppeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetGPS_Geschaeftspartner_SettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetGPT_GeschaeftspartnerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetGrundDatenImportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetGrundDatenImport_PartnerdatenbankResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetGrunddaten_SammelAuftragResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetGrundeinstellungResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetHaendlerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetHaendler_HistorieResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetHGR_HaendlergruppeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetIBA_Import_Bewegung_AuftragResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetIBA_Import_Bewegung_Auftrag_HistorieResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetKEP_VersandResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetKfzdaten_ClassicResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetKundenInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetLandResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetLetzte_Bewegung_Auftrag_DokumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetMahnstufeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetMahnung_Bewegung_AuftragResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetPDB_PartnerdatenbankResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetPermissionPerUserAndApplicationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetPLZ_ORTResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetSammelAuftragResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetSammelauftrag_StatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetSCHLUESSELResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetSCHLUESSEL_HistorieResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetSystemParameterAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetSystemParameterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetSystemtabellenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetS_STATIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetTemp_Bewegung_Auftrag_DokumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetTIL_TitelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetUeberwachungResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetVersand_ArtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetVGA_Versandgrund_AnschreibenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetVGR_VersandgrundResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetVSO_VersandoptionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetVW_FutureApplicationsPerUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetWME_WebMethodExecuteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGetWML_WebMethodCallLogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMGrunddatenImportSpeichernResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertAFF_AuftragsfreigabeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertAnschreiben_TypResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertAppSettingEventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertAppSettingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertASP_AnsprechpartnerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertAufbietungResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertBenutzerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertDokumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertEmpfaengerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertEmpfaenger_Gruppe_4APResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertErrorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertExport_EKFOResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertFahrzeugResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertFahrzeug_BemerkungResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertFahrzeug_Zusatz_InfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertFieldSettingsEventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertFieldSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertFreigabe_GruppeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertGPS_Geschaeftspartner_SettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertHaendlerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertIBAImport_Bewegung_AuftragResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertLandResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertMahnung_Bewegung_AuftragResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertSystemParameterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertTIL_TitelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertVersand_ArtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertVGA_Versandgrund_AnschreibenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertVGR_VersandgrundResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMInsertWME_WebMethodExecuteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMLoginInternalAppResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMLoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMLoginSessionInternalAppResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMLoginSessionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMLogoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMPrepareAutoLoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMReloadHaendlerInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMResetEVT_EventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMResetPasswordInternalAppResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMResetPasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMTempBeauftragungAusfuehrenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUeberwachungStornierenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateAFF_AuftragsfreigabeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateAnschreiben_TypResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateAppSettingEventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateAppSettingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateASP_AnsprechpartnerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateAufbietungResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateBenutzerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateBewegung_Auftrag_DokumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateDokumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateEmpfaengerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateEmpfaenger_Gruppe_4APResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateErrorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateExport_EKFOResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateFahrzeugResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateFahrzeugUndDokumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateFahrzeug_BemerkungResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateFahrzeug_Zusatz_InfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateFieldSettingsEventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateFieldSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateFreigabe_GruppeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateGPS_Geschaeftspartner_SettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateHaendlerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateIBA_Import_Bewegung_AuftragResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateKEP_VersandResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateLandResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateMahnung_Bewegung_AuftragResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateSystemParameterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateTIL_TitelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateVersand_ArtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateVGA_Versandgrund_AnschreibenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMUpdateVGR_VersandgrundResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\Cic.OpenOne.GateBANKNOW.Common.FoodasServiceReference.WMVersandauftragFreigebenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FoodasServiceReference\PSFoodasWS.wsdl" />
+    <None Include="Service References\GuardeanServiceReference\Cic.OpenOne.GateBANKNOW.Common.GuardeanServiceReference.executeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GuardeanServiceReference\Cic.OpenOne.GateBANKNOW.Common.GuardeanServiceReference.executeResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GuardeanServiceReference\CIC_SHS_001.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GuardeanServiceReference\CIC_SHS_W001.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GuardeanServiceReference\Wkf_Control_Interface1.wsdl" />
+    <None Include="Service References\GuardeanServiceReference\Wkf_Control_Interface2.wsdl" />
+    <None Include="Service References\GuardeanStatusUpdateServiceReference\Cic.OpenOne.GateBANKNOW.Common.GuardeanStatusUpdateServiceReference.executeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GuardeanStatusUpdateServiceReference\Cic.OpenOne.GateBANKNOW.Common.GuardeanStatusUpdateServiceReference.executeResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GuardeanStatusUpdateServiceReference\Wkf_Status_Update.wsdl" />
+    <None Include="Service References\GuardeanStatusUpdateServiceReference\Wkf_Status_Update.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IBANService\Cic.OpenOne.GateBANKNOW.Common.IBANService.IBANInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IBANService\IBANKernel.wsdl" />
+    <None Include="Service References\IBANService\IBANKernel3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IBANService\IBANKernel31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IBANService\IBANKernel32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IBANService\IBANService1.wsdl" />
+    <None Include="Service References\SchufaSiml2AuskunfteiWorkflow\Cic.OpenOne.GateBANKNOW.Common.SchufaSiml2AuskunfteiWorkflow.executeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SchufaSiml2AuskunfteiWorkflow\Cic.OpenOne.GateBANKNOW.Common.SchufaSiml2AuskunfteiWorkflow.executeResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SchufaSiml2AuskunfteiWorkflow\SchufaSiml2AuskunfteiWorkflow.wsdl" />
+    <None Include="Service References\SchufaSiml2AuskunfteiWorkflow\SchufaSiml2AuskunfteiWorkflow.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ScoreCaseMgmt\Cic.OpenOne.GateBANKNOW.Common.ScoreCaseMgmt.createColCaseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ScoreCaseMgmt\Cic.OpenOne.GateBANKNOW.Common.ScoreCaseMgmt.MessageHeaderType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ScoreCaseMgmt\Cic.OpenOne.GateBANKNOW.Common.ScoreCaseMgmt.updateColCaseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ScoreCaseMgmt\ColCaseMgmt1.wsdl" />
+    <None Include="Service References\ScoreCaseMgmt\ColCaseMgmt_v011.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ScoreCaseMgmt\il_common1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DAO.Auskunft.DeltavistaRef2\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.DeltavistaRef2.AddressHistoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.DeltavistaRef2\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.DeltavistaRef2.AddressIdentificationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.DeltavistaRef2\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.DeltavistaRef2.CollectionCheckResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.DeltavistaRef2\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.DeltavistaRef2.CompanyDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.DeltavistaRef2\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.DeltavistaRef2.CresuraReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.DeltavistaRef2\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.DeltavistaRef2.DebtDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.DeltavistaRef2\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.DeltavistaRef2.DebtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.DeltavistaRef2\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.DeltavistaRef2.GWGCheckResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.DeltavistaRef2\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.DeltavistaRef2.PersonDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.DeltavistaRef2\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.DeltavistaRef2.ReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.DeltavistaRef2\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.DeltavistaRef2.ScoreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.DeltavistaRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.DeltavistaRef.AddressIdentificationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.DeltavistaRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.DeltavistaRef.CompanyDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.DeltavistaRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.DeltavistaRef.DebtDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.EurotaxRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.EurotaxRef.ETGHeaderType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.EurotaxRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.EurotaxRef.ETGsettingType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.EurotaxRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.EurotaxRef.ExtendedVehicleType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.EurotaxRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.EurotaxRef.HistoricalForecast.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.EurotaxRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.EurotaxRef.VehicleType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.EurotaxRef\forecast.wsdl" />
+    <None Include="Service References\DAO.Auskunft.EurotaxValuationRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.EurotaxValuationRef.ETGHeaderType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.EurotaxValuationRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.EurotaxValuationRef.ETGsettingType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.EurotaxValuationRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.EurotaxValuationRef.ETGversionInformationType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.EurotaxValuationRef\Cic.OpenOne.GateBANKNOW.Common.DAO.Auskunft.EurotaxValuationRef.ValuationType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DAO.Auskunft.EurotaxValuationRef\valuation.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ch.bn.iamws\" />
+    <WCFMetadataStorage Include="Service References\CrifSoapService\" />
+    <WCFMetadataStorage Include="Service References\DAO.Auskunft.DecisionEngineRef\" />
+    <WCFMetadataStorage Include="Service References\DAO.Auskunft.DeltavistaRef2\" />
+    <WCFMetadataStorage Include="Service References\DAO.Auskunft.DeltavistaRef\" />
+    <WCFMetadataStorage Include="Service References\DAO.Auskunft.EurotaxRef\" />
+    <WCFMetadataStorage Include="Service References\DAO.Auskunft.EurotaxValuationRef\" />
+    <WCFMetadataStorage Include="Service References\DAO.Auskunft.EurotaxVinRef\" />
+    <WCFMetadataStorage Include="Service References\DAO.Auskunft.KREMORef\" />
+    <WCFMetadataStorage Include="Service References\DAO.Auskunft.RISKEWBS1Ref\" />
+    <WCFMetadataStorage Include="Service References\DAO.Auskunft.VinSearch\" />
+    <WCFMetadataStorage Include="Service References\DAO.Auskunft.ZEKBatchRef\" />
+    <WCFMetadataStorage Include="Service References\DAO.Auskunft.ZEKRef\" />
+    <WCFMetadataStorage Include="Service References\FoodasLoginServiceReference\" />
+    <WCFMetadataStorage Include="Service References\FoodasServiceReference\" />
+    <WCFMetadataStorage Include="Service References\GuardeanServiceReference\" />
+    <WCFMetadataStorage Include="Service References\GuardeanStatusUpdateServiceReference\" />
+    <WCFMetadataStorage Include="Service References\IBANService\" />
+    <WCFMetadataStorage Include="Service References\SchufaSiml2AuskunfteiWorkflow\" />
+    <WCFMetadataStorage Include="Service References\ScoreCaseMgmt\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.EurotaxRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.EurotaxRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.EurotaxRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.DeltavistaRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.DeltavistaRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.DeltavistaRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.DecisionEngineRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.DecisionEngineRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.EurotaxValuationRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.EurotaxValuationRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.EurotaxValuationRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.DeltavistaRef2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.DeltavistaRef2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.DeltavistaRef2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.ZEKRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.ZEKRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.ZEKRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.KREMORef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.KREMORef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.KREMORef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Resources\ExceptionMessages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionMessages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\IBANService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\IBANService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\IBANService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.ZEKBatchRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.ZEKBatchRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.ZEKBatchRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.RISKEWBS1Ref\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.RISKEWBS1Ref\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.RISKEWBS1Ref\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ch.bn.iamws\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ch.bn.iamws\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ch.bn.iamws\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.EurotaxVinRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.EurotaxVinRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.EurotaxVinRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FoodasServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FoodasServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FoodasServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FoodasLoginServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FoodasLoginServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FoodasLoginServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SchufaSiml2AuskunfteiWorkflow\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SchufaSiml2AuskunfteiWorkflow\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SchufaSiml2AuskunfteiWorkflow\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GuardeanServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GuardeanServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GuardeanServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.VinSearch\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.VinSearch\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAO.Auskunft.VinSearch\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CrifSoapService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CrifSoapService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CrifSoapService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GuardeanStatusUpdateServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GuardeanStatusUpdateServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GuardeanStatusUpdateServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BO\Auskunft\SHS\GenerateAPI.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ScoreCaseMgmt\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ScoreCaseMgmt\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ScoreCaseMgmt\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Cic.Utils\Cic.One.Utils\Cic.One.Utils.csproj">
+      <Project>{d1f653f9-3d9e-4486-89cc-4b0044307750}</Project>
+      <Name>Cic.One.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CIC.OpenOneCarConfigurator\Cic.OpenOne.CarConfigurator\Cic.OpenOne.CarConfigurator.csproj">
+      <Project>{c50e4898-5a07-475f-ae79-137611353f51}</Project>
+      <Name>Cic.OpenOne.CarConfigurator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CIC.OpenOne\Cic.OpenOne.Common\Cic.OpenOne.Common.csproj">
+      <Project>{fc4049ac-617c-4233-ba92-287674e30b35}</Project>
+      <Name>Cic.OpenOne.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Import Project="..\..\libs\Microsoft.WebApplication.targets" Condition="'$(HUDSON)' == 'YES'" />
+  <Import Project="..\..\libs\MSBuild.Community.Tasks.Targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets. -->
+  <Target Name="BeforeBuild" Condition="'$(HUDSON)'=='YESOFF'">
+    <FileUpdate Files="Properties\AssemblyInfo.cs" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.$(SVN_REVISION)" />
+  </Target>
+  <!-- 
+  <Target Name="AfterBuild" Condition="'$(HUDSON)'=='YES'">
+  </Target>
+  -->
+</Project>

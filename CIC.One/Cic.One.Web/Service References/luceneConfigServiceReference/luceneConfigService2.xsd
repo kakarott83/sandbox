@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CIC.ASS.Common.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CIC.ASS.Common.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8732/luceneConfigService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Lucene.Net.Search" />
+  <xs:complexType name="ArrayOfIndexedTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IndexedTable" nillable="true" type="tns:IndexedTable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIndexedTable" nillable="true" type="tns:ArrayOfIndexedTable" />
+  <xs:complexType name="IndexedTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="indexid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="keyField" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="peroleFilter" type="xs:boolean" />
+      <xs:element minOccurs="0" name="positiveId" type="xs:boolean" />
+      <xs:element minOccurs="0" name="query" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="updatequery" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndexedTable" nillable="true" type="tns:IndexedTable" />
+  <xs:complexType name="QueryPreprocessorConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="boost1" type="xs:float" />
+      <xs:element minOccurs="0" name="boost2" type="xs:float" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Lucene.Net.Search" minOccurs="0" name="occur1" type="q1:Occur" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Lucene.Net.Search" minOccurs="0" name="occur2" type="q2:Occur" />
+      <xs:element minOccurs="0" name="query1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="query2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="type" type="tns:QueryPreprocessorType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryPreprocessorConfig" nillable="true" type="tns:QueryPreprocessorConfig" />
+  <xs:simpleType name="QueryPreprocessorType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OR" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QueryPreprocessorType" nillable="true" type="tns:QueryPreprocessorType" />
+</xs:schema>

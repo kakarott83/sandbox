@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://guardean.net/webservices/workflow/wkf_status_update/types" targetNamespace="http://guardean.net/webservices/workflow/wkf_status_update/types" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="executeRequest" type="tns:executeRequest" />
+  <xs:element name="executeResponse" type="tns:executeResponse" />
+  <xs:element name="systemMessage" type="tns:systemMessageType" />
+  <xs:complexType name="systemMessageType">
+    <xs:annotation>
+      <xs:documentation>
+                Represents a message to the user.
+                This type is similar to systemMessageType but has additionally a cause chain.
+            </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="message" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+                        A text that can be displayed to an end user without any further
+                        processing.  The producer of this element is responsible for
+                        performing locale dependend processing, parameter replacements
+                        and so on.  The consumer has to use as is.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="code" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+                        A unique identification of the message.  This element is to be
+                        used for programmatic processing of a system message.  It is
+                        intended to be used as a key for message dependent processing.
+                        Systems that produce this element have to offer a list of
+                        possible error codes.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="parameter" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+                        An additional information that is part of this system message.
+                        Used in programmatic processing of the message.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="cause" type="tns:systemMessageType">
+        <xs:annotation>
+          <xs:documentation>
+                        The system message that caused this system message.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BusinessInformationStruct">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="statusUpdateDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="statusUpdateDescription" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="statusUpdateEditor" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="statusUpdateSystem" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="statusUpdateText" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TechnicalInformationStruct">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="applicationID" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="externalReference" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="status" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="executeRequest">
+    <xs:annotation>
+      <xs:documentation>
+                Workflow request
+            </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="businessInformation" type="tns:BusinessInformationStruct" />
+      <xs:element minOccurs="0" maxOccurs="1" name="technicalInformation" type="tns:TechnicalInformationStruct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="executeResponse">
+    <xs:annotation>
+      <xs:documentation>
+                Workflow response
+            </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="statusResponse" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="statusResponseText" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

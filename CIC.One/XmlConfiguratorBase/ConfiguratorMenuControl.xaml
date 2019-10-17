@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="XmlConfiguratorBase.ConfiguratorMenuControl" x:Name="menu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:gui="clr-namespace:XmlConfiguratorBase.BO.GUI"
+             xmlns:localDTO="clr-namespace:XmlConfiguratorBase.DTO"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <gui:SimpleBoolConverter x:Key="EnumBoolConverter"/>
+    </UserControl.Resources>
+    
+    <UserControl.CommandBindings>
+        <CommandBinding Command="Save" CanExecute="CanExecuteAlways" Executed="OnExecuteSave"/>
+        <CommandBinding Command="gui:CustomCommands.OpenFile" CanExecute="CanExecuteAlways" Executed="OnExecuteOpenFile"/>
+        <CommandBinding Command="New" CanExecute="CanExecuteAlways" Executed="OnExecuteNewElement"/>
+        <CommandBinding Command="Delete" x:Name="DeleteCommand" CanExecute="CanExecuteIfItemSelected" Executed="OnExecuteDeleteElement"/>
+        <CommandBinding Command="gui:CustomCommands.ShowDependencies" x:Name="ShowDependenciesCommand" CanExecute="CanExecuteIfItemSelected" Executed="OnExecuteShowDependencies"/>
+    </UserControl.CommandBindings>
+    <Grid Name="MenuGrid" Grid.ColumnSpan="99">
+        <Menu HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Top">
+            <MenuItem Header="Daten">
+                <MenuItem Header="Laden...">
+                    <MenuItem Header="...aus XML-Datei" Command="gui:CustomCommands.OpenFile"/>
+                    <MenuItem Header="...aus Datenbank" Click="OnClickOpenDatabase"/>
+                    <MenuItem Header="...aus xml (Debug)" Click="OnClickDebug"/>
+                    <Separator/>
+                    <MenuItem Header="Liste vorher leeren"                      StaysOpenOnClick="True" IsCheckable="True" IsChecked="{Binding Path=OverwritingSettings, ElementName=menu, Mode=TwoWay, Converter={StaticResource EnumBoolConverter}, ConverterParameter={x:Static localDTO:DataReadMode.GIVEN_SOURCE_ONLY}}"/>
+                    <MenuItem Header="Nur einfügen wenn noch nicht vorhanden"   StaysOpenOnClick="True" IsCheckable="True" IsChecked="{Binding Path=OverwritingSettings, ElementName=menu, Mode=TwoWay, Converter={StaticResource EnumBoolConverter}, ConverterParameter={x:Static localDTO:DataReadMode.ADD_DATA_IF_NOT_EXISTING}}"/>
+                    <MenuItem Header="Vorhandene Elemente überschreiben"        StaysOpenOnClick="True" IsCheckable="True" IsChecked="{Binding Path=OverwritingSettings, ElementName=menu, Mode=TwoWay, Converter={StaticResource EnumBoolConverter}, ConverterParameter={x:Static localDTO:DataReadMode.OVERWRITE_IF_EXISTING}}"/>
+                </MenuItem>
+                <MenuItem Header="Speichern" Command="Save"/>
+                <MenuItem Header="Speichern...">
+                    <MenuItem Header="...in XML-Datei" Click="OnClickSaveFile"/>
+                    <MenuItem Header="...in Datenbank" Click="OnClickSaveDatabase"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Elemente">
+                <MenuItem Header="Neu...">
+                    <MenuItem Header="WfvEntry" Click="OnClickCreateNewWfvEntry"/>
+                    <MenuItem Header="WfvConfigEntry" Command="New"/>
+                </MenuItem>
+                <MenuItem Header="Löschen" Command="Delete"/>
+                <MenuItem Header="Abhängigkeiten anzeigen" Command="gui:CustomCommands.ShowDependencies"/>
+            </MenuItem>
+            <MenuItem Header="Sonstiges" Visibility="Hidden">
+                <MenuItem Header="Rückgängig" Command="Undo"/>
+                <MenuItem Header="Wiederherstellen" Command="Redo"/>
+            </MenuItem>
+        </Menu>
+    </Grid>
+</UserControl>

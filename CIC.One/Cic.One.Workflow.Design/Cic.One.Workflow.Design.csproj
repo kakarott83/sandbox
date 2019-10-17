@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F1997812-0317-413D-B616-69519116E9B2}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cic.One.Workflow.Design</RootNamespace>
+    <AssemblyName>Cic.One.Workflow.Design</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Cic.One.Workflow\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivityDesigns\AddMessageDesign.cs" />
+    <Compile Include="ActivityDesigns\AddMessageDesigner.xaml.cs">
+      <DependentUpon>AddMessageDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityDesigns\CASCallDesign.cs" />
+    <Compile Include="ActivityDesigns\CASCallDesigner.xaml.cs">
+      <DependentUpon>CASCallDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityDesigns\PrintButtonDesigner.xaml.cs">
+      <DependentUpon>PrintButtonDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityDesigns\PrintButtonDesign.cs" />
+    <Compile Include="ActivityDesigns\MessageBoxDesign.cs" />
+    <Compile Include="ActivityDesigns\MessageBoxDesigner.xaml.cs">
+      <DependentUpon>MessageBoxDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityDesigns\WorkflowButtonDesign.cs" />
+    <Compile Include="ActivityDesigns\UserInteractionDesign.cs" />
+    <Compile Include="ActivityDesigns\WorkflowButtonDesigner.xaml.cs">
+      <DependentUpon>WorkflowButtonDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\ComboBoxItemConverter.cs" />
+    <Compile Include="Converter\InArgumentBoolConverter.cs" />
+    <Compile Include="DataSource\ViewItemSource.cs" />
+    <Compile Include="Editor\InArgumentBoolPropertyEditor.cs" />
+    <Compile Include="OneEditor.cs" />
+    <Compile Include="Utils\ResourceLoading.cs" />
+    <Page Include="ActivityDesigner1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="ActivityDesigner1.xaml.cs">
+      <DependentUpon>ActivityDesigner1.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ActivityDesigns\AddMessageDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ActivityDesigns\CASCallDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ActivityDesigns\PrintButtonDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ActivityDesigns\MessageBoxDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ActivityDesigns\UserInteractionDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ActivityDesigns\WorkflowButtonDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivityDesigns\UserInteractionDesigner.xaml.cs">
+      <DependentUpon>UserInteractionDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityLibraryMetadata.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CIC.OpenOne\Cic.OpenOne.Common\Cic.OpenOne.Common.csproj">
+      <Project>{fc4049ac-617c-4233-ba92-287674e30b35}</Project>
+      <Name>Cic.OpenOne.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Cic.Utils\Cic.One.Utils\Cic.One.Utils.csproj">
+      <Project>{d1f653f9-3d9e-4486-89cc-4b0044307750}</Project>
+      <Name>Cic.One.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cic.One.DTO\Cic.One.DTO.csproj">
+      <Project>{0fdcc4e9-cfde-486f-9d93-58049a1f8325}</Project>
+      <Name>Cic.One.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cic.One.Web\Cic.One.Web.csproj">
+      <Project>{B7F449B0-F29C-413E-8454-D77A9F725835}</Project>
+      <Name>Cic.One.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cic.One.Workflow\Cic.One.Workflow.csproj">
+      <Project>{B62E8091-2667-4CA4-8197-A67DAFAB5139}</Project>
+      <Name>Cic.One.Workflow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cic.One.Web.Service\Cic.One.Web.Service.csproj">
+      <Project>{1EB55903-97FB-42CD-89A5-1B4568047979}</Project>
+      <Name>Cic.One.Web.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="HowTo_Readme.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

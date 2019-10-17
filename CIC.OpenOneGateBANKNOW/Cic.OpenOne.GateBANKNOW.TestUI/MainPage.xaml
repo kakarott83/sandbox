@@ -1,0 +1,79 @@
+﻿<Page x:Class="Cic.OpenOne.GateBANKNOW.TESTAUSKUNFTUI.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      xmlns:local="clr-namespace:Cic.OpenOne.GateBANKNOW.TESTAUSKUNFTUI"
+      xmlns:uc="clr-namespace:Cic.OpenOne.GateBANKNOW.TESTAUSKUNFTUI.UserControls"
+      xmlns:sys="clr-namespace:System;assembly=mscorlib"
+	Title="MainPage">
+
+    <DockPanel Background="Black">
+        <Grid DockPanel.Dock="Top" Height="50" Background="{StaticResource HeaderBackground}">
+            <StackPanel Margin="10 0" HorizontalAlignment="Left">
+                <TextBlock x:Name="txtHeading" Foreground="White" FontSize="22">
+				<Bold FontWeight="ExtraBold" Foreground="LightGray">
+					AUSKUNFT</Bold>
+                </TextBlock>
+
+            </StackPanel>
+        </Grid>
+        <Menu Background="Black" DockPanel.Dock="Top">
+            <Menu.Resources>
+                <Style TargetType="{x:Type Image}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type MenuItem}},Path=IsEnabled}" Value="False">
+                            <Setter Property="Opacity" Value="0.4"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Menu.Resources>
+            <MenuItem  Header="_File" Background="Black" Foreground="White">
+                <MenuItem Header="_Neue Liste" Command="ApplicationCommands.New">
+
+                </MenuItem>
+                <MenuItem Header="Liste ö_ffnen" Command="ApplicationCommands.Open">
+
+                </MenuItem>
+            </MenuItem>
+
+        </Menu>
+        <Rectangle DockPanel.Dock="Top" Fill="Gray" Height="2"/>
+        <!-- Dock="Bottom" – Statusbar am unteren Rand -->
+        <StatusBar  DockPanel.Dock="Bottom">
+            <!-- Die StatusBar verwendet als ItemsPanel ein DockPanel.
+		       Somit zeigt die Attached Property DockPanel.Dock ihre Auswirkung -->
+
+            <StatusBarItem Foreground="White">
+                <TextBlock Text="Status: "/>
+            </StatusBarItem>
+            <StatusBarItem >
+                <TextBlock Name="statusblock" Foreground="White" Text="{Binding StatusCode,UpdateSourceTrigger=PropertyChanged}"/>
+            </StatusBarItem>
+        </StatusBar>
+
+
+
+        <TabControl Name="tabcontrol"  Background="{StaticResource HeaderBackground}">
+
+            <TabItem Header="Kremo" Height="30" TabIndex="0">
+
+                <TabItem.Content>
+                    <uc:KREMO/>
+                </TabItem.Content>
+            </TabItem>
+
+
+
+            <TabItem Header="DecisionEngine" TabIndex="2">
+                <TabItem.Content>
+                    <uc:DecisionEngine/>
+                </TabItem.Content>
+            </TabItem>
+
+        </TabControl>
+
+    </DockPanel>
+</Page>

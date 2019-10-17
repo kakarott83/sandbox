@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://pub.wsinterfaces.s1.crif.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="S1Public" targetNamespace="http://pub.wsinterfaces.s1.crif.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://bnow-de:8090/strategyone/ws/S1Public?xsd=1" namespace="http://process.core.s1.crif.com" />
+    </xsd:schema>
+  </types>
+  <message name="execute">
+    <part name="request" type="xsd:string" />
+  </message>
+  <message name="executeResponse">
+    <part xmlns:ns1="http://process.core.s1.crif.com" name="executeReturn" type="ns1:StrategyOneResponse" />
+  </message>
+  <portType name="S1Public">
+    <operation name="execute">
+      <input wsam:Action="http://pub.wsinterfaces.s1.crif.com/S1Public/executeRequest" message="tns:execute" />
+      <output wsam:Action="http://pub.wsinterfaces.s1.crif.com/S1Public/executeResponse" message="tns:executeResponse" />
+    </operation>
+  </portType>
+  <binding name="S1PublicServicePortBinding" type="tns:S1Public">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="execute">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" namespace="http://pub.wsinterfaces.s1.crif.com/" />
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://pub.wsinterfaces.s1.crif.com/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="S1Public">
+    <port name="S1PublicServicePort" binding="tns:S1PublicServicePortBinding">
+      <soap:address location="http://bnow-de:8090/strategyone/ws/S1Public" />
+    </port>
+  </service>
+</definitions>

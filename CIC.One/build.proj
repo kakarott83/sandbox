@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="PrepareVersion;Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  
+	<!-- Jenkins MSBUILD-File for the CIC.One.Web Services -->
+  <PropertyGroup>
+
+    <MSBuildCommunityTasksPath>..\libs</MSBuildCommunityTasksPath>
+
+	<MSBuildExtensionPackPath>$(MSBuildProjectDirectory)\Tools\MSBuild.ExtensionPack</MSBuildExtensionPackPath>
+	<ExtensionTasksPath>$(MSBuildExtensionPackPath)\Binaries\</ExtensionTasksPath>
+		
+    <!-- Default configuration -->
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+
+    <!-- Default platform -->
+    <Platform Condition=" '$(Platform)' == '' ">"Any CPU"</Platform>
+
+    <!-- Release folder \\w1\work\buildqueue\Cic.One.Web\Service\$(SVN_REVISION)\$(Configuration)   -->
+    <ReleaseFolder Condition=" '$(ReleaseFolder)' == '' ">c:\temp\testbuild</ReleaseFolder>
+
+    <!-- Path to msdeploy.exe -->
+    <MSDeployPath Condition=" '$(MSDeployPath)' == '' ">.\Tools\MSDeploy\msdeploy.exe</MSDeployPath>
+
+    <!-- IIS deployment configuration -->
+    <DeployHost Condition=" '$(DeployHost)' == '' ">localhost</DeployHost>
+    <DeployUsername Condition=" '$(DeployUsername)' == '' "></DeployUsername>
+    <DeployUserPassword Condition=" '$(DeployUserPassword)' == '' "></DeployUserPassword>
+
+    
+    <!-- Build server variables -->
+    <BUILD_NUMBER Condition=" '$(BUILD_NUMBER)' == '' ">1</BUILD_NUMBER>
+    <GIT_BRANCH Condition=" '$(GIT_BRANCH)' == '' ">unknown</GIT_BRANCH>
+    <GIT_COMMIT Condition=" '$(GIT_COMMIT)' == '' ">unknown</GIT_COMMIT>
+	
+		
+	<!-- Eval documentation export data source-->
+	<EvalSrcDbService Condition="'$(EvalSrcDbService)' == ''" >BNR13DEV</EvalSrcDbService>
+	<EvalSrcDbUser Condition="'$(EvalSrcDbUser)' == ''">cic</EvalSrcDbUser>
+	<EvalSrcDbPasswordService Condition="'$(EvalSrcDbPasswordService)' == ''"></EvalSrcDbPasswordService>
+	<EvalSrcDbPassword Condition="'$(EvalSrcDbPassword)' == ''"></EvalSrcDbPassword>
+	<SOURCE_BUILD_NUMBER Condition="'$(SOURCE_BUILD_NUMBER)' == ''">$(BUILD_NUMBER)</SOURCE_BUILD_NUMBER>
+	
+	
+  </PropertyGroup>
+
+<!--  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />-->
+  <Import Project="..\libs\Microsoft.WebApplication.targets" />
+  <Import Project="..\libs\MSBuild.Community.Tasks.Targets" />
+	<Import Project="..\libs\MSBuild.ExtensionPack.tasks" />
+	
+	
+	
+  
+  <!-- Prepare AssemblyInfo versions -->
+  <Target Name="PrepareVersion">
+    <Time Format="yyyy">
+      <Output TaskParameter="FormattedTime" PropertyName="BuildYear" />
+    </Time>
+
+    <!-- Update all AssemblyInfo.cs files -->
+    <ItemGroup>
+      <AssemblyInfoFilesToUpdate Include="..\**\AssemblyInfo.cs"/>
+    </ItemGroup>
+
+	<Exec Command="git rev-list HEAD --count" ConsoleToMSBuild="true">
+		 <Output TaskParameter="ConsoleOutput" PropertyName="GIT_NUMBER"/>
+	</Exec>
+	
+    <Attrib Files="@(AssemblyInfoFilesToUpdate)" Normal="true" />
+   <FileUpdate Files="@(AssemblyInfoFilesToUpdate)" Regex="AssemblyVersion\(&quot;(\d+).(\d+).(\d+).(\d+)&quot;\)" ReplacementText="AssemblyVersion(&quot;$1.$2.$3.$(BUILD_NUMBER)&quot;)" />
+    <FileUpdate Files="@(AssemblyInfoFilesToUpdate)" Regex="AssemblyFileVersion\(&quot;(\d+).(\d+).(\d+).(\d+)&quot;\)" ReplacementText="AssemblyFileVersion(&quot;$1.$2.$3.$(BUILD_NUMBER)&quot;)" />
+
+	<FileUpdate Files="@(AssemblyInfoFilesToUpdate)" Regex="AssemblyInformationalVersion\(&quot;.*&quot;\)"  ReplacementText="AssemblyInformationalVersion(&quot;$(BUILD_NUMBER).$(GIT_NUMBER).$(GIT_BRANCH)-$(GIT_COMMIT)&quot;)" />
+	<FileUpdate Files="@(AssemblyInfoFilesToUpdate)" Regex="AssemblyCopyright\(&quot;.*&quot;\)" ReplacementText="AssemblyCopyright(&quot;Copyright © C.I.C. Software GmbH $(BuildYear)&quot;)" />
+ </Target>
+
+  <!-- Solution build. -->
+  <Target Name="Build" >
+    <MSBuild
+			Targets="Build"
+			Projects="Cic.One.sln"
+			ContinueOnError="false"
+			Properties="Configuration=$(Configuration);RunCodeAnalysis=Never"/>
+
+    <CallTarget Targets="AfterBuild"/>
+  </Target>
+  
+   <Target Name="AfterBuild" >
+    <ItemGroup>
+      <binDir Include="$(ReleaseFolder)\$(BUILD_NUMBER)\bin" />
+      <svcDir Include="$(ReleaseFolder)\$(BUILD_NUMBER)" />
+      <CurrentBin Include="$(ReleaseFolder)\CurrentService\bin" />
+      <CurrentSvc Include="$(ReleaseFolder)\CurrentService" />
+      <BinFiles Include=".\Cic.One.Web.Service\bin\*.*" />
+      <SvcFiles Include=".\Cic.One.Web.Service\*.svc" />
+      <SvcFiles Include=".\Cic.One.Web.Service\*.asax" />
+      <SvcFiles Include=".\Cic.One.Web.Service\*.aspx" />
+      <SvcFiles Include=".\Cic.One.Web.Service\wfvconfig.dll" />
+    </ItemGroup>
+    <MakeDir Directories="@(binDir)" ContinueOnError="true" />
+    <MakeDir Directories="@(CurrentBin)" ContinueOnError="true" />
+    <Copy SourceFiles="@(BinFiles)" DestinationFolder="@(binDir)" />
+    <Copy SourceFiles="@(SvcFiles)" DestinationFolder="@(svcDir)" />
+    <Copy SourceFiles="@(BinFiles)" DestinationFolder="@(CurrentBin)" Condition=" '$(Configuration)'=='Release' " />
+    <Copy SourceFiles="@(SvcFiles)" DestinationFolder="@(CurrentSvc)" Condition=" '$(Configuration)'=='Release' " />
+  </Target>
+  
+</Project>

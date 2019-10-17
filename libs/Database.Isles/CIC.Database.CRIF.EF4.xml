@@ -1,0 +1,4634 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CIC.Database.CRIF.EF4</name>
+    </assembly>
+    <members>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CRIFContext">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.#ctor">
+            <summary>
+            Initializes a new CRIFContext object using the connection string found in the 'CRIFContext' section of the application configuration file.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.#ctor(System.String)">
+            <summary>
+            Initialize a new CRIFContext object.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.#ctor(System.Data.EntityClient.EntityConnection)">
+            <summary>
+            Initialize a new CRIFContext object.
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.AUSKUNFT">
+            <summary>
+            Table: AUSKUNFT&#xA;Description: Auskunft
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.AUSKUNFTTYP">
+            <summary>
+            Table: AUSKUNFTTYP&#xA;Description: Typ der Auskunft
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.AUSKUNFTCFG">
+            <summary>
+            Table: AUSKUNFTCFG&#xA;Description: Konfiguration für Auskunft
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFADDRESS">
+            <summary>
+            Table: CFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFADDRESSHIST">
+            <summary>
+            Table: CFADDRESSHIST&#xA;Description: Trimmed
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFADDRESSMATCH">
+            <summary>
+            Table: CFADDRESSMATCH
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFBANKACCOUNT">
+            <summary>
+            Table: CFBANKACCOUNT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFBRANCHOFFICE">
+            <summary>
+            Table: CFBRANCHOFFICE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFBUSINESSLIC">
+            <summary>
+            Table: CFBUSINESSLIC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFCANDIDATE">
+            <summary>
+            Table: CFCANDIDATE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFCOMPANY">
+            <summary>
+            Table: CFCOMPANY
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFCOMPLIANCE">
+            <summary>
+            Table: CFCOMPLIANCE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFCOMPLIANCEDE">
+            <summary>
+            Table: CFCOMPLIANCEDE&#xA;Description: Trimmed: CFCOMPLIANCEDESCRIPTION
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFCREDITRATIO">
+            <summary>
+            Table: CFCREDITRATIO
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFDEBT">
+            <summary>
+            Table: CFDEBT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFDECISION">
+            <summary>
+            Table: CFDECISION
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFDOCUMENT">
+            <summary>
+            Table: CFDOCUMENT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFDOCUMENTIMG">
+            <summary>
+            Table: CFDOCUMENTIMG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFFINELEMENT">
+            <summary>
+            Table: CFFINELEMENT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFFINSTATEMENT">
+            <summary>
+            Table: CFFINSTATEMENT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFHEADER">
+            <summary>
+            Table: CFHEADER
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFINPARCHDREP">
+            <summary>
+            Table: CFINPARCHDREP&#xA;Description: Trimmed: CFINPARCHIVEDREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFINPDEBTDET">
+            <summary>
+            Table: CFINPDEBTDET&#xA;Description: Trimmed: CFINPDEBTDETAILS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFINPGETREPORT">
+            <summary>
+            Table: CFINPGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFINPIDENTADDR">
+            <summary>
+            Table: CFINPIDENTADDR&#xA;Description: Trimmed: CFINPIDENTADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFINPLISTOFFRE">
+            <summary>
+            Table: CFINPLISTOFFRE&#xA;Description: Trimmed: CFINPLISTOFFLINEREPORTS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFINPORDEROFF">
+            <summary>
+            Table: CFINPORDEROFF&#xA;Description: Trimmed: CFINPORDEROFFLINE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFINPPOLLOFF">
+            <summary>
+            Table: CFINPPOLLOFF&#xA;Description: Trimmed: CFINPPOLLOFFLINEREP
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFKEYPERIOD">
+            <summary>
+            Table: CFKEYPERIOD
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFKEYVALUE">
+            <summary>
+            Table: CFKEYVALUE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFOFFLINEREPID">
+            <summary>
+            Table: CFOFFLINEREPID&#xA;Description: Trimmed: CFOFFLINEREPORTID
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFOUTARCHREP">
+            <summary>
+            Table: CFOUTARCHREP&#xA;Description: Trimmed: CFOUTARCHIVEDREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFOUTDEBTDET">
+            <summary>
+            Table: CFOUTDEBTDET&#xA;Description: Trimmed: CFOUTDEBTDETAILS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFOUTGETREPORT">
+            <summary>
+            Table: CFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFOUTIDENTADDR">
+            <summary>
+            Table: CFOUTIDENTADDR&#xA;Description: Trimmed: CFOUTIDENTADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFOUTLISTOFFRE">
+            <summary>
+            Table: CFOUTLISTOFFRE&#xA;Description: Trimmed: CFOUTLISTOFFLINEREPORTS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFOUTORDEROFF">
+            <summary>
+            Table: CFOUTORDEROFF&#xA;Description: Trimmed: CFOUTORDEROFFLINE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFOUTPOLLOFF">
+            <summary>
+            Table: CFOUTPOLLOFF&#xA;Description: Trimmed: CFOUTPOLLOFFLINEREP
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFPERSON">
+            <summary>
+            Table: CFPERSON
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFPOSITIONFUNC">
+            <summary>
+            Table: CFPOSITIONFUNC&#xA;Description: Trimmed: CFPOSITIONFUNCTION
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFPUBLICATION">
+            <summary>
+            Table: CFPUBLICATION
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFSCHUFA">
+            <summary>
+            Table: CFSCHUFA
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFSCHUFAFEAT">
+            <summary>
+            Table: CFSCHUFAFEAT&#xA;Description: Trimmed: CFSCHUFAFEATURE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFSCORE">
+            <summary>
+            Table: CFSCORE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFSCORERANGE">
+            <summary>
+            Table: CFSCORERANGE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFSUBDECISION">
+            <summary>
+            Table: CFSUBDECISION
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFVERIFICATION">
+            <summary>
+            Table: CFVERIFICATION
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFVERIFICATCOM">
+            <summary>
+            Table: CFVERIFICATCOM&#xA;Description: Trimmed: CFVERIFICATIONCOMP
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFWOWADDRESS">
+            <summary>
+            Table: CFWOWADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFWOWRELATION">
+            <summary>
+            Table: CFWOWRELATION
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFIDVERIFICAT">
+            <summary>
+            Table: CFIDVERIFICAT&#xA;Description: Trimmed: CFIDVERIFICATION. Neu definiert mit Version 62
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFORGAPOSITION">
+            <summary>
+            Table: CFORGAPOSITION&#xA;Description: Trimmed: CFORGANIZATIONPOSITION. Neu definiert mit Version 62
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFCOMPHIST">
+            <summary>
+            Table: CFCOMPHIST
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CRIFContext.CFERROR">
+            <summary>
+            Table: CFERROR
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToAUSKUNFT(CIC.Database.CRIF.EF4.Model.AUSKUNFT)">
+            <summary>
+            Deprecated Method for adding a new object to the AUSKUNFT EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToAUSKUNFTTYP(CIC.Database.CRIF.EF4.Model.AUSKUNFTTYP)">
+            <summary>
+            Deprecated Method for adding a new object to the AUSKUNFTTYP EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToAUSKUNFTCFG(CIC.Database.CRIF.EF4.Model.AUSKUNFTCFG)">
+            <summary>
+            Deprecated Method for adding a new object to the AUSKUNFTCFG EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFADDRESS(CIC.Database.CRIF.EF4.Model.CFADDRESS)">
+            <summary>
+            Deprecated Method for adding a new object to the CFADDRESS EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFADDRESSHIST(CIC.Database.CRIF.EF4.Model.CFADDRESSHIST)">
+            <summary>
+            Deprecated Method for adding a new object to the CFADDRESSHIST EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFADDRESSMATCH(CIC.Database.CRIF.EF4.Model.CFADDRESSMATCH)">
+            <summary>
+            Deprecated Method for adding a new object to the CFADDRESSMATCH EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFBANKACCOUNT(CIC.Database.CRIF.EF4.Model.CFBANKACCOUNT)">
+            <summary>
+            Deprecated Method for adding a new object to the CFBANKACCOUNT EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFBRANCHOFFICE(CIC.Database.CRIF.EF4.Model.CFBRANCHOFFICE)">
+            <summary>
+            Deprecated Method for adding a new object to the CFBRANCHOFFICE EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFBUSINESSLIC(CIC.Database.CRIF.EF4.Model.CFBUSINESSLIC)">
+            <summary>
+            Deprecated Method for adding a new object to the CFBUSINESSLIC EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFCANDIDATE(CIC.Database.CRIF.EF4.Model.CFCANDIDATE)">
+            <summary>
+            Deprecated Method for adding a new object to the CFCANDIDATE EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFCOMPANY(CIC.Database.CRIF.EF4.Model.CFCOMPANY)">
+            <summary>
+            Deprecated Method for adding a new object to the CFCOMPANY EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFCOMPLIANCE(CIC.Database.CRIF.EF4.Model.CFCOMPLIANCE)">
+            <summary>
+            Deprecated Method for adding a new object to the CFCOMPLIANCE EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFCOMPLIANCEDE(CIC.Database.CRIF.EF4.Model.CFCOMPLIANCEDE)">
+            <summary>
+            Deprecated Method for adding a new object to the CFCOMPLIANCEDE EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFCREDITRATIO(CIC.Database.CRIF.EF4.Model.CFCREDITRATIO)">
+            <summary>
+            Deprecated Method for adding a new object to the CFCREDITRATIO EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFDEBT(CIC.Database.CRIF.EF4.Model.CFDEBT)">
+            <summary>
+            Deprecated Method for adding a new object to the CFDEBT EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFDECISION(CIC.Database.CRIF.EF4.Model.CFDECISION)">
+            <summary>
+            Deprecated Method for adding a new object to the CFDECISION EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFDOCUMENT(CIC.Database.CRIF.EF4.Model.CFDOCUMENT)">
+            <summary>
+            Deprecated Method for adding a new object to the CFDOCUMENT EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFDOCUMENTIMG(CIC.Database.CRIF.EF4.Model.CFDOCUMENTIMG)">
+            <summary>
+            Deprecated Method for adding a new object to the CFDOCUMENTIMG EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFFINELEMENT(CIC.Database.CRIF.EF4.Model.CFFINELEMENT)">
+            <summary>
+            Deprecated Method for adding a new object to the CFFINELEMENT EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFFINSTATEMENT(CIC.Database.CRIF.EF4.Model.CFFINSTATEMENT)">
+            <summary>
+            Deprecated Method for adding a new object to the CFFINSTATEMENT EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFHEADER(CIC.Database.CRIF.EF4.Model.CFHEADER)">
+            <summary>
+            Deprecated Method for adding a new object to the CFHEADER EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFINPARCHDREP(CIC.Database.CRIF.EF4.Model.CFINPARCHDREP)">
+            <summary>
+            Deprecated Method for adding a new object to the CFINPARCHDREP EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFINPDEBTDET(CIC.Database.CRIF.EF4.Model.CFINPDEBTDET)">
+            <summary>
+            Deprecated Method for adding a new object to the CFINPDEBTDET EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFINPGETREPORT(CIC.Database.CRIF.EF4.Model.CFINPGETREPORT)">
+            <summary>
+            Deprecated Method for adding a new object to the CFINPGETREPORT EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFINPIDENTADDR(CIC.Database.CRIF.EF4.Model.CFINPIDENTADDR)">
+            <summary>
+            Deprecated Method for adding a new object to the CFINPIDENTADDR EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFINPLISTOFFRE(CIC.Database.CRIF.EF4.Model.CFINPLISTOFFRE)">
+            <summary>
+            Deprecated Method for adding a new object to the CFINPLISTOFFRE EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFINPORDEROFF(CIC.Database.CRIF.EF4.Model.CFINPORDEROFF)">
+            <summary>
+            Deprecated Method for adding a new object to the CFINPORDEROFF EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFINPPOLLOFF(CIC.Database.CRIF.EF4.Model.CFINPPOLLOFF)">
+            <summary>
+            Deprecated Method for adding a new object to the CFINPPOLLOFF EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFKEYPERIOD(CIC.Database.CRIF.EF4.Model.CFKEYPERIOD)">
+            <summary>
+            Deprecated Method for adding a new object to the CFKEYPERIOD EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFKEYVALUE(CIC.Database.CRIF.EF4.Model.CFKEYVALUE)">
+            <summary>
+            Deprecated Method for adding a new object to the CFKEYVALUE EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFOFFLINEREPID(CIC.Database.CRIF.EF4.Model.CFOFFLINEREPID)">
+            <summary>
+            Deprecated Method for adding a new object to the CFOFFLINEREPID EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFOUTARCHREP(CIC.Database.CRIF.EF4.Model.CFOUTARCHREP)">
+            <summary>
+            Deprecated Method for adding a new object to the CFOUTARCHREP EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFOUTDEBTDET(CIC.Database.CRIF.EF4.Model.CFOUTDEBTDET)">
+            <summary>
+            Deprecated Method for adding a new object to the CFOUTDEBTDET EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFOUTGETREPORT(CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT)">
+            <summary>
+            Deprecated Method for adding a new object to the CFOUTGETREPORT EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFOUTIDENTADDR(CIC.Database.CRIF.EF4.Model.CFOUTIDENTADDR)">
+            <summary>
+            Deprecated Method for adding a new object to the CFOUTIDENTADDR EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFOUTLISTOFFRE(CIC.Database.CRIF.EF4.Model.CFOUTLISTOFFRE)">
+            <summary>
+            Deprecated Method for adding a new object to the CFOUTLISTOFFRE EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFOUTORDEROFF(CIC.Database.CRIF.EF4.Model.CFOUTORDEROFF)">
+            <summary>
+            Deprecated Method for adding a new object to the CFOUTORDEROFF EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFOUTPOLLOFF(CIC.Database.CRIF.EF4.Model.CFOUTPOLLOFF)">
+            <summary>
+            Deprecated Method for adding a new object to the CFOUTPOLLOFF EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFPERSON(CIC.Database.CRIF.EF4.Model.CFPERSON)">
+            <summary>
+            Deprecated Method for adding a new object to the CFPERSON EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFPOSITIONFUNC(CIC.Database.CRIF.EF4.Model.CFPOSITIONFUNC)">
+            <summary>
+            Deprecated Method for adding a new object to the CFPOSITIONFUNC EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFPUBLICATION(CIC.Database.CRIF.EF4.Model.CFPUBLICATION)">
+            <summary>
+            Deprecated Method for adding a new object to the CFPUBLICATION EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFSCHUFA(CIC.Database.CRIF.EF4.Model.CFSCHUFA)">
+            <summary>
+            Deprecated Method for adding a new object to the CFSCHUFA EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFSCHUFAFEAT(CIC.Database.CRIF.EF4.Model.CFSCHUFAFEAT)">
+            <summary>
+            Deprecated Method for adding a new object to the CFSCHUFAFEAT EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFSCORE(CIC.Database.CRIF.EF4.Model.CFSCORE)">
+            <summary>
+            Deprecated Method for adding a new object to the CFSCORE EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFSCORERANGE(CIC.Database.CRIF.EF4.Model.CFSCORERANGE)">
+            <summary>
+            Deprecated Method for adding a new object to the CFSCORERANGE EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFSUBDECISION(CIC.Database.CRIF.EF4.Model.CFSUBDECISION)">
+            <summary>
+            Deprecated Method for adding a new object to the CFSUBDECISION EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFVERIFICATION(CIC.Database.CRIF.EF4.Model.CFVERIFICATION)">
+            <summary>
+            Deprecated Method for adding a new object to the CFVERIFICATION EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFVERIFICATCOM(CIC.Database.CRIF.EF4.Model.CFVERIFICATCOM)">
+            <summary>
+            Deprecated Method for adding a new object to the CFVERIFICATCOM EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFWOWADDRESS(CIC.Database.CRIF.EF4.Model.CFWOWADDRESS)">
+            <summary>
+            Deprecated Method for adding a new object to the CFWOWADDRESS EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFWOWRELATION(CIC.Database.CRIF.EF4.Model.CFWOWRELATION)">
+            <summary>
+            Deprecated Method for adding a new object to the CFWOWRELATION EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFIDVERIFICAT(CIC.Database.CRIF.EF4.Model.CFIDVERIFICAT)">
+            <summary>
+            Deprecated Method for adding a new object to the CFIDVERIFICAT EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFORGAPOSITION(CIC.Database.CRIF.EF4.Model.CFORGAPOSITION)">
+            <summary>
+            Deprecated Method for adding a new object to the CFORGAPOSITION EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFCOMPHIST(CIC.Database.CRIF.EF4.Model.CFCOMPHIST)">
+            <summary>
+            Deprecated Method for adding a new object to the CFCOMPHIST EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CRIFContext.AddToCFERROR(CIC.Database.CRIF.EF4.Model.CFERROR)">
+            <summary>
+            Deprecated Method for adding a new object to the CFERROR EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.AUSKUNFT">
+            <summary>
+            Table: AUSKUNFT&#xA;Description: Auskunft
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.AUSKUNFT.CreateAUSKUNFT(System.Int64)">
+            <summary>
+            Create a new AUSKUNFT object.
+            </summary>
+            <param name="sYSAUSKUNFT">Initial value of the SYSAUSKUNFT property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.SYSAUSKUNFT">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.SYSAUSKUNFTTYP">
+            <summary>
+            Foreign key: True&#xA;Navigation property: AUSKUNFTTYP
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.STATUS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.ANFRAGEDATUM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.ANFRAGEUHRZEIT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.FEHLERCODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.STATUSNUM">
+            <summary>
+            Description: Status (technisch)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.AREA">
+            <summary>
+            Description: Gebiet
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.SYSID">
+            <summary>
+            Description: SysID zum gebiet
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.SYSWFUSER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.HOSTCOMPUTER">
+            <summary>
+            Description: Host Computer
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.AUSKUNFTTYP">
+            <summary>
+            Refers to table|alias: AUSKUNFTTYP, FK Columns: SYSAUSKUNFTTYP
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.AUSKUNFTTYPReference">
+            <summary>
+            Refers to table|alias: AUSKUNFTTYP, FK Columns: SYSAUSKUNFTTYP
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.CFERRORList">
+            <summary>
+            Refers to table|alias: &apos;CFERROR&apos;, PK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.CFINPARCHDREPList">
+            <summary>
+            Refers to table|alias: &apos;CFINPARCHDREP&apos;, PK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.CFINPDEBTDETList">
+            <summary>
+            Refers to table|alias: &apos;CFINPDEBTDET&apos;, PK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.CFINPGETREPORTList">
+            <summary>
+            Refers to table|alias: &apos;CFINPGETREPORT&apos;, PK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.CFINPIDENTADDRList">
+            <summary>
+            Refers to table|alias: &apos;CFINPIDENTADDR&apos;, PK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.CFINPLISTOFFREList">
+            <summary>
+            Refers to table|alias: &apos;CFINPLISTOFFRE&apos;, PK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.CFINPORDEROFFList">
+            <summary>
+            Refers to table|alias: &apos;CFINPORDEROFF&apos;, PK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.CFINPPOLLOFFList">
+            <summary>
+            Refers to table|alias: &apos;CFINPPOLLOFF&apos;, PK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.CFKEYVALUEList">
+            <summary>
+            Refers to table|alias: &apos;CFKEYVALUE&apos;, PK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.CFOUTARCHREPList">
+            <summary>
+            Refers to table|alias: &apos;CFOUTARCHREP&apos;, PK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.CFOUTDEBTDETList">
+            <summary>
+            Refers to table|alias: &apos;CFOUTDEBTDET&apos;, PK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.CFOUTGETREPORTList">
+            <summary>
+            Refers to table|alias: &apos;CFOUTGETREPORT&apos;, PK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.CFOUTIDENTADDRList">
+            <summary>
+            Refers to table|alias: &apos;CFOUTIDENTADDR&apos;, PK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.CFOUTLISTOFFREList">
+            <summary>
+            Refers to table|alias: &apos;CFOUTLISTOFFRE&apos;, PK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.CFOUTORDEROFFList">
+            <summary>
+            Refers to table|alias: &apos;CFOUTORDEROFF&apos;, PK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFT.CFOUTPOLLOFFList">
+            <summary>
+            Refers to table|alias: &apos;CFOUTPOLLOFF&apos;, PK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.AUSKUNFTCFG">
+            <summary>
+            Table: AUSKUNFTCFG&#xA;Description: Konfiguration für Auskunft
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.AUSKUNFTCFG.CreateAUSKUNFTCFG(System.Int64,System.String)">
+            <summary>
+            Create a new AUSKUNFTCFG object.
+            </summary>
+            <param name="sYSAUSKUNFTCFG">Initial value of the SYSAUSKUNFTCFG property.</param>
+            <param name="bEZEICHNUNG">Initial value of the BEZEICHNUNG property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFTCFG.SYSAUSKUNFTCFG">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFTCFG.BEZEICHNUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFTCFG.BESCHREIBUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFTCFG.URL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFTCFG.USERNAME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFTCFG.KEYVALUE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFTCFG.SYSEAIPAR">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFTCFG.DATAOBJECT">
+            <summary>
+            Description: Binary Blob. Don&apos;t forget to create Fieldoption: BLOB and set its value to BLOB
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFTCFG.AUSKUNFTTYPList">
+            <summary>
+            Refers to table|alias: &apos;AUSKUNFTTYP&apos;, PK Columns: SYSAUSKUNFTCFG
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.AUSKUNFTTYP">
+            <summary>
+            Table: AUSKUNFTTYP&#xA;Description: Typ der Auskunft
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.AUSKUNFTTYP.CreateAUSKUNFTTYP(System.Int64,System.String)">
+            <summary>
+            Create a new AUSKUNFTTYP object.
+            </summary>
+            <param name="sYSAUSKUNFTTYP">Initial value of the SYSAUSKUNFTTYP property.</param>
+            <param name="bEZEICHNUNG">Initial value of the BEZEICHNUNG property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFTTYP.SYSAUSKUNFTTYP">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFTTYP.BEZEICHNUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFTTYP.BESCHREIBUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFTTYP.SYSAUSKUNFTCFG">
+            <summary>
+            Foreign key: True&#xA;Navigation property: AUSKUNFTCFG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFTTYP.METHODE">
+            <summary>
+            Description: Methodes des aufgerufenen Webservices
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFTTYP.DEBUGFLAG">
+            <summary>
+            Description: Dieser Flag signalisiert, dass die Abfrage von diesem Auskunfttypen in der Tabelle LOGDUMP geloggt werden sollen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFTTYP.AUSKUNFTList">
+            <summary>
+            Refers to table|alias: &apos;AUSKUNFT&apos;, PK Columns: SYSAUSKUNFTTYP
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFTTYP.AUSKUNFTCFG">
+            <summary>
+            Refers to table|alias: AUSKUNFTCFG, FK Columns: SYSAUSKUNFTCFG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.AUSKUNFTTYP.AUSKUNFTCFGReference">
+            <summary>
+            Refers to table|alias: AUSKUNFTCFG, FK Columns: SYSAUSKUNFTCFG
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFADDRESS">
+            <summary>
+            Table: CFADDRESS
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFADDRESS.CreateCFADDRESS(System.Int64)">
+            <summary>
+            Create a new CFADDRESS object.
+            </summary>
+            <param name="sYSCFADDRESS">Initial value of the SYSCFADDRESS property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.SYSCFADDRESS">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.STREET">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.HOUSENUMBER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.APARTMENT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.ZIP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.CITY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.REGIONCODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.SUBREGIONCODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.COUNTRY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.IDENTIFICATIONTYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.COMPANYNAME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.CONAME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.FIRSTNAME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.LASTNAME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.MIDDLENAME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.SEX">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.BIRTHDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.ISCOMPANY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.CFADDRESSHISTList">
+            <summary>
+            Refers to table|alias: &apos;CFADDRESSHIST&apos;, PK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.CFADDRESSMATCHList">
+            <summary>
+            Refers to table|alias: &apos;CFADDRESSMATCH&apos;, PK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.CFBANKACCOUNTList">
+            <summary>
+            Refers to table|alias: &apos;CFBANKACCOUNT&apos;, PK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.CFBRANCHOFFICEList">
+            <summary>
+            Refers to table|alias: &apos;CFBRANCHOFFICE&apos;, PK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.CFCANDIDATEList">
+            <summary>
+            Refers to table|alias: &apos;CFCANDIDATE&apos;, PK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.CFCOMPANYList">
+            <summary>
+            Refers to table|alias: &apos;CFCOMPANY&apos;, PK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.CFCOMPHISTList">
+            <summary>
+            Refers to table|alias: &apos;CFCOMPHIST&apos;, PK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.CFCOMPLIANCEList">
+            <summary>
+            Refers to table|alias: &apos;CFCOMPLIANCE&apos;, PK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.CFINPGETREPORTList">
+            <summary>
+            Refers to table|alias: &apos;CFINPGETREPORT&apos;, PK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.CFINPIDENTADDRList">
+            <summary>
+            Refers to table|alias: &apos;CFINPIDENTADDR&apos;, PK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.CFINPORDEROFFList">
+            <summary>
+            Refers to table|alias: &apos;CFINPORDEROFF&apos;, PK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.CFPERSONList">
+            <summary>
+            Refers to table|alias: &apos;CFPERSON&apos;, PK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESS.CFWOWADDRESSList">
+            <summary>
+            Refers to table|alias: &apos;CFWOWADDRESS&apos;, PK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFADDRESSHIST">
+            <summary>
+            Table: CFADDRESSHIST&#xA;Description: Trimmed
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFADDRESSHIST.CreateCFADDRESSHIST(System.Int64)">
+            <summary>
+            Create a new CFADDRESSHIST object.
+            </summary>
+            <param name="sYSCFADDRESSHIST">Initial value of the SYSCFADDRESSHIST property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESSHIST.SYSCFADDRESSHIST">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESSHIST.SYSCFOUTGETREPORT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESSHIST.SYSCFADDRESS">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESSHIST.ADDRESSINPUTDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESSHIST.ADDRESSID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESSHIST.ADDRESSIDTYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESSHIST.DELIVERABILITY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESSHIST.CFADDRESS">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESSHIST.CFADDRESSReference">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESSHIST.CFOUTGETREPORT">
+            <summary>
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESSHIST.CFOUTGETREPORTReference">
+            <summary>
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFADDRESSMATCH">
+            <summary>
+            Table: CFADDRESSMATCH
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFADDRESSMATCH.CreateCFADDRESSMATCH(System.Int64)">
+            <summary>
+            Create a new CFADDRESSMATCH object.
+            </summary>
+            <param name="sYSCFADDRESSMATCH">Initial value of the SYSCFADDRESSMATCH property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESSMATCH.SYSCFADDRESSMATCH">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESSMATCH.SYSCFADDRESS">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESSMATCH.NAMEHINT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESSMATCH.ADDRESSMATCHRESULTTYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESSMATCH.CHARACTER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESSMATCH.LOCATIONIDENTIFICATIONTYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESSMATCH.HOUSETYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESSMATCH.SYSCFADDRESSNORM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESSMATCH.CFADDRESS">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESSMATCH.CFADDRESSReference">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESSMATCH.CFCANDIDATEList">
+            <summary>
+            Refers to table|alias: &apos;CFCANDIDATE&apos;, PK Columns: SYSCFADDRESSMATCH
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESSMATCH.CFOUTGETREPORTList">
+            <summary>
+            Refers to table|alias: &apos;CFOUTGETREPORT&apos;, PK Columns: SYSCFADDRESSMATCH
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFADDRESSMATCH.CFOUTIDENTADDRList">
+            <summary>
+            Refers to table|alias: &apos;CFOUTIDENTADDR&apos;, PK Columns: SYSCFADDRESSMATCH
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFBANKACCOUNT">
+            <summary>
+            Table: CFBANKACCOUNT
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFBANKACCOUNT.CreateCFBANKACCOUNT(System.Int64)">
+            <summary>
+            Create a new CFBANKACCOUNT object.
+            </summary>
+            <param name="sYSCFBANKACCOUNT">Initial value of the SYSCFBANKACCOUNT property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBANKACCOUNT.SYSCFBANKACCOUNT">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBANKACCOUNT.SYSCFCOMPANY">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFCOMPANY
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBANKACCOUNT.SYSCFADDRESS">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBANKACCOUNT.BANKDESCRIPTION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBANKACCOUNT.LOCALACCOUNTNR">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBANKACCOUNT.IBAN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBANKACCOUNT.SWIFTCODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBANKACCOUNT.CURRENCY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBANKACCOUNT.CFADDRESS">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBANKACCOUNT.CFADDRESSReference">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBANKACCOUNT.CFCOMPANY">
+            <summary>
+            Refers to table|alias: CFCOMPANY, FK Columns: SYSCFCOMPANY
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBANKACCOUNT.CFCOMPANYReference">
+            <summary>
+            Refers to table|alias: CFCOMPANY, FK Columns: SYSCFCOMPANY
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFBRANCHOFFICE">
+            <summary>
+            Table: CFBRANCHOFFICE
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFBRANCHOFFICE.CreateCFBRANCHOFFICE(System.Int64)">
+            <summary>
+            Create a new CFBRANCHOFFICE object.
+            </summary>
+            <param name="sYSCFBRANCHOFFICE">Initial value of the SYSCFBRANCHOFFICE property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBRANCHOFFICE.SYSCFBRANCHOFFICE">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBRANCHOFFICE.SYSCFOUTGETREPORT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBRANCHOFFICE.SYSCFADDRESS">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBRANCHOFFICE.DESCRIPTION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBRANCHOFFICE.PERIODSTART">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBRANCHOFFICE.PERIODEND">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBRANCHOFFICE.REGISTERED">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBRANCHOFFICE.CFADDRESS">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBRANCHOFFICE.CFADDRESSReference">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBRANCHOFFICE.CFOUTGETREPORT">
+            <summary>
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBRANCHOFFICE.CFOUTGETREPORTReference">
+            <summary>
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFBUSINESSLIC">
+            <summary>
+            Table: CFBUSINESSLIC
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFBUSINESSLIC.CreateCFBUSINESSLIC(System.Int64)">
+            <summary>
+            Create a new CFBUSINESSLIC object.
+            </summary>
+            <param name="sYSCFBUSINESSLIC">Initial value of the SYSCFBUSINESSLIC property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBUSINESSLIC.SYSCFBUSINESSLIC">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBUSINESSLIC.SYSCFOUTGETREPORT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBUSINESSLIC.INDUSTRYNAME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBUSINESSLIC.SYSCFKEYPERIOD">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFKEYPERIOD
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBUSINESSLIC.ISSUEDTO">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBUSINESSLIC.PERIODSTART">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBUSINESSLIC.PERIODEND">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBUSINESSLIC.STATUS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBUSINESSLIC.CFKEYPERIOD">
+            <summary>
+            Refers to table|alias: CFKEYPERIOD, FK Columns: SYSCFKEYPERIOD
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBUSINESSLIC.CFKEYPERIODReference">
+            <summary>
+            Refers to table|alias: CFKEYPERIOD, FK Columns: SYSCFKEYPERIOD
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBUSINESSLIC.CFOUTGETREPORT">
+            <summary>
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFBUSINESSLIC.CFOUTGETREPORTReference">
+            <summary>
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFCANDIDATE">
+            <summary>
+            Table: CFCANDIDATE
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFCANDIDATE.CreateCFCANDIDATE(System.Int64)">
+            <summary>
+            Create a new CFCANDIDATE object.
+            </summary>
+            <param name="sYSCFCANDIDATE">Initial value of the SYSCFCANDIDATE property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCANDIDATE.SYSCFCANDIDATE">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCANDIDATE.SYSCFADDRESSMATCH">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFADDRESSMATCH
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCANDIDATE.SYSCFADDRESS">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCANDIDATE.CANDIDATERANK">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCANDIDATE.GROUPID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCANDIDATE.CFADDRESS">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCANDIDATE.CFADDRESSReference">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCANDIDATE.CFADDRESSMATCH">
+            <summary>
+            Refers to table|alias: CFADDRESSMATCH, FK Columns: SYSCFADDRESSMATCH
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCANDIDATE.CFADDRESSMATCHReference">
+            <summary>
+            Refers to table|alias: CFADDRESSMATCH, FK Columns: SYSCFADDRESSMATCH
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFCOMPANY">
+            <summary>
+            Table: CFCOMPANY
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFCOMPANY.CreateCFCOMPANY(System.Int64)">
+            <summary>
+            Create a new CFCOMPANY object.
+            </summary>
+            <param name="sYSCFCOMPANY">Initial value of the SYSCFCOMPANY property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.SYSCFCOMPANY">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.SYSCFADDRESS">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.REGISTEREDOFFICECITY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.FOUNDINGDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.CAPITALAMOUNT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.CAPITALCURRENCY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.CAPITALPAYEDAMOUNT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.CAPITALPAYEDCURRENCY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.CAPITALINKIND">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.HASAUDITINGCOMPANY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.SYSCFCOMPANYAUDITING">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.REGISTRYTYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.ACTIVITYSTATUS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.ACTIVITYSTATUSORIGINAL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.LEGALFORMTYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.LEGALFORMTYPEORIGINAL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.LEGALFORMTEXT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.SYSCFCOMPANYMOTHER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.EMPLOYEESFROM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.EMPLOYEESTO">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.SIZECLASS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.TURNOVERCURRENCY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.TURNOVERFROM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.TURNOVERTO">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.TURNOVERINEXPORT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.ACTIVITYINDEX">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.KNOWNSINCE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.DATEFINANCIALSTATEMENT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.DATEFINANCIALSTATEMENTHANDEDIN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.SYSCFOUTGETREPORTOBVIOUS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.SYSCFOUTGETREPORTPROBABLE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.SYSCFOUTGETREPORTSAMETEL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.PURPOSE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.CFBANKACCOUNTList">
+            <summary>
+            Refers to table|alias: &apos;CFBANKACCOUNT&apos;, PK Columns: SYSCFCOMPANY
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.CFADDRESS">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.CFADDRESSReference">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.CFCOMPHISTList">
+            <summary>
+            Refers to table|alias: &apos;CFCOMPHIST&apos;, PK Columns: SYSCFCOMPANY
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.CFKEYPERIODList">
+            <summary>
+            Refers to table|alias: &apos;CFKEYPERIOD&apos;, PK Columns: SYSCFCOMPANY
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPANY.CFOUTGETREPORTList">
+            <summary>
+            Refers to table|alias: &apos;CFOUTGETREPORT&apos;, PK Columns: SYSCFCOMPANY
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFCOMPHIST">
+            <summary>
+            Table: CFCOMPHIST
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFCOMPHIST.CreateCFCOMPHIST(System.Int64)">
+            <summary>
+            Create a new CFCOMPHIST object.
+            </summary>
+            <param name="sYSCFCOMPHIST">Initial value of the SYSCFCOMPHIST property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPHIST.SYSCFCOMPHIST">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPHIST.SYSCFCOMPANY">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFCOMPANY
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPHIST.TYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPHIST.PERIODSTART">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPHIST.PERIODEND">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPHIST.ACTIVITYSTATUS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPHIST.ACTIVITYSTATUSORIGINAL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPHIST.SYSCFADDRESS">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPHIST.AMOUNT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPHIST.AMOUNTCUR">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPHIST.LEGALFORMTYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPHIST.LEGALFORMTYPEORIG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPHIST.LEGALFORMTEXT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPHIST.SYSCFADDRESSLOCATION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPHIST.TEXT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPHIST.CFADDRESS">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPHIST.CFADDRESSReference">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPHIST.CFCOMPANY">
+            <summary>
+            Refers to table|alias: CFCOMPANY, FK Columns: SYSCFCOMPANY
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPHIST.CFCOMPANYReference">
+            <summary>
+            Refers to table|alias: CFCOMPANY, FK Columns: SYSCFCOMPANY
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCE">
+            <summary>
+            Table: CFCOMPLIANCE
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCE.CreateCFCOMPLIANCE(System.Int64)">
+            <summary>
+            Create a new CFCOMPLIANCE object.
+            </summary>
+            <param name="sYSCFCOMPLIANCE">Initial value of the SYSCFCOMPLIANCE property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCE.SYSCFCOMPLIANCE">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCE.RELATIONTYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCE.SYSCFADDRESS">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCE.SYSCFCOMPLIANCEFOUND">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCE.SYSCFCOMPLIANCECHECKED">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCE.SYSCFCOMPLIANCEDE">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFCOMPLIANCEDE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCE.CONFIDENCENAME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCE.CONFIDENCEBIRTHDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCE.MATCHEDNAME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCE.MATCHEDBIRTHDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCE.CRIFREFID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCE.PRIMARYNAME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCE.AGE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCE.COUNTRY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCE.CFADDRESS">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCE.CFADDRESSReference">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCE.CFCOMPLIANCEDE">
+            <summary>
+            Refers to table|alias: CFCOMPLIANCEDE, FK Columns: SYSCFCOMPLIANCEDE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCE.CFCOMPLIANCEDEReference">
+            <summary>
+            Refers to table|alias: CFCOMPLIANCEDE, FK Columns: SYSCFCOMPLIANCEDE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCE.CFOUTGETREPORTList">
+            <summary>
+            Refers to table|alias: &apos;CFOUTGETREPORT&apos;, PK Columns: SYSCFCOMPLIANCE
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCEDE">
+            <summary>
+            Table: CFCOMPLIANCEDE&#xA;Description: Trimmed: CFCOMPLIANCEDESCRIPTION
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCEDE.CreateCFCOMPLIANCEDE(System.Int64)">
+            <summary>
+            Create a new CFCOMPLIANCEDE object.
+            </summary>
+            <param name="sYSCFCOMPLIANCEDE">Initial value of the SYSCFCOMPLIANCEDE property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCEDE.SYSCFCOMPLIANCEDE">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCEDE.SYSCFOUTGETREPORT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCEDE.CATEGORY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCEDE.NAME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCEDE.PUBLISHINGORGANIZATION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCEDE.DATELASTUPDATED">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCEDE.CFCOMPLIANCEList">
+            <summary>
+            Refers to table|alias: &apos;CFCOMPLIANCE&apos;, PK Columns: SYSCFCOMPLIANCEDE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCEDE.CFOUTGETREPORT">
+            <summary>
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCOMPLIANCEDE.CFOUTGETREPORTReference">
+            <summary>
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFCREDITRATIO">
+            <summary>
+            Table: CFCREDITRATIO
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFCREDITRATIO.CreateCFCREDITRATIO(System.Int64)">
+            <summary>
+            Create a new CFCREDITRATIO object.
+            </summary>
+            <param name="sYSCFCREDITRATIO">Initial value of the SYSCFCREDITRATIO property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCREDITRATIO.SYSCFCREDITRATIO">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCREDITRATIO.CREDITRATIOIDENTIFIER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCREDITRATIO.VALUE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCREDITRATIO.SYSCFFINSTATEMENT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFFINSTATEMENT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCREDITRATIO.CFFINSTATEMENT">
+            <summary>
+            Refers to table|alias: CFFINSTATEMENT, FK Columns: SYSCFFINSTATEMENT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFCREDITRATIO.CFFINSTATEMENTReference">
+            <summary>
+            Refers to table|alias: CFFINSTATEMENT, FK Columns: SYSCFFINSTATEMENT
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFDEBT">
+            <summary>
+            Table: CFDEBT
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFDEBT.CreateCFDEBT(System.Int64)">
+            <summary>
+            Create a new CFDEBT object.
+            </summary>
+            <param name="sYSCFDEBT">Initial value of the SYSCFDEBT property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDEBT.SYSCFDEBT">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDEBT.SYSCFOUTGETREPORT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDEBT.RISKCLASS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDEBT.DATEOPEN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDEBT.DATECLOSE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDEBT.AMOUNT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDEBT.AMOUNTCUR">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDEBT.AMOUNTOPEN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDEBT.AMOUNTOPENCUR">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDEBT.DEBTTYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDEBT.PAYMENTSTATUS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDEBT.PAYMENTSTATUSTEXT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDEBT.ORIGIN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDEBT.TEXT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDEBT.SYSCFOUTDEBTDET">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFOUTDEBTDET
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDEBT.SYSCFOUTPOLLOFF">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFOUTPOLLOFF
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDEBT.CFOUTDEBTDET">
+            <summary>
+            Refers to table|alias: CFOUTDEBTDET, FK Columns: SYSCFOUTDEBTDET
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDEBT.CFOUTDEBTDETReference">
+            <summary>
+            Refers to table|alias: CFOUTDEBTDET, FK Columns: SYSCFOUTDEBTDET
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDEBT.CFOUTGETREPORT">
+            <summary>
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDEBT.CFOUTGETREPORTReference">
+            <summary>
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDEBT.CFOUTPOLLOFF">
+            <summary>
+            Refers to table|alias: CFOUTPOLLOFF, FK Columns: SYSCFOUTPOLLOFF
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDEBT.CFOUTPOLLOFFReference">
+            <summary>
+            Refers to table|alias: CFOUTPOLLOFF, FK Columns: SYSCFOUTPOLLOFF
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFDECISION">
+            <summary>
+            Table: CFDECISION
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFDECISION.CreateCFDECISION(System.Int64)">
+            <summary>
+            Create a new CFDECISION object.
+            </summary>
+            <param name="sYSCFDECISION">Initial value of the SYSCFDECISION property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDECISION.SYSCFDECISION">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDECISION.DECISION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDECISION.CREDITLIMIT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDECISION.DECISIONTEXT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDECISION.CFOUTGETREPORTList">
+            <summary>
+            Refers to table|alias: &apos;CFOUTGETREPORT&apos;, PK Columns: SYSCFDECISION
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDECISION.CFSUBDECISIONList">
+            <summary>
+            Refers to table|alias: &apos;CFSUBDECISION&apos;, PK Columns: SYSCFDECISION
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFDOCUMENT">
+            <summary>
+            Table: CFDOCUMENT
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFDOCUMENT.CreateCFDOCUMENT(System.Int64)">
+            <summary>
+            Create a new CFDOCUMENT object.
+            </summary>
+            <param name="sYSCFDOCUMENT">Initial value of the SYSCFDOCUMENT property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDOCUMENT.SYSCFDOCUMENT">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDOCUMENT.DOCUMENTNUMBER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDOCUMENT.DOCUMENTTYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDOCUMENT.DOCUMENTDESCRIPTION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDOCUMENT.ISSUINGSTATEORORGA">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDOCUMENT.ISSUINGDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDOCUMENT.EXPIRATIONDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDOCUMENT.VALIDITYFROMDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDOCUMENT.SIGNDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDOCUMENT.MRZ1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDOCUMENT.MRZ2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDOCUMENT.MRZ3">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDOCUMENT.CFVERIFICATIONList">
+            <summary>
+            Refers to table|alias: &apos;CFVERIFICATION&apos;, PK Columns: SYSCFDOCUMENT
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFDOCUMENTIMG">
+            <summary>
+            Table: CFDOCUMENTIMG
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFDOCUMENTIMG.CreateCFDOCUMENTIMG(System.Int64)">
+            <summary>
+            Create a new CFDOCUMENTIMG object.
+            </summary>
+            <param name="sYSCFDOCUMENTIMG">Initial value of the SYSCFDOCUMENTIMG property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDOCUMENTIMG.SYSCFDOCUMENTIMG">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDOCUMENTIMG.SYSCFVERIFICATION">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFVERIFICATION
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDOCUMENTIMG.MIMETYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDOCUMENTIMG.DATACLASSIFICATION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDOCUMENTIMG.DATA">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDOCUMENTIMG.CFVERIFICATION">
+            <summary>
+            Refers to table|alias: CFVERIFICATION, FK Columns: SYSCFVERIFICATION
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFDOCUMENTIMG.CFVERIFICATIONReference">
+            <summary>
+            Refers to table|alias: CFVERIFICATION, FK Columns: SYSCFVERIFICATION
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFERROR">
+            <summary>
+            Table: CFERROR
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFERROR.CreateCFERROR(System.Int64)">
+            <summary>
+            Create a new CFERROR object.
+            </summary>
+            <param name="sYSCFERROR">Initial value of the SYSCFERROR property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFERROR.SYSCFERROR">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFERROR.SYSAUSKUNFT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: AUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFERROR.CODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFERROR.MESSAGETEXT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFERROR.FAULTCODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFERROR.MESSAGE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFERROR.AUSKUNFT">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFERROR.AUSKUNFTReference">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFFINELEMENT">
+            <summary>
+            Table: CFFINELEMENT
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFFINELEMENT.CreateCFFINELEMENT(System.Int64)">
+            <summary>
+            Create a new CFFINELEMENT object.
+            </summary>
+            <param name="sYSCFFINELEMENT">Initial value of the SYSCFFINELEMENT property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFFINELEMENT.SYSCFFINELEMENT">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFFINELEMENT.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFFINELEMENT.PARENTID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFFINELEMENT.IDENTIFIER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFFINELEMENT.IDENTIFIERTEXT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFFINELEMENT.VALUE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFFINELEMENT.POSITION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFFINELEMENT.SYSCFFINSTATEMENTBALANCE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFFINELEMENT.SYSCFFINSTATEMENTPROFITLOSS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFFINELEMENT.SYSCFFINSTATEMENTCASHFLOW">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFFINELEMENT.SYSCFFINSTATEMENTFURTHER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFFINSTATEMENT">
+            <summary>
+            Table: CFFINSTATEMENT
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFFINSTATEMENT.CreateCFFINSTATEMENT(System.Int64)">
+            <summary>
+            Create a new CFFINSTATEMENT object.
+            </summary>
+            <param name="sYSCFFINSTATEMENT">Initial value of the SYSCFFINSTATEMENT property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFFINSTATEMENT.SYSCFFINSTATEMENT">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFFINSTATEMENT.SYSCFOUTGETREPORT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFFINSTATEMENT.FINANCIALREPORTINGSTANDARD">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFFINSTATEMENT.COMPANYNAME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFFINSTATEMENT.CURRENCYCODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFFINSTATEMENT.PERIODSTART">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFFINSTATEMENT.PERIODEND">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFFINSTATEMENT.SYSCFOUTGETREPORTGROUP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFFINSTATEMENT.CFCREDITRATIOList">
+            <summary>
+            Refers to table|alias: &apos;CFCREDITRATIO&apos;, PK Columns: SYSCFFINSTATEMENT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFFINSTATEMENT.CFOUTGETREPORT">
+            <summary>
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFFINSTATEMENT.CFOUTGETREPORTReference">
+            <summary>
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFHEADER">
+            <summary>
+            Table: CFHEADER
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFHEADER.CreateCFHEADER(System.Int64)">
+            <summary>
+            Create a new CFHEADER object.
+            </summary>
+            <param name="sYSCFHEADER">Initial value of the SYSCFHEADER property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFHEADER.SYSCFHEADER">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFHEADER.MAJORVERSION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFHEADER.MINORVERSION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFHEADER.USERNAME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFHEADER.PASSWORD">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFHEADER.ENDUSERID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFHEADER.COSTGROUPID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFHEADER.REFERENCENUMBER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFHEADER.CFINPARCHDREPList">
+            <summary>
+            Refers to table|alias: &apos;CFINPARCHDREP&apos;, PK Columns: SYSCFHEADER
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFHEADER.CFINPDEBTDETList">
+            <summary>
+            Refers to table|alias: &apos;CFINPDEBTDET&apos;, PK Columns: SYSCFHEADER
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFHEADER.CFINPGETREPORTList">
+            <summary>
+            Refers to table|alias: &apos;CFINPGETREPORT&apos;, PK Columns: SYSCFHEADER
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFHEADER.CFINPIDENTADDRList">
+            <summary>
+            Refers to table|alias: &apos;CFINPIDENTADDR&apos;, PK Columns: SYSCFHEADER
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFHEADER.CFINPLISTOFFREList">
+            <summary>
+            Refers to table|alias: &apos;CFINPLISTOFFRE&apos;, PK Columns: SYSCFHEADER
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFHEADER.CFINPORDEROFFList">
+            <summary>
+            Refers to table|alias: &apos;CFINPORDEROFF&apos;, PK Columns: SYSCFHEADER
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFHEADER.CFINPPOLLOFFList">
+            <summary>
+            Refers to table|alias: &apos;CFINPPOLLOFF&apos;, PK Columns: SYSCFHEADER
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFIDVERIFICAT">
+            <summary>
+            Table: CFIDVERIFICAT&#xA;Description: Trimmed: CFIDVERIFICATION. Neu definiert mit Version 62
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFIDVERIFICAT.CreateCFIDVERIFICAT(System.Int64)">
+            <summary>
+            Create a new CFIDVERIFICAT object.
+            </summary>
+            <param name="sYSCFIDVERIFICAT">Initial value of the SYSCFIDVERIFICAT property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFIDVERIFICAT.SYSCFIDVERIFICAT">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFIDVERIFICAT.DOCUMENTTYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFIDVERIFICAT.DOCUMENTDESCRIPTION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFIDVERIFICAT.ISSUINGSTATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFIDVERIFICAT.ISSUINGDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFIDVERIFICAT.EXPIRATIONDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFIDVERIFICAT.VALIDITYFROMDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFIDVERIFICAT.SIGNDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFIDVERIFICAT.MRZ1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFIDVERIFICAT.MRZ2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFIDVERIFICAT.MRZ3">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFIDVERIFICAT.SYSCFPERSON">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFPERSON
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFIDVERIFICAT.CFPERSON">
+            <summary>
+            Refers to table|alias: CFPERSON, FK Columns: SYSCFPERSON
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFIDVERIFICAT.CFPERSONReference">
+            <summary>
+            Refers to table|alias: CFPERSON, FK Columns: SYSCFPERSON
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFIDVERIFICAT.CFINPGETREPORTList">
+            <summary>
+            Refers to table|alias: &apos;CFINPGETREPORT&apos;, PK Columns: SYSCFIDVERIFICAT
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFINPARCHDREP">
+            <summary>
+            Table: CFINPARCHDREP&#xA;Description: Trimmed: CFINPARCHIVEDREPORT
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFINPARCHDREP.CreateCFINPARCHDREP(System.Int64)">
+            <summary>
+            Create a new CFINPARCHDREP object.
+            </summary>
+            <param name="sYSCFINPARCHDREP">Initial value of the SYSCFINPARCHDREP property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPARCHDREP.SYSCFINPARCHDREP">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPARCHDREP.SYSAUSKUNFT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: AUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPARCHDREP.SYSCFHEADER">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFHEADER
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPARCHDREP.ARCHIVINGID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPARCHDREP.TARGETFORMAT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPARCHDREP.AUSKUNFT">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPARCHDREP.AUSKUNFTReference">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPARCHDREP.CFHEADER">
+            <summary>
+            Refers to table|alias: CFHEADER, FK Columns: SYSCFHEADER
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPARCHDREP.CFHEADERReference">
+            <summary>
+            Refers to table|alias: CFHEADER, FK Columns: SYSCFHEADER
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFINPDEBTDET">
+            <summary>
+            Table: CFINPDEBTDET&#xA;Description: Trimmed: CFINPDEBTDETAILS
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFINPDEBTDET.CreateCFINPDEBTDET(System.Int64)">
+            <summary>
+            Create a new CFINPDEBTDET object.
+            </summary>
+            <param name="sYSCFINPDEBTDET">Initial value of the SYSCFINPDEBTDET property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPDEBTDET.SYSCFINPDEBTDET">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPDEBTDET.SYSAUSKUNFT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: AUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPDEBTDET.SYSCFHEADER">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFHEADER
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPDEBTDET.IDENTIFIERTEXT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPDEBTDET.IDENTIFIERTYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPDEBTDET.AUSKUNFT">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPDEBTDET.AUSKUNFTReference">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPDEBTDET.CFHEADER">
+            <summary>
+            Refers to table|alias: CFHEADER, FK Columns: SYSCFHEADER
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPDEBTDET.CFHEADERReference">
+            <summary>
+            Refers to table|alias: CFHEADER, FK Columns: SYSCFHEADER
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFINPGETREPORT">
+            <summary>
+            Table: CFINPGETREPORT
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFINPGETREPORT.CreateCFINPGETREPORT(System.Int64)">
+            <summary>
+            Create a new CFINPGETREPORT object.
+            </summary>
+            <param name="sYSCFINPGETREPORT">Initial value of the SYSCFINPGETREPORT property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPGETREPORT.SYSCFINPGETREPORT">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPGETREPORT.SYSAUSKUNFT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: AUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPGETREPORT.SYSCFHEADER">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFHEADER
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPGETREPORT.SYSCFADDRESS">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPGETREPORT.REPORTTYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPGETREPORT.TARGETREPORTFORMAT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPGETREPORT.SYSCFIDVERIFICAT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFIDVERIFICAT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPGETREPORT.IDENTIFIERTEXT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPGETREPORT.IDENTIFIERTYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPGETREPORT.AUSKUNFT">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPGETREPORT.AUSKUNFTReference">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPGETREPORT.CFADDRESS">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPGETREPORT.CFADDRESSReference">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPGETREPORT.CFHEADER">
+            <summary>
+            Refers to table|alias: CFHEADER, FK Columns: SYSCFHEADER
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPGETREPORT.CFHEADERReference">
+            <summary>
+            Refers to table|alias: CFHEADER, FK Columns: SYSCFHEADER
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPGETREPORT.CFIDVERIFICAT">
+            <summary>
+            Refers to table|alias: CFIDVERIFICAT, FK Columns: SYSCFIDVERIFICAT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPGETREPORT.CFIDVERIFICATReference">
+            <summary>
+            Refers to table|alias: CFIDVERIFICAT, FK Columns: SYSCFIDVERIFICAT
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFINPIDENTADDR">
+            <summary>
+            Table: CFINPIDENTADDR&#xA;Description: Trimmed: CFINPIDENTADDRESS
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFINPIDENTADDR.CreateCFINPIDENTADDR(System.Int64)">
+            <summary>
+            Create a new CFINPIDENTADDR object.
+            </summary>
+            <param name="sYSCFINPIDENTADDR">Initial value of the SYSCFINPIDENTADDR property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPIDENTADDR.SYSCFINPIDENTADDR">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPIDENTADDR.SYSCFADDRESS">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPIDENTADDR.SYSAUSKUNFT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: AUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPIDENTADDR.SYSCFHEADER">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFHEADER
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPIDENTADDR.AUSKUNFT">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPIDENTADDR.AUSKUNFTReference">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPIDENTADDR.CFADDRESS">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPIDENTADDR.CFADDRESSReference">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPIDENTADDR.CFHEADER">
+            <summary>
+            Refers to table|alias: CFHEADER, FK Columns: SYSCFHEADER
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPIDENTADDR.CFHEADERReference">
+            <summary>
+            Refers to table|alias: CFHEADER, FK Columns: SYSCFHEADER
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFINPLISTOFFRE">
+            <summary>
+            Table: CFINPLISTOFFRE&#xA;Description: Trimmed: CFINPLISTOFFLINEREPORTS
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFINPLISTOFFRE.CreateCFINPLISTOFFRE(System.Int64)">
+            <summary>
+            Create a new CFINPLISTOFFRE object.
+            </summary>
+            <param name="sYSCFINPLISTOFFRE">Initial value of the SYSCFINPLISTOFFRE property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPLISTOFFRE.SYSCFINPLISTOFFRE">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPLISTOFFRE.SYSCFHEADER">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFHEADER
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPLISTOFFRE.SYSAUSKUNFT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: AUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPLISTOFFRE.AUSKUNFT">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPLISTOFFRE.AUSKUNFTReference">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPLISTOFFRE.CFHEADER">
+            <summary>
+            Refers to table|alias: CFHEADER, FK Columns: SYSCFHEADER
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPLISTOFFRE.CFHEADERReference">
+            <summary>
+            Refers to table|alias: CFHEADER, FK Columns: SYSCFHEADER
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFINPORDEROFF">
+            <summary>
+            Table: CFINPORDEROFF&#xA;Description: Trimmed: CFINPORDEROFFLINE
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFINPORDEROFF.CreateCFINPORDEROFF(System.Int64)">
+            <summary>
+            Create a new CFINPORDEROFF object.
+            </summary>
+            <param name="sYSCFINPORDEROFF">Initial value of the SYSCFINPORDEROFF property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPORDEROFF.SYSCFINPORDEROFF">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPORDEROFF.SYSAUSKUNFT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: AUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPORDEROFF.SYSCFHEADER">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFHEADER
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPORDEROFF.SYSCFADDRESS">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPORDEROFF.IDENTIFIERTEXT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPORDEROFF.IDENTIFIERTYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPORDEROFF.OFFLINEREPORTTYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPORDEROFF.BINARYPOITYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPORDEROFF.CONTACTMAIL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPORDEROFF.CONTACTPHONE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPORDEROFF.BINARYPOI">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPORDEROFF.AUSKUNFT">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPORDEROFF.AUSKUNFTReference">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPORDEROFF.CFADDRESS">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPORDEROFF.CFADDRESSReference">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPORDEROFF.CFHEADER">
+            <summary>
+            Refers to table|alias: CFHEADER, FK Columns: SYSCFHEADER
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPORDEROFF.CFHEADERReference">
+            <summary>
+            Refers to table|alias: CFHEADER, FK Columns: SYSCFHEADER
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFINPPOLLOFF">
+            <summary>
+            Table: CFINPPOLLOFF&#xA;Description: Trimmed: CFINPPOLLOFFLINEREP
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFINPPOLLOFF.CreateCFINPPOLLOFF(System.Int64)">
+            <summary>
+            Create a new CFINPPOLLOFF object.
+            </summary>
+            <param name="sYSCFINPPOLLOFF">Initial value of the SYSCFINPPOLLOFF property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPPOLLOFF.SYSCFINPPOLLOFF">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPPOLLOFF.SYSAUSKUNFT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: AUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPPOLLOFF.SYSCFHEADER">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFHEADER
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPPOLLOFF.ORDERREFERENCENUMBER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPPOLLOFF.AUSKUNFT">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPPOLLOFF.AUSKUNFTReference">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPPOLLOFF.CFHEADER">
+            <summary>
+            Refers to table|alias: CFHEADER, FK Columns: SYSCFHEADER
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFINPPOLLOFF.CFHEADERReference">
+            <summary>
+            Refers to table|alias: CFHEADER, FK Columns: SYSCFHEADER
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFKEYPERIOD">
+            <summary>
+            Table: CFKEYPERIOD
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFKEYPERIOD.CreateCFKEYPERIOD(System.Int64)">
+            <summary>
+            Create a new CFKEYPERIOD object.
+            </summary>
+            <param name="sYSCFKEYPERIOD">Initial value of the SYSCFKEYPERIOD property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFKEYPERIOD.SYSCFKEYPERIOD">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFKEYPERIOD.SYSCFCOMPANY">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFCOMPANY
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFKEYPERIOD.TYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFKEYPERIOD.PERIODSTART">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFKEYPERIOD.PERIODEND">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFKEYPERIOD.CODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFKEYPERIOD.CODEDESCRIPTION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFKEYPERIOD.ISMAININDUSTRYCODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFKEYPERIOD.SYSCFCOMPANYINDUSTRY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFKEYPERIOD.CFBUSINESSLICList">
+            <summary>
+            Refers to table|alias: &apos;CFBUSINESSLIC&apos;, PK Columns: SYSCFKEYPERIOD
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFKEYPERIOD.CFCOMPANY">
+            <summary>
+            Refers to table|alias: CFCOMPANY, FK Columns: SYSCFCOMPANY
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFKEYPERIOD.CFCOMPANYReference">
+            <summary>
+            Refers to table|alias: CFCOMPANY, FK Columns: SYSCFCOMPANY
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFKEYVALUE">
+            <summary>
+            Table: CFKEYVALUE
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFKEYVALUE.CreateCFKEYVALUE(System.Int64)">
+            <summary>
+            Create a new CFKEYVALUE object.
+            </summary>
+            <param name="sYSCFKEYVALUE">Initial value of the SYSCFKEYVALUE property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFKEYVALUE.SYSCFKEYVALUE">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFKEYVALUE.SYSAUSKUNFT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: AUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFKEYVALUE.SYSID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFKEYVALUE.AREA">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFKEYVALUE.CONTEXT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFKEYVALUE.KEYVAL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFKEYVALUE.VALUE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFKEYVALUE.AUSKUNFT">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFKEYVALUE.AUSKUNFTReference">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFOFFLINEREPID">
+            <summary>
+            Table: CFOFFLINEREPID&#xA;Description: Trimmed: CFOFFLINEREPORTID
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFOFFLINEREPID.CreateCFOFFLINEREPID(System.Int64)">
+            <summary>
+            Create a new CFOFFLINEREPID object.
+            </summary>
+            <param name="sYSCFOFFLINEREPID">Initial value of the SYSCFOFFLINEREPID property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOFFLINEREPID.SYSCFOFFLINEREPID">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOFFLINEREPID.SYSCFOUTLISTOFFRE">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFOUTLISTOFFRE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOFFLINEREPID.ORDERREFERENCENUMBER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOFFLINEREPID.REFERENCENUMBER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOFFLINEREPID.CFOUTLISTOFFRE">
+            <summary>
+            Refers to table|alias: CFOUTLISTOFFRE, FK Columns: SYSCFOUTLISTOFFRE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOFFLINEREPID.CFOUTLISTOFFREReference">
+            <summary>
+            Refers to table|alias: CFOUTLISTOFFRE, FK Columns: SYSCFOUTLISTOFFRE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOFFLINEREPID.CFOUTPOLLOFFList">
+            <summary>
+            Refers to table|alias: &apos;CFOUTPOLLOFF&apos;, PK Columns: SYSCFOFFLINEREPID
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION">
+            <summary>
+            Table: CFORGAPOSITION&#xA;Description: Trimmed: CFORGANIZATIONPOSITION. Neu definiert mit Version 62
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.CreateCFORGAPOSITION(System.Int64)">
+            <summary>
+            Create a new CFORGAPOSITION object.
+            </summary>
+            <param name="sYSCFORGAPOSITION">Initial value of the SYSCFORGAPOSITION property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.SYSCFORGAPOSITION">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.SYSCFOUTGETREPORT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.FIRSTNAME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.NAME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.NATIONALITY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.HOMETOWN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.CITY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.SYSCFPOSITIONFUNC">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFPOSITIONFUNC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.SHAREVALUE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.SIGNATURETYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.SIGNATUREORIGINAL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.PERIODSTART">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.PERIODEND">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.ADDRESSID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.ADDRESSIDTYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.HASDEBTS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.NROFPOSITIONS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.NROFPOSITIONSBANKRUPT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.BIRTHDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.SYSCFORGANIZATIONPOSITIONOTHER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.CFOUTGETREPORT">
+            <summary>
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.CFOUTGETREPORTReference">
+            <summary>
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.CFPOSITIONFUNC">
+            <summary>
+            Refers to table|alias: CFPOSITIONFUNC, FK Columns: SYSCFPOSITIONFUNC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFORGAPOSITION.CFPOSITIONFUNCReference">
+            <summary>
+            Refers to table|alias: CFPOSITIONFUNC, FK Columns: SYSCFPOSITIONFUNC
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFOUTARCHREP">
+            <summary>
+            Table: CFOUTARCHREP&#xA;Description: Trimmed: CFOUTARCHIVEDREPORT
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFOUTARCHREP.CreateCFOUTARCHREP(System.Int64)">
+            <summary>
+            Create a new CFOUTARCHREP object.
+            </summary>
+            <param name="sYSCFOUTARCHREP">Initial value of the SYSCFOUTARCHREP property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTARCHREP.SYSCFOUTARCHREP">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTARCHREP.SYSAUSKUNFT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: AUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTARCHREP.ARCHIVINGID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTARCHREP.REPORT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTARCHREP.AUSKUNFT">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTARCHREP.AUSKUNFTReference">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFOUTDEBTDET">
+            <summary>
+            Table: CFOUTDEBTDET&#xA;Description: Trimmed: CFOUTDEBTDETAILS
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFOUTDEBTDET.CreateCFOUTDEBTDET(System.Int64)">
+            <summary>
+            Create a new CFOUTDEBTDET object.
+            </summary>
+            <param name="sYSCFOUTDEBTDET">Initial value of the SYSCFOUTDEBTDET property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTDEBTDET.SYSCFOUTDEBTDET">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTDEBTDET.SYSAUSKUNFT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: AUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTDEBTDET.ARCHIVINGID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTDEBTDET.CFDEBTList">
+            <summary>
+            Refers to table|alias: &apos;CFDEBT&apos;, PK Columns: SYSCFOUTDEBTDET
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTDEBTDET.AUSKUNFT">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTDEBTDET.AUSKUNFTReference">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT">
+            <summary>
+            Table: CFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CreateCFOUTGETREPORT(System.Int64)">
+            <summary>
+            Create a new CFOUTGETREPORT object.
+            </summary>
+            <param name="sYSCFOUTGETREPORT">Initial value of the SYSCFOUTGETREPORT property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.SYSCFOUTGETREPORT">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.SYSAUSKUNFT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: AUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.ARCHIVINGID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.SYSCFDECISION">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFDECISION
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.SYSCFADDRESSMATCH">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFADDRESSMATCH
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.SYSCFCOMPANY">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFCOMPANY
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.INTIMERATIO">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.AVGDELAYSHORTTERM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.AVGDELAYLONGTERM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.PAYMENTTYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.PAYMENTEXPECTEDTYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.POSITIONSTRUNCATED">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.PUBLICATIONSTRUNCATED">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.BRANCHOFFICESTRUNCATED">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.SYSCFSCORE">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFSCORE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.SYSCFCOMPLIANCE">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFCOMPLIANCE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.SYSCFVERIFICATION">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFVERIFICATION
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.SYSCFSCHUFA">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFSCHUFA
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.REPORT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CFADDRESSHISTList">
+            <summary>
+            Refers to table|alias: &apos;CFADDRESSHIST&apos;, PK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CFBRANCHOFFICEList">
+            <summary>
+            Refers to table|alias: &apos;CFBRANCHOFFICE&apos;, PK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CFBUSINESSLICList">
+            <summary>
+            Refers to table|alias: &apos;CFBUSINESSLIC&apos;, PK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CFCOMPLIANCEDEList">
+            <summary>
+            Refers to table|alias: &apos;CFCOMPLIANCEDE&apos;, PK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CFDEBTList">
+            <summary>
+            Refers to table|alias: &apos;CFDEBT&apos;, PK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CFFINSTATEMENTList">
+            <summary>
+            Refers to table|alias: &apos;CFFINSTATEMENT&apos;, PK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CFORGAPOSITIONList">
+            <summary>
+            Refers to table|alias: &apos;CFORGAPOSITION&apos;, PK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.AUSKUNFT">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.AUSKUNFTReference">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CFADDRESSMATCH">
+            <summary>
+            Refers to table|alias: CFADDRESSMATCH, FK Columns: SYSCFADDRESSMATCH
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CFADDRESSMATCHReference">
+            <summary>
+            Refers to table|alias: CFADDRESSMATCH, FK Columns: SYSCFADDRESSMATCH
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CFCOMPANY">
+            <summary>
+            Refers to table|alias: CFCOMPANY, FK Columns: SYSCFCOMPANY
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CFCOMPANYReference">
+            <summary>
+            Refers to table|alias: CFCOMPANY, FK Columns: SYSCFCOMPANY
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CFCOMPLIANCE">
+            <summary>
+            Refers to table|alias: CFCOMPLIANCE, FK Columns: SYSCFCOMPLIANCE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CFCOMPLIANCEReference">
+            <summary>
+            Refers to table|alias: CFCOMPLIANCE, FK Columns: SYSCFCOMPLIANCE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CFDECISION">
+            <summary>
+            Refers to table|alias: CFDECISION, FK Columns: SYSCFDECISION
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CFDECISIONReference">
+            <summary>
+            Refers to table|alias: CFDECISION, FK Columns: SYSCFDECISION
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CFSCHUFA">
+            <summary>
+            Refers to table|alias: CFSCHUFA, FK Columns: SYSCFSCHUFA
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CFSCHUFAReference">
+            <summary>
+            Refers to table|alias: CFSCHUFA, FK Columns: SYSCFSCHUFA
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CFSCORE">
+            <summary>
+            Refers to table|alias: CFSCORE, FK Columns: SYSCFSCORE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CFSCOREReference">
+            <summary>
+            Refers to table|alias: CFSCORE, FK Columns: SYSCFSCORE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CFVERIFICATION">
+            <summary>
+            Refers to table|alias: CFVERIFICATION, FK Columns: SYSCFVERIFICATION
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CFVERIFICATIONReference">
+            <summary>
+            Refers to table|alias: CFVERIFICATION, FK Columns: SYSCFVERIFICATION
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CFPUBLICATIONList">
+            <summary>
+            Refers to table|alias: &apos;CFPUBLICATION&apos;, PK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CFWOWADDRESSList">
+            <summary>
+            Refers to table|alias: &apos;CFWOWADDRESS&apos;, PK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTGETREPORT.CFWOWRELATIONList">
+            <summary>
+            Refers to table|alias: &apos;CFWOWRELATION&apos;, PK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFOUTIDENTADDR">
+            <summary>
+            Table: CFOUTIDENTADDR&#xA;Description: Trimmed: CFOUTIDENTADDRESS
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFOUTIDENTADDR.CreateCFOUTIDENTADDR(System.Int64)">
+            <summary>
+            Create a new CFOUTIDENTADDR object.
+            </summary>
+            <param name="sYSCFOUTIDENTADDR">Initial value of the SYSCFOUTIDENTADDR property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTIDENTADDR.SYSCFOUTIDENTADDR">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTIDENTADDR.ARCHIVINGID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTIDENTADDR.SYSAUSKUNFT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: AUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTIDENTADDR.SYSCFADDRESSMATCH">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFADDRESSMATCH
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTIDENTADDR.AUSKUNFT">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTIDENTADDR.AUSKUNFTReference">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTIDENTADDR.CFADDRESSMATCH">
+            <summary>
+            Refers to table|alias: CFADDRESSMATCH, FK Columns: SYSCFADDRESSMATCH
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTIDENTADDR.CFADDRESSMATCHReference">
+            <summary>
+            Refers to table|alias: CFADDRESSMATCH, FK Columns: SYSCFADDRESSMATCH
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFOUTLISTOFFRE">
+            <summary>
+            Table: CFOUTLISTOFFRE&#xA;Description: Trimmed: CFOUTLISTOFFLINEREPORTS
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFOUTLISTOFFRE.CreateCFOUTLISTOFFRE(System.Int64)">
+            <summary>
+            Create a new CFOUTLISTOFFRE object.
+            </summary>
+            <param name="sYSCFOUTLISTOFFRE">Initial value of the SYSCFOUTLISTOFFRE property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTLISTOFFRE.SYSCFOUTLISTOFFRE">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTLISTOFFRE.SYSAUSKUNFT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: AUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTLISTOFFRE.ARCHIVINGID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTLISTOFFRE.CFOFFLINEREPIDList">
+            <summary>
+            Refers to table|alias: &apos;CFOFFLINEREPID&apos;, PK Columns: SYSCFOUTLISTOFFRE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTLISTOFFRE.AUSKUNFT">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTLISTOFFRE.AUSKUNFTReference">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFOUTORDEROFF">
+            <summary>
+            Table: CFOUTORDEROFF&#xA;Description: Trimmed: CFOUTORDEROFFLINE
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFOUTORDEROFF.CreateCFOUTORDEROFF(System.Int64)">
+            <summary>
+            Create a new CFOUTORDEROFF object.
+            </summary>
+            <param name="sYSCFOUTORDEROFF">Initial value of the SYSCFOUTORDEROFF property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTORDEROFF.SYSCFOUTORDEROFF">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTORDEROFF.SYSAUSKUNFT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: AUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTORDEROFF.ARCHIVINGID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTORDEROFF.ORDERREFERENCENUMBER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTORDEROFF.AUSKUNFT">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTORDEROFF.AUSKUNFTReference">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFOUTPOLLOFF">
+            <summary>
+            Table: CFOUTPOLLOFF&#xA;Description: Trimmed: CFOUTPOLLOFFLINEREP
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFOUTPOLLOFF.CreateCFOUTPOLLOFF(System.Int64)">
+            <summary>
+            Create a new CFOUTPOLLOFF object.
+            </summary>
+            <param name="sYSCFOUTPOLLOFF">Initial value of the SYSCFOUTPOLLOFF property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTPOLLOFF.SYSCFOUTPOLLOFF">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTPOLLOFF.SYSAUSKUNFT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: AUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTPOLLOFF.OFFLINEREPORTSTATUS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTPOLLOFF.SYSCFOFFLINEREPID">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFOFFLINEREPID
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTPOLLOFF.ARCHIVINGID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTPOLLOFF.REPORT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTPOLLOFF.CFDEBTList">
+            <summary>
+            Refers to table|alias: &apos;CFDEBT&apos;, PK Columns: SYSCFOUTPOLLOFF
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTPOLLOFF.AUSKUNFT">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTPOLLOFF.AUSKUNFTReference">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTPOLLOFF.CFOFFLINEREPID">
+            <summary>
+            Refers to table|alias: CFOFFLINEREPID, FK Columns: SYSCFOFFLINEREPID
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFOUTPOLLOFF.CFOFFLINEREPIDReference">
+            <summary>
+            Refers to table|alias: CFOFFLINEREPID, FK Columns: SYSCFOFFLINEREPID
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFPERSON">
+            <summary>
+            Table: CFPERSON
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFPERSON.CreateCFPERSON(System.Int64)">
+            <summary>
+            Create a new CFPERSON object.
+            </summary>
+            <param name="sYSCFPERSON">Initial value of the SYSCFPERSON property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPERSON.SYSCFPERSON">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPERSON.SYSCFADDRESS">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPERSON.ADDRESS1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPERSON.ADDRESS2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPERSON.NATIONALID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPERSON.PLACEOFBIRTH">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPERSON.NATIONALITY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPERSON.CFIDVERIFICATList">
+            <summary>
+            Refers to table|alias: &apos;CFIDVERIFICAT&apos;, PK Columns: SYSCFPERSON
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPERSON.CFADDRESS">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPERSON.CFADDRESSReference">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPERSON.CFVERIFICATIONList">
+            <summary>
+            Refers to table|alias: &apos;CFVERIFICATION&apos;, PK Columns: SYSCFPERSON
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFPOSITIONFUNC">
+            <summary>
+            Table: CFPOSITIONFUNC&#xA;Description: Trimmed: CFPOSITIONFUNCTION
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFPOSITIONFUNC.CreateCFPOSITIONFUNC(System.Int64)">
+            <summary>
+            Create a new CFPOSITIONFUNC object.
+            </summary>
+            <param name="sYSCFPOSITIONFUNC">Initial value of the SYSCFPOSITIONFUNC property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPOSITIONFUNC.SYSCFPOSITIONFUNC">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPOSITIONFUNC.FUNCTIONTYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPOSITIONFUNC.FUNCTIONTYPEORIGINAL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPOSITIONFUNC.FUNCTIONPRIORITY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPOSITIONFUNC.SYSCFORGAPOSITION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPOSITIONFUNC.CFORGAPOSITIONList">
+            <summary>
+            Refers to table|alias: &apos;CFORGAPOSITION&apos;, PK Columns: SYSCFPOSITIONFUNC
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFPUBLICATION">
+            <summary>
+            Table: CFPUBLICATION
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFPUBLICATION.CreateCFPUBLICATION(System.Int64)">
+            <summary>
+            Create a new CFPUBLICATION object.
+            </summary>
+            <param name="sYSCFPUBLICATION">Initial value of the SYSCFPUBLICATION property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPUBLICATION.SYSCFPUBLICATION">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPUBLICATION.PUBLICATIONDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPUBLICATION.PUBLICATIONCATEGORYORIGINAL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPUBLICATION.PUBLICATIONCATEGORY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPUBLICATION.LANGUAGE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPUBLICATION.PUBLICATIONREGION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPUBLICATION.TEXT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPUBLICATION.SYSCFOUTGETREPORT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPUBLICATION.CFOUTGETREPORT">
+            <summary>
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFPUBLICATION.CFOUTGETREPORTReference">
+            <summary>
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFSCHUFA">
+            <summary>
+            Table: CFSCHUFA
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFSCHUFA.CreateCFSCHUFA(System.Int64)">
+            <summary>
+            Create a new CFSCHUFA object.
+            </summary>
+            <param name="sYSCFSCHUFA">Initial value of the SYSCFSCHUFA property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFA.SYSCFSCHUFA">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFA.IDENTITYRESERVATIONPERSON">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFA.IDENTITYRESERVATIONADDRESS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFA.PERSONWITHOUTBIRTHDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFA.DESCRIPTION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFA.SCOREVALUE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFA.RISKQUOTA">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFA.SCORECATEGORY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFA.SCORETEXT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFA.SCOREERROR">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFA.TITLE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFA.PLACEOFBIRTH">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFA.SYSCFADDRESSPREVIOUS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFA.CFOUTGETREPORTList">
+            <summary>
+            Refers to table|alias: &apos;CFOUTGETREPORT&apos;, PK Columns: SYSCFSCHUFA
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFA.CFSCHUFAFEATList">
+            <summary>
+            Refers to table|alias: &apos;CFSCHUFAFEAT&apos;, PK Columns: SYSCFSCHUFA
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFSCHUFAFEAT">
+            <summary>
+            Table: CFSCHUFAFEAT&#xA;Description: Trimmed: CFSCHUFAFEATURE
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFSCHUFAFEAT.CreateCFSCHUFAFEAT(System.Int64)">
+            <summary>
+            Create a new CFSCHUFAFEAT object.
+            </summary>
+            <param name="sYSCFSCHUFAFEAT">Initial value of the SYSCFSCHUFAFEAT property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFAFEAT.SYSCFSCHUFAFEAT">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFAFEAT.SYSCFSCHUFA">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFSCHUFA
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFAFEAT.TYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFAFEAT.FEATUREWITHOUTBIRTHDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFAFEAT.OWNFEATURE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFAFEAT.FEATURECODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFAFEAT.DESCRIPTION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFAFEAT.TEXT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFAFEAT.DATUM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFAFEAT.ACCOUNTNUMBER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFAFEAT.AMOUNT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFAFEAT.AMOUNTCUR">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFAFEAT.NUMBEROFINSTALLEMENTS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFAFEAT.INSTALLMENTTYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFAFEAT.CFSCHUFA">
+            <summary>
+            Refers to table|alias: CFSCHUFA, FK Columns: SYSCFSCHUFA
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCHUFAFEAT.CFSCHUFAReference">
+            <summary>
+            Refers to table|alias: CFSCHUFA, FK Columns: SYSCFSCHUFA
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFSCORE">
+            <summary>
+            Table: CFSCORE
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFSCORE.CreateCFSCORE(System.Int64)">
+            <summary>
+            Create a new CFSCORE object.
+            </summary>
+            <param name="sYSCFSCORE">Initial value of the SYSCFSCORE property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCORE.SYSCFSCORE">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCORE.RANGEFROM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCORE.RANGETO">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCORE.SCORE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCORE.AVERAGESCOREINDUSTRY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCORE.AVERAGESCOREALL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCORE.CFOUTGETREPORTList">
+            <summary>
+            Refers to table|alias: &apos;CFOUTGETREPORT&apos;, PK Columns: SYSCFSCORE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCORE.CFSCORERANGEList">
+            <summary>
+            Refers to table|alias: &apos;CFSCORERANGE&apos;, PK Columns: SYSCFSCORE
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFSCORERANGE">
+            <summary>
+            Table: CFSCORERANGE
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFSCORERANGE.CreateCFSCORERANGE(System.Int64)">
+            <summary>
+            Create a new CFSCORERANGE object.
+            </summary>
+            <param name="sYSCFSCORERANGE">Initial value of the SYSCFSCORERANGE property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCORERANGE.SYSCFSCORERANGE">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCORERANGE.SYSCFSCORE">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFSCORE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCORERANGE.RANGEFROM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCORERANGE.RANGETO">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCORERANGE.DECISION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCORERANGE.CFSCORE">
+            <summary>
+            Refers to table|alias: CFSCORE, FK Columns: SYSCFSCORE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSCORERANGE.CFSCOREReference">
+            <summary>
+            Refers to table|alias: CFSCORE, FK Columns: SYSCFSCORE
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFSUBDECISION">
+            <summary>
+            Table: CFSUBDECISION
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFSUBDECISION.CreateCFSUBDECISION(System.Int64)">
+            <summary>
+            Create a new CFSUBDECISION object.
+            </summary>
+            <param name="sYSCFSUBDECISION">Initial value of the SYSCFSUBDECISION property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSUBDECISION.SYSCFSUBDECISION">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSUBDECISION.SYSCFDECISION">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFDECISION
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSUBDECISION.TYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSUBDECISION.DECISION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSUBDECISION.VALUE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSUBDECISION.INFOTEXT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSUBDECISION.CFDECISION">
+            <summary>
+            Refers to table|alias: CFDECISION, FK Columns: SYSCFDECISION
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFSUBDECISION.CFDECISIONReference">
+            <summary>
+            Refers to table|alias: CFDECISION, FK Columns: SYSCFDECISION
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFVERIFICATCOM">
+            <summary>
+            Table: CFVERIFICATCOM&#xA;Description: Trimmed: CFVERIFICATIONCOMP
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFVERIFICATCOM.CreateCFVERIFICATCOM(System.Int64)">
+            <summary>
+            Create a new CFVERIFICATCOM object.
+            </summary>
+            <param name="sYSCFVERIFICATCOM">Initial value of the SYSCFVERIFICATCOM property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATCOM.SYSCFVERIFICATCOM">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATCOM.SYSCFVERIFICATION">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFVERIFICATION
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATCOM.FIELDNAME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATCOM.PROVIDEDVALUE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATCOM.DOCUMENTVALUE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATCOM.PERCENTAGE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATCOM.MRZVALUE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATCOM.PROVIDEDVSDOCSIMILARITY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATCOM.PROVIDEDVSMRZSIMILARITY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATCOM.DOCUMENTVSMRZSIMILARITY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATCOM.CFVERIFICATION">
+            <summary>
+            Refers to table|alias: CFVERIFICATION, FK Columns: SYSCFVERIFICATION
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATCOM.CFVERIFICATIONReference">
+            <summary>
+            Refers to table|alias: CFVERIFICATION, FK Columns: SYSCFVERIFICATION
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFVERIFICATION">
+            <summary>
+            Table: CFVERIFICATION
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFVERIFICATION.CreateCFVERIFICATION(System.Int64)">
+            <summary>
+            Create a new CFVERIFICATION object.
+            </summary>
+            <param name="sYSCFVERIFICATION">Initial value of the SYSCFVERIFICATION property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATION.SYSCFVERIFICATION">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATION.SYSCFDOCUMENT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFDOCUMENT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATION.SYSCFPERSON">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFPERSON
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATION.ISVALID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATION.ISCOMPLETE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATION.ISCOMPOSITECHECKDIGITVERIFIED">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATION.ISBIRTHDATEVERIFIED">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATION.ISEXPIRATIONDATEVERIFIED">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATION.ISDOCUMENTNUMBERVERIFIED">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATION.ISISSUINGSTATEORORGVERIFIED">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATION.ISNATIONALIDVERIFIED">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATION.ISNATIONALITYVERIFIED">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATION.PROCESSINGRESULT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATION.CFDOCUMENTIMGList">
+            <summary>
+            Refers to table|alias: &apos;CFDOCUMENTIMG&apos;, PK Columns: SYSCFVERIFICATION
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATION.CFOUTGETREPORTList">
+            <summary>
+            Refers to table|alias: &apos;CFOUTGETREPORT&apos;, PK Columns: SYSCFVERIFICATION
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATION.CFVERIFICATCOMList">
+            <summary>
+            Refers to table|alias: &apos;CFVERIFICATCOM&apos;, PK Columns: SYSCFVERIFICATION
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATION.CFDOCUMENT">
+            <summary>
+            Refers to table|alias: CFDOCUMENT, FK Columns: SYSCFDOCUMENT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATION.CFDOCUMENTReference">
+            <summary>
+            Refers to table|alias: CFDOCUMENT, FK Columns: SYSCFDOCUMENT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATION.CFPERSON">
+            <summary>
+            Refers to table|alias: CFPERSON, FK Columns: SYSCFPERSON
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFVERIFICATION.CFPERSONReference">
+            <summary>
+            Refers to table|alias: CFPERSON, FK Columns: SYSCFPERSON
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFWOWADDRESS">
+            <summary>
+            Table: CFWOWADDRESS
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFWOWADDRESS.CreateCFWOWADDRESS(System.Int64)">
+            <summary>
+            Create a new CFWOWADDRESS object.
+            </summary>
+            <param name="sYSCFWOWADDRESS">Initial value of the SYSCFWOWADDRESS property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFWOWADDRESS.SYSCFWOWADDRESS">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFWOWADDRESS.SYSCFOUTGETREPORT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFWOWADDRESS.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFWOWADDRESS.HASDEBTS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFWOWADDRESS.SYSCFADDRESS">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFWOWADDRESS.CFADDRESS">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFWOWADDRESS.CFADDRESSReference">
+            <summary>
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFWOWADDRESS.CFOUTGETREPORT">
+            <summary>
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFWOWADDRESS.CFOUTGETREPORTReference">
+            <summary>
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF4.Model.CFWOWRELATION">
+            <summary>
+            Table: CFWOWRELATION
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CRIF.EF4.Model.CFWOWRELATION.CreateCFWOWRELATION(System.Int64)">
+            <summary>
+            Create a new CFWOWRELATION object.
+            </summary>
+            <param name="sYSCFWOWRELATION">Initial value of the SYSCFWOWRELATION property.</param>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFWOWRELATION.SYSCFWOWRELATION">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFWOWRELATION.SYSCFOUTGETREPORT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFWOWRELATION.OWNER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFWOWRELATION.OWNEDSUBJECT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFWOWRELATION.ISMAJORITYOWNER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFWOWRELATION.CAPITALSHARE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFWOWRELATION.VOTESHARE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFWOWRELATION.CFOUTGETREPORT">
+            <summary>
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF4.Model.CFWOWRELATION.CFOUTGETREPORTReference">
+            <summary>
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT
+            </summary>
+        </member>
+    </members>
+</doc>

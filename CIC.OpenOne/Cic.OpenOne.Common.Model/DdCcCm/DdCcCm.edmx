@@ -1,0 +1,718 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Runtime>
+      <!-- Storage schema - SSDL -->
+      <edmx:StorageModels>
+        <Schema Namespace="Cic.OpenOne.Common.Model.DdCcCm.Store" Alias="Self" Provider="Devart.Data.Oracle" ProviderManifestToken="ORA" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+          <EntityContainer Name="CIC_CCCM">
+          <EntitySet Name="CMUSERS" EntityType="Cic.OpenOne.Common.Model.DdCcCm.Store.CMUSERS" Schema="CIC" Table="CMUSERS" />
+          <EntitySet Name="CMCATCPKGS" EntityType="Cic.OpenOne.Common.Model.DdCcCm.Store.CMCATCPKGS" Schema="CIC" Table="CMCATCPKGS" />
+          <EntitySet Name="CMCATITEMS" EntityType="Cic.OpenOne.Common.Model.DdCcCm.Store.CMCATITEMS" Schema="CIC" Table="CMCATITEMS" />
+          <EntitySet Name="CMCONFGRPS" EntityType="Cic.OpenOne.Common.Model.DdCcCm.Store.CMCONFGRPS" Schema="CIC" Table="CMCONFGRPS" />
+          <EntitySet Name="CMCIDENTS" EntityType="Cic.OpenOne.Common.Model.DdCcCm.Store.CMCIDENTS" Schema="CIC" Table="CMCIDENTS" />
+          <EntitySet Name="CMCPKGS" EntityType="Cic.OpenOne.Common.Model.DdCcCm.Store.CMCPKGS" Schema="CIC" Table="CMCPKGS" />
+          <EntitySet Name="CMDSRCVERS" EntityType="Cic.OpenOne.Common.Model.DdCcCm.Store.CMDSRCVERS" Schema="CIC" Table="CMDSRCVERS" />
+          <EntitySet Name="CMDATASRCS" EntityType="Cic.OpenOne.Common.Model.DdCcCm.Store.CMDATASRCS" Schema="CIC" Table="CMDATASRCS" />
+          <AssociationSet Name="CMUSERS_CMCONFGRPS" Association="Cic.OpenOne.Common.Model.DdCcCm.Store.CMUSERS_CMCONFGRPS">
+            <End Role="CMUSERS" EntitySet="CMUSERS" />
+            <End Role="CMCONFGRPS" EntitySet="CMCONFGRPS" />
+          </AssociationSet>
+          <AssociationSet Name="CMUSERS_CMCPKGS" Association="Cic.OpenOne.Common.Model.DdCcCm.Store.CMUSERS_CMCPKGS">
+            <End Role="CMUSERS" EntitySet="CMUSERS" />
+            <End Role="CMCPKGS" EntitySet="CMCPKGS" />
+          </AssociationSet>
+          <AssociationSet Name="CMCATITEMS_CMCATCPKGS" Association="Cic.OpenOne.Common.Model.DdCcCm.Store.CMCATITEMS_CMCATCPKGS">
+            <End Role="CMCATITEMS" EntitySet="CMCATITEMS" />
+            <End Role="CMCATCPKGS" EntitySet="CMCATCPKGS" />
+          </AssociationSet>
+          <AssociationSet Name="CMCONFGRPS_CMCPKGS" Association="Cic.OpenOne.Common.Model.DdCcCm.Store.CMCONFGRPS_CMCPKGS">
+            <End Role="CMCONFGRPS" EntitySet="CMCONFGRPS" />
+            <End Role="CMCPKGS" EntitySet="CMCPKGS" />
+          </AssociationSet>
+          <AssociationSet Name="CMCIDENTS_CMCPKGS" Association="Cic.OpenOne.Common.Model.DdCcCm.Store.CMCIDENTS_CMCPKGS">
+            <End Role="CMCIDENTS" EntitySet="CMCIDENTS" />
+            <End Role="CMCPKGS" EntitySet="CMCPKGS" />
+          </AssociationSet>
+          <AssociationSet Name="CMCPKGS_CMCATCPKGS" Association="Cic.OpenOne.Common.Model.DdCcCm.Store.CMCPKGS_CMCATCPKGS">
+            <End Role="CMCPKGS" EntitySet="CMCPKGS" />
+            <End Role="CMCATCPKGS" EntitySet="CMCATCPKGS" />
+          </AssociationSet>
+          <AssociationSet Name="CMDSRCVERS_CMCPKGS" Association="Cic.OpenOne.Common.Model.DdCcCm.Store.CMDSRCVERS_CMCPKGS">
+            <End Role="CMDSRCVERS" EntitySet="CMDSRCVERS" />
+            <End Role="CMCPKGS" EntitySet="CMCPKGS" />
+          </AssociationSet>
+          <AssociationSet Name="CMDATASRCS_CMDSRCVERS" Association="Cic.OpenOne.Common.Model.DdCcCm.Store.CMDATASRCS_CMDSRCVERS">
+            <End Role="CMDATASRCS" EntitySet="CMDATASRCS" />
+            <End Role="CMDSRCVERS" EntitySet="CMDSRCVERS" />
+          </AssociationSet>
+          </EntityContainer>  
+      <EntityType Name="CMUSERS">
+        <Key>
+          <PropertyRef Name="SYSCMUSERS" />
+        </Key>
+        <Property Name="SYSCMUSERS" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="CODE" Type="VARCHAR2" MaxLength="128" Nullable="true" />
+        <Property Name="DESCRIPTION" Type="VARCHAR2" MaxLength="1024" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CMCATCPKGS">
+        <Key>
+          <PropertyRef Name="SYSCMCATCPKGS" />
+        </Key>
+        <Property Name="SYSCMCATCPKGS" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="SYSCMCATITEMS" Type="int64" Nullable="true" />
+        <Property Name="SYSCMCPKGS" Type="int64" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CMCATITEMS">
+        <Key>
+          <PropertyRef Name="SYSCMCATITEMS" />
+        </Key>
+        <Property Name="SYSCMCATITEMS" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="NAME" Type="VARCHAR2" MaxLength="128" Nullable="true" />
+        <Property Name="DESCRIPTION" Type="VARCHAR2" MaxLength="1024" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CMCONFGRPS">
+        <Key>
+          <PropertyRef Name="SYSCMCONFGRPS" />
+        </Key>
+        <Property Name="SYSCMCONFGRPS" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="SYSCMUSERS" Type="int64" Nullable="true" />
+        <Property Name="NAME" Type="VARCHAR2" MaxLength="128" Nullable="true" />
+        <Property Name="DESCRIPTION" Type="VARCHAR2" MaxLength="1024" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CMCIDENTS">
+        <Key>
+          <PropertyRef Name="IDENTIFIER" />
+        </Key>
+        <Property Name="IDENTIFIER" Type="VARCHAR2" MaxLength="40" Nullable="false" StoreGeneratedPattern="None" />
+        <Property Name="USERCODE" Type="VARCHAR2" MaxLength="128" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CMCPKGS">
+        <Key>
+          <PropertyRef Name="SYSCMCPKGS" />
+        </Key>
+        <Property Name="SYSCMCPKGS" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="SYSCMDSRCVERS" Type="int64" Nullable="true" />
+        <Property Name="SYSCMCONFGRPS" Type="int64" Nullable="true" />
+        <Property Name="SYSCMUSERS" Type="int64" Nullable="true" />
+        <Property Name="IDENTIFIER" Type="VARCHAR2" MaxLength="40" Nullable="true" />
+        <Property Name="DESIGNATION" Type="VARCHAR2" MaxLength="128" Nullable="true" />
+        <Property Name="DESCRIPTION" Type="VARCHAR2" MaxLength="1024" Nullable="true" />
+        <Property Name="CRATEDAT" Type="DATE" Nullable="true" />
+        <Property Name="LASTMODIFIEDAT" Type="DATE" Nullable="true" />
+        <Property Name="ISPUBLIC" Type="int" Nullable="true" />
+        <Property Name="ISLOCKED" Type="int" Nullable="true" />
+        <Property Name="XMLTREENODE" Type="CLOB" Nullable="true" />
+        <Property Name="XMLCOMPONENTS" Type="CLOB" Nullable="true" />
+        <Property Name="SELECTEDLANGUAGE" Type="VARCHAR2" MaxLength="128" Nullable="true" />
+        <Property Name="SELECTEDCURRENCY" Type="VARCHAR2" MaxLength="128" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CMDSRCVERS">
+        <Key>
+          <PropertyRef Name="SYSCMDSRCVERS" />
+        </Key>
+        <Property Name="SYSCMDSRCVERS" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="SYSCMDATASRCS" Type="int64" Nullable="true" />
+        <Property Name="VERSION" Type="VARCHAR2" MaxLength="128" Nullable="true" />
+        <Property Name="DESCRIPTION" Type="VARCHAR2" MaxLength="1024" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CMDATASRCS">
+        <Key>
+          <PropertyRef Name="SYSCMDATASRCS" />
+        </Key>
+        <Property Name="SYSCMDATASRCS" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="IDENTIFIER" Type="VARCHAR2" MaxLength="40" Nullable="true" />
+        <Property Name="DESIGNATION" Type="VARCHAR2" MaxLength="128" Nullable="true" />
+        <Property Name="DESCRIPTION" Type="VARCHAR2" MaxLength="1024" Nullable="true" />
+      </EntityType>
+            <Association Name="CMUSERS_CMCONFGRPS">
+              <End Role="CMUSERS" Type="Cic.OpenOne.Common.Model.DdCcCm.Store.CMUSERS" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="CMCONFGRPS" Type="Cic.OpenOne.Common.Model.DdCcCm.Store.CMCONFGRPS" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="CMUSERS">
+                  <PropertyRef Name="SYSCMUSERS" />
+                </Principal>
+                <Dependent Role="CMCONFGRPS">
+                  <PropertyRef Name="SYSCMUSERS" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="CMUSERS_CMCPKGS">
+              <End Role="CMUSERS" Type="Cic.OpenOne.Common.Model.DdCcCm.Store.CMUSERS" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="CMCPKGS" Type="Cic.OpenOne.Common.Model.DdCcCm.Store.CMCPKGS" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="CMUSERS">
+                  <PropertyRef Name="SYSCMUSERS" />
+                </Principal>
+                <Dependent Role="CMCPKGS">
+                  <PropertyRef Name="SYSCMUSERS" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="CMCATITEMS_CMCATCPKGS">
+              <End Role="CMCATITEMS" Type="Cic.OpenOne.Common.Model.DdCcCm.Store.CMCATITEMS" Multiplicity="0..1">
+              </End>
+              <End Role="CMCATCPKGS" Type="Cic.OpenOne.Common.Model.DdCcCm.Store.CMCATCPKGS" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="CMCATITEMS">
+                  <PropertyRef Name="SYSCMCATITEMS" />
+                </Principal>
+                <Dependent Role="CMCATCPKGS">
+                  <PropertyRef Name="SYSCMCATITEMS" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="CMCONFGRPS_CMCPKGS">
+              <End Role="CMCONFGRPS" Type="Cic.OpenOne.Common.Model.DdCcCm.Store.CMCONFGRPS" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="CMCPKGS" Type="Cic.OpenOne.Common.Model.DdCcCm.Store.CMCPKGS" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="CMCONFGRPS">
+                  <PropertyRef Name="SYSCMCONFGRPS" />
+                </Principal>
+                <Dependent Role="CMCPKGS">
+                  <PropertyRef Name="SYSCMCONFGRPS" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="CMCIDENTS_CMCPKGS">
+              <End Role="CMCIDENTS" Type="Cic.OpenOne.Common.Model.DdCcCm.Store.CMCIDENTS" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="CMCPKGS" Type="Cic.OpenOne.Common.Model.DdCcCm.Store.CMCPKGS" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="CMCIDENTS">
+                  <PropertyRef Name="IDENTIFIER" />
+                </Principal>
+                <Dependent Role="CMCPKGS">
+                  <PropertyRef Name="IDENTIFIER" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="CMCPKGS_CMCATCPKGS">
+              <End Role="CMCPKGS" Type="Cic.OpenOne.Common.Model.DdCcCm.Store.CMCPKGS" Multiplicity="0..1">
+              </End>
+              <End Role="CMCATCPKGS" Type="Cic.OpenOne.Common.Model.DdCcCm.Store.CMCATCPKGS" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="CMCPKGS">
+                  <PropertyRef Name="SYSCMCPKGS" />
+                </Principal>
+                <Dependent Role="CMCATCPKGS">
+                  <PropertyRef Name="SYSCMCPKGS" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="CMDSRCVERS_CMCPKGS">
+              <End Role="CMDSRCVERS" Type="Cic.OpenOne.Common.Model.DdCcCm.Store.CMDSRCVERS" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="CMCPKGS" Type="Cic.OpenOne.Common.Model.DdCcCm.Store.CMCPKGS" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="CMDSRCVERS">
+                  <PropertyRef Name="SYSCMDSRCVERS" />
+                </Principal>
+                <Dependent Role="CMCPKGS">
+                  <PropertyRef Name="SYSCMDSRCVERS" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="CMDATASRCS_CMDSRCVERS">
+              <End Role="CMDATASRCS" Type="Cic.OpenOne.Common.Model.DdCcCm.Store.CMDATASRCS" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="CMDSRCVERS" Type="Cic.OpenOne.Common.Model.DdCcCm.Store.CMDSRCVERS" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="CMDATASRCS">
+                  <PropertyRef Name="SYSCMDATASRCS" />
+                </Principal>
+                <Dependent Role="CMDSRCVERS">
+                  <PropertyRef Name="SYSCMDATASRCS" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+        </Schema>  
+      </edmx:StorageModels>
+      <!-- Conceptual schema - CSDL -->
+      <edmx:ConceptualModels>
+        <Schema Namespace="Cic.OpenOne.Common.Model.DdCcCm" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntityContainer Name="CcCmEntities">
+          <EntitySet Name="CMUSERS" EntityType="Cic.OpenOne.Common.Model.DdCcCm.CMUSERS" />
+          <EntitySet Name="CMCATCPKGS" EntityType="Cic.OpenOne.Common.Model.DdCcCm.CMCATCPKGS" />
+          <EntitySet Name="CMCATITEMS" EntityType="Cic.OpenOne.Common.Model.DdCcCm.CMCATITEMS" />
+          <EntitySet Name="CMCONFGRPS" EntityType="Cic.OpenOne.Common.Model.DdCcCm.CMCONFGRPS" />
+          <EntitySet Name="CMCIDENTS" EntityType="Cic.OpenOne.Common.Model.DdCcCm.CMCIDENTS" />
+          <EntitySet Name="CMCPKGS" EntityType="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS" />
+          <EntitySet Name="CMDSRCVERS" EntityType="Cic.OpenOne.Common.Model.DdCcCm.CMDSRCVERS" />
+          <EntitySet Name="CMDATASRCS" EntityType="Cic.OpenOne.Common.Model.DdCcCm.CMDATASRCS" />
+          <AssociationSet Name="CMCONFGRPS_CMUSERS" Association="Cic.OpenOne.Common.Model.DdCcCm.CMCONFGRPS_CMUSERS">
+            <End Role="CMUSERS" EntitySet="CMUSERS" />
+            <End Role="CMCONFGRPS" EntitySet="CMCONFGRPS" />
+          </AssociationSet>
+          <AssociationSet Name="CMCPKGS_CMUSERS" Association="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS_CMUSERS">
+            <End Role="CMUSERS" EntitySet="CMUSERS" />
+            <End Role="CMCPKGS" EntitySet="CMCPKGS" />
+          </AssociationSet>
+          <AssociationSet Name="CMCATCPKGS_CMCATITEMS" Association="Cic.OpenOne.Common.Model.DdCcCm.CMCATCPKGS_CMCATITEMS">
+            <End Role="CMCATITEMS" EntitySet="CMCATITEMS" />
+            <End Role="CMCATCPKGS" EntitySet="CMCATCPKGS" />
+          </AssociationSet>
+          <AssociationSet Name="CMCPKGS_CMCONFGRPS" Association="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS_CMCONFGRPS">
+            <End Role="CMCONFGRPS" EntitySet="CMCONFGRPS" />
+            <End Role="CMCPKGS" EntitySet="CMCPKGS" />
+          </AssociationSet>
+          <AssociationSet Name="CMCPKGS_CMCIDENTS" Association="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS_CMCIDENTS">
+            <End Role="CMCIDENTS" EntitySet="CMCIDENTS" />
+            <End Role="CMCPKGS" EntitySet="CMCPKGS" />
+          </AssociationSet>
+          <AssociationSet Name="CMCATCPKGS_CMCPKGS" Association="Cic.OpenOne.Common.Model.DdCcCm.CMCATCPKGS_CMCPKGS">
+            <End Role="CMCPKGS" EntitySet="CMCPKGS" />
+            <End Role="CMCATCPKGS" EntitySet="CMCATCPKGS" />
+          </AssociationSet>
+          <AssociationSet Name="CMCPKGS_CMDSRCVERS" Association="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS_CMDSRCVERS">
+            <End Role="CMDSRCVERS" EntitySet="CMDSRCVERS" />
+            <End Role="CMCPKGS" EntitySet="CMCPKGS" />
+          </AssociationSet>
+          <AssociationSet Name="CMDSRCVERS_CMDATASRCS" Association="Cic.OpenOne.Common.Model.DdCcCm.CMDSRCVERS_CMDATASRCS">
+            <End Role="CMDATASRCS" EntitySet="CMDATASRCS" />
+            <End Role="CMDSRCVERS" EntitySet="CMDSRCVERS" />
+          </AssociationSet>
+          </EntityContainer>
+      <EntityType Name="CMUSERS">
+        <Documentation><Summary>Users</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCMUSERS" />
+        </Key>
+        <Property Name="SYSCMUSERS" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <Property Name="CODE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <Property Name="DESCRIPTION" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <NavigationProperty Name="CMCONFGRPSList" Relationship="Cic.OpenOne.Common.Model.DdCcCm.CMCONFGRPS_CMUSERS" FromRole="CMUSERS" ToRole="CMCONFGRPS" />
+        <NavigationProperty Name="CMCPKGSList" Relationship="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS_CMUSERS" FromRole="CMUSERS" ToRole="CMCPKGS" />
+      </EntityType>
+      <EntityType Name="CMCATCPKGS">
+        <Documentation><Summary>Catalog Configuration Packages</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCMCATCPKGS" />
+        </Key>
+        <Property Name="SYSCMCATCPKGS" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <NavigationProperty Name="CMCPKGS" Relationship="Cic.OpenOne.Common.Model.DdCcCm.CMCATCPKGS_CMCPKGS" FromRole="CMCATCPKGS" ToRole="CMCPKGS" />
+        <NavigationProperty Name="CMCATITEMS" Relationship="Cic.OpenOne.Common.Model.DdCcCm.CMCATCPKGS_CMCATITEMS" FromRole="CMCATCPKGS" ToRole="CMCATITEMS" />
+      </EntityType>
+      <EntityType Name="CMCATITEMS">
+        <Documentation><Summary>Catalog Items</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCMCATITEMS" />
+        </Key>
+        <Property Name="SYSCMCATITEMS" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <Property Name="NAME" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <Property Name="DESCRIPTION" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <NavigationProperty Name="CMCATCPKGSList" Relationship="Cic.OpenOne.Common.Model.DdCcCm.CMCATCPKGS_CMCATITEMS" FromRole="CMCATITEMS" ToRole="CMCATCPKGS" />
+      </EntityType>
+      <EntityType Name="CMCONFGRPS">
+        <Documentation><Summary>Configuration Groups</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCMCONFGRPS" />
+        </Key>
+        <Property Name="SYSCMCONFGRPS" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <Property Name="NAME" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <Property Name="DESCRIPTION" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <NavigationProperty Name="CMCPKGSList" Relationship="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS_CMCONFGRPS" FromRole="CMCONFGRPS" ToRole="CMCPKGS" />
+        <NavigationProperty Name="CMUSERS" Relationship="Cic.OpenOne.Common.Model.DdCcCm.CMCONFGRPS_CMUSERS" FromRole="CMCONFGRPS" ToRole="CMUSERS" />
+      </EntityType>
+      <EntityType Name="CMCIDENTS">
+        <Documentation><Summary>Configuration Identifiers</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="IDENTIFIER" />
+        </Key>
+        <Property Name="IDENTIFIER" Type="String" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <Property Name="USERCODE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <NavigationProperty Name="CMCPKGSList" Relationship="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS_CMCIDENTS" FromRole="CMCIDENTS" ToRole="CMCPKGS" />
+      </EntityType>
+      <EntityType Name="CMCPKGS">
+        <Documentation><Summary>Configuration Packages</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCMCPKGS" />
+        </Key>
+        <Property Name="SYSCMCPKGS" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <Property Name="DESIGNATION" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <Property Name="DESCRIPTION" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <Property Name="CRATEDAT" Type="DateTime" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <Property Name="LASTMODIFIEDAT" Type="DateTime" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <Property Name="ISPUBLIC" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <Property Name="ISLOCKED" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <Property Name="XMLTREENODE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <Property Name="XMLCOMPONENTS" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <Property Name="SELECTEDLANGUAGE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <Property Name="SELECTEDCURRENCY" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <NavigationProperty Name="CMCIDENTS" Relationship="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS_CMCIDENTS" FromRole="CMCPKGS" ToRole="CMCIDENTS" />
+        <NavigationProperty Name="CMCATCPKGSList" Relationship="Cic.OpenOne.Common.Model.DdCcCm.CMCATCPKGS_CMCPKGS" FromRole="CMCPKGS" ToRole="CMCATCPKGS" />
+        <NavigationProperty Name="CMCONFGRPS" Relationship="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS_CMCONFGRPS" FromRole="CMCPKGS" ToRole="CMCONFGRPS" />
+        <NavigationProperty Name="CMDSRCVERS" Relationship="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS_CMDSRCVERS" FromRole="CMCPKGS" ToRole="CMDSRCVERS" />
+        <NavigationProperty Name="CMUSERS" Relationship="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS_CMUSERS" FromRole="CMCPKGS" ToRole="CMUSERS" />
+      </EntityType>
+      <EntityType Name="CMDSRCVERS">
+        <Documentation><Summary>Data Source Versions</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCMDSRCVERS" />
+        </Key>
+        <Property Name="SYSCMDSRCVERS" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <Property Name="VERSION" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <Property Name="DESCRIPTION" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <NavigationProperty Name="CMDATASRCS" Relationship="Cic.OpenOne.Common.Model.DdCcCm.CMDSRCVERS_CMDATASRCS" FromRole="CMDSRCVERS" ToRole="CMDATASRCS" />
+        <NavigationProperty Name="CMCPKGSList" Relationship="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS_CMDSRCVERS" FromRole="CMDSRCVERS" ToRole="CMCPKGS" />
+      </EntityType>
+      <EntityType Name="CMDATASRCS">
+        <Documentation><Summary>Data Sources</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCMDATASRCS" />
+        </Key>
+        <Property Name="SYSCMDATASRCS" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <Property Name="IDENTIFIER" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <Property Name="DESIGNATION" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <Property Name="DESCRIPTION" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary /></Documentation>
+        </Property>
+        <NavigationProperty Name="CMDSRCVERSList" Relationship="Cic.OpenOne.Common.Model.DdCcCm.CMDSRCVERS_CMDATASRCS" FromRole="CMDATASRCS" ToRole="CMDSRCVERS" />
+      </EntityType>
+            <Association Name="CMCONFGRPS_CMUSERS">
+              <End Role="CMUSERS" Type="Cic.OpenOne.Common.Model.DdCcCm.CMUSERS" Multiplicity="0..1">
+              </End>  
+              <End Role="CMCONFGRPS" Type="Cic.OpenOne.Common.Model.DdCcCm.CMCONFGRPS" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="CMCPKGS_CMUSERS">
+              <End Role="CMUSERS" Type="Cic.OpenOne.Common.Model.DdCcCm.CMUSERS" Multiplicity="0..1">
+              </End>  
+              <End Role="CMCPKGS" Type="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="CMCATCPKGS_CMCATITEMS">
+              <End Role="CMCATITEMS" Type="Cic.OpenOne.Common.Model.DdCcCm.CMCATITEMS" Multiplicity="0..1">
+              </End>  
+              <End Role="CMCATCPKGS" Type="Cic.OpenOne.Common.Model.DdCcCm.CMCATCPKGS" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="CMCPKGS_CMCONFGRPS">
+              <End Role="CMCONFGRPS" Type="Cic.OpenOne.Common.Model.DdCcCm.CMCONFGRPS" Multiplicity="0..1">
+              </End>  
+              <End Role="CMCPKGS" Type="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="CMCPKGS_CMCIDENTS">
+              <End Role="CMCIDENTS" Type="Cic.OpenOne.Common.Model.DdCcCm.CMCIDENTS" Multiplicity="0..1">
+              </End>  
+              <End Role="CMCPKGS" Type="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="CMCATCPKGS_CMCPKGS">
+              <End Role="CMCPKGS" Type="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS" Multiplicity="0..1">
+              </End>  
+              <End Role="CMCATCPKGS" Type="Cic.OpenOne.Common.Model.DdCcCm.CMCATCPKGS" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="CMCPKGS_CMDSRCVERS">
+              <End Role="CMDSRCVERS" Type="Cic.OpenOne.Common.Model.DdCcCm.CMDSRCVERS" Multiplicity="0..1">
+              </End>  
+              <End Role="CMCPKGS" Type="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="CMDSRCVERS_CMDATASRCS">
+              <End Role="CMDATASRCS" Type="Cic.OpenOne.Common.Model.DdCcCm.CMDATASRCS" Multiplicity="0..1">
+              </End>  
+              <End Role="CMDSRCVERS" Type="Cic.OpenOne.Common.Model.DdCcCm.CMDSRCVERS" Multiplicity="*">
+              </End>
+            </Association>
+        </Schema>
+      </edmx:ConceptualModels>
+      <!-- C-S mapping content -->
+      <edmx:Mappings>
+        <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">    
+          <EntityContainerMapping StorageEntityContainer="CIC_CCCM" CdmEntityContainer="CcCmEntities">
+          <EntitySetMapping Name="CMUSERS">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenOne.Common.Model.DdCcCm.CMUSERS)">
+              <MappingFragment StoreEntitySet="CMUSERS">
+                 <ScalarProperty Name="SYSCMUSERS" ColumnName="SYSCMUSERS" />
+                 <ScalarProperty Name="CODE" ColumnName="CODE" />
+                 <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMCATCPKGS">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenOne.Common.Model.DdCcCm.CMCATCPKGS)">
+              <MappingFragment StoreEntitySet="CMCATCPKGS">
+                 <ScalarProperty Name="SYSCMCATCPKGS" ColumnName="SYSCMCATCPKGS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMCATITEMS">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenOne.Common.Model.DdCcCm.CMCATITEMS)">
+              <MappingFragment StoreEntitySet="CMCATITEMS">
+                 <ScalarProperty Name="SYSCMCATITEMS" ColumnName="SYSCMCATITEMS" />
+                 <ScalarProperty Name="NAME" ColumnName="NAME" />
+                 <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMCONFGRPS">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenOne.Common.Model.DdCcCm.CMCONFGRPS)">
+              <MappingFragment StoreEntitySet="CMCONFGRPS">
+                 <ScalarProperty Name="SYSCMCONFGRPS" ColumnName="SYSCMCONFGRPS" />
+                 <ScalarProperty Name="NAME" ColumnName="NAME" />
+                 <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMCIDENTS">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenOne.Common.Model.DdCcCm.CMCIDENTS)">
+              <MappingFragment StoreEntitySet="CMCIDENTS">
+                 <ScalarProperty Name="IDENTIFIER" ColumnName="IDENTIFIER" />
+                 <ScalarProperty Name="USERCODE" ColumnName="USERCODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMCPKGS">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS)">
+              <MappingFragment StoreEntitySet="CMCPKGS">
+                 <ScalarProperty Name="SYSCMCPKGS" ColumnName="SYSCMCPKGS" />
+                 <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+                 <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                 <ScalarProperty Name="CRATEDAT" ColumnName="CRATEDAT" />
+                 <ScalarProperty Name="LASTMODIFIEDAT" ColumnName="LASTMODIFIEDAT" />
+                 <ScalarProperty Name="ISPUBLIC" ColumnName="ISPUBLIC" />
+                 <ScalarProperty Name="ISLOCKED" ColumnName="ISLOCKED" />
+                 <ScalarProperty Name="XMLTREENODE" ColumnName="XMLTREENODE" />
+                 <ScalarProperty Name="XMLCOMPONENTS" ColumnName="XMLCOMPONENTS" />
+                 <ScalarProperty Name="SELECTEDLANGUAGE" ColumnName="SELECTEDLANGUAGE" />
+                 <ScalarProperty Name="SELECTEDCURRENCY" ColumnName="SELECTEDCURRENCY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMDSRCVERS">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenOne.Common.Model.DdCcCm.CMDSRCVERS)">
+              <MappingFragment StoreEntitySet="CMDSRCVERS">
+                 <ScalarProperty Name="SYSCMDSRCVERS" ColumnName="SYSCMDSRCVERS" />
+                 <ScalarProperty Name="VERSION" ColumnName="VERSION" />
+                 <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMDATASRCS">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenOne.Common.Model.DdCcCm.CMDATASRCS)">
+              <MappingFragment StoreEntitySet="CMDATASRCS">
+                 <ScalarProperty Name="SYSCMDATASRCS" ColumnName="SYSCMDATASRCS" />
+                 <ScalarProperty Name="IDENTIFIER" ColumnName="IDENTIFIER" />
+                 <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+                 <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+            <AssociationSetMapping Name="CMCONFGRPS_CMUSERS" TypeName="Cic.OpenOne.Common.Model.DdCcCm.CMCONFGRPS_CMUSERS" StoreEntitySet="CMCONFGRPS">
+              <EndProperty Name="CMUSERS">
+                  <ScalarProperty Name="SYSCMUSERS" ColumnName="SYSCMUSERS" />
+                </EndProperty>
+                <EndProperty Name="CMCONFGRPS">
+                <ScalarProperty Name="SYSCMCONFGRPS" ColumnName="SYSCMCONFGRPS" />
+                </EndProperty>
+                <Condition ColumnName="SYSCMUSERS" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="CMCPKGS_CMUSERS" TypeName="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS_CMUSERS" StoreEntitySet="CMCPKGS">
+              <EndProperty Name="CMUSERS">
+                  <ScalarProperty Name="SYSCMUSERS" ColumnName="SYSCMUSERS" />
+                </EndProperty>
+                <EndProperty Name="CMCPKGS">
+                <ScalarProperty Name="SYSCMCPKGS" ColumnName="SYSCMCPKGS" />
+                </EndProperty>
+                <Condition ColumnName="SYSCMUSERS" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="CMCATCPKGS_CMCATITEMS" TypeName="Cic.OpenOne.Common.Model.DdCcCm.CMCATCPKGS_CMCATITEMS" StoreEntitySet="CMCATCPKGS">
+              <EndProperty Name="CMCATITEMS">
+                  <ScalarProperty Name="SYSCMCATITEMS" ColumnName="SYSCMCATITEMS" />
+                </EndProperty>
+                <EndProperty Name="CMCATCPKGS">
+                <ScalarProperty Name="SYSCMCATCPKGS" ColumnName="SYSCMCATCPKGS" />
+                </EndProperty>
+                <Condition ColumnName="SYSCMCATITEMS" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="CMCPKGS_CMCONFGRPS" TypeName="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS_CMCONFGRPS" StoreEntitySet="CMCPKGS">
+              <EndProperty Name="CMCONFGRPS">
+                  <ScalarProperty Name="SYSCMCONFGRPS" ColumnName="SYSCMCONFGRPS" />
+                </EndProperty>
+                <EndProperty Name="CMCPKGS">
+                <ScalarProperty Name="SYSCMCPKGS" ColumnName="SYSCMCPKGS" />
+                </EndProperty>
+                <Condition ColumnName="SYSCMCONFGRPS" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="CMCPKGS_CMCIDENTS" TypeName="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS_CMCIDENTS" StoreEntitySet="CMCPKGS">
+              <EndProperty Name="CMCIDENTS">
+                  <ScalarProperty Name="IDENTIFIER" ColumnName="IDENTIFIER" />
+                </EndProperty>
+                <EndProperty Name="CMCPKGS">
+                <ScalarProperty Name="SYSCMCPKGS" ColumnName="SYSCMCPKGS" />
+                </EndProperty>
+                <Condition ColumnName="IDENTIFIER" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="CMCATCPKGS_CMCPKGS" TypeName="Cic.OpenOne.Common.Model.DdCcCm.CMCATCPKGS_CMCPKGS" StoreEntitySet="CMCATCPKGS">
+              <EndProperty Name="CMCPKGS">
+                  <ScalarProperty Name="SYSCMCPKGS" ColumnName="SYSCMCPKGS" />
+                </EndProperty>
+                <EndProperty Name="CMCATCPKGS">
+                <ScalarProperty Name="SYSCMCATCPKGS" ColumnName="SYSCMCATCPKGS" />
+                </EndProperty>
+                <Condition ColumnName="SYSCMCPKGS" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="CMCPKGS_CMDSRCVERS" TypeName="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS_CMDSRCVERS" StoreEntitySet="CMCPKGS">
+              <EndProperty Name="CMDSRCVERS">
+                  <ScalarProperty Name="SYSCMDSRCVERS" ColumnName="SYSCMDSRCVERS" />
+                </EndProperty>
+                <EndProperty Name="CMCPKGS">
+                <ScalarProperty Name="SYSCMCPKGS" ColumnName="SYSCMCPKGS" />
+                </EndProperty>
+                <Condition ColumnName="SYSCMDSRCVERS" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="CMDSRCVERS_CMDATASRCS" TypeName="Cic.OpenOne.Common.Model.DdCcCm.CMDSRCVERS_CMDATASRCS" StoreEntitySet="CMDSRCVERS">
+              <EndProperty Name="CMDATASRCS">
+                  <ScalarProperty Name="SYSCMDATASRCS" ColumnName="SYSCMDATASRCS" />
+                </EndProperty>
+                <EndProperty Name="CMDSRCVERS">
+                <ScalarProperty Name="SYSCMDSRCVERS" ColumnName="SYSCMDSRCVERS" />
+                </EndProperty>
+                <Condition ColumnName="SYSCMDATASRCS" IsNull="false" />
+              </AssociationSetMapping>
+          </EntityContainerMapping>
+        </Mapping>
+      </edmx:Mappings>
+    </edmx:Runtime>
+  <edmx:Designer>
+    <edmx:Connection>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+    </edmx:Options>
+    <edmx:Diagrams>
+      <edmx:Diagram Name="DdCcCm">
+        <edmx:EntityTypeShape EntityType="Cic.OpenOne.Common.Model.DdCcCm.CMUSERS" Width="1.5" PointX="0.75" PointY="3.625" Height="1.9802864583333335" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="Cic.OpenOne.Common.Model.DdCcCm.CMCATCPKGS" Width="1.5" PointX="7.5" PointY="3.75" Height="1.5956835937499996" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="Cic.OpenOne.Common.Model.DdCcCm.CMCATITEMS" Width="1.5" PointX="5.25" PointY="8.625" Height="1.7879850260416674" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="Cic.OpenOne.Common.Model.DdCcCm.CMCONFGRPS" Width="1.5" PointX="3" PointY="3.625" Height="1.9802864583333335" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="Cic.OpenOne.Common.Model.DdCcCm.CMCIDENTS" Width="1.5" PointX="3" PointY="6.375" Height="1.5956835937499996" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS" Width="1.5" PointX="5.25" PointY="2.5" Height="4.0956022135416656" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="Cic.OpenOne.Common.Model.DdCcCm.CMDSRCVERS" Width="1.5" PointX="2.875" PointY="0.5" Height="1.9802864583333317" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="Cic.OpenOne.Common.Model.DdCcCm.CMDATASRCS" Width="1.5" PointX="0.75" PointY="6.5" Height="1.9802864583333317" IsExpanded="true" />
+        <edmx:AssociationConnector Association="Cic.OpenOne.Common.Model.DdCcCm.CMCONFGRPS_CMUSERS" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="2.25" PointY="4.6151432291666667" />
+          <edmx:ConnectorPoint PointX="3" PointY="4.6151432291666667" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS_CMUSERS" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="1.5" PointY="3.625" />
+          <edmx:ConnectorPoint PointX="1.5" PointY="3.1463927291666658" />
+          <edmx:ConnectorPoint PointX="4.510416666666667" PointY="3.1463927291666653" />
+          <edmx:ConnectorPoint PointX="4.677083333333333" PointY="3.1463927291666658" />
+          <edmx:ConnectorPoint PointX="5.25" PointY="3.1463927291666658" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="Cic.OpenOne.Common.Model.DdCcCm.CMCATCPKGS_CMCATITEMS" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="6.75" PointY="9.5189925130208337" />
+          <edmx:ConnectorPoint PointX="8.25" PointY="9.5189925130208337" />
+          <edmx:ConnectorPoint PointX="8.25" PointY="5.34568359375" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS_CMCONFGRPS" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="4.5" PointY="4.6151432291666667" />
+          <edmx:ConnectorPoint PointX="4.510416666666667" PointY="4.6151432291666659" />
+          <edmx:ConnectorPoint PointX="4.677083333333333" PointY="4.6151432291666667" />
+          <edmx:ConnectorPoint PointX="5.25" PointY="4.6151432291666667" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS_CMCIDENTS" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="4.5" PointY="7.2831434036458322" />
+          <edmx:ConnectorPoint PointX="4.510416666666667" PointY="7.2831434036458313" />
+          <edmx:ConnectorPoint PointX="4.677083333333333" PointY="7.2831434036458322" />
+          <edmx:ConnectorPoint PointX="6" PointY="7.2831434036458322" />
+          <edmx:ConnectorPoint PointX="6" PointY="6.5956022135416656" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="Cic.OpenOne.Common.Model.DdCcCm.CMCATCPKGS_CMCPKGS" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="6.75" PointY="4.547841796875" />
+          <edmx:ConnectorPoint PointX="7.5" PointY="4.547841796875" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="Cic.OpenOne.Common.Model.DdCcCm.CMCPKGS_CMDSRCVERS" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="4.625" PointY="1.5624995" />
+          <edmx:ConnectorPoint PointX="6" PointY="1.5624995" />
+          <edmx:ConnectorPoint PointX="6" PointY="2.5" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="Cic.OpenOne.Common.Model.DdCcCm.CMDSRCVERS_CMDATASRCS" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="2.25" PointY="8.2567350260416656" />
+          <edmx:ConnectorPoint PointX="4.59375" PointY="8.2567350260416656" />
+          <edmx:ConnectorPoint PointX="4.59375" PointY="2.6052864583333317" />
+        </edmx:AssociationConnector>
+      </edmx:Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+  </edmx:Edmx>

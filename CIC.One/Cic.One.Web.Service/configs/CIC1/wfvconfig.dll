@@ -1,0 +1,3381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WfvConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries>
+
+  <WfvEntry>
+      <syscode>wfvit_detail_dashboard</syscode>
+
+      <entrytype>2</entrytype>
+      <references>
+        <WfvRef>
+          <syscode>wfvit_detail</syscode>
+          <column>0</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <collapsed>0</collapsed>
+          <mainref>1</mainref>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvitadresse_liste</syscode>
+          <column>1</column>
+          <row>0</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvitkonto_liste</syscode>
+          <column>1</column>
+          <row>0</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>wfvmemo_liste</syscode>
+          <column>1</column>
+          <row>0</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvnotiz_liste</syscode>
+          <column>1</column>
+          <row>0</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvmailmsg_liste</syscode>
+          <column>1</column>
+          <row>0</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvindikator_liste</syscode>
+          <column>1</column>
+          <row>0</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>wfvb2b_angebot_liste</syscode>
+          <column>1</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>wfvpartner_liste</syscode>
+          <column>1</column>
+          <row>0</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+
+      </references>
+    </WfvEntry>
+	
+     <WfvEntry>
+      <syscode>wfv_angebot_wizard</syscode>
+      
+	  <entrytype>3</entrytype>
+	  <befehlszeile>b2bangebotwizard</befehlszeile>
+      <wizardtype>1</wizardtype>
+	  
+      <customentry>
+        <title>Angebot</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+      <references>
+       
+        <WfvRef>
+          <syscode>wfvit_detail</syscode>
+          <column>0</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <collapsed>0</collapsed>
+		   <mainref>1</mainref>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvangob_detail</syscode>
+          <column>0</column>
+          <row>1</row>
+          <visibility>1</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>      
+        <WfvRef>
+          <syscode>wfvangkalk_detail</syscode>
+          <column>1</column>
+          <row>2</row>
+          <visibility>1</visibility>
+          <collapsed>0</collapsed>
+          <mainref>0</mainref>
+        </WfvRef>   
+		 <WfvRef>
+          <syscode>wfvangebotneu_detail</syscode>
+          <column>0</column>
+          <row>3</row>
+          <visibility>1</visibility>
+         
+        </WfvRef>
+      </references>
+    </WfvEntry>
+    
+    <WfvEntry>
+      <syscode>wfvangebotsummary_dashboard</syscode>
+
+      <entrytype>2</entrytype>
+      <customentry>
+        <title>Angebot</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+      <references>
+      
+	  <WfvRef>
+          <syscode>wfvangebot2_detail</syscode>
+          <column>0</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <collapsed>0</collapsed>
+		   <mainref>1</mainref>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvit_detail</syscode>
+          <column>1</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvangob_detail</syscode>
+          <column>1</column>
+          <row>1</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvangkalk_liste</syscode>
+          <column>1</column>
+          <row>2</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+
+      </references>
+    </WfvEntry>
+    
+    <WfvEntry>
+      <syscode>wfvangebotneu_dashboard</syscode>
+
+      <entrytype>2</entrytype>
+      <customentry>
+        <title>Angebot</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+      <references>
+        <WfvRef>
+          <syscode>wfvangebotneu_detail</syscode>
+          <column>0</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <mainref>1</mainref>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvit_detail</syscode>
+          <column>1</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvangob_detail</syscode>
+          <column>0</column>
+          <row>1</row>
+          <visibility>1</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+      </references>
+    </WfvEntry>
+    
+    <WfvEntry>
+      <syscode>wfvangkalk_detail_dashboard</syscode>
+
+      <entrytype>2</entrytype>
+      <references>
+        <WfvRef>
+          <syscode>wfvangkalk_detail</syscode>
+          <column>0</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <collapsed>0</collapsed>
+          <mainref>0</mainref>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvangebotneu_detail</syscode>
+          <column>0</column>
+          <row>1</row>
+          <visibility>0</visibility>
+          <mainref>1</mainref>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>wfvangob_detail</syscode>
+          <column>0</column>
+          <row>1</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+      </references>
+    </WfvEntry>
+    
+	<WfvEntry>
+      <syscode>cockpitb2b</syscode>
+
+      <entrytype>2</entrytype>
+      <customentry>
+        <title>Cockpit</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+
+      <references>
+        <WfvRef>
+          <syscode>wfvptask_liste</syscode>
+          <column>0</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <collapsed>0</collapsed>
+          <mainref>1</mainref>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>wfvapptmt_liste</syscode>
+          <column>1</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <collapsed>0</collapsed>
+          <mainref>0</mainref>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>wfvb2b_angebot_liste</syscode>
+          <column>1</column>
+          <row>1</row>
+          <visibility>1</visibility>
+          <collapsed>0</collapsed>
+          <mainref>0</mainref>
+        </WfvRef>
+
+      </references>
+    </WfvEntry>
+	
+    <WfvEntry>
+      <syscode>cockpit</syscode>
+
+      <entrytype>2</entrytype>
+      <customentry>
+        <title>Cockpit</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+
+      <references>
+        <WfvRef>
+          <syscode>wfvptask_liste</syscode>
+          <column>0</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <collapsed>0</collapsed>
+          <mainref>1</mainref>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>wfvapptmt_liste</syscode>
+          <column>1</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <collapsed>0</collapsed>
+          <mainref>0</mainref>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>wfvopportunity_liste</syscode>
+          <column>1</column>
+          <row>1</row>
+          <visibility>1</visibility>
+          <collapsed>0</collapsed>
+          <mainref>0</mainref>
+        </WfvRef>
+
+      </references>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvcontact_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>contact_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvcontact_dashboard</detailsyscode>
+        <createsyscode>wfvcontact_dashboard</createsyscode>
+        <title>Touchpoints</title>
+        <icon>disk</icon>
+        <filter />
+        <sortfields>CONTACT.SYSCONTACT</sortfields>
+        <sortorder>DESC</sortorder>
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvcontact_dashboard</syscode>
+
+      <entrytype>2</entrytype>
+      <customentry>
+        <title>Touchpoint</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+      <references>
+        <WfvRef>
+          <syscode>wfvcontact_detail</syscode>
+          <column>0</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <mainref>1</mainref>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvaccount_change</syscode>
+          <column>1</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvopportunity_detail</syscode>
+          <column>1</column>
+          <row>1</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+
+
+        <WfvRef>
+          <syscode>wfvptask_liste</syscode>
+          <column>1</column>
+          <row>2</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvmailmsg_liste</syscode>
+          <column>1</column>
+          <row>2</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>wfvbesuchsbericht_detail</syscode>
+          <column>1</column>
+          <row>2</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>wfvpartner_detail</syscode>
+          <column>1</column>
+          <row>2</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvcamp_detail</syscode>
+          <column>1</column>
+          <row>2</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>wfvapptmt_listenotfiltered</syscode>
+          <column>1</column>
+          <row>2</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+
+      </references>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvapptmt_listenotfiltered</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>apptmt_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvapptmt_change_dashboard</detailsyscode>
+        <createsyscode>wfvapptmt_change_dashboard</createsyscode>
+        <title>Termine</title>
+        <icon>disk</icon>
+        <filters>
+          <Filter>
+            <fieldname>APPTMT.STARTDATE</fieldname>
+            <filterType>DateGE</filterType>
+            <description>Von</description>
+            <valueType>DATE</valueType>
+            <fieldType>CALENDAR</fieldType>
+            <value>Date.parse("1")</value>
+          </Filter>
+          <Filter>
+            <fieldname>APPTMT.ENDDATE</fieldname>
+            <filterType>DateLE</filterType>
+            <description>Bis</description>
+            <valueType>DATE</valueType>
+            <fieldType>CALENDAR</fieldType>
+            <value>Date.parse("1").add(6).months()</value>
+          </Filter>
+
+          <Filter>
+            <fieldname>PEUNI.SYSPEROLE</fieldname>
+            <filterType>Equal</filterType>
+            <groupName>b</groupName>
+            <orFilter>false</orFilter>
+            <andFilter>false</andFilter>
+            <description>Besitzer</description>
+            <xprocode>PUSER</xprocode>
+            <valueType>LONG</valueType>
+            <fieldType>MULTISELECT</fieldType>
+          </Filter>
+        </filters>
+        <sortfields>MDBS_TOORATIME( APPTMT.STARTTIME,APPTMT.STARTDATE)</sortfields>
+        <sortorder>ASC</sortorder>
+
+      </customentry>
+    </WfvEntry>
+    
+
+    <WfvEntry>
+      <syscode>wfvmailmsg_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>mailmsg_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvmailmsg_change_dashboard</detailsyscode>
+        <createsyscode>wfvmailmsg_change_dashboard</createsyscode>
+        <title>E-Mails</title>
+        <icon>disk</icon>
+        <filter />
+        <sortfields>MAILMSG.SYSMAILMSG</sortfields>
+        <sortorder>DESC</sortorder>
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvmailmsg_change_dashboard</syscode>
+
+      <entrytype>2</entrytype>
+      <customentry>
+        <title>E-Mail</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+      <references>
+        <WfvRef>
+          <syscode>wfvmailmsg_detail</syscode>
+          <column>0</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <mainref>1</mainref>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvaccount_change</syscode>
+          <column>1</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvpartner_detail</syscode>
+          <column>1</column>
+          <row>1</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvfileatt_liste</syscode>
+          <column>0</column>
+          <row>2</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>wfvfileatt_detail</syscode>
+          <column>1</column>
+          <row>3</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+          <popup>1</popup>
+        </WfvRef>
+
+        
+
+
+        <WfvRef>
+          <syscode>wfvitemcatm_liste</syscode>
+          <column>1</column>
+          <row>2</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvreminder_liste</syscode>
+          <column>1</column>
+          <row>2</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvopportunity_detail</syscode>
+          <column>1</column>
+          <row>2</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+
+
+
+        <WfvRef>
+          <syscode>wfvitemcatm_detail</syscode>
+          <column>1</column>
+          <row>2</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+          <popup>1</popup>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>wfvreminder_detail</syscode>
+          <column>1</column>
+          <row>2</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+          <popup>1</popup>
+        </WfvRef>
+      </references>
+    </WfvEntry>
+
+
+    <WfvEntry>
+      <syscode>wfvactivity_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>activity_liste</befehlszeile>
+      <customentry>
+        <title>Vorgänge</title>
+        <icon>disk</icon>
+        <sortfields>ACTIVITY.DATUM</sortfields>
+        <sortorder>desc</sortorder>
+        <internalfilter>1=1</internalfilter>
+        <filters>
+          <Filter>
+            <fieldname></fieldname>
+            <filterType>SQL</filterType>
+            <groupName>otph</groupName>
+            <orFilter>true</orFilter>
+            <andFilter>false</andFilter>
+            <description>Bereich</description>
+            <valueType>STRING</valueType>
+            <fieldType>MULTISELECT</fieldType>
+            <optionvalues>Kontakt:activity.area='CONTACT';Angebot:activity.area='ANGEBOT';Vertrag:activity.area='VT';Antrag:activity.area='ANTRAG';E-Mail:area='MAILMSG';Verkaufschance:area='OPPO';Aufgabe:area='PTASK';Termin:area='APPTMT'</optionvalues>
+          </Filter>
+        </filters>
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvopportunity_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>opportunity_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvoppo_change_dashboard</detailsyscode>
+        <createsyscode>wfvoppo_change_dashboard</createsyscode>
+        <title>Verkaufschancen</title>
+        <icon>disk</icon>
+        <filters>
+          <Filter>
+            <fieldname>OPPO.STATUS</fieldname>
+            <filterType>Equal</filterType>
+            <groupName>kundeand</groupName>
+            <orFilter>true</orFilter>
+            <andFilter>false</andFilter>
+            <description>Status</description>
+            <xprocode>oppo_status</xprocode>
+            <valueType>STRING</valueType>
+            <fieldType>MULTISELECT</fieldType>
+          </Filter>
+        </filters>
+        <internalfilter>1=1</internalfilter>
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvoppo_change_dashboard</syscode>
+
+      <entrytype>2</entrytype>
+      <customentry>
+        <title>Opportunity</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+      <references>
+        <WfvRef>
+          <syscode>wfvopportunity_detail</syscode>
+          <column>0</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <mainref>1</mainref>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvaccount_change</syscode>
+          <column>1</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+
+
+        <WfvRef>
+          <syscode>wfvptask_liste</syscode>
+          <column>1</column>
+          <row>1</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>contact_liste</syscode>
+          <column>1</column>
+          <row>2</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>wfvmailmsg_liste</syscode>
+          <column>1</column>
+          <row>3</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>wfvapptmt_listenotfiltered</syscode>
+          <column>1</column>
+          <row>4</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>wfvcamp_detail</syscode>
+          <column>1</column>
+          <row>5</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+
+
+        <WfvRef>
+          <syscode>wfvpartner_detail</syscode>
+          <column>1</column>
+          <row>5</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>wfvbeteiligter_liste</syscode>
+          <column>1</column>
+          <row>5</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+      </references>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvapptmt_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>apptmt_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvapptmt_change_dashboard</detailsyscode>
+        <createsyscode>wfvapptmt_change_dashboard</createsyscode>
+        <title>Termine</title>
+        <icon>disk</icon>
+
+        <filters>
+          <Filter>
+            <fieldname>APPTMT.STARTDATE</fieldname>
+            <filterType>BETWEEN</filterType>
+            <groupName>G</groupName>
+            <orFilter>false</orFilter>
+            <andFilter>false</andFilter>
+            <description>Beginn</description>
+            <valueType>DATE</valueType>
+            <fieldType>BETWEEN</fieldType>
+            <values>
+              <!-- see documentation at https://code.google.com/p/datejs/ //-->
+              <string>Date.parse("1")</string>
+              <string>Date.parse("1").add(6).months()</string>
+            </values>
+          </Filter>
+          <Filter>
+            <fieldname>APPTMT.ENDDATE</fieldname>
+            <filterType>BETWEEN</filterType>
+            <groupName>G</groupName>
+            <orFilter>false</orFilter>
+            <andFilter>false</andFilter>
+            <description>Ende</description>
+            <valueType>DATE</valueType>
+            <fieldType>BETWEEN</fieldType>
+            <values>
+              <!-- see documentation at https://code.google.com/p/datejs/ //-->
+              <string>Date.parse("1")</string>
+              <string>Date.parse("1").add(6).months()</string>
+            </values>
+          </Filter>
+
+
+          <Filter>
+            <fieldname>PEUNI.SYSPEROLE</fieldname>
+            <filterType>Equal</filterType>
+            <groupName>b</groupName>
+            <orFilter>false</orFilter>
+            <andFilter>false</andFilter>
+            <description>Besitzer</description>
+            <xprocode>PUSER</xprocode>
+            <valueType>LONG</valueType>
+            <fieldType>MULTISELECT</fieldType>
+          </Filter>
+        </filters>
+        <sortfields>MDBS_TOORATIME( APPTMT.STARTTIME,APPTMT.STARTDATE)</sortfields>
+        <sortorder>ASC</sortorder>
+
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvptask_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>ptask_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvptask_change_dashboard</detailsyscode>
+        <createsyscode>wfvptask_change_dashboard</createsyscode>
+        <title>Aufgaben</title>
+        <icon>disk</icon>
+        <filter>AKTIV</filter>
+        <filters>
+          <Filter>
+            <fieldname>PEUNI.SYSPEROLE</fieldname>
+            <filterType>Equal</filterType>
+            <groupName>b</groupName>
+            <orFilter>false</orFilter>
+            <andFilter>false</andFilter>
+            <description>Besitzer</description>
+            <xprocode>PUSER</xprocode>
+            <valueType>LONG</valueType>
+            <fieldType>MULTISELECT</fieldType>
+          </Filter>
+
+          <Filter>
+            <fieldname></fieldname>
+            <filterType>SQL</filterType>
+            <groupName>kundeand</groupName>
+            <!--groupName benötigt für and/or-Filter//-->
+            <description>Zustand</description>
+            <andFilter>true</andFilter>
+            <valueType>STRING</valueType>
+            <fieldType>MULTISELECT</fieldType>
+            <optionvalues>
+              Erledigt:(PTASK.COMPLETEFLAG=1);Aktiv:(PTASK.COMPLETEFLAG=0)
+            </optionvalues>
+          </Filter>
+
+
+        </filters>
+        <sortfields>MDBS_TOORATIME(duetime,duedate)</sortfields>
+        <sortorder>ASC</sortorder>
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvfav_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>fav_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvfav_detail</detailsyscode>
+        <createsyscode></createsyscode>
+        <title>Favoriten</title>
+        <icon>disk</icon>
+        <filter />
+        <filterfields>REGVAR.WERT, REGVAR.CHGDATE</filterfields>
+        <sortfields>REGVAR.CHGDATE</sortfields>
+        <sortorder>DESC</sortorder>
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfv_camprep_liste</syscode>
+      <entrytype>0</entrytype>
+      <befehlszeile>a2_rrcsc_liste</befehlszeile>
+      <customentry>
+        <title>Retention Rate / Car Sales Conversion Reporting</title>
+        <icon>disk</icon>
+        <filters>
+         
+          <Filter>
+            <fieldname>vt.ende</fieldname>
+            <enabled>true</enabled>
+            <locked>true</locked>
+            <filterType>BETWEEN</filterType>
+            <groupName>DUED</groupName>
+            <description>Zeitraum</description>
+            <valueType>DATE</valueType>
+            <fieldType>BETWEEN</fieldType>
+            <values>
+              <!-- see documentation at https://code.google.com/p/datejs/ //-->
+              <string>Date.january().first()</string>
+              <string>Date.december().moveToLastDayOfMonth()</string>
+            </values>
+          </Filter>
+         
+
+          <Filter>
+            <fieldname>trim(vt.vart)</fieldname>
+            <filterType>Equal</filterType>
+            <groupName>vartand</groupName>
+            <orFilter>true</orFilter>
+            <andFilter>false</andFilter>
+            <description>Vertragsart</description>
+            <xprocode>VTVART</xprocode>
+            <valueType>STRING</valueType>
+            <fieldType>MULTISELECTCODE</fieldType>
+          </Filter>
+
+
+          <Filter>
+            <fieldname></fieldname>
+            <filterType>SQL</filterType>
+            <groupName>abart</groupName>
+            <orFilter>true</orFilter>
+            <andFilter>false</andFilter>
+            <description>Ablaufart</description>
+            <valueType>STRING</valueType>
+            <fieldType>MULTISELECT</fieldType>
+            <optionvalues>Vorzeitig:vt.zustand='VORZEITIGER ABLAUF';Vertragsende:vt.zustand='NORMALABLAUF'</optionvalues>
+          </Filter>
+
+          <Filter>
+            <fieldname>oppo.syscamp</fieldname>
+            <filterType>Equal</filterType>
+            <groupName>hgand</groupName>
+            <orFilter>true</orFilter>
+            <andFilter>false</andFilter>
+            <description>Kampagne</description>
+            <xprocode>CAMP</xprocode>
+            <valueType>STRING</valueType>
+            <fieldType>MULTISELECT</fieldType>
+          </Filter>
+
+        </filters>
+        <internalfilter>1=1</internalfilter>
+        <filterfields>vt.vertrag</filterfields>
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvcamp_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>camp_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvcamp_dashboard</detailsyscode>
+        <createsyscode>wfvcamp_dashboard</createsyscode>
+        <title>Kampagnen</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvcamp_dashboard</syscode>
+
+      <entrytype>2</entrytype>
+      <customentry>
+        <title>Kampagne</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+      <references>
+        <WfvRef>
+          <syscode>wfvcamp_detail</syscode>
+          <column>0</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <mainref>1</mainref>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvcamp_liste</syscode>
+          <column>1</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+      </references>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfv_campadm_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>a2_campadm_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfv_campadm_detail_dashboard</detailsyscode>
+        <createsyscode>wfv_campadm_detail_dashboard</createsyscode>
+        <title>Kampagnen Administration</title>
+        <icon>disk</icon>
+        <sortfields>camp.syscamp</sortfields>
+        <sortorder>desc</sortorder>
+        <internalfilter>1=1</internalfilter>
+        <filterfields>camp.description, camp.name</filterfields>
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfv_campadm_detail_dashboard</syscode>
+
+      <entrytype>2</entrytype>
+      <references>
+        <WfvRef>
+          <syscode>wfv_campadm_detail</syscode>
+          <column>0</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <collapsed>0</collapsed>
+          <mainref>1</mainref>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfv_vertrag_liste</syscode>
+          <column>1</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <collapsed>0</collapsed>
+          <mainref>0</mainref>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfv_campoppo_liste</syscode>
+          <column>1</column>
+          <row>1</row>
+          <visibility>1</visibility>
+          <collapsed>0</collapsed>
+          <mainref>0</mainref>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfv_campoppo_detail</syscode>
+          <column>1</column>
+          <row>2</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+          <mainref>0</mainref>
+          <popup>1</popup>
+        </WfvRef>
+
+      </references>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfv_vertrag_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>a2_vertrag_liste</befehlszeile>
+      <customentry>
+        <title>Vertragszuordnung</title>
+        <icon>disk</icon>
+        <filters>
+
+
+
+          <Filter>
+            <fieldname>trim(vt.vart)</fieldname>
+            <filterType>Equal</filterType>
+            <groupName>vartand</groupName>
+            <orFilter>true</orFilter>
+            <andFilter>false</andFilter>
+            <description>Vertragsart</description>
+            <xprocode>VTVART</xprocode>
+            <valueType>STRING</valueType>
+            <fieldType>MULTISELECTCODE</fieldType>
+          </Filter>
+          <Filter>
+            <fieldname>vt.sysls</fieldname>
+            <filterType>Equal</filterType>
+            <groupName>mand</groupName>
+            <orFilter>true</orFilter>
+            <andFilter>false</andFilter>
+            <description>Mandant</description>
+            <xprocode>MANDANT</xprocode>
+            <valueType>LONG</valueType>
+            <fieldType>MULTISELECT</fieldType>
+          </Filter>
+          <Filter>
+            <fieldname>trim(vt.vertriebsweg)</fieldname>
+            <filterType>Equal</filterType>
+            <groupName>vwand</groupName>
+            <orFilter>true</orFilter>
+            <andFilter>false</andFilter>
+            <description>Vertriebsweg</description>
+            <xprocode>VERTRIEBSWEG</xprocode>
+            <valueType>STRING</valueType>
+            <fieldType>MULTISELECTCODE</fieldType>
+          </Filter>
+          <Filter>
+            <fieldname>trim(vt.konstellation)</fieldname>
+            <filterType>Equal</filterType>
+            <groupName>tkzand</groupName>
+            <orFilter>true</orFilter>
+            <andFilter>false</andFilter>
+            <description>Tarif-Kennz.</description>
+            <xprocode>TARIFKZ</xprocode>
+            <valueType>STRING</valueType>
+            <fieldType>MULTISELECTCODE</fieldType>
+          </Filter>
+
+          <Filter>
+            <fieldname></fieldname>
+            <filterType>SQL</filterType>
+            <groupName>inttand</groupName>
+
+            <description>Zinstyp</description>
+            <andFilter>false</andFilter>
+            <orFilter>true</orFilter>
+            <valueType>STRING</valueType>
+            <fieldType>MULTISELECT</fieldType>
+            <optionvalues>fix:(select vtobsl.variabel from vtobsl where vtobsl.sysvt = vt.sysid  and vtobsl.syssltyp in (select syssltyp from sltyp where renditeflag = 1) and vtobsl.inaktiv = 0)=0;variabel:(select vtobsl.variabel from vtobsl where vtobsl.sysvt = vt.sysid  and vtobsl.syssltyp in (select syssltyp from sltyp where renditeflag = 1) and vtobsl.inaktiv = 0)=1</optionvalues>
+          </Filter>
+
+
+
+          <Filter>
+            <fieldname>trim(vt.zustand)</fieldname>
+            <filterType>Equal</filterType>
+            <groupName>vtsand</groupName>
+            <orFilter>true</orFilter>
+            <andFilter>false</andFilter>
+            <description>Status</description>
+            <xprocode>VTSTATUS</xprocode>
+            <valueType>STRING</valueType>
+            <fieldType>MULTISELECTCODE</fieldType>
+          </Filter>
+          <Filter>
+            <fieldname>trim(ob.inventar)</fieldname>
+            <filterType>Equal</filterType>
+            <groupName>obkatand</groupName>
+            <orFilter>true</orFilter>
+            <andFilter>false</andFilter>
+            <description>Objektkategorie</description>
+            <xprocode>OBINVENTAR</xprocode>
+            <valueType>STRING</valueType>
+            <fieldType>MULTISELECTCODE</fieldType>
+          </Filter>
+          
+
+          <Filter>
+            <fieldname></fieldname>
+            <filterType>SQL</filterType>
+            <groupName>gewpriv</groupName>
+
+            <description>Gewerblich/Privat</description>
+            <andFilter>false</andFilter>
+            <orFilter>true</orFilter>
+            <valueType>STRING</valueType>
+            <fieldType>MULTISELECT</fieldType>
+            <optionvalues>Privat:kd.privatflag=1;Geschäftlich:kd.privatflag=0</optionvalues>
+          </Filter>
+
+          <Filter>
+            <fieldname></fieldname>
+            <filterType>SQL</filterType>
+            <groupName>komm</groupName>
+
+            <description>Kommunikationsmittel </description>
+            <andFilter>false</andFilter>
+            <orFilter>true</orFilter>
+            <valueType>STRING</valueType>
+            <fieldType>MULTISELECT</fieldType>
+            <optionvalues>Mobilnummer privat vorhanden:(trim(length(KD.HANDY))>0);Mobilnummer geschäftlich vorhanden:(trim(length(KD.HANDY2))>0);Telefon privat vorhanden:(trim(length(KD.PTELEFON))>0);Telefon geschäftlich vorhanden:(trim(length(KD.TELEFON))>0);EMail privat vorhanden:(trim(length(KD.EMAIL))>0);EMail geschäftlich vorhanden:(trim(length(KD.EMAIL2))>0)</optionvalues>
+          </Filter>
+          <Filter>
+            <fieldname></fieldname>
+            <filterType>SQL</filterType>
+            <groupName>ieq</groupName>
+
+            <description>In Equity</description>
+            <andFilter>false</andFilter>
+            <orFilter>true</orFilter>
+            <valueType>STRING</valueType>
+            <fieldType>MULTISELECT</fieldType>
+            <optionvalues>Ja:(risikogr8>0);Nein:(0>=risikogr8)</optionvalues>
+          </Filter>
+
+
+
+          <Filter>
+            <fieldname>(select max(upper(bezeichnung)) from obtyp where level = 4 connect by prior sysobtypp=sysobtyp start with trim(obtyp.schwacke)=trim(ob.schwacke))</fieldname>
+            <filterType>Like</filterType>
+            <description>Marke</description>
+            <valueType>STRING</valueType>
+            <fieldType>INPUT</fieldType>
+          </Filter>
+
+          <Filter>
+            <fieldname>trim(hd.name)</fieldname>
+            <filterType>Like</filterType>
+            <description>Händlername</description>
+            <valueType>STRING</valueType>
+            <fieldType>INPUT</fieldType>
+          </Filter>
+          <Filter>
+            <fieldname>hd.sysperson</fieldname>
+            <filterType>Equal</filterType>
+            <groupName>hdand</groupName>
+            <orFilter>true</orFilter>
+            <andFilter>false</andFilter>
+            <description>Händlernummer</description>
+            <xprocode>HAENDLER_NUMMER</xprocode>
+            <valueType>LONG</valueType>
+            <fieldType>MULTISELECT</fieldType>
+          </Filter>
+
+
+
+          <Filter>
+            <fieldname>kalkfs.hpflag</fieldname>
+            <filterType>Equal</filterType>
+            <description>Haftpflicht</description>
+            <valueType>LONG</valueType>
+            <fieldType>CHECKBOX</fieldType>
+          </Filter>
+          <Filter>
+            <fieldname>kalkfs.vkflag</fieldname>
+            <filterType>Equal</filterType>
+            <description>Kaskoversicherung</description>
+            <valueType>LONG</valueType>
+            <fieldType>CHECKBOX</fieldType>
+          </Filter>
+
+
+
+
+          <Filter>
+            <fieldname>kalk.bgextern</fieldname>
+            <filterType>BETWEENNUMBER</filterType>
+            <description>Anschaffungswert</description>
+            <valueType>DOUBLE</valueType>
+            <fieldType>BETWEENNUMBER</fieldType>
+          </Filter>
+          <Filter>
+            <fieldname>vtobligo.risikogr4</fieldname>
+            <filterType>BETWEENNUMBER</filterType>
+            <description>akt. Auflösewert</description>
+            <valueType>DOUBLE</valueType>
+            <fieldType>BETWEENNUMBER</fieldType>
+          </Filter>
+          <Filter>
+            <fieldname>kalk.depot</fieldname>
+            <filterType>BETWEENNUMBER</filterType>
+            <description>Depot</description>
+            <valueType>DOUBLE</valueType>
+            <fieldType>BETWEENNUMBER</fieldType>
+          </Filter>
+          <Filter>
+            <fieldname>kalk.anzahlung</fieldname>
+            <filterType>BETWEENNUMBER</filterType>
+            <description>Anzahlung/SZ/MVZ</description>
+            <valueType>DOUBLE</valueType>
+            <fieldType>BETWEENNUMBER</fieldType>
+          </Filter>
+          <Filter>
+            <fieldname>kalk.sz</fieldname>
+            <filterType>BETWEENNUMBER</filterType>
+            <description>Mietvorauszahlung</description>
+            <valueType>DOUBLE</valueType>
+            <fieldType>BETWEENNUMBER</fieldType>
+          </Filter>
+          <Filter>
+            <fieldname>kalk.rw</fieldname>
+            <filterType>BETWEENNUMBER</filterType>
+            <description>Restwert</description>
+            <valueType>DOUBLE</valueType>
+            <fieldType>BETWEENNUMBER</fieldType>
+          </Filter>
+          <Filter>
+            <fieldname>ob.jahreskm</fieldname>
+            <filterType>BETWEENNUMBER</filterType>
+            <groupName>JAHRESKM</groupName>
+            <description>Km p.A.</description>
+            <valueType>DOUBLE</valueType>
+            <fieldType>BETWEENNUMBER</fieldType>
+          </Filter>
+          <Filter>
+            <fieldname>vt.rlz</fieldname>
+            <filterType>BETWEENNUMBER</filterType>
+            <description>Mahnstufe</description>
+            <valueType>DOUBLE</valueType>
+            <fieldType>BETWEENNUMBER</fieldType>
+          </Filter>
+          <Filter>
+            <fieldname>kalk.lz</fieldname>
+            <filterType>BETWEENNUMBER</filterType>
+            <description>Laufzeit</description>
+            <valueType>DOUBLE</valueType>
+            <fieldType>BETWEENNUMBER</fieldType>
+          </Filter>
+          <Filter>
+            <fieldname>VT.RLZ</fieldname>
+            <filterType>BETWEENNUMBER</filterType>
+            <groupName>RLZ</groupName>
+            <description>Restlaufzeit</description>
+            <valueType>DOUBLE</valueType>
+            <fieldType>BETWEENNUMBER</fieldType>
+          </Filter>
+          <Filter>
+            <fieldname>vtobligo.risikogr8</fieldname>
+            <filterType>BETWEENNUMBER</filterType>
+            <groupName>ETBL</groupName>
+            <description>Abw. AW/ET-Blau %</description>
+            <valueType>DOUBLE</valueType>
+            <fieldType>BETWEENNUMBER</fieldType>
+          </Filter>
+          <Filter>
+            <fieldname>OBINI.ERSTZUL</fieldname>
+            <filterType>BETWEEN</filterType>
+            <groupName>EZL</groupName>
+            <description>Erstzulassung</description>
+            <valueType>DATE</valueType>
+            <fieldType>BETWEEN</fieldType>
+          </Filter>
+          <Filter>
+            <fieldname>VT.BEGINN</fieldname>
+            <filterType>BETWEEN</filterType>
+            <groupName>ADT</groupName>
+            <description>Aktivierungsdatum</description>
+            <valueType>DATE</valueType>
+            <fieldType>BETWEEN</fieldType>
+          </Filter>
+          <Filter>
+            <fieldname>VT.ENDE</fieldname>
+            <filterType>BETWEEN</filterType>
+            <groupName>ADT</groupName>
+            <description>Vertragsende</description>
+            <valueType>DATE</valueType>
+            <fieldType>BETWEEN</fieldType>
+          </Filter>
+
+
+
+
+        </filters>
+
+        <filterfields>KD.NAME, KD.VORNAME, VT.VERTRAG, VT.ZUSTAND, VT.FABRIKAT, VT.BEGINN, VT.ENDE</filterfields>
+
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfv_campoppo_liste</syscode>
+      <entrytype>0</entrytype>
+      <befehlszeile>a2_campoppo_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfv_campoppo_detail</detailsyscode>
+        <title>Kampagnen Verkaufschancen</title>
+        <icon>disk</icon>
+        <filters>
+          
+          <Filter>
+            <fieldname></fieldname>
+            <filterType>SQL</filterType>
+            <groupName>otph</groupName>
+            <orFilter>true</orFilter>
+            <andFilter>false</andFilter>
+            <description>Aktivitätsstatus</description>
+            <valueType>STRING</valueType>
+            <fieldType>MULTISELECT</fieldType>
+            <optionvalues>Grün:(select max(phase) from oppotask where oppotask.sysoppo=oppo.sysoppo)=0;Orange:(select max(phase) from oppotask where oppotask.sysoppo=oppo.sysoppo)=1;Rot:(select max(phase) from oppotask where oppotask.sysoppo=oppo.sysoppo)=2</optionvalues>
+          </Filter>
+          <Filter>
+            <fieldname>oppo.resultat</fieldname>
+            <filterType>Equal</filterType>
+            <groupName>orgrp</groupName>
+            <orFilter>true</orFilter>
+            <andFilter>false</andFilter>
+            <description>Ergebnis</description>
+            <xprocode>OPPO_RESULT</xprocode>
+            <valueType>STRING</valueType>
+            <fieldType>MULTISELECT</fieldType>
+          </Filter>
+
+          <Filter>
+            <fieldname>oppo.extresultat</fieldname>
+            <filterType>Equal</filterType>
+            <groupName>orgrp</groupName>
+            <orFilter>true</orFilter>
+            <andFilter>false</andFilter>
+            <description>Agenturergebnis</description>
+            <xprocode>OPPO_AGRESULT</xprocode>
+            <valueType>STRING</valueType>
+            <fieldType>MULTISELECT</fieldType>
+          </Filter>
+          <Filter>
+            <fieldname>oppo.status</fieldname>
+            <filterType>Equal</filterType>
+            <groupName>stgrp</groupName>
+            <orFilter>true</orFilter>
+            <andFilter>false</andFilter>
+            <description>Status</description>
+            <xprocode>OPPO_STATUS</xprocode>
+            <valueType>STRING</valueType>
+            <fieldType>MULTISELECT</fieldType>
+          </Filter>
+          <Filter>
+            <fieldname></fieldname>
+            <filterType>SQL</filterType>
+            <groupName>agqu</groupName>
+            <!--groupName benötigt für and/or-Filter//-->
+            <description>Agentur vorqualifiziert</description>
+            <andFilter>false</andFilter>
+            <orFilter>true</orFilter>
+            <valueType>STRING</valueType>
+            <fieldType>MULTISELECT</fieldType>
+            <optionvalues>Ja:oppo.extqualflag=1;Nein:oppo.extqualflag=0</optionvalues>
+          </Filter>
+
+          <Filter>
+            <fieldname>trim(hd.name)</fieldname>
+            <filterType>Like</filterType>
+            <description>Händlername</description>
+            <valueType>STRING</valueType>
+            <fieldType>INPUT</fieldType>
+          </Filter>
+          <Filter>
+            <fieldname>trim(hd.code)</fieldname>
+            <filterType>Like</filterType>
+            <description>Händlernummer</description>
+            <valueType>STRING</valueType>
+            <fieldType>INPUT</fieldType>
+          </Filter>
+
+          <Filter>
+            <fieldname>(select max(upper(bezeichnung)) from obtyp where level = 4 connect by prior sysobtypp=sysobtyp start with trim(obtyp.schwacke)=trim(ob.schwacke))</fieldname>
+            <filterType>Like</filterType>
+            <description>Marke</description>
+            <valueType>STRING</valueType>
+            <fieldType>INPUT</fieldType>
+          </Filter>
+
+        </filters>
+        <internalfilter>1=1</internalfilter>
+        <filterfields>oppo.sysoppo, vk.name, vk.vorname, vt.vertrag, kd.name, kd.vorname,ob.hersteller, ob.objektvt, ob.serie, ob.kennzeichen</filterfields>
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvptask_change_dashboard</syscode>
+
+      <entrytype>2</entrytype>
+      <customentry>
+        <title>Aufgabe</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+      <references>
+        <WfvRef>
+          <syscode>wfvptask_detail</syscode>
+          <column>0</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <mainref>1</mainref>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvaccount_change</syscode>
+          <column>1</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvpartner_detail</syscode>
+          <column>1</column>
+          <row>1</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvfileatt_liste</syscode>
+          <column>1</column>
+          <row>2</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+        
+        <WfvRef>
+          <syscode>wfvopportunity_detail</syscode>
+          <column>1</column>
+          <row>3</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvrecurr_detail</syscode>
+          <column>1</column>
+          <row>4</row>
+          <visibility>0</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>wfvfileatt_detail</syscode>
+          <column>1</column>
+          <row>5</row>
+          <visibility>0</visibility>
+          <collapsed>1</collapsed>
+          <popup>1</popup>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvitemcatm_liste</syscode>
+          <column>1</column>
+          <row>6</row>
+          <visibility>0</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvreminder_liste</syscode>
+          <column>1</column>
+          <row>7</row>
+          <visibility>0</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvitemcatm_detail</syscode>
+          <column>1</column>
+          <row>8</row>
+          <visibility>0</visibility>
+          <collapsed>1</collapsed>
+          <popup>1</popup>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvreminder_detail</syscode>
+          <column>1</column>
+          <row>9</row>
+          <visibility>0</visibility>
+          <collapsed>1</collapsed>
+          <popup>1</popup>
+        </WfvRef>
+
+      </references>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvapptmt_change_dashboard</syscode>
+
+      <entrytype>2</entrytype>
+      <customentry>
+        <title>Termin</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+      <references>
+        <WfvRef>
+          <syscode>wfvapptmt_detail</syscode>
+          <column>0</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <mainref>1</mainref>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>wfvaccount_change</syscode>
+          <column>1</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvpartner_detail</syscode>
+          <column>1</column>
+          <row>1</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+        <!--
+        <WfvRef>
+          <syscode>wfvrecurr_detail</syscode>
+          <column>0</column>
+          <row>1</row>
+          <visibility>0</visibility>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvfileatt_liste</syscode>
+          <column>0</column>
+          <row>2</row>
+          <visibility>1</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvfileatt_detail</syscode>
+          <column>0</column>
+          <row>1</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+          <popup>1</popup>
+        </WfvRef>
+       
+        <WfvRef>
+          <syscode>wfvitemcatm_liste</syscode>
+          <column>0</column>
+          <row>3</row>
+          <visibility>1</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvreminder_liste</syscode>
+          <column>0</column>
+          <row>4</row>
+          <visibility>1</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvitemcatm_detail</syscode>
+          <column>0</column>
+          <row>1</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+          <popup>1</popup>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvreminder_detail</syscode>
+          <column>0</column>
+          <row>1</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+          <popup>1</popup>
+        </WfvRef>
+        //-->
+      </references>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvaccount_change</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>account_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvaccount_detail_dashboard</detailsyscode>
+        <title>Kunde / Lead</title>
+        <icon>men</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvaccount_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>account_liste</befehlszeile>
+      <customentry>
+
+
+        <detailsyscode>wfvaccount_detail_dashboard</detailsyscode>
+        <createsyscode>wfvaccount_change</createsyscode>
+        <title>Kunden / Leads</title>
+        <icon>men</icon>
+        <filter/>
+        <sortfields>PERSON.SYSPERSON</sortfields>
+        <sortorder>desc</sortorder>
+        <internalfilter>1=1</internalfilter>
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvaccount_detail_dashboard</syscode>
+
+      <entrytype>2</entrytype>
+      <customentry>
+        <detailsyscode></detailsyscode>
+        <title>Kunde / Lead</title>
+        <icon>men</icon>
+        <filter></filter>
+
+      </customentry>
+      <references>
+        <WfvRef>
+          <syscode>wfvaccount_detail</syscode>
+          <column>0</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <collapsed>0</collapsed>
+          <mainref>1</mainref>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvindikator_liste</syscode>
+          <column>1</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>wfvptask_listenotfiltered</syscode>
+          <column>1</column>
+          <row>1</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+
+
+        <WfvRef>
+          <syscode>wfvcontact_liste</syscode>
+          <column>1</column>
+          <row>2</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvopportunity_liste</syscode>
+          <column>1</column>
+          <row>3</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>wfvactivity_liste</syscode>
+          <column>1</column>
+          <row>4</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>wfvmailmsg_liste</syscode>
+          <column>1</column>
+          <row>5</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvapptmt_liste</syscode>
+          <column>1</column>
+          <row>6</row>
+          <visibility>1</visibility>
+          <collapsed>01</collapsed>
+        </WfvRef>
+        
+        
+        <WfvRef>
+          <syscode>wfvpartner_liste</syscode>
+          <column>1</column>
+          <row>8</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvprkgroupm_account_liste</syscode>
+          <column>1</column>
+          <row>8</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>wfvadresse_liste</syscode>
+          <column>1</column>
+          <row>8</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+
+
+
+        
+
+        <WfvRef>
+          <syscode>wfvkonto_liste</syscode>
+          <column>1</column>
+          <row>8</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+
+        <WfvRef>
+          <syscode>wfvddlkprub_liste</syscode>
+          <column>1</column>
+          <row>8</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+
+
+        <WfvRef>
+          <syscode>wfvmemo_liste</syscode>
+          <column>1</column>
+          <row>8</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvnotiz_liste</syscode>
+          <column>1</column>
+          <row>8</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvfileatt_liste</syscode>
+          <column>1</column>
+          <row>8</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvfileatt_detail</syscode>
+          <column>1</column>
+          <row>8</row>
+          <visibility>0</visibility>
+          <collapsed>0</collapsed>
+          <popup>1</popup>
+        </WfvRef>
+      </references>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvindikator_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>indikator_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvindikator_liste</detailsyscode>
+        <title>Indikatoren</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvptask_listenotfiltered</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>ptask_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvptask_change_dashboard</detailsyscode>
+        <createsyscode>wfvptask_change_dashboard</createsyscode>
+        <title>Aufgaben</title>
+        <icon>disk</icon>
+        <filter>NONE</filter>
+        <sortfields>MDBS_TOORATIME(duetime,duedate)</sortfields>
+        <sortorder>ASC</sortorder>
+      </customentry>
+    </WfvEntry>
+    <!--###############################################DETAILS##########################################################//-->
+
+    <WfvEntry>
+      <syscode>wfvstaffelpositionstyp_detail</syscode>
+      <entrytype>1</entrytype>
+      <befehlszeile>staffelpositionstyp_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvstaffelpositionstyp_detail_dashboard</detailsyscode>
+        <createsyscode>wfvstaffelpositionstyp_detail_dashboard</createsyscode>
+        <title>Staffelpositionstyp</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+    <WfvEntry>
+      <syscode>wfvstaffeltyp_detail</syscode>
+      <entrytype>1</entrytype>
+      <befehlszeile>staffeltyp_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvstaffeltyp_detail_dashboard</detailsyscode>
+        <createsyscode>wfvstaffeltyp_detail_dashboard</createsyscode>
+        <title>Staffeltyp</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+    <WfvEntry>
+      <syscode>wfvrolle_detail</syscode>
+      <entrytype>1</entrytype>
+      <befehlszeile>rolle_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvrolle_detail_dashboard</detailsyscode>
+        <createsyscode>wfvrolle_detail_dashboard</createsyscode>
+        <title>Rolle</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+    <WfvEntry>
+      <syscode>wfvrollentyp_detail</syscode>
+      <entrytype>1</entrytype>
+      <befehlszeile>rollentyp_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvrollentyp_detail_dashboard</detailsyscode>
+        <createsyscode>wfvrollentyp_detail_dashboard</createsyscode>
+        <title>Rollentyp</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+    <WfvEntry>
+      <syscode>wfvhandelsgruppe_detail</syscode>
+      <entrytype>1</entrytype>
+      <befehlszeile>handelsgruppe_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvhandelsgruppe_detail_dashboard</detailsyscode>
+        <createsyscode>wfvhandelsgruppe_detail_dashboard</createsyscode>
+        <title>Handelsgruppe</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+    <WfvEntry>
+      <syscode>wfvvertriebskanal_detail</syscode>
+      <entrytype>1</entrytype>
+      <befehlszeile>vertriebskanal_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvvertriebskanal_detail_dashboard</detailsyscode>
+        <createsyscode>wfvvertriebskanal_detail_dashboard</createsyscode>
+        <title>Vertriebskanal</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+    <WfvEntry>
+      <syscode>wfvbrand_detail</syscode>
+      <entrytype>1</entrytype>
+      <befehlszeile>brand_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvbrand_detail_dashboard</detailsyscode>
+        <createsyscode>wfvbrand_detail_dashboard</createsyscode>
+        <title>Brand</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+    <WfvEntry>
+      <syscode>wfvrechnung_detail</syscode>
+      <entrytype>1</entrytype>
+      <befehlszeile>rechnung_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvrechnung_detail_dashboard</detailsyscode>
+        <createsyscode>wfvrechnung_detail_dashboard</createsyscode>
+        <title>Rechnung</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+    <WfvEntry>
+      <syscode>wfvangobbrief_detail</syscode>
+      <entrytype>1</entrytype>
+      <befehlszeile>angobbrief_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvangobbrief_detail_dashboard</detailsyscode>
+        <createsyscode>wfvangobbrief_detail_dashboard</createsyscode>
+        <title>Angobbrief</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+    <WfvEntry>
+      <syscode>wfvzahlungsplan_detail</syscode>
+      <entrytype>1</entrytype>
+      <befehlszeile>zahlungsplan_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvzahlungsplan_detail_dashboard</detailsyscode>
+        <createsyscode>wfvzahlungsplan_detail_dashboard</createsyscode>
+        <title>Zahlungsplan</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+    <WfvEntry>
+      <syscode>wfvfahrzeugbrief_detail</syscode>
+      <entrytype>1</entrytype>
+      <befehlszeile>fahrzeugbrief_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvfahrzeugbrief_detail_dashboard</detailsyscode>
+        <createsyscode>wfvfahrzeugbrief_detail_dashboard</createsyscode>
+        <title>Fahrzeugbrief</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+    <WfvEntry>
+      <syscode>wfvkalk_detail</syscode>
+      <entrytype>1</entrytype>
+      <befehlszeile>kalk_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvkalk_detail_dashboard</detailsyscode>
+        <createsyscode>wfvkalk_detail_dashboard</createsyscode>
+        <title>Kalk</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+    <WfvEntry>
+      <syscode>wfvb2b_person_detail</syscode>
+      <entrytype>1</entrytype>
+      <befehlszeile>b2b_person_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvb2b_person_detail_dashboard</detailsyscode>
+        <createsyscode>wfvb2b_person_detail_dashboard</createsyscode>
+        <title>Person</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+
+    <WfvEntry>
+      <syscode>wfvobjekt_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>objekt_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvobjekt_detail_dashboard</detailsyscode>
+        <createsyscode>wfvobjekt_detail_dashboard</createsyscode>
+        <title>Objekt</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvfinanzierung_nkk_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>finanzierung_nkk_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvfinanzierung_nkk_detail_dashboard</detailsyscode>
+        <createsyscode>wfvfinanzierung_nkk_detail_dashboard</createsyscode>
+        <title>Finanzierung</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvfinanzierung_nkk_create</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>finanzierung_nkk_create</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvfinanzierung_nkk_create_dashboard</detailsyscode>
+        <createsyscode>wfvfinanzierung_nkk_create_dashboard</createsyscode>
+        <title>Finanzierung erfassen</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvwkt_objekt_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>wkt_objekt_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvwkt_objekt_detail</detailsyscode>
+        <createsyscode>wfvwkt_objekt_detail</createsyscode>
+        <title>Fahrzeug</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvwkt_offer_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>wkt_offer_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvwkt_offer_detail</detailsyscode>
+        <createsyscode>wfvwkt_offer_detail</createsyscode>
+        <title>Angebotsübersicht</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvmycalc_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>mycalc_detail</befehlszeile>
+      <customentry>
+        <createsyscode>wfvmycalc_detail</createsyscode>
+        <title>Kalkulation</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvmycalcfs_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>mycalcfs_detail</befehlszeile>
+      <customentry>
+
+        <title>Service</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvorder_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>wkt_offer_detail</befehlszeile>
+      <customentry>
+
+        <title>Bestellung</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvrahmenvorlage_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>rahmen_detail</befehlszeile>
+      <customentry>
+        <title>Rahmenvertrag Vorlage</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvrahmen_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>rahmen_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvrahmen_detail_dashboard</detailsyscode>
+        <createsyscode>wfvrahmen_detail</createsyscode>
+        <forwardsyscode>wfvrahmen_detail_dashboard</forwardsyscode>
+        <title>Rahmenvertrag</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvhaendler_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>haendler_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvhaendler_detail_dashboard</detailsyscode>
+        <createsyscode>wfvhaendler_detail_dashboard</createsyscode>
+        <title>Händler</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvit_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>it_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvit_detail_dashboard</detailsyscode>
+        <createsyscode>wfvit_detail_dashboard</createsyscode>
+        <title>Interessent</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvaccount_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>account_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvaccount_detail_dashboard</detailsyscode>
+        <createsyscode>wfvaccount_detail_dashboard</createsyscode>
+        <title>Account</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvb2b_account_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>account_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvb2b_account_detail_dashboard</detailsyscode>
+        <title>Account</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvwkt_account_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>wkt_account_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvwkt_account_detail_dashboard</detailsyscode>
+        <createsyscode>wfvwkt_account_detail_dashboard</createsyscode>
+        <forwardsyscode>wfvwkt_account_detail_dashboard</forwardsyscode>
+        <title>Account</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfv_eot_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>a2_eot_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfv_eot_detail_dashboard</detailsyscode>
+        <createsyscode>wfv_eot_detail_dashboard</createsyscode>
+        <forwardsyscode>wfv_eot_detail_dashboard</forwardsyscode>
+        <title>End Of Term</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfv_camp_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>a2_camp_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfv_camp_detail_dashboard</detailsyscode>
+        <title>Kampagnen</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfv_campadm_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>a2_campadm_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfv_campadm_detail</detailsyscode>
+        <createsyscode>wfv_campadm_detail</createsyscode>
+        <title>Kampagnen Administration</title>
+        <icon>disk</icon>
+        <filter/>
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfv_oppotask_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>a2_oppotask_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfv_oppotask_detail_dash</detailsyscode>
+        <createsyscode>wfv_oppotask_detail_dash</createsyscode>
+        <forwardsyscode>wfv_oppotask_detail_dash</forwardsyscode>
+        <title>Aktivität</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfv_kunde_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>a2_kunde_detail</befehlszeile>
+      <customentry>
+        <title>Kunde</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfv_campoppo_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>a2_campoppo_detail</befehlszeile>
+      <customentry>
+        <title>Kampagnen Opportunity</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvangob_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>angob_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvangob_detail_dashboard</detailsyscode>
+        <createsyscode>wfvangob_detail_dashboard</createsyscode>
+        <title>Objekt</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvob_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>ob_detail</befehlszeile>
+      <customentry>
+
+        <title>Objekt</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvobjekt_nkk_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>objekt_nkk_detail</befehlszeile>
+      <customentry>
+
+        <title>Objekt</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvobjekt_nkk_create</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>objekt_nkk_create</befehlszeile>
+      <customentry>
+
+        <title>Objekt erfassen</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvangkalk_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>angkalk_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvangkalk_detail_dashboard</detailsyscode>
+        <createsyscode>wfvangkalk_detail_dashboard</createsyscode>
+        <title>Kalkulation</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvangvar_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>angvar_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvangvar_detail_dashboard</detailsyscode>
+        <createsyscode>wfvangvar_detail_dashboard</createsyscode>
+        <title>Varianten</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvopportunity_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>opportunity_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvoppo_change_dashboard</detailsyscode>
+        <title>Opportunity</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvddlkprub_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>ddlkprub_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvddlkprub_detail</detailsyscode>
+        <title>Zusatzdaten</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+    <WfvEntry>
+      <syscode>wfvprkgroup_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>prkgroup_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvprkgroup_detail</detailsyscode>
+        <title>Kundengruppe</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+
+    <WfvEntry>
+      <syscode>wfvpartner_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>partner_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvaccount_detail_dashboard</detailsyscode>
+        <title>Ansprechpartner</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvbeteiligter_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>beteiligter_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvaccount_detail_dashboard</detailsyscode>
+        <title>Beteiligter</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvpartner2_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>partner2_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvaccount_detail_dashboard</detailsyscode>
+        <title>Ansprechpartner</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvptrelate_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>ptrelate_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvptrelate_detail</detailsyscode>
+        <title>Ansprechpartner</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvcrmnm_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>crmnm_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvcrmnm_detail</detailsyscode>
+        <title>Beteiligter</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvprkgroupm_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>prkgroupm_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvprkgroupm_detail</detailsyscode>
+        <title>Kundengruppe</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvseg_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>seg_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvseg_detail</detailsyscode>
+        <title>Segment</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+
+    <WfvEntry>
+      <syscode>wfvreport_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>report_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvreport_detail</detailsyscode>
+        <title>Bericht</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+
+    <WfvEntry>
+      <syscode>wfvcamp_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>camp_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvcamp_dashboard</detailsyscode>
+        <title>Kampagne</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+    <WfvEntry>
+      <syscode>wfvfileatt_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>fileatt_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvfileatt_detail</detailsyscode>
+        <title>Anhang</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvptask_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>ptask_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvptask_detail</detailsyscode>
+        <title>Aufgabe</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvgooglemap_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>googlemap_detail</befehlszeile>
+      <customentry>
+        <title>Kartenansicht</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvaccount_change</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>account_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvaccount_detail_dashboard</detailsyscode>
+        <title>Account</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvit_change</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>it_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvit_detail_dashboard</detailsyscode>
+        <title>Interessent</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvuser_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>user_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvuser_detail</detailsyscode>
+        <title>Benutzereinstellungen</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvmailmsg_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>mailmsg_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvmailmsg_detail</detailsyscode>
+        <title>E-Mail</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvkonto_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>konto_detail</befehlszeile>
+      <customentry>
+        <title>Konto</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvitkonto_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>itkonto_detail</befehlszeile>
+      <customentry>
+        <title>Konto</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvcontact_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>contact_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvaccount_detail_dashboard</detailsyscode>
+        <title>Touchpoint</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvapptmt_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>apptmt_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvapptmt_detail</detailsyscode>
+        <title>Termin</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvadresse_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>adresse_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvadresse_detail</detailsyscode>
+        <title>Adresse</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvitadresse_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>itadresse_detail</befehlszeile>
+      <customentry>
+        <title>Adresse</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+
+
+    <WfvEntry>
+      <syscode>wfvreminder_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>reminder_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvreminder_detail</detailsyscode>
+        <title>Erinnerung</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+    <WfvEntry>
+      <syscode>wfvmemo_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>memo_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvmemo_detail</detailsyscode>
+        <title>Memo</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvrecurr_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>recurr_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvrecurr_detail</detailsyscode>
+        <title>Serientyp</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+    <WfvEntry>
+      <syscode>wfvfav_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>fav_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvfav_detail</detailsyscode>
+        <title>Favorit</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+    <WfvEntry>
+      <syscode>wfvbonitaetschufa_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>bonitaetschufa_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvbonitaetschufa_detail</detailsyscode>
+        <title>Schufa</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+    <WfvEntry>
+      <syscode>wfvdocument_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>document_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvdocument_detail</detailsyscode>
+        <title>Dokumentensuche</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvrecent_detail</syscode>
+      <entrytype>1</entrytype>
+      <befehlszeile>recent_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvrecent_detail</detailsyscode>
+        <title>Letzte</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvfollow_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>follow_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvfollow_detail</detailsyscode>
+        <title>Follow</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+    <WfvEntry>
+      <syscode>wfvrecalc_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>recalc_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvrecalc_detail</detailsyscode>
+        <title>Rekalkulation</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvitemcatm_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>itemcatm_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvitemcatm_detail</detailsyscode>
+        <title>Item Kategorie</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvstickynote_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>stickynote_detail</befehlszeile>
+      <customentry>
+        <title>Notiz</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvbesuchsbericht_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>besuchsbericht_detail</befehlszeile>
+      <customentry>
+        <title>Besuchsbericht</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvvorgang_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>vorgang_detail</befehlszeile>
+      <customentry>
+        <title>Vorgang</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvangebot_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>angebot_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvaccount_detail_dashboard</detailsyscode>
+        <title>Angebot</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvangebot2_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>angebot2_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvangebotsummary_dashboard</detailsyscode>
+        <title>Angebot</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvwktangebot_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>wkt_angebot_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvwktangebot_detail_dashboard</detailsyscode>
+        <forwardsyscode>wfvwktangebot_detail_dashboard</forwardsyscode>
+        <title>Angebot</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvangebotneu_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>angebotneu_detail</befehlszeile>
+      <customentry>
+        <title>Angebot</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvantrag_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>antrag_detail</befehlszeile>
+      <customentry>
+        <title>Antrag</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvvertrag_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>vertrag_detail</befehlszeile>
+      <customentry>
+        <title>Vertrag</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvwkt_vertrag_detail</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>wkt_vertrag_detail</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvwkt_vertrag_detail_dashboard</detailsyscode>
+        <title>Vertrag</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+
+    <WfvEntry>
+      <syscode>wfvaccount_selector</syscode>
+
+      <entrytype>1</entrytype>
+      <befehlszeile>account_selector</befehlszeile>
+      <customentry>
+        <title>Serienverarbeitung</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvempty_dashboard</syscode>
+
+      <entrytype>2</entrytype>
+      <customentry>
+        <detailsyscode></detailsyscode>
+        <title>Startseite</title>
+        <icon>disk</icon>
+        <filter></filter>
+
+      </customentry>
+      <references>
+        <WfvRef>
+          <syscode>wfvuser_detail</syscode>
+          <column>0</column>
+          <row>0</row>
+          <visibility>0</visibility>
+          <mainref>1</mainref>
+        </WfvRef>
+
+      </references>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvvertrag_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>vorgang_liste</befehlszeile>
+      <customentry>
+
+        <detailsyscode>wfvvorgang_detail_dashboard</detailsyscode>
+        <createsyscode>wfvvorgang_detail</createsyscode>
+        <title>Verträge</title>
+        <icon>disk</icon>
+        <internalfilter>AREA='VT'</internalfilter>
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvvorgang_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>vorgang_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvvorgang_detail_dashboard</detailsyscode>
+        <createsyscode>wfvvorgang_detail</createsyscode>
+        <title>Vorgänge</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvvorgang_detail_dashboard</syscode>
+
+      <entrytype>2</entrytype>
+      <customentry>
+        <detailsyscode></detailsyscode>
+        <title>Vorgang</title>
+        <icon>disk</icon>
+        <filter></filter>
+
+      </customentry>
+      <references>
+        <WfvRef>
+          <syscode>wfvvorgang_detail</syscode>
+          <column>0</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <collapsed>0</collapsed>
+          <mainref>1</mainref>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvnotiz_liste</syscode>
+          <column>1</column>
+          <row>0</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvangvar_liste</syscode>
+          <column>1</column>
+          <row>1</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvangob_liste</syscode>
+          <column>1</column>
+          <row>2</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvangobsl_liste</syscode>
+          <column>1</column>
+          <row>3</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+        <WfvRef>
+          <syscode>wfvangobslpos_liste</syscode>
+          <column>1</column>
+          <row>4</row>
+          <visibility>1</visibility>
+          <collapsed>1</collapsed>
+        </WfvRef>
+      </references>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvangob_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>angob_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvangob_detail_dashboard</detailsyscode>
+        <title>Objekte</title>
+        <icon>disk</icon>
+        <filter />
+        <sortfields>ANGOB.SYSOB</sortfields>
+        <sortorder>DESC</sortorder>
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvangobsl_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>angobsl_liste</befehlszeile>
+      <customentry>
+        <title>Staffeln</title>
+        <icon>disk</icon>
+        <filter />
+        <sortfields>ANGOBSL.SYSID</sortfields>
+        <sortorder>DESC</sortorder>
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvangobslpos_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>angobslpos_liste</befehlszeile>
+      <customentry>
+        <title>Raten</title>
+        <icon>disk</icon>
+        <filter />
+        <sortfields>ANGOBSLPOS.SYSID</sortfields>
+        <sortorder>DESC</sortorder>
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvangvar_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>angvar_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvangvar_detail_dashboard</detailsyscode>
+        <createsyscode>wfvangvar_detail_dashboard</createsyscode>
+        <title>Variante</title>
+        <icon>disk</icon>
+        <filter />
+        <sortfields>ANGVAR.SYSANGVAR</sortfields>
+        <sortorder>DESC</sortorder>
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvantob_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>antob_liste</befehlszeile>
+      <customentry>
+        <title>Objekte</title>
+        <icon>disk</icon>
+        <filter />
+        <sortfields>ANTOB.SYSOB</sortfields>
+        <sortorder>DESC</sortorder>
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvantobsl_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>antobsl_liste</befehlszeile>
+      <customentry>
+        <title>Staffeln</title>
+        <icon>disk</icon>
+        <filter />
+        <sortfields>ANTOBSL.SYSID</sortfields>
+        <sortorder>DESC</sortorder>
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvantobslpos_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>antobslpos_liste</befehlszeile>
+      <customentry>
+        <title>Raten</title>
+        <icon>disk</icon>
+        <filter />
+        <sortfields>ANTOBSLPOS.SYSID</sortfields>
+        <sortorder>DESC</sortorder>
+      </customentry>
+    </WfvEntry>
+
+
+    <WfvEntry>
+      <syscode>wfvob_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>ob_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvob_detail</detailsyscode>
+        <createsyscode>wfvob_detail</createsyscode>
+        <title>Objekte</title>
+        <icon>disk</icon>
+        <filter />
+        <sortfields>OB.SYSOB</sortfields>
+        <sortorder>DESC</sortorder>
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvvtobsl_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>vtobsl_liste</befehlszeile>
+      <customentry>
+        <title>Staffeln</title>
+        <icon>disk</icon>
+        <filter />
+        <sortfields>VTOBSL.SYSID</sortfields>
+        <sortorder>DESC</sortorder>
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvvtobslpos_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>vtobslpos_liste</befehlszeile>
+      <customentry>
+        <title>Raten</title>
+        <icon>disk</icon>
+        <filter />
+        <sortfields>VTOBSLPOS.SYSID</sortfields>
+        <sortorder>DESC</sortorder>
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvwktvtobslpos_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>vtobslpos_liste</befehlszeile>
+      <customentry>
+        <title>Staffeln</title>
+        <icon>disk</icon>
+        <filter />
+        <sortfields>VTOBSL.BEZEICHNUNG, VTOBSLPOS.RANG</sortfields>
+        <sortorder>DESC</sortorder>
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvnotiz_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>notiz_liste</befehlszeile>
+      <customentry>
+        <title>Notizen</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+	
+	   <WfvEntry>
+      <syscode>wfvrecent_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>recent_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvrecent_detail</detailsyscode>
+        <createsyscode></createsyscode>
+        <title>Letzte</title>
+        <icon>disk</icon>
+        <filter />
+        <filterfields>REGVAR.WERT,REGVAR.CHGDATE</filterfields>
+        <sortfields>REGVAR.SYSREGVAR</sortfields>
+        <sortorder>DESC</sortorder>
+      </customentry>
+    </WfvEntry>
+
+
+    <WfvEntry>
+      <syscode>wfvfollow_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>follow_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvfollow_detail</detailsyscode>
+        <createsyscode>wfvfollow_detail</createsyscode>
+        <title>Follows</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+	
+	<WfvEntry>
+      <syscode>wfvit_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>it_liste</befehlszeile>
+      <customentry>
+
+        <detailsyscode>wfvit_detail_dashboard</detailsyscode>
+        <createsyscode>wfvit_detail_dashboard</createsyscode>
+        <title>Interessenten</title>
+        <icon>disk</icon>
+        <filter />
+		<internalfilter>1=1</internalfilter>
+        <sortfields>IT.SYSIT</sortfields>
+        <sortorder>DESC</sortorder>
+      </customentry>
+    </WfvEntry>
+  
+    <WfvEntry>
+      <syscode>wfvangkalk_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>angkalk_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvangkalk_detail</detailsyscode>
+        <createsyscode>wfvangkalk_detail</createsyscode>
+        <title>Kalkulationen</title>
+        <icon>disk</icon>
+        <filter />
+        <sortfields>ANGKALK.SYSKALK</sortfields>
+        <sortorder>DESC</sortorder>
+      </customentry>
+    </WfvEntry>
+	
+	 <WfvEntry>
+      <syscode>wfvkonto_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>konto_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvkonto_detail</detailsyscode>
+        <createsyscode>wfvkonto_detail</createsyscode>
+        <title>Konten</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+    <WfvEntry>
+      <syscode>wfvitkonto_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>itkonto_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvitkonto_detail</detailsyscode>
+        <createsyscode>wfvitkonto_detail</createsyscode>
+        <title>Konten</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+	 <WfvEntry>
+      <syscode>wfvadresse_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>adresse_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvadresse_detail</detailsyscode>
+        <createsyscode>wfvadresse_detail</createsyscode>
+        <title>Adressen</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+
+    <WfvEntry>
+      <syscode>wfvitadresse_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>itadresse_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvitadresse_detail</detailsyscode>
+        <createsyscode>wfvitadresse_detail</createsyscode>
+        <title>Adressen</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+	
+	 <WfvEntry>
+      <syscode>wfvmemo_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>memo_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvmemo_detail</detailsyscode>
+        <createsyscode>wfvmemo_detail</createsyscode>
+        <title>Memos</title>
+        <icon>disk</icon>
+        <filter />
+      </customentry>
+    </WfvEntry>
+	
+	 <WfvEntry>
+      <syscode>wfvbeteiligter_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>beteiligter_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvbeteiligter_detail_dashboard</detailsyscode>
+        <createsyscode>wfvbeteiligter_create_dashboard</createsyscode>
+        <title>Beteiligte</title>
+        <icon>disk</icon>
+        <filter />
+        <sortfields>CRMNM.TYPCODE</sortfields>
+        <sortorder>ASC</sortorder>
+      </customentry>
+    </WfvEntry>
+	
+	 <WfvEntry>
+      <syscode>wfvb2b_angebot_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>b2b_angebot_liste</befehlszeile>
+      <customentry>
+        <detailsyscode>wfvangebotsummary_dashboard</detailsyscode>
+        <createsyscode>wfvangebotsummary_dashboard</createsyscode>
+        <title>Angebote</title>
+        <icon>disk</icon>
+        <filter />
+		<internalfilter>1=1</internalfilter>
+       
+        <sortfields>ANGEBOT.SYSID</sortfields>
+        <sortorder>DESC</sortorder>
+      </customentry>
+    </WfvEntry>
+	
+	 <WfvEntry>
+      <syscode>wfvcomment_liste</syscode>
+
+      <entrytype>0</entrytype>
+      <befehlszeile>comment_liste</befehlszeile>
+      <customentry>
+        <title>Comments</title>
+        <icon>disk</icon>
+        <filter />
+        <sortfields>STICKYNOTE.SYSCRTDATE</sortfields>
+        <sortorder>DESC</sortorder>
+
+      </customentry>
+    </WfvEntry>
+  </entries>
+</WfvConfig>
+

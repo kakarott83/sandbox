@@ -1,0 +1,2423 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CIC.Database.ET.EF6</name>
+    </assembly>
+    <members>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGTYPE">
+            <summary>               
+            Table: ETGTYPE
+            Description: Vehicle type listing 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.OBTYPFZADD">
+            <summary>               
+            Table: OBTYPFZADD
+            Description: Fahrzeugspezifische Erweiterungen für Objekttypen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.BRAND">
+            <summary>               
+            Table: BRAND
+            Description: Hersteller bzw. Marke 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.OBTYP">
+            <summary>               
+            Table: OBTYP
+            Description: Objekttypen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGTYPEAT">
+            <summary>               
+            Table: ETGTYPEAT
+            Description: Special vehicle type listing for Austria 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGTYPEBE">
+            <summary>               
+            Table: ETGTYPEBE
+            Description: Special vehicle type listing for Belgium 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGTYPEDE">
+            <summary>               
+            Table: ETGTYPEDE
+            Description: Special vehicle type listing for Germany 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGTYPEFR">
+            <summary>               
+            Table: ETGTYPEFR
+            Description: Special vehicle type listing for France 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGTYPEGB">
+            <summary>               
+            Table: ETGTYPEGB
+            Description: Special vehicle type listing for United Kingdom 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGTYPECH">
+            <summary>               
+            Table: ETGTYPECH
+            Description: Special vehicle type listing for Switzerland 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGTYPEPT">
+            <summary>               
+            Table: ETGTYPEPT
+            Description: Special vehicle type listing for Portugal 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGTYPEHU">
+            <summary>               
+            Table: ETGTYPEHU
+            Description: Special vehicle type listing for Hungary 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGNAEDE">
+            <summary>               
+            Table: ETGNAEDE
+            Description: NAE-Values 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGMAKE">
+            <summary>               
+            Table: ETGMAKE
+            Description: Brand information 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGMODEL">
+            <summary>               
+            Table: ETGMODEL
+            Description: Model name 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGMODLEVONE">
+            <summary>               
+            Table: ETGMODLEVONE
+            Description: First level for grouping under vehicle type 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGMODLEVTWO">
+            <summary>               
+            Table: ETGMODLEVTWO
+            Description: Second level for grouping under vehicle type 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGPRICE">
+            <summary>               
+            Table: ETGPRICE
+            Description: New price (only last known new price) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGTCERT">
+            <summary>               
+            Table: ETGTCERT
+            Description: Type homologation / certification 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGTXTTABEL">
+            <summary>               
+            Table: ETGTXTTABEL
+            Description: Text tables for editing 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGTINFORM">
+            <summary>               
+            Table: ETGTINFORM
+            Description: Editing information for types and options 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGADDITION">
+            <summary>               
+            Table: ETGADDITION
+            Description: Equipment information 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGEUROCOL">
+            <summary>               
+            Table: ETGEUROCOL
+            Description: Basic colour names 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGMANUCOL">
+            <summary>               
+            Table: ETGMANUCOL
+            Description: Colour designations of the manufacturers 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGTYPECOL">
+            <summary>               
+            Table: ETGTYPECOL
+            Description: Colours of the type-equipments 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGCONTENT">
+            <summary>               
+            Table: ETGCONTENT
+            Description: Equipment package (content) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGADDTIME">
+            <summary>               
+            Table: ETGADDTIME
+            Description: Addition price list information 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGEQTEXT">
+            <summary>               
+            Table: ETGEQTEXT
+            Description: Equipment text 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGEXCLUDE">
+            <summary>               
+            Table: ETGEXCLUDE
+            Description: Assembling, In- / Exclude and Obligatory properties 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGFORMULA">
+            <summary>               
+            Table: ETGFORMULA
+            Description: Addition formulas 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGESAJOIN">
+            <summary>               
+            Table: ETGESAJOIN
+            Description: Pointers to equipment text codes / ESACO code 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGESACO">
+            <summary>               
+            Table: ETGESACO
+            Description: EurotaxGlass's equipment codes grouping 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGESACOTYPES">
+            <summary>               
+            Table: ETGESACOTYPES
+            Description: Flag, if ESACO Subgroup covers the issues 'Paint', 'Interior trim', 'Rim' or 'Tyres'. Only Subgroups with one or more flags are in this table 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGMANUFACTOR">
+            <summary>               
+            Table: ETGMANUFACTOR
+            Description: Manufacturer codes 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGEQJWHEEL">
+            <summary>               
+            Table: ETGEQJWHEEL
+            Description: Join between wheels information and equipment items 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGGROUPEXCL">
+            <summary>               
+            Table: ETGGROUPEXCL
+            Description: Group code exclusions 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGGROUPLINK">
+            <summary>               
+            Table: ETGGROUPLINK
+            Description: Link between equipment code and group code 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGGROUPVALIDNR">
+            <summary>               
+            Table: ETGGROUPVALIDNR
+            Description: Valid numbers of group codes 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGGRAVEPRI">
+            <summary>               
+            Table: ETGGRAVEPRI
+            Description: Average prices of equipment groups for valuation 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGGRODEVCO">
+            <summary>               
+            Table: ETGGRODEVCO
+            Description: Information for devaluation concerning equipment groups 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGESAEXGRP">
+            <summary>               
+            Table: ETGESAEXGRP
+            Description: ESACO exclusion group names 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGESAEXC">
+            <summary>               
+            Table: ETGESAEXC
+            Description: ESACO per exclusion group 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGESAMUL">
+            <summary>               
+            Table: ETGESAMUL
+            Description: ESACO non exclusions per vehicle category 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGESAGRUC">
+            <summary>               
+            Table: ETGESAGRUC
+            Description: Join between Exclusion groups and vehicle category 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGESAEXE">
+            <summary>               
+            Table: ETGESAEXE
+            Description: Exceptions in exclusion groups 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGPRICEHISTORY">
+            <summary>               
+            Table: ETGPRICEHISTORY
+            Description: Exceptions in exclusion groups 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGCONSUMER">
+            <summary>               
+            Table: ETGCONSUMER
+            Description: Consumer information 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGJWHEEL">
+            <summary>               
+            Table: ETGJWHEEL
+            Description: Join between wheels information and types 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGTYRES">
+            <summary>               
+            Table: ETGTYRES
+            Description: Tyres information 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGRIMS">
+            <summary>               
+            Table: ETGRIMS
+            Description: Rims information 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGTESPECED">
+            <summary>               
+            Table: ETGTESPECED
+            Description: Textinformation about special editions 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGBASICMOD">
+            <summary>               
+            Table: ETGBASICMOD
+            Description: Basismodelltexts 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGORDERCODE">
+            <summary>               
+            Table: ETGORDERCODE
+            Description: Ordercodes per type and period 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGTECHNIC">
+            <summary>               
+            Table: ETGTECHNIC
+            Description: Vehicle type database: technical data 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGMODIDENT">
+            <summary>               
+            Table: ETGMODIDENT
+            Description: Logistic for searching over the VIN-Number or Modelcode 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGTCERTDATACH">
+            <summary>               
+            Table: ETGTCERTDATACH
+            Description: Data for Type homogation / certification (Switzerland) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGQUOTAT">
+            <summary>               
+            Table: ETGQUOTAT
+            Description: Valuations 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGPROGNOS">
+            <summary>               
+            Table: ETGPROGNOS
+            Description: Residual value forecasts 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGMEDIAETX">
+            <summary>               
+            Table: ETGMEDIAETX
+            Description: Links, media/customers 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGIMAGES">
+            <summary>               
+            Table: ETGIMAGES
+            Description: Image characteristics 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGIMATECINF">
+            <summary>               
+            Table: ETGIMATECINF
+            Description: Image file information 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGETINTER">
+            <summary>               
+            Table: ETGETINTER
+            Description: National &amp; International links between EurotaxGlass's-Countries 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGETLINK">
+            <summary>               
+            Table: ETGETLINK
+            Description: Int. data links between EurotaxGlass's and other Systems 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGZREPORT">
+            <summary>               
+            Table: ETGZREPORT
+            Description: Report of Delivery 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGZVERSION">
+            <summary>               
+            Table: ETGZVERSION
+            Description: Version of DB-Structure/Template 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGZMARKET">
+            <summary>               
+            Table: ETGZMARKET
+            Description: List of Markets/Countries 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGZLANGUAGE">
+            <summary>               
+            Table: ETGZLANGUAGE
+            Description: List of Languages 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGZCURRENCY">
+            <summary>               
+            Table: ETGZCURRENCY
+            Description: List of Currencies 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGZVEHTYPE">
+            <summary>               
+            Table: ETGZVEHTYPE
+            Description: Vehicle Types per Market/Country 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.ETGCONFIG">
+            <summary>               
+            Table: ETGCONFIG
+            Description: Eurotax Adapter configuration 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.OBTYPMAP">
+            <summary>               
+            Table: OBTYPMAP
+            Description: Objekttypenmapping 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETContext.FZTYP">
+            <summary>               
+            Table: FZTYP
+            Description: Fahrzeugtyp 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.BRAND">
+            <summary>               
+            Table: BRAND
+            Description: Hersteller bzw. Marke 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.BRAND.SYSBRAND">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.BRAND.MANDANT">
+            <summary>           
+            Description: Externe Mandantennummer (candidate key) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.BRAND.SYSLS">
+            <summary>           
+            Description: Mandant 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGADDITION">
+            <summary>               
+            Table: ETGADDITION
+            Description: Equipment information 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGADDITION.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGADDITION.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGADDITION.ID">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGADDTIME">
+            <summary>               
+            Table: ETGADDTIME
+            Description: Addition price list information 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGADDTIME.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGADDTIME.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGADDTIME.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGADDTIME.CODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGADDTIME.VAL">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGBASICMOD">
+            <summary>               
+            Table: ETGBASICMOD
+            Description: Basismodelltexts 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGBASICMOD.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGBASICMOD.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGBASICMOD.TDECD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGCONFIG">
+            <summary>               
+            Table: ETGCONFIG
+            Description: Eurotax Adapter configuration 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGCONFIG.NAME">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGCONFIG.VALUE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGCONSUMER">
+            <summary>               
+            Table: ETGCONSUMER
+            Description: Consumer information 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGCONSUMER.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGCONSUMER.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGCONSUMER.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGCONTENT">
+            <summary>               
+            Table: ETGCONTENT
+            Description: Equipment package (content) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGCONTENT.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGCONTENT.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGCONTENT.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGCONTENT.EQCODEP">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGCONTENT.EQCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGCONTENT.VAL">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGEQJWHEEL">
+            <summary>               
+            Table: ETGEQJWHEEL
+            Description: Join between wheels information and equipment items 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEQJWHEEL.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEQJWHEEL.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEQJWHEEL.EQTCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEQJWHEEL.TYRTYREFCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEQJWHEEL.TYRTYRERCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEQJWHEEL.TYRTYREMRCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEQJWHEEL.TYRTYREMFCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEQJWHEEL.RIMRIMFCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEQJWHEEL.RIMRIMRCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEQJWHEEL.RIMRIMMRCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEQJWHEEL.RIMRIMMFCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEQJWHEEL.REPLID">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGEQTEXT">
+            <summary>               
+            Table: ETGEQTEXT
+            Description: Equipment text 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEQTEXT.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEQTEXT.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEQTEXT.EQCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEQTEXT.LANGCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGESACO">
+            <summary>               
+            Table: ETGESACO
+            Description: EurotaxGlass's equipment codes grouping 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGESACO.TYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGESACO.TXTCODECD2">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGESACOTYPES">
+            <summary>               
+            Table: ETGESACOTYPES
+            Description: Flag, if ESACO Subgroup covers the issues 'Paint', 'Interior trim', 'Rim' or 'Tyres'. Only Subgroups with one or more flags are in this table 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGESACOTYPES.TXTSUBGRPCD2">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGESAEXC">
+            <summary>               
+            Table: ETGESAEXC
+            Description: ESACO per exclusion group 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGESAEXC.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGESAEXC.EEGGRPCODECD2">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGESAEXE">
+            <summary>               
+            Table: ETGESAEXE
+            Description: Exceptions in exclusion groups 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGESAEXE.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGESAEXE.EEGGRPCODECD2">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGESAEXE.TXTESACOCD2">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGESAEXGRP">
+            <summary>               
+            Table: ETGESAEXGRP
+            Description: ESACO exclusion group names 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGESAEXGRP.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGESAEXGRP.GROUPCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGESAEXGRP.LANGCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGESAGRUC">
+            <summary>               
+            Table: ETGESAGRUC
+            Description: Join between Exclusion groups and vehicle category 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGESAGRUC.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGESAGRUC.EEGGRPCODECD2">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGESAGRUC.TXTVEHCATCD2">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGESAJOIN">
+            <summary>               
+            Table: ETGESAJOIN
+            Description: Pointers to equipment text codes / ESACO code 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGESAJOIN.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGESAJOIN.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGESAJOIN.EQTEQCODECD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGESAJOIN.TXTESACOCD2">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGESAJOIN.REPLID">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGESAMUL">
+            <summary>               
+            Table: ETGESAMUL
+            Description: ESACO non exclusions per vehicle category 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGESAMUL.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGESAMUL.TXTESACOCD2">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGESAMUL.TXTVEHCATCD2">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGETINTER">
+            <summary>               
+            Table: ETGETINTER
+            Description: National &amp; International links between EurotaxGlass's-Countries 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGETINTER.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGETINTER.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGETINTER.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGETINTER.MARKET2">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGETINTER.NATCODE2">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGETINTER.LINKTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGETLINK">
+            <summary>               
+            Table: ETGETLINK
+            Description: Int. data links between EurotaxGlass's and other Systems 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGETLINK.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGETLINK.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGETLINK.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGETLINK.SYSTEMID">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGETLINK.SYSTEMCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGETLINK.LINKTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGETLINK.IDENTNUMBER">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGEUROCOL">
+            <summary>               
+            Table: ETGEUROCOL
+            Description: Basic colour names 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEUROCOL.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEUROCOL.COLID">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEUROCOL.LANGCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEUROCOL.COLCODECD2">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGEXCLUDE">
+            <summary>               
+            Table: ETGEXCLUDE
+            Description: Assembling, In- / Exclude and Obligatory properties 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEXCLUDE.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEXCLUDE.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEXCLUDE.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEXCLUDE.ADDCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEXCLUDE.EQTCODECD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGEXCLUDE.VAL">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGFORMULA">
+            <summary>               
+            Table: ETGFORMULA
+            Description: Addition formulas 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGFORMULA.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGFORMULA.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGFORMULA.ADDCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGGRAVEPRI">
+            <summary>               
+            Table: ETGGRAVEPRI
+            Description: Average prices of equipment groups for valuation 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGGRAVEPRI.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGGRAVEPRI.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGGRAVEPRI.TXTCODECD2">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGGRODEVCO">
+            <summary>               
+            Table: ETGGRODEVCO
+            Description: Information for devaluation concerning equipment groups 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGGRODEVCO.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGGRODEVCO.MAKCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGGRODEVCO.TXTCODECD2">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGGRODEVCO.TXTSEG1CD2">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGGROUPEXCL">
+            <summary>               
+            Table: ETGGROUPEXCL
+            Description: Group code exclusions 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGGROUPEXCL.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGGROUPEXCL.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGGROUPEXCL.TXTCODECD2">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGGROUPEXCL.TXTCODE2CD2">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGGROUPLINK">
+            <summary>               
+            Table: ETGGROUPLINK
+            Description: Link between equipment code and group code 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGGROUPLINK.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGGROUPLINK.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGGROUPLINK.EQTEQCODECD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGGROUPLINK.TXTCODECD2">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGGROUPVALIDNR">
+            <summary>               
+            Table: ETGGROUPVALIDNR
+            Description: Valid numbers of group codes 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGGROUPVALIDNR.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGGROUPVALIDNR.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGGROUPVALIDNR.TXTCODECD2">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGGROUPVALIDNR.NUMBER1">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGIMAGES">
+            <summary>               
+            Table: ETGIMAGES
+            Description: Image characteristics 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGIMAGES.ID">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGIMATECINF">
+            <summary>               
+            Table: ETGIMATECINF
+            Description: Image file information 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGIMATECINF.ID">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGIMATECINF.SIZENAME">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGJWHEEL">
+            <summary>               
+            Table: ETGJWHEEL
+            Description: Join between wheels information and types 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGJWHEEL.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGJWHEEL.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGJWHEEL.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGJWHEEL.TYRTYREFCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGJWHEEL.TYRTYRERCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGJWHEEL.TYRTYREMRCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGJWHEEL.TYRTYREMFCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGJWHEEL.RIMRIMFCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGJWHEEL.RIMRIMRCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGJWHEEL.RIMRIMMRCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGJWHEEL.RIMRIMMFCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGJWHEEL.ISSTD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGJWHEEL.SORT">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGJWHEEL.VAL">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGJWHEEL.REPLID">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGMAKE">
+            <summary>               
+            Table: ETGMAKE
+            Description: Brand information 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMAKE.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMAKE.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMAKE.LANGCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMAKE.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGMANUCOL">
+            <summary>               
+            Table: ETGMANUCOL
+            Description: Colour designations of the manufacturers 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMANUCOL.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMANUCOL.MANCOLCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMANUCOL.ECLCOLCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMANUCOL.LANGCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGMANUFACTOR">
+            <summary>               
+            Table: ETGMANUFACTOR
+            Description: Manufacturer codes 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMANUFACTOR.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMANUFACTOR.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMANUFACTOR.EQTEQCODECD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMANUFACTOR.VAL">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMANUFACTOR.TYPCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMANUFACTOR.MCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGMEDIAETX">
+            <summary>               
+            Table: ETGMEDIAETX
+            Description: Links, media/customers 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMEDIAETX.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMEDIAETX.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMEDIAETX.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMEDIAETX.TYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMEDIAETX.IMGOBJECTCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGMODEL">
+            <summary>               
+            Table: ETGMODEL
+            Description: Model name 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMODEL.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMODEL.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMODEL.LANGCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMODEL.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGMODIDENT">
+            <summary>               
+            Table: ETGMODIDENT
+            Description: Logistic for searching over the VIN-Number or Modelcode 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMODIDENT.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMODIDENT.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMODIDENT.MAKCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGMODLEVONE">
+            <summary>               
+            Table: ETGMODLEVONE
+            Description: First level for grouping under vehicle type 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMODLEVONE.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMODLEVONE.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMODLEVONE.CODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMODLEVONE.LANGCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGMODLEVTWO">
+            <summary>               
+            Table: ETGMODLEVTWO
+            Description: Second level for grouping under vehicle type 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMODLEVTWO.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMODLEVTWO.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMODLEVTWO.CODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGMODLEVTWO.LANGCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGNAEDE">
+            <summary>               
+            Table: ETGNAEDE
+            Description: NAE-Values 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGNAEDE.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGNAEDE.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGNAEDE.TDECD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGORDERCODE">
+            <summary>               
+            Table: ETGORDERCODE
+            Description: Ordercodes per type and period 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGORDERCODE.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGORDERCODE.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGORDERCODE.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGORDERCODE.VAL">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGPRICE">
+            <summary>               
+            Table: ETGPRICE
+            Description: New price (only last known new price) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGPRICE.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGPRICE.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGPRICE.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGPRICE.CURRENCY">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGPRICE.VAL">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGPRICE.NET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGPRICE.REPLID">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGPRICEHISTORY">
+            <summary>               
+            Table: ETGPRICEHISTORY
+            Description: Exceptions in exclusion groups 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGPRICEHISTORY.PRHMARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGPRICEHISTORY.PRHVEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGPRICEHISTORY.PRHNATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGPRICEHISTORY.PRHCURRENCY">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGPRICEHISTORY.PRHVAL">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGPRICEHISTORY.PRHNET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGPRICEHISTORY.PRHREPLID">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGPROGNOS">
+            <summary>               
+            Table: ETGPROGNOS
+            Description: Residual value forecasts 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGPROGNOS.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGPROGNOS.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGPROGNOS.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGPROGNOS.YISSUE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGPROGNOS.MISSUE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGPROGNOS.AGEM">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGQUOTAT">
+            <summary>               
+            Table: ETGQUOTAT
+            Description: Valuations 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGQUOTAT.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGQUOTAT.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGQUOTAT.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGQUOTAT.CURRENCY">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGQUOTAT.YISSUE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGQUOTAT.MISSUE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGQUOTAT.YQUOT">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGQUOTAT.MQUOT">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGQUOTAT.FLAG">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGRIMS">
+            <summary>               
+            Table: ETGRIMS
+            Description: Rims information 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGRIMS.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGRIMS.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGRIMS.ID">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGTCERT">
+            <summary>               
+            Table: ETGTCERT
+            Description: Type homologation / certification 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTCERT.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTCERT.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTCERT.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTCERT.NUM">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTCERT.NUM2">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGTCERTDATACH">
+            <summary>               
+            Table: ETGTCERTDATACH
+            Description: Data for Type homogation / certification (Switzerland) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTCERTDATACH.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTCERTDATACH.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTCERTDATACH.TGNR">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGTECHNIC">
+            <summary>               
+            Table: ETGTECHNIC
+            Description: Vehicle type database: technical data 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTECHNIC.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTECHNIC.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTECHNIC.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGTESPECED">
+            <summary>               
+            Table: ETGTESPECED
+            Description: Textinformation about special editions 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTESPECED.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTESPECED.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTESPECED.MAKCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTESPECED.SPECCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGTINFORM">
+            <summary>               
+            Table: ETGTINFORM
+            Description: Editing information for types and options 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTINFORM.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTINFORM.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTINFORM.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTINFORM.REPLID">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGTXTTABEL">
+            <summary>               
+            Table: ETGTXTTABEL
+            Description: Text tables for editing 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTXTTABEL.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTXTTABEL.CODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTXTTABEL.LANGCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGTYPE">
+            <summary>               
+            Table: ETGTYPE
+            Description: Vehicle type listing 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPE.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPE.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPE.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGTYPEAT">
+            <summary>               
+            Table: ETGTYPEAT
+            Description: Special vehicle type listing for Austria 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPEAT.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPEAT.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPEAT.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGTYPEBE">
+            <summary>               
+            Table: ETGTYPEBE
+            Description: Special vehicle type listing for Belgium 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPEBE.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPEBE.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPEBE.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGTYPECH">
+            <summary>               
+            Table: ETGTYPECH
+            Description: Special vehicle type listing for Switzerland 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPECH.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPECH.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPECH.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGTYPECOL">
+            <summary>               
+            Table: ETGTYPECOL
+            Description: Colours of the type-equipments 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPECOL.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPECOL.TYPEQTCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPECOL.MCLCOLCD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGTYPEDE">
+            <summary>               
+            Table: ETGTYPEDE
+            Description: Special vehicle type listing for Germany 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPEDE.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPEDE.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPEDE.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPEDE.RETCOSTCUR">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGTYPEFR">
+            <summary>               
+            Table: ETGTYPEFR
+            Description: Special vehicle type listing for France 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPEFR.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPEFR.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPEFR.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGTYPEGB">
+            <summary>               
+            Table: ETGTYPEGB
+            Description: Special vehicle type listing for United Kingdom 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPEGB.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPEGB.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPEGB.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGTYPEHU">
+            <summary>               
+            Table: ETGTYPEHU
+            Description: Special vehicle type listing for Hungary 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPEHU.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPEHU.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPEHU.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPEHU.TYPENR">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGTYPEPT">
+            <summary>               
+            Table: ETGTYPEPT
+            Description: Special vehicle type listing for Portugal 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPEPT.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPEPT.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYPEPT.NATCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGTYRES">
+            <summary>               
+            Table: ETGTYRES
+            Description: Tyres information 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYRES.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYRES.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGTYRES.ID">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGZCURRENCY">
+            <summary>               
+            Table: ETGZCURRENCY
+            Description: List of Currencies 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGZCURRENCY.CURRENCY">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGZCURRENCY.LANGCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGZLANGUAGE">
+            <summary>               
+            Table: ETGZLANGUAGE
+            Description: List of Languages 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGZLANGUAGE.LANGCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGZMARKET">
+            <summary>               
+            Table: ETGZMARKET
+            Description: List of Markets/Countries 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGZMARKET.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGZMARKET.LANGCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGZREPORT">
+            <summary>               
+            Table: ETGZREPORT
+            Description: Report of Delivery 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGZREPORT.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGZREPORT.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGZREPORT.GENDATE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGZREPORT.GENTIME">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGZVEHTYPE">
+            <summary>               
+            Table: ETGZVEHTYPE
+            Description: Vehicle Types per Market/Country 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGZVEHTYPE.MARKET">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGZVEHTYPE.LANGCODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGZVEHTYPE.VEHTYPE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.ETGZVERSION">
+            <summary>               
+            Table: ETGZVERSION
+            Description: Version of DB-Structure/Template 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGZVERSION.IDDVERSION">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.ETGZVERSION.IDDMINOR">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.FZTYP">
+            <summary>               
+            Table: FZTYP
+            Description: Fahrzeugtyp 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.FZTYP.SYSFZTYP">
+            <summary>           
+            Primary Key: True
+            Description: ID 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.FZTYP.HUBRAUM">
+            <summary>           
+            Description: Hubraum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.FZTYP.LEISTUNG">
+            <summary>           
+            Description: Leistung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.FZTYP.MART">
+            <summary>           
+            Description: Motorart 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.FZTYP.GART">
+            <summary>           
+            Description: Getriebeart 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.FZTYP.NOVA">
+            <summary>           
+            Description: Nova 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.FZTYP.CO2EMI">
+            <summary>           
+            Description: CO2 Emission 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.OBTYP">
+            <summary>               
+            Table: OBTYP
+            Description: Objekttypen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYP.SYSOBTYP">
+            <summary>           
+            Primary Key: True
+            Description: ID 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYP.BEZEICHNUNG">
+            <summary>           
+            Description: Bezeichnung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYP.BESCHREIBUNG">
+            <summary>           
+            Description: Beschreibung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYP.SYSFZTYP">
+            <summary>           
+            Description: ID Fahrzeugtyp 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYP.IMPORTSOURCE">
+            <summary>           
+            Enum values: 'unspezifisch' = '0'|'Jato' = '1'|'Eurotax' = '2'|'Reserve' = '3' 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYP.SYSVGRW2">
+            <summary>           
+            Description: Verweis auf alternative Restwertgruppe 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYP.SYSVGLGD">
+            <summary>           
+            Description: Verweis auf Wertegruppe zu LGD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYP.OBTYPMAPList">
+            <summary>           
+            Refers to table|alias: 'OBTYPMAP', PK Columns: SYSOBTYP 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.OBTYPFZADD">
+            <summary>               
+            Table: OBTYPFZADD
+            Description: Fahrzeugspezifische Erweiterungen für Objekttypen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYPFZADD.SYSOBTYP">
+            <summary>           
+            Primary Key: True
+            Description: ID 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYPFZADD.HUBRAUM">
+            <summary>           
+            Description: Hubraum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYPFZADD.LEISTUNG">
+            <summary>           
+            Description: Leistung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYPFZADD.MART">
+            <summary>           
+            Description: Motorart 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYPFZADD.GART">
+            <summary>           
+            Description: Getriebeart 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYPFZADD.NOVA">
+            <summary>           
+            Description: Nova 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYPFZADD.GRUND">
+            <summary>           
+            Description: Grundpreis 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYPFZADD.VERBRAUCHECEGESAMT">
+            <summary>           
+            Description: Verbrauch nach ECE gesamt 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYPFZADD.CO2EMI">
+            <summary>           
+            Description: CO2 Emission 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYPFZADD.NEUPREISBRUTTO">
+            <summary>           
+            Description: neupreis brutto 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYPFZADD.NEUPREISNETTO">
+            <summary>           
+            Description: neupreis netto 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYPFZADD.KWE">
+            <summary>           
+            Description: Leistung in KW - Elektromotor 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYPFZADD.PSE">
+            <summary>           
+            Description: Leistung in PS - Elektromotor 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYPFZADD.KWGESAMT">
+            <summary>           
+            Description: Leistung in KW - Gesamt 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYPFZADD.PSGESAMT">
+            <summary>           
+            Description: Leistung in PS - Gesamt 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYPFZADD.EEK">
+            <summary>           
+            Description: Energieeffizienzklasse 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYPFZADD.REICHWEITE">
+            <summary>           
+            Description: Reichweite (Elektromotor) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYPFZADD.KWH">
+            <summary>           
+            Description: Strom- / Energieverbrauch 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.ET.EF6.Model.OBTYPMAP">
+            <summary>               
+            Table: OBTYPMAP
+            Description: Objekttypenmapping 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYPMAP.SYSOBTYPMAP">
+            <summary>           
+            Primary Key: True
+            Description: ID 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYPMAP.SYSOBTYP">
+            <summary>           
+            Foreign key: True
+            Navigation property: OBTYP
+            Description: ID Objekttyp 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYPMAP.SYSEXTMAP">
+            <summary>           
+            Description: ID externes Mapping 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYPMAP.HSN">
+            <summary>           
+            Description: Herstellerschlüsselnummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYPMAP.TSN">
+            <summary>           
+            Description: Typschlüsselnummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.ET.EF6.Model.OBTYPMAP.OBTYP">
+            <summary>           
+            Refers to table|alias: OBTYP, FK Columns: SYSOBTYP 
+            </summary>
+        </member>
+    </members>
+</doc>

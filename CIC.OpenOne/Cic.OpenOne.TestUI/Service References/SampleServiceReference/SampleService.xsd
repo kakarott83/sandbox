@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Cic.OpenOne.Service.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cic.OpenOne.Service.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50010/SampleService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Cic.OpenOne.Common.DTO" />
+  <xs:complexType name="iSampleMethodDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="inputData" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="iSampleMethodDto" nillable="true" type="tns:iSampleMethodDto" />
+  <xs:complexType name="oSampleMethodDto">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Cic.OpenOne.Common.DTO" base="q1:oBaseDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="aTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="inner1" nillable="true" type="tns:InnerType" />
+          <xs:element minOccurs="0" name="innerarray" nillable="true" type="tns:ArrayOfInnerType">
+            <xs:annotation>
+              <xs:appinfo>
+                <Surrogate i:type="d1p1:string" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="http://www.w3.org/2001/XMLSchema" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">This is the account balance</Surrogate>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="innerlist" nillable="true" type="tns:ArrayOfInnerType" />
+          <xs:element minOccurs="0" name="numberlong" type="xs:long" />
+          <xs:element minOccurs="0" name="numberlong2" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="sampleResult" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="oSampleMethodDto" nillable="true" type="tns:oSampleMethodDto" />
+  <xs:complexType name="InnerType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="innerinner" nillable="true" type="tns:InnerType2" />
+      <xs:element minOccurs="0" name="test" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InnerType" nillable="true" type="tns:InnerType" />
+  <xs:complexType name="InnerType2">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="test" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InnerType2" nillable="true" type="tns:InnerType2" />
+  <xs:complexType name="ArrayOfInnerType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InnerType" nillable="true" type="tns:InnerType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInnerType" nillable="true" type="tns:ArrayOfInnerType" />
+</xs:schema>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Lucene.Net.Search" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Lucene.Net.Search" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="Occur">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MUST" />
+      <xs:enumeration value="SHOULD" />
+      <xs:enumeration value="MUST_NOT" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Occur" nillable="true" type="tns:Occur" />
+</xs:schema>

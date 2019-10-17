@@ -1,0 +1,1479 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CIC.Database.OD.EF6</name>
+    </assembly>
+    <members>
+        <member name="P:CIC.Database.OD.EF6.Model.ODContext.DDKEYS2">
+            <summary>               
+            Table: DDKEYS2
+            Description: Schlüssel Stufe 2 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODContext.DDPRKGROUPZ">
+            <summary>               
+            Table: DDPRKGROUPZ
+            Description: Foreign (ol.dct) Kundengruppen / Zusatzdaten 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODContext.NEDELETE">
+            <summary>               
+            Table: NEDELETE
+            Description: n-eyes delete action 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODContext.ODUSER">
+            <summary>               
+            Table: ODUSER
+            Description: Workflow-Benutzer ! 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODContext.NEPROC">
+            <summary>               
+            Table: NEPROC
+            Description: n-eyes approval process 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODContext.DDLKPSPOS">
+            <summary>               
+            Table: DDLKPSPOS
+            Description: Selektierte Werte 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODContext.DDLKPCOL">
+            <summary>               
+            Table: DDLKPCOL
+            Description: Wertebereiche 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODContext.DDKEYS1">
+            <summary>               
+            Table: DDKEYS1
+            Description: Schlüssel Stufe 1 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODContext.DDKEYS5">
+            <summary>               
+            Table: DDKEYS5
+            Description: Schlüssel Stufe 5 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODContext.DDKEYS4">
+            <summary>               
+            Table: DDKEYS4
+            Description: Schlüssel Stufe 4 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODContext.DDKEYS3">
+            <summary>               
+            Table: DDKEYS3
+            Description: Schlüssel Stufe 3 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODContext.DD">
+            <summary>               
+            Table: DD
+            Description: Data Dictionary
+            Aliases: ADD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODContext.DDKEY">
+            <summary>               
+            Table: DDKEY
+            Description: Schlüsseltabelle 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODContext.DDLKPPOS">
+            <summary>               
+            Table: DDLKPPOS
+            Description: Lookup Values 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODContext.DDLKPRUB">
+            <summary>               
+            Table: DDLKPRUB
+            Description: Rubriken 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODContext.NEINSTANCE">
+            <summary>               
+            Table: NEINSTANCE
+            Description: n-eyes votum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODContext.NEPROPVAL">
+            <summary>               
+            Table: NEPROPVAL
+            Description: n-eyes approval proposal fieldvalues 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODContext.NEVOTUM">
+            <summary>               
+            Table: NEVOTUM
+            Description: n-eyes approval votum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODContext.NEPROP">
+            <summary>               
+            Table: NEPROP
+            Description: n-eyes approval proposal 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODContext.DDLKPART">
+            <summary>               
+            Table: DDLKPART
+            Description: Lookup Art 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODContext.NEPROCDD">
+            <summary>               
+            Table: NEPROCDD
+            Description: Linker for n-eyes approval n:m (NEPROC : DD) 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OD.EF6.Model.DD">
+            <summary>               
+            Table: DD
+            Description: Data Dictionary
+            Aliases: ADD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.SYSDD">
+            <summary>           
+            Primary Key: True
+            Description: ID 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.FIELD">
+            <summary>           
+            Description: Feldname 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.AKTIVKZ">
+            <summary>           
+            Description: aktiv 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.FIELDHLP">
+            <summary>           
+            Description: Feldhilfe 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.FIELDKEY">
+            <summary>           
+            Foreign key: True
+            Navigation property: DDKEY
+            Description: Menüvorbelegung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.JUSTIFICATION">
+            <summary>           
+            Description: Ausrichtung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.READONLY">
+            <summary>           
+            Description: Eingabesperre 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.ENTRYMODE">
+            <summary>           
+            Description: Eingabemodus 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.CASEMODE">
+            <summary>           
+            Description: Schreibmodus 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.HIDE">
+            <summary>           
+            Description: Hide 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.CHK">
+            <summary>           
+            Description: Prüfung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.TIP">
+            <summary>           
+            Description: Tip 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.REQ">
+            <summary>           
+            Description: Mußfeld 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.RANGE">
+            <summary>           
+            Description: Bereich 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.MINVALUE">
+            <summary>           
+            Description: minimaler Wert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.MAXVALUE">
+            <summary>           
+            Description: maximaler Wert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.CAPITALIZE">
+            <summary>           
+            Description: Kapitalisierung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.SKIP">
+            <summary>           
+            Description: Skip 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.VORBELEGUNG">
+            <summary>           
+            Description: Vorbelegung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.FIELDINIT">
+            <summary>           
+            Description: Initialisierung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.FIELDCHECK">
+            <summary>           
+            Description: Prüfung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.STUFE">
+            <summary>           
+            Description: Berechtigungsstufe 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.STUFEINSERT">
+            <summary>           
+            Description: Berechtigungsstufe beim Einfügen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.STUFEEDIT">
+            <summary>           
+            Description: Berechtigungsstufe beim Bearbeiten 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.SYSNEPROC">
+            <summary>           
+            Foreign key: True
+            Navigation property: NEPROC
+            Description: Verweis auf n-eyes approval process 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.PRECONDITIONNEPROP">
+            <summary>           
+            Description: SQL bedingung für das Generieren einer pendenten Genehmigung (NEPROP) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.FORMATNEPROP">
+            <summary>           
+            Description: Anzeigeformat (internationalisierbar) für Übersichten 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.DBTABLE">
+            <summary>           
+            Description: Oracle Tabellenname für das DataDictionary Feld (wichtig falls ein Alias) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.DBFIELD">
+            <summary>           
+            Description: Oracle Feldname für das DataDictionary Feld (wichtig falls Alias) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.BEZEICHNUNG">
+            <summary>           
+            Description: Anzeigetext für/bei Übersichten 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.RELATEDCTRLID">
+            <summary>           
+            Description: ControlID für den prompt der zu einem Entry-Feld dazugehört 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.FIELDACCEPTED">
+            <summary>           
+            Description: Dieses Feld wird nach dem Feld FieldCheck evaluiert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.LKPTABLE">
+            <summary>           
+            Description: Tabelle für Lookup wegen Beschreibung (n-eyes) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.LKPFIELDDESC">
+            <summary>           
+            Description: Beschreibung für das Lookup Field (n-eyes) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.VIEWID">
+            <summary>           
+            Description: ViewID aus dem NT Client zum Überschreiben der lokalen Views 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.DDKEY">
+            <summary>           
+            Refers to table|alias: DDKEY, FK Columns: FIELDKEY 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.NEPROC">
+            <summary>           
+            Refers to table|alias: NEPROC, FK Columns: SYSNEPROC 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.NEPROCDDList">
+            <summary>           
+            Refers to table|alias: 'NEPROCDD', PK Columns: SYSDD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DD.NEPROPVALList">
+            <summary>           
+            Refers to table|alias: 'NEPROPVAL', PK Columns: SYSDD 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OD.EF6.Model.DDKEY">
+            <summary>               
+            Table: DDKEY
+            Description: Schlüsseltabelle 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEY.SYSDDKEY">
+            <summary>           
+            Primary Key: True
+            Description: ID 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEY.DESCRIPTION">
+            <summary>           
+            Description: Beschreibung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEY.BEMERKUNG">
+            <summary>           
+            Description: Bemerkung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEY.DDList">
+            <summary>           
+            Refers to table|alias: 'DD', PK Columns: SYSDDKEY 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEY.DDKEYSList">
+            <summary>           
+            Refers to table|alias: 'DDKEYS1', PK Columns: SYSDDKEY 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OD.EF6.Model.DDKEYS1">
+            <summary>               
+            Table: DDKEYS1
+            Description: Schlüssel Stufe 1 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS1.SYSDDKEYS1">
+            <summary>           
+            Primary Key: True
+            Description: ID 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS1.DDKEYID">
+            <summary>           
+            Foreign key: True
+            Navigation property: DDKEY
+            Description: Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS1.RANG">
+            <summary>           
+            Description: Rang 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS1.KEY">
+            <summary>           
+            Description: Schlüsselflag 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS1.VALUE">
+            <summary>           
+            Description: Wert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS1.BEMERKUNG">
+            <summary>           
+            Description: Bemerkung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS1.CHK">
+            <summary>           
+            Description: Prüfung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS1.DDKEY">
+            <summary>           
+            Refers to table|alias: DDKEY, FK Columns: DDKEYID 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS1.DDKEYSList">
+            <summary>           
+            Refers to table|alias: 'DDKEYS2', PK Columns: SYSDDKEYS1 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OD.EF6.Model.DDKEYS2">
+            <summary>               
+            Table: DDKEYS2
+            Description: Schlüssel Stufe 2 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS2.SYSDDKEYS2">
+            <summary>           
+            Primary Key: True
+            Description: ID 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS2.DDKEYID">
+            <summary>           
+            Foreign key: True
+            Navigation property: DDKEYS1
+            Description: Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS2.RANG">
+            <summary>           
+            Description: Rang 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS2.KEY">
+            <summary>           
+            Description: Schlüsselflag 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS2.VALUE">
+            <summary>           
+            Description: Wert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS2.BEMERKUNG">
+            <summary>           
+            Description: Bemerkung: 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS2.CHK">
+            <summary>           
+            Description: Prüfung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS2.DDKEYS1">
+            <summary>           
+            Refers to table|alias: DDKEYS1, FK Columns: DDKEYID 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS2.DDKEYSList">
+            <summary>           
+            Refers to table|alias: 'DDKEYS3', PK Columns: SYSDDKEYS2 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OD.EF6.Model.DDKEYS3">
+            <summary>               
+            Table: DDKEYS3
+            Description: Schlüssel Stufe 3 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS3.SYSDDKEYS3">
+            <summary>           
+            Primary Key: True
+            Description: ID 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS3.DDKEYID">
+            <summary>           
+            Foreign key: True
+            Navigation property: DDKEYS1
+            Description: Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS3.RANG">
+            <summary>           
+            Description: Rang 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS3.KEY">
+            <summary>           
+            Description: Schlüsselflag 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS3.VALUE">
+            <summary>           
+            Description: Wert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS3.BEMERKUNG">
+            <summary>           
+            Description: Bemerkung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS3.CHK">
+            <summary>           
+            Description: Prüfung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS3.DDKEYS1">
+            <summary>           
+            Refers to table|alias: DDKEYS2, FK Columns: DDKEYID 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS3.DDKEYSList">
+            <summary>           
+            Refers to table|alias: 'DDKEYS4', PK Columns: SYSDDKEYS3 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OD.EF6.Model.DDKEYS4">
+            <summary>               
+            Table: DDKEYS4
+            Description: Schlüssel Stufe 4 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS4.SYSDDKEYS4">
+            <summary>           
+            Primary Key: True
+            Description: ID 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS4.DDKEYID">
+            <summary>           
+            Foreign key: True
+            Navigation property: DDKEYS1
+            Description: Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS4.RANG">
+            <summary>           
+            Description: Rang 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS4.KEY">
+            <summary>           
+            Description: Schlüsselflag 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS4.VALUE">
+            <summary>           
+            Description: Wert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS4.BEMERKUNG">
+            <summary>           
+            Description: Bemerkung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS4.CHK">
+            <summary>           
+            Description: Prüfung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS4.DDKEYS1">
+            <summary>           
+            Refers to table|alias: DDKEYS3, FK Columns: DDKEYID 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS4.DDKEYSList">
+            <summary>           
+            Refers to table|alias: 'DDKEYS5', PK Columns: SYSDDKEYS4 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OD.EF6.Model.DDKEYS5">
+            <summary>               
+            Table: DDKEYS5
+            Description: Schlüssel Stufe 5 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS5.SYSDDKEYS5">
+            <summary>           
+            Primary Key: True
+            Description: ID 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS5.DDKEYID">
+            <summary>           
+            Foreign key: True
+            Navigation property: DDKEYS1
+            Description: Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS5.RANG">
+            <summary>           
+            Description: Rang 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS5.KEY">
+            <summary>           
+            Description: Schlüsselflag 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS5.VALUE">
+            <summary>           
+            Description: Wert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS5.BEMERKUNG">
+            <summary>           
+            Description: Bemerkung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS5.CHK">
+            <summary>           
+            Description: Prüfung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDKEYS5.DDKEYS1">
+            <summary>           
+            Refers to table|alias: DDKEYS4, FK Columns: DDKEYID 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OD.EF6.Model.DDLKPART">
+            <summary>               
+            Table: DDLKPART
+            Description: Lookup Art 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPART.SYSDDLKPART">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPART.VALUETYPE">
+            <summary>           
+            Enum values: 'String' = '0'|'Number' = '1'|'Date' = '2' 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPART.VALUESOURCE">
+            <summary>           
+            Enum values: 'ID' = '0'|'Value' = '1'|'Domain ID' = '2' 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPART.SAVESOURCE">
+            <summary>           
+            Enum values: 'ID' = '0'|'Value' = '1'|'Domain ID' = '2' 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OD.EF6.Model.DDLKPCOL">
+            <summary>               
+            Table: DDLKPCOL
+            Description: Wertebereiche 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPCOL.SYSDDLKPCOL">
+            <summary>           
+            Primary Key: True
+            Description: Primärschlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPCOL.SYSDDLKPRUB">
+            <summary>           
+            Foreign key: True
+            Navigation property: DDLKPRUB
+            Description: Verweis zur Rubrik 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPCOL.ACTIVEFLAG">
+            <summary>           
+            Description: AktivFlag. 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPCOL.RANK">
+            <summary>           
+            Description: Rang für Sortierung der Anzeige 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPCOL.NAME">
+            <summary>           
+            Description: Bezeichnung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPCOL.CODE">
+            <summary>           
+            Description: Code 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPCOL.TYPE">
+            <summary>           
+            Description: Typ. Optionbox (0 = unbekannt, 1=Eingabe, 2=Liste)
+            Enum values: 'unbekannt' = '0'|'Eingabe' = '1'|'Liste' = '2' 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPCOL.FORMAT">
+            <summary>           
+            Description: Feldtyp. Optionbox (0 = unbekannt, 1=Text, 2=Ganzzahl, 3=Betrag, 4=Prozent, 5=Datum)
+            Enum values: 'unbekannt' = '0'|'Text' = '1'|'Ganzzahl' = '2'|'Betrag' = '3'|'Prozent' = '4'|'Datum' = '5'|'Uhrzeit' = '6' 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPCOL.EDITABLE">
+            <summary>           
+            Description: Beschreibbar 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPCOL.DEFAULTVALUE">
+            <summary>           
+            Description: Defaultwert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPCOL.DDLKPRUB">
+            <summary>           
+            Refers to table|alias: DDLKPRUB, FK Columns: SYSDDLKPRUB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPCOL.DDLKPPOSList">
+            <summary>           
+            Refers to table|alias: 'DDLKPPOS', PK Columns: SYSDDLKPCOL 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPCOL.DDLKPSPOSList">
+            <summary>           
+            Refers to table|alias: 'DDLKPSPOS', PK Columns: SYSDDLKPCOL 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPCOL.DDPRKGROUPZList">
+            <summary>           
+            Refers to table|alias: 'DDPRKGROUPZ', PK Columns: SYSDDLKPCOL 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OD.EF6.Model.DDLKPPOS">
+            <summary>               
+            Table: DDLKPPOS
+            Description: Lookup Values 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPPOS.SYSDDLKPPOS">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPPOS.ACTIVEFLAG">
+            <summary>           
+            Description: Aktiveflag 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPPOS.SYSDDLKPCOL">
+            <summary>           
+            Foreign key: True
+            Navigation property: DDLKPCOL
+            Description: Verweis zur Collection 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPPOS.DDLKPCOL">
+            <summary>           
+            Refers to table|alias: DDLKPCOL, FK Columns: SYSDDLKPCOL 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPPOS.DDLKPSPOSList">
+            <summary>           
+            Refers to table|alias: 'DDLKPSPOS', PK Columns: SYSDDLKPPOS 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OD.EF6.Model.DDLKPRUB">
+            <summary>               
+            Table: DDLKPRUB
+            Description: Rubriken 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPRUB.SYSDDLKPRUB">
+            <summary>           
+            Primary Key: True
+            Description: Primärschlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPRUB.ACTIVEFLAG">
+            <summary>           
+            Description: AktivFlag. 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPRUB.RANK">
+            <summary>           
+            Description: Rang für Sortierung der Anzeige 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPRUB.NAME">
+            <summary>           
+            Description: Bezeichnung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPRUB.CODE">
+            <summary>           
+            Description: Code 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPRUB.AREA">
+            <summary>           
+            Description: Gebiet 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPRUB.SYSID">
+            <summary>           
+            Description: Verweis zum Satz im Gebiet 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPRUB.OPENFLAG">
+            <summary>           
+            Description: Feld "openflag" als boolschen Wert, um das "offen oder geschlossen" Verhalten im CRM zu beeinflussen in der Rubrikenauswahl 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPRUB.TYP">
+            <summary>           
+            Description: Feld "type", in das wir einen Code in OL hinterlegen. Damit soll dann die Anzeige der Rubrik gesteuert werden, also ob die Rubrik überhaupt zur Auswahl erscheint oder nicht. 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPRUB.DDLKPCOLList">
+            <summary>           
+            Refers to table|alias: 'DDLKPCOL', PK Columns: SYSDDLKPRUB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPRUB.DDPRKGROUPZList">
+            <summary>           
+            Refers to table|alias: 'DDPRKGROUPZ', PK Columns: SYSDDLKPRUB 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OD.EF6.Model.DDLKPSPOS">
+            <summary>               
+            Table: DDLKPSPOS
+            Description: Selektierte Werte 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPSPOS.SYSDDLKPSPOS">
+            <summary>           
+            Primary Key: True
+            Description: Primärschlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPSPOS.SYSDDLKPPOS">
+            <summary>           
+            Foreign key: True
+            Navigation property: DDLKPPOS
+            Description: Verweis zum Wert (wenn aus Liste gewählt) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPSPOS.SYSDDLKPCOL">
+            <summary>           
+            Foreign key: True
+            Navigation property: DDLKPCOL
+            Description: Verweis zur Collection (immer) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPSPOS.AREA">
+            <summary>           
+            Description: Gebiet 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPSPOS.SYSID">
+            <summary>           
+            Description: Verweis zum Satz im Gebiet 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPSPOS.VALUE">
+            <summary>           
+            Description: Gewählter bzw geschriebener Wert (bei ddlkpcol.type = 1 > geschrieben, ddlkpcool.type =2, gewählt) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPSPOS.ACTIVEFLAG">
+            <summary>           
+            Description: Aktiv 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPSPOS.GROUPID">
+            <summary>           
+            Description: ID zur Gruppierung von DDLKPSPOS Einträgen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPSPOS.CONTENT">
+            <summary>           
+            Description: Reportingdaten zum B2C ANGEBOT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPSPOS.DDLKPCOL">
+            <summary>           
+            Refers to table|alias: DDLKPCOL, FK Columns: SYSDDLKPCOL 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDLKPSPOS.DDLKPPOS">
+            <summary>           
+            Refers to table|alias: DDLKPPOS, FK Columns: SYSDDLKPPOS 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OD.EF6.Model.DDPRKGROUPZ">
+            <summary>               
+            Table: DDPRKGROUPZ
+            Description: Foreign (ol.dct) Kundengruppen / Zusatzdaten 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDPRKGROUPZ.SYSPRKGROUPZ">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDPRKGROUPZ.SYSPRKGROUP">
+            <summary>           
+            Description: Verweis zur Kundengruppe 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDPRKGROUPZ.SYSDDLKPRUB">
+            <summary>           
+            Foreign key: True
+            Navigation property: DDLKPRUB
+            Description: Verweis zur Rubrik 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDPRKGROUPZ.SYSDDLKPCOL">
+            <summary>           
+            Foreign key: True
+            Navigation property: DDLKPCOL
+            Description: Verweis zur Collection 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDPRKGROUPZ.DDLKPCOL">
+            <summary>           
+            Refers to table|alias: DDLKPCOL, FK Columns: SYSDDLKPCOL 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.DDPRKGROUPZ.DDLKPRUB">
+            <summary>           
+            Refers to table|alias: DDLKPRUB, FK Columns: SYSDDLKPRUB 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OD.EF6.Model.NEDELETE">
+            <summary>               
+            Table: NEDELETE
+            Description: n-eyes delete action 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEDELETE.SYSNEDELETE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEDELETE.SYSNEPROC">
+            <summary>           
+            Foreign key: True
+            Navigation property: NEPROC 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEDELETE.NEPROC">
+            <summary>           
+            Refers to table|alias: NEPROC, FK Columns: SYSNEPROC 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OD.EF6.Model.NEINSTANCE">
+            <summary>               
+            Table: NEINSTANCE
+            Description: n-eyes votum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEINSTANCE.SYSNEINSTANCE">
+            <summary>           
+            Primary Key: True
+            Description: Primärschlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEINSTANCE.NAME">
+            <summary>           
+            Description: Eindeutiger Name (nur eindeutig zusammen mit SysNEPROC) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEINSTANCE.DESCRIPTION">
+            <summary>           
+            Description: Beschreibung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEINSTANCE.ACTIVEFLAG">
+            <summary>           
+            Description: AktivFlag. Darf nur geändert werden wenn keine pendenten Genehmigungen (NEPROP) vorliegen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEINSTANCE.WEIGHTAGE">
+            <summary>           
+            Description: Gewichtung 1..99. Darf nur geändert werden wenn keine abhängigen offenen Genehmigungen vorliegen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEINSTANCE.MANDATORYFLAG">
+            <summary>           
+            Description: Mussflag. Das Votum muss auf jeden Fall abgegeben werden (auch wenn bereits überstimmt)  - ansonsten gibt es keine Entscheidung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEINSTANCE.SYSNEPROC">
+            <summary>           
+            Foreign key: True
+            Navigation property: NEPROC
+            Description: Verweis auf approval process 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEINSTANCE.CODERMO">
+            <summary>           
+            Description: Teilverweis auf RFU (Part1 Rechtemodul) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEINSTANCE.CODERFU">
+            <summary>           
+            Description: Teilverweis auf RFU (Part2 Rechtefunktion) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEINSTANCE.SYSRFN">
+            <summary>           
+            Description: Verweis auf RFN 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEINSTANCE.NEPROC">
+            <summary>           
+            Refers to table|alias: NEPROC, FK Columns: SYSNEPROC 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEINSTANCE.NEVOTUMList">
+            <summary>           
+            Refers to table|alias: 'NEVOTUM', PK Columns: SYSNEINSTANCE 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OD.EF6.Model.NEPROC">
+            <summary>               
+            Table: NEPROC
+            Description: n-eyes approval process 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROC.SYSNEPROC">
+            <summary>           
+            Primary Key: True
+            Description: Primärschlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROC.NAME">
+            <summary>           
+            Description: Eindeutiger Name 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROC.DESCRIPTION">
+            <summary>           
+            Description: Beschreibung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROC.ACTIVEFLAG">
+            <summary>           
+            Description: AktivFlag. Darf nur geändert werden wenn keine pendenten Genehmigungen (NEPROP) vorliegen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROC.DELAYEDFLAG">
+            <summary>           
+            Description: DelayedFlag. Verzögerte Aktion nach Genehmigung. 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROC.SELFAPPROVALFLAG">
+            <summary>           
+            Description: SelfApprovalFlag. Derjenige der die Genehmigung anfordert darf es auch genehmigen (wenn er in der entsprechenden Rechtefunktionsgruppe ist) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROC.WHENCLAUSE">
+            <summary>           
+            Description: When Clause for the 4 eyes Trigger 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROC.PRECONDITIONNEPROC">
+            <summary>           
+            Description: Globale Bedingung für NEPROC 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROC.DDList">
+            <summary>           
+            Refers to table|alias: 'DD', PK Columns: SYSNEPROC 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROC.NEDELETEList">
+            <summary>           
+            Refers to table|alias: 'NEDELETE', PK Columns: SYSNEPROC 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROC.NEINSTANCEList">
+            <summary>           
+            Refers to table|alias: 'NEINSTANCE', PK Columns: SYSNEPROC 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROC.NEPROCDDList">
+            <summary>           
+            Refers to table|alias: 'NEPROCDD', PK Columns: SYSNEPROC 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OD.EF6.Model.NEPROCDD">
+            <summary>               
+            Table: NEPROCDD
+            Description: Linker for n-eyes approval n:m (NEPROC : DD) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROCDD.SYSNEPROCDD">
+            <summary>           
+            Primary Key: True
+            Description: Primärschlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROCDD.SYSDD">
+            <summary>           
+            Foreign key: True
+            Navigation property: DD
+            Description: Verweis auf DD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROCDD.SYSNEPROC">
+            <summary>           
+            Foreign key: True
+            Navigation property: NEPROC
+            Description: Verweis auf NEPROC 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROCDD.PRECONDITIONNEPROP">
+            <summary>           
+            Description: SQL bedingung für das Generieren einer pendenten Genehmigung (NEPROP) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROCDD.BEZEICHNUNG">
+            <summary>           
+            Description: Anzeigetext für/bei Übersichten 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROCDD.PRECONDITIONNEPROC">
+            <summary>           
+            Description: Globale Bedingung für NEPROC 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROCDD.DD">
+            <summary>           
+            Refers to table|alias: DD, FK Columns: SYSDD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROCDD.NEPROC">
+            <summary>           
+            Refers to table|alias: NEPROC, FK Columns: SYSNEPROC 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OD.EF6.Model.NEPROP">
+            <summary>               
+            Table: NEPROP
+            Description: n-eyes approval proposal 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROP.SYSNEPROP">
+            <summary>           
+            Primary Key: True
+            Description: Primärschlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROP.AREA">
+            <summary>           
+            Description: Gebiet (Area) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROP.SYSID">
+            <summary>           
+            Description: SysID zum Gebiet 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROP.DESCRIPTION">
+            <summary>           
+            Description: Kommentar oder Beschreibung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROP.APPROVALSTATUS">
+            <summary>           
+            Description: Genehmigungszustand: 0 = offen, -1 = abgelehnt, 1 = genehmigt
+            Enum values: 'offen' = '0'|'abgelehnt' = '-1'|'genehmigt' = '1' 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROP.CREATEDATE">
+            <summary>           
+            Description: Erstellt am 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROP.CREATETIME">
+            <summary>           
+            Description: Erstellt am 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROP.SYSCREATEUSER">
+            <summary>           
+            Description: Verweis auf Ersteller 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROP.DESIREDDATE">
+            <summary>           
+            Description: Wunschtermin 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROP.DECISIONDATE">
+            <summary>           
+            Description: Entschieden am 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROP.DECISIONTIME">
+            <summary>           
+            Description: Entschieden um 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROP.DECISIONREM">
+            <summary>           
+            Description: Bemerkungen zur Entscheidung bzw. Entscheidungsfindung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROP.PROCESSEDDATE">
+            <summary>           
+            Description: Verarbeitet am 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROP.PROCESSEDTIME">
+            <summary>           
+            Description: Verarbeitet um 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROP.SYSPROCESSEDUSER">
+            <summary>           
+            Description: Verweis auf den Durchführer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROP.PROCESSEDFLAG">
+            <summary>           
+            Description: Verarbeitet 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROP.SYSNEPROC">
+            <summary>           
+            Description: Verweis auf approval process 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROP.EXECAREA">
+            <summary>           
+            Description: ExecArea: 'DD','WFTA','WFLVL1','WFLVL2','WFLVL3','WFLVL4','WFLVL5','WFJLVL1','WFJLVL2','WFJLVL3','WFJLVL4','WFJLVL5','JPOOL','WFTABLE' 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROP.SYSEXECAREA">
+            <summary>           
+            Description: SysEXECAREA. ID von DD, WFTA, WFLVL1 bis WFLVL5, WFJLVL1 bis WFJLVL5 bzw. JPOOL abhängig von ExceArt 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROP.EXECART">
+            <summary>           
+            Description: ExecArt. 0= Manuell/Verbal, 1= Feldänderung, 2= Workflow,3=DoBox,4=JobBox, 5=Jobpool, 6=Löschung
+            Enum values: 'Manuell/Verbal' = '0'|'Feldänderung' = '1'|'Workflow' = '2'|'DoBox' = '3'|'JobBox' = '4'|'Jobpool' = '5'|'Löschung' = '6' 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROP.SYSLS">
+            <summary>           
+            Description: Verweis auf Mandanten (lsadd.syslsadd) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROP.NEPROPVALList">
+            <summary>           
+            Refers to table|alias: 'NEPROPVAL', PK Columns: SYSNEPROP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROP.NEVOTUMList">
+            <summary>           
+            Refers to table|alias: 'NEVOTUM', PK Columns: SYSNEPROP 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OD.EF6.Model.NEPROPVAL">
+            <summary>               
+            Table: NEPROPVAL
+            Description: n-eyes approval proposal fieldvalues 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROPVAL.SYSNEPROPVAL">
+            <summary>           
+            Primary Key: True
+            Description: Primärschlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROPVAL.OLDVALUE">
+            <summary>           
+            Description: Alteer Feldwert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROPVAL.NEWVALUE">
+            <summary>           
+            Description: Neuer Feldwert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROPVAL.AREA">
+            <summary>           
+            Description: Area (Gebiet) falls abweichend von NEPROP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROPVAL.SYSID">
+            <summary>           
+            Description: SysID zur Area (Gebiet) falls abweichend von NEPROP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROPVAL.SYSDD">
+            <summary>           
+            Foreign key: True
+            Navigation property: DD
+            Description: Verweis auf DD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROPVAL.SYSNEPROP">
+            <summary>           
+            Foreign key: True
+            Navigation property: NEPROP
+            Description: Verweis auf n-eyes approval proposal 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROPVAL.DD">
+            <summary>           
+            Refers to table|alias: DD, FK Columns: SYSDD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEPROPVAL.NEPROP">
+            <summary>           
+            Refers to table|alias: NEPROP, FK Columns: SYSNEPROP 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OD.EF6.Model.NEVOTUM">
+            <summary>               
+            Table: NEVOTUM
+            Description: n-eyes approval votum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEVOTUM.SYSNEVOTUM">
+            <summary>           
+            Primary Key: True
+            Description: Primärschlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEVOTUM.SYSNEPROP">
+            <summary>           
+            Foreign key: True
+            Navigation property: NEPROP
+            Description: Verweis auf approval proposal 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEVOTUM.SYSNEINSTANCE">
+            <summary>           
+            Foreign key: True
+            Navigation property: NEINSTANCE
+            Description: Verweis auf approval instance 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEVOTUM.VOTUMDATE">
+            <summary>           
+            Description: Votum am 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEVOTUM.VOTUMTIME">
+            <summary>           
+            Description: Votum um 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEVOTUM.SYSVOTUMUSER">
+            <summary>           
+            Foreign key: True
+            Navigation property: ODUSER
+            Description: Verweis auf den Abstimmer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEVOTUM.VOTUM">
+            <summary>           
+            Description: Votum. Werte: 0 = neutral, -1 = abgelehnt, 1 = genehmigt
+            Enum values: 'neutral' = '0'|'abgelehnt' = '-1'|'genehmigt' = '1' 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEVOTUM.VOTUMREM">
+            <summary>           
+            Description: Bemerkungen und Kommentare 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEVOTUM.READFLAG">
+            <summary>           
+            Description: Leseflag nach Durchlauf des 4-Augen Prinzips 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEVOTUM.NEINSTANCE">
+            <summary>           
+            Refers to table|alias: NEINSTANCE, FK Columns: SYSNEINSTANCE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEVOTUM.NEPROP">
+            <summary>           
+            Refers to table|alias: NEPROP, FK Columns: SYSNEPROP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.NEVOTUM.ODUSER">
+            <summary>           
+            Refers to table|alias: ODUSER, FK Columns: SYSVOTUMUSER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OD.EF6.Model.ODUSER">
+            <summary>               
+            Table: ODUSER
+            Description: Workflow-Benutzer ! 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODUSER.SYSWFUSER">
+            <summary>           
+            Primary Key: True
+            Description: ID 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODUSER.SORTKZ">
+            <summary>           
+            Description: Sortierkennzeichen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODUSER.REMARK">
+            <summary>           
+            Description: Bemerkung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODUSER.IDENTNR">
+            <summary>           
+            Description: identifikationsnummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODUSER.LOGINART">
+            <summary>           
+            Description: Login Art: 0 = both, 1 = only SSO, 2 = only Credentials
+            Enum values: 'both' = '0'|'SSO only' = '1'|'Credentials only' = '2' 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODUSER.SYSCTLANG">
+            <summary>           
+            Description: Verweis auf die Sprache des Benutzers 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODUSER.USERART">
+            <summary>           
+            Description: User art: 0 = standard, 1 = readonly
+            Enum values: 'Standard' = '0'|'Readonly' = '1' 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODUSER.OVERIDESSOEXKLFLAG">
+            <summary>           
+            Description: Für diesen User den wert aus WFPARAM:SSOExklFlag überschreiben falls er gesetzt ist 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODUSER.EXTMAILADDRESS">
+            <summary>           
+            Description: Externe eMail Adresse (z.B.: für exchange) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODUSER.EXTMAILACCOUNT">
+            <summary>           
+            Description: Externer eMail Account (z.B.: für Excjange) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODUSER.EXTMAILPASSWORD">
+            <summary>           
+            Description: Password für den externen eMail Account (z.B: Exchange) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OD.EF6.Model.ODUSER.NEVOTUMList">
+            <summary>           
+            Refers to table|alias: 'NEVOTUM', PK Columns: SYSWFUSER 
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B7F449B0-F29C-413E-8454-D77A9F725835}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cic.One.Web</RootNamespace>
+    <AssemblyName>Cic.One.Web</AssemblyName>
+    <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <XsdCodeGenEnabled>False</XsdCodeGenEnabled>
+    <WcfConfigValidationEnabled>False</WcfConfigValidationEnabled>
+    <XsdCodeGenSerializerMode>XmlSerializer</XsdCodeGenSerializerMode>
+    <XsdCodeGenReuseTypesFlag>True</XsdCodeGenReuseTypesFlag>
+    <XsdCodeGenReuseTypesMode>All</XsdCodeGenReuseTypesMode>
+    <XsdCodeGenReferences />
+    <XsdCodeGenNamespaceMappings>%2a, Cic.One.Web.ContractTypes</XsdCodeGenNamespaceMappings>
+    <XsdCodeGenCollectionTypes>System.Array%3bSystem.Collections.Generic.Dictionary`2</XsdCodeGenCollectionTypes>
+    <XsdCodeGenExcludedTypes />
+    <XsdCodeGenImportXmlTypes>True</XsdCodeGenImportXmlTypes>
+    <XsdCodeGenGenerateSerializableTypes>True</XsdCodeGenGenerateSerializableTypes>
+    <XsdCodeGenGenerateInternalTypes>False</XsdCodeGenGenerateInternalTypes>
+    <XsdCodeGenEnableDataBinding>False</XsdCodeGenEnableDataBinding>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>5</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=1.1.0.188, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.1.1.0.118\lib\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.ASS.Common">
+      <HintPath>..\..\libs\CIC.ASS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.ASS.SearchService">
+      <HintPath>..\..\libs\CIC.ASS.SearchService.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Database.OL.EF4, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CIC.Database.OL.EF4.4.430.136.221\lib\net45\CIC.Database.OL.EF4.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Monitoring">
+      <HintPath>..\..\libs\Monitoring\CIC.Monitoring.dll</HintPath>
+    </Reference>
+    <Reference Include="Cic.OpenLeaseAuskunftManagement">
+      <HintPath>..\..\libs\Cic.OpenLeaseAuskunftManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data, Version=5.0.1095.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Oracle, Version=8.4.303.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Devart.Data.Oracle.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Oracle.Entity, Version=8.4.303.6, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Devart.Data.Oracle.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net">
+      <HintPath>..\..\libs\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Exchange.WebServices">
+      <HintPath>..\..\libs\Microsoft.Exchange.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Pechkin">
+      <HintPath>..\..\libs\Pechkin.dll</HintPath>
+    </Reference>
+    <Reference Include="Pechkin.Synchronized">
+      <HintPath>..\..\libs\Pechkin.Synchronized.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BO\AbstractEntityBo.cs" />
+    <Compile Include="BO\AbstractPrintBo.cs" />
+    <Compile Include="BO\AreaEntityMapperBO.cs" />
+    <Compile Include="BO\AuthenticationBo.cs" />
+    <Compile Include="BO\BOFactory.cs" />
+    <Compile Include="BO\BOFactoryFactory.cs" />
+    <Compile Include="BO\CalculationBO.cs" />
+    <Compile Include="BO\EntityBo.cs" />
+    <Compile Include="BO\EntityComparator.cs" />
+    <Compile Include="BO\GuardeanBo.cs" />
+    <Compile Include="BO\IAuthenticationBo.cs" />
+    <Compile Include="BO\IBOFactory.cs" />
+    <Compile Include="BO\ICalculationBo.cs" />
+    <Compile Include="BO\IEntityBo.cs" />
+    <Compile Include="BO\IGuardeanBo.cs" />
+    <Compile Include="BO\IPrintBo.cs" />
+    <Compile Include="BO\IReportBo.cs" />
+    <Compile Include="BO\IStateServiceBo.cs" />
+    <Compile Include="BO\IWorkflowBo.cs" />
+    <Compile Include="BO\LuceneBO.cs" />
+    <Compile Include="BO\Mail\AbstractEntityMailBo.cs" />
+    <Compile Include="BO\Mail\AbstractMailBo.cs" />
+    <Compile Include="BO\Mail\EntityMailBo.cs" />
+    <Compile Include="BO\Mail\EWSMailBo.cs" />
+    <Compile Include="BO\Mail\IEntityMailBo.cs" />
+    <Compile Include="BO\Mail\IMailBo.cs" />
+    <Compile Include="BO\PrintBo.cs" />
+    <Compile Include="BO\ReportBo.cs" />
+    <Compile Include="BO\SearchHandlerFactory.cs" />
+    <Compile Include="BO\Search\AbstractDocumentSearchBo.cs" />
+    <Compile Include="BO\Search\AbstractXproSearchBo.cs" />
+    <Compile Include="BO\Search\QueryInfoDataType5.cs" />
+    <Compile Include="BO\Search\QueryInfoDataType4.cs" />
+    <Compile Include="BO\Search\QueryInfoDataType3.cs" />
+    <Compile Include="BO\Search\SearchQueryFactoryFactory.cs" />
+    <Compile Include="BO\Search\DocumentSearchBo.cs" />
+    <Compile Include="BO\Search\IDocumentSearchBo.cs" />
+    <Compile Include="BO\Search\ISearch.cs" />
+    <Compile Include="BO\Search\ISearchQueryInfoFactory.cs" />
+    <Compile Include="BO\Search\IXproSearchBo.cs" />
+    <Compile Include="BO\Search\QueryInfoData.cs" />
+    <Compile Include="BO\Search\QueryInfoDataType1.cs" />
+    <Compile Include="BO\Search\QueryInfoDataType2.cs" />
+    <Compile Include="BO\Search\QueryInfoDataTypeUnion.cs" />
+    <Compile Include="BO\Search\QueryStructure.cs" />
+    <Compile Include="BO\Search\SearchBo.cs" />
+    <Compile Include="BO\Search\SearchQueryInfoFactory.cs" />
+    <Compile Include="BO\Search\XproFavorite.cs" />
+    <Compile Include="BO\Search\XproInfoFactory.cs" />
+    <Compile Include="BO\Search\XproSearchBo.cs" />
+    <Compile Include="BO\ServiceHandler.cs" />
+    <Compile Include="BO\ServiceHandlerSimple.cs" />
+    <Compile Include="BO\ServiceStateBo.cs" />
+    <Compile Include="BO\WorkflowBo.cs" />
+    <Compile Include="Contract\IappManagementService.cs" />
+    <Compile Include="Contract\IauskunftService.cs" />
+    <Compile Include="Contract\IchatCallback.cs" />
+    <Compile Include="Contract\IchatService.cs" />
+    <Compile Include="Contract\IcreateOrUpdateService.cs" />
+    <Compile Include="Contract\IdocumentSearchService.cs" />
+    <Compile Include="Contract\IgetEntityService.cs" />
+    <Compile Include="Contract\ImailService.cs" />
+    <Compile Include="Contract\IprintService.cs" />
+    <Compile Include="Contract\IsearchService.cs" />
+    <Compile Include="Contract\IxproSearchService.cs" />
+    <Compile Include="DAO\AuthenticationDao.cs" />
+    <Compile Include="DAO\DAOFactory.cs" />
+    <Compile Include="DAO\DAOFactoryFactory.cs" />
+    <Compile Include="DAO\CachedDictionaryListsDao.cs" />
+    <Compile Include="DAO\CacheDelegator.cs" />
+    <Compile Include="DAO\ChatDaoFactory.cs" />
+    <Compile Include="DAO\EntityDao.cs" />
+    <Compile Include="DAO\IAuthenticationDao.cs" />
+    <Compile Include="DAO\IDAOFactory.cs" />
+    <Compile Include="DAO\IDocumentSearchDao.cs" />
+    <Compile Include="DAO\IEntityDao.cs" />
+    <Compile Include="DAO\IRecurrDao.cs" />
+    <Compile Include="DAO\ISearchDao.cs" />
+    <Compile Include="DAO\ITADocumentSearchDao.cs" />
+    <Compile Include="DAO\IWorkflowDao.cs" />
+    <Compile Include="DAO\IXproLoaderDao.cs" />
+    <Compile Include="DAO\Mail\ActiveDirectoryConnection.cs" />
+    <Compile Include="DAO\Mail\CertificateCallback.cs" />
+    <Compile Include="DAO\Mail\DebugTraceListenerDao.cs" />
+    <Compile Include="DAO\Mail\EWSDao.cs" />
+    <Compile Include="DAO\Mail\EWSDBDao.cs" />
+    <Compile Include="DAO\Mail\EWSLoadDao.cs" />
+    <Compile Include="DAO\Mail\ExchangeAddressListService.cs" />
+    <Compile Include="DAO\Mail\IMailDao.cs" />
+    <Compile Include="DAO\Mail\IMailDBDao.cs" />
+    <Compile Include="DAO\Mail\ITraceListenerDao.cs" />
+    <Compile Include="DAO\Mail\LogTraceListenerDao.cs" />
+    <Compile Include="DAO\Mail\MailDaoFactory.cs" />
+    <Compile Include="DAO\Mail\SubscriptionWrapper.cs" />
+    <Compile Include="DAO\Mail\TextFileTraceListenerDao.cs" />
+    <Compile Include="DAO\RecurrDao.cs" />
+    <Compile Include="DAO\GViewSearchDao.cs" />
+    <Compile Include="DAO\SearchDao.cs" />
+    <Compile Include="DAO\UtilityDAO.cs" />
+    <Compile Include="DAO\WFVDao.cs" />
+    <Compile Include="DAO\XproInfoDao.cs" />
+    <Compile Include="DAO\XproLoaderDao.cs" />
+    <Compile Include="DAO\XproTemplateDao.cs" />
+    <Compile Include="DTO\BildweltInfoDto.cs" />
+    <Compile Include="DTO\ExcalcDto.cs" />
+    <Compile Include="DTO\ExcalculationDto.cs" />
+    <Compile Include="DTO\ExcustomerDto.cs" />
+    <Compile Include="DTO\ExobjectDto.cs" />
+    <Compile Include="DTO\ExpUpdDto.cs" />
+    <Compile Include="DTO\SanityCheckInfoDto.cs" />
+    <Compile Include="DTO\SchemaColumnDto.cs" />
+    <Compile Include="DTO\SchemaInfoDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\GateGuardean\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\luceneConfigServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\luceneSearchServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\CIC.ASS.SearchService.DTO.SearchEntityResult.datasource" />
+    <None Include="Properties\DataSources\CIC.ASS.SearchService.DTO.SearchEntityResult1.datasource" />
+    <None Include="Properties\DataSources\CIC.ASS.SearchService.DTO.SearchResult.datasource" />
+    <None Include="Properties\DataSources\CIC.ASS.SearchService.DTO.SearchResult1.datasource" />
+    <None Include="Service References\GateGuardean\WorkflowEngineWebService2.wsdl" />
+    <None Include="Service References\luceneConfigServiceReference\luceneConfigService.wsdl" />
+    <None Include="Service References\luceneConfigServiceReference\luceneConfigService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\luceneConfigServiceReference\luceneConfigService1.wsdl" />
+    <None Include="Service References\luceneConfigServiceReference\luceneConfigService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\luceneConfigServiceReference\luceneConfigService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\luceneConfigServiceReference\luceneConfigService31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\luceneConfigServiceReference\luceneConfigService32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\luceneConfigServiceReference\luceneConfigService33.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\luceneSearchServiceReference\luceneSearchService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\luceneSearchServiceReference\luceneSearchService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\luceneSearchServiceReference\luceneSearchService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\luceneSearchServiceReference\luceneSearchService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\luceneSearchServiceReference\Search.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CIC.OpenOneCarConfigurator\Cic.OpenOne.CarConfigurator\Cic.OpenOne.CarConfigurator.csproj">
+      <Project>{c50e4898-5a07-475f-ae79-137611353f51}</Project>
+      <Name>Cic.OpenOne.CarConfigurator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CIC.OpenOne\Cic.OpenOne.Common.Model\Cic.OpenOne.Common.Model.csproj">
+      <Project>{1fef8f25-bbaa-453c-a249-f1733bbb0b3c}</Project>
+      <Name>Cic.OpenOne.Common.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CIC.OpenOne\Cic.OpenOne.Common\Cic.OpenOne.Common.csproj">
+      <Project>{fc4049ac-617c-4233-ba92-287674e30b35}</Project>
+      <Name>Cic.OpenOne.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Cic.Utils\Cic.One.Utils\Cic.One.Utils.csproj">
+      <Project>{d1f653f9-3d9e-4486-89cc-4b0044307750}</Project>
+      <Name>Cic.One.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cic.One.DTO\Cic.One.DTO.csproj">
+      <Project>{0fdcc4e9-cfde-486f-9d93-58049a1f8325}</Project>
+      <Name>Cic.One.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cic.One.Workflow\Cic.One.Workflow.csproj">
+      <Project>{B62E8091-2667-4CA4-8197-A67DAFAB5139}</Project>
+      <Name>Cic.One.Workflow</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\GateGuardean\" />
+    <WCFMetadataStorage Include="Service References\luceneConfigServiceReference\" />
+    <WCFMetadataStorage Include="Service References\luceneSearchServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\luceneConfigServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\luceneConfigServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\luceneConfigServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\luceneSearchServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\luceneSearchServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\luceneSearchServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GateGuardean\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GateGuardean\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GateGuardean\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{3D9AD99F-2412-4246-B90B-4EAA41C64699}">
+        <WcfProjectProperties>
+          <AutoStart>False</AutoStart>
+        </WcfProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

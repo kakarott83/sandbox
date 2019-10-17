@@ -1,0 +1,768 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CIC.Database.OIQUEUE.EF6</name>
+    </assembly>
+    <members>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.OIQUEUEContext.EAIHOT">
+            <summary>               
+            Table: EAIHOT
+            Description: EAI Hot füt Aufrufe aus dem Portal (Soap und Socket) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.OIQUEUEContext.USRCFG">
+            <summary>               
+            Table: USRCFG
+            Description: Customizing Konfiguration 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.OIQUEUEContext.USRCFGSEC">
+            <summary>               
+            Table: USRCFGSEC
+            Description: User-Konfigurationsbereich für Customizing 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.OIQUEUEContext.USRCFGVAR">
+            <summary>               
+            Table: USRCFGVAR
+            Description: User-Konfigurationsvariablen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.OIQUEUEContext.CICLOGD">
+            <summary>               
+            Table: CICLOGD
+            Description: Renamed ciclogd 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.OIQUEUEContext.CFG">
+            <summary>               
+            Table: CFG
+            Description: Konfiguration (entspricht einer INI Datei) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.OIQUEUEContext.CFGSEC">
+            <summary>               
+            Table: CFGSEC
+            Description: Bereich (entspricht dem Bereich einer INI Datei) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.OIQUEUEContext.CFGVAR">
+            <summary>               
+            Table: CFGVAR
+            Description: Variable (entspricht der Variable aus der INI) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.OIQUEUEContext.CICLOG">
+            <summary>               
+            Table: CICLOG
+            Description: CICLOG 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.OIQUEUEContext.DBVERS">
+            <summary>               
+            Table: DBVERS
+            Description: DB-Version 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.OIQUEUEContext.EAIART">
+            <summary>               
+            Table: EAIART
+            Description: EAI Arten für z.B. Passwörter und Accounts des C:D. Gilt für EAIHOT und EAIJOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.OIQUEUEContext.EAIHFILE">
+            <summary>               
+            Table: EAIHFILE
+            Description: EAI Dateien mit BLOB. Hier hängen die PDF drinnen ... 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.OIQUEUEContext.DBSCRIPT">
+            <summary>               
+            Table: DBSCRIPT
+            Description: DB-Version-Script 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.OIQUEUEContext.XMLSAVE">
+            <summary>               
+            Table: XMLSAVE
+            Description: XML temporary save 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.OIQUEUEContext.XMLSAVEPOS">
+            <summary>               
+            Table: XMLSAVEPOS
+            Description: XML temporary save pos 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.OIQUEUEContext.CICCHNGLOG">
+            <summary>               
+            Table: CICCHNGLOG
+            Description: record change log 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF6.Model.CFG">
+            <summary>               
+            Table: CFG
+            Description: Konfiguration (entspricht einer INI Datei) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CFG.SYSCFG">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CFG.OVERRIDEFLAG">
+            <summary>           
+            Description: cicGETINI (IniReplacement muss 1 sein): Wenn dieser Flag gesetzt ist so überschreibt die INI Einstellung die CFG Einstellung (falls vorhanden) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CFG.SUPPLEMENTFLAG">
+            <summary>           
+            Description: cicGETINI (IniReplacement muss 1 sein): Alles was hier nicht vohanden ist wird aus der INI gezogen.  Wenn das Flag nicht gesetzt ist wird die INI komplett ignoriert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CFG.ACTIVEFLAG">
+            <summary>           
+            Description: cicGETINI und cicGETCFG: Diese Konfiguration ist aktiv oder nicht 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CFG.INIREPLACEMENT">
+            <summary>           
+            Description: cicGETINI: dient als Ersatz der INI Datei. In diesem Fall MUSS das Feld Code gleich dem INI Dateinamen sein. z.B: CIC.INI oder .\oltrans.ini 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CFG.CFGSECList">
+            <summary>           
+            Refers to table|alias: 'CFGSEC', PK Columns: SYSCFG 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF6.Model.CFGSEC">
+            <summary>               
+            Table: CFGSEC
+            Description: Bereich (entspricht dem Bereich einer INI Datei) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CFGSEC.SYSCFGSEC">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CFGSEC.SYSCFG">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFG 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CFGSEC.ACTIVEFLAG">
+            <summary>           
+            Description: cicGETINI bzw. cicGETCFG: dieser Bereich ist aktiv oder nicht 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CFGSEC.CFG">
+            <summary>           
+            Refers to table|alias: CFG, FK Columns: SYSCFG 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CFGSEC.CFGVARList">
+            <summary>           
+            Refers to table|alias: 'CFGVAR', PK Columns: SYSCFGSEC 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF6.Model.CFGVAR">
+            <summary>               
+            Table: CFGVAR
+            Description: Variable (entspricht der Variable aus der INI) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CFGVAR.SYSCFGVAR">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CFGVAR.SYSCFGSEC">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFGSEC 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CFGVAR.OVERRIDEFLAG">
+            <summary>           
+            Description: cicGETINI (CFG:IniReplacement und ForceOverrideFlag müssen 1 sein): Übersteuert das Verhalten des CFG:OverrideFlags (nur wenn ForceOverrideFlag gesetzt ist) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CFGVAR.FORCEOVERRIDEFLAG">
+            <summary>           
+            Description: cicGETINI: dieses Flag macht nur Sinn wenn CFG:IniReplacement gesetzt ist und steuert die Gültigkeit von CFGVAR:OverrideFlag 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CFGVAR.CFGSEC">
+            <summary>           
+            Refers to table|alias: CFGSEC, FK Columns: SYSCFGSEC 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF6.Model.CICCHNGLOG">
+            <summary>               
+            Table: CICCHNGLOG
+            Description: record change log 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CICCHNGLOG.SYSCICCHNGLOG">
+            <summary>           
+            Primary Key: True
+            Description: Primary key 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CICCHNGLOG.AREA">
+            <summary>           
+            Description: Name of DB table 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CICCHNGLOG.SYSAREA">
+            <summary>           
+            Description: Primary key id within table 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CICCHNGLOG.DATEOPERATION">
+            <summary>           
+            Description: Timestamp of operation 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CICCHNGLOG.OPERATION">
+            <summary>           
+            Description: Type of operation (I=insert, U=update, D=delete) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CICCHNGLOG.DBUSER">
+            <summary>           
+            Description: Database user 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CICCHNGLOG.CICUSER">
+            <summary>           
+            Description: CIC user 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CICCHNGLOG.OSUSER">
+            <summary>           
+            Description: Operating system user 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CICCHNGLOG.MACHINE">
+            <summary>           
+            Description: Name of the host machine from which the client has connected. 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CICCHNGLOG.APPLICATION">
+            <summary>           
+            Description: The application name (module) set through the DBMS_APPLICATION_INFO package or OCI. 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CICCHNGLOG.SYSCICLOG">
+            <summary>           
+            Foreign key: True
+            Navigation property: CICLOG
+            Description: DB relation to CICLOG for detailed login information 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CICCHNGLOG.DATEREG">
+            <summary>           
+            Description: Record insert timestamp used for partitioning the WFCHNGLOG table 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CICCHNGLOG.CICLOG">
+            <summary>           
+            Refers to table|alias: CICLOG, FK Columns: SYSCICLOG 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF6.Model.CICLOG">
+            <summary>               
+            Table: CICLOG
+            Description: CICLOG 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CICLOG.SYSCICLOG">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CICLOG.CICCHNGLOGList">
+            <summary>           
+            Refers to table|alias: 'CICCHNGLOG', PK Columns: SYSCICLOG 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CICLOG.CICLOGDList">
+            <summary>           
+            Refers to table|alias: 'CICLOGD', PK Columns: SYSCICLOG 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF6.Model.CICLOGD">
+            <summary>               
+            Table: CICLOGD
+            Description: Renamed ciclogd 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CICLOGD.SYSCICLOGD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CICLOGD.SYSCICLOG">
+            <summary>           
+            Foreign key: True
+            Navigation property: CICLOG 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.CICLOGD.CICLOG">
+            <summary>           
+            Refers to table|alias: CICLOG, FK Columns: SYSCICLOG 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF6.Model.DBSCRIPT">
+            <summary>               
+            Table: DBSCRIPT
+            Description: DB-Version-Script 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.DBSCRIPT.SYSDBSCRIPT">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.DBSCRIPT.SYSDBVERS">
+            <summary>           
+            Foreign key: True
+            Navigation property: DBVERS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.DBSCRIPT.DBVERS">
+            <summary>           
+            Refers to table|alias: DBVERS, FK Columns: SYSDBVERS 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF6.Model.DBVERS">
+            <summary>               
+            Table: DBVERS
+            Description: DB-Version 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.DBVERS.SYSDBVERS">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.DBVERS.DBSCRIPTList">
+            <summary>           
+            Refers to table|alias: 'DBSCRIPT', PK Columns: SYSDBVERS 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF6.Model.EAIART">
+            <summary>               
+            Table: EAIART
+            Description: EAI Arten für z.B. Passwörter und Accounts des C:D. Gilt für EAIHOT und EAIJOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIART.SYSEAIART">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIART.FIELDSPEC01">
+            <summary>           
+            Description: Fieldname 01 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIART.FIELDVALUE01">
+            <summary>           
+            Description: Fieldvalue 01 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIART.EVALEXPRESSION">
+            <summary>           
+            Description: Exression - wird u.U. vom EAIHOT überschrieben ... 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIART.TYP">
+            <summary>           
+            Description: Typ der EAIART 0 = standard, 1 = Inbox 2 = Inbox (pregenerated)
+            Enum values: 'Standard' = '0'|'Inbox' = '1'|'Inbox (pregenerated)' = '2' 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIART.TIMEOUT">
+            <summary>           
+            Description: Timeout pro EAIART 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIART.RETRYCOUNT">
+            <summary>           
+            Description: Anzahl Wiederholungen pro EAIART 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIART.SERVERALIASNAME">
+            <summary>           
+            Description: Serverzuweisung pro EAIART 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIART.PRIORITY">
+            <summary>           
+            Description: Priorität pro EAIART 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIART.AVOIDPARALLELEXECUTION">
+            <summary>           
+            Description: Der EventEngine Aftrag darf nicht im parallel-Modus durchgeführt werden 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIART.HOSTCOMPUTER">
+            <summary>           
+            Description: Name des Host Computers (kann von EAIHOT:HostComputer übersteuert werden) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIART.EAIHOTList">
+            <summary>           
+            Refers to table|alias: 'EAIHOT', PK Columns: SYSEAIART 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF6.Model.EAIHFILE">
+            <summary>               
+            Table: EAIHFILE
+            Description: EAI Dateien mit BLOB. Hier hängen die PDF drinnen ... 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHFILE.SYSEAIHFILE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHFILE.SYSEAIHOT">
+            <summary>           
+            Foreign key: True
+            Navigation property: EAIHOT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHFILE.INPUTFLAG">
+            <summary>           
+            Description: Eventuell dafür um zu unterscheiden in welche Richtung diese Datei wandern soll 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHFILE.READFLAG">
+            <summary>           
+            Description: Gelesen Flag 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHFILE.EAIHFILE1">
+            <summary>           
+            Description: Binary Blob. Don't forget to create Fieldoption: BLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHFILE.EAIHOT">
+            <summary>           
+            Refers to table|alias: EAIHOT, FK Columns: SYSEAIHOT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF6.Model.EAIHOT">
+            <summary>               
+            Table: EAIHOT
+            Description: EAI Hot füt Aufrufe aus dem Portal (Soap und Socket) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHOT.SYSEAIHOT">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHOT.CODE">
+            <summary>           
+            Description: Art des EAI Auftrags ... 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHOT.OLTABLE">
+            <summary>           
+            Description: Gebiet 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHOT.SYSOLTABLE">
+            <summary>           
+            Description: Gebiet ID 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHOT.PROZESSSTATUS">
+            <summary>           
+            Description: Verarbeitungsstatus: 0 = submitted, 1 = processing, 2 = finished, 99 = broken 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHOT.SYSPORTAL">
+            <summary>           
+            Description: ID des Portalusers (auch afb etc.) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHOT.SYSEAIART">
+            <summary>           
+            Foreign key: True
+            Navigation property: EAIART
+            Description: EAI Art   - hier können Anmeldedaten für Direct Link etc. hinetrlegt werden 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHOT.FILEFLAGIN">
+            <summary>           
+            Description: Im Bezug auf EAIQIN 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHOT.FILEFLAGOUT">
+            <summary>           
+            Description: Im Bezug auf EAIQOU 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHOT.EXECPRIORITY">
+            <summary>           
+            Description: 0 = Normal, 1 = Vorzug, 2 = High (eigener Thread) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHOT.EVALEXPRESSION">
+            <summary>           
+            Description: Wenn angegeben so wird der (eventuell vorhandene) Wert aus EAIART überschrieben 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHOT.SUBMITDATE">
+            <summary>           
+            Description: Sumbit Date (in Clarionformat) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHOT.FINISHDATE">
+            <summary>           
+            Description: Finish Date (in Clarionformat) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHOT.SYSWFEXEC">
+            <summary>           
+            Description: Runtime ID mit der die Aufgabe erledigt wurde 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHOT.EVE">
+            <summary>           
+            Description: Wenn 1 dann ist dieser Satz für die Event-Engine bestimmt ... 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHOT.COMPUTERNAME">
+            <summary>           
+            Description: Name des Computers welcher diesen Auftrag verarbeitet (hat). 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHOT.CLIENTART">
+            <summary>           
+            Description: Art of client to process the this eaihot record with...
+            Enum values: 'C6' = '0'|'C7' = '1'|'.net' = '2' 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHOT.EXECUTIONCOUNT">
+            <summary>           
+            Description: Zähler der Wiederholungen pro EAIHOT (entspricht EAIART:RetryCount) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHOT.TOTALEXECUTIONCOUNT">
+            <summary>           
+            Description: Gesamtsumme der Wiederholungen pro EAIHOT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHOT.EXECUTEDMANUALLY">
+            <summary>           
+            Description: Ein Flag welcher anzeigt ob EAIHOT manuell verarbeitet wurde 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHOT.SYSBPPROCINST">
+            <summary>           
+            Description: Verweis auf Prozessinstanz 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHOT.SYSSUBMITTER">
+            <summary>           
+            Description: Auftrags Ersteller bzw. Initiator 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHOT.EAIHFILEList">
+            <summary>           
+            Refers to table|alias: 'EAIHFILE', PK Columns: SYSEAIHOT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.EAIHOT.EAIART">
+            <summary>           
+            Refers to table|alias: EAIART, FK Columns: SYSEAIART 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF6.Model.USRCFG">
+            <summary>               
+            Table: USRCFG
+            Description: Customizing Konfiguration 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.USRCFG.SYSUSRCFG">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.USRCFG.OVERRIDEFLAG">
+            <summary>           
+            Description: cicGETINI (IniReplacement muss 1 sein): Wenn dieser Flag gesetzt ist so überschreibt die INI Einstellung die CFG Einstellung (falls vorhanden) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.USRCFG.SUPPLEMENTFLAG">
+            <summary>           
+            Description: cicGETINI (IniReplacement muss 1 sein): Alles was hier nicht vohanden ist wird aus der INI gezogen.  Wenn das Flag nicht gesetzt ist wird die INI komplett ignoriert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.USRCFG.ACTIVEFLAG">
+            <summary>           
+            Description: cicGETINI und cicGETCFG: Diese Konfiguration ist aktiv oder nicht 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.USRCFG.INIREPLACEMENT">
+            <summary>           
+            Description: cicGETINI: dient als Ersatz der INI Datei. In diesem Fall MUSS das Feld Code gleich dem INI Dateinamen sein. z.B: CIC.INI oder .\oltrans.ini 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.USRCFG.USRCFGSECList">
+            <summary>           
+            Refers to table|alias: 'USRCFGSEC', PK Columns: SYSUSRCFG 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF6.Model.USRCFGSEC">
+            <summary>               
+            Table: USRCFGSEC
+            Description: User-Konfigurationsbereich für Customizing 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.USRCFGSEC.SYSUSRCFGSEC">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.USRCFGSEC.SYSUSRCFG">
+            <summary>           
+            Foreign key: True
+            Navigation property: USRCFG 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.USRCFGSEC.ACTIVEFLAG">
+            <summary>           
+            Description: cicGETUSRINI bzw. cicGETUSRCFG: dieser Bereich ist aktiv oder nicht 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.USRCFGSEC.USRCFG">
+            <summary>           
+            Refers to table|alias: USRCFG, FK Columns: SYSUSRCFG 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.USRCFGSEC.USRCFGVARList">
+            <summary>           
+            Refers to table|alias: 'USRCFGVAR', PK Columns: SYSUSRCFGSEC 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF6.Model.USRCFGVAR">
+            <summary>               
+            Table: USRCFGVAR
+            Description: User-Konfigurationsvariablen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.USRCFGVAR.SYSUSRCFGVAR">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.USRCFGVAR.SYSUSRCFGSEC">
+            <summary>           
+            Foreign key: True
+            Navigation property: USRCFGSEC 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.USRCFGVAR.OVERRIDEFLAG">
+            <summary>           
+            Description: cicGETUSRINI (USRCFG:IniReplacement und ForceOverrideFlag müssen 1 sein): Übersteuert das Verhalten des USRCFG:OverrideFlags (nur wenn ForceOverrideFlag gesetzt ist) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.USRCFGVAR.FORCEOVERRIDEFLAG">
+            <summary>           
+            Description: cicGETUSRINI: dieses Flag macht nur Sinn wenn USRCFG:IniReplacement gesetzt ist und steuert die Gültigkeit von USRCFGVAR:OverrideFlag 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.USRCFGVAR.USRCFGSEC">
+            <summary>           
+            Refers to table|alias: USRCFGSEC, FK Columns: SYSUSRCFGSEC 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF6.Model.XMLSAVE">
+            <summary>               
+            Table: XMLSAVE
+            Description: XML temporary save 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.XMLSAVE.SYSXMLSAVE">
+            <summary>           
+            Primary Key: True
+            Description: System ID 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.XMLSAVE.SYSLEASE">
+            <summary>           
+            Description: Lease-ID (falls bereits existent) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.XMLSAVE.SYSPUSER">
+            <summary>           
+            Description: Optional  - falls man es im Web benutzen möchte ... 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.XMLSAVE.SOURCE">
+            <summary>           
+            Description: Herkunft (z.B. Vorgang Angebotsassistent, Inbox etc.) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.XMLSAVE.STATUS">
+            <summary>           
+            Description: Status (aber auch z.B. für Tab-Nummer etc.) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.XMLSAVE.DESCRIPTION">
+            <summary>           
+            Description: z.B: für Hinweise zur Identifikation für den Benutzer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.XMLSAVE.XMLSAVEPOSList">
+            <summary>           
+            Refers to table|alias: 'XMLSAVEPOS', PK Columns: SYSXMLSAVE 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF6.Model.XMLSAVEPOS">
+            <summary>               
+            Table: XMLSAVEPOS
+            Description: XML temporary save pos 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.XMLSAVEPOS.SYSXMLSAVEPOS">
+            <summary>           
+            Primary Key: True
+            Description: System ID 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.XMLSAVEPOS.SYSXMLSAVE">
+            <summary>           
+            Foreign key: True
+            Navigation property: XMLSAVE
+            Description: XMLSAVE  ID 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.XMLSAVEPOS.DTNAME">
+            <summary>           
+            Description: Name datentyp (bei einer Queue z.B. qAngebot) oder Name Suchvorlage 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.XMLSAVEPOS.DTVALUE">
+            <summary>           
+            Description: XML-String 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF6.Model.XMLSAVEPOS.XMLSAVE">
+            <summary>           
+            Refers to table|alias: XMLSAVE, FK Columns: SYSXMLSAVE 
+            </summary>
+        </member>
+    </members>
+</doc>

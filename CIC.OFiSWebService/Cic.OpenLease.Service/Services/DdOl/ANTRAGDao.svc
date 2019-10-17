@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Factory="Cic.OpenLease.Service.ServiceFactory" Service="Cic.OpenLease.Service.DdOl.ANTRAGDao" CodeBehind="ANTRAGDao.svc.cs" %>

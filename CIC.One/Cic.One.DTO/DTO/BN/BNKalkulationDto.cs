@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Cic.One.DTO
+{
+    public class BNKalkulationDto
+    {
+        /// <summary>
+        /// 0..1 Finanzkalkulationsdaten
+        /// </summary>
+        public AngAntKalkDto angAntKalkDto { get; set; }
+    }
+}

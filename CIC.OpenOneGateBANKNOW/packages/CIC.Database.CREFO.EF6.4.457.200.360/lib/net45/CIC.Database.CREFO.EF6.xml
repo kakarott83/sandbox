@@ -1,0 +1,3846 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CIC.Database.CREFO.EF6</name>
+    </assembly>
+    <members>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRADDRESS">
+            <summary>               
+            Table: CRADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRCOMPANYADD">
+            <summary>               
+            Table: CRCOMPANYADD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTSERVICE">
+            <summary>               
+            Table: CRTSERVICE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.AUSKUNFT">
+            <summary>               
+            Table: AUSKUNFT
+            Description: Auskunft 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRAMOUNT">
+            <summary>               
+            Table: CRAMOUNT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRMIGRADIFFREQ">
+            <summary>               
+            Table: CRMIGRADIFFREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRBASEHEADER">
+            <summary>               
+            Table: CRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRINPHEADER">
+            <summary>               
+            Table: CRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRCHGEMAILREQ">
+            <summary>               
+            Table: CRCHGEMAILREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRCHGEMAILRES">
+            <summary>               
+            Table: CRCHGEMAILRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRCHGPWREQ">
+            <summary>               
+            Table: CRCHGPWREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRCHGPWRES">
+            <summary>               
+            Table: CRCHGPWRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRCSREPORTREQ">
+            <summary>               
+            Table: CRCSREPORTREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRCRRADR">
+            <summary>               
+            Table: CRCRRADR 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRCRRADRENTRY">
+            <summary>               
+            Table: CRCRRADRENTRY 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRCRRATINGDATA">
+            <summary>               
+            Table: CRCRRATINGDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRCRRGEODATA">
+            <summary>               
+            Table: CRCRRGEODATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRCRRNEGFACT">
+            <summary>               
+            Table: CRCRRNEGFACT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRCRRPARTICIP">
+            <summary>               
+            Table: CRCRRPARTICIP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRFAULTFIELD">
+            <summary>               
+            Table: CRFAULTFIELD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRCRRPAYBEHACC">
+            <summary>               
+            Table: CRCRRPAYBEHACC 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRIDNUMAPREQ">
+            <summary>               
+            Table: CRIDNUMAPREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRIDNUMAPRES">
+            <summary>               
+            Table: CRIDNUMAPRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRCRRRREQUEST">
+            <summary>               
+            Table: CRCRRRREQUEST 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRLOGONREQ">
+            <summary>               
+            Table: CRLOGONREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRENTRY">
+            <summary>               
+            Table: CRENTRY 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRCSREPORTRES">
+            <summary>               
+            Table: CRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRCREDENTIALS">
+            <summary>               
+            Table: CRCREDENTIALS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRLOGONRES">
+            <summary>               
+            Table: CRLOGONRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRMAILDIRREQ">
+            <summary>               
+            Table: CRMAILDIRREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTCONSTRAINTS">
+            <summary>               
+            Table: CRTCONSTRAINTS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRMAILDIRRES">
+            <summary>               
+            Table: CRMAILDIRRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRMIGRADIFFRES">
+            <summary>               
+            Table: CRMIGRADIFFRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRMONSTATUSREQ">
+            <summary>               
+            Table: CRMONSTATUSREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRPRIVATEADD">
+            <summary>               
+            Table: CRPRIVATEADD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRMAILENTRYREQ">
+            <summary>               
+            Table: CRMAILENTRYREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRMAILENTRYRES">
+            <summary>               
+            Table: CRMAILENTRYRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRMBDIRENTRY">
+            <summary>               
+            Table: CRMBDIRENTRY 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRORDERREQ">
+            <summary>               
+            Table: CRORDERREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRORDERRES">
+            <summary>               
+            Table: CRORDERRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRPTDATAREQ">
+            <summary>               
+            Table: CRPTDATAREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRPRODAVAILRES">
+            <summary>               
+            Table: CRPRODAVAILRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRREPORTDATA">
+            <summary>               
+            Table: CRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRPTDATARES">
+            <summary>               
+            Table: CRPTDATARES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRPTDATASTREQ">
+            <summary>               
+            Table: CRPTDATASTREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRPTDATASTRES">
+            <summary>               
+            Table: CRPTDATASTRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRPRODAVAILREQ">
+            <summary>               
+            Table: CRPRODAVAILREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRREPORTREQ">
+            <summary>               
+            Table: CRREPORTREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRBALASCREQ">
+            <summary>               
+            Table: CRBALASCREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRREPORTRES">
+            <summary>               
+            Table: CRREPORTRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTBALANCECR">
+            <summary>               
+            Table: CRTBALANCECR 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRSERVICEFAULT">
+            <summary>               
+            Table: CRSERVICEFAULT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRSEARCHREQ">
+            <summary>               
+            Table: CRSEARCHREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRSEARCHRES">
+            <summary>               
+            Table: CRSEARCHRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTBANKS">
+            <summary>               
+            Table: CRTBANKS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTCAPACSH">
+            <summary>               
+            Table: CRTCAPACSH 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTCAPACSHBASE">
+            <summary>               
+            Table: CRTCAPACSHBASE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTSHAREHLD">
+            <summary>               
+            Table: CRTSHAREHLD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTCAPSHBASETS">
+            <summary>               
+            Table: CRTCAPSHBASETS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTMONITORING">
+            <summary>               
+            Table: CRTMONITORING 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTCAPSHTSH">
+            <summary>               
+            Table: CRTCAPSHTSH 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTCAPBASEOTH">
+            <summary>               
+            Table: CRTCAPBASEOTH 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTCAPSHTSHEXT">
+            <summary>               
+            Table: CRTCAPSHTSHEXT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTCOMPANYID">
+            <summary>               
+            Table: CRTCOMPANYID 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTCOURT">
+            <summary>               
+            Table: CRTCOURT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTDEPUTMANAGE">
+            <summary>               
+            Table: CRTDEPUTMANAGE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTFOUNDATION">
+            <summary>               
+            Table: CRTFOUNDATION 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTFOUNDPROBY">
+            <summary>               
+            Table: CRTFOUNDPROBY 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTKEY">
+            <summary>               
+            Table: CRTKEY 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTLEGALFORM">
+            <summary>               
+            Table: CRTLEGALFORM 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTLEGFRMPROBY">
+            <summary>               
+            Table: CRTLEGFRMPROBY 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTNEGATIVEREP">
+            <summary>               
+            Table: CRTNEGATIVEREP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTPARAM">
+            <summary>               
+            Table: CRTPARAM 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.AUSKUNFTTYP">
+            <summary>               
+            Table: AUSKUNFTTYP
+            Description: Typ der Auskunft 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTPARAMLISTIN">
+            <summary>               
+            Table: CRTPARAMLISTIN 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTPARTCAPBTP">
+            <summary>               
+            Table: CRTPARTCAPBTP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTPARTICAPAC">
+            <summary>               
+            Table: CRTPARTICAPAC 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTPHONE">
+            <summary>               
+            Table: CRTPHONE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTPARTCAPPTTX">
+            <summary>               
+            Table: CRTPARTCAPPTTX 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTPART">
+            <summary>               
+            Table: CRTPART 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTPARTCAPPART">
+            <summary>               
+            Table: CRTPARTCAPPART 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTPARTICAPACB">
+            <summary>               
+            Table: CRTPARTICAPACB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTPARTANTXTD">
+            <summary>               
+            Table: CRTPARTANTXTD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTPRIVATPS">
+            <summary>               
+            Table: CRTPRIVATPS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTPRIVATPSFAM">
+            <summary>               
+            Table: CRTPRIVATPSFAM 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTPROBYOFDEFA">
+            <summary>               
+            Table: CRTPROBYOFDEFA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTREGISTER">
+            <summary>               
+            Table: CRTREGISTER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTREQUESTDATA">
+            <summary>               
+            Table: CRTREQUESTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTSEARCHHIT">
+            <summary>               
+            Table: CRTSEARCHHIT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTSHARECAP">
+            <summary>               
+            Table: CRTSHARECAP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTSALITYPROD">
+            <summary>               
+            Table: CRTSALITYPROD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTSHAREHLDCAP">
+            <summary>               
+            Table: CRTSHAREHLDCAP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTSHAREHLDXTD">
+            <summary>               
+            Table: CRTSHAREHLDXTD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTSOLVEIDXPRB">
+            <summary>               
+            Table: CRTSOLVEIDXPRB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTSOLVEIDX">
+            <summary>               
+            Table: CRTSOLVEIDX 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTSOLVEREMARK">
+            <summary>               
+            Table: CRTSOLVEREMARK 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTSOLVECLASS">
+            <summary>               
+            Table: CRTSOLVECLASS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTSTATUSREPLY">
+            <summary>               
+            Table: CRTSTATUSREPLY 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTTAXDATA">
+            <summary>               
+            Table: CRTTAXDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTTRAFLISOLVE">
+            <summary>               
+            Table: CRTTRAFLISOLVE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTTRAFPAYMODE">
+            <summary>               
+            Table: CRTTRAFPAYMODE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CREFOContext.CRTPARAMLIST">
+            <summary>               
+            Table: CRTPARAMLIST 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.AUSKUNFT">
+            <summary>               
+            Table: AUSKUNFT
+            Description: Auskunft 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.SysAUSKUNFT">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.SysAUSKUNFTTYP">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFTTYP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.StatusNum">
+            <summary>           
+            Description: Status (technisch) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.Area">
+            <summary>           
+            Description: Gebiet 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.SysID">
+            <summary>           
+            Description: SysID zum gebiet 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.HostComputer">
+            <summary>           
+            Description: Host Computer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.AUSKUNFTTYP">
+            <summary>           
+            Refers to table|alias: AUSKUNFTTYP, FK Columns: SYSAUSKUNFTTYP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRBALASCREQList">
+            <summary>           
+            Refers to table|alias: 'CRBALASCREQ', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRCHGEMAILREQList">
+            <summary>           
+            Refers to table|alias: 'CRCHGEMAILREQ', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRCHGEMAILRESList">
+            <summary>           
+            Refers to table|alias: 'CRCHGEMAILRES', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRCHGPWREQList">
+            <summary>           
+            Refers to table|alias: 'CRCHGPWREQ', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRCHGPWRESList">
+            <summary>           
+            Refers to table|alias: 'CRCHGPWRES', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRCSREPORTREQList">
+            <summary>           
+            Refers to table|alias: 'CRCSREPORTREQ', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRCSREPORTRESList">
+            <summary>           
+            Refers to table|alias: 'CRCSREPORTRES', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRLOGONREQList">
+            <summary>           
+            Refers to table|alias: 'CRLOGONREQ', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRLOGONRESList">
+            <summary>           
+            Refers to table|alias: 'CRLOGONRES', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRMAILDIRREQList">
+            <summary>           
+            Refers to table|alias: 'CRMAILDIRREQ', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRMAILDIRRESList">
+            <summary>           
+            Refers to table|alias: 'CRMAILDIRRES', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRMAILENTRYREQList">
+            <summary>           
+            Refers to table|alias: 'CRMAILENTRYREQ', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRMAILENTRYRESList">
+            <summary>           
+            Refers to table|alias: 'CRMAILENTRYRES', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRMIGRADIFFREQList">
+            <summary>           
+            Refers to table|alias: 'CRMIGRADIFFREQ', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRMIGRADIFFRESList">
+            <summary>           
+            Refers to table|alias: 'CRMIGRADIFFRES', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRORDERREQList">
+            <summary>           
+            Refers to table|alias: 'CRORDERREQ', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRORDERRESList">
+            <summary>           
+            Refers to table|alias: 'CRORDERRES', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRPRODAVAILREQList">
+            <summary>           
+            Refers to table|alias: 'CRPRODAVAILREQ', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRPRODAVAILRESList">
+            <summary>           
+            Refers to table|alias: 'CRPRODAVAILRES', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRPTDATAREQList">
+            <summary>           
+            Refers to table|alias: 'CRPTDATAREQ', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRPTDATARESList">
+            <summary>           
+            Refers to table|alias: 'CRPTDATARES', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRPTDATASTREQList">
+            <summary>           
+            Refers to table|alias: 'CRPTDATASTREQ', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRPTDATASTRESList">
+            <summary>           
+            Refers to table|alias: 'CRPTDATASTRES', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRREPORTREQList">
+            <summary>           
+            Refers to table|alias: 'CRREPORTREQ', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRREPORTRESList">
+            <summary>           
+            Refers to table|alias: 'CRREPORTRES', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRSEARCHREQList">
+            <summary>           
+            Refers to table|alias: 'CRSEARCHREQ', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRSEARCHRESList">
+            <summary>           
+            Refers to table|alias: 'CRSEARCHRES', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFT.CRSERVICEFAULTList">
+            <summary>           
+            Refers to table|alias: 'CRSERVICEFAULT', PK Columns: SysAUSKUNFT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.AUSKUNFTTYP">
+            <summary>               
+            Table: AUSKUNFTTYP
+            Description: Typ der Auskunft 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFTTYP.SysAUSKUNFTTYP">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFTTYP.Methode">
+            <summary>           
+            Description: Methodes des aufgerufenen Webservices 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFTTYP.DebugFlag">
+            <summary>           
+            Description: Dieser Flag signalisiert, dass die Abfrage von diesem Auskunfttypen in der Tabelle LOGDUMP geloggt werden sollen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.AUSKUNFTTYP.AUSKUNFTList">
+            <summary>           
+            Refers to table|alias: 'AUSKUNFT', PK Columns: SysAUSKUNFTTYP 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRADDRESS">
+            <summary>               
+            Table: CRADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRADDRESS.SysCRADDRESS">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRADDRESS.CRPRIVATEADDList">
+            <summary>           
+            Refers to table|alias: 'CRPRIVATEADD', PK Columns: SysCRADDRESS 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRAMOUNT">
+            <summary>               
+            Table: CRAMOUNT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRAMOUNT.SysCRAMOUNT">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRAMOUNT.CRORDERREQList">
+            <summary>           
+            Refers to table|alias: 'CRORDERREQ', PK Columns: SysCRAMOUNT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRAMOUNT.CRTSHARECAPList">
+            <summary>           
+            Refers to table|alias: 'CRTSHARECAP', PK Columns: SysCRAMOUNT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRAMOUNT.CRTSHAREHLDList">
+            <summary>           
+            Refers to table|alias: 'CRTSHAREHLD', PK Columns: SysCRAMOUNT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRBALASCREQ">
+            <summary>               
+            Table: CRBALASCREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRBALASCREQ.SysCRBALASCREQ">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRBALASCREQ.SysCRBASEHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRBALASCREQ.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRBALASCREQ.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRBALASCREQ.CRBASEHEADER">
+            <summary>           
+            Refers to table|alias: CRBASEHEADER, FK Columns: SYSCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRBASEHEADER">
+            <summary>               
+            Table: CRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRBASEHEADER.SysCRBASEHEADER">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRBASEHEADER.CRBALASCREQList">
+            <summary>           
+            Refers to table|alias: 'CRBALASCREQ', PK Columns: SysCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRBASEHEADER.CRCHGEMAILRESList">
+            <summary>           
+            Refers to table|alias: 'CRCHGEMAILRES', PK Columns: SysCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRBASEHEADER.CRCHGPWRESList">
+            <summary>           
+            Refers to table|alias: 'CRCHGPWRES', PK Columns: SysCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRBASEHEADER.CRCSREPORTRESList">
+            <summary>           
+            Refers to table|alias: 'CRCSREPORTRES', PK Columns: SysCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRBASEHEADER.CRINPHEADERList">
+            <summary>           
+            Refers to table|alias: 'CRINPHEADER', PK Columns: SysCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRBASEHEADER.CRLOGONRESList">
+            <summary>           
+            Refers to table|alias: 'CRLOGONRES', PK Columns: SysCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRBASEHEADER.CRMAILDIRRESList">
+            <summary>           
+            Refers to table|alias: 'CRMAILDIRRES', PK Columns: SysCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRBASEHEADER.CRMAILENTRYRESList">
+            <summary>           
+            Refers to table|alias: 'CRMAILENTRYRES', PK Columns: SysCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRBASEHEADER.CRMIGRADIFFRESList">
+            <summary>           
+            Refers to table|alias: 'CRMIGRADIFFRES', PK Columns: SysCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRBASEHEADER.CRORDERRESList">
+            <summary>           
+            Refers to table|alias: 'CRORDERRES', PK Columns: SysCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRBASEHEADER.CRPRODAVAILRESList">
+            <summary>           
+            Refers to table|alias: 'CRPRODAVAILRES', PK Columns: SysCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRBASEHEADER.CRPTDATARESList">
+            <summary>           
+            Refers to table|alias: 'CRPTDATARES', PK Columns: SysCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRBASEHEADER.CRPTDATASTRESList">
+            <summary>           
+            Refers to table|alias: 'CRPTDATASTRES', PK Columns: SysCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRBASEHEADER.CRREPORTRESList">
+            <summary>           
+            Refers to table|alias: 'CRREPORTRES', PK Columns: SysCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRBASEHEADER.CRSEARCHRESList">
+            <summary>           
+            Refers to table|alias: 'CRSEARCHRES', PK Columns: SysCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRBASEHEADER.CRSERVICEFAULTList">
+            <summary>           
+            Refers to table|alias: 'CRSERVICEFAULT', PK Columns: SysCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRCHGEMAILREQ">
+            <summary>               
+            Table: CRCHGEMAILREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCHGEMAILREQ.SysCRCHGEMAILREQ">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCHGEMAILREQ.SYSCRINPHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCHGEMAILREQ.SYSAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCHGEMAILREQ.BODY">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCHGEMAILREQ.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCHGEMAILREQ.CRINPHEADER">
+            <summary>           
+            Refers to table|alias: CRINPHEADER, FK Columns: SYSCRINPHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRCHGEMAILRES">
+            <summary>               
+            Table: CRCHGEMAILRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCHGEMAILRES.SysCRCHGEMAILRES">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCHGEMAILRES.SysCRBASEHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCHGEMAILRES.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCHGEMAILRES.BODY">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCHGEMAILRES.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCHGEMAILRES.CRBASEHEADER">
+            <summary>           
+            Refers to table|alias: CRBASEHEADER, FK Columns: SYSCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRCHGPWREQ">
+            <summary>               
+            Table: CRCHGPWREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCHGPWREQ.SysCRCHGPWREQ">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCHGPWREQ.SysCRINPHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCHGPWREQ.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCHGPWREQ.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCHGPWREQ.CRINPHEADER">
+            <summary>           
+            Refers to table|alias: CRINPHEADER, FK Columns: SYSCRINPHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRCHGPWRES">
+            <summary>               
+            Table: CRCHGPWRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCHGPWRES.SysCRCHGPWRES">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCHGPWRES.SysCRBASEHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCHGPWRES.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCHGPWRES.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCHGPWRES.CRBASEHEADER">
+            <summary>           
+            Refers to table|alias: CRBASEHEADER, FK Columns: SYSCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRCOMPANYADD">
+            <summary>               
+            Table: CRCOMPANYADD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCOMPANYADD.SysCRCOMPANYADD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRCREDENTIALS">
+            <summary>               
+            Table: CRCREDENTIALS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCREDENTIALS.SysCRCREDENTIALS">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRCRRADR">
+            <summary>               
+            Table: CRCRRADR 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRADR.SysCRCRRADR">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRADR.CRCRRADRENTRYList">
+            <summary>           
+            Refers to table|alias: 'CRCRRADRENTRY', PK Columns: SysCRCRRADR 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRADR.CRCRRPARTICIPList">
+            <summary>           
+            Refers to table|alias: 'CRCRRPARTICIP', PK Columns: SysCRCRRADR 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRADR.CRCRRRREQUESTList">
+            <summary>           
+            Refers to table|alias: 'CRCRRRREQUEST', PK Columns: SysCRCRRADR 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRADR.CRCSREPORTRESList">
+            <summary>           
+            Refers to table|alias: 'CRCSREPORTRES', PK Columns: SysCRCRRADR 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRCRRADRENTRY">
+            <summary>               
+            Table: CRCRRADRENTRY 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRADRENTRY.SysCRCRRADRENTRY">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRADRENTRY.SysCRCSREPORTRES">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRADRENTRY.SysCRCRRADR">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRCRRADR 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRADRENTRY.CRCRRADR">
+            <summary>           
+            Refers to table|alias: CRCRRADR, FK Columns: SYSCRCRRADR 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRADRENTRY.CRCSREPORTRES">
+            <summary>           
+            Refers to table|alias: CRCSREPORTRES, FK Columns: SYSCRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRCRRATINGDATA">
+            <summary>               
+            Table: CRCRRATINGDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRATINGDATA.SysCRCRRATINGDATA">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRATINGDATA.SysCRCSREPORTRES">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRATINGDATA.CRCSREPORTRES">
+            <summary>           
+            Refers to table|alias: CRCSREPORTRES, FK Columns: SYSCRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRCRRGEODATA">
+            <summary>               
+            Table: CRCRRGEODATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRGEODATA.SysCRCRRGEODATA">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRGEODATA.SysCRCSREPORTRES">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRGEODATA.CRCSREPORTRES">
+            <summary>           
+            Refers to table|alias: CRCSREPORTRES, FK Columns: SYSCRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRCRRNEGFACT">
+            <summary>               
+            Table: CRCRRNEGFACT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRNEGFACT.SysCRCRRNEGFACT">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRNEGFACT.SysCRCSREPORTRES">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRNEGFACT.PROCESSSTEPS">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRNEGFACT.CRCSREPORTRES">
+            <summary>           
+            Refers to table|alias: CRCSREPORTRES, FK Columns: SYSCRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRCRRPARTICIP">
+            <summary>               
+            Table: CRCRRPARTICIP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRPARTICIP.SysCRCRRPARTICIP">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRPARTICIP.SysCRCSREPORTRES">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRPARTICIP.SysCRCRRADR">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRCRRADR 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRPARTICIP.CRCRRADR">
+            <summary>           
+            Refers to table|alias: CRCRRADR, FK Columns: SYSCRCRRADR 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRPARTICIP.CRCSREPORTRES">
+            <summary>           
+            Refers to table|alias: CRCSREPORTRES, FK Columns: SYSCRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRCRRPAYBEHACC">
+            <summary>               
+            Table: CRCRRPAYBEHACC 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRPAYBEHACC.SysCRCRRPAYBEHACC">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRPAYBEHACC.SysCRCSREPORTRES">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRPAYBEHACC.CRCSREPORTRES">
+            <summary>           
+            Refers to table|alias: CRCSREPORTRES, FK Columns: SYSCRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRCRRRREQUEST">
+            <summary>               
+            Table: CRCRRRREQUEST 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRRREQUEST.SysCRCRRRREQUEST">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRRREQUEST.SysCRCSREPORTRES">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRRREQUEST.SysCRCRRADR">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRCRRADR 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRRREQUEST.CRCRRADR">
+            <summary>           
+            Refers to table|alias: CRCRRADR, FK Columns: SYSCRCRRADR 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCRRRREQUEST.CRCSREPORTRES">
+            <summary>           
+            Refers to table|alias: CRCSREPORTRES, FK Columns: SYSCRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRCSREPORTREQ">
+            <summary>               
+            Table: CRCSREPORTREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCSREPORTREQ.SysCRCSREPORTREQ">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCSREPORTREQ.SysCRINPHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCSREPORTREQ.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCSREPORTREQ.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCSREPORTREQ.CRINPHEADER">
+            <summary>           
+            Refers to table|alias: CRINPHEADER, FK Columns: SYSCRINPHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRCSREPORTRES">
+            <summary>               
+            Table: CRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCSREPORTRES.SysCRCSREPORTRES">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCSREPORTRES.SysCRBASEHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCSREPORTRES.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCSREPORTRES.SysCRCRRADR">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRCRRADR 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCSREPORTRES.TEXTREPORT">
+            <summary>           
+            Description: Binary Blob. Don't forget to create Fieldoption: BLOB and set its value to BLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCSREPORTRES.COLLECTIONDATA">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCSREPORTRES.CRCRRADRENTRYList">
+            <summary>           
+            Refers to table|alias: 'CRCRRADRENTRY', PK Columns: SysCRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCSREPORTRES.CRCRRATINGDATAList">
+            <summary>           
+            Refers to table|alias: 'CRCRRATINGDATA', PK Columns: SysCRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCSREPORTRES.CRCRRGEODATAList">
+            <summary>           
+            Refers to table|alias: 'CRCRRGEODATA', PK Columns: SysCRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCSREPORTRES.CRCRRNEGFACTList">
+            <summary>           
+            Refers to table|alias: 'CRCRRNEGFACT', PK Columns: SysCRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCSREPORTRES.CRCRRPARTICIPList">
+            <summary>           
+            Refers to table|alias: 'CRCRRPARTICIP', PK Columns: SysCRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCSREPORTRES.CRCRRPAYBEHACCList">
+            <summary>           
+            Refers to table|alias: 'CRCRRPAYBEHACC', PK Columns: SysCRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCSREPORTRES.CRCRRRREQUESTList">
+            <summary>           
+            Refers to table|alias: 'CRCRRRREQUEST', PK Columns: SysCRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCSREPORTRES.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCSREPORTRES.CRBASEHEADER">
+            <summary>           
+            Refers to table|alias: CRBASEHEADER, FK Columns: SYSCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCSREPORTRES.CRCRRADR">
+            <summary>           
+            Refers to table|alias: CRCRRADR, FK Columns: SYSCRCRRADR 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRCSREPORTRES.CRENTRYList">
+            <summary>           
+            Refers to table|alias: 'CRENTRY', PK Columns: SysCRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRENTRY">
+            <summary>               
+            Table: CRENTRY 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRENTRY.SysCRENTRY">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRENTRY.SysCRCSREPORTRES">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRENTRY.CRCSREPORTRES">
+            <summary>           
+            Refers to table|alias: CRCSREPORTRES, FK Columns: SYSCRCSREPORTRES 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRFAULTFIELD">
+            <summary>               
+            Table: CRFAULTFIELD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRFAULTFIELD.SysCRFAULTFIELD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRFAULTFIELD.SysCRSERVICEFAULT">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRSERVICEFAULT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRFAULTFIELD.CRSERVICEFAULT">
+            <summary>           
+            Refers to table|alias: CRSERVICEFAULT, FK Columns: SYSCRSERVICEFAULT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRIDNUMAPREQ">
+            <summary>               
+            Table: CRIDNUMAPREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRIDNUMAPREQ.SysCRIDNUMAPREQ">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRIDNUMAPRES">
+            <summary>               
+            Table: CRIDNUMAPRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRIDNUMAPRES.SysCRIDNUMAPRES">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRINPHEADER">
+            <summary>               
+            Table: CRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRINPHEADER.SysCRINPHEADER">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRINPHEADER.SysCRBASEHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRINPHEADER.CRCHGEMAILREQList">
+            <summary>           
+            Refers to table|alias: 'CRCHGEMAILREQ', PK Columns: SysCRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRINPHEADER.CRCHGPWREQList">
+            <summary>           
+            Refers to table|alias: 'CRCHGPWREQ', PK Columns: SysCRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRINPHEADER.CRCSREPORTREQList">
+            <summary>           
+            Refers to table|alias: 'CRCSREPORTREQ', PK Columns: SysCRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRINPHEADER.CRBASEHEADER">
+            <summary>           
+            Refers to table|alias: CRBASEHEADER, FK Columns: SYSCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRINPHEADER.CRLOGONREQList">
+            <summary>           
+            Refers to table|alias: 'CRLOGONREQ', PK Columns: SysCRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRINPHEADER.CRMAILDIRREQList">
+            <summary>           
+            Refers to table|alias: 'CRMAILDIRREQ', PK Columns: SysCRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRINPHEADER.CRMAILENTRYREQList">
+            <summary>           
+            Refers to table|alias: 'CRMAILENTRYREQ', PK Columns: SysCRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRINPHEADER.CRMIGRADIFFREQList">
+            <summary>           
+            Refers to table|alias: 'CRMIGRADIFFREQ', PK Columns: SysCRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRINPHEADER.CRORDERREQList">
+            <summary>           
+            Refers to table|alias: 'CRORDERREQ', PK Columns: SysCRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRINPHEADER.CRPRODAVAILREQList">
+            <summary>           
+            Refers to table|alias: 'CRPRODAVAILREQ', PK Columns: SysCRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRINPHEADER.CRPTDATAREQList">
+            <summary>           
+            Refers to table|alias: 'CRPTDATAREQ', PK Columns: SysCRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRINPHEADER.CRPTDATASTREQList">
+            <summary>           
+            Refers to table|alias: 'CRPTDATASTREQ', PK Columns: SysCRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRINPHEADER.CRREPORTREQList">
+            <summary>           
+            Refers to table|alias: 'CRREPORTREQ', PK Columns: SysCRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRINPHEADER.CRSEARCHREQList">
+            <summary>           
+            Refers to table|alias: 'CRSEARCHREQ', PK Columns: SysCRINPHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRLOGONREQ">
+            <summary>               
+            Table: CRLOGONREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRLOGONREQ.SysCRLOGONREQ">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRLOGONREQ.SysCRINPHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRLOGONREQ.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRLOGONREQ.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRLOGONREQ.CRINPHEADER">
+            <summary>           
+            Refers to table|alias: CRINPHEADER, FK Columns: SYSCRINPHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRLOGONRES">
+            <summary>               
+            Table: CRLOGONRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRLOGONRES.SysCRLOGONRES">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRLOGONRES.SysCRBASEHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRLOGONRES.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRLOGONRES.INTERFACEINFORMATION">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRLOGONRES.SERVICE">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRLOGONRES.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRLOGONRES.CRBASEHEADER">
+            <summary>           
+            Refers to table|alias: CRBASEHEADER, FK Columns: SYSCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRMAILDIRREQ">
+            <summary>               
+            Table: CRMAILDIRREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMAILDIRREQ.SysCRMAILDIRREQ">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMAILDIRREQ.SysCRINPHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMAILDIRREQ.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMAILDIRREQ.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMAILDIRREQ.CRINPHEADER">
+            <summary>           
+            Refers to table|alias: CRINPHEADER, FK Columns: SYSCRINPHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRMAILDIRRES">
+            <summary>               
+            Table: CRMAILDIRRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMAILDIRRES.SysCRMAILDIRRES">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMAILDIRRES.SysCRBASEHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMAILDIRRES.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMAILDIRRES.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMAILDIRRES.CRBASEHEADER">
+            <summary>           
+            Refers to table|alias: CRBASEHEADER, FK Columns: SYSCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMAILDIRRES.CRMBDIRENTRYList">
+            <summary>           
+            Refers to table|alias: 'CRMBDIRENTRY', PK Columns: SysCRMAILDIRRES 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRMAILENTRYREQ">
+            <summary>               
+            Table: CRMAILENTRYREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMAILENTRYREQ.SysCRMAILENTRYREQ">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMAILENTRYREQ.SysCRINPHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMAILENTRYREQ.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMAILENTRYREQ.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMAILENTRYREQ.CRINPHEADER">
+            <summary>           
+            Refers to table|alias: CRINPHEADER, FK Columns: SYSCRINPHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRMAILENTRYRES">
+            <summary>               
+            Table: CRMAILENTRYRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMAILENTRYRES.SysCRMAILENTRYRES">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMAILENTRYRES.SysCRBASEHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMAILENTRYRES.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMAILENTRYRES.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMAILENTRYRES.CRBASEHEADER">
+            <summary>           
+            Refers to table|alias: CRBASEHEADER, FK Columns: SYSCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRMBDIRENTRY">
+            <summary>               
+            Table: CRMBDIRENTRY 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMBDIRENTRY.SysCRMBDIRENTRY">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMBDIRENTRY.SysCRMAILDIRRES">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRMAILDIRRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMBDIRENTRY.SysCRTMONITORING">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTMONITORING 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMBDIRENTRY.ITEM1">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMBDIRENTRY.ITEM2">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMBDIRENTRY.CRMAILDIRRES">
+            <summary>           
+            Refers to table|alias: CRMAILDIRRES, FK Columns: SYSCRMAILDIRRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMBDIRENTRY.CRTMONITORING">
+            <summary>           
+            Refers to table|alias: CRTMONITORING, FK Columns: SYSCRTMONITORING 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRMIGRADIFFREQ">
+            <summary>               
+            Table: CRMIGRADIFFREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMIGRADIFFREQ.SysCRMIGRADIFFREQ">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMIGRADIFFREQ.SysCRINPHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMIGRADIFFREQ.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMIGRADIFFREQ.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMIGRADIFFREQ.CRINPHEADER">
+            <summary>           
+            Refers to table|alias: CRINPHEADER, FK Columns: SYSCRINPHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRMIGRADIFFRES">
+            <summary>               
+            Table: CRMIGRADIFFRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMIGRADIFFRES.SysCRMIGRADIFFRES">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMIGRADIFFRES.SysCRBASEHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMIGRADIFFRES.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMIGRADIFFRES.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMIGRADIFFRES.CRBASEHEADER">
+            <summary>           
+            Refers to table|alias: CRBASEHEADER, FK Columns: SYSCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRMONSTATUSREQ">
+            <summary>               
+            Table: CRMONSTATUSREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRMONSTATUSREQ.SysCRMONSTATUSREQ">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRORDERREQ">
+            <summary>               
+            Table: CRORDERREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRORDERREQ.SysCRORDERREQ">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRORDERREQ.SysCRINPHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRORDERREQ.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRORDERREQ.SysCRAMOUNT">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRAMOUNT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRORDERREQ.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRORDERREQ.CRAMOUNT">
+            <summary>           
+            Refers to table|alias: CRAMOUNT, FK Columns: SYSCRAMOUNT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRORDERREQ.CRINPHEADER">
+            <summary>           
+            Refers to table|alias: CRINPHEADER, FK Columns: SYSCRINPHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRORDERRES">
+            <summary>               
+            Table: CRORDERRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRORDERRES.SysCRORDERRES">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRORDERRES.SysCRBASEHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRORDERRES.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRORDERRES.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRORDERRES.CRBASEHEADER">
+            <summary>           
+            Refers to table|alias: CRBASEHEADER, FK Columns: SYSCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRPRIVATEADD">
+            <summary>               
+            Table: CRPRIVATEADD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPRIVATEADD.SysCRPRIVATEADD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPRIVATEADD.SysCRADDRESS">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPRIVATEADD.CRADDRESS">
+            <summary>           
+            Refers to table|alias: CRADDRESS, FK Columns: SYSCRADDRESS 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRPRODAVAILREQ">
+            <summary>               
+            Table: CRPRODAVAILREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPRODAVAILREQ.SysCRPRODAVAILREQ">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPRODAVAILREQ.SysCRINPHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPRODAVAILREQ.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPRODAVAILREQ.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPRODAVAILREQ.CRINPHEADER">
+            <summary>           
+            Refers to table|alias: CRINPHEADER, FK Columns: SYSCRINPHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRPRODAVAILRES">
+            <summary>               
+            Table: CRPRODAVAILRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPRODAVAILRES.SysCRPRODAVAILRES">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPRODAVAILRES.SysCRBASEHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPRODAVAILRES.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPRODAVAILRES.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPRODAVAILRES.CRBASEHEADER">
+            <summary>           
+            Refers to table|alias: CRBASEHEADER, FK Columns: SYSCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPRODAVAILRES.CRTSALITYPRODList">
+            <summary>           
+            Refers to table|alias: 'CRTSALITYPROD', PK Columns: SysCRPRODAVAILRES 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRPTDATAREQ">
+            <summary>               
+            Table: CRPTDATAREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPTDATAREQ.SysCRPTDATAREQ">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPTDATAREQ.SysCRINPHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPTDATAREQ.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPTDATAREQ.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPTDATAREQ.CRINPHEADER">
+            <summary>           
+            Refers to table|alias: CRINPHEADER, FK Columns: SYSCRINPHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRPTDATARES">
+            <summary>               
+            Table: CRPTDATARES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPTDATARES.SysCRPTDATARES">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPTDATARES.SysCRBASEHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPTDATARES.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPTDATARES.IDENTIFICATION">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPTDATARES.PARTICIPANTS">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPTDATARES.PARTICIPATIONS">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPTDATARES.TEXTREPORT">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPTDATARES.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPTDATARES.CRBASEHEADER">
+            <summary>           
+            Refers to table|alias: CRBASEHEADER, FK Columns: SYSCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRPTDATASTREQ">
+            <summary>               
+            Table: CRPTDATASTREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPTDATASTREQ.SysCRPTDATASTREQ">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPTDATASTREQ.SysCRINPHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPTDATASTREQ.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPTDATASTREQ.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPTDATASTREQ.CRINPHEADER">
+            <summary>           
+            Refers to table|alias: CRINPHEADER, FK Columns: SYSCRINPHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRPTDATASTRES">
+            <summary>               
+            Table: CRPTDATASTRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPTDATASTRES.SysCRPTDATASTRES">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPTDATASTRES.SysCRBASEHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPTDATASTRES.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPTDATASTRES.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRPTDATASTRES.CRBASEHEADER">
+            <summary>           
+            Refers to table|alias: CRBASEHEADER, FK Columns: SYSCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRREPORTDATA">
+            <summary>               
+            Table: CRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.SysCRREPORTDATA">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.SYSCRREPORTRES">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRREPORTRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.REGISTERHISTORY">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.LOCATIONS">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.PROFITSLOSSES">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.FINANCIALSTATUSPRIVATEPERSON">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.FORMERLOCATIONS">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.AFFILIATEDGROUP">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.BALANCESHEETGROUP">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.PROFITSLOSSESGROUP">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.SOLVENCYINDEXHISTORY">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.SOLVENCYFINANCEINDUSTRY">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.VALUATIONSFINANCEINDUSTRY">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.BALANCESOLVENCY">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.FINANCIALSTATEMENTFIGURES">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.FINANCIALSTATEMENTFIGURESGROUP">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.TURNOVERCOMPANYRANGE">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.STAFFCOMPANYRANGE">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.PAYMENTBEHAVIOUR">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.FINANCIALINFORMATION">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.REPORTHINTS">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.TEXTREPORT">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.NEGATIVEFACT">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.PARTICIPATIONSCOMPANY">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.PARTICIPATIONSPRIVPERSON">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.PARTICIPATIONSPARTICIPANTS">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.BUSINESSPURPOSE">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.BRANCH">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.STAFFCOMPANY">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.STAFFGROUP">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.TURNOVERCOMPANY">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.TURNOVERGROUP">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.BALANCESHEET">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.ENQUIRYCOUNTER">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.SPECIFICATIONOFPROFESSION">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.BUSINESSDEVELOPMENT">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.ANCILLARYINFORMATION">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.FINANCIALDATA">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.BUSINESSAREAF">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.REALESTATES">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.IMPORTEXPORT">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.PAYMENTMODE">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.CREDITOPINION">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.SUPPLEMENT">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.CRREPORTRES">
+            <summary>           
+            Refers to table|alias: CRREPORTRES, FK Columns: SYSCRREPORTRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.CRTBANKSList">
+            <summary>           
+            Refers to table|alias: 'CRTBANKS', PK Columns: SysCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.CRTCOMPANYIDList">
+            <summary>           
+            Refers to table|alias: 'CRTCOMPANYID', PK Columns: SysCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.CRTDEPUTMANAGEList">
+            <summary>           
+            Refers to table|alias: 'CRTDEPUTMANAGE', PK Columns: SysCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.CRTFOUNDATIONList">
+            <summary>           
+            Refers to table|alias: 'CRTFOUNDATION', PK Columns: SysCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.CRTLEGALFORMList">
+            <summary>           
+            Refers to table|alias: 'CRTLEGALFORM', PK Columns: SysCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.CRTNEGATIVEREPList">
+            <summary>           
+            Refers to table|alias: 'CRTNEGATIVEREP', PK Columns: SysCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.CRTPRIVATPSList">
+            <summary>           
+            Refers to table|alias: 'CRTPRIVATPS', PK Columns: SysCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.CRTREGISTERList">
+            <summary>           
+            Refers to table|alias: 'CRTREGISTER', PK Columns: SysCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.CRTREQUESTDATAList">
+            <summary>           
+            Refers to table|alias: 'CRTREQUESTDATA', PK Columns: SysCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.CRTSOLVECLASSList">
+            <summary>           
+            Refers to table|alias: 'CRTSOLVECLASS', PK Columns: SysCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.CRTSOLVEIDXList">
+            <summary>           
+            Refers to table|alias: 'CRTSOLVEIDX', PK Columns: SysCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.CRTSOLVEREMARKList">
+            <summary>           
+            Refers to table|alias: 'CRTSOLVEREMARK', PK Columns: SysCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.CRTSTATUSREPLYList">
+            <summary>           
+            Refers to table|alias: 'CRTSTATUSREPLY', PK Columns: SysCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.CRTTAXDATAList">
+            <summary>           
+            Refers to table|alias: 'CRTTAXDATA', PK Columns: SysCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.CRTTRAFLISOLVEList">
+            <summary>           
+            Refers to table|alias: 'CRTTRAFLISOLVE', PK Columns: SysCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTDATA.CRTTRAFPAYMODEList">
+            <summary>           
+            Refers to table|alias: 'CRTTRAFPAYMODE', PK Columns: SysCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRREPORTREQ">
+            <summary>               
+            Table: CRREPORTREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTREQ.SysCRREPORTREQ">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTREQ.SysCRINPHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTREQ.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTREQ.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTREQ.CRINPHEADER">
+            <summary>           
+            Refers to table|alias: CRINPHEADER, FK Columns: SYSCRINPHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRREPORTRES">
+            <summary>               
+            Table: CRREPORTRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTRES.SysCRREPORTRES">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTRES.SysCRBASEHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTRES.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTRES.CRREPORTDATAList">
+            <summary>           
+            Refers to table|alias: 'CRREPORTDATA', PK Columns: SysCRREPORTRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTRES.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRREPORTRES.CRBASEHEADER">
+            <summary>           
+            Refers to table|alias: CRBASEHEADER, FK Columns: SYSCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRSEARCHREQ">
+            <summary>               
+            Table: CRSEARCHREQ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRSEARCHREQ.SysCRSEARCHREQ">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRSEARCHREQ.SysCRINPHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRINPHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRSEARCHREQ.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRSEARCHREQ.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRSEARCHREQ.CRINPHEADER">
+            <summary>           
+            Refers to table|alias: CRINPHEADER, FK Columns: SYSCRINPHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRSEARCHRES">
+            <summary>               
+            Table: CRSEARCHRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRSEARCHRES.SysCRSEARCHRES">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRSEARCHRES.SysCRBASEHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRSEARCHRES.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRSEARCHRES.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRSEARCHRES.CRBASEHEADER">
+            <summary>           
+            Refers to table|alias: CRBASEHEADER, FK Columns: SYSCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRSEARCHRES.CRTSEARCHHITList">
+            <summary>           
+            Refers to table|alias: 'CRTSEARCHHIT', PK Columns: SysCRSEARCHRES 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRSERVICEFAULT">
+            <summary>               
+            Table: CRSERVICEFAULT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRSERVICEFAULT.SysCRSERVICEFAULT">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRSERVICEFAULT.SysCRBASEHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRBASEHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRSERVICEFAULT.SysAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRSERVICEFAULT.CRFAULTFIELDList">
+            <summary>           
+            Refers to table|alias: 'CRFAULTFIELD', PK Columns: SysCRSERVICEFAULT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRSERVICEFAULT.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRSERVICEFAULT.CRBASEHEADER">
+            <summary>           
+            Refers to table|alias: CRBASEHEADER, FK Columns: SYSCRBASEHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTBALANCECR">
+            <summary>               
+            Table: CRTBALANCECR 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTBALANCECR.SysCRTBALANCECR">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTBANKS">
+            <summary>               
+            Table: CRTBANKS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTBANKS.SysCRTBANKS">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTBANKS.SysCRREPORTDATA">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTBANKS.CRREPORTDATA">
+            <summary>           
+            Refers to table|alias: CRREPORTDATA, FK Columns: SYSCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTCAPACSH">
+            <summary>               
+            Table: CRTCAPACSH 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPACSH.SysCRTCAPACSH">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPACSH.SysCRTSHAREHLDCAP">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTSHAREHLDCAP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPACSH.SysCRTCAPBASEOTH">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTCAPBASEOTH 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPACSH.SysCRTSHARECAP">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTSHARECAP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPACSH.CRTCAPBASEOTH">
+            <summary>           
+            Refers to table|alias: CRTCAPBASEOTH, FK Columns: SYSCRTCAPBASEOTH 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPACSH.CRTSHARECAP">
+            <summary>           
+            Refers to table|alias: CRTSHARECAP, FK Columns: SYSCRTSHARECAP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPACSH.CRTSHAREHLDCAP">
+            <summary>           
+            Refers to table|alias: CRTSHAREHLDCAP, FK Columns: SYSCRTSHAREHLDCAP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPACSH.CRTCAPSHTSHList">
+            <summary>           
+            Refers to table|alias: 'CRTCAPSHTSH', PK Columns: SysCRTCAPACSH 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPACSH.CRTCAPSHTSHEXTList">
+            <summary>           
+            Refers to table|alias: 'CRTCAPSHTSHEXT', PK Columns: SysCRTCAPACSH 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTCAPACSHBASE">
+            <summary>               
+            Table: CRTCAPACSHBASE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPACSHBASE.SysCRTCAPACSHBASE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPACSHBASE.SysCRTSHAREHLDXTD">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTSHAREHLDXTD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPACSHBASE.SysCRTSHARECAP">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTSHARECAP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPACSHBASE.SysCRTCAPBASEOTH">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTCAPBASEOTH 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPACSHBASE.CRTCAPBASEOTH">
+            <summary>           
+            Refers to table|alias: CRTCAPBASEOTH, FK Columns: SYSCRTCAPBASEOTH 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPACSHBASE.CRTSHARECAP">
+            <summary>           
+            Refers to table|alias: CRTSHARECAP, FK Columns: SYSCRTSHARECAP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPACSHBASE.CRTSHAREHLDXTD">
+            <summary>           
+            Refers to table|alias: CRTSHAREHLDXTD, FK Columns: SYSCRTSHAREHLDXTD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPACSHBASE.CRTCAPSHBASETSList">
+            <summary>           
+            Refers to table|alias: 'CRTCAPSHBASETS', PK Columns: SysCRTCAPACSHBASE 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTCAPBASEOTH">
+            <summary>               
+            Table: CRTCAPBASEOTH 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPBASEOTH.SysCRTCAPBASEOTH">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPBASEOTH.CRTCAPACSHList">
+            <summary>           
+            Refers to table|alias: 'CRTCAPACSH', PK Columns: SysCRTCAPBASEOTH 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPBASEOTH.CRTCAPACSHBASEList">
+            <summary>           
+            Refers to table|alias: 'CRTCAPACSHBASE', PK Columns: SysCRTCAPBASEOTH 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTCAPSHBASETS">
+            <summary>               
+            Table: CRTCAPSHBASETS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPSHBASETS.SysCRTCAPSHBASETS">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPSHBASETS.SysCRTCAPACSHBASE">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTCAPACSHBASE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPSHBASETS.SysCRTSHAREHLD">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTSHAREHLD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPSHBASETS.CRTCAPACSHBASE">
+            <summary>           
+            Refers to table|alias: CRTCAPACSHBASE, FK Columns: SYSCRTCAPACSHBASE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPSHBASETS.CRTSHAREHLD">
+            <summary>           
+            Refers to table|alias: CRTSHAREHLD, FK Columns: SYSCRTSHAREHLD 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTCAPSHTSH">
+            <summary>               
+            Table: CRTCAPSHTSH 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPSHTSH.SysCRTCAPSHTSH">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPSHTSH.SysCRTCAPACSH">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTCAPACSH 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPSHTSH.SysCRTSHAREHLD">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTSHAREHLD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPSHTSH.CRTCAPACSH">
+            <summary>           
+            Refers to table|alias: CRTCAPACSH, FK Columns: SYSCRTCAPACSH 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPSHTSH.CRTSHAREHLD">
+            <summary>           
+            Refers to table|alias: CRTSHAREHLD, FK Columns: SYSCRTSHAREHLD 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTCAPSHTSHEXT">
+            <summary>               
+            Table: CRTCAPSHTSHEXT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPSHTSHEXT.SysCRTCAPSHTSHEXT">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPSHTSHEXT.SysCRTCAPACSH">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTCAPACSH 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPSHTSHEXT.SysCRTSHAREHLDXTD">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTSHAREHLDXTD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPSHTSHEXT.CRTCAPACSH">
+            <summary>           
+            Refers to table|alias: CRTCAPACSH, FK Columns: SYSCRTCAPACSH 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCAPSHTSHEXT.CRTSHAREHLDXTD">
+            <summary>           
+            Refers to table|alias: CRTSHAREHLDXTD, FK Columns: SYSCRTSHAREHLDXTD 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTCOMPANYID">
+            <summary>               
+            Table: CRTCOMPANYID 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCOMPANYID.SysCRTCOMPANYID">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCOMPANYID.SysCRREPORTDATA">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCOMPANYID.CRREPORTDATA">
+            <summary>           
+            Refers to table|alias: CRREPORTDATA, FK Columns: SYSCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTCONSTRAINTS">
+            <summary>               
+            Table: CRTCONSTRAINTS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCONSTRAINTS.SysCRTCONSTRAINTS">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTCOURT">
+            <summary>               
+            Table: CRTCOURT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCOURT.SysCRTCOURT">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTCOURT.CRTREGISTERList">
+            <summary>           
+            Refers to table|alias: 'CRTREGISTER', PK Columns: SysCRTCOURT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTDEPUTMANAGE">
+            <summary>               
+            Table: CRTDEPUTMANAGE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTDEPUTMANAGE.SysCRTDEPUTMANAGE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTDEPUTMANAGE.SysCRREPORTDATA">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTDEPUTMANAGE.CRREPORTDATA">
+            <summary>           
+            Refers to table|alias: CRREPORTDATA, FK Columns: SYSCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTDEPUTMANAGE.CRTPARTICAPACList">
+            <summary>           
+            Refers to table|alias: 'CRTPARTICAPAC', PK Columns: SysCRTDEPUTMANAGE 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTFOUNDATION">
+            <summary>               
+            Table: CRTFOUNDATION 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTFOUNDATION.SysCRTFOUNDATION">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTFOUNDATION.SysCRREPORTDATA">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTFOUNDATION.CRREPORTDATA">
+            <summary>           
+            Refers to table|alias: CRREPORTDATA, FK Columns: SYSCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTFOUNDATION.CRTFOUNDPROBYList">
+            <summary>           
+            Refers to table|alias: 'CRTFOUNDPROBY', PK Columns: SysCRTFOUNDATION 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTFOUNDPROBY">
+            <summary>               
+            Table: CRTFOUNDPROBY 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTFOUNDPROBY.SysCRTFOUNDPROBY">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTFOUNDPROBY.SysCRTFOUNDATION">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTFOUNDATION 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTFOUNDPROBY.CRTFOUNDATION">
+            <summary>           
+            Refers to table|alias: CRTFOUNDATION, FK Columns: SYSCRTFOUNDATION 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTKEY">
+            <summary>               
+            Table: CRTKEY 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTKEY.SysCRTKEY">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTLEGALFORM">
+            <summary>               
+            Table: CRTLEGALFORM 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTLEGALFORM.SysCRTLEGALFORM">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTLEGALFORM.SysCRREPORTDATA">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTLEGALFORM.CRREPORTDATA">
+            <summary>           
+            Refers to table|alias: CRREPORTDATA, FK Columns: SYSCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTLEGFRMPROBY">
+            <summary>               
+            Table: CRTLEGFRMPROBY 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTLEGFRMPROBY.SysCRTLEGFRMPROBY">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTMONITORING">
+            <summary>               
+            Table: CRTMONITORING 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTMONITORING.SysCRTMONITORING">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTMONITORING.CRMBDIRENTRYList">
+            <summary>           
+            Refers to table|alias: 'CRMBDIRENTRY', PK Columns: SysCRTMONITORING 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTNEGATIVEREP">
+            <summary>               
+            Table: CRTNEGATIVEREP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTNEGATIVEREP.SysCRTNEGATIVEREP">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTNEGATIVEREP.SysCRREPORTDATA">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTNEGATIVEREP.CRREPORTDATA">
+            <summary>           
+            Refers to table|alias: CRREPORTDATA, FK Columns: SYSCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTPARAM">
+            <summary>               
+            Table: CRTPARAM 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARAM.SysCRTPARAM">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARAM.SysCRTPARAMLIST">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTPARAMLIST 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARAM.ITEMS">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARAM.CRTPARAMLIST">
+            <summary>           
+            Refers to table|alias: CRTPARAMLIST, FK Columns: SYSCRTPARAMLIST 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTPARAMLIST">
+            <summary>               
+            Table: CRTPARAMLIST 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARAMLIST.SysCRTPARAMLIST">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARAMLIST.SysCRTSALITYPROD">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTSALITYPROD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARAMLIST.CRTPARAMList">
+            <summary>           
+            Refers to table|alias: 'CRTPARAM', PK Columns: SysCRTPARAMLIST 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARAMLIST.CRTSALITYPROD">
+            <summary>           
+            Refers to table|alias: CRTSALITYPROD, FK Columns: SYSCRTSALITYPROD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARAMLIST.CRTPARAMLISTINList">
+            <summary>           
+            Refers to table|alias: 'CRTPARAMLISTIN', PK Columns: SysCRTPARAMLIST 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTPARAMLISTIN">
+            <summary>               
+            Table: CRTPARAMLISTIN 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARAMLISTIN.SysCRTPARAMLISTIN">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARAMLISTIN.SysCRTPARAMLIST">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTPARAMLIST 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARAMLISTIN.CRTPARAMLIST">
+            <summary>           
+            Refers to table|alias: CRTPARAMLIST, FK Columns: SYSCRTPARAMLIST 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTPART">
+            <summary>               
+            Table: CRTPART 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPART.SysCRTPART">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPART.ITEM">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPART.CRTPARTANTXTDList">
+            <summary>           
+            Refers to table|alias: 'CRTPARTANTXTD', PK Columns: SysCRTPART 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPART.CRTPARTCAPBTPList">
+            <summary>           
+            Refers to table|alias: 'CRTPARTCAPBTP', PK Columns: SysCRTPART 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPART.CRTPARTCAPPARTList">
+            <summary>           
+            Refers to table|alias: 'CRTPARTCAPPART', PK Columns: SysCRTPART 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTPARTANTXTD">
+            <summary>               
+            Table: CRTPARTANTXTD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTANTXTD.SysCRTPARTANTXTD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTANTXTD.SysCRTPART">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTPART 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTANTXTD.CRTPART">
+            <summary>           
+            Refers to table|alias: CRTPART, FK Columns: SYSCRTPART 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTANTXTD.CRTPARTCAPPTTXList">
+            <summary>           
+            Refers to table|alias: 'CRTPARTCAPPTTX', PK Columns: SysCRTPARTANTXTD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTANTXTD.CRTPARTICAPACBList">
+            <summary>           
+            Refers to table|alias: 'CRTPARTICAPACB', PK Columns: SysCRTPARTANTXTD 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTPARTCAPBTP">
+            <summary>               
+            Table: CRTPARTCAPBTP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTCAPBTP.SysCRTPARTCAPBTP">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTCAPBTP.SysCRTPART">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTPART 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTCAPBTP.CRTPART">
+            <summary>           
+            Refers to table|alias: CRTPART, FK Columns: SYSCRTPART 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTPARTCAPPART">
+            <summary>               
+            Table: CRTPARTCAPPART 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTCAPPART.SysCRTPARTCAPPART">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTCAPPART.SysCRTPARTICAPAC">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTPARTICAPAC 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTCAPPART.SysCRTPART">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTPART 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTCAPPART.CRTPART">
+            <summary>           
+            Refers to table|alias: CRTPART, FK Columns: SYSCRTPART 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTCAPPART.CRTPARTICAPAC">
+            <summary>           
+            Refers to table|alias: CRTPARTICAPAC, FK Columns: SYSCRTPARTICAPAC 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTPARTCAPPTTX">
+            <summary>               
+            Table: CRTPARTCAPPTTX 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTCAPPTTX.SysCRTPARTCAPPTTX">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTCAPPTTX.SysCRTPARTICAPAC">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTPARTICAPAC 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTCAPPTTX.SysCRTPARTANTXTD">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTPARTANTXTD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTCAPPTTX.CRTPARTANTXTD">
+            <summary>           
+            Refers to table|alias: CRTPARTANTXTD, FK Columns: SYSCRTPARTANTXTD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTCAPPTTX.CRTPARTICAPAC">
+            <summary>           
+            Refers to table|alias: CRTPARTICAPAC, FK Columns: SYSCRTPARTICAPAC 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTPARTICAPAC">
+            <summary>               
+            Table: CRTPARTICAPAC 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTICAPAC.SysCRTPARTICAPAC">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTICAPAC.SysCRTDEPUTMANAGE">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTDEPUTMANAGE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTICAPAC.CRTPARTCAPPARTList">
+            <summary>           
+            Refers to table|alias: 'CRTPARTCAPPART', PK Columns: SysCRTPARTICAPAC 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTICAPAC.CRTPARTCAPPTTXList">
+            <summary>           
+            Refers to table|alias: 'CRTPARTCAPPTTX', PK Columns: SysCRTPARTICAPAC 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTICAPAC.CRTDEPUTMANAGE">
+            <summary>           
+            Refers to table|alias: CRTDEPUTMANAGE, FK Columns: SYSCRTDEPUTMANAGE 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTPARTICAPACB">
+            <summary>               
+            Table: CRTPARTICAPACB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTICAPACB.SysCRTPARTICAPACB">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTICAPACB.SysCRTPARTANTXTD">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTPARTANTXTD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPARTICAPACB.CRTPARTANTXTD">
+            <summary>           
+            Refers to table|alias: CRTPARTANTXTD, FK Columns: SYSCRTPARTANTXTD 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTPHONE">
+            <summary>               
+            Table: CRTPHONE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPHONE.SysCRTPHONE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTPRIVATPS">
+            <summary>               
+            Table: CRTPRIVATPS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPRIVATPS.SysCRTPRIVATPS">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPRIVATPS.SysCRREPORTDATA">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPRIVATPS.CRREPORTDATA">
+            <summary>           
+            Refers to table|alias: CRREPORTDATA, FK Columns: SYSCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTPRIVATPSFAM">
+            <summary>               
+            Table: CRTPRIVATPSFAM 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPRIVATPSFAM.SysCRTPRIVATPSFAM">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTPROBYOFDEFA">
+            <summary>               
+            Table: CRTPROBYOFDEFA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPROBYOFDEFA.SysCRTPROBYOFDEFA">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPROBYOFDEFA.SysCRTSOLVEIDXPRB">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTSOLVEIDXPRB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTPROBYOFDEFA.CRTSOLVEIDXPRB">
+            <summary>           
+            Refers to table|alias: CRTSOLVEIDXPRB, FK Columns: SYSCRTSOLVEIDXPRB 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTREGISTER">
+            <summary>               
+            Table: CRTREGISTER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTREGISTER.SysCRTREGISTER">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTREGISTER.SysCRREPORTDATA">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTREGISTER.SysCRTCOURT">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTCOURT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTREGISTER.CRREPORTDATA">
+            <summary>           
+            Refers to table|alias: CRREPORTDATA, FK Columns: SYSCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTREGISTER.CRTCOURT">
+            <summary>           
+            Refers to table|alias: CRTCOURT, FK Columns: SYSCRTCOURT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTREQUESTDATA">
+            <summary>               
+            Table: CRTREQUESTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTREQUESTDATA.SysCRTREQUESTDATA">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTREQUESTDATA.SysCRREPORTDATA">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTREQUESTDATA.ITEM">
+            <summary>           
+            Description: Text Blob. Don't forget to create Fieldoption: BLOB and set its value to CLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTREQUESTDATA.CRREPORTDATA">
+            <summary>           
+            Refers to table|alias: CRREPORTDATA, FK Columns: SYSCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTSALITYPROD">
+            <summary>               
+            Table: CRTSALITYPROD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSALITYPROD.SysCRTSALITYPROD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSALITYPROD.SysCRPRODAVAILRES">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRPRODAVAILRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSALITYPROD.CRTPARAMLISTList">
+            <summary>           
+            Refers to table|alias: 'CRTPARAMLIST', PK Columns: SysCRTSALITYPROD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSALITYPROD.CRPRODAVAILRES">
+            <summary>           
+            Refers to table|alias: CRPRODAVAILRES, FK Columns: SYSCRPRODAVAILRES 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTSEARCHHIT">
+            <summary>               
+            Table: CRTSEARCHHIT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSEARCHHIT.SysCRTSEARCHHIT">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSEARCHHIT.SysCRSEARCHRES">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRSEARCHRES 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSEARCHHIT.CRSEARCHRES">
+            <summary>           
+            Refers to table|alias: CRSEARCHRES, FK Columns: SYSCRSEARCHRES 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTSERVICE">
+            <summary>               
+            Table: CRTSERVICE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSERVICE.SysCRTSERVICE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTSHARECAP">
+            <summary>               
+            Table: CRTSHARECAP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSHARECAP.SysCRTSHARECAP">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSHARECAP.SysCRAMOUNT">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRAMOUNT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSHARECAP.CRTCAPACSHList">
+            <summary>           
+            Refers to table|alias: 'CRTCAPACSH', PK Columns: SysCRTSHARECAP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSHARECAP.CRTCAPACSHBASEList">
+            <summary>           
+            Refers to table|alias: 'CRTCAPACSHBASE', PK Columns: SysCRTSHARECAP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSHARECAP.CRAMOUNT">
+            <summary>           
+            Refers to table|alias: CRAMOUNT, FK Columns: SYSCRAMOUNT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTSHAREHLD">
+            <summary>               
+            Table: CRTSHAREHLD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSHAREHLD.SysCRTSHAREHLD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSHAREHLD.CAPITALSHARE">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRAMOUNT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSHAREHLD.CRTCAPSHBASETSList">
+            <summary>           
+            Refers to table|alias: 'CRTCAPSHBASETS', PK Columns: SysCRTSHAREHLD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSHAREHLD.CRTCAPSHTSHList">
+            <summary>           
+            Refers to table|alias: 'CRTCAPSHTSH', PK Columns: SysCRTSHAREHLD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSHAREHLD.CRAMOUNT">
+            <summary>           
+            Refers to table|alias: CRAMOUNT, FK Columns: CAPITALSHARE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSHAREHLD.CRTSHAREHLDXTDList">
+            <summary>           
+            Refers to table|alias: 'CRTSHAREHLDXTD', PK Columns: SysCRTSHAREHLD 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTSHAREHLDCAP">
+            <summary>               
+            Table: CRTSHAREHLDCAP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSHAREHLDCAP.SysCRTSHAREHLDCAP">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSHAREHLDCAP.CRTCAPACSHList">
+            <summary>           
+            Refers to table|alias: 'CRTCAPACSH', PK Columns: SysCRTSHAREHLDCAP 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTSHAREHLDXTD">
+            <summary>               
+            Table: CRTSHAREHLDXTD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSHAREHLDXTD.SysCRTSHAREHLDXTD">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSHAREHLDXTD.SysCRTSHAREHLD">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTSHAREHLD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSHAREHLDXTD.CRTCAPACSHBASEList">
+            <summary>           
+            Refers to table|alias: 'CRTCAPACSHBASE', PK Columns: SysCRTSHAREHLDXTD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSHAREHLDXTD.CRTCAPSHTSHEXTList">
+            <summary>           
+            Refers to table|alias: 'CRTCAPSHTSHEXT', PK Columns: SysCRTSHAREHLDXTD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSHAREHLDXTD.CRTSHAREHLD">
+            <summary>           
+            Refers to table|alias: CRTSHAREHLD, FK Columns: SYSCRTSHAREHLD 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTSOLVECLASS">
+            <summary>               
+            Table: CRTSOLVECLASS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSOLVECLASS.SysCRTSOLVECLASS">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSOLVECLASS.SysCRREPORTDATA">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSOLVECLASS.CRREPORTDATA">
+            <summary>           
+            Refers to table|alias: CRREPORTDATA, FK Columns: SYSCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTSOLVEIDX">
+            <summary>               
+            Table: CRTSOLVEIDX 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSOLVEIDX.SysCRTSOLVEIDX">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSOLVEIDX.SysCRREPORTDATA">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSOLVEIDX.CRREPORTDATA">
+            <summary>           
+            Refers to table|alias: CRREPORTDATA, FK Columns: SYSCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSOLVEIDX.CRTSOLVEIDXPRBList">
+            <summary>           
+            Refers to table|alias: 'CRTSOLVEIDXPRB', PK Columns: SysCRTSOLVEIDX 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTSOLVEIDXPRB">
+            <summary>               
+            Table: CRTSOLVEIDXPRB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSOLVEIDXPRB.SysCRTSOLVEIDXPRB">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSOLVEIDXPRB.SysCRTSOLVEIDX">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRTSOLVEIDX 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSOLVEIDXPRB.CRTPROBYOFDEFAList">
+            <summary>           
+            Refers to table|alias: 'CRTPROBYOFDEFA', PK Columns: SysCRTSOLVEIDXPRB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSOLVEIDXPRB.CRTSOLVEIDX">
+            <summary>           
+            Refers to table|alias: CRTSOLVEIDX, FK Columns: SYSCRTSOLVEIDX 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTSOLVEREMARK">
+            <summary>               
+            Table: CRTSOLVEREMARK 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSOLVEREMARK.SysCRTSOLVEREMARK">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSOLVEREMARK.SysCRREPORTDATA">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSOLVEREMARK.CRREPORTDATA">
+            <summary>           
+            Refers to table|alias: CRREPORTDATA, FK Columns: SYSCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTSTATUSREPLY">
+            <summary>               
+            Table: CRTSTATUSREPLY 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSTATUSREPLY.SysCRTSTATUSREPLY">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSTATUSREPLY.SysCRREPORTDATA">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTSTATUSREPLY.CRREPORTDATA">
+            <summary>           
+            Refers to table|alias: CRREPORTDATA, FK Columns: SYSCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTTAXDATA">
+            <summary>               
+            Table: CRTTAXDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTTAXDATA.SysCRTTAXDATA">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTTAXDATA.SysCRREPORTDATA">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTTAXDATA.CRREPORTDATA">
+            <summary>           
+            Refers to table|alias: CRREPORTDATA, FK Columns: SYSCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTTRAFLISOLVE">
+            <summary>               
+            Table: CRTTRAFLISOLVE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTTRAFLISOLVE.SysCRTTRAFLISOLVE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTTRAFLISOLVE.SysCRREPORTDATA">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTTRAFLISOLVE.CRREPORTDATA">
+            <summary>           
+            Refers to table|alias: CRREPORTDATA, FK Columns: SYSCRREPORTDATA 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CREFO.EF6.Model.CRTTRAFPAYMODE">
+            <summary>               
+            Table: CRTTRAFPAYMODE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTTRAFPAYMODE.SysCRTTRAFPAYMODE">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTTRAFPAYMODE.SysCRREPORTDATA">
+            <summary>           
+            Foreign key: True
+            Navigation property: CRREPORTDATA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CREFO.EF6.Model.CRTTRAFPAYMODE.CRREPORTDATA">
+            <summary>           
+            Refers to table|alias: CRREPORTDATA, FK Columns: SYSCRREPORTDATA 
+            </summary>
+        </member>
+    </members>
+</doc>

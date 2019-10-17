@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CIC.Bas.Modules.OpenBPE.Engine" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CIC.Bas.Modules.OpenBPE.Engine" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://hcedev/BAS/MediatorService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/CIC.Clarion.Evaluate.OpenLease.BindProcedures.BusinessProcessing.Subscriptions.Dto" />
+  <xs:import schemaLocation="http://hcedev/BAS/MediatorService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CIC.Bas.Extensibility" />
+  <xs:import schemaLocation="http://hcedev/BAS/MediatorService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/CIC.OpenBPE.Storage" />
+  <xs:import schemaLocation="http://hcedev/BAS/MediatorService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/CIC.Bas.Core" />
+  <xs:import schemaLocation="http://hcedev/BAS/MediatorService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/CIC.OpenBPE.Storage.Models" />
+  <xs:complexType name="DispatchAndExecuteEventRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/CIC.Bas.Extensibility" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AreaId" type="xs:long" />
+          <xs:element minOccurs="0" name="AreaName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EventCode" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CIC.Clarion.Evaluate.OpenLease.BindProcedures.BusinessProcessing.Subscriptions.Dto" minOccurs="0" name="ProcessContext" nillable="true" type="q2:SubscriptionsDataDto" />
+          <xs:element minOccurs="0" name="ProcessDefinitionCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DispatchAndExecuteEventRequest" nillable="true" type="tns:DispatchAndExecuteEventRequest" />
+  <xs:complexType name="DispatchAndExecuteListenerRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/CIC.Bas.Extensibility" base="q3:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InstanceTimestamp" type="xs:long" />
+          <xs:element minOccurs="0" name="ListenerId" type="xs:long" />
+          <xs:element minOccurs="0" name="OverwriteProcessContext" type="xs:boolean" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CIC.Clarion.Evaluate.OpenLease.BindProcedures.BusinessProcessing.Subscriptions.Dto" minOccurs="0" name="ProcessContext" nillable="true" type="q4:SubscriptionsDataDto" />
+          <xs:element minOccurs="0" name="UserId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DispatchAndExecuteListenerRequest" nillable="true" type="tns:DispatchAndExecuteListenerRequest" />
+  <xs:complexType name="GetInstanceTimestampRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/CIC.Bas.Extensibility" base="q5:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ProcessInstanceId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetInstanceTimestampRequest" nillable="true" type="tns:GetInstanceTimestampRequest" />
+  <xs:complexType name="GetListenersRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/CIC.Bas.Extensibility" base="q6:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AreaId" type="xs:long" />
+          <xs:element minOccurs="0" name="AreaName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProcessDefinitionCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetListenersRequest" nillable="true" type="tns:GetListenersRequest" />
+  <xs:complexType name="GetProcessContextRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/CIC.Bas.Extensibility" base="q7:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ListenerId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetProcessContextRequest" nillable="true" type="tns:GetProcessContextRequest" />
+  <xs:complexType name="PermissionCheckRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/CIC.Bas.Extensibility" base="q8:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LaneName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PermissionCheckRequest" nillable="true" type="tns:PermissionCheckRequest" />
+  <xs:complexType name="SearchListenersRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/CIC.Bas.Extensibility" base="q9:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Filter" nillable="true" type="tns:SearchListenersFilter" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchListenersRequest" nillable="true" type="tns:SearchListenersRequest" />
+  <xs:complexType name="SearchListenersFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaIdFrom" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="AreaIdTo" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="AreaName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedAtFrom" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedAtTo" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedByUserId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="IsUserTask" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="LaneName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/CIC.OpenBPE.Storage" minOccurs="0" name="ListenerState" nillable="true" type="q10:ListenerState" />
+      <xs:element minOccurs="0" name="OrderByColumn" type="tns:SearchListenersColumn" />
+      <xs:element minOccurs="0" name="PageNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PageSize" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ProcessInstanceIdFrom" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ProcessInstanceIdTo" nillable="true" type="xs:long" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/CIC.Bas.Core" minOccurs="0" name="SortOrder" type="q11:SortOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchListenersFilter" nillable="true" type="tns:SearchListenersFilter" />
+  <xs:simpleType name="SearchListenersColumn">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Id" />
+      <xs:enumeration value="EventCode" />
+      <xs:enumeration value="AreaName" />
+      <xs:enumeration value="AreaId" />
+      <xs:enumeration value="ProcessId" />
+      <xs:enumeration value="ListenerDefinitionId" />
+      <xs:enumeration value="ProcessDefinitionId" />
+      <xs:enumeration value="ProcessInstanceId" />
+      <xs:enumeration value="IsUserTask" />
+      <xs:enumeration value="FlowNodeId" />
+      <xs:enumeration value="Priority" />
+      <xs:enumeration value="ListenerState" />
+      <xs:enumeration value="ExecutionHost" />
+      <xs:enumeration value="UserId" />
+      <xs:enumeration value="TokenId" />
+      <xs:enumeration value="LaneName" />
+      <xs:enumeration value="CreatedAt" />
+      <xs:enumeration value="ProcessInstanceChildId" />
+      <xs:enumeration value="EvaluateCode" />
+      <xs:enumeration value="EventDefinitionCode" />
+      <xs:enumeration value="EnablePersistence" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SearchListenersColumn" nillable="true" type="tns:SearchListenersColumn" />
+  <xs:complexType name="SetProcessContextRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/CIC.Bas.Extensibility" base="q12:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/CIC.Clarion.Evaluate.OpenLease.BindProcedures.BusinessProcessing.Subscriptions.Dto" minOccurs="0" name="ProcessContext" nillable="true" type="q13:SubscriptionsDataDto" />
+          <xs:element minOccurs="0" name="ProcessInstanceId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SetProcessContextRequest" nillable="true" type="tns:SetProcessContextRequest" />
+  <xs:complexType name="DispatchAndExecuteEventResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/CIC.Bas.Extensibility" base="q14:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ExecutionReport" nillable="true" type="tns:ExecutionReport" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DispatchAndExecuteEventResponse" nillable="true" type="tns:DispatchAndExecuteEventResponse" />
+  <xs:complexType name="ExecutionReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaId" type="xs:long" />
+      <xs:element minOccurs="0" name="AreaName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EventCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/CIC.OpenBPE.Storage.Models" minOccurs="0" name="Listeners" nillable="true" type="q15:ArrayOfListenerModel" />
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/CIC.Clarion.Evaluate.OpenLease.BindProcedures.BusinessProcessing.Subscriptions.Dto" minOccurs="0" name="ProcessContext" nillable="true" type="q16:SubscriptionsDataDto" />
+      <xs:element minOccurs="0" name="ProcessDefinitionCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/CIC.OpenBPE.Storage.Models" minOccurs="0" name="ProcessInstance" nillable="true" type="q17:ProcessInstanceModel" />
+      <xs:element minOccurs="0" name="UserId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExecutionReport" nillable="true" type="tns:ExecutionReport" />
+  <xs:complexType name="DispatchAndExecuteListenerResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/CIC.Bas.Extensibility" base="q18:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ExecutionReport" nillable="true" type="tns:ExecutionReport" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DispatchAndExecuteListenerResponse" nillable="true" type="tns:DispatchAndExecuteListenerResponse" />
+  <xs:complexType name="GetInstanceTimestampResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q19="http://schemas.datacontract.org/2004/07/CIC.Bas.Extensibility" base="q19:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InstanceTimestamp" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetInstanceTimestampResponse" nillable="true" type="tns:GetInstanceTimestampResponse" />
+  <xs:complexType name="GetListenersResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://schemas.datacontract.org/2004/07/CIC.Bas.Extensibility" base="q20:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/CIC.OpenBPE.Storage.Models" minOccurs="0" name="Listeners" nillable="true" type="q21:ArrayOfListenerModel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetListenersResponse" nillable="true" type="tns:GetListenersResponse" />
+  <xs:complexType name="GetProcessContextResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q22="http://schemas.datacontract.org/2004/07/CIC.Bas.Extensibility" base="q22:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/CIC.Clarion.Evaluate.OpenLease.BindProcedures.BusinessProcessing.Subscriptions.Dto" minOccurs="0" name="ProcessContext" nillable="true" type="q23:SubscriptionsDataDto" />
+          <xs:element minOccurs="0" name="ProcessInstanceId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetProcessContextResponse" nillable="true" type="tns:GetProcessContextResponse" />
+  <xs:complexType name="PermissionCheckResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q24="http://schemas.datacontract.org/2004/07/CIC.Bas.Extensibility" base="q24:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HasPermission" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PermissionCheckResponse" nillable="true" type="tns:PermissionCheckResponse" />
+  <xs:complexType name="SearchListenersResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q25="http://schemas.datacontract.org/2004/07/CIC.Bas.Extensibility" base="q25:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/CIC.OpenBPE.Storage.Models" minOccurs="0" name="Listeners" nillable="true" type="q26:ArrayOfListenerModel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchListenersResponse" nillable="true" type="tns:SearchListenersResponse" />
+</xs:schema>

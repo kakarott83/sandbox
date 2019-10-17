@@ -1,0 +1,1282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intf="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns1="urn:ZEKTransactionService" xmlns:impl="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" targetNamespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:ZEKTransactionService">
+      <xsd:import namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="IdentityDescriptor">
+        <xsd:sequence>
+          <xsd:element name="clientUserId" nillable="true" type="xsd:string" />
+          <xsd:element name="name" nillable="true" type="xsd:string" />
+          <xsd:element name="password" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="AddressDescription">
+        <xsd:sequence>
+          <xsd:element name="UID" nillable="true" type="xsd:string" />
+          <xsd:element name="birthdate" nillable="true" type="xsd:string" />
+          <xsd:element name="city" nillable="true" type="xsd:string" />
+          <xsd:element name="country" nillable="true" type="xsd:string" />
+          <xsd:element name="datumWohnhaftSeit" nillable="true" type="xsd:string" />
+          <xsd:element name="firmaZusatz" nillable="true" type="xsd:string" />
+          <xsd:element name="firstname" nillable="true" type="xsd:string" />
+          <xsd:element name="foundingDate" nillable="true" type="xsd:string" />
+          <xsd:element name="housenumber" nillable="true" type="xsd:string" />
+          <xsd:element name="kundenId" nillable="true" type="xsd:string" />
+          <xsd:element name="legalForm" type="xsd:int" />
+          <xsd:element name="maidenName" nillable="true" type="xsd:string" />
+          <xsd:element name="name" nillable="true" type="xsd:string" />
+          <xsd:element name="nationality" nillable="true" type="xsd:string" />
+          <xsd:element name="nogaCode" nillable="true" type="xsd:string" />
+          <xsd:element name="profession" nillable="true" type="xsd:string" />
+          <xsd:element name="sex" nillable="true" type="xsd:int" />
+          <xsd:element name="street" nillable="true" type="xsd:string" />
+          <xsd:element name="zip" nillable="true" type="xsd:string" />
+          <xsd:element name="zipAdd" nillable="true" type="xsd:string" />
+          <xsd:element name="zivilstandscode" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RequestEntity">
+        <xsd:sequence>
+          <xsd:element name="addressDescription" nillable="true" type="tns1:AddressDescription" />
+          <xsd:element name="debtorRole" type="xsd:int" />
+          <xsd:element name="forceNewAddress" nillable="true" type="xsd:int" />
+          <xsd:element name="previousReturnCode" nillable="true" type="xsd:int" />
+          <xsd:element name="refno" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="AmtsinformationDescription">
+        <xsd:sequence>
+          <xsd:element name="amtsCode" type="xsd:int" />
+          <xsd:element name="datumEingabefrist" nillable="true" type="xsd:string" />
+          <xsd:element name="datumQuelle" nillable="true" type="xsd:string" />
+          <xsd:element name="plzAmt" nillable="true" type="xsd:string" />
+          <xsd:element name="quellenKanton" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BardarlehenDescription">
+        <xsd:sequence>
+          <xsd:element name="anzahlMonatlicheRaten" type="xsd:int" />
+          <xsd:element name="bonitaetsCodeIKO" nillable="true" type="xsd:int" />
+          <xsd:element name="bonitaetsCodeZEK" nillable="true" type="xsd:int" />
+          <xsd:element name="datumBonitaetIKO" nillable="true" type="xsd:string" />
+          <xsd:element name="datumBonitaetZEK" nillable="true" type="xsd:string" />
+          <xsd:element name="datumErsteRate" nillable="true" type="xsd:string" />
+          <xsd:element name="datumLetzteRate" nillable="true" type="xsd:string" />
+          <xsd:element name="debtorRole" nillable="true" type="xsd:int" />
+          <xsd:element name="filiale" nillable="true" type="xsd:int" />
+          <xsd:element name="herkunft" nillable="true" type="xsd:int" />
+          <xsd:element name="kennzeichen" nillable="true" type="xsd:int" />
+          <xsd:element name="kreditBetrag" type="xsd:float" />
+          <xsd:element name="kreditVertragID" nillable="true" type="xsd:string" />
+          <xsd:element name="monatsrate" type="xsd:float" />
+          <xsd:element name="sicherstellungsCode" nillable="true" type="xsd:int" />
+          <xsd:element name="theoRestSaldo" type="xsd:float" />
+          <xsd:element name="vertragsStatus" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="eCode178">
+        <xsd:sequence>
+          <xsd:element name="chassisNummer" nillable="true" type="xsd:string" />
+          <xsd:element name="datumGueltigAb" nillable="true" type="xsd:string" />
+          <xsd:element name="datumGueltigBis" nillable="true" type="xsd:string" />
+          <xsd:element name="eCode178Id" nillable="true" type="xsd:string" />
+          <xsd:element name="eCodeStatus" nillable="true" type="xsd:string" />
+          <xsd:element name="fzStammnummer" nillable="true" type="xsd:string" />
+          <xsd:element name="haendlerNummer" nillable="true" type="xsd:string" />
+          <xsd:element name="nextEcodeState" nillable="true" type="xsd:string" />
+          <xsd:element name="stvaNummer" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Festkredit">
+        <xsd:sequence>
+          <xsd:element name="bonitaetsCodeIKO" nillable="true" type="xsd:int" />
+          <xsd:element name="bonitaetsCodeZEK" nillable="true" type="xsd:int" />
+          <xsd:element name="datumBonitaetIKO" nillable="true" type="xsd:string" />
+          <xsd:element name="datumBonitaetZEK" nillable="true" type="xsd:string" />
+          <xsd:element name="datumVertragsBeginn" nillable="true" type="xsd:string" />
+          <xsd:element name="datumVertragsEnde" nillable="true" type="xsd:string" />
+          <xsd:element name="debtorRole" nillable="true" type="xsd:int" />
+          <xsd:element name="filiale" nillable="true" type="xsd:int" />
+          <xsd:element name="herkunft" nillable="true" type="xsd:int" />
+          <xsd:element name="kennzeichen" nillable="true" type="xsd:int" />
+          <xsd:element name="kreditBetrag" type="xsd:float" />
+          <xsd:element name="kreditVertragID" nillable="true" type="xsd:string" />
+          <xsd:element name="sicherstellungsCode" nillable="true" type="xsd:int" />
+          <xsd:element name="theoRestSaldo" type="xsd:float" />
+          <xsd:element name="vertragsStatus" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="KartenengagementDescription">
+        <xsd:sequence>
+          <xsd:element name="datumKontoEroeffnung" nillable="true" type="xsd:string" />
+          <xsd:element name="datumSaldoStichTag" nillable="true" type="xsd:string" />
+          <xsd:element name="debtorRole" nillable="true" type="xsd:int" />
+          <xsd:element name="filiale" nillable="true" type="xsd:int" />
+          <xsd:element name="herkunft" nillable="true" type="xsd:int" />
+          <xsd:element name="kennzeichen" nillable="true" type="xsd:int" />
+          <xsd:element name="kreditVertragID" nillable="true" type="xsd:string" />
+          <xsd:element name="saldoAbrechnungsTag" type="xsd:float" />
+          <xsd:element name="theoRestSaldo" type="xsd:float" />
+          <xsd:element name="vertragsStatus" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="KarteninformationDescription">
+        <xsd:sequence>
+          <xsd:element name="datumNegativereignis" nillable="true" type="xsd:string" />
+          <xsd:element name="datumPositivmeldung" nillable="true" type="xsd:string" />
+          <xsd:element name="ereignisCode" type="xsd:int" />
+          <xsd:element name="filiale" nillable="true" type="xsd:int" />
+          <xsd:element name="kartenTypCode" type="xsd:int" />
+          <xsd:element name="kennzeichen" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="KontokorrentkreditDescription">
+        <xsd:sequence>
+          <xsd:element name="beanspruchterKreditProzent" nillable="true" type="xsd:int" />
+          <xsd:element name="bonitaetsCodeIKO" nillable="true" type="xsd:int" />
+          <xsd:element name="bonitaetsCodeZEK" nillable="true" type="xsd:int" />
+          <xsd:element name="datumBonitaetIKO" nillable="true" type="xsd:string" />
+          <xsd:element name="datumBonitaetZEK" nillable="true" type="xsd:string" />
+          <xsd:element name="datumVertragsBeginn" nillable="true" type="xsd:string" />
+          <xsd:element name="datumVertragsEnde" nillable="true" type="xsd:string" />
+          <xsd:element name="debtorRole" nillable="true" type="xsd:int" />
+          <xsd:element name="filiale" nillable="true" type="xsd:int" />
+          <xsd:element name="herkunft" nillable="true" type="xsd:int" />
+          <xsd:element name="kennzeichen" nillable="true" type="xsd:int" />
+          <xsd:element name="kreditLimite" type="xsd:float" />
+          <xsd:element name="kreditVertragID" nillable="true" type="xsd:string" />
+          <xsd:element name="sicherstellungsCode" nillable="true" type="xsd:int" />
+          <xsd:element name="theoRestSaldo" type="xsd:float" />
+          <xsd:element name="vertragsStatus" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="KreditGesuchDescription">
+        <xsd:sequence>
+          <xsd:element name="ablehnungsgrund" nillable="true" type="xsd:int" />
+          <xsd:element name="datumAblehnung" nillable="true" type="xsd:string" />
+          <xsd:element name="datumGueltigBis" nillable="true" type="xsd:string" />
+          <xsd:element name="datumKreditGesuch" nillable="true" type="xsd:string" />
+          <xsd:element name="debtorRole" nillable="true" type="xsd:int" />
+          <xsd:element name="filiale" nillable="true" type="xsd:int" />
+          <xsd:element name="herkunft" nillable="true" type="xsd:int" />
+          <xsd:element name="kennzeichen" nillable="true" type="xsd:int" />
+          <xsd:element name="kreditVertragID" nillable="true" type="xsd:string" />
+          <xsd:element name="vertragsStatus" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LeasingMietvertragDescription">
+        <xsd:sequence>
+          <xsd:element name="anzahlMonatlicheRaten" type="xsd:int" />
+          <xsd:element name="anzahlung" nillable="true" type="xsd:int" />
+          <xsd:element name="bonitaetsCodeIKO" nillable="true" type="xsd:int" />
+          <xsd:element name="bonitaetsCodeZEK" nillable="true" type="xsd:int" />
+          <xsd:element name="datumBonitaetIKO" nillable="true" type="xsd:string" />
+          <xsd:element name="datumBonitaetZEK" nillable="true" type="xsd:string" />
+          <xsd:element name="datumErsteRate" nillable="true" type="xsd:string" />
+          <xsd:element name="datumLetzteRate" nillable="true" type="xsd:string" />
+          <xsd:element name="debtorRole" nillable="true" type="xsd:int" />
+          <xsd:element name="ersteGrosseRate" nillable="true" type="xsd:int" />
+          <xsd:element name="filiale" nillable="true" type="xsd:int" />
+          <xsd:element name="grosseSchlussrate" nillable="true" type="xsd:int" />
+          <xsd:element name="herkunft" nillable="true" type="xsd:int" />
+          <xsd:element name="kennzeichen" nillable="true" type="xsd:int" />
+          <xsd:element name="kreditBetrag" type="xsd:float" />
+          <xsd:element name="kreditVertragID" nillable="true" type="xsd:string" />
+          <xsd:element name="monatsrate" type="xsd:float" />
+          <xsd:element name="restwert" nillable="true" type="xsd:int" />
+          <xsd:element name="sicherstellungsCode" nillable="true" type="xsd:int" />
+          <xsd:element name="theoRestSaldo" type="xsd:float" />
+          <xsd:element name="vertragsStatus" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SolidarschuldnerDescription">
+        <xsd:sequence>
+          <xsd:element name="anzahlMonatlicheRaten" nillable="true" type="xsd:int" />
+          <xsd:element name="bonitaetsCodeIKO" nillable="true" type="xsd:int" />
+          <xsd:element name="bonitaetsCodeZEK" nillable="true" type="xsd:int" />
+          <xsd:element name="datumBonitaetIKO" nillable="true" type="xsd:string" />
+          <xsd:element name="datumBonitaetZEK" nillable="true" type="xsd:string" />
+          <xsd:element name="datumErsteRate" nillable="true" type="xsd:string" />
+          <xsd:element name="datumLetzteRate" nillable="true" type="xsd:string" />
+          <xsd:element name="debtorRole" nillable="true" type="xsd:int" />
+          <xsd:element name="filiale" nillable="true" type="xsd:int" />
+          <xsd:element name="herkunft" nillable="true" type="xsd:int" />
+          <xsd:element name="kennzeichen" nillable="true" type="xsd:int" />
+          <xsd:element name="kreditBetrag" type="xsd:float" />
+          <xsd:element name="kreditVertragID" nillable="true" type="xsd:string" />
+          <xsd:element name="monatsrate" nillable="true" type="xsd:float" />
+          <xsd:element name="sicherstellungsCode" nillable="true" type="xsd:int" />
+          <xsd:element name="vertragsStatus" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TeilzahlungskreditDescription">
+        <xsd:sequence>
+          <xsd:element name="anzahlMonatlicheRaten" type="xsd:int" />
+          <xsd:element name="bonitaetsCodeIKO" nillable="true" type="xsd:int" />
+          <xsd:element name="bonitaetsCodeZEK" nillable="true" type="xsd:int" />
+          <xsd:element name="datumBonitaetIKO" nillable="true" type="xsd:string" />
+          <xsd:element name="datumBonitaetZEK" nillable="true" type="xsd:string" />
+          <xsd:element name="datumErsteRate" nillable="true" type="xsd:string" />
+          <xsd:element name="datumLetzteRate" nillable="true" type="xsd:string" />
+          <xsd:element name="debtorRole" nillable="true" type="xsd:int" />
+          <xsd:element name="filiale" nillable="true" type="xsd:int" />
+          <xsd:element name="herkunft" nillable="true" type="xsd:int" />
+          <xsd:element name="kennzeichen" nillable="true" type="xsd:int" />
+          <xsd:element name="kreditBetrag" type="xsd:float" />
+          <xsd:element name="kreditVertragID" nillable="true" type="xsd:string" />
+          <xsd:element name="monatsrate" type="xsd:float" />
+          <xsd:element name="sicherstellungsCode" nillable="true" type="xsd:int" />
+          <xsd:element name="theoRestSaldo" type="xsd:float" />
+          <xsd:element name="vertragsStatus" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TeilzahlungsvertragDescription">
+        <xsd:sequence>
+          <xsd:element name="anfangsrate" nillable="true" type="xsd:int" />
+          <xsd:element name="anzahlMonatlicheRaten" nillable="true" type="xsd:int" />
+          <xsd:element name="bonitaetsCodeIKO" nillable="true" type="xsd:int" />
+          <xsd:element name="bonitaetsCodeZEK" nillable="true" type="xsd:int" />
+          <xsd:element name="datumBonitaetIKO" nillable="true" type="xsd:string" />
+          <xsd:element name="datumBonitaetZEK" nillable="true" type="xsd:string" />
+          <xsd:element name="datumErsteRate" nillable="true" type="xsd:string" />
+          <xsd:element name="datumLetzteRate" nillable="true" type="xsd:string" />
+          <xsd:element name="debtorRole" nillable="true" type="xsd:int" />
+          <xsd:element name="filiale" nillable="true" type="xsd:int" />
+          <xsd:element name="herkunft" nillable="true" type="xsd:int" />
+          <xsd:element name="kennzeichen" nillable="true" type="xsd:int" />
+          <xsd:element name="kreditBetrag" type="xsd:float" />
+          <xsd:element name="kreditVertragID" nillable="true" type="xsd:string" />
+          <xsd:element name="monatsrate" nillable="true" type="xsd:float" />
+          <xsd:element name="restwert" nillable="true" type="xsd:int" />
+          <xsd:element name="sicherstellungsCode" nillable="true" type="xsd:int" />
+          <xsd:element name="theoRestSaldo" type="xsd:float" />
+          <xsd:element name="vertragsStatus" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="UeberziehungskreditDescription">
+        <xsd:sequence>
+          <xsd:element name="datumReferenz" nillable="true" type="xsd:string" />
+          <xsd:element name="datumSaldoStichTag" nillable="true" type="xsd:string" />
+          <xsd:element name="debtorRole" nillable="true" type="xsd:int" />
+          <xsd:element name="filiale" nillable="true" type="xsd:int" />
+          <xsd:element name="herkunft" nillable="true" type="xsd:int" />
+          <xsd:element name="kennzeichen" nillable="true" type="xsd:int" />
+          <xsd:element name="kreditVertragID" nillable="true" type="xsd:string" />
+          <xsd:element name="saldoKontoAuszug" type="xsd:float" />
+          <xsd:element name="theoRestSaldo" type="xsd:float" />
+          <xsd:element name="vertragsStatus" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="FoundContracts">
+        <xsd:sequence>
+          <xsd:element name="amtsinformationContracts" nillable="true" type="impl:ArrayOf_tns1_AmtsinformationDescription" />
+          <xsd:element name="bardarlehenContracts" nillable="true" type="impl:ArrayOf_tns1_BardarlehenDescription" />
+          <xsd:element name="eCodes178" nillable="true" type="impl:ArrayOf_tns1_eCode178" />
+          <xsd:element name="festkreditContracts" nillable="true" type="impl:ArrayOf_tns1_Festkredit" />
+          <xsd:element name="gesamtEngagement" nillable="true" type="xsd:int" />
+          <xsd:element name="kartenengagementContracts" nillable="true" type="impl:ArrayOf_tns1_KartenengagementDescription" />
+          <xsd:element name="karteninformationContracts" nillable="true" type="impl:ArrayOf_tns1_KarteninformationDescription" />
+          <xsd:element name="kontokorrentkreditContracts" nillable="true" type="impl:ArrayOf_tns1_KontokorrentkreditDescription" />
+          <xsd:element name="kreditGesuchContracts" nillable="true" type="impl:ArrayOf_tns1_KreditGesuchDescription" />
+          <xsd:element name="leasingMietvertragContracts" nillable="true" type="impl:ArrayOf_tns1_LeasingMietvertragDescription" />
+          <xsd:element name="solidarschuldnerContracts" nillable="true" type="impl:ArrayOf_tns1_SolidarschuldnerDescription" />
+          <xsd:element name="teilzahlungskreditContracts" nillable="true" type="impl:ArrayOf_tns1_TeilzahlungskreditDescription" />
+          <xsd:element name="teilzahlungsvertragContracts" nillable="true" type="impl:ArrayOf_tns1_TeilzahlungsvertragDescription" />
+          <xsd:element name="ueberziehungskreditContracts" nillable="true" type="impl:ArrayOf_tns1_UeberziehungskreditDescription" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ReturnCode">
+        <xsd:sequence>
+          <xsd:element name="code" type="xsd:int" />
+          <xsd:element name="text" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ResponseDescription">
+        <xsd:sequence>
+          <xsd:element name="foundContracts" nillable="true" type="tns1:FoundContracts" />
+          <xsd:element name="foundPerson" nillable="true" type="tns1:AddressDescription" />
+          <xsd:element name="refNo" type="xsd:int" />
+          <xsd:element name="returnCode" nillable="true" type="tns1:ReturnCode" />
+          <xsd:element name="synonymes" nillable="true" type="impl:ArrayOf_tns1_AddressDescription" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TransactionError">
+        <xsd:sequence>
+          <xsd:element name="code" type="xsd:int" />
+          <xsd:element name="text" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CommonMultiResponse">
+        <xsd:sequence>
+          <xsd:element name="eCodeId" nillable="true" type="xsd:string" />
+          <xsd:element name="kreditGesuchID" nillable="true" type="xsd:string" />
+          <xsd:element name="kreditVertragID" nillable="true" type="xsd:string" />
+          <xsd:element name="responses" nillable="true" type="impl:ArrayOf_tns1_ResponseDescription" />
+          <xsd:element name="transactionError" nillable="true" type="tns1:TransactionError" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="InfoResponse">
+        <xsd:sequence>
+          <xsd:element name="foundContracts" nillable="true" type="tns1:FoundContracts" />
+          <xsd:element name="foundPerson" nillable="true" type="tns1:AddressDescription" />
+          <xsd:element name="returnCode" nillable="true" type="tns1:ReturnCode" />
+          <xsd:element name="synonymes" nillable="true" type="impl:ArrayOf_tns1_AddressDescription" />
+          <xsd:element name="transactionError" nillable="true" type="tns1:TransactionError" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CreditClaimRejectionResponse">
+        <xsd:sequence>
+          <xsd:element name="returnCode" nillable="true" type="tns1:ReturnCode" />
+          <xsd:element name="synonymes" nillable="true" type="impl:ArrayOf_tns1_AddressDescription" />
+          <xsd:element name="transactionError" nillable="true" type="tns1:TransactionError" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ExtendedAddressDescription">
+        <xsd:sequence>
+          <xsd:element name="birthdate" nillable="true" type="xsd:string" />
+          <xsd:element name="city" nillable="true" type="xsd:string" />
+          <xsd:element name="country" nillable="true" type="xsd:string" />
+          <xsd:element name="datumWohnhaftSeit" nillable="true" type="xsd:string" />
+          <xsd:element name="dvAddressId" nillable="true" type="xsd:string" />
+          <xsd:element name="firmaZusatz" nillable="true" type="xsd:string" />
+          <xsd:element name="firstname" nillable="true" type="xsd:string" />
+          <xsd:element name="foundingDate" nillable="true" type="xsd:string" />
+          <xsd:element name="housenumber" nillable="true" type="xsd:string" />
+          <xsd:element name="kundenId" nillable="true" type="xsd:string" />
+          <xsd:element name="legalForm" type="xsd:int" />
+          <xsd:element name="maidenName" nillable="true" type="xsd:string" />
+          <xsd:element name="name" nillable="true" type="xsd:string" />
+          <xsd:element name="nationality" nillable="true" type="xsd:string" />
+          <xsd:element name="nogaCode" nillable="true" type="xsd:string" />
+          <xsd:element name="profession" nillable="true" type="xsd:string" />
+          <xsd:element name="sex" nillable="true" type="xsd:int" />
+          <xsd:element name="similarity" nillable="true" type="xsd:int" />
+          <xsd:element name="sourceId" nillable="true" type="xsd:int" />
+          <xsd:element name="street" nillable="true" type="xsd:string" />
+          <xsd:element name="zip" nillable="true" type="xsd:string" />
+          <xsd:element name="zipAdd" nillable="true" type="xsd:string" />
+          <xsd:element name="zivilstandscode" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ExtendedRequestEntity">
+        <xsd:sequence>
+          <xsd:element name="addressDescription" nillable="true" type="tns1:ExtendedAddressDescription" />
+          <xsd:element name="debtorRole" type="xsd:int" />
+          <xsd:element name="forceNewAddress" nillable="true" type="xsd:int" />
+          <xsd:element name="previousReturnCode" nillable="true" type="xsd:int" />
+          <xsd:element name="refno" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="KeyValueItem">
+        <xsd:sequence>
+          <xsd:element name="key" nillable="true" type="xsd:string" />
+          <xsd:element name="value" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ExtendedResponseDescription">
+        <xsd:sequence>
+          <xsd:element name="deltavistaFoundPerson" nillable="true" type="tns1:ExtendedAddressDescription" />
+          <xsd:element name="deltavistaSynonymes" nillable="true" type="impl:ArrayOf_tns1_ExtendedAddressDescription" />
+          <xsd:element name="foundContracts" nillable="true" type="tns1:FoundContracts" />
+          <xsd:element name="foundPerson" nillable="true" type="tns1:ExtendedAddressDescription" />
+          <xsd:element name="keyValueItems" nillable="true" type="impl:ArrayOf_tns1_KeyValueItem" />
+          <xsd:element name="refNo" type="xsd:int" />
+          <xsd:element name="returnCode" nillable="true" type="tns1:ReturnCode" />
+          <xsd:element name="synonymes" nillable="true" type="impl:ArrayOf_tns1_ExtendedAddressDescription" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ExtendedCommonMultiResponse">
+        <xsd:sequence>
+          <xsd:element name="eCodeId" nillable="true" type="xsd:string" />
+          <xsd:element name="kreditGesuchID" nillable="true" type="xsd:string" />
+          <xsd:element name="kreditVertragID" nillable="true" type="xsd:string" />
+          <xsd:element name="responses" nillable="true" type="impl:ArrayOf_tns1_ExtendedResponseDescription" />
+          <xsd:element name="transactionError" nillable="true" type="tns1:TransactionError" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ExtendedInfoResponse">
+        <xsd:sequence>
+          <xsd:element name="deltavistaFoundPerson" nillable="true" type="tns1:ExtendedAddressDescription" />
+          <xsd:element name="deltavistaSynonymes" nillable="true" type="impl:ArrayOf_tns1_ExtendedAddressDescription" />
+          <xsd:element name="foundContracts" nillable="true" type="tns1:FoundContracts" />
+          <xsd:element name="foundPerson" nillable="true" type="tns1:ExtendedAddressDescription" />
+          <xsd:element name="keyValueItems" nillable="true" type="impl:ArrayOf_tns1_KeyValueItem" />
+          <xsd:element name="returnCode" nillable="true" type="tns1:ReturnCode" />
+          <xsd:element name="synonymes" nillable="true" type="impl:ArrayOf_tns1_ExtendedAddressDescription" />
+          <xsd:element name="transactionError" nillable="true" type="tns1:TransactionError" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArmItem">
+        <xsd:sequence>
+          <xsd:element name="creationDate" nillable="true" type="xsd:string" />
+          <xsd:element name="eCode178Id" nillable="true" type="xsd:string" />
+          <xsd:element name="eCodeStatus" nillable="true" type="xsd:string" />
+          <xsd:element name="kreditGesuchID" nillable="true" type="xsd:string" />
+          <xsd:element name="kreditVertragID" nillable="true" type="xsd:string" />
+          <xsd:element name="kundenId" nillable="true" type="xsd:string" />
+          <xsd:element name="rueckmeldeCode" type="xsd:int" />
+          <xsd:element name="rueckmeldeId" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArmResponse">
+        <xsd:sequence>
+          <xsd:element name="armList" nillable="true" type="impl:ArrayOf_tns1_ArmItem" />
+          <xsd:element name="requestDate" nillable="true" type="xsd:string" />
+          <xsd:element name="returnCode" nillable="true" type="tns1:ReturnCode" />
+          <xsd:element name="transactionError" nillable="true" type="tns1:TransactionError" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateAddressResponse">
+        <xsd:sequence>
+          <xsd:element name="returnCode" nillable="true" type="tns1:ReturnCode" />
+          <xsd:element name="synonymes" nillable="true" type="impl:ArrayOf_tns1_AddressDescription" />
+          <xsd:element name="synonymesNew" nillable="true" type="impl:ArrayOf_tns1_AddressDescription" />
+          <xsd:element name="transactionError" nillable="true" type="tns1:TransactionError" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3">
+      <xsd:import namespace="urn:ZEKTransactionService" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="ArrayOf_tns1_RequestEntity">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:RequestEntity[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_AmtsinformationDescription">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:AmtsinformationDescription[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_BardarlehenDescription">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:BardarlehenDescription[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_eCode178">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:eCode178[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_Festkredit">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:Festkredit[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_KartenengagementDescription">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:KartenengagementDescription[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_KarteninformationDescription">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:KarteninformationDescription[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_KontokorrentkreditDescription">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:KontokorrentkreditDescription[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_KreditGesuchDescription">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:KreditGesuchDescription[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_LeasingMietvertragDescription">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:LeasingMietvertragDescription[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_SolidarschuldnerDescription">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:SolidarschuldnerDescription[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_TeilzahlungskreditDescription">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:TeilzahlungskreditDescription[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_TeilzahlungsvertragDescription">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:TeilzahlungsvertragDescription[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_UeberziehungskreditDescription">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:UeberziehungskreditDescription[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_AddressDescription">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:AddressDescription[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_ResponseDescription">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:ResponseDescription[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_ExtendedRequestEntity">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:ExtendedRequestEntity[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_KeyValueItem">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:KeyValueItem[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_ExtendedAddressDescription">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:ExtendedAddressDescription[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_ExtendedResponseDescription">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:ExtendedResponseDescription[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_ArmItem">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:ArmItem[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="informativabfrageResponse">
+    <wsdl:part name="informativabfrageReturn" type="tns1:InfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateFestkreditRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntities" type="impl:ArrayOf_tns1_RequestEntity" />
+    <wsdl:part name="festkredit" type="tns1:Festkredit" />
+    <wsdl:part name="festkreditNew" type="tns1:Festkredit" />
+  </wsdl:message>
+  <wsdl:message name="registerLeasingMietvertragRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntities" type="impl:ArrayOf_tns1_RequestEntity" />
+    <wsdl:part name="leasingMietvertrag" type="tns1:LeasingMietvertragDescription" />
+    <wsdl:part name="kreditGesuchID" type="xsd:string" />
+    <wsdl:part name="zielVerein" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="eCode178AbmeldenRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="eCode178" type="tns1:eCode178" />
+  </wsdl:message>
+  <wsdl:message name="meldungUeberziehungskreditResponse">
+    <wsdl:part name="meldungUeberziehungskreditReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="kreditgesuchAblehnenRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntity" type="tns1:RequestEntity" />
+    <wsdl:part name="datumAblehnung" type="xsd:string" />
+    <wsdl:part name="ablehnungsgrund" type="xsd:int" />
+    <wsdl:part name="kreditGesuchID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="eCode178AbfrageRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="eCode178" type="tns1:eCode178" />
+  </wsdl:message>
+  <wsdl:message name="eCode178AbmeldenResponse">
+    <wsdl:part name="eCode178AbmeldenReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="kreditgesuchNeuRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntities" type="impl:ArrayOf_tns1_RequestEntity" />
+    <wsdl:part name="zielVerein" type="xsd:int" />
+    <wsdl:part name="anfragegrund" type="xsd:int" />
+    <wsdl:part name="previousKreditGesuchId" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="updateKontokorrentkreditResponse">
+    <wsdl:part name="updateKontokorrentkreditReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateBardarlehenRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntities" type="impl:ArrayOf_tns1_RequestEntity" />
+    <wsdl:part name="bardarlehen" type="tns1:BardarlehenDescription" />
+    <wsdl:part name="bardarlehenNew" type="tns1:BardarlehenDescription" />
+  </wsdl:message>
+  <wsdl:message name="closeBardarlehenResponse">
+    <wsdl:part name="closeBardarlehenReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateTeilzahlungsvertragResponse">
+    <wsdl:part name="updateTeilzahlungsvertragReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateKontokorrentkreditRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntities" type="impl:ArrayOf_tns1_RequestEntity" />
+    <wsdl:part name="kontokorrentkredit" type="tns1:KontokorrentkreditDescription" />
+    <wsdl:part name="kontokorrentkreditNew" type="tns1:KontokorrentkreditDescription" />
+  </wsdl:message>
+  <wsdl:message name="closeTeilzahlungsvertragResponse">
+    <wsdl:part name="closeTeilzahlungsvertragReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="meldungUeberziehungskreditRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntities" type="impl:ArrayOf_tns1_RequestEntity" />
+    <wsdl:part name="ueberziehungskredit" type="tns1:UeberziehungskreditDescription" />
+    <wsdl:part name="kreditGesuchID" type="xsd:string" />
+    <wsdl:part name="zielVerein" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="closeFestkreditRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntities" type="impl:ArrayOf_tns1_RequestEntity" />
+    <wsdl:part name="circumstantialCreditDescription" type="tns1:Festkredit" />
+  </wsdl:message>
+  <wsdl:message name="updateTeilzahlungskreditRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntities" type="impl:ArrayOf_tns1_RequestEntity" />
+    <wsdl:part name="teilzahlungskredit" type="tns1:TeilzahlungskreditDescription" />
+    <wsdl:part name="teilzahlungskreditNew" type="tns1:TeilzahlungskreditDescription" />
+  </wsdl:message>
+  <wsdl:message name="closeLeasingMietvertragRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntities" type="impl:ArrayOf_tns1_RequestEntity" />
+    <wsdl:part name="leasingMietvertrag" type="tns1:LeasingMietvertragDescription" />
+  </wsdl:message>
+  <wsdl:message name="updateFestkreditResponse">
+    <wsdl:part name="updateFestkreditReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="closeKontokorrentkreditRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntities" type="impl:ArrayOf_tns1_RequestEntity" />
+    <wsdl:part name="kontokorrentkredit" type="tns1:KontokorrentkreditDescription" />
+  </wsdl:message>
+  <wsdl:message name="updateBardarlehenResponse">
+    <wsdl:part name="updateBardarlehenReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="registerFestkreditResponse">
+    <wsdl:part name="registerFestkreditReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="kreditgesuchNeuExtRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntities" type="impl:ArrayOf_tns1_ExtendedRequestEntity" />
+    <wsdl:part name="zielVerein" type="xsd:int" />
+    <wsdl:part name="anfragegrund" type="xsd:int" />
+    <wsdl:part name="previousKreditGesuchId" type="xsd:string" />
+    <wsdl:part name="keyValueItems" type="impl:ArrayOf_tns1_KeyValueItem" />
+  </wsdl:message>
+  <wsdl:message name="updateLeasingMietvertragRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntities" type="impl:ArrayOf_tns1_RequestEntity" />
+    <wsdl:part name="leasingMietvertrag" type="tns1:LeasingMietvertragDescription" />
+    <wsdl:part name="leasingMietvertragNew" type="tns1:LeasingMietvertragDescription" />
+  </wsdl:message>
+  <wsdl:message name="registerBardarlehenRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntities" type="impl:ArrayOf_tns1_RequestEntity" />
+    <wsdl:part name="bardarlehen" type="tns1:BardarlehenDescription" />
+    <wsdl:part name="kreditGesuchID" type="xsd:string" />
+    <wsdl:part name="zielVerein" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="informativabfrageExtRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntity" type="tns1:ExtendedRequestEntity" />
+    <wsdl:part name="zielVerein" type="xsd:int" />
+    <wsdl:part name="anfragegrund" type="xsd:int" />
+    <wsdl:part name="keyValueItems" type="impl:ArrayOf_tns1_KeyValueItem" />
+  </wsdl:message>
+  <wsdl:message name="meldungKartenengagementResponse">
+    <wsdl:part name="meldungKartenengagementReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="closeBardarlehenRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntities" type="impl:ArrayOf_tns1_RequestEntity" />
+    <wsdl:part name="bardarlehen" type="tns1:BardarlehenDescription" />
+  </wsdl:message>
+  <wsdl:message name="registerKontokorrentkreditResponse">
+    <wsdl:part name="registerKontokorrentkreditReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="registerBardarlehenResponse">
+    <wsdl:part name="registerBardarlehenReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="closeFestkreditResponse">
+    <wsdl:part name="closeFestkreditReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="registerTeilzahlungskreditRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntities" type="impl:ArrayOf_tns1_RequestEntity" />
+    <wsdl:part name="teilzahlungskredit" type="tns1:TeilzahlungskreditDescription" />
+    <wsdl:part name="kreditGesuchID" type="xsd:string" />
+    <wsdl:part name="zielVerein" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="grunddatenMutierenRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntity" type="tns1:RequestEntity" />
+    <wsdl:part name="requestEntityNew" type="tns1:RequestEntity" />
+  </wsdl:message>
+  <wsdl:message name="informativabfrageRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntity" type="tns1:RequestEntity" />
+    <wsdl:part name="zielVerein" type="xsd:int" />
+    <wsdl:part name="anfragegrund" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="closeKontokorrentkreditResponse">
+    <wsdl:part name="closeKontokorrentkreditReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateTeilzahlungsvertragRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntities" type="impl:ArrayOf_tns1_RequestEntity" />
+    <wsdl:part name="teilzahlungsvertrag" type="tns1:TeilzahlungsvertragDescription" />
+    <wsdl:part name="teilzahlungsvertragNew" type="tns1:TeilzahlungsvertragDescription" />
+  </wsdl:message>
+  <wsdl:message name="closeLeasingMietvertragResponse">
+    <wsdl:part name="closeLeasingMietvertragReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="meldungKartenengagementRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntities" type="impl:ArrayOf_tns1_RequestEntity" />
+    <wsdl:part name="kartenengagement" type="tns1:KartenengagementDescription" />
+    <wsdl:part name="kreditGesuchID" type="xsd:string" />
+    <wsdl:part name="zielVerein" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="eCode178AnmeldenRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntity" type="tns1:RequestEntity" />
+    <wsdl:part name="eCode178" type="tns1:eCode178" />
+    <wsdl:part name="kreditGesuchID" type="xsd:string" />
+    <wsdl:part name="contractId" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="closeTeilzahlungskreditResponse">
+    <wsdl:part name="closeTeilzahlungskreditReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="kreditgesuchAblehnenResponse">
+    <wsdl:part name="kreditgesuchAblehnenReturn" type="tns1:CreditClaimRejectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="registerTeilzahlungsvertragResponse">
+    <wsdl:part name="registerTeilzahlungsvertragReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="eCode178MutierenRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="eCode178" type="tns1:eCode178" />
+  </wsdl:message>
+  <wsdl:message name="kreditgesuchNeuResponse">
+    <wsdl:part name="kreditgesuchNeuReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="closeTeilzahlungsvertragRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntities" type="impl:ArrayOf_tns1_RequestEntity" />
+    <wsdl:part name="teilzahlungsvertrag" type="tns1:TeilzahlungsvertragDescription" />
+  </wsdl:message>
+  <wsdl:message name="registerTeilzahlungsvertragRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntities" type="impl:ArrayOf_tns1_RequestEntity" />
+    <wsdl:part name="teilzahlungsvertrag" type="tns1:TeilzahlungsvertragDescription" />
+    <wsdl:part name="kreditGesuchID" type="xsd:string" />
+    <wsdl:part name="zielVerein" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="informativabfrageExtResponse">
+    <wsdl:part name="informativabfrageExtReturn" type="tns1:ExtendedInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="registerKontokorrentkreditRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntities" type="impl:ArrayOf_tns1_RequestEntity" />
+    <wsdl:part name="kontokorrentkredit" type="tns1:KontokorrentkreditDescription" />
+    <wsdl:part name="kreditGesuchID" type="xsd:string" />
+    <wsdl:part name="zielVerein" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="registerLeasingMietvertragResponse">
+    <wsdl:part name="registerLeasingMietvertragReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="kreditgesuchNeuExtResponse">
+    <wsdl:part name="kreditgesuchNeuExtReturn" type="tns1:ExtendedCommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="eCode178AnmeldenResponse">
+    <wsdl:part name="eCode178AnmeldenReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="registerFestkreditRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntities" type="impl:ArrayOf_tns1_RequestEntity" />
+    <wsdl:part name="festkredit" type="tns1:Festkredit" />
+    <wsdl:part name="kreditGesuchID" type="xsd:string" />
+    <wsdl:part name="zielVerein" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="getARMsResponse">
+    <wsdl:part name="getARMsReturn" type="tns1:ArmResponse" />
+  </wsdl:message>
+  <wsdl:message name="getARMsRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="dateLastSuccessfullRequest" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="closeTeilzahlungskreditRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="requestEntities" type="impl:ArrayOf_tns1_RequestEntity" />
+    <wsdl:part name="teilzahlungskredit" type="tns1:TeilzahlungskreditDescription" />
+  </wsdl:message>
+  <wsdl:message name="updateTeilzahlungskreditResponse">
+    <wsdl:part name="updateTeilzahlungskreditReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="eCode178MutierenResponse">
+    <wsdl:part name="eCode178MutierenReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="registerTeilzahlungskreditResponse">
+    <wsdl:part name="registerTeilzahlungskreditReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="eCode178AbfrageResponse">
+    <wsdl:part name="eCode178AbfrageReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateLeasingMietvertragResponse">
+    <wsdl:part name="updateLeasingMietvertragReturn" type="tns1:CommonMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="grunddatenMutierenResponse">
+    <wsdl:part name="grunddatenMutierenReturn" type="tns1:UpdateAddressResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ZEKService">
+    <wsdl:operation name="kreditgesuchNeu" parameterOrder="identityDescriptor requestEntities zielVerein anfragegrund previousKreditGesuchId">
+      <wsdl:input name="kreditgesuchNeuRequest" message="impl:kreditgesuchNeuRequest" />
+      <wsdl:output name="kreditgesuchNeuResponse" message="impl:kreditgesuchNeuResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="informativabfrage" parameterOrder="identityDescriptor requestEntity zielVerein anfragegrund">
+      <wsdl:input name="informativabfrageRequest" message="impl:informativabfrageRequest" />
+      <wsdl:output name="informativabfrageResponse" message="impl:informativabfrageResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="kreditgesuchAblehnen" parameterOrder="identityDescriptor requestEntity datumAblehnung ablehnungsgrund kreditGesuchID">
+      <wsdl:input name="kreditgesuchAblehnenRequest" message="impl:kreditgesuchAblehnenRequest" />
+      <wsdl:output name="kreditgesuchAblehnenResponse" message="impl:kreditgesuchAblehnenResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="registerBardarlehen" parameterOrder="identityDescriptor requestEntities bardarlehen kreditGesuchID zielVerein">
+      <wsdl:input name="registerBardarlehenRequest" message="impl:registerBardarlehenRequest" />
+      <wsdl:output name="registerBardarlehenResponse" message="impl:registerBardarlehenResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="registerFestkredit" parameterOrder="identityDescriptor requestEntities festkredit kreditGesuchID zielVerein">
+      <wsdl:input name="registerFestkreditRequest" message="impl:registerFestkreditRequest" />
+      <wsdl:output name="registerFestkreditResponse" message="impl:registerFestkreditResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="registerLeasingMietvertrag" parameterOrder="identityDescriptor requestEntities leasingMietvertrag kreditGesuchID zielVerein">
+      <wsdl:input name="registerLeasingMietvertragRequest" message="impl:registerLeasingMietvertragRequest" />
+      <wsdl:output name="registerLeasingMietvertragResponse" message="impl:registerLeasingMietvertragResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="registerTeilzahlungskredit" parameterOrder="identityDescriptor requestEntities teilzahlungskredit kreditGesuchID zielVerein">
+      <wsdl:input name="registerTeilzahlungskreditRequest" message="impl:registerTeilzahlungskreditRequest" />
+      <wsdl:output name="registerTeilzahlungskreditResponse" message="impl:registerTeilzahlungskreditResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="registerKontokorrentkredit" parameterOrder="identityDescriptor requestEntities kontokorrentkredit kreditGesuchID zielVerein">
+      <wsdl:input name="registerKontokorrentkreditRequest" message="impl:registerKontokorrentkreditRequest" />
+      <wsdl:output name="registerKontokorrentkreditResponse" message="impl:registerKontokorrentkreditResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="registerTeilzahlungsvertrag" parameterOrder="identityDescriptor requestEntities teilzahlungsvertrag kreditGesuchID zielVerein">
+      <wsdl:input name="registerTeilzahlungsvertragRequest" message="impl:registerTeilzahlungsvertragRequest" />
+      <wsdl:output name="registerTeilzahlungsvertragResponse" message="impl:registerTeilzahlungsvertragResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="meldungKartenengagement" parameterOrder="identityDescriptor requestEntities kartenengagement kreditGesuchID zielVerein">
+      <wsdl:input name="meldungKartenengagementRequest" message="impl:meldungKartenengagementRequest" />
+      <wsdl:output name="meldungKartenengagementResponse" message="impl:meldungKartenengagementResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="meldungUeberziehungskredit" parameterOrder="identityDescriptor requestEntities ueberziehungskredit kreditGesuchID zielVerein">
+      <wsdl:input name="meldungUeberziehungskreditRequest" message="impl:meldungUeberziehungskreditRequest" />
+      <wsdl:output name="meldungUeberziehungskreditResponse" message="impl:meldungUeberziehungskreditResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="closeBardarlehen" parameterOrder="identityDescriptor requestEntities bardarlehen">
+      <wsdl:input name="closeBardarlehenRequest" message="impl:closeBardarlehenRequest" />
+      <wsdl:output name="closeBardarlehenResponse" message="impl:closeBardarlehenResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="closeFestkredit" parameterOrder="identityDescriptor requestEntities circumstantialCreditDescription">
+      <wsdl:input name="closeFestkreditRequest" message="impl:closeFestkreditRequest" />
+      <wsdl:output name="closeFestkreditResponse" message="impl:closeFestkreditResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="closeLeasingMietvertrag" parameterOrder="identityDescriptor requestEntities leasingMietvertrag">
+      <wsdl:input name="closeLeasingMietvertragRequest" message="impl:closeLeasingMietvertragRequest" />
+      <wsdl:output name="closeLeasingMietvertragResponse" message="impl:closeLeasingMietvertragResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="closeTeilzahlungskredit" parameterOrder="identityDescriptor requestEntities teilzahlungskredit">
+      <wsdl:input name="closeTeilzahlungskreditRequest" message="impl:closeTeilzahlungskreditRequest" />
+      <wsdl:output name="closeTeilzahlungskreditResponse" message="impl:closeTeilzahlungskreditResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="closeTeilzahlungsvertrag" parameterOrder="identityDescriptor requestEntities teilzahlungsvertrag">
+      <wsdl:input name="closeTeilzahlungsvertragRequest" message="impl:closeTeilzahlungsvertragRequest" />
+      <wsdl:output name="closeTeilzahlungsvertragResponse" message="impl:closeTeilzahlungsvertragResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="closeKontokorrentkredit" parameterOrder="identityDescriptor requestEntities kontokorrentkredit">
+      <wsdl:input name="closeKontokorrentkreditRequest" message="impl:closeKontokorrentkreditRequest" />
+      <wsdl:output name="closeKontokorrentkreditResponse" message="impl:closeKontokorrentkreditResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateBardarlehen" parameterOrder="identityDescriptor requestEntities bardarlehen bardarlehenNew">
+      <wsdl:input name="updateBardarlehenRequest" message="impl:updateBardarlehenRequest" />
+      <wsdl:output name="updateBardarlehenResponse" message="impl:updateBardarlehenResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateFestkredit" parameterOrder="identityDescriptor requestEntities festkredit festkreditNew">
+      <wsdl:input name="updateFestkreditRequest" message="impl:updateFestkreditRequest" />
+      <wsdl:output name="updateFestkreditResponse" message="impl:updateFestkreditResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateLeasingMietvertrag" parameterOrder="identityDescriptor requestEntities leasingMietvertrag leasingMietvertragNew">
+      <wsdl:input name="updateLeasingMietvertragRequest" message="impl:updateLeasingMietvertragRequest" />
+      <wsdl:output name="updateLeasingMietvertragResponse" message="impl:updateLeasingMietvertragResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateTeilzahlungskredit" parameterOrder="identityDescriptor requestEntities teilzahlungskredit teilzahlungskreditNew">
+      <wsdl:input name="updateTeilzahlungskreditRequest" message="impl:updateTeilzahlungskreditRequest" />
+      <wsdl:output name="updateTeilzahlungskreditResponse" message="impl:updateTeilzahlungskreditResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateTeilzahlungsvertrag" parameterOrder="identityDescriptor requestEntities teilzahlungsvertrag teilzahlungsvertragNew">
+      <wsdl:input name="updateTeilzahlungsvertragRequest" message="impl:updateTeilzahlungsvertragRequest" />
+      <wsdl:output name="updateTeilzahlungsvertragResponse" message="impl:updateTeilzahlungsvertragResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateKontokorrentkredit" parameterOrder="identityDescriptor requestEntities kontokorrentkredit kontokorrentkreditNew">
+      <wsdl:input name="updateKontokorrentkreditRequest" message="impl:updateKontokorrentkreditRequest" />
+      <wsdl:output name="updateKontokorrentkreditResponse" message="impl:updateKontokorrentkreditResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="kreditgesuchNeuExt" parameterOrder="identityDescriptor requestEntities zielVerein anfragegrund previousKreditGesuchId keyValueItems">
+      <wsdl:input name="kreditgesuchNeuExtRequest" message="impl:kreditgesuchNeuExtRequest" />
+      <wsdl:output name="kreditgesuchNeuExtResponse" message="impl:kreditgesuchNeuExtResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="informativabfrageExt" parameterOrder="identityDescriptor requestEntity zielVerein anfragegrund keyValueItems">
+      <wsdl:input name="informativabfrageExtRequest" message="impl:informativabfrageExtRequest" />
+      <wsdl:output name="informativabfrageExtResponse" message="impl:informativabfrageExtResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getARMs" parameterOrder="identityDescriptor dateLastSuccessfullRequest">
+      <wsdl:input name="getARMsRequest" message="impl:getARMsRequest" />
+      <wsdl:output name="getARMsResponse" message="impl:getARMsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="eCode178Anmelden" parameterOrder="identityDescriptor requestEntity eCode178 kreditGesuchID contractId">
+      <wsdl:input name="eCode178AnmeldenRequest" message="impl:eCode178AnmeldenRequest" />
+      <wsdl:output name="eCode178AnmeldenResponse" message="impl:eCode178AnmeldenResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="eCode178Mutieren" parameterOrder="identityDescriptor eCode178">
+      <wsdl:input name="eCode178MutierenRequest" message="impl:eCode178MutierenRequest" />
+      <wsdl:output name="eCode178MutierenResponse" message="impl:eCode178MutierenResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="eCode178Abmelden" parameterOrder="identityDescriptor eCode178">
+      <wsdl:input name="eCode178AbmeldenRequest" message="impl:eCode178AbmeldenRequest" />
+      <wsdl:output name="eCode178AbmeldenResponse" message="impl:eCode178AbmeldenResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="eCode178Abfrage" parameterOrder="identityDescriptor eCode178">
+      <wsdl:input name="eCode178AbfrageRequest" message="impl:eCode178AbfrageRequest" />
+      <wsdl:output name="eCode178AbfrageResponse" message="impl:eCode178AbfrageResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="grunddatenMutieren" parameterOrder="identityDescriptor requestEntity requestEntityNew">
+      <wsdl:input name="grunddatenMutierenRequest" message="impl:grunddatenMutierenRequest" />
+      <wsdl:output name="grunddatenMutierenResponse" message="impl:grunddatenMutierenResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZEKTransactionServiceAnonymousV3SoapBinding" type="impl:ZEKService">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="kreditgesuchNeu">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="kreditgesuchNeuRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="kreditgesuchNeuResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="informativabfrage">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="informativabfrageRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="informativabfrageResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kreditgesuchAblehnen">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="kreditgesuchAblehnenRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="kreditgesuchAblehnenResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerBardarlehen">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="registerBardarlehenRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="registerBardarlehenResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerFestkredit">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="registerFestkreditRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="registerFestkreditResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerLeasingMietvertrag">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="registerLeasingMietvertragRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="registerLeasingMietvertragResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerTeilzahlungskredit">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="registerTeilzahlungskreditRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="registerTeilzahlungskreditResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerKontokorrentkredit">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="registerKontokorrentkreditRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="registerKontokorrentkreditResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerTeilzahlungsvertrag">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="registerTeilzahlungsvertragRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="registerTeilzahlungsvertragResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="meldungKartenengagement">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="meldungKartenengagementRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="meldungKartenengagementResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="meldungUeberziehungskredit">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="meldungUeberziehungskreditRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="meldungUeberziehungskreditResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeBardarlehen">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="closeBardarlehenRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="closeBardarlehenResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeFestkredit">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="closeFestkreditRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="closeFestkreditResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeLeasingMietvertrag">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="closeLeasingMietvertragRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="closeLeasingMietvertragResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeTeilzahlungskredit">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="closeTeilzahlungskreditRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="closeTeilzahlungskreditResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeTeilzahlungsvertrag">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="closeTeilzahlungsvertragRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="closeTeilzahlungsvertragResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeKontokorrentkredit">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="closeKontokorrentkreditRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="closeKontokorrentkreditResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateBardarlehen">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="updateBardarlehenRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="updateBardarlehenResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateFestkredit">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="updateFestkreditRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="updateFestkreditResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateLeasingMietvertrag">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="updateLeasingMietvertragRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="updateLeasingMietvertragResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTeilzahlungskredit">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="updateTeilzahlungskreditRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="updateTeilzahlungskreditResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTeilzahlungsvertrag">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="updateTeilzahlungsvertragRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="updateTeilzahlungsvertragResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateKontokorrentkredit">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="updateKontokorrentkreditRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="updateKontokorrentkreditResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kreditgesuchNeuExt">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="kreditgesuchNeuExtRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="kreditgesuchNeuExtResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="informativabfrageExt">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="informativabfrageExtRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="informativabfrageExtResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getARMs">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getARMsRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getARMsResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eCode178Anmelden">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="eCode178AnmeldenRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="eCode178AnmeldenResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eCode178Mutieren">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="eCode178MutierenRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="eCode178MutierenResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eCode178Abmelden">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="eCode178AbmeldenRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="eCode178AbmeldenResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eCode178Abfrage">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="eCode178AbfrageRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="eCode178AbfrageResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grunddatenMutieren">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="grunddatenMutierenRequest">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="grunddatenMutierenResponse">
+        <wsdlsoap:body use="encoded" namespace="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZEKServiceService">
+    <wsdl:port name="ZEKTransactionServiceAnonymousV3" binding="impl:ZEKTransactionServiceAnonymousV3SoapBinding">
+      <wsdlsoap:address location="https://preprodservices.crif-online.ch/ZEKsoap/ZEKTransactionServiceAnonymousV3" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

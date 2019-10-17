@@ -1,0 +1,4797 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CIC.Database.DE.EF4</name>
+    </assembly>
+    <members>
+        <member name="T:CIC.Database.DE.EF4.Model.DEContext">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.#ctor">
+            <summary>
+            Initializes a new DEContext object using the connection string found in the 'DEContext' section of the application configuration file.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.#ctor(System.String)">
+            <summary>
+            Initialize a new DEContext object.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.#ctor(System.Data.EntityClient.EntityConnection)">
+            <summary>
+            Initialize a new DEContext object.
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DEWBIN">
+            <summary>
+            Table: DEWBIN&#xA;Description: Persistente WB Input-Tabelle
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DEDEFRULTXT">
+            <summary>
+            Table: DEDEFRULTXT&#xA;Description: Decision engine: Übersetzung der Regeltexte
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.AUSKUNFTZEK">
+            <summary>
+            Table: AUSKUNFTZEK&#xA;Description: n:m Verbindung zwischen AUSKUNFT un ZEK
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DEINPEXEC">
+            <summary>
+            Table: DEINPEXEC&#xA;Description: Decision Engine Input Execute
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.AUSKUNFT">
+            <summary>
+            Table: AUSKUNFT&#xA;Description: Auskunft
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.AUSKUNFTTYP">
+            <summary>
+            Table: AUSKUNFTTYP&#xA;Description: Typ der Auskunft
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DEPARTNER">
+            <summary>
+            Table: DEPARTNER&#xA;Description: Decision Engine Vertriebspartner 1:1 DEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DEZEK">
+            <summary>
+            Table: DEZEK&#xA;Description: Decision Engine ZEK
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DEADRBONI">
+            <summary>
+            Table: DEADRBONI&#xA;Description: Decision Engine Adressvalidierung und Bonitätsauskunft
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DEOBJECT">
+            <summary>
+            Table: DEOBJECT&#xA;Description: Decision Engine Object 1:1 DEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DEWBRKL">
+            <summary>
+            Table: DEWBRKL&#xA;Description: Decision engine: Output Rating Job
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DEDETAIL">
+            <summary>
+            Table: DEDETAIL&#xA;Description: Decision Engine Detail Decision 1:1 DEOUTEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DESCORE">
+            <summary>
+            Table: DESCORE&#xA;Description: Decision Engine Scorecard N:1 DEDETAIL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DERULCON">
+            <summary>
+            Table: DERULCON&#xA;Description: Decision engine: Rule vs Condition
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DEDEFCONTXT">
+            <summary>
+            Table: DEDEFCONTXT&#xA;Description: Decision engine: Übersetzung der Auflagentexte
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DERUL">
+            <summary>
+            Table: DERUL&#xA;Description: Decision engine: geprüfte Regeln
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DEDEFRULCON">
+            <summary>
+            Table: DEDEFRULCON&#xA;Description: Decision engine: Verknüpfung zwischen Regeln und Auflagen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DEDEFRUL">
+            <summary>
+            Table: DEDEFRUL&#xA;Description: Decision engine: Regeln
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DEDEFCON">
+            <summary>
+            Table: DEDEFCON&#xA;Description: Decision engine: Auflagen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DECON">
+            <summary>
+            Table: DECON&#xA;Description: Decision engine: Condition
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DESONST">
+            <summary>
+            Table: DESONST&#xA;Description: Decision Engine Sonstige Felder 1:1 DEOUTEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DEENVOUT">
+            <summary>
+            Table: DEENVOUT&#xA;Description: Decision Engine Envelope OUTPUT 1:1 DEOUTEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DEDECISION">
+            <summary>
+            Table: DEDECISION&#xA;Description: Decision Engine Decision 1:1 DEOUTEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DEERROROUT">
+            <summary>
+            Table: DEERROROUT&#xA;Description: Output Decision Engine Error
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DECONTRACT">
+            <summary>
+            Table: DECONTRACT&#xA;Description: Decision Engine Contract 1:1 DEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DEOUTEXEC">
+            <summary>
+            Table: DEOUTEXEC&#xA;Description: Decision Engine Output Execute
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DEOPENLEASE">
+            <summary>
+            Table: DEOPENLEASE&#xA;Description: Decision Engine OpenLease
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DESALES">
+            <summary>
+            Table: DESALES&#xA;Description: Decision Engine Sales Ablösedaten 1:1 DEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DEAPPLICANT">
+            <summary>
+            Table: DEAPPLICANT&#xA;Description: Decision Engine Applicant
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DEENVINP">
+            <summary>
+            Table: DEENVINP&#xA;Description: Decision Engine Envelope Input 1:1 DEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DEARBEIT">
+            <summary>
+            Table: DEARBEIT&#xA;Description: Decision Engine Arbeitgeberauskunft
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.AUSKUNFTCFG">
+            <summary>
+            Table: AUSKUNFTCFG&#xA;Description: Konfiguration für Auskunft
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DEBUDGET">
+            <summary>
+            Table: DEBUDGET&#xA;Description: Decision Engine Budget Daten
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEContext.DEFRAUD">
+            <summary>
+            Table: DEFRAUD
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDEWBIN(CIC.Database.DE.EF4.Model.DEWBIN)">
+            <summary>
+            Deprecated Method for adding a new object to the DEWBIN EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDEDEFRULTXT(CIC.Database.DE.EF4.Model.DEDEFRULTXT)">
+            <summary>
+            Deprecated Method for adding a new object to the DEDEFRULTXT EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToAUSKUNFTZEK(CIC.Database.DE.EF4.Model.AUSKUNFTZEK)">
+            <summary>
+            Deprecated Method for adding a new object to the AUSKUNFTZEK EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDEINPEXEC(CIC.Database.DE.EF4.Model.DEINPEXEC)">
+            <summary>
+            Deprecated Method for adding a new object to the DEINPEXEC EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToAUSKUNFT(CIC.Database.DE.EF4.Model.AUSKUNFT)">
+            <summary>
+            Deprecated Method for adding a new object to the AUSKUNFT EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToAUSKUNFTTYP(CIC.Database.DE.EF4.Model.AUSKUNFTTYP)">
+            <summary>
+            Deprecated Method for adding a new object to the AUSKUNFTTYP EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDEPARTNER(CIC.Database.DE.EF4.Model.DEPARTNER)">
+            <summary>
+            Deprecated Method for adding a new object to the DEPARTNER EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDEZEK(CIC.Database.DE.EF4.Model.DEZEK)">
+            <summary>
+            Deprecated Method for adding a new object to the DEZEK EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDEADRBONI(CIC.Database.DE.EF4.Model.DEADRBONI)">
+            <summary>
+            Deprecated Method for adding a new object to the DEADRBONI EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDEOBJECT(CIC.Database.DE.EF4.Model.DEOBJECT)">
+            <summary>
+            Deprecated Method for adding a new object to the DEOBJECT EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDEWBRKL(CIC.Database.DE.EF4.Model.DEWBRKL)">
+            <summary>
+            Deprecated Method for adding a new object to the DEWBRKL EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDEDETAIL(CIC.Database.DE.EF4.Model.DEDETAIL)">
+            <summary>
+            Deprecated Method for adding a new object to the DEDETAIL EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDESCORE(CIC.Database.DE.EF4.Model.DESCORE)">
+            <summary>
+            Deprecated Method for adding a new object to the DESCORE EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDERULCON(CIC.Database.DE.EF4.Model.DERULCON)">
+            <summary>
+            Deprecated Method for adding a new object to the DERULCON EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDEDEFCONTXT(CIC.Database.DE.EF4.Model.DEDEFCONTXT)">
+            <summary>
+            Deprecated Method for adding a new object to the DEDEFCONTXT EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDERUL(CIC.Database.DE.EF4.Model.DERUL)">
+            <summary>
+            Deprecated Method for adding a new object to the DERUL EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDEDEFRULCON(CIC.Database.DE.EF4.Model.DEDEFRULCON)">
+            <summary>
+            Deprecated Method for adding a new object to the DEDEFRULCON EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDEDEFRUL(CIC.Database.DE.EF4.Model.DEDEFRUL)">
+            <summary>
+            Deprecated Method for adding a new object to the DEDEFRUL EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDEDEFCON(CIC.Database.DE.EF4.Model.DEDEFCON)">
+            <summary>
+            Deprecated Method for adding a new object to the DEDEFCON EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDECON(CIC.Database.DE.EF4.Model.DECON)">
+            <summary>
+            Deprecated Method for adding a new object to the DECON EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDESONST(CIC.Database.DE.EF4.Model.DESONST)">
+            <summary>
+            Deprecated Method for adding a new object to the DESONST EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDEENVOUT(CIC.Database.DE.EF4.Model.DEENVOUT)">
+            <summary>
+            Deprecated Method for adding a new object to the DEENVOUT EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDEDECISION(CIC.Database.DE.EF4.Model.DEDECISION)">
+            <summary>
+            Deprecated Method for adding a new object to the DEDECISION EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDEERROROUT(CIC.Database.DE.EF4.Model.DEERROROUT)">
+            <summary>
+            Deprecated Method for adding a new object to the DEERROROUT EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDECONTRACT(CIC.Database.DE.EF4.Model.DECONTRACT)">
+            <summary>
+            Deprecated Method for adding a new object to the DECONTRACT EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDEOUTEXEC(CIC.Database.DE.EF4.Model.DEOUTEXEC)">
+            <summary>
+            Deprecated Method for adding a new object to the DEOUTEXEC EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDEOPENLEASE(CIC.Database.DE.EF4.Model.DEOPENLEASE)">
+            <summary>
+            Deprecated Method for adding a new object to the DEOPENLEASE EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDESALES(CIC.Database.DE.EF4.Model.DESALES)">
+            <summary>
+            Deprecated Method for adding a new object to the DESALES EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDEAPPLICANT(CIC.Database.DE.EF4.Model.DEAPPLICANT)">
+            <summary>
+            Deprecated Method for adding a new object to the DEAPPLICANT EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDEENVINP(CIC.Database.DE.EF4.Model.DEENVINP)">
+            <summary>
+            Deprecated Method for adding a new object to the DEENVINP EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDEARBEIT(CIC.Database.DE.EF4.Model.DEARBEIT)">
+            <summary>
+            Deprecated Method for adding a new object to the DEARBEIT EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToAUSKUNFTCFG(CIC.Database.DE.EF4.Model.AUSKUNFTCFG)">
+            <summary>
+            Deprecated Method for adding a new object to the AUSKUNFTCFG EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDEBUDGET(CIC.Database.DE.EF4.Model.DEBUDGET)">
+            <summary>
+            Deprecated Method for adding a new object to the DEBUDGET EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEContext.AddToDEFRAUD(CIC.Database.DE.EF4.Model.DEFRAUD)">
+            <summary>
+            Deprecated Method for adding a new object to the DEFRAUD EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.AUSKUNFT">
+            <summary>
+            Table: AUSKUNFT&#xA;Description: Auskunft
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.AUSKUNFT.CreateAUSKUNFT(System.Int64)">
+            <summary>
+            Create a new AUSKUNFT object.
+            </summary>
+            <param name="sYSAUSKUNFT">Initial value of the SYSAUSKUNFT property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFT.SYSAUSKUNFT">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFT.SYSAUSKUNFTTYP">
+            <summary>
+            Foreign key: True&#xA;Navigation property: AUSKUNFTTYP
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFT.STATUS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFT.ANFRAGEDATUM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFT.ANFRAGEUHRZEIT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFT.FEHLERCODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFT.STATUSNUM">
+            <summary>
+            Description: Status (technisch)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFT.AREA">
+            <summary>
+            Description: Gebiet
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFT.SYSID">
+            <summary>
+            Description: SysID zum gebiet
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFT.SYSWFUSER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFT.HOSTCOMPUTER">
+            <summary>
+            Description: Host Computer
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFT.AUSKUNFTTYP">
+            <summary>
+            Refers to table|alias: AUSKUNFTTYP, FK Columns: SYSAUSKUNFTTYP
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFT.AUSKUNFTTYPReference">
+            <summary>
+            Refers to table|alias: AUSKUNFTTYP, FK Columns: SYSAUSKUNFTTYP
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFT.AUSKUNFTZEKList">
+            <summary>
+            Refers to table|alias: &apos;AUSKUNFTZEK&apos;, PK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFT.DEINPEXECList">
+            <summary>
+            Refers to table|alias: &apos;DEINPEXEC&apos;, PK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFT.DEOUTEXECList">
+            <summary>
+            Refers to table|alias: &apos;DEOUTEXEC&apos;, PK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.AUSKUNFTCFG">
+            <summary>
+            Table: AUSKUNFTCFG&#xA;Description: Konfiguration für Auskunft
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.AUSKUNFTCFG.CreateAUSKUNFTCFG(System.Int64)">
+            <summary>
+            Create a new AUSKUNFTCFG object.
+            </summary>
+            <param name="sYSAUSKUNFTCFG">Initial value of the SYSAUSKUNFTCFG property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFTCFG.SYSAUSKUNFTCFG">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFTCFG.BEZEICHNUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFTCFG.BESCHREIBUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFTCFG.URL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFTCFG.USERNAME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFTCFG.KEYVALUE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFTCFG.SYSEAIPAR">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFTCFG.DATAOBJECT">
+            <summary>
+            Description: Binary Blob. Don&apos;t forget to create Fieldoption: BLOB and set its value to BLOB
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFTCFG.AUSKUNFTTYPList">
+            <summary>
+            Refers to table|alias: &apos;AUSKUNFTTYP&apos;, PK Columns: SYSAUSKUNFTCFG
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.AUSKUNFTTYP">
+            <summary>
+            Table: AUSKUNFTTYP&#xA;Description: Typ der Auskunft
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.AUSKUNFTTYP.CreateAUSKUNFTTYP(System.Int64)">
+            <summary>
+            Create a new AUSKUNFTTYP object.
+            </summary>
+            <param name="sYSAUSKUNFTTYP">Initial value of the SYSAUSKUNFTTYP property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFTTYP.SYSAUSKUNFTTYP">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFTTYP.BEZEICHNUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFTTYP.BESCHREIBUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFTTYP.SYSAUSKUNFTCFG">
+            <summary>
+            Foreign key: True&#xA;Navigation property: AUSKUNFTCFG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFTTYP.METHODE">
+            <summary>
+            Description: Methodes des aufgerufenen Webservices
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFTTYP.DEBUGFLAG">
+            <summary>
+            Description: Dieser Flag signalisiert, dass die Abfrage von diesem Auskunfttypen in der Tabelle LOGDUMP geloggt werden sollen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFTTYP.AUSKUNFTList">
+            <summary>
+            Refers to table|alias: &apos;AUSKUNFT&apos;, PK Columns: SYSAUSKUNFTTYP
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFTTYP.AUSKUNFTCFG">
+            <summary>
+            Refers to table|alias: AUSKUNFTCFG, FK Columns: SYSAUSKUNFTCFG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFTTYP.AUSKUNFTCFGReference">
+            <summary>
+            Refers to table|alias: AUSKUNFTCFG, FK Columns: SYSAUSKUNFTCFG
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.AUSKUNFTZEK">
+            <summary>
+            Table: AUSKUNFTZEK&#xA;Description: n:m Verbindung zwischen AUSKUNFT un ZEK
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.AUSKUNFTZEK.CreateAUSKUNFTZEK(System.Int64)">
+            <summary>
+            Create a new AUSKUNFTZEK object.
+            </summary>
+            <param name="sYSAUSKUNFTZEK">Initial value of the SYSAUSKUNFTZEK property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFTZEK.SYSAUSKUNFTZEK">
+            <summary>
+            Primary Key: True&#xA;Description: Primärschlüssel
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFTZEK.SYSAUSKUNFT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: AUSKUNFT&#xA;Description: Verweis auf Auskunft
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFTZEK.SYSZEK">
+            <summary>
+            Description: Verweis auf ZEK
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFTZEK.ACTIVEFLAG">
+            <summary>
+            Description: Aktiv
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFTZEK.AUSKUNFT">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.AUSKUNFTZEK.AUSKUNFTReference">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DEADRBONI">
+            <summary>
+            Table: DEADRBONI&#xA;Description: Decision Engine Adressvalidierung und Bonitätsauskunft
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEADRBONI.CreateDEADRBONI(System.Int64)">
+            <summary>
+            Create a new DEADRBONI object.
+            </summary>
+            <param name="sYSDEADRBONI">Initial value of the SYSDEADRBONI property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.SYSDEADRBONI">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.SYSDEINPEXEC">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.DATUMDERAUSKUNFT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ZEITDERAUSKUNFT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.STATUSAUSKUNFTADRESSVALID">
+            <summary>
+            Description: Status Auskunft Adressvalidierung
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZDVTREFFERADRESSVALIDIERUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.KUNDENID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.GEBURTSDATUM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.PLZ">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.LAND">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.DATUMERSTEMELDUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.DATUMAKTUELLEADRESSESEIT">
+            <summary>
+            Description: Datum an der aktuellenadresse seit
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.FIRMENSTATUS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.GRUENDUNGSDATUM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.NOGACODEBRANCHE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.RECHTSFORM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.KAPITAL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.FRAUDFELD">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPM12M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPM24M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBMP36M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT0112M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT0124M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT0136M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT0212M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT0224M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT0236M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT0312M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT0324M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT0336M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT0412M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT0424M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT0436M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.SCHLECHTESTERFSTAT12M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.SCHLECHTESTERFSTAT24M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.SCHLECHTESTERFSTAT36M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.MOCOUNTER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.UIDNUMMER">
+            <summary>
+            Description: UID des Firmenkunden aus Output Deltavista
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBMP48M">
+            <summary>
+            Description: Anz_BPM_l48M
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBMP60M">
+            <summary>
+            Description: Anz_BPM_l60M
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBM">
+            <summary>
+            Description: Anz_BPM
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT0148M">
+            <summary>
+            Description: Anz_BPM_m_FStat_01_l48M
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT0160M">
+            <summary>
+            Description: Anz_BPM_m_FStat_01_l60M
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT01">
+            <summary>
+            Description: Anz_BPM_m_FStat_01
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT0248M">
+            <summary>
+            Description: Anz_BPM_m_FStat_02_l48M
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT0260M">
+            <summary>
+            Description: Anz_BPM_m_FStat_02_l60M
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT02">
+            <summary>
+            Description: Anz_BPM_m_FStat_02
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT0348M">
+            <summary>
+            Description: Anz_BPM_m_FStat_03_l48M
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT0360M">
+            <summary>
+            Description: Anz_BPM_m_FStat_03_l60M
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT03">
+            <summary>
+            Description: Anz_BPM_m_FStat_03
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT0448M">
+            <summary>
+            Description: Anz_BPM_m_FStat_04_l48M
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT0460M">
+            <summary>
+            Description: Anz_BPM_m_FStat_04_l60M
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT04">
+            <summary>
+            Description: Anz_BPM_m_FStat_04
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.SCHLECHTESTERFSTAT48M">
+            <summary>
+            Description: Schlechtester_FStat_l48M
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.SCHLECHTESTERFSTAT60M">
+            <summary>
+            Description: Schlechtester_FStat_l60M
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.SCHLECHTESTERFSTAT">
+            <summary>
+            Description: Schlechtester_FStat_l
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZDECISIONMAKER">
+            <summary>
+            Description: Anzahl_Decision_Maker
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.UIDSAMEASNAME">
+            <summary>
+            Description: Entspricht UID = Firmenname
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZBPMMFSTAT00">
+            <summary>
+            Description: Anzahl Bonitätsmeldungen mit Status 00
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.DATUMJUENGSTEREINTRAG">
+            <summary>
+            Description: Datum jüngster Eintrag
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.KRITISCHERGLAEUBIGER">
+            <summary>
+            Description: Anzahl kritischer Gläubiger
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.SUMOFFENERBETREIBUNGEN">
+            <summary>
+            Description: Summe offener Betreibungen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.ANZOFFENERBETREIBUNGEN">
+            <summary>
+            Description: Anzahl offener Betreibungen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.DATUMJUENGSTEBETREIBUNG">
+            <summary>
+            Description: Datum jüngster Betreibung
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.DECVALUEORG">
+            <summary>
+            Description: Management ist belastet (j/n)?
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.DEVVALUERISK">
+            <summary>
+            Description: Punktezahl aus Riskalert
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.DECVALUECCB">
+            <summary>
+            Description: Scorewert Creadit CcheckBusiness
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.FIRSTSHABDATE">
+            <summary>
+            Description: Erste Meldung im Schweizer Handelsblattamt
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.PAYMENTDELAYRATIO">
+            <summary>
+            Description: Prozent pünklich gezahlter Rechnungen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.DEINPEXEC">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEADRBONI.DEINPEXECReference">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DEAPPLICANT">
+            <summary>
+            Table: DEAPPLICANT&#xA;Description: Decision Engine Applicant
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEAPPLICANT.CreateDEAPPLICANT(System.Int64)">
+            <summary>
+            Create a new DEAPPLICANT object.
+            </summary>
+            <param name="sYSDEAPPLICANT">Initial value of the SYSDEAPPLICANT property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.SYSDEAPPLICANT">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.SYSDEINPEXEC">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.KUNDENID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.MOCOUNTER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.KUNDENART">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.GEBURTSDATUM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.PLZ">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.LAND">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.KANTON">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.SPRACHE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.STATUS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.TELEFONPRIVAT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.TELEFONGESCHAEFTLICH">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.MOBILTELEFON">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.EMAIL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.HIWERWOHNHAFTSEIT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.AUSZAHLUNGSART">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.RUECKZAHLUNGSART">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.FLAGMITARBEITERCS">
+            <summary>
+            Description: mitarbeiter Credit Suisse Group
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.CSEINHEIT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.APID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.INSTRADIERUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.ZIVILSTAND">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.WOHNVERHAELTNIS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.ANZKINDBIS6">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.ANZKINDER7BIS10">
+            <summary>
+            Description: Anzahl Kinder über 6 bis 10
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.ANZKIND11BIS12">
+            <summary>
+            Description: Anzahl Kiner über 10 bis 12
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.ANZKINDERAB13">
+            <summary>
+            Description: Anzahl unterstützungspflichtige Kinder ab 12
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.NATIONALITAET">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.AUSLAENDERAUSWEIS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.AUSLAENDERAUSWEISEINREISEDATUM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.AUSLAENDERAUSWEISGUELTIGKEIT">
+            <summary>
+            Description: Ausländerausweis Gültigkeitsdatum
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.BERUFLICHESITUATION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.ARBEITGEBERSEITWANN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.ARBEITGEBERBESCHAEFTIGTBIS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.EINKOMMENART">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.HAUPTEINKOMMENBETRAG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.JAEHRLGRATIFIKATIONBONUS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.FLAG13MONATSLOHN">
+            <summary>
+            Description: 13 Monatslohn
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.QUELLENSTEUERPFLICHTIG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.NEBENEINKOMMENBETRAG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.ZUSATZEINKOMMENBETRAG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.ZUSATZEINKOMMEN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.ANZAHLBETREIBUNGEN">
+            <summary>
+            Description: Anzahl der Betreibungen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.HOEHEBETREIBUNGEN">
+            <summary>
+            Description: Höhe der Betreibungen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.VERLUSTSCHEINEPFAENDUNGEN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.WOHNKOSTENMIETE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.BESTEHENDEKREDITRATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.BESTEHENDELEASINGRATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.REGELMAESSIGEAUSLAGENBETRAG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.REGELMAESSIGEAUSLAGEN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.UNTERSTUETZUNGSBEITRAEGEBETRAG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.UNTERSTUETZUNGSBEITRAEGE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.BERUFSAUSLAGENBETRAG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.BERUFSAUSLAGEN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.TELEFON1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.TELEFON2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.JAHRESUMSATZ">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.EIGENKAPITAL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.BILANZSUMME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.JAHRESGEWINN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.FLUESSIGEMITTEL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.KURZFRISTIGEVERBINDLICHKEITEN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.INHANDELSREGISTEREINGETRAGEN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.REVISIONSSTELLEVORHANDEN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.DATUMLETZTERJAHRESABSCHLUSS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.ANZMITARBEITER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.EHEPARTNERFLAG">
+            <summary>
+            Description: Ehepartner(ja/nein)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.WEITEREVERPFLICHTUNGENBETRAG">
+            <summary>
+            Description: Betrag der weiteren Verpflichtungen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.WEITEREVERPFLICHTUNGEN">
+            <summary>
+            Description: Weitere Auslagen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.UIDNUMMER">
+            <summary>
+            Description: UID des Firmenkunden aus PERSON:IDENTEG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.NEBENEINKOMMENSEIT">
+            <summary>
+            Description: Datum für Nebeneinkommen seit
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.NAMEAG">
+            <summary>
+            Description: Name Arbeitgeber
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.BERUFLICHESITUATION2">
+            <summary>
+            Description: Berufliche Situation für das Nebeneinkommen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.ARBEITGEBERBESCHAEFTIGTBIS2">
+            <summary>
+            Description: Beschäftigt seit (für das Nebeneinkommen)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.GESCHLECHT">
+            <summary>
+            Description: Geschlecht des Antragsstellers&#xA;Enum values: &apos;ohne&apos; = &apos;0&apos;|&apos;männlich&apos; = &apos;1&apos;|&apos;weiblich&apos; = &apos;2&apos;
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.PLZAG1">
+            <summary>
+            Description: Postleitzahl des Arbeitgebers (Haupteinkommen)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.PLZAG2">
+            <summary>
+            Description: Postleitzahl des Arbeitgebers (Nebeneinkommen)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.NAMEAG2">
+            <summary>
+            Description: Name des Arbeitgebers für das Nebeneinkommen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.ARBEITGEBERSEITWANN2">
+            <summary>
+            Description: Seit wann ist der Kunde beim AG2 beschäftigt
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.ZULAGEKIND">
+            <summary>
+            Description: Zulage Kind
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.ZULAGEAUSBILDUNG">
+            <summary>
+            Description: Ausbildungszulage
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.ZULAGESONST">
+            <summary>
+            Description: Sonstige Zulagen, z.B. Schichtarbeit
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.DEINPEXEC">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEAPPLICANT.DEINPEXECReference">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DEARBEIT">
+            <summary>
+            Table: DEARBEIT&#xA;Description: Decision Engine Arbeitgeberauskunft
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEARBEIT.CreateDEARBEIT(System.Int64)">
+            <summary>
+            Create a new DEARBEIT object.
+            </summary>
+            <param name="sYSDEARBEIT">Initial value of the SYSDEARBEIT property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEARBEIT.SYSDEARBEIT">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEARBEIT.SYSDEINPEXEC">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEARBEIT.DATUM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEARBEIT.ZEIT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEARBEIT.STATUS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEARBEIT.RECHTSFORM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEARBEIT.GRUENDUNGSDATUM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEARBEIT.FIRMENSTATUS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEARBEIT.DECISIONMAKER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEARBEIT.NOGACODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEARBEIT.MOCOUNTER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEARBEIT.UIDNUMMER">
+            <summary>
+            Description: UID des Arbeitgeber aus Output Deltavista
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEARBEIT.KAPITAL">
+            <summary>
+            Description: Kapital Arbeitgeber
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEARBEIT.PLZAG1">
+            <summary>
+            Description: Postleitzahl des Arbeitgebers (Haupteinkommen)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEARBEIT.PLZAG2">
+            <summary>
+            Description: Postleitzahl des Arbeitgebers (Nebeneinkommen)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEARBEIT.KUNDENID">
+            <summary>
+            Description: CRIF Kunden ID
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEARBEIT.DEINPEXEC">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEARBEIT.DEINPEXECReference">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DEBUDGET">
+            <summary>
+            Table: DEBUDGET&#xA;Description: Decision Engine Budget Daten
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEBUDGET.CreateDEBUDGET(System.Int64)">
+            <summary>
+            Create a new DEBUDGET object.
+            </summary>
+            <param name="sYSDEBUDGET">Initial value of the SYSDEBUDGET property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEBUDGET.SYSDEBUDGET">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEBUDGET.SYSDEINPEXEC">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEBUDGET.ANFRAGEDATUM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEBUDGET.QUELLSTEUER">
+            <summary>
+            Description: Quellsteuer (auch Kremo.Steuern)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEBUDGET.KRANKENKASSE">
+            <summary>
+            Description: Krankenkassenbeitrag (auch Kremo.BerechKrankenkasse)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEBUDGET.GRUNDBETRAG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEBUDGET.SOZIALAUSLAGEN">
+            <summary>
+            Description: Sozialauslagen (auch Kremo.sozialausl1(2))
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEBUDGET.MOCOUNTER">
+            <summary>
+            Description: Antragsteller 0=unbekannt, 1= Antragsteller 1, 2 = Antragsteller 2&#xA;Enum values: &apos;unbekannt&apos; = &apos;0&apos;|&apos;Antragsteller 1&apos; = &apos;1&apos;|&apos;Antragsteller 2&apos; = &apos;2&apos;
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEBUDGET.BUDGETUEBERSCHUSSGESAMT">
+            <summary>
+            Description: Büdgetüberschuss beider Antragsteller aus Berechnung
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEBUDGET.BUDGETUEBERSCHUSS">
+            <summary>
+            Description: Budget Überschuß
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEBUDGET.KREMOCODE">
+            <summary>
+            Description: Code von KREMO
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEBUDGET.EINKNETTOBERECH">
+            <summary>
+            Description: Berechnetes Nettoeinkommen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEBUDGET.EINKNETTOBERECH2">
+            <summary>
+            Description: Berechnetes Nettoeinkommen des 2. AS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEBUDGET.EXTBETRKOSTENTAT">
+            <summary>
+            Description: reale externe Betreuungskosten für Budgetkalkulation
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEBUDGET.KRANKENKASSETAT">
+            <summary>
+            Description: tatsächliche Krankenkassenkosten
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEBUDGET.ARBEITSWEGAUSLAGE">
+            <summary>
+            Description: tatsächliche Arbeitswegauslagen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEBUDGET.DEINPEXEC">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEBUDGET.DEINPEXECReference">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DECON">
+            <summary>
+            Table: DECON&#xA;Description: Decision engine: Condition
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DECON.CreateDECON(System.Int64)">
+            <summary>
+            Create a new DECON object.
+            </summary>
+            <param name="sYSDECON">Initial value of the SYSDECON property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECON.SYSDECON">
+            <summary>
+            Primary Key: True&#xA;Description: Primäre ID
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECON.SYSDEDETAIL">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEDETAIL&#xA;Description: Id des Decision Details
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECON.SYSDEDEFCON">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEDEFCON&#xA;Description: ID der Condition
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECON.SYSWFUSER">
+            <summary>
+            Description: ID des Sachbearbeiters
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECON.DISPLAYTYPE">
+            <summary>
+            Enum values: &apos;Internal&apos; = &apos;0&apos;|&apos;External&apos; = &apos;1&apos;
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECON.FULFILLED">
+            <summary>
+            Description: Flag: Auflage erfüllt
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECON.FULFILLEDDATE">
+            <summary>
+            Description: Auflage erfüllt am
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECON.DEDEFCON">
+            <summary>
+            Refers to table|alias: DEDEFCON, FK Columns: SYSDEDEFCON
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECON.DEDEFCONReference">
+            <summary>
+            Refers to table|alias: DEDEFCON, FK Columns: SYSDEDEFCON
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECON.DEDETAIL">
+            <summary>
+            Refers to table|alias: DEDETAIL, FK Columns: SYSDEDETAIL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECON.DEDETAILReference">
+            <summary>
+            Refers to table|alias: DEDETAIL, FK Columns: SYSDEDETAIL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECON.DERULCONList">
+            <summary>
+            Refers to table|alias: &apos;DERULCON&apos;, PK Columns: SYSDECON
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DECONTRACT">
+            <summary>
+            Table: DECONTRACT&#xA;Description: Decision Engine Contract 1:1 DEINPEXEC
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DECONTRACT.CreateDECONTRACT(System.Int64)">
+            <summary>
+            Create a new DECONTRACT object.
+            </summary>
+            <param name="sYSDECONTRACT">Initial value of the SYSDECONTRACT property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.SYSDECONTRACT">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.SYSDEINPEXEC">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.GESCHAEFTSART">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.ERFASSUNGSKANAL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.RISKFLAG">
+            <summary>
+            Description: Risk-Flag (Notstopp)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.FINANZIERUNGSBETRAG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.ANZAHLUNERSTERATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.VERTRAGSART">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.LAUFZEIT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.ZINSSATZ">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.PPIFLAGPAKET1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.PPIFLAGPAKET2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.RATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.RESTWERT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.KAUTION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.KKGPFLICHT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.NUTZUNGSART">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.BUDGETUEBERSCHUSS1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.BUDGETUEBERSCHUSS2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.BUDGETUEBERSCHUSSGESAMT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.KREMOCODE">
+            <summary>
+            Description: Code von KREMO
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.AUSZAHLUNGSART">
+            <summary>
+            Description: Bar oder Bank
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.BUCHWERTGARANTIE">
+            <summary>
+            Description: Buchwert wird übernommen (ja/nein)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.VTTYP">
+            <summary>
+            Description: Typisierung des Produkt zur Übergabe an die DecisionEn-gine. Wertebereich=0,1,2N
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.ABO">
+            <summary>
+            Description: Übergabe von 1 an die DE wenn Abo vorhanden
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.UMSCHREIBUNG">
+            <summary>
+            Description: Umschreibung
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.RANDOMNUMBER">
+            <summary>
+            Description: Gelieferte Nummer von der Decision Engine im 1. Durchlauf
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.RWVERLFLAG">
+            <summary>
+            Description: Kennzeichnung für Restwertverlängerung
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.FLAGNEULV">
+            <summary>
+            Description: Kenneichen für neu LV Version. 1 = Neu, 0 = Alt
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.SYSRWGA">
+            <summary>
+            Description: Verweis auf abweichenden Restwertgarant aus dem Antrag
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.DEINPEXEC">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DECONTRACT.DEINPEXECReference">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DEDECISION">
+            <summary>
+            Table: DEDECISION&#xA;Description: Decision Engine Decision 1:1 DEOUTEXEC
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEDECISION.CreateDEDECISION(System.Int64)">
+            <summary>
+            Create a new DEDECISION object.
+            </summary>
+            <param name="sYSDEDECISION">Initial value of the SYSDEDECISION property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDECISION.SYSDEDECISION">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDECISION.SYSDEOUTEXEC">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEOUTEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDECISION.PROZESSSCHRITTID">
+            <summary>
+            Description: Prozessschritt ID
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDECISION.STATUS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDECISION.STATUSID">
+            <summary>
+            Description: Status ID
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDECISION.AMPEL">
+            <summary>
+            Description: Ampel
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDECISION.REGELWERKCODE">
+            <summary>
+            Description: Regelwerk Code
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDECISION.DEOUTEXEC">
+            <summary>
+            Refers to table|alias: DEOUTEXEC, FK Columns: SYSDEOUTEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDECISION.DEOUTEXECReference">
+            <summary>
+            Refers to table|alias: DEOUTEXEC, FK Columns: SYSDEOUTEXEC
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DEDEFCON">
+            <summary>
+            Table: DEDEFCON&#xA;Description: Decision engine: Auflagen
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEDEFCON.CreateDEDEFCON(System.Int64)">
+            <summary>
+            Create a new DEDEFCON object.
+            </summary>
+            <param name="sYSDEDEFCON">Initial value of the SYSDEDEFCON property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCON.SYSDEDEFCON">
+            <summary>
+            Primary Key: True&#xA;Description: Primäre ID
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCON.EXTERNCODE">
+            <summary>
+            Description: Eindeutiger Auflagencode
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCON.NAME">
+            <summary>
+            Description: Kurzbeschreibung
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCON.DEFTEXT">
+            <summary>
+            Description: Auflagentext (sprachenunabhängig)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCON.DISPLAYTYPE">
+            <summary>
+            Enum values: &apos;Internal&apos; = &apos;0&apos;|&apos;External&apos; = &apos;1&apos;
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCON.CONTYPE">
+            <summary>
+            Description: Unterscheidung zwischen Auflage (0) und Formalität (1)&#xA;Enum values: &apos;Auflage&apos; = &apos;0&apos;|&apos;Formalität&apos; = &apos;1&apos;
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCON.FLAGMANUELL">
+            <summary>
+            Description: Manuelle Wählbarkeit im Client (sonst nur aus DE generiert)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCON.DEFTEXTEXT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCON.DEFTEXTDOC">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCON.AKTIVFLAG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCON.RANK">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCON.FLAGAUSZREL">
+            <summary>
+            Description: Auszahlungsrelevant
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCON.FLAGDOCREL">
+            <summary>
+            Description: Dokumentenrelevant
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCON.DOCTYPE">
+            <summary>
+            Description: Dokumententyp
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCON.DECONList">
+            <summary>
+            Refers to table|alias: &apos;DECON&apos;, PK Columns: SYSDEDEFCON
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCON.DEDEFCONTXTList">
+            <summary>
+            Refers to table|alias: &apos;DEDEFCONTXT&apos;, PK Columns: SYSDEDEFCON
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCON.DEDEFRULCONList">
+            <summary>
+            Refers to table|alias: &apos;DEDEFRULCON&apos;, PK Columns: SYSDEDEFCON
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DEDEFCONTXT">
+            <summary>
+            Table: DEDEFCONTXT&#xA;Description: Decision engine: Übersetzung der Auflagentexte
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEDEFCONTXT.CreateDEDEFCONTXT(System.Int64)">
+            <summary>
+            Create a new DEDEFCONTXT object.
+            </summary>
+            <param name="sYSDEDEFCONTXT">Initial value of the SYSDEDEFCONTXT property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCONTXT.SYSDEDEFCONTXT">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCONTXT.SYSDEDEFCON">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEDEFCON
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCONTXT.SYSCTLANG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCONTXT.TEXT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCONTXT.TEXTEXT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCONTXT.TEXTDOC">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCONTXT.DEDEFCON">
+            <summary>
+            Refers to table|alias: DEDEFCON, FK Columns: SYSDEDEFCON
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFCONTXT.DEDEFCONReference">
+            <summary>
+            Refers to table|alias: DEDEFCON, FK Columns: SYSDEDEFCON
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DEDEFRUL">
+            <summary>
+            Table: DEDEFRUL&#xA;Description: Decision engine: Regeln
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEDEFRUL.CreateDEDEFRUL(System.Int64)">
+            <summary>
+            Create a new DEDEFRUL object.
+            </summary>
+            <param name="sYSDEDEFRUL">Initial value of the SYSDEDEFRUL property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFRUL.SYSDEDEFRUL">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFRUL.EXTERNCODE">
+            <summary>
+            Description: Eindeutige Identifikation der Regel
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFRUL.NAME">
+            <summary>
+            Description: Kurzbezeichnung
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFRUL.DEFTEXT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFRUL.DISPLAYTYPE">
+            <summary>
+            Enum values: &apos;Internal&apos; = &apos;0&apos;|&apos;External&apos; = &apos;1&apos;
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFRUL.DEDEFRULCONList">
+            <summary>
+            Refers to table|alias: &apos;DEDEFRULCON&apos;, PK Columns: SYSDEDEFRUL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFRUL.DEDEFRULTXTList">
+            <summary>
+            Refers to table|alias: &apos;DEDEFRULTXT&apos;, PK Columns: SYSDEDEFRUL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFRUL.DERULList">
+            <summary>
+            Refers to table|alias: &apos;DERUL&apos;, PK Columns: SYSDEDEFRUL
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DEDEFRULCON">
+            <summary>
+            Table: DEDEFRULCON&#xA;Description: Decision engine: Verknüpfung zwischen Regeln und Auflagen
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEDEFRULCON.CreateDEDEFRULCON(System.Int64)">
+            <summary>
+            Create a new DEDEFRULCON object.
+            </summary>
+            <param name="sYSDEDEFRULCON">Initial value of the SYSDEDEFRULCON property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFRULCON.SYSDEDEFRULCON">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFRULCON.SYSDEDEFRUL">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEDEFRUL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFRULCON.SYSDEDEFCON">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEDEFCON
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFRULCON.DEDEFCON">
+            <summary>
+            Refers to table|alias: DEDEFCON, FK Columns: SYSDEDEFCON
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFRULCON.DEDEFCONReference">
+            <summary>
+            Refers to table|alias: DEDEFCON, FK Columns: SYSDEDEFCON
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFRULCON.DEDEFRUL">
+            <summary>
+            Refers to table|alias: DEDEFRUL, FK Columns: SYSDEDEFRUL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFRULCON.DEDEFRULReference">
+            <summary>
+            Refers to table|alias: DEDEFRUL, FK Columns: SYSDEDEFRUL
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DEDEFRULTXT">
+            <summary>
+            Table: DEDEFRULTXT&#xA;Description: Decision engine: Übersetzung der Regeltexte
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEDEFRULTXT.CreateDEDEFRULTXT(System.Int64)">
+            <summary>
+            Create a new DEDEFRULTXT object.
+            </summary>
+            <param name="sYSDEDEFRULTXT">Initial value of the SYSDEDEFRULTXT property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFRULTXT.SYSDEDEFRULTXT">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFRULTXT.SYSDEDEFRUL">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEDEFRUL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFRULTXT.SYSCTLANG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFRULTXT.TEXT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFRULTXT.DEDEFRUL">
+            <summary>
+            Refers to table|alias: DEDEFRUL, FK Columns: SYSDEDEFRUL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDEFRULTXT.DEDEFRULReference">
+            <summary>
+            Refers to table|alias: DEDEFRUL, FK Columns: SYSDEDEFRUL
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DEDETAIL">
+            <summary>
+            Table: DEDETAIL&#xA;Description: Decision Engine Detail Decision 1:1 DEOUTEXEC
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEDETAIL.CreateDEDETAIL(System.Int64)">
+            <summary>
+            Create a new DEDETAIL object.
+            </summary>
+            <param name="sYSDEDETAIL">Initial value of the SYSDEDETAIL property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.SYSDEDETAIL">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.SYSDEOUTEXEC">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEOUTEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.ANTRAGSTELLER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.SCORECODE">
+            <summary>
+            Description: Scorekarte Code
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.SCOREBEZEICHNUNG">
+            <summary>
+            Description: Scorekarte Bezeichnung
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.SCORETOTAL">
+            <summary>
+            Description: Scorewert Total
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.RISIKOKLASSEID">
+            <summary>
+            Description: Risikoklasse ID
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.RISIKOKLASSEBEZEICHNUNG">
+            <summary>
+            Description: Risikoklasse Bezeichnung
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.LISTEREGELNVP">
+            <summary>
+            Description: Liste getroffener Regeln VP
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.LISTEREGELNBP">
+            <summary>
+            Description: Liste getroffener Regeln BP
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.LISTEREGELNRP">
+            <summary>
+            Description: Liste getroffener Regeln RP
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.LISTEAUFLAGEN">
+            <summary>
+            Description: Liste Auflagen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.LISTEFORMALITAETEN">
+            <summary>
+            Description: Liste Formalitäten
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.FAKTORZ">
+            <summary>
+            Description: Faktor Z für die Budgetberechnung
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.MINDESTMIETE">
+            <summary>
+            Description: Mindestmeite für die Budgetberechnung
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.FREIBETRAG">
+            <summary>
+            Description: Freibetrag für die Budgetberechnung
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.FAKTORBP">
+            <summary>
+            Description: Faktor zur Multiplikation des Budgetüberschusses
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.KUNDENGRUPPE">
+            <summary>
+            Description: Übergabe der Kundengruppe
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.FRAUDSCORE">
+            <summary>
+            Description: Berechneter Fraud Score aus der Decision Engine
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.FRAUD">
+            <summary>
+            Description: Fraus Verdacht aus der Decision Engine
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.PD">
+            <summary>
+            Description: Ermittelter PD zum Kunden
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.CLUSTERVALUE">
+            <summary>
+            Description: Cluster des Antrags
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.BUDGETPUFFER">
+            <summary>
+            Description: Budget-Puffer bzw. Toleranz
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.EXTBETRKOSTEN">
+            <summary>
+            Description: externe Betreuungskosten aus der DecisionEngine
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.DECONList">
+            <summary>
+            Refers to table|alias: &apos;DECON&apos;, PK Columns: SYSDEDETAIL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.DEOUTEXEC">
+            <summary>
+            Refers to table|alias: DEOUTEXEC, FK Columns: SYSDEOUTEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.DEOUTEXECReference">
+            <summary>
+            Refers to table|alias: DEOUTEXEC, FK Columns: SYSDEOUTEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.DERULList">
+            <summary>
+            Refers to table|alias: &apos;DERUL&apos;, PK Columns: SYSDEDETAIL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEDETAIL.DESCOREList">
+            <summary>
+            Refers to table|alias: &apos;DESCORE&apos;, PK Columns: SYSDEDETAIL
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DEENVINP">
+            <summary>
+            Table: DEENVINP&#xA;Description: Decision Engine Envelope Input 1:1 DEINPEXEC
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEENVINP.CreateDEENVINP(System.Int64)">
+            <summary>
+            Create a new DEENVINP object.
+            </summary>
+            <param name="sYSDEENVINP">Initial value of the SYSDEENVINP property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVINP.SYSDEENVINP">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVINP.SYSDEINPEXEC">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVINP.INQUIRYCODE">
+            <summary>
+            Description: Inquiry Code
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVINP.PROCESSCODE">
+            <summary>
+            Description: Process Code
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVINP.ORGANIZATIONCODE">
+            <summary>
+            Description: Organization Code
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVINP.PROCESSVERSION">
+            <summary>
+            Description: Process version
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVINP.INQUIRYDATE">
+            <summary>
+            Description: I_INQUIRY_DATE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVINP.INQUIRYTIME">
+            <summary>
+            Description: I_INQUIRY_TIME
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVINP.FLAGVORPRUEFUNG">
+            <summary>
+            Description: Flag Vorprüfung
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVINP.FLAGBONITAETSPRUEFUNG">
+            <summary>
+            Description: Flag Bonitätsprüfung
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVINP.FLAGRISIKOPRUEFUNG">
+            <summary>
+            Description: Flag Risikoprüfung
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVINP.ERFASSUNG">
+            <summary>
+            Description: Datum Antragserfassung
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVINP.SYSDEWBIN">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEWBIN&#xA;Description: Verweis zur DEWBIN
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVINP.CICONEVERSION">
+            <summary>
+            Description: CICOne bzw. OpenLease Version
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVINP.DEINPEXEC">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVINP.DEINPEXECReference">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVINP.DEWBIN">
+            <summary>
+            Refers to table|alias: DEWBIN, FK Columns: SYSDEWBIN
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVINP.DEWBINReference">
+            <summary>
+            Refers to table|alias: DEWBIN, FK Columns: SYSDEWBIN
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DEENVOUT">
+            <summary>
+            Table: DEENVOUT&#xA;Description: Decision Engine Envelope OUTPUT 1:1 DEOUTEXEC
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEENVOUT.CreateDEENVOUT(System.Int64)">
+            <summary>
+            Create a new DEENVOUT object.
+            </summary>
+            <param name="sYSDEENVOUT">Initial value of the SYSDEENVOUT property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVOUT.SYSDEENVOUT">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVOUT.SYSDEOUTEXEC">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEOUTEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVOUT.INQUIRYCODE">
+            <summary>
+            Description: Inquiry Code
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVOUT.PROCESSCODE">
+            <summary>
+            Description: Process Code
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVOUT.ORGANIZATIONCODE">
+            <summary>
+            Description: Organization Code
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVOUT.PROCESSVERSION">
+            <summary>
+            Description: Process Version
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVOUT.LAYOUTVERSION">
+            <summary>
+            Description: Layout Version
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVOUT.INQUIRYDATE">
+            <summary>
+            Description: I_INQUIRY_DATE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVOUT.INQUIRYTIME">
+            <summary>
+            Description: I_INQUIRY_TIME
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVOUT.SYSTEMDECISION">
+            <summary>
+            Description: O_SYSTEM_DECISION
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVOUT.SYSTEMDECISIONGROUP">
+            <summary>
+            Description: O_SYSTEM_DECISION_GROUP
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVOUT.SYSDEWBRKL">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEWBRKL&#xA;Description: Verweis auf DEWBRKL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVOUT.DEOUTEXEC">
+            <summary>
+            Refers to table|alias: DEOUTEXEC, FK Columns: SYSDEOUTEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVOUT.DEOUTEXECReference">
+            <summary>
+            Refers to table|alias: DEOUTEXEC, FK Columns: SYSDEOUTEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVOUT.DEWBRKL">
+            <summary>
+            Refers to table|alias: DEWBRKL, FK Columns: SYSDEWBRKL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEENVOUT.DEWBRKLReference">
+            <summary>
+            Refers to table|alias: DEWBRKL, FK Columns: SYSDEWBRKL
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DEERROROUT">
+            <summary>
+            Table: DEERROROUT&#xA;Description: Output Decision Engine Error
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEERROROUT.CreateDEERROROUT(System.Int64)">
+            <summary>
+            Create a new DEERROROUT object.
+            </summary>
+            <param name="sYSDEERROROUT">Initial value of the SYSDEERROROUT property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEERROROUT.SYSDEERROROUT">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEERROROUT.SYSDEWBRKL">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEWBRKL&#xA;Description: Verknüpfung zur DEWBRKL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEERROROUT.INQUIRYDATE">
+            <summary>
+            Description: Execution Date
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEERROROUT.INQUIRYTIME">
+            <summary>
+            Description: Execution time
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEERROROUT.CODE">
+            <summary>
+            Description: Code
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEERROROUT.DESCRIPTION">
+            <summary>
+            Description: Error description
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEERROROUT.ENGINEVERSION">
+            <summary>
+            Description: StrategyOne EngineVersion
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEERROROUT.ENGINESTACKTRACE">
+            <summary>
+            Description: Strategy Path
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEERROROUT.JAVASTACKTRACE">
+            <summary>
+            Description: Java stack trace
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEERROROUT.DEWBRKL">
+            <summary>
+            Refers to table|alias: DEWBRKL, FK Columns: SYSDEWBRKL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEERROROUT.DEWBRKLReference">
+            <summary>
+            Refers to table|alias: DEWBRKL, FK Columns: SYSDEWBRKL
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DEFRAUD">
+            <summary>
+            Table: DEFRAUD
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEFRAUD.CreateDEFRAUD(System.Int64)">
+            <summary>
+            Create a new DEFRAUD object.
+            </summary>
+            <param name="sYSDEFRAUD">Initial value of the SYSDEFRAUD property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEFRAUD.SYSDEFRAUD">
+            <summary>
+            Primary Key: True&#xA;Description: PrimaryKey
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEFRAUD.SYSDEINPEXEC">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEINPEXEC&#xA;Description: Verweis zur DEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEFRAUD.MOCOUNTER">
+            <summary>
+            Description: Antragsteller
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEFRAUD.VALUE">
+            <summary>
+            Description: Enthält das XML Stament
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEFRAUD.DEINPEXEC">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEFRAUD.DEINPEXECReference">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DEINPEXEC">
+            <summary>
+            Table: DEINPEXEC&#xA;Description: Decision Engine Input Execute
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEINPEXEC.CreateDEINPEXEC(System.Int64)">
+            <summary>
+            Create a new DEINPEXEC object.
+            </summary>
+            <param name="sYSDEINPEXEC">Initial value of the SYSDEINPEXEC property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEINPEXEC.SYSDEINPEXEC">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEINPEXEC.SYSAUSKUNFT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: AUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEINPEXEC.DEADRBONIList">
+            <summary>
+            Refers to table|alias: &apos;DEADRBONI&apos;, PK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEINPEXEC.DEAPPLICANTList">
+            <summary>
+            Refers to table|alias: &apos;DEAPPLICANT&apos;, PK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEINPEXEC.DEARBEITList">
+            <summary>
+            Refers to table|alias: &apos;DEARBEIT&apos;, PK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEINPEXEC.DEBUDGETList">
+            <summary>
+            Refers to table|alias: &apos;DEBUDGET&apos;, PK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEINPEXEC.DECONTRACTList">
+            <summary>
+            Refers to table|alias: &apos;DECONTRACT&apos;, PK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEINPEXEC.DEENVINPList">
+            <summary>
+            Refers to table|alias: &apos;DEENVINP&apos;, PK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEINPEXEC.DEFRAUDList">
+            <summary>
+            Refers to table|alias: &apos;DEFRAUD&apos;, PK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEINPEXEC.AUSKUNFT">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEINPEXEC.AUSKUNFTReference">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEINPEXEC.DEOBJECTList">
+            <summary>
+            Refers to table|alias: &apos;DEOBJECT&apos;, PK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEINPEXEC.DEOPENLEASEList">
+            <summary>
+            Refers to table|alias: &apos;DEOPENLEASE&apos;, PK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEINPEXEC.DEPARTNERList">
+            <summary>
+            Refers to table|alias: &apos;DEPARTNER&apos;, PK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEINPEXEC.DESALESList">
+            <summary>
+            Refers to table|alias: &apos;DESALES&apos;, PK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEINPEXEC.DEWBINList">
+            <summary>
+            Refers to table|alias: &apos;DEWBIN&apos;, PK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEINPEXEC.DEZEKList">
+            <summary>
+            Refers to table|alias: &apos;DEZEK&apos;, PK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DEOBJECT">
+            <summary>
+            Table: DEOBJECT&#xA;Description: Decision Engine Object 1:1 DEINPEXEC
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEOBJECT.CreateDEOBJECT(System.Int64)">
+            <summary>
+            Create a new DEOBJECT object.
+            </summary>
+            <param name="sYSDEOBJECT">Initial value of the SYSDEOBJECT property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOBJECT.SYSDEOBJECT">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOBJECT.SYSDEINPEXEC">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOBJECT.OBJEKTART">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOBJECT.MARKE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOBJECT.MODELL">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOBJECT.ZUSTAND">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOBJECT.KMSTAND">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOBJECT.KMPROJAHR">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOBJECT.INVERKEHRSSETZUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOBJECT.STAMMNUMMER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOBJECT.ZUBEHOERPREIS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOBJECT.KATALOGPREISEUROTAX">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOBJECT.FAHRZEUGPREISEUROTAX">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOBJECT.RESTWERTEUROTAX">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOBJECT.RESTWERTBANK">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOBJECT.CLUSTEROBJEKT">
+            <summary>
+            Description: Cluster aus Objekt
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOBJECT.EWBBETRAG">
+            <summary>
+            Description: Betrag expected Loss
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOBJECT.EWBPROC">
+            <summary>
+            Description: Prozentbetrag expected Loss
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOBJECT.EWBPROF">
+            <summary>
+            Description: Profitabilität expected Loss
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOBJECT.EWBLGD">
+            <summary>
+            Description: LGD für die Berechnung des expected Loss
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOBJECT.DEINPEXEC">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOBJECT.DEINPEXECReference">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DEOPENLEASE">
+            <summary>
+            Table: DEOPENLEASE&#xA;Description: Decision Engine OpenLease
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEOPENLEASE.CreateDEOPENLEASE(System.Int64)">
+            <summary>
+            Create a new DEOPENLEASE object.
+            </summary>
+            <param name="sYSDEOPENLEASE">Initial value of the SYSDEOPENLEASE property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.SYSDEOPENLEASE">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.SYSDEINPEXEC">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.OPENLEASEDATUMAUSKUNFT">
+            <summary>
+            Description: OpenLease Datum der Auskunft
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.STATUS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.ANZKUNDENIDS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.MINDATUMKUNDESEIT">
+            <summary>
+            Description: Minimales Datum Kunde seit
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.MAXBADLISTEINTRAG">
+            <summary>
+            Description: Maximaler Badlisteneintrag
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.MAXAKTRKLASSEKUNDE">
+            <summary>
+            Description: Maximale akt RKlasse des Kunden
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.MAXRISIKOKLASSEKUNDE">
+            <summary>
+            Description: Maximale Risikoklasse des Kunden
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.ANZANTRAEGE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.ANZMEHRFACHANTRAEGE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.ANZANNULIERUNGEN12M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.ANZVERZICHTE12M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.EVENTUALENGAGEMENT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.GESAMTENGAGEMENT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.HAUSHALTENGAGEMENT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.LETZTEMIETE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.LETZTERZIVILSTAND">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.LETZTESWOHNVERHAELTNIS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.LETZTENATIONALITAET">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.LETZTESARBEITSVERHAELTNIS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.LETZTESHAUPTEINKOMMEN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.LETZTESNEBENEINKOMMEN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.LETZTESZUSATZEINKOMMEN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.LETZTERBONUS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.ENGAGEMENT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.ANZVERTRAEGE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.ANZLFDVERTRAEGE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.ANZVERTRAEGEIMRECOVERY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.ANZMAHNUNGEN1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.ANZMAHNUNGEN2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.ANZMAHNUNGEN3">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.MAXIMALEMAHNSTUFE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.ANZSTUNDUNGEN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.ANZZAHLUNGSVEREINBARUNGEN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.SUMMEOP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.ANZOP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.EFFEKTIVEKUNDENBEZIEHUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.DAUERKUNDENBEZIEHUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.MOCOUNTER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.ANZAUFSTOCKSTOP">
+            <summary>
+            Description: Anzahl der Aufstockungsstops
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.DATEAUFSTOCKSTOP">
+            <summary>
+            Description: Dateum des längsten Aufstockungsstops
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.ANZMANABL6M">
+            <summary>
+            Description: Anzahl mit manueller Ablehnung in den letzten 6 Monaten
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.ANZMANABL12M">
+            <summary>
+            Description: Anzahl mit menueller Ablehnung in den letzten 12 Monaten
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.ANZVTSPEZ">
+            <summary>
+            Description: Anzahl Verträge mit Speziallfall
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.ANZVTSPEZLFD">
+            <summary>
+            Description: Anzahl laufende Verträge mit Speziallfall
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.DATEMAHN1">
+            <summary>
+            Description: Datum erste Mahnung
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.DATEMAHN2">
+            <summary>
+            Description: Datum zweite Mahnung
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.DATEMAHN3">
+            <summary>
+            Description: Datum dritte Mahnung
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.DATESTUNDUNGEN">
+            <summary>
+            Description: Datum Stundung
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.DATEZVB">
+            <summary>
+            Description: Datum Zahlungsvereinbarungen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.LETZTEEINKOMMENART">
+            <summary>
+            Description: Letzte Einkommenart - brutto oder netto des letzten Antrags
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.GBEZIEHUNG">
+            <summary>
+            Description: Inkl. der Doubletten
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.RATENPAUSEN">
+            <summary>
+            Description: Summe aller Ratenpausen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.DATUMERSTERANTRAG">
+            <summary>
+            Description: Datum erster Antrag des Kunden
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.DATUMLETZTERANTRAG">
+            <summary>
+            Description: Datum letzter Antrag des Kunden
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.ANZMAHN1AVG6M">
+            <summary>
+            Description: Durchschnittliche Anzahl erster Mahnungen pro Vertrag in den letzten 6 Monaten mit Mahnstufe 1
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.ANZMAHN2AVG6M">
+            <summary>
+            Description: Durchschnittliche Anzahl zweiter Mahnungen pro Vertrag in den letzten 6 Monaten mit Mahnstufe 2
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.ANZMAHN3AVG6M">
+            <summary>
+            Description: Durchschnittliche Anzahl dritter Mahnungen pro Vertrag in den letzten 6 Monaten mit Mahnstufe 3
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.ANZZAHLAVG12M">
+            <summary>
+            Description: Durchschnittliche Anzahl Einzahlungen pro Vertrag in den letzten 12 Monaten
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.RUECKSTANDAVG">
+            <summary>
+            Description: Durchschnittliche Reduktion Buchsaldo pro Vertrag in den letzten 12 Monaten
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.BUCHSALDOAVG">
+            <summary>
+            Description: Durchschnittlicher offenerPosten (rückstand) über alle Verträge zum aktuellen Zeitpunkt
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.DEINPEXEC">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOPENLEASE.DEINPEXECReference">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DEOUTEXEC">
+            <summary>
+            Table: DEOUTEXEC&#xA;Description: Decision Engine Output Execute
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEOUTEXEC.CreateDEOUTEXEC(System.Int64)">
+            <summary>
+            Create a new DEOUTEXEC object.
+            </summary>
+            <param name="sYSDEOUTEXEC">Initial value of the SYSDEOUTEXEC property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOUTEXEC.SYSDEOUTEXEC">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOUTEXEC.SYSAUSKUNFT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: AUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOUTEXEC.DEDECISIONList">
+            <summary>
+            Refers to table|alias: &apos;DEDECISION&apos;, PK Columns: SYSDEOUTEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOUTEXEC.DEDETAILList">
+            <summary>
+            Refers to table|alias: &apos;DEDETAIL&apos;, PK Columns: SYSDEOUTEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOUTEXEC.DEENVOUTList">
+            <summary>
+            Refers to table|alias: &apos;DEENVOUT&apos;, PK Columns: SYSDEOUTEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOUTEXEC.AUSKUNFT">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOUTEXEC.AUSKUNFTReference">
+            <summary>
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOUTEXEC.DESONSTList">
+            <summary>
+            Refers to table|alias: &apos;DESONST&apos;, PK Columns: SYSDEOUTEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEOUTEXEC.DEWBRKLList">
+            <summary>
+            Refers to table|alias: &apos;DEWBRKL&apos;, PK Columns: SYSDEOUTEXEC
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DEPARTNER">
+            <summary>
+            Table: DEPARTNER&#xA;Description: Decision Engine Vertriebspartner 1:1 DEINPEXEC
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEPARTNER.CreateDEPARTNER(System.Int64)">
+            <summary>
+            Create a new DEPARTNER object.
+            </summary>
+            <param name="sYSDEPARTNER">Initial value of the SYSDEPARTNER property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.SYSDEPARTNER">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.SYSDEINPEXEC">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.VERTRIEBSPARTNERID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.VERTRIEBSPARTNERART">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.RECHTSFORM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.PLZ">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.SPRACHE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.FLAGAKTIV">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.FLAGEPOS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.FLAGVSB">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.GARANTENLIMITE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.VOLUMENENGAGEMENT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.EVENTUALVOLUMENENGAGEMENT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.RESTWERTENGAGEMENT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.EVENTUALRESTWERTENGAGEMENT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.ANZANTRAEGE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.ANZPENDENTEANTRAEGE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.ANZVERTRAEGE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.ANZLFDVERTRAEGE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.UIDNUMMER">
+            <summary>
+            Description: UID des Vertriebspartner
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.STRATEGICACCOUNT">
+            <summary>
+            Description: Strategischer Partner
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.BADLISTEINTRAG">
+            <summary>
+            Description: Übergabe des Badlisteintrag an die Decision Engine
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.VERMITTLERART">
+            <summary>
+            Description: Status des Händlers (Platin, Bronzw etc.) aus RVT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.DEINPEXEC">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEPARTNER.DEINPEXECReference">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DERUL">
+            <summary>
+            Table: DERUL&#xA;Description: Decision engine: geprüfte Regeln
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DERUL.CreateDERUL(System.Int64)">
+            <summary>
+            Create a new DERUL object.
+            </summary>
+            <param name="sYSDERUL">Initial value of the SYSDERUL property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DERUL.SYSDERUL">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DERUL.SYSDEDETAIL">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEDETAIL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DERUL.SYSDEDEFRUL">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEDEFRUL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DERUL.DISPLAYTYPE">
+            <summary>
+            Enum values: &apos;Internal&apos; = &apos;0&apos;|&apos;External&apos; = &apos;1&apos;
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DERUL.VIOLATED">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DERUL.DEDEFRUL">
+            <summary>
+            Refers to table|alias: DEDEFRUL, FK Columns: SYSDEDEFRUL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DERUL.DEDEFRULReference">
+            <summary>
+            Refers to table|alias: DEDEFRUL, FK Columns: SYSDEDEFRUL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DERUL.DEDETAIL">
+            <summary>
+            Refers to table|alias: DEDETAIL, FK Columns: SYSDEDETAIL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DERUL.DEDETAILReference">
+            <summary>
+            Refers to table|alias: DEDETAIL, FK Columns: SYSDEDETAIL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DERUL.DERULCONList">
+            <summary>
+            Refers to table|alias: &apos;DERULCON&apos;, PK Columns: SYSDERUL
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DERULCON">
+            <summary>
+            Table: DERULCON&#xA;Description: Decision engine: Rule vs Condition
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DERULCON.CreateDERULCON(System.Int64)">
+            <summary>
+            Create a new DERULCON object.
+            </summary>
+            <param name="sYSDERULCON">Initial value of the SYSDERULCON property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DERULCON.SYSDERULCON">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DERULCON.SYSDERUL">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DERUL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DERULCON.SYSDECON">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DECON
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DERULCON.DECON">
+            <summary>
+            Refers to table|alias: DECON, FK Columns: SYSDECON
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DERULCON.DECONReference">
+            <summary>
+            Refers to table|alias: DECON, FK Columns: SYSDECON
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DERULCON.DERUL">
+            <summary>
+            Refers to table|alias: DERUL, FK Columns: SYSDERUL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DERULCON.DERULReference">
+            <summary>
+            Refers to table|alias: DERUL, FK Columns: SYSDERUL
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DESALES">
+            <summary>
+            Table: DESALES&#xA;Description: Decision Engine Sales Ablösedaten 1:1 DEINPEXEC
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DESALES.CreateDESALES(System.Int64)">
+            <summary>
+            Create a new DESALES object.
+            </summary>
+            <param name="sYSDESALES">Initial value of the SYSDESALES property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESALES.SYSDESALES">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESALES.SYSDEINPEXEC">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESALES.ANZABLOESEN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESALES.ANZEIGENABLOESEN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESALES.ANZFREMDABLOESEN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESALES.SUMMEABLOESEN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESALES.SUMMEEIGENABLOESEN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESALES.SUMMEFREMDABLOESEN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESALES.NAMEABLOESEBANK1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESALES.NAMEABLOESEBANK2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESALES.NAMEABLOESEBANK3">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESALES.NAMEABLOESEBANK4">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESALES.NAMEABLOESEBANK5">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESALES.VALIDABL">
+            <summary>
+            Description: Übergabe an die DecisionEngine für Stopps bei der erfassten Ablöse
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESALES.SYSVARTABL">
+            <summary>
+            Description: Verweis auf die Vertragsart (Produkt) des abzulösendes Vertrages
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESALES.VTDAUERABLTOTAL">
+            <summary>
+            Description: Effektive Laufzeit der abgelösten Verträge
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESALES.VTDAUERABLPERVART">
+            <summary>
+            Description: Effektive Laufzeit der abgelösten Verträge mit gleicher VART
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESALES.ANZABLVTPERVART">
+            <summary>
+            Description: Anzahl der abgelösten Verträge mit gleicher VART
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESALES.VTDAUERABL">
+            <summary>
+            Description: Vereinbarte Laufzeit des abzulösenden Vorvertrags
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESALES.DEINPEXEC">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESALES.DEINPEXECReference">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DESCORE">
+            <summary>
+            Table: DESCORE&#xA;Description: Decision Engine Scorecard N:1 DEDETAIL
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DESCORE.CreateDESCORE(System.Int64)">
+            <summary>
+            Create a new DESCORE object.
+            </summary>
+            <param name="sYSDESCORE">Initial value of the SYSDESCORE property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESCORE.SYSDESCORE">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESCORE.SYSDEDETAIL">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEDETAIL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESCORE.RANK">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESCORE.BEZEICHNUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESCORE.RESULTATWERT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESCORE.EINGABEWERT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESCORE.BERECHNUNGSVARIABLEN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESCORE.DEDETAIL">
+            <summary>
+            Refers to table|alias: DEDETAIL, FK Columns: SYSDEDETAIL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESCORE.DEDETAILReference">
+            <summary>
+            Refers to table|alias: DEDETAIL, FK Columns: SYSDEDETAIL
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DESONST">
+            <summary>
+            Table: DESONST&#xA;Description: Decision Engine Sonstige Felder 1:1 DEOUTEXEC
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DESONST.CreateDESONST(System.Int64)">
+            <summary>
+            Create a new DESONST object.
+            </summary>
+            <param name="sYSDESONST">Initial value of the SYSDESONST property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESONST.SYSDESONST">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESONST.SYSDEOUTEXEC">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEOUTEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESONST.RANDOMNUMBER">
+            <summary>
+            Description: O_RANDOM_NUMBER
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESONST.FEHLERCODE">
+            <summary>
+            Description: O_FEHLERCODE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESONST.NUMBER01">
+            <summary>
+            Description: O_RESERVE_NUMBER_1
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESONST.NUMBER02">
+            <summary>
+            Description: O_RESERVE_NUMBER_2
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESONST.NUMBER03">
+            <summary>
+            Description: O_RESERVE_NUMBER_3
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESONST.DATE01">
+            <summary>
+            Description: O_RESERVE_DATE_1
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESONST.DATE02">
+            <summary>
+            Description: O_RESERVE_DATE_2
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESONST.DATE03">
+            <summary>
+            Description: O_RESERVE_DATE_3
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESONST.TEXT01">
+            <summary>
+            Description: O_RESERVE_TEXT_1
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESONST.TEXT02">
+            <summary>
+            Description: O_RESERVE_TEXT_2
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESONST.TEXT03">
+            <summary>
+            Description: O_RESERVE_TEXT_3
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESONST.DEOUTEXEC">
+            <summary>
+            Refers to table|alias: DEOUTEXEC, FK Columns: SYSDEOUTEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DESONST.DEOUTEXECReference">
+            <summary>
+            Refers to table|alias: DEOUTEXEC, FK Columns: SYSDEOUTEXEC
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DEWBIN">
+            <summary>
+            Table: DEWBIN&#xA;Description: Persistente WB Input-Tabelle
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEWBIN.CreateDEWBIN(System.Int64)">
+            <summary>
+            Create a new DEWBIN object.
+            </summary>
+            <param name="sYSDEWBIN">Initial value of the SYSDEWBIN property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.SYSDEWBIN">
+            <summary>
+            Primary Key: True&#xA;Description: ID
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.SYSDEINPEXEC">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEINPEXEC&#xA;Description: Verweis auf DEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.STR01">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.STR02">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.STR03">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.STR04">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.STR05">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.STR06">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.STR07">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.STR08">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.STR09">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.STR10">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.STR11">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.STR12">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.STR13">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.STR14">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.STR15">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.DAT01">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.DAT02">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.DAT03">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.DAT04">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.DAT05">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.DAT06">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.DAT07">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.DAT08">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.DAT09">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.DAT10">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.DAT11">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.DAT12">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.DAT13">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.DAT14">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.DAT15">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.DAT16">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.DAT17">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.DAT18">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.DAT19">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.DAT20">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1501">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1502">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1503">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1504">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1505">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1506">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1507">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1508">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1509">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1510">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1511">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1512">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1513">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1514">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1515">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1516">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1517">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1518">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1519">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1520">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1521">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1522">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1523">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1524">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.PDEC1525">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.INT01">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.INT02">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.INT03">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.INT04">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.INT05">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.INT06">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.INT07">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.INT08">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.INT09">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.INT10">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.FLAG01">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.FLAG02">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.FLAG03">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.FLAG04">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.FLAG05">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.FLAG06">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.FLAG07">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.FLAG08">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.FLAG09">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.FLAG10">
+            <summary>
+            Description: Beliebig verwendbarer Zwischenspeicher
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.DEENVINPList">
+            <summary>
+            Refers to table|alias: &apos;DEENVINP&apos;, PK Columns: SYSDEWBIN
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.DEINPEXEC">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBIN.DEINPEXECReference">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DEWBRKL">
+            <summary>
+            Table: DEWBRKL&#xA;Description: Decision engine: Output Rating Job
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEWBRKL.CreateDEWBRKL(System.Int64)">
+            <summary>
+            Create a new DEWBRKL object.
+            </summary>
+            <param name="sYSDEWBRKL">Initial value of the SYSDEWBRKL property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.SYSDEWBRKL">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.SYSDEOUTEXEC">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEOUTEXEC&#xA;Description: Verknüpfung zur DEOUTEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.SYSKD">
+            <summary>
+            Description: Verknüpfung zum Kunden
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.SYSVT">
+            <summary>
+            Description: Verknüpfung zum Vertrag
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.RKLVT">
+            <summary>
+            Description: Verknüpfung zur Risikoklasse des Vertrags
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.WBKAPITAL">
+            <summary>
+            Description: Wertberichtigung Kapital
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.WBKAPITALACP">
+            <summary>
+            Description: Wertberichtigung Kapital ACP
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.WBZINS">
+            <summary>
+            Description: Wertberichtigung Zins
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.WBZINSACP">
+            <summary>
+            Description: Wertberichtigung Zins ACP
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.PARAMETERID">
+            <summary>
+            Description: Parameter-ID
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.PDT1">
+            <summary>
+            Description: Probability of Default t1
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.PDT1FRAC">
+            <summary>
+            Description: Probability of Default t1 frac
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.FEHLERCODE">
+            <summary>
+            Description: Error-Code
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.FEHLERBESCHREIBUNG">
+            <summary>
+            Description: Error-Description
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.PDEC901">
+            <summary>
+            Description: Reserve
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.PDEC902">
+            <summary>
+            Description: Reserve
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.PDEC903">
+            <summary>
+            Description: Reserve
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.DAT01">
+            <summary>
+            Description: Reserve
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.DAT02">
+            <summary>
+            Description: Reserve
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.DAT03">
+            <summary>
+            Description: Reserve
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.STR01">
+            <summary>
+            Description: Reserve
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.STR02">
+            <summary>
+            Description: Reserve
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.STR03">
+            <summary>
+            Description: Reserve
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.DEENVOUTList">
+            <summary>
+            Refers to table|alias: &apos;DEENVOUT&apos;, PK Columns: SYSDEWBRKL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.DEERROROUTList">
+            <summary>
+            Refers to table|alias: &apos;DEERROROUT&apos;, PK Columns: SYSDEWBRKL
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.DEOUTEXEC">
+            <summary>
+            Refers to table|alias: DEOUTEXEC, FK Columns: SYSDEOUTEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEWBRKL.DEOUTEXECReference">
+            <summary>
+            Refers to table|alias: DEOUTEXEC, FK Columns: SYSDEOUTEXEC
+            </summary>
+        </member>
+        <member name="T:CIC.Database.DE.EF4.Model.DEZEK">
+            <summary>
+            Table: DEZEK&#xA;Description: Decision Engine ZEK
+            </summary>
+        </member>
+        <member name="M:CIC.Database.DE.EF4.Model.DEZEK.CreateDEZEK(System.Int64)">
+            <summary>
+            Create a new DEZEK object.
+            </summary>
+            <param name="sYSDEZEK">Initial value of the SYSDEZEK property.</param>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.SYSDEZEK">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.SYSDEINPEXEC">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.DATUMAUSKUNFT">
+            <summary>
+            Description: Datum der Auskunft
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.STATUS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.KUNDEGESAMTENGAGEMENT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKSYNONYME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKVERTRAEGE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZLFDZEKENG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZLFDZEKENGBARDARLEHEN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZLFDZEKENGFESTKREDIT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZLFDZEKENGLEASING">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZLFDZEKENGTEILZVERTRAG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZLFDZEKENGKONTOKORRENT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZLFDZEKENGKARTEN">
+            <summary>
+            Description: Anz_lfd_ZEL_Eng_Kartenengagement
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKENGMBCODE0506">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKENGMBCODE04">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKENGMBCODE0412M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKENGMBCODE0424M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKENGMBCODE0436M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKENGMBCODE03">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKENGMBCODE0312M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKENGMBCODE0324M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKENGMBCODE0336M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.SCHLECHTESTERZEKBCODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKGESUCHE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZLFDZEKFREMDGES">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKGESMABLCODE05060812">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKGESMABLCODE0412M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKGESMABLCODE0712M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKGESMABLCODE0912M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKGESMABLCODE1012M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKGESMABLCODE1312M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKGESMABLCODE1412M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKGESMABLCODE9912M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKGESMABLCODE0424M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKGESMABLCODE0724M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKGESMABLCODE0924M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKGESMABLCODE1024M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKGESMABLCODE1324M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKGESMABLCODE1424M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKGESMABLCODE9924M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKGESMABLCODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.SCHLECHTESTERZEKABLCODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKKMELDMERCODE2112M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKKMELDMERCODE2124M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKKMELDMERCODE2136M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKKMELDMERCODE2148M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKKMELDMERCODE2160M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKKMELDMERCODE2212M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKKMELDMERCODE2224M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKKMELDMERCODE2236M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKKMELDMERCODE2248M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKKMELDMERCODE2260M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKKMELDMERCODE23242526">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKAMTSMELDEN0105">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKAMTSMELDEN010512M">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.MOCOUNTER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZLFDZEKEIGENGES">
+            <summary>
+            Description: Anz_lfd_ZEK_EigenGes
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKGESMABLCODE040709">
+            <summary>
+            Description: Anz_ZEK_Ges_m_AblCode_04_07_09
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZBC04LFD">
+            <summary>
+            Description: Anzahl Bonitätscode 04 laufend
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZBC04SAL">
+            <summary>
+            Description: Anzahl Bonitätscode 04 saldiert
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZBC03LFD">
+            <summary>
+            Description: Anzahl Bonitätscode 03 laufend
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZBC03SAL">
+            <summary>
+            Description: Anzahl Bonitätscode 03 saldiert
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKGESMABLCODE04070999E">
+            <summary>
+            Description: Anzahl Gesuchsmeldung mit Ablehncode 04,07,09,99 und Eigen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKGESMABLCODE04070999F">
+            <summary>
+            Description: Anzahl Gesuchsmeldung mit Ablehncode 04,07,09,99 und Fremd
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKGESMABLCODE10E">
+            <summary>
+            Description: Anzahl Gesuchsmeldung mit Ablehncode 10 und Eigen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKGESMABLCODE10F">
+            <summary>
+            Description: Anzahl Gesuchsmeldung mit Ablehncode 10 und Fremd
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKGESMABLCODE1314E">
+            <summary>
+            Description: Anzahl Gesuchsmeldung mit Ablehncode 13 und 14 und Eigen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKGESMABLCODE1314F">
+            <summary>
+            Description: Anzahl Gesuchsmeldung mit Ablehncode 13 und 14 und Fremd
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKKMELDMCODE21POS">
+            <summary>
+            Description: Anzahl Kartenmeldung mit Code 21 positiv
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKKMELDMCODE21NEG">
+            <summary>
+            Description: Anzahl Kartenmeldung mit Code 21 negativ
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKKMELDMCODE22POS">
+            <summary>
+            Description: Anzahl Kartenmeldung mit Code 22 positiv
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKKMELDMCODE22NEG">
+            <summary>
+            Description: Anzahl Kartenmeldung mit Code 22 negativ
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKMELDNEG">
+            <summary>
+            Description: Anzahl Negativmeldungen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKMELDPOS">
+            <summary>
+            Description: Anzahl Positivmeldungen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKENGBCODE61">
+            <summary>
+            Description: Anzahl ZEK Engagement mit Bonitätscode 61
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKENGBCODE61L12M">
+            <summary>
+            Description: Anzahl ZEK Engagement mit Bonitätscode 61 letzte 12 Monate
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKENGBCODE61L24M">
+            <summary>
+            Description: Anzahl ZEK Engagement mit Bonitätscode 61 letzte 24 Monate
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKENGBCODE61L36M">
+            <summary>
+            Description: Anzahl ZEK Engagement mit Bonitätscode 61 letzte 36 Monate
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKENGBCODE61LFD">
+            <summary>
+            Description: Anzahl ZEK Engagement mit Bonitätscode 61 laufend
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKENGBCODE61SLD">
+            <summary>
+            Description: Anzahl ZEK Engagement mit Bonitätscode 61 saldiert
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKENGBCODE71">
+            <summary>
+            Description: Anzahl ZEK Engagement mit Bonitätscode 71
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKENGBCODE71L12M">
+            <summary>
+            Description: Anzahl ZEK Engagement mit Bonitätscode 71 letzte 12 Monate
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKENGBCODE71L24M">
+            <summary>
+            Description: Anzahl ZEK Engagement mit Bonitätscode 71 letzte 24 Monate
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKENGBCODE71L36M">
+            <summary>
+            Description: Anzahl ZEK Engagement mit Bonitätscode 71 letzte 36 Monate
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKENGBCODE71LFD">
+            <summary>
+            Description: Anzahl ZEK Engagement mit Bonitätscode 71 laufend
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.ANZZEKENGBCODE71SLD">
+            <summary>
+            Description: Anzahl ZEK Engagement mit Bonitätscode 71 saldiert
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.DEINPEXEC">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.DE.EF4.Model.DEZEK.DEINPEXECReference">
+            <summary>
+            Refers to table|alias: DEINPEXEC, FK Columns: SYSDEINPEXEC
+            </summary>
+        </member>
+    </members>
+</doc>

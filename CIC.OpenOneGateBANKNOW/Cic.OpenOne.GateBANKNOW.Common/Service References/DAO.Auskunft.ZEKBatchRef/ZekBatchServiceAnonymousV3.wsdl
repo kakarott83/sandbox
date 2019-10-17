@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tns3="urn:ZekBatchService" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intf="http://zekbatchservice.xml.prechku.sys:15574/dvzekbatch/services/ZekBatchService" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns2="http://base.sys.iqa" xmlns:tns4="http://beans.soap.batch.zkb.appl.ch" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns1="urn:ZekTransactionService" xmlns:tns5="urn:ZEKTransactionService" xmlns:impl="http://zekbatchservice.xml.prechku.sys:15574/dvzekbatch/services/ZekBatchService" targetNamespace="http://zekbatchservice.xml.prechku.sys:15574/dvzekbatch/services/ZekBatchService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://base.sys.iqa">
+      <xsd:import namespace="urn:ZekTransactionService" />
+      <xsd:import namespace="http://zekbatchservice.xml.prechku.sys:15574/dvzekbatch/services/ZekBatchService" />
+      <xsd:import namespace="urn:ZekBatchService" />
+      <xsd:import namespace="http://beans.soap.batch.zkb.appl.ch" />
+      <xsd:import namespace="urn:ZEKTransactionService" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="BasicObject">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:complexType name="BasicModel" abstract="true">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:BasicObject">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="Model">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:BasicModel">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:ZekTransactionService">
+      <xsd:import namespace="http://base.sys.iqa" />
+      <xsd:import namespace="http://zekbatchservice.xml.prechku.sys:15574/dvzekbatch/services/ZekBatchService" />
+      <xsd:import namespace="urn:ZekBatchService" />
+      <xsd:import namespace="http://beans.soap.batch.zkb.appl.ch" />
+      <xsd:import namespace="urn:ZEKTransactionService" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="IdentityDescriptor">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:Model">
+            <xsd:sequence>
+              <xsd:element name="clientUserId" nillable="true" type="xsd:string" />
+              <xsd:element name="name" nillable="true" type="xsd:string" />
+              <xsd:element name="password" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ReturnCode">
+        <xsd:sequence>
+          <xsd:element name="code" type="xsd:int" />
+          <xsd:element name="text" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TransactionError">
+        <xsd:sequence>
+          <xsd:element name="code" type="xsd:int" />
+          <xsd:element name="text" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://beans.soap.batch.zkb.appl.ch">
+      <xsd:import namespace="http://base.sys.iqa" />
+      <xsd:import namespace="urn:ZekTransactionService" />
+      <xsd:import namespace="http://zekbatchservice.xml.prechku.sys:15574/dvzekbatch/services/ZekBatchService" />
+      <xsd:import namespace="urn:ZekBatchService" />
+      <xsd:import namespace="urn:ZEKTransactionService" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="CommonBatchInstruction" abstract="true">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:Model">
+            <xsd:sequence>
+              <xsd:element name="customerReference" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:ZekBatchService">
+      <xsd:import namespace="http://base.sys.iqa" />
+      <xsd:import namespace="urn:ZekTransactionService" />
+      <xsd:import namespace="http://zekbatchservice.xml.prechku.sys:15574/dvzekbatch/services/ZekBatchService" />
+      <xsd:import namespace="http://beans.soap.batch.zkb.appl.ch" />
+      <xsd:import namespace="urn:ZEKTransactionService" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="ContractClosureInstruction">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns4:CommonBatchInstruction">
+            <xsd:sequence>
+              <xsd:element name="bonitaetsCodeIKO" nillable="true" type="xsd:int" />
+              <xsd:element name="bonitaetsCodeZEK" nillable="true" type="xsd:int" />
+              <xsd:element name="contractType" nillable="true" type="xsd:int" />
+              <xsd:element name="datumBonitaetIKO" nillable="true" type="xsd:string" />
+              <xsd:element name="datumBonitaetZEK" nillable="true" type="xsd:string" />
+              <xsd:element name="kreditVertragID" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="CommonBatchResponse" abstract="true">
+        <xsd:sequence>
+          <xsd:element name="returnCode" nillable="true" type="tns1:ReturnCode" />
+          <xsd:element name="transactionError" nillable="true" type="tns1:TransactionError" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BatchInstructionResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns3:CommonBatchResponse">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="BardarlehenDescription">
+        <xsd:sequence>
+          <xsd:element name="anzahlMonatlicheRaten" type="xsd:int" />
+          <xsd:element name="bonitaetsCodeIKO" nillable="true" type="xsd:int" />
+          <xsd:element name="bonitaetsCodeZEK" nillable="true" type="xsd:int" />
+          <xsd:element name="datumBonitaetIKO" nillable="true" type="xsd:string" />
+          <xsd:element name="datumBonitaetZEK" nillable="true" type="xsd:string" />
+          <xsd:element name="datumErsteRate" nillable="true" type="xsd:string" />
+          <xsd:element name="datumLetzteRate" nillable="true" type="xsd:string" />
+          <xsd:element name="debtorRole" nillable="true" type="xsd:int" />
+          <xsd:element name="filiale" nillable="true" type="xsd:int" />
+          <xsd:element name="herkunft" nillable="true" type="xsd:int" />
+          <xsd:element name="kennzeichen" nillable="true" type="xsd:int" />
+          <xsd:element name="kreditBetrag" type="xsd:float" />
+          <xsd:element name="kreditVertragID" nillable="true" type="xsd:string" />
+          <xsd:element name="monatsrate" type="xsd:float" />
+          <xsd:element name="sicherstellungsCode" nillable="true" type="xsd:int" />
+          <xsd:element name="theoRestSaldo" type="xsd:float" />
+          <xsd:element name="vertragsStatus" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Festkredit">
+        <xsd:sequence>
+          <xsd:element name="bonitaetsCodeIKO" nillable="true" type="xsd:int" />
+          <xsd:element name="bonitaetsCodeZEK" nillable="true" type="xsd:int" />
+          <xsd:element name="datumBonitaetIKO" nillable="true" type="xsd:string" />
+          <xsd:element name="datumBonitaetZEK" nillable="true" type="xsd:string" />
+          <xsd:element name="datumVertragsBeginn" nillable="true" type="xsd:string" />
+          <xsd:element name="datumVertragsEnde" nillable="true" type="xsd:string" />
+          <xsd:element name="debtorRole" nillable="true" type="xsd:int" />
+          <xsd:element name="filiale" nillable="true" type="xsd:int" />
+          <xsd:element name="herkunft" nillable="true" type="xsd:int" />
+          <xsd:element name="kennzeichen" nillable="true" type="xsd:int" />
+          <xsd:element name="kreditBetrag" type="xsd:float" />
+          <xsd:element name="kreditVertragID" nillable="true" type="xsd:string" />
+          <xsd:element name="sicherstellungsCode" nillable="true" type="xsd:int" />
+          <xsd:element name="theoRestSaldo" type="xsd:float" />
+          <xsd:element name="vertragsStatus" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="KontokorrentkreditDescription">
+        <xsd:sequence>
+          <xsd:element name="beanspruchterKreditProzent" nillable="true" type="xsd:int" />
+          <xsd:element name="bonitaetsCodeIKO" nillable="true" type="xsd:int" />
+          <xsd:element name="bonitaetsCodeZEK" nillable="true" type="xsd:int" />
+          <xsd:element name="datumBonitaetIKO" nillable="true" type="xsd:string" />
+          <xsd:element name="datumBonitaetZEK" nillable="true" type="xsd:string" />
+          <xsd:element name="datumVertragsBeginn" nillable="true" type="xsd:string" />
+          <xsd:element name="datumVertragsEnde" nillable="true" type="xsd:string" />
+          <xsd:element name="debtorRole" nillable="true" type="xsd:int" />
+          <xsd:element name="filiale" nillable="true" type="xsd:int" />
+          <xsd:element name="herkunft" nillable="true" type="xsd:int" />
+          <xsd:element name="kennzeichen" nillable="true" type="xsd:int" />
+          <xsd:element name="kreditLimite" type="xsd:float" />
+          <xsd:element name="kreditVertragID" nillable="true" type="xsd:string" />
+          <xsd:element name="sicherstellungsCode" nillable="true" type="xsd:int" />
+          <xsd:element name="theoRestSaldo" type="xsd:float" />
+          <xsd:element name="vertragsStatus" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LeasingMietvertragDescription">
+        <xsd:sequence>
+          <xsd:element name="anzahlMonatlicheRaten" type="xsd:int" />
+          <xsd:element name="anzahlung" nillable="true" type="xsd:int" />
+          <xsd:element name="bonitaetsCodeIKO" nillable="true" type="xsd:int" />
+          <xsd:element name="bonitaetsCodeZEK" nillable="true" type="xsd:int" />
+          <xsd:element name="datumBonitaetIKO" nillable="true" type="xsd:string" />
+          <xsd:element name="datumBonitaetZEK" nillable="true" type="xsd:string" />
+          <xsd:element name="datumErsteRate" nillable="true" type="xsd:string" />
+          <xsd:element name="datumLetzteRate" nillable="true" type="xsd:string" />
+          <xsd:element name="debtorRole" nillable="true" type="xsd:int" />
+          <xsd:element name="ersteGrosseRate" nillable="true" type="xsd:int" />
+          <xsd:element name="filiale" nillable="true" type="xsd:int" />
+          <xsd:element name="grosseSchlussrate" nillable="true" type="xsd:int" />
+          <xsd:element name="herkunft" nillable="true" type="xsd:int" />
+          <xsd:element name="kennzeichen" nillable="true" type="xsd:int" />
+          <xsd:element name="kreditBetrag" type="xsd:float" />
+          <xsd:element name="kreditVertragID" nillable="true" type="xsd:string" />
+          <xsd:element name="monatsrate" type="xsd:float" />
+          <xsd:element name="restwert" nillable="true" type="xsd:int" />
+          <xsd:element name="sicherstellungsCode" nillable="true" type="xsd:int" />
+          <xsd:element name="theoRestSaldo" type="xsd:float" />
+          <xsd:element name="vertragsStatus" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TeilzahlungskreditDescription">
+        <xsd:sequence>
+          <xsd:element name="anzahlMonatlicheRaten" type="xsd:int" />
+          <xsd:element name="bonitaetsCodeIKO" nillable="true" type="xsd:int" />
+          <xsd:element name="bonitaetsCodeZEK" nillable="true" type="xsd:int" />
+          <xsd:element name="datumBonitaetIKO" nillable="true" type="xsd:string" />
+          <xsd:element name="datumBonitaetZEK" nillable="true" type="xsd:string" />
+          <xsd:element name="datumErsteRate" nillable="true" type="xsd:string" />
+          <xsd:element name="datumLetzteRate" nillable="true" type="xsd:string" />
+          <xsd:element name="debtorRole" nillable="true" type="xsd:int" />
+          <xsd:element name="filiale" nillable="true" type="xsd:int" />
+          <xsd:element name="herkunft" nillable="true" type="xsd:int" />
+          <xsd:element name="kennzeichen" nillable="true" type="xsd:int" />
+          <xsd:element name="kreditBetrag" type="xsd:float" />
+          <xsd:element name="kreditVertragID" nillable="true" type="xsd:string" />
+          <xsd:element name="monatsrate" type="xsd:float" />
+          <xsd:element name="sicherstellungsCode" nillable="true" type="xsd:int" />
+          <xsd:element name="theoRestSaldo" type="xsd:float" />
+          <xsd:element name="vertragsStatus" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ContractOpenInstruction">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns4:CommonBatchInstruction">
+            <xsd:sequence>
+              <xsd:element name="bardarlehen" nillable="true" type="tns3:BardarlehenDescription" />
+              <xsd:element name="festkredit" nillable="true" type="tns3:Festkredit" />
+              <xsd:element name="kontokorrentkredit" nillable="true" type="tns3:KontokorrentkreditDescription" />
+              <xsd:element name="kreditGesuchID" nillable="true" type="xsd:string" />
+              <xsd:element name="kundenId" nillable="true" type="xsd:string" />
+              <xsd:element name="leasingMietvertrag" nillable="true" type="tns3:LeasingMietvertragDescription" />
+              <xsd:element name="teilzahlungskredit" nillable="true" type="tns3:TeilzahlungskreditDescription" />
+              <xsd:element name="teilzahlungsvertrag" nillable="true" type="tns5:TeilzahlungsvertragDescription" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ContractUpdateInstruction">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns4:CommonBatchInstruction">
+            <xsd:sequence>
+              <xsd:element name="bardarlehen" nillable="true" type="tns3:BardarlehenDescription" />
+              <xsd:element name="festkredit" nillable="true" type="tns3:Festkredit" />
+              <xsd:element name="kontokorrentkredit" nillable="true" type="tns3:KontokorrentkreditDescription" />
+              <xsd:element name="leasingMietvertrag" nillable="true" type="tns3:LeasingMietvertragDescription" />
+              <xsd:element name="teilzahlungskredit" nillable="true" type="tns3:TeilzahlungskreditDescription" />
+              <xsd:element name="teilzahlungsvertrag" nillable="true" type="tns5:TeilzahlungsvertragDescription" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="BatchInstructionError">
+        <xsd:sequence>
+          <xsd:element name="customerReference" nillable="true" type="xsd:string" />
+          <xsd:element name="errorDescription" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BatchStatusResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns3:CommonBatchResponse">
+            <xsd:sequence>
+              <xsd:element name="countProcessedError" nillable="true" type="xsd:int" />
+              <xsd:element name="countProcessedSuccesfully" nillable="true" type="xsd:int" />
+              <xsd:element name="errorList" nillable="true" type="impl:ArrayOf_tns3_BatchInstructionError" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://zekbatchservice.xml.prechku.sys:15574/dvzekbatch/services/ZekBatchService">
+      <xsd:import namespace="http://base.sys.iqa" />
+      <xsd:import namespace="urn:ZekTransactionService" />
+      <xsd:import namespace="urn:ZekBatchService" />
+      <xsd:import namespace="http://beans.soap.batch.zkb.appl.ch" />
+      <xsd:import namespace="urn:ZEKTransactionService" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="ArrayOf_tns3_ContractClosureInstruction">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns3:ContractClosureInstruction[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns3_ContractOpenInstruction">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns3:ContractOpenInstruction[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns3_ContractUpdateInstruction">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns3:ContractUpdateInstruction[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns3_BatchInstructionError">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns3:BatchInstructionError[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:ZEKTransactionService">
+      <xsd:import namespace="http://base.sys.iqa" />
+      <xsd:import namespace="urn:ZekTransactionService" />
+      <xsd:import namespace="http://zekbatchservice.xml.prechku.sys:15574/dvzekbatch/services/ZekBatchService" />
+      <xsd:import namespace="urn:ZekBatchService" />
+      <xsd:import namespace="http://beans.soap.batch.zkb.appl.ch" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="TeilzahlungsvertragDescription">
+        <xsd:sequence>
+          <xsd:element name="anfangsrate" nillable="true" type="xsd:int" />
+          <xsd:element name="anzahlMonatlicheRaten" nillable="true" type="xsd:int" />
+          <xsd:element name="bonitaetsCodeIKO" nillable="true" type="xsd:int" />
+          <xsd:element name="bonitaetsCodeZEK" nillable="true" type="xsd:int" />
+          <xsd:element name="datumBonitaetIKO" nillable="true" type="xsd:string" />
+          <xsd:element name="datumBonitaetZEK" nillable="true" type="xsd:string" />
+          <xsd:element name="datumErsteRate" nillable="true" type="xsd:string" />
+          <xsd:element name="datumLetzteRate" nillable="true" type="xsd:string" />
+          <xsd:element name="debtorRole" nillable="true" type="xsd:int" />
+          <xsd:element name="filiale" nillable="true" type="xsd:int" />
+          <xsd:element name="herkunft" nillable="true" type="xsd:int" />
+          <xsd:element name="kennzeichen" nillable="true" type="xsd:int" />
+          <xsd:element name="kreditBetrag" type="xsd:float" />
+          <xsd:element name="kreditVertragID" nillable="true" type="xsd:string" />
+          <xsd:element name="monatsrate" nillable="true" type="xsd:float" />
+          <xsd:element name="restwert" nillable="true" type="xsd:int" />
+          <xsd:element name="sicherstellungsCode" nillable="true" type="xsd:int" />
+          <xsd:element name="theoRestSaldo" type="xsd:float" />
+          <xsd:element name="vertragsStatus" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="updateContractsBatchResponse">
+    <wsdl:part name="updateContractsBatchReturn" type="tns3:BatchInstructionResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateContractsBatchRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="batchRequestId" type="xsd:string" />
+    <wsdl:part name="contracts" type="impl:ArrayOf_tns3_ContractUpdateInstruction" />
+  </wsdl:message>
+  <wsdl:message name="openContractsBatchResponse">
+    <wsdl:part name="openContractsBatchReturn" type="tns3:BatchInstructionResponse" />
+  </wsdl:message>
+  <wsdl:message name="openContractsBatchRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="batchRequestId" type="xsd:string" />
+    <wsdl:part name="contracts" type="impl:ArrayOf_tns3_ContractOpenInstruction" />
+  </wsdl:message>
+  <wsdl:message name="closeContractsBatchRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="batchRequestId" type="xsd:string" />
+    <wsdl:part name="contracts" type="impl:ArrayOf_tns3_ContractClosureInstruction" />
+  </wsdl:message>
+  <wsdl:message name="closeContractsBatchResponse">
+    <wsdl:part name="closeContractsBatchReturn" type="tns3:BatchInstructionResponse" />
+  </wsdl:message>
+  <wsdl:message name="batchStatusRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="batchRequestId" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="batchStatusResponse">
+    <wsdl:part name="batchStatusReturn" type="tns3:BatchStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ZEKBatchService">
+    <wsdl:operation name="closeContractsBatch" parameterOrder="identityDescriptor batchRequestId contracts">
+      <wsdl:input name="closeContractsBatchRequest" message="impl:closeContractsBatchRequest" />
+      <wsdl:output name="closeContractsBatchResponse" message="impl:closeContractsBatchResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="openContractsBatch" parameterOrder="identityDescriptor batchRequestId contracts">
+      <wsdl:input name="openContractsBatchRequest" message="impl:openContractsBatchRequest" />
+      <wsdl:output name="openContractsBatchResponse" message="impl:openContractsBatchResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateContractsBatch" parameterOrder="identityDescriptor batchRequestId contracts">
+      <wsdl:input name="updateContractsBatchRequest" message="impl:updateContractsBatchRequest" />
+      <wsdl:output name="updateContractsBatchResponse" message="impl:updateContractsBatchResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="batchStatus" parameterOrder="identityDescriptor batchRequestId">
+      <wsdl:input name="batchStatusRequest" message="impl:batchStatusRequest" />
+      <wsdl:output name="batchStatusResponse" message="impl:batchStatusResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZekBatchServiceSoapBinding" type="impl:ZEKBatchService">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="closeContractsBatch">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="closeContractsBatchRequest">
+        <wsdlsoap:body use="encoded" namespace="http://zekbatchservice.xml.prechku.sys:15574/dvzekbatch/services/ZekBatchService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="closeContractsBatchResponse">
+        <wsdlsoap:body use="encoded" namespace="http://zekbatchservice.xml.prechku.sys:15574/dvzekbatch/services/ZekBatchService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="openContractsBatch">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="openContractsBatchRequest">
+        <wsdlsoap:body use="encoded" namespace="http://zekbatchservice.xml.prechku.sys:15574/dvzekbatch/services/ZekBatchService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="openContractsBatchResponse">
+        <wsdlsoap:body use="encoded" namespace="http://zekbatchservice.xml.prechku.sys:15574/dvzekbatch/services/ZekBatchService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateContractsBatch">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="updateContractsBatchRequest">
+        <wsdlsoap:body use="encoded" namespace="http://zekbatchservice.xml.prechku.sys:15574/dvzekbatch/services/ZekBatchService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="updateContractsBatchResponse">
+        <wsdlsoap:body use="encoded" namespace="http://zekbatchservice.xml.prechku.sys:15574/dvzekbatch/services/ZekBatchService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="batchStatus">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="batchStatusRequest">
+        <wsdlsoap:body use="encoded" namespace="http://zekbatchservice.xml.prechku.sys:15574/dvzekbatch/services/ZekBatchService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="batchStatusResponse">
+        <wsdlsoap:body use="encoded" namespace="http://zekbatchservice.xml.prechku.sys:15574/dvzekbatch/services/ZekBatchService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZEKBatchServiceService">
+    <wsdl:port name="ZekBatchService" binding="impl:ZekBatchServiceSoapBinding">
+      <wsdlsoap:address location="http://zekbatchservice.xml.prechku.sys:15574/dvzekbatch/services/ZekBatchService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

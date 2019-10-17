@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b9afed61-7b1b-4158-9a85-13750d43991e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://hcedev/BAS/MediatorService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MediatorService8.xsd" MetadataType="Schema" ID="f266dbc0-8b8d-47de-9713-c288fec7ca07" SourceId="1" SourceUrl="http://hcedev/BAS/MediatorService.svc?xsd=xsd4" />
+    <MetadataFile FileName="MediatorService81.xsd" MetadataType="Schema" ID="a9ba2cde-713b-4eb0-93fd-acbd6ed0df4b" SourceId="1" SourceUrl="http://hcedev/BAS/MediatorService.svc?xsd=xsd0" />
+    <MetadataFile FileName="MediatorService82.xsd" MetadataType="Schema" ID="43343509-49f4-4ce0-aaae-475f8d45d539" SourceId="1" SourceUrl="http://hcedev/BAS/MediatorService.svc?xsd=xsd8" />
+    <MetadataFile FileName="MediatorService83.xsd" MetadataType="Schema" ID="3ac38f5b-cf43-4df4-9e83-d7da48af0865" SourceId="1" SourceUrl="http://hcedev/BAS/MediatorService.svc?xsd=xsd5" />
+    <MetadataFile FileName="MediatorService84.xsd" MetadataType="Schema" ID="c7eb2c4d-5066-4b34-a370-18271bb52b33" SourceId="1" SourceUrl="http://hcedev/BAS/MediatorService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MediatorService85.xsd" MetadataType="Schema" ID="89ef4d86-9990-4739-8129-83e39f69aa95" SourceId="1" SourceUrl="http://hcedev/BAS/MediatorService.svc?xsd=xsd9" />
+    <MetadataFile FileName="MediatorService1.disco" MetadataType="Disco" ID="a82c603d-64d1-45e8-8b4c-ca3beb45e656" SourceId="1" SourceUrl="http://hcedev/BAS/MediatorService.svc?disco" />
+    <MetadataFile FileName="MediatorService1.wsdl" MetadataType="Wsdl" ID="2684f9d4-b9f2-4291-bae8-55fc69582159" SourceId="1" SourceUrl="http://hcedev/BAS/MediatorService.svc?wsdl" />
+    <MetadataFile FileName="MediatorService86.xsd" MetadataType="Schema" ID="898180de-9604-4194-8283-74b9a58ca2c0" SourceId="1" SourceUrl="http://hcedev/BAS/MediatorService.svc?xsd=xsd6" />
+    <MetadataFile FileName="MediatorService87.xsd" MetadataType="Schema" ID="42183dd7-df76-4d24-89f5-896c893fae5b" SourceId="1" SourceUrl="http://hcedev/BAS/MediatorService.svc?xsd=xsd2" />
+    <MetadataFile FileName="MediatorService88.xsd" MetadataType="Schema" ID="9df21a7d-f552-49b1-a89b-8b31b7e27496" SourceId="1" SourceUrl="http://hcedev/BAS/MediatorService.svc?xsd=xsd7" />
+    <MetadataFile FileName="MediatorService89.xsd" MetadataType="Schema" ID="261d590b-6215-43f6-8325-7f30887c1def" SourceId="1" SourceUrl="http://hcedev/BAS/MediatorService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

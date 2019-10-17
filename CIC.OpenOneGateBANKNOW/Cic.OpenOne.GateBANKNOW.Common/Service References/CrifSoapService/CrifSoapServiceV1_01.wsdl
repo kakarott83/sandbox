@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:crifss10="http://www.crif-online.ch/webservices/crifsoapservice/v1.00" xmlns:tns="http://www.crif-online.ch/webservices/crifsoapservice/wsdl/v1.00" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" name="CrifSoapServiceV1_0" targetNamespace="http://www.crif-online.ch/webservices/crifsoapservice/wsdl/v1.00" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <documentation>Crif Soap Service V1.13</documentation>
+  <types>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import schemaLocation="crif-soap-service.xsd" namespace="http://www.crif-online.ch/webservices/crifsoapservice/v1.00" />
+    </xs:schema>
+  </types>
+  <message name="ServiceError">
+    <part name="error" element="crifss10:error" />
+  </message>
+  <message name="identifyAddressRequest">
+    <part name="parameter" element="crifss10:identifyAddressRequest" />
+  </message>
+  <message name="identifyAddressResponse">
+    <part name="return" element="crifss10:identifyAddressResponse" />
+  </message>
+  <message name="addressInvestigationRequest">
+    <part name="parameter" element="crifss10:addressInvestigationRequest" />
+  </message>
+  <message name="addressInvestigationResponse">
+    <part name="return" element="crifss10:addressInvestigationResponse" />
+  </message>
+  <message name="getReportRequest">
+    <part name="parameter" element="crifss10:getReportRequest" />
+  </message>
+  <message name="getReportResponse">
+    <part name="return" element="crifss10:getReportResponse" />
+  </message>
+  <message name="getArchivedReportRequest">
+    <part name="parameter" element="crifss10:getArchivedReportRequest" />
+  </message>
+  <message name="getArchivedReportResponse">
+    <part name="return" element="crifss10:getArchivedReportResponse" />
+  </message>
+  <message name="getDebtDetailsRequest">
+    <part name="parameter" element="crifss10:getDebtDetailsRequest" />
+  </message>
+  <message name="getDebtDetailsResponse">
+    <part name="return" element="crifss10:getDebtDetailsResponse" />
+  </message>
+  <message name="orderOfflineReportRequest">
+    <part name="parameter" element="crifss10:orderOfflineReportRequest" />
+  </message>
+  <message name="orderOfflineReportResponse">
+    <part name="return" element="crifss10:orderOfflineReportResponse" />
+  </message>
+  <message name="getListOfReadyOfflineReportsRequest">
+    <part name="parameter" element="crifss10:getListOfReadyOfflineReportsRequest" />
+  </message>
+  <message name="getListOfReadyOfflineReportsResponse">
+    <part name="return" element="crifss10:getListOfReadyOfflineReportsResponse" />
+  </message>
+  <message name="pollOfflineReportResponseRequest">
+    <part name="parameter" element="crifss10:pollOfflineReportResponseRequest" />
+  </message>
+  <message name="pollOfflineReportResponseResponse">
+    <part name="return" element="crifss10:pollOfflineReportResponseResponse" />
+  </message>
+  <message name="idVerificationRequest">
+    <part name="parameter" element="crifss10:idVerificationRequest" />
+  </message>
+  <message name="idVerificationResponse">
+    <part name="return" element="crifss10:idVerificationResponse" />
+  </message>
+  <message name="submitDataIssueRequest">
+    <part name="parameter" element="crifss10:submitDataIssueRequest" />
+  </message>
+  <message name="submitDataIssueResponse">
+    <part name="return" element="crifss10:submitDataIssueResponse" />
+  </message>
+  <message name="cancelDataIssueRequest">
+    <part name="parameter" element="crifss10:cancelDataIssueRequest" />
+  </message>
+  <message name="cancelDataIssueResponse">
+    <part name="return" element="crifss10:cancelDataIssueResponse" />
+  </message>
+  <message name="getDataIssueStatusRequest">
+    <part name="parameter" element="crifss10:getDataIssueStatusRequest" />
+  </message>
+  <message name="getDataIssueStatusResponse">
+    <part name="return" element="crifss10:getDataIssueStatusResponse" />
+  </message>
+  <portType name="CrifSoapServicePortTypeV1_0">
+    <operation name="identifyAddress">
+      <input name="iaInput" message="tns:identifyAddressRequest" />
+      <output name="iaOutput" message="tns:identifyAddressResponse" />
+      <fault name="error" message="tns:ServiceError" />
+    </operation>
+    <operation name="addressInvestigation">
+      <input name="aiInput" message="tns:addressInvestigationRequest" />
+      <output name="aiOutput" message="tns:addressInvestigationResponse" />
+      <fault name="error" message="tns:ServiceError" />
+    </operation>
+    <operation name="getReport">
+      <input name="grInput" message="tns:getReportRequest" />
+      <output name="grOutput" message="tns:getReportResponse" />
+      <fault name="error" message="tns:ServiceError" />
+    </operation>
+    <operation name="getArchivedReport">
+      <input name="garInput" message="tns:getArchivedReportRequest" />
+      <output name="garOutput" message="tns:getArchivedReportResponse" />
+      <fault name="error" message="tns:ServiceError" />
+    </operation>
+    <operation name="getDebtDetails">
+      <input name="gddInput" message="tns:getDebtDetailsRequest" />
+      <output name="gddOutput" message="tns:getDebtDetailsResponse" />
+      <fault name="error" message="tns:ServiceError" />
+    </operation>
+    <operation name="orderOfflineReport">
+      <input name="oorInput" message="tns:orderOfflineReportRequest" />
+      <output name="oorOutput" message="tns:orderOfflineReportResponse" />
+      <fault name="error" message="tns:ServiceError" />
+    </operation>
+    <operation name="getListOfReadyOfflineReports">
+      <input name="glotorInput" message="tns:getListOfReadyOfflineReportsRequest" />
+      <output name="glotorOutput" message="tns:getListOfReadyOfflineReportsResponse" />
+      <fault name="error" message="tns:ServiceError" />
+    </operation>
+    <operation name="pollOfflineReportResponse">
+      <input name="porrInput" message="tns:pollOfflineReportResponseRequest" />
+      <output name="porrOutput" message="tns:pollOfflineReportResponseResponse" />
+      <fault name="error" message="tns:ServiceError" />
+    </operation>
+    <operation name="idVerification">
+      <input name="ivrInput" message="tns:idVerificationRequest" />
+      <output name="ivrOutput" message="tns:idVerificationResponse" />
+      <fault name="error" message="tns:ServiceError" />
+    </operation>
+    <operation name="submitDataIssue">
+      <input name="sdiInput" message="tns:submitDataIssueRequest" />
+      <output name="sdiOutput" message="tns:submitDataIssueResponse" />
+      <fault name="error" message="tns:ServiceError" />
+    </operation>
+    <operation name="cancelDataIssue">
+      <input name="cdiInput" message="tns:cancelDataIssueRequest" />
+      <output name="cdiOutput" message="tns:cancelDataIssueResponse" />
+      <fault name="error" message="tns:ServiceError" />
+    </operation>
+    <operation name="getDataIssueStatus">
+      <input name="gdisInput" message="tns:getDataIssueStatusRequest" />
+      <output name="gdisOutput" message="tns:getDataIssueStatusResponse" />
+      <fault name="error" message="tns:ServiceError" />
+    </operation>
+  </portType>
+  <binding name="CrifSoapServiceBindingV1_0" type="tns:CrifSoapServicePortTypeV1_0">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="identifyAddress">
+      <soap12:operation soapAction="identifyAddress" style="document" />
+      <input name="iaInput">
+        <soap12:body use="literal" />
+      </input>
+      <output name="iaOutput">
+        <soap12:body use="literal" />
+      </output>
+      <fault name="error">
+        <soap12:fault use="literal" name="error" namespace="" />
+      </fault>
+    </operation>
+    <operation name="addressInvestigation">
+      <soap12:operation soapAction="addressInvestigation" style="document" />
+      <input name="aiInput">
+        <soap12:body use="literal" />
+      </input>
+      <output name="aiOutput">
+        <soap12:body use="literal" />
+      </output>
+      <fault name="error">
+        <soap12:fault use="literal" name="error" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getReport">
+      <soap12:operation soapAction="getReport" style="document" />
+      <input name="grInput">
+        <soap12:body use="literal" />
+      </input>
+      <output name="grOutput">
+        <soap12:body use="literal" />
+      </output>
+      <fault name="error">
+        <soap12:fault use="literal" name="error" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getArchivedReport">
+      <soap12:operation soapAction="getArchivedReport" style="document" />
+      <input name="garInput">
+        <soap12:body use="literal" />
+      </input>
+      <output name="garOutput">
+        <soap12:body use="literal" />
+      </output>
+      <fault name="error">
+        <soap12:fault use="literal" name="error" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getDebtDetails">
+      <soap12:operation soapAction="getDebtDetails" style="document" />
+      <input name="gddInput">
+        <soap12:body use="literal" />
+      </input>
+      <output name="gddOutput">
+        <soap12:body use="literal" />
+      </output>
+      <fault name="error">
+        <soap12:fault use="literal" name="error" namespace="" />
+      </fault>
+    </operation>
+    <operation name="orderOfflineReport">
+      <soap12:operation soapAction="orderOfflineReport" style="document" />
+      <input name="oorInput">
+        <soap12:body use="literal" />
+      </input>
+      <output name="oorOutput">
+        <soap12:body use="literal" />
+      </output>
+      <fault name="error">
+        <soap12:fault use="literal" name="error" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getListOfReadyOfflineReports">
+      <soap12:operation soapAction="getListOfReadyOfflineReports" style="document" />
+      <input name="glotorInput">
+        <soap12:body use="literal" />
+      </input>
+      <output name="glotorOutput">
+        <soap12:body use="literal" />
+      </output>
+      <fault name="error">
+        <soap12:fault use="literal" name="error" namespace="" />
+      </fault>
+    </operation>
+    <operation name="pollOfflineReportResponse">
+      <soap12:operation soapAction="pollOfflineReportResponse" style="document" />
+      <input name="porrInput">
+        <soap12:body use="literal" />
+      </input>
+      <output name="porrOutput">
+        <soap12:body use="literal" />
+      </output>
+      <fault name="error">
+        <soap12:fault use="literal" name="error" namespace="" />
+      </fault>
+    </operation>
+    <operation name="idVerification">
+      <soap12:operation soapAction="idVerification" style="document" />
+      <input name="ivrInput">
+        <soap12:body use="literal" />
+      </input>
+      <output name="ivrOutput">
+        <soap12:body use="literal" />
+      </output>
+      <fault name="error">
+        <soap12:fault use="literal" name="error" namespace="" />
+      </fault>
+    </operation>
+    <operation name="submitDataIssue">
+      <soap12:operation soapAction="submitDataIssue" style="document" />
+      <input name="sdiInput">
+        <soap12:body use="literal" />
+      </input>
+      <output name="sdiOutput">
+        <soap12:body use="literal" />
+      </output>
+      <fault name="error">
+        <soap12:fault use="literal" name="error" namespace="" />
+      </fault>
+    </operation>
+    <operation name="cancelDataIssue">
+      <soap12:operation soapAction="cancelDataIssue" style="document" />
+      <input name="cdiInput">
+        <soap12:body use="literal" />
+      </input>
+      <output name="cdiOutput">
+        <soap12:body use="literal" />
+      </output>
+      <fault name="error">
+        <soap12:fault use="literal" name="error" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getDataIssueStatus">
+      <soap12:operation soapAction="getDataIssueStatus" style="document" />
+      <input name="gdisInput">
+        <soap12:body use="literal" />
+      </input>
+      <output name="gdisOutput">
+        <soap12:body use="literal" />
+      </output>
+      <fault name="error">
+        <soap12:fault use="literal" name="error" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="CrifSoapServiceV1_0">
+    <port name="CrifSoapServicePortV1_0" binding="tns:CrifSoapServiceBindingV1_0">
+      <soap12:address location="http://localhost:80/crifss/" />
+    </port>
+  </service>
+</definitions>

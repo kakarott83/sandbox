@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Runtime>
+      <!-- Storage schema - SSDL -->
+      <edmx:StorageModels>
+        <Schema Namespace="Cic.OpenLease.Model.DdOl_NK.Store" Alias="Self" Provider="Devart.Data.Oracle" ProviderManifestToken="ORA" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+          <EntityContainer Name="CIC_OL_NK">
+          <EntitySet Name="NK" EntityType="Cic.OpenLease.Model.DdOl_NK.Store.NK" Schema="CIC" Table="NK" />
+          <EntitySet Name="NKNUM" EntityType="Cic.OpenLease.Model.DdOl_NK.Store.NKNUM" Schema="CIC" Table="NKNUM" />
+          <AssociationSet Name="NKNUM_NK" Association="Cic.OpenLease.Model.DdOl_NK.Store.NKNUM_NK">
+            <End Role="NKNUM" EntitySet="NKNUM" />
+            <End Role="NK" EntitySet="NK" />
+          </AssociationSet>
+          </EntityContainer>  
+      <EntityType Name="NK">
+        <Key>
+          <PropertyRef Name="SYSNK" />
+        </Key>
+        <Property Name="SYSNK" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="BEZEICHNUNG" Type="VARCHAR2" MaxLength="40" Nullable="true" />
+        <Property Name="BESCHREIBUNG" Type="VARCHAR2" MaxLength="180" Nullable="true" />
+        <Property Name="BEREICH" Type="VARCHAR2" MaxLength="15" Nullable="true" />
+        <Property Name="TYP" Type="VARCHAR2" MaxLength="25" Nullable="true" />
+        <Property Name="SYSNKNUM" Type="int64" Nullable="true" />
+        <Property Name="EVALSYSNKNUM" Type="VARCHAR2" MaxLength="80" Nullable="true" />
+        <Property Name="AUSDRUCK" Type="VARCHAR2" MaxLength="255" Nullable="true" />
+        <Property Name="LASTEDIT" Type="DATE" Nullable="true" />
+        <Property Name="RESETFLAG" Type="int" Nullable="true" />
+        <Property Name="PERIODE" Type="int" Nullable="true" />
+        <Property Name="DOTNETENABLED" Type="int" Nullable="true" />
+      </EntityType>
+      <EntityType Name="NKNUM">
+        <Key>
+          <PropertyRef Name="SYSNKNUM" />
+        </Key>
+        <Property Name="SYSNKNUM" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="BEZEICHNUNG" Type="VARCHAR2" MaxLength="40" Nullable="true" />
+        <Property Name="LFDNR" Type="int64" Nullable="true" />
+        <Property Name="MIN" Type="int64" Nullable="true" />
+        <Property Name="MAX" Type="int64" Nullable="true" />
+        <Property Name="FLAGRESET" Type="int" Nullable="true" />
+        <Property Name="FLAGOFLOWMES" Type="int" Nullable="true" />
+        <Property Name="EVLOFLOWMES" Type="VARCHAR2" MaxLength="255" Nullable="true" />
+      </EntityType>
+            <Association Name="NKNUM_NK">
+              <End Role="NKNUM" Type="Cic.OpenLease.Model.DdOl_NK.Store.NKNUM" Multiplicity="0..1">
+              </End>
+              <End Role="NK" Type="Cic.OpenLease.Model.DdOl_NK.Store.NK" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="NKNUM">
+                  <PropertyRef Name="SYSNKNUM" />
+                </Principal>
+                <Dependent Role="NK">
+                  <PropertyRef Name="SYSNKNUM" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+        </Schema>  
+      </edmx:StorageModels>
+      <!-- Conceptual schema - CSDL -->
+      <edmx:ConceptualModels>
+        <Schema Namespace="Cic.OpenLease.Model.DdOl_NK" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntityContainer Name="Ol_NKEntities">
+          <EntitySet Name="NK" EntityType="Cic.OpenLease.Model.DdOl_NK.NK" />
+          <EntitySet Name="NKNUM" EntityType="Cic.OpenLease.Model.DdOl_NK.NKNUM" />
+          <AssociationSet Name="NK_NKNUM" Association="Cic.OpenLease.Model.DdOl_NK.NK_NKNUM">
+            <End Role="NKNUM" EntitySet="NKNUM" />
+            <End Role="NK" EntitySet="NK" />
+          </AssociationSet>
+          </EntityContainer>
+      <EntityType Name="NK">
+        <Documentation><Summary>Nummernkreise</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSNK" />
+        </Key>
+        <Property Name="SYSNK" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary>ID</Summary></Documentation>
+        </Property>
+        <Property Name="BEZEICHNUNG" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Bezeichnung</Summary></Documentation>
+        </Property>
+        <Property Name="BESCHREIBUNG" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Beschreibung</Summary></Documentation>
+        </Property>
+        <Property Name="BEREICH" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Bereich</Summary></Documentation>
+        </Property>
+        <Property Name="TYP" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Code</Summary></Documentation>
+        </Property>
+        <Property Name="EVALSYSNKNUM" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="AUSDRUCK" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Ausdruck</Summary></Documentation>
+        </Property>
+        <Property Name="LASTEDIT" Type="DateTime" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>zuletzt ge�ndert</Summary></Documentation>
+        </Property>
+        <Property Name="RESETFLAG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Zur�cksetzm�glichkeit</Summary></Documentation>
+        </Property>
+        <Property Name="PERIODE" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Periode</Summary></Documentation>
+        </Property>
+        <Property Name="DOTNETENABLED" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="NKNUM" Relationship="Cic.OpenLease.Model.DdOl_NK.NK_NKNUM" FromRole="NK" ToRole="NKNUM" />
+      </EntityType>
+      <EntityType Name="NKNUM">
+        <Documentation><Summary>Z�hler</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSNKNUM" />
+        </Key>
+        <Property Name="SYSNKNUM" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary>ID</Summary></Documentation>
+        </Property>
+        <Property Name="BEZEICHNUNG" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Bezeichnung</Summary></Documentation>
+        </Property>
+        <Property Name="LFDNR" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>laufende Nummer</Summary></Documentation>
+        </Property>
+        <Property Name="MIN" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Minimum</Summary></Documentation>
+        </Property>
+        <Property Name="MAX" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Maximum</Summary></Documentation>
+        </Property>
+        <Property Name="FLAGRESET" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="FLAGOFLOWMES" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Message bei Overflow</Summary></Documentation>
+        </Property>
+        <Property Name="EVLOFLOWMES" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Formel f�r Message bei Oveflow</Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="NKList" Relationship="Cic.OpenLease.Model.DdOl_NK.NK_NKNUM" FromRole="NKNUM" ToRole="NK" />
+      </EntityType>
+            <Association Name="NK_NKNUM">
+              <End Role="NKNUM" Type="Cic.OpenLease.Model.DdOl_NK.NKNUM" Multiplicity="0..1">
+              </End>  
+              <End Role="NK" Type="Cic.OpenLease.Model.DdOl_NK.NK" Multiplicity="*">
+              </End>
+            </Association>
+        </Schema>
+      </edmx:ConceptualModels>
+      <!-- C-S mapping content -->
+      <edmx:Mappings>
+        <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">    
+          <EntityContainerMapping StorageEntityContainer="CIC_OL_NK" CdmEntityContainer="Ol_NKEntities">
+          <EntitySetMapping Name="NK">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOl_NK.NK)">
+              <MappingFragment StoreEntitySet="NK">
+                 <ScalarProperty Name="SYSNK" ColumnName="SYSNK" />
+                 <ScalarProperty Name="BEZEICHNUNG" ColumnName="BEZEICHNUNG" />
+                 <ScalarProperty Name="BESCHREIBUNG" ColumnName="BESCHREIBUNG" />
+                 <ScalarProperty Name="BEREICH" ColumnName="BEREICH" />
+                 <ScalarProperty Name="TYP" ColumnName="TYP" />
+                 <ScalarProperty Name="EVALSYSNKNUM" ColumnName="EVALSYSNKNUM" />
+                 <ScalarProperty Name="AUSDRUCK" ColumnName="AUSDRUCK" />
+                 <ScalarProperty Name="LASTEDIT" ColumnName="LASTEDIT" />
+                 <ScalarProperty Name="RESETFLAG" ColumnName="RESETFLAG" />
+                 <ScalarProperty Name="PERIODE" ColumnName="PERIODE" />
+                 <ScalarProperty Name="DOTNETENABLED" ColumnName="DOTNETENABLED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NKNUM">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOl_NK.NKNUM)">
+              <MappingFragment StoreEntitySet="NKNUM">
+                 <ScalarProperty Name="SYSNKNUM" ColumnName="SYSNKNUM" />
+                 <ScalarProperty Name="BEZEICHNUNG" ColumnName="BEZEICHNUNG" />
+                 <ScalarProperty Name="LFDNR" ColumnName="LFDNR" />
+                 <ScalarProperty Name="MIN" ColumnName="MIN" />
+                 <ScalarProperty Name="MAX" ColumnName="MAX" />
+                 <ScalarProperty Name="FLAGRESET" ColumnName="FLAGRESET" />
+                 <ScalarProperty Name="FLAGOFLOWMES" ColumnName="FLAGOFLOWMES" />
+                 <ScalarProperty Name="EVLOFLOWMES" ColumnName="EVLOFLOWMES" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+            <AssociationSetMapping Name="NK_NKNUM" TypeName="Cic.OpenLease.Model.DdOl_NK.NK_NKNUM" StoreEntitySet="NK">
+              <EndProperty Name="NKNUM">
+                  <ScalarProperty Name="SYSNKNUM" ColumnName="SYSNKNUM" />
+                </EndProperty>
+                <EndProperty Name="NK">
+                <ScalarProperty Name="SYSNK" ColumnName="SYSNK" />
+                </EndProperty>
+                <Condition ColumnName="SYSNKNUM" IsNull="false" />
+              </AssociationSetMapping>
+          </EntityContainerMapping>
+        </Mapping>
+      </edmx:Mappings>
+    </edmx:Runtime>
+  <edmx:Designer>
+    <edmx:Connection>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+    </edmx:Options>
+    <edmx:Diagrams>
+      <Diagram Name="DdOl_NK" xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOl_NK.NK" Width="1.5" PointX="3" PointY="1" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOl_NK.NKNUM" Width="1.5" PointX="0.75" PointY="1.125" Height="2.7494921874999996" IsExpanded="true" />
+        <AssociationConnector Association="Cic.OpenLease.Model.DdOl_NK.NK_NKNUM" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.49974609375" />
+          <ConnectorPoint PointX="3" PointY="2.49974609375" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+  </edmx:Edmx>

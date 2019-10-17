@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project name="CASService" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" id="d0bdd1fb-f1ff-4fec-a7d2-5ea752cd5485" activeEnvironment="Default" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="200508" name="WSHttpBinding_CASKernel" type="wsdl" bindingName="{http://cic-software.de/CASKernel}WSHttpBinding_CASKernel" soapVersion="1_2" anonymous="optional" definition="https://bnr13dev1.cic.muc/BAS/CASKernel.svc?singleWsdl" id="51de766f-d2c8-4b45-bc3e-b37c24d1b251" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://bnr13dev1.cic.muc/BAS/CASKernel.svc?singleWsdl"><con:part><con:url>https://bnr13dev1.cic.muc/BAS/CASKernel.svc?singleWsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CASService" targetNamespace="http://cic-software.de/CASKernel" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:i0="http://cic-software.de/CASKernel/CASService" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://cic-software.de/CASKernel" xmlns:i1="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+  <wsp:Policy wsu:Id="WSHttpBinding_CASKernel_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://cic-software.de/CASKernel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/CIC.Bas.Services"/>
+      <xs:element name="CicEval">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="eval" nillable="true" type="q1:CASEvaluate" xmlns:q1="http://schemas.datacontract.org/2004/07/CIC.Bas.Services"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CicEvalResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="CicEvalResult" nillable="true" type="q2:CASEvaluateOutput" xmlns:q2="http://schemas.datacontract.org/2004/07/CIC.Bas.Services"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+      <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+      <xs:element name="byte" nillable="true" type="xs:byte"/>
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+      <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+      <xs:element name="double" nillable="true" type="xs:double"/>
+      <xs:element name="float" nillable="true" type="xs:float"/>
+      <xs:element name="int" nillable="true" type="xs:int"/>
+      <xs:element name="long" nillable="true" type="xs:long"/>
+      <xs:element name="QName" nillable="true" type="xs:QName"/>
+      <xs:element name="short" nillable="true" type="xs:short"/>
+      <xs:element name="string" nillable="true" type="xs:string"/>
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+      <xs:element name="char" nillable="true" type="tns:char"/>
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int"/>
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration"/>
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid"/>
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName"/>
+      <xs:attribute name="Id" type="xs:ID"/>
+      <xs:attribute name="Ref" type="xs:IDREF"/>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CIC.Bas.Services" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/CIC.Bas.Services">
+      <xs:complexType name="CASEvaluate">
+        <xs:sequence>
+          <xs:element name="Mandant" type="xs:long"/>
+          <xs:element name="SysWfuser" type="xs:long"/>
+          <xs:element name="Area" nillable="true" type="xs:string"/>
+          <xs:element name="ExprList" nillable="true" type="tns:ArrayOfExpression"/>
+          <xs:element name="IDList" nillable="true" type="tns:ArrayOfID"/>
+          <xs:element minOccurs="0" name="ParamList" nillable="true" type="tns:ArrayOfParameter"/>
+          <xs:element minOccurs="0" name="ExecID" type="xs:long"/>
+          <xs:element minOccurs="0" name="ProcessInstanceID" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CASEvaluate" nillable="true" type="tns:CASEvaluate"/>
+      <xs:complexType name="ArrayOfExpression">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Expression" nillable="true" type="tns:Expression"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfExpression" nillable="true" type="tns:ArrayOfExpression"/>
+      <xs:complexType name="Expression">
+        <xs:sequence>
+          <xs:element name="Value" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Expression" nillable="true" type="tns:Expression"/>
+      <xs:complexType name="ArrayOfID">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ID" nillable="true" type="tns:ID"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfID" nillable="true" type="tns:ArrayOfID"/>
+      <xs:complexType name="ID">
+        <xs:sequence>
+          <xs:element name="SysID" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ID" nillable="true" type="tns:ID"/>
+      <xs:complexType name="ArrayOfParameter">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Parameter" nillable="true" type="tns:Parameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfParameter" nillable="true" type="tns:ArrayOfParameter"/>
+      <xs:complexType name="Parameter">
+        <xs:sequence>
+          <xs:element name="Value" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Parameter" nillable="true" type="tns:Parameter"/>
+      <xs:complexType name="CASEvaluateOutput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ReturnMessage" nillable="true" type="tns:CASMessage"/>
+          <xs:element minOccurs="0" name="Area" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ExecID" type="xs:long"/>
+          <xs:element minOccurs="0" name="OutputList" nillable="true" type="tns:ArrayOfResult"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CASEvaluateOutput" nillable="true" type="tns:CASEvaluateOutput"/>
+      <xs:complexType name="CASMessage">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RetCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="RetMessage" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CASMessage" nillable="true" type="tns:CASMessage"/>
+      <xs:complexType name="ArrayOfResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Result" nillable="true" type="tns:Result"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfResult" nillable="true" type="tns:ArrayOfResult"/>
+      <xs:complexType name="Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SysID" type="xs:long"/>
+          <xs:element minOccurs="0" name="ResultList" nillable="true" type="tns:ArrayOfCASExpressionResult"/>
+          <xs:element minOccurs="0" name="ParamList" nillable="true" type="tns:ArrayOfParameter"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Result" nillable="true" type="tns:Result"/>
+      <xs:complexType name="ArrayOfCASExpressionResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="CASExpressionResult" nillable="true" type="tns:CASExpressionResult"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfCASExpressionResult" nillable="true" type="tns:ArrayOfCASExpressionResult"/>
+      <xs:complexType name="CASExpressionResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClarionResult" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CASExpressionResult" nillable="true" type="tns:CASExpressionResult"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="CASKernel_CicEval_InputMessage">
+    <wsdl:part name="parameters" element="tns:CicEval"/>
+  </wsdl:message>
+  <wsdl:message name="CASKernel_CicEval_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CicEvalResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="CASKernel">
+    <wsdl:operation name="CicEval">
+      <wsdl:input wsaw:Action="http://cic-software.de/CASKernel/CASKernel/CicEval" message="tns:CASKernel_CicEval_InputMessage"/>
+      <wsdl:output wsaw:Action="http://cic-software.de/CASKernel/CASKernel/CicEvalResponse" message="tns:CASKernel_CicEval_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_CASKernel" type="tns:CASKernel">
+    <wsp:PolicyReference URI="#WSHttpBinding_CASKernel_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="CicEval">
+      <soap12:operation soapAction="http://cic-software.de/CASKernel/CASKernel/CicEval" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CASService">
+    <wsdl:port name="WSHttpBinding_CASKernel" binding="tns:WSHttpBinding_CASKernel">
+      <soap12:address location="https://bnr13dev1.cic.muc/BAS/CASKernel.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://bnr13dev1.cic.muc/BAS/CASKernel.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://80.146.230.195/CASKernel/CASKernel.svc</con:endpoint><con:endpoint>https://bmwone-dev-cas/CASKernel/CASKernel.svc</con:endpoint><con:endpoint>https://bnr13dev1.cic.muc/BAS/CASKernel.svc</con:endpoint><con:endpoint>https://localhost/CASKernel/CASKernel.svc</con:endpoint></con:endpoints><con:operation id="2b81b900-844b-4112-acfd-94fb2c87da07" isOneWay="false" action="http://cic-software.de/CASKernel/CASKernel/CicEval" name="CicEval" bindingOperationName="CicEval" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="37c9c8e8-1fcb-4651-918f-06942cf411fe" name="SMSTEXT" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bnr13dev1.cic.muc/BAS/CASKernel.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:cas="http://cic-software.de/CASKernel" xmlns:cic="http://schemas.datacontract.org/2004/07/CIC.Bas.Services">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <cas:CicEval>\r
+       <!--Optional:-->
+     
+         <!--Optional:-->\r
+         <cas:eval>\r
+            <cic:Mandant>1</cic:Mandant>\r
+            <cic:SysWfuser>2148</cic:SysWfuser>\r
+            <cic:Area>ANGEBOT</cic:Area>\r
+            <cic:ExprList>\r
+               <!--Zero or more repetitions:-->\r
+               <cic:Expression>\r
+                  <cic:Value>_F('GET_CALLBACK_SMS','ANGEBOT',15575,2148)</cic:Value>\r
+               </cic:Expression>\r
+            </cic:ExprList>\r
+            <cic:IDList>\r
+               <!--Zero or more repetitions:-->\r
+               <cic:ID>\r
+                  <cic:SysID>15575</cic:SysID>\r
+               </cic:ID>\r
+            </cic:IDList>\r
+          
+         </cas:eval>\r
+      </cas:CicEval>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://cic-software.de/CASKernel/CASKernel/CicEval" addDefaultAction="true" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="08a98e0a-3e11-4675-9271-e9df816572fa" name="SMSTEXTANTRAG" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://HCEDEV.cic.muc/BAS/CASKernel.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:cas="http://cic-software.de/CASKernel" xmlns:cic="http://schemas.datacontract.org/2004/07/CIC.Bas.Services">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <cas:CicEval>\r
+       <!--Optional:-->
+     
+         <!--Optional:-->\r
+         <cas:eval>\r
+            <cic:Mandant>1</cic:Mandant>\r
+            <cic:SysWfuser>31280</cic:SysWfuser>\r
+            <cic:Area>ANTRAG</cic:Area>\r
+            <cic:ExprList>\r
+               <!--Zero or more repetitions:-->\r
+               <cic:Expression>\r
+                  <cic:Value>_F('GET_CALLBACK_SMS','ANTRAG',31280,2148)</cic:Value>\r
+               </cic:Expression>\r
+            </cic:ExprList>\r
+            <cic:IDList>\r
+               <!--Zero or more repetitions:-->\r
+               <cic:ID>\r
+                  <cic:SysID>31280</cic:SysID>\r
+               </cic:ID>\r
+            </cic:IDList>\r
+          
+         </cas:eval>\r
+      </cas:CicEval>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://cic-software.de/CASKernel/CASKernel/CicEval"/><con:wsrmConfig version="1.2"/></con:call><con:call id="a52f851f-a12d-4d53-b2e9-24f1a184b1b4" name="KLINIE" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://HCEDEV.cic.muc/BAS/CASKernel.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:cas="http://cic-software.de/CASKernel" xmlns:cic="http://schemas.datacontract.org/2004/07/CIC.Bas.Services">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <cas:CicEval>\r
+       <!--Optional:-->
+     
+         <!--Optional:-->\r
+         <cas:eval>\r
+            <cic:Mandant>1</cic:Mandant>\r
+            <cic:SysWfuser>58</cic:SysWfuser>\r
+            <cic:Area>KLINIE</cic:Area>\r
+            <cic:ExprList>\r
+               <!--Zero or more repetitions:-->\r
+               <cic:Expression>\r
+                  <cic:Value>_KLINIE:xtd('KLINIE',KLINIE:SYSKLINIE,'UTIL',0,'',2,0,today())</cic:Value>\r
+               </cic:Expression>\r
+            </cic:ExprList>\r
+            <cic:IDList>\r
+               <!--Zero or more repetitions:-->\r
+               <cic:ID>\r
+                  <cic:SysID>782</cic:SysID>\r
+               </cic:ID>\r
+            </cic:IDList>\r
+          
+         </cas:eval>\r
+      </cas:CicEval>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://cic-software.de/CASKernel/CASKernel/CicEval"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="BasicHttpBinding_CASKernel" type="wsdl" bindingName="{http://cic-software.de/CASKernel/CASService}BasicHttpBinding_CASKernel" soapVersion="1_1" anonymous="optional" definition="http://localhost:50139/CASKernel.svc?wsdl" id="9e4b6fcc-c75f-495a-93ef-c5a2e66c35c1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:description>ghjgj</con:description><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:50139/CASKernel.svc?wsdl"><con:part><con:url>http://localhost:50139/CASKernel.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CASService" targetNamespace="http://cic-software.de/CASKernel" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://cic-software.de/CASKernel" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://cic-software.de/CASKernel/CASService" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsdl:import namespace="http://cic-software.de/CASKernel/CASService" location="http://localhost:50139/CASKernel.svc?wsdl=wsdl0"/>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://cic-software.de/CASKernel/Imports">
+      <xsd:import schemaLocation="http://localhost:50139/CASKernel.svc?xsd=xsd0" namespace="http://cic-software.de/CASKernel"/>
+      <xsd:import schemaLocation="http://localhost:50139/CASKernel.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="http://localhost:50139/CASKernel.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CASKernel"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CASKernel_cicEval_InputMessage">
+    <wsdl:part name="parameters" element="tns:cicEval"/>
+  </wsdl:message>
+  <wsdl:message name="CASKernel_cicEval_OutputMessage">
+    <wsdl:part name="parameters" element="tns:cicEvalResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="CASKernel">
+    <wsdl:operation name="cicEval">
+      <wsdl:input wsaw:Action="http://cic-software.de/CASKernel/CASKernel/cicEval" message="tns:CASKernel_cicEval_InputMessage"/>
+      <wsdl:output wsaw:Action="http://cic-software.de/CASKernel/CASKernel/cicEvalResponse" message="tns:CASKernel_cicEval_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="CASService">
+    <wsdl:port name="BasicHttpBinding_CASKernel" binding="i0:BasicHttpBinding_CASKernel">
+      <soap:address location="http://localhost:50139/CASKernel.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:50139/CASKernel.svc?wsdl=wsdl0</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://cic-software.de/CASKernel/CASService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://cic-software.de/CASKernel/CASService" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://cic-software.de/CASKernel" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsdl:import namespace="http://cic-software.de/CASKernel" location="http://localhost:50139/CASKernel.svc?wsdl"/>
+  <wsdl:types/>
+  <wsdl:binding name="BasicHttpBinding_CASKernel" type="i0:CASKernel">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="cicEval">
+      <soap:operation soapAction="http://cic-software.de/CASKernel/CASKernel/cicEval" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:50139/CASKernel.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://cic-software.de/CASKernel" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://cic-software.de/CASKernel">
+  <xs:import schemaLocation="http://localhost:50139/CASKernel.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CASKernel"/>
+  <xs:element name="cicEval">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eval" nillable="true" type="q1:CASEvaluate" xmlns:q1="http://schemas.datacontract.org/2004/07/CASKernel"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cicEvalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cicEvalResult" nillable="true" type="q2:CASEvaluateOutput" xmlns:q2="http://schemas.datacontract.org/2004/07/CASKernel"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:50139/CASKernel.svc?xsd=xsd2</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CASKernel" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/CASKernel">
+  <xs:complexType name="CASEvaluate">
+    <xs:sequence>
+      <xs:element name="mandant" type="xs:long"/>
+      <xs:element name="sysWfuser" type="xs:long"/>
+      <xs:element name="area" nillable="true" type="xs:string"/>
+      <xs:element name="ExprList" nillable="true" type="tns:ArrayOfExpression"/>
+      <xs:element name="IDList" nillable="true" type="tns:ArrayOfID"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CASEvaluate" nillable="true" type="tns:CASEvaluate"/>
+  <xs:complexType name="ArrayOfExpression">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Expression" nillable="true" type="tns:Expression"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExpression" nillable="true" type="tns:ArrayOfExpression"/>
+  <xs:complexType name="Expression">
+    <xs:sequence>
+      <xs:element name="Value" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Expression" nillable="true" type="tns:Expression"/>
+  <xs:complexType name="ArrayOfID">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ID" nillable="true" type="tns:ID"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfID" nillable="true" type="tns:ArrayOfID"/>
+  <xs:complexType name="ID">
+    <xs:sequence>
+      <xs:element name="sysID" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ID" nillable="true" type="tns:ID"/>
+  <xs:complexType name="CASEvaluateOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="returnMessage" nillable="true" type="tns:CASMessage"/>
+      <xs:element minOccurs="0" name="area" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="execID" type="xs:long"/>
+      <xs:element minOccurs="0" name="outputList" nillable="true" type="tns:ArrayOfResult"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CASEvaluateOutput" nillable="true" type="tns:CASEvaluateOutput"/>
+  <xs:complexType name="CASMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="retCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="retMessage" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CASMessage" nillable="true" type="tns:CASMessage"/>
+  <xs:complexType name="ArrayOfResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Result" nillable="true" type="tns:Result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResult" nillable="true" type="tns:ArrayOfResult"/>
+  <xs:complexType name="Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sysID" type="xs:long"/>
+      <xs:element minOccurs="0" name="resultList" nillable="true" type="tns:ArrayOfCASExpressionResult"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Result" nillable="true" type="tns:Result"/>
+  <xs:complexType name="ArrayOfCASExpressionResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CASExpressionResult" nillable="true" type="tns:CASExpressionResult"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCASExpressionResult" nillable="true" type="tns:ArrayOfCASExpressionResult"/>
+  <xs:complexType name="CASExpressionResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="clarionResult" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CASExpressionResult" nillable="true" type="tns:CASExpressionResult"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:50139/CASKernel.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:50139/CASKernel.svc</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://cic-software.de/CASKernel/CASKernel/cicEval" name="cicEval" bindingOperationName="cicEval" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="3a680d7d-d6d3-4cc3-a045-2bca51607cf1"><con:description>jkll</con:description><con:settings/><con:call name="Nur zum Debuggen" id="9bc1d2e9-358b-4a51-8d3e-a9b60b84e214"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:50139/CASKernel.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cas="http://cic-software.de/CASKernel" xmlns:cas1="http://schemas.datacontract.org/2004/07/CASKernel">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cas:cicEval>
+         <!--Optional:-->
+         <cas:eval>
+            <cas1:mandant>1</cas1:mandant>
+            <cas1:sysWfuser>200</cas1:sysWfuser>
+            <cas1:area>PERSON</cas1:area>
+            <cas1:ExprList>
+               <!--Zero or more repetitions:-->
+               <cas1:Expression>
+                  <cas1:Value>_op:xtd('PERSON',PERSON:SysID,'',0)</cas1:Value>
+               </cas1:Expression>
+               <cas1:Expression>
+                  <cas1:Value>_f('CICH')</cas1:Value>
+               </cas1:Expression>
+            </cas1:ExprList>
+            <cas1:IDList>
+               <!--Zero or more repetitions:-->
+               <cas1:ID>
+                  <cas1:sysID>527969</cas1:sysID>
+               </cas1:ID>
+               <cas1:ID>
+                  <cas1:sysID>528511</cas1:sysID>
+               </cas1:ID>
+               <cas1:ID>
+                  <cas1:sysID>528511</cas1:sysID>
+               </cas1:ID>
+               <cas1:ID>
+                  <cas1:sysID>527969</cas1:sysID>
+               </cas1:ID>
+               <cas1:ID>
+                  <cas1:sysID>528511</cas1:sysID>
+               </cas1:ID>
+            </cas1:IDList>
+         </cas:eval>
+      </cas:cicEval>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://cic-software.de/CASKernel/CASKernel/cicEval"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

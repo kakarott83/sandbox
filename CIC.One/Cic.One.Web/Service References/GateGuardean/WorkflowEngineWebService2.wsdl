@@ -1,0 +1,3013 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:types="http://guardean.net/workflow/engine/wsdl2/types" xmlns:tns="http://guardean.net/workflow/engine/wsdl2" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="WorkflowEngineWebService2" targetNamespace="http://guardean.net/workflow/engine/wsdl2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+        This is the Web Service interface to the GUARDEAN Workflow Engine.
+
+        Every operation of this interface accepts a request and returns a
+        response message. The details of these messages are defined and
+        described in the imported XML schema.
+
+        $Revision: 26843 $
+    </wsdl:documentation>
+  <wsdl:types>
+    <xs:schema xmlns:tns="http://guardean.net/data/instance/schema" targetNamespace="http://guardean.net/data/instance/schema">
+      <xs:annotation>
+        <xs:documentation>
+            This schema describes a GUARDEAN data instance. A data instance is normally modelled
+            with a data model. The "entry point" to the data instance is the instance of its root
+            struct. The struct attributes values must be instances of structs, arrays or simple
+            types. The array element values must be instances of structs or simple types. This
+            hierarchy continues recursively.
+        </xs:documentation>
+      </xs:annotation>
+      <xs:element name="dataInstance" type="tns:dataInstanceType">
+        <xs:annotation>
+          <xs:documentation>The top XML element of the data instance.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:complexType name="dataInstanceType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dataModel" type="tns:dataModelType">
+            <xs:annotation>
+              <xs:documentation>
+                        Optional reference to the data model with which this data instance is
+                        modelled. For now this reference is only used for documentation purposes but
+                        in future this can change.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="root" type="tns:structType">
+            <xs:annotation>
+              <xs:documentation>
+                        Instance of the root struct of this data instance. This is the "entry point"
+                        to the data instance. This struct instance does not differ from the rest
+                        struct instances except that its name attribute must be left.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="dataModelType">
+        <xs:annotation>
+          <xs:documentation>Identifies the data model of this data instance.</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="name" type="xs:string" use="optional">
+          <xs:annotation>
+            <xs:documentation>The name of the data model of this instance.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:complexType>
+      <xs:complexType name="abstractValueType" abstract="true">
+        <xs:annotation>
+          <xs:documentation>
+                Abstract base type for all instances of a struct or simple type.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="name" type="xs:string" use="optional">
+          <xs:annotation>
+            <xs:documentation>
+                    The name of the attribute holding this value. This name must be empty only for
+                    the root struct instance and is required in all other places.
+                </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:complexType>
+      <xs:complexType name="arrayType">
+        <xs:annotation>
+          <xs:documentation>Represents an instance of an array.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractValueType">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="element" nillable="true" type="tns:abstractValueType">
+                <xs:annotation>
+                  <xs:documentation>
+                                List of the array elements. All elements in one array must be of the
+                                same type.
+                            </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="structType">
+        <xs:annotation>
+          <xs:documentation>Represents an instance of a struct.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractValueType">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="attribute" type="tns:abstractValueType">
+                <xs:annotation>
+                  <xs:documentation>
+                                List of the struct attribute instances.
+                            </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="stringType">
+        <xs:annotation>
+          <xs:documentation>Instance of a string attribute.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractValueType">
+            <xs:sequence>
+              <xs:element name="value" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation>The string value.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="longType">
+        <xs:annotation>
+          <xs:documentation>Instance of a long attribute.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractValueType">
+            <xs:sequence>
+              <xs:element name="value" nillable="true" type="xs:long">
+                <xs:annotation>
+                  <xs:documentation>The long value.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="doubleType">
+        <xs:annotation>
+          <xs:documentation>Instance of a double attribute.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractValueType">
+            <xs:sequence>
+              <xs:element name="value" nillable="true" type="xs:double">
+                <xs:annotation>
+                  <xs:documentation>The double value.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="booleanType">
+        <xs:annotation>
+          <xs:documentation>Instance of a boolean attribute.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractValueType">
+            <xs:sequence>
+              <xs:element name="value" nillable="true" type="xs:boolean">
+                <xs:annotation>
+                  <xs:documentation>The boolean value.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="dateTimeType">
+        <xs:annotation>
+          <xs:documentation>Instance of a dateTime attribute.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractValueType">
+            <xs:sequence>
+              <xs:element name="value" nillable="true" type="xs:dateTime">
+                <xs:annotation>
+                  <xs:documentation>The date time value.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="binaryType">
+        <xs:annotation>
+          <xs:documentation>Instance of a binary attribute.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractValueType">
+            <xs:sequence>
+              <xs:element name="value" nillable="true" type="xs:base64Binary">
+                <xs:annotation>
+                  <xs:documentation>The binary value.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://guardean.net/data/model/schema" targetNamespace="http://guardean.net/data/model/schema">
+      <xs:annotation>
+        <xs:documentation>
+            This schema describes a GUARDEAN data model. A data model defines types and referrs to
+            one of the struct types as its root type. The types can be devided in two sorts -
+            complex and simple. The only complex type is the struct. A struct is a collection of
+            attributes. The simple types can be devided in built-in and custom. The built-in simple
+            types are string, long, double, boolean, dateTime and binary. The custom simple types
+            are based on the built-in types and can apply an optional restriction on the values. The
+            "entry point" to the data model is its root type which must be a struct. A struct
+            contains attrubutes which must be of struct type, array or simple type. The array
+            ellements must be of struct type or simple type. The base simple types are build-in and
+            must not be defined. Note that the names of the data model types must not contain any
+            namespace syntax. I.e. they must not contain the ":" character.
+        </xs:documentation>
+      </xs:annotation>
+      <xs:element name="dataModel" type="tns:dataModelType">
+        <xs:annotation>
+          <xs:documentation>The top XML element of the data model.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:complexType name="dataModelType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="description" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Optional description of this data model.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="root" type="tns:rootType">
+            <xs:annotation>
+              <xs:documentation>
+                        Reference to the root type of this data model. The root type is the "entry
+                        point" of the data model and must be a struct.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="simpleType" type="tns:simpleTypeType">
+            <xs:annotation>
+              <xs:documentation>List of simple type definitions.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="struct" type="tns:structType">
+            <xs:annotation>
+              <xs:documentation>List of structs definitions.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="rootType">
+        <xs:attribute name="struct" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>
+                    The root struct of the data model.
+                </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:complexType>
+      <xs:complexType name="abstractType" abstract="true">
+        <xs:annotation>
+          <xs:documentation>Abstract base type for all data model types.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="description" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Optional description of the type.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>
+                    The type's name. This name is case sensitive. All types share the same naming
+                    space. This means that this name must not be any of the built-in types (string,
+                    long, double, boolean, dateTime, binary) neither any of the other types definied
+                    in this data model.
+                </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:complexType>
+      <xs:complexType name="structType">
+        <xs:annotation>
+          <xs:documentation>Definition of a struct type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractType">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="attribute" type="tns:attributeType">
+                <xs:annotation>
+                  <xs:documentation>
+                                List of the attribute definitions of this struct.
+                            </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="attributeType">
+        <xs:annotation>
+          <xs:documentation>Definition of an attribute of a struct.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="description" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Optional description of this attribute.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>
+                    The name of this attribute. This name is case sensitive.
+                </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="type" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>
+                    The type of this attribute. This must be one of the built-in types or one of the
+                    types defined in this data model.
+                </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="maxOccurs" type="tns:maxOccursType" use="optional">
+          <xs:annotation>
+            <xs:documentation>
+                    The maximum number of occurances of this attribute.
+
+                    If it is present, then the described attribute is considered an array.
+                    Otherwise, the described attribute is considered a non-array.
+
+                    If it is present and has the value -1, then the described attribute
+                    is considered an unbounded array - i.e. an array without length
+                    restriction.
+
+                    If it is present and has non-negative value (0, 1, 2, ...), then
+                    the described attribute is considered a bounded array -  i.e.
+                    an array with the given length.
+                </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="required" type="xs:boolean" use="optional">
+          <xs:annotation>
+            <xs:documentation>
+                   Indicates whether the attribute is required,
+                   i.e. its value must not be null.
+                   Default is false.
+                </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:complexType>
+      <xs:simpleType name="maxOccursType">
+        <xs:annotation>
+          <xs:documentation>
+                The type of the maxOccurs attribute in the "attributeType".
+                Allows values in the range -1, 0, 1, 2, ...
+                The value -1 specifies an unbounded array length.
+                The values 0, 1, 2, ... specify a bounded array length.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:int">
+          <xs:minInclusive value="-1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="simpleTypeType">
+        <xs:annotation>
+          <xs:documentation>Definition of a simple type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractType">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="enumeration" type="tns:abstractRestrictionValueType">
+                <xs:annotation>
+                  <xs:documentation>
+                                Enumeration restriction for this simple type. When the enumeration
+                                restriction elements list is not empty then only the listed values
+                                will be allowed for this simple type.
+                            </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="minInclusive" type="tns:abstractRestrictionValueType">
+                <xs:annotation>
+                  <xs:documentation>
+                                Only values bigger or equal to the value of this restriction will be
+                                allowed for this simple type. This restriction can be set only when
+                                the base type of this simple type is numeric or date.
+                            </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="maxInclusive" type="tns:abstractRestrictionValueType">
+                <xs:annotation>
+                  <xs:documentation>
+                                Only values smaller or equal to the value of this restriction will
+                                be allowed for this simple type. This restriction can be set only
+                                when the base type of this simple type is numeric or date.
+                            </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="baseType" type="tns:builtInSimpleTypeType" use="required">
+              <xs:annotation>
+                <xs:documentation>
+                            The base type of this simple type. This must be one of the built-in
+                            simple types.
+                        </xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="abstractRestrictionValueType" abstract="true">
+        <xs:annotation>
+          <xs:documentation>Base type for the restriction values.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="description" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Description of this restriction.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="stringType">
+        <xs:annotation>
+          <xs:documentation>Restriction on a string simlpe type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractRestrictionValueType">
+            <xs:sequence>
+              <xs:element name="value" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation>The string value.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="longType">
+        <xs:annotation>
+          <xs:documentation>Restriction on a long simlpe type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractRestrictionValueType">
+            <xs:sequence>
+              <xs:element name="value" nillable="true" type="xs:long">
+                <xs:annotation>
+                  <xs:documentation>The long value.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="doubleType">
+        <xs:annotation>
+          <xs:documentation>Restriction on a double simlpe type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractRestrictionValueType">
+            <xs:sequence>
+              <xs:element name="value" nillable="true" type="xs:double">
+                <xs:annotation>
+                  <xs:documentation>The double value.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="booleanType">
+        <xs:annotation>
+          <xs:documentation>Restriction on a boolean simlpe type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractRestrictionValueType">
+            <xs:sequence>
+              <xs:element name="value" nillable="true" type="xs:boolean">
+                <xs:annotation>
+                  <xs:documentation>The boolean value.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="dateTimeType">
+        <xs:annotation>
+          <xs:documentation>Restriction on a dateTime simlpe type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractRestrictionValueType">
+            <xs:sequence>
+              <xs:element name="value" nillable="true" type="xs:dateTime">
+                <xs:annotation>
+                  <xs:documentation>The dateTime value.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:simpleType name="builtInSimpleTypeType">
+        <xs:annotation>
+          <xs:documentation>Built-in simple types.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="string" />
+          <xs:enumeration value="long" />
+          <xs:enumeration value="double" />
+          <xs:enumeration value="boolean" />
+          <xs:enumeration value="dateTime" />
+          <xs:enumeration value="binary" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xsd:schema xmlns="http://ws.commons.guardean.net/schema" targetNamespace="http://ws.commons.guardean.net/schema" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:complexType name="nameValueType">
+        <xsd:annotation>
+          <xsd:documentation>
+                Associates a name and a value and allows to specify an explicit type
+                for the value.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" name="type" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>
+                        The type of this name/value pair. This type must be one of
+                        the XSD build-in datatypes. If not specified then the value is
+                        considered to be of string type.  An XSD type is for example
+                        'xsd:int', see the w3c schema documentation for further types.
+                    </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="value" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="nameValueListType">
+        <xsd:annotation>
+          <xsd:documentation>
+                A list of name value pairs.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="nameValue" type="nameValueType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="optionalEntryType">
+        <xsd:annotation>
+          <xsd:documentation>
+                Associates a name and a value and allows to specify an explicit type
+                for the value. In the future please use 'nameValueType' defined above
+                and don't use this type.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" name="type" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>
+                        The literal value that defines the type has to follow
+                        the XML-Schema type naming scheme.  An example is
+                        'xsd:string'.
+                    </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="value" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="optionalEntry">
+        <xsd:annotation>
+          <xsd:documentation>
+                A name and a list of associated values.
+                This element may be used to add
+                information in a name-value pair form.
+        
+                Do not use in new schemas, use instead optionalEntryType.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="name" type="xsd:string" />
+          <xsd:element maxOccurs="unbounded" name="value" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="systemMessageType">
+        <xsd:annotation>
+          <xsd:documentation>
+                Represents a message to the user.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="message" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>
+                        A text that can be displayed to an end user without any further
+                        processing.  The producer of this element is responsible for
+                        performing locale dependend processing, parameter replacements
+                        and so on.  The consumer has to use as is.
+                    </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="code" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>
+                        A unique identification of the message.  This element is to be
+                        used for programmatic processing of a system message.  It is
+                        intended to be used as a key for message dependent processing.
+                        Systems that produce this element have to offer a list of
+                        possible error codes.
+                    </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="parameter" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>
+                        An additional information that is part of this system message.
+                        Used in programmatic processing of the message.
+                    </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="systemMessage2Type">
+        <xsd:annotation>
+          <xsd:documentation>
+                Represents a message to the user.
+                This type is similar to systemMessageType but has additionally a cause chain. 
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="message" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>
+                        A text that can be displayed to an end user without any further
+                        processing.  The producer of this element is responsible for
+                        performing locale dependend processing, parameter replacements
+                        and so on.  The consumer has to use as is.
+                    </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="code" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>
+                        A unique identification of the message.  This element is to be
+                        used for programmatic processing of a system message.  It is
+                        intended to be used as a key for message dependent processing.
+                        Systems that produce this element have to offer a list of
+                        possible error codes.
+                    </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="parameter" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>
+                        An additional information that is part of this system message.
+                        Used in programmatic processing of the message.
+                    </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="cause" type="systemMessage2Type">
+            <xsd:annotation>
+              <xsd:documentation>
+                        The system message that caused this system message.
+                    </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="systemMessageListType">
+        <xsd:annotation>
+          <xsd:documentation>
+                List of system messages.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="systemMessage" type="systemMessageType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="moneyType">
+        <xsd:annotation>
+          <xsd:documentation>
+                Holds an amount of money with an ISO 4217 defined
+                currency code.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:attribute name="amount" type="xsd:double" use="required" />
+        <xsd:attribute name="currencyISO4217" type="xsd:token" use="required" />
+        <xsd:attribute name="exact" type="xsd:boolean" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>
+                    This attribute marks an instance of this type explicitly as
+                    being not exact.  This is optional, if it is not set this is
+                    interpreted as being 'true', i.e. exact.
+                </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:complexType>
+      <xsd:simpleType name="genderType">
+        <xsd:annotation>
+          <xsd:documentation>
+                Holds the gender of a person.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="MALE" />
+          <xsd:enumeration value="FEMALE" />
+          <xsd:enumeration value="UNKNOWN" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="stringList">
+        <xsd:annotation>
+          <xsd:documentation>
+                A simple lists of String values.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="value" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xs:schema xmlns:gen="http://ws.commons.guardean.net/schema" xmlns:dm="http://guardean.net/data/model/schema" xmlns:tns="http://guardean.net/workflow/engine/wsdl2/types" xmlns:inst="http://guardean.net/data/instance/schema" targetNamespace="http://guardean.net/workflow/engine/wsdl2/types">
+      <xs:annotation>
+        <xs:documentation>
+            This XML schema contains the request and response message types for the
+            operations of the workflow engine Web Service.
+
+            An operation may throw a system message fault to indicate an
+            error situation. The system message codes that can be thrown from all
+            operations are listed below (the parameters mentioned in the below
+            description mean parameters of the system message):
+
+            WORKFLOW/INTERNAL_ERROR
+                Indicates an unclassified internal error.
+                The parameters contain additional information about the error.
+
+            WORKFLOW/MODULE_ACCESS_FAILED
+                Indicates that the access to a module has failed.
+                param1 = The name of the module to which the access has failed.
+
+            WORKFLOW/AUTHENTICATION_FAILED
+                Indicates that the user could not be authenticated. I.e
+                its username or password are wrong.
+                param1 = The name of the user that could not be authenticated.
+
+            WORKFLOW/AUTHORIZATION_FAILED
+                Indicates that the user is not authorized to execute the
+                requested operation.
+                param1 = The name of the user that is not authorized.
+                param2 = The name of the operation that is not authorized.
+
+            The system message codes that are specific for the operations are
+            described in their request description.
+
+            $Revision: 35317 $
+        </xs:documentation>
+      </xs:annotation>
+      <xs:element name="deployWorkflowRequest" type="tns:deployWorkflowRequestType" />
+      <xs:element name="deployWorkflowResponse" type="tns:deployWorkflowResponseType" />
+      <xs:element name="updateDeployedWorkflowRequest" type="tns:updateDeployedWorkflowRequestType" />
+      <xs:element name="updateDeployedWorkflowResponse" type="tns:updateDeployedWorkflowResponseType" />
+      <xs:element name="listDeployedWorkflowsRequest" type="tns:listDeployedWorkflowsRequestType" />
+      <xs:element name="listDeployedWorkflowsResponse" type="tns:listDeployedWorkflowsResponseType" />
+      <xs:element name="listExecutedWorkflowsRequest" type="tns:listExecutedWorkflowsRequestType" />
+      <xs:element name="listExecutedWorkflowsResponse" type="tns:listExecutedWorkflowsResponseType" />
+      <xs:element name="undeployWorkflowRequest" type="tns:undeployWorkflowRequestType" />
+      <xs:element name="undeployWorkflowResponse" type="tns:undeployWorkflowResponseType" />
+      <xs:element name="executeWorkflowRequest" type="tns:executeWorkflowRequestType" />
+      <xs:element name="executeWorkflowResponse" type="tns:executeWorkflowResponseType" />
+      <xs:element name="startWorkflowRequest" type="tns:startWorkflowRequestType" />
+      <xs:element name="startWorkflowResponse" type="tns:startWorkflowResponseType" />
+      <xs:element name="hasWorkflowExecutionEndedRequest" type="tns:hasWorkflowExecutionEndedRequestType" />
+      <xs:element name="hasWorkflowExecutionEndedResponse" type="tns:hasWorkflowExecutionEndedResponseType" />
+      <xs:element name="getWorkflowExecutionRequest" type="tns:getWorkflowExecutionRequestType" />
+      <xs:element name="getWorkflowExecutionResponse" type="tns:getWorkflowExecutionResponseType" />
+      <xs:element name="findPathsRequest" type="tns:findPathsRequestType" />
+      <xs:element name="findPathsResponse" type="tns:findPathsResponseType" />
+      <xs:element name="findWorkflowExecutionsRequest" type="tns:findWorkflowExecutionsRequestType" />
+      <xs:element name="findWorkflowExecutionsResponse" type="tns:findWorkflowExecutionsResponseType" />
+      <xs:element name="deleteWorkflowExecutionRequest" type="tns:deleteWorkflowExecutionRequestType" />
+      <xs:element name="deleteWorkflowExecutionResponse" type="tns:deleteWorkflowExecutionResponseType" />
+      <xs:element name="deleteWorkflowExecutionsRequest" type="tns:deleteWorkflowExecutionsRequestType" />
+      <xs:element name="deleteWorkflowExecutionsResponse" type="tns:deleteWorkflowExecutionsResponseType" />
+      <xs:element name="systemMessage" type="gen:systemMessage2Type" />
+      <xs:complexType name="deployWorkflowRequestType">
+        <xs:annotation>
+          <xs:documentation>
+                Deploys a workflow recursively, i.e. sub-workflows will also
+                be deployed automatically (in case they are still not deployed).
+                If the deployment fails (e.g. the main- or the
+                sub-workflows cannot be deployed) then nothing at all will
+                be deployed.
+
+                System messages:
+
+                WORKFLOW/INVALID_WORKFLOW_DEFINITION
+                    Indicates that the workflow or sub-workflow passed for deployment
+                    has an invalid workflow definition.
+                    param1 = The name of the invalid workflow.
+
+                WORKFLOW/WORKFLOW_ALREADY_DEPLOYED
+                    Indicates that the given main workflow is already deployed.
+                    param1 = The name of the workflow that is already deployed.
+
+                WORKFLOW/EXPECTED_QUALIFIED_WORKFLOW_NAME
+                    Indicates that the given workflow name is not qualified,
+                    where a qualified workflow name was expected.
+                    param1 = The unqualified workflow name that was passed.
+
+                WORKFLOW/DEFINITION_MAPPING_FAILED
+                    Indicates that a node data model mapping failed.
+                    param1 = The name of workflow where the mapping failed.
+                    param2 = Name of the workflow node where the mapping failed.
+                    param3 = Indicates whether the failure occurred in the request
+                             or in the response mapping.
+                    param4 = The mapping path of the source datamodel.
+                    param5 = The mapping path of the target datamodel.
+                    param6 = The message of the mapping error that caused this failure.
+
+                WORKFLOW/FLAVOUR_METADATA_RETRIEVAL_FAILED
+                    Indicates that the flavour metadata cannot be retrieved.
+                    param1 = The service ID of the flavour that could not be retrieved.
+                    param2 = The flavour name that could not be retrieved.
+                    param3 = The message of the retrieval error that caused this failure.
+
+                WORKFLOW/INVALID_WORKFLOW_NAME
+                    Indicates that the workflow name is invalid.
+                    param1 = The name of the workflow.
+                    param2 = An explanation why the workflow name is invalid.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="workflowName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The qualified name of the workflow definition file that has to be deployed.
+                        The workflow definition file must be present in the file storage.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deployWorkflowResponseType">
+        <xs:annotation>
+          <xs:documentation>
+                The response from the workflow deployment operation.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="workflow" type="tns:workflowType">
+            <xs:annotation>
+              <xs:documentation>
+                        A list of deployment information on the workflow
+                        and all direct or indirect subworkflows.
+                        If the workflow contains no subworkflows then the list will contain
+                        only a single element for the workflow.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateDeployedWorkflowRequestType">
+        <xs:annotation>
+          <xs:documentation>
+                Updates an already deployed workflow.
+                The persistence behaviour of a deployed workflow can be changed with this operation.
+
+                System messages:
+
+                WORKFLOW/WORKFLOW_NOT_FOUND
+                    Indicates that the workflow engine can not find the given workflow.
+                    param1 = The name of the workflow that was not found.
+
+                WORKFLOW/EXPECTED_QUALIFIED_WORKFLOW_NAME
+                    Indicates that the workflow name given in the request was not qualified,
+                    but a qualified workflow name was expected.
+                    param1 = The unqualified workflow name that was given in the request.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="workflowName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The qualified name of a deployed workflow.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="persist" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>
+                        Whether the workflow executions must be persisted. A workflow execution
+                        that is persisted remains in the workflow engine storage and can be
+                        retrieved or deleted at a later point in time.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateDeployedWorkflowResponseType">
+        <xs:annotation>
+          <xs:documentation>
+                This response is empty on success.
+                In case of an error a system message is thrown.
+            </xs:documentation>
+        </xs:annotation>
+      </xs:complexType>
+      <xs:complexType name="listDeployedWorkflowsRequestType">
+        <xs:annotation>
+          <xs:documentation>
+                Lists the deployed workflows.
+            </xs:documentation>
+        </xs:annotation>
+      </xs:complexType>
+      <xs:complexType name="listDeployedWorkflowsResponseType">
+        <xs:annotation>
+          <xs:documentation>
+                Returns deployment information for all deployed workflows.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="workflow" type="tns:workflowType">
+            <xs:annotation>
+              <xs:documentation>
+                        List of the deployment information for all deployed workflows.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="listExecutedWorkflowsRequestType">
+        <xs:annotation>
+          <xs:documentation>
+                Lists the executed workflows, i.e. the workflows for which at
+                least one execution is saved in the workflow engine storage.
+                It does not matter if the workflow execution is still running or
+                is already ended.
+
+                For the returned workflows it is guaranteed that the findWorkflowExecutions
+                operation will return at least one order, if the orders have not been deleted in
+                the meantime.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="archiveName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The name of the archive where to search. If not specified
+                        then the search will be done in the platform 
+                        storage. If the archive does not exist or can not be 
+                        opened then an error will be returned.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="listExecutedWorkflowsResponseType">
+        <xs:annotation>
+          <xs:documentation>
+                List of the available workflows.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="workflowName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        List of the qualified names of executed workflows.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="undeployWorkflowRequestType">
+        <xs:annotation>
+          <xs:documentation>
+                Undeploys the workflow that is specified with its qualified name.
+                The workflow definition file in the FileStorage will not be removed.
+
+                All running workflow executions of the undeployed workflow version
+                will be unaffected and will continue their execution. However no new executions
+                can be started for the undeployed workflow.
+
+                If the passed workflow is referenced by any other deployed
+                workflow it cannot be undeployed and the undeploy will fail with
+                an UNDEPLOY_FAILED_WORKFLOW_REFERENCED error.
+
+                System messages:
+
+                WORKFLOW/WORKFLOW_NOT_FOUND
+                    Indicates that the workflow engine can not find the given
+                    workflow.
+                    param1 = The name of the workflow that was not found.
+
+                WORKFLOW/EXPECTED_QUALIFIED_WORKFLOW_NAME
+                    Indicates that the workflow name given in the request was not qualified,
+                    but a qualified workflow name was expected.
+                    param1 = The unqualified workflow name that was given.
+
+                WORKFLOW/UNDEPLOY_FAILED_WORKFLOW_REFERENCED
+                    Indicates that a workflow cannot be undeployed because
+                    it is referenced by another deployed workflow.
+                    param1 = The qualified name of the deployed workflow that
+                             references the workflow that must be undeployed.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="workflowName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The qualified name of the workflow that has to be undeployed.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="undeployWorkflowResponseType">
+        <xs:annotation>
+          <xs:documentation>
+                The response from undeploying a workflow.
+                This response is empty on success.
+                In case of an error a system message is thrown.
+            </xs:documentation>
+        </xs:annotation>
+      </xs:complexType>
+      <xs:complexType name="executeWorkflowRequestType">
+        <xs:annotation>
+          <xs:documentation>
+                Executes a workflow synchronously. The invoker is blocked until
+                the workflow execution ends and a response or a system message
+                is returned.
+
+                Note that this operation is synchronous. If the given workflow
+                is asynchronous, then the system message EXPECTED_SYNCHRONOUS_WORKFLOW
+                will be raised.
+
+                Also note that the workflow must not contain a FORK node, since this
+                qualifies a workflow as asynchronous.
+
+                If the execution succeeded, the response will contain the result key
+                and the responseStruct produced from the workflow execution.
+
+                If during workflow execution an
+                unrecoverable failure is detected, then the operation will return a
+                response containing the system message that describes the reason
+                for the failure. In this case workflow execution information
+                will be returned, but the contained result key and responseStruct
+                are not set.
+
+                If the workflow execution could not start at all, then one of the
+                following system messages will be thrown and no response will be returned.
+
+                System messages:
+
+                WORKFLOW/WORKFLOW_NOT_FOUND
+                    Indicates that the workflow engine cannot find the given
+                    workflow.
+                    param1 = The name of the workflow that was not found.
+
+                WORKFLOW/INCOMPATIBLE_DATA_INSTANCE
+                    Indicates that the supplied data instance is not compatible
+                    with the data model of the workflow.
+                    param1 = Message describing why the data instance is not compatible.
+
+                WORKFLOW/INVALID_WORKFLOW_REQUEST
+                    Indicates that the workflow request is not valid.
+                    param1 = The qualified name of the workflow that had to be executed.
+                    param2 = Message describing why the request is invalid.
+
+                WORKFLOW/EXPECTED_SYNCHRONOUS_WORKFLOW
+                    Indicates that the workflow given in the request is asynchronous but
+                    this operation expects a synchronous workflow.
+                    param1 = The qualified name of the workflow given in the request.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="data" type="tns:workflowExecutionDataType">
+            <xs:annotation>
+              <xs:documentation>
+                        The data with which to execute the workflow.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="executeWorkflowResponseType">
+        <xs:annotation>
+          <xs:documentation>
+                The result of the synchronous workflow execution.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="workflowExecution" type="tns:workflowExecutionType">
+            <xs:annotation>
+              <xs:documentation>
+                        Information about the workflow execution.  The granularity
+                        depends on the detail level specified in the request.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="startWorkflowRequestType">
+        <xs:annotation>
+          <xs:documentation>
+                Starts an asynchronous execution of the workflow.
+
+                The "endTime" attribute in the response can be used to check if the workflow
+                execution has ended.
+
+                1) If the workflow execution ended before the given timeout was reached then
+                the end state of the workflow execution is returned. In this case the "endTime"
+                attribute in the response is filled.
+
+                2) If the timeout was reached and the workflow execution is still ongoing then
+                the current state of the workflow execution is returned. In this case the "endTime"
+                attribute in the response is not filled and the workflow execution continues
+                asynchronously. The "hasWorkflowExecutionEnded" and "getWorkflowExecution"
+                operations can be used to check if the workflow has finished and to retrieve
+                the result.
+
+                If the given timeout is 0 or less then the current state of the workflow
+                execution will be immediatelly returned without waiting. Note that it is
+                possible that the workflow execution has ended (if it was very quick).
+
+                The given workflow must be deployed as persisted, otherwise the
+                EXPECTED_PERSISTENT_WORKFLOW system message will be raised when executing
+                this operation.
+
+                The workflow execution will be persisted in the WorkflowEngine database.
+                Using the workflow execution ID the caller can check
+                if the workflow execution has ended and can retrieve the workflow
+                execution information as soon as this is the case.
+                This assumes that the workflow is persisted, otherwise
+                the EXPECTED_PERSISTENT_WORKFLOW system message will be thrown.
+
+                System messages:
+
+                WORKFLOW/WORKFLOW_NOT_FOUND
+                    Indicates that the given workflow is not deployed.
+                    param1 = The name of the workflow that was not found.
+
+                WORKFLOW/INCOMPATIBLE_DATA_INSTANCE
+                    Indicates that the supplied data instance is not compatible
+                    with the workflow data model.
+                    param1 = Message describing why the data instance is not compatible.
+
+                WORKFLOW/EXPECTED_PERSISTENT_WORKFLOW
+                    Indicates that the given workflow is not persistent.
+                    Only persistent workflows can be started asynchronously.
+                    param1 = The qualified name of the given workflow.
+
+                WORKFLOW/INVALID_WORKFLOW_REQUEST
+                    Indicates that the workflow request is not valid.
+                    param1 = The qualified name of the workflow that had to be executed.
+                    param2 = Message describing why the request is invalid.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="data" type="tns:workflowExecutionDataType">
+            <xs:annotation>
+              <xs:documentation>
+                        Main information needed for workflow execution.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="timeoutMillis" type="xs:long">
+            <xs:annotation>
+              <xs:documentation>
+                        The timeout in milliseconds for the workflow execution.
+
+                        If the workflow execution finishes before the timeout is reached
+                        then the workflow execution result will be returned according
+                        to the specified detailLevel.
+
+                        Otherwise, if the workflow execution does not end before the timeout
+                        is reached, then only the workflow execution ID will be returned and the
+                        workflow execution will continue asynchronously.
+
+                        If the given timeout is 0 or less then the current state of the workflow
+                        execution will be immediatelly returned without waiting. Note that it is
+                        possible that the workflow execution has ended (if it was very quick).
+
+                        Note that the timeout is considered as best-effort. It is
+                        not guaranteed that the response will be sent exactly on the
+                        given timeout. Note also that the timeout is implemented
+                        with polling on regular intervals to check if the order 
+                        has finished. Therefore the order will not be returned 
+                        immediatelly when it has finished. It will be returned 
+                        at the next poll interval. Therefore do not rely that 
+                        the response will be returned on the exact millisecond 
+                        of the timeout or on the exact millisecond when the 
+                        order has finished.
+
+                        Note that if the timeout is larger than the web service or the socket
+                        connection timeout then the corresponding infrastructure error may be
+                        thrown from the application server before the given timeout is reached.
+                        Short timeouts, i.e. less than a minute, should be preferred.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="startWorkflowResponseType">
+        <xs:annotation>
+          <xs:documentation>
+                The response from an asynchronous workflow start.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="workflowExecution" type="tns:workflowExecutionType">
+            <xs:annotation>
+              <xs:documentation>
+                        Information about the workflow execution according to
+                        the detail level specified in the request.
+
+                        If the workflow execution has ended then the endTime parameter is set,
+                        otherwise the endTime is not returned.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="hasWorkflowExecutionEndedRequestType">
+        <xs:annotation>
+          <xs:documentation>
+                Returns whether the execution of the workflow execution with the given ID
+                has ended.
+
+                System messages:
+
+                WORKFLOW/WORKFLOW_EXECUTION_NOT_FOUND
+                    Indicates that the workflow engine cannot find the given
+                    workflow execution.
+                    param1 = The unknown ID.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="workflowExecutionId" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The ID of a workflow execution that has to be checked.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="hasWorkflowExecutionEndedResponseType">
+        <xs:annotation>
+          <xs:documentation>
+                The response from checking whether a workflow execution has ended.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="ended" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>
+                        Whether the workflow execution given in the request is ended.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getWorkflowExecutionRequestType">
+        <xs:annotation>
+          <xs:documentation>
+                Returns information about the workflow execution with the given ID.
+                This operation can be invoked for running and for finished
+                workflow executions.
+
+                Note that depending on the expected workflow execution size,
+                the detail level of the returned
+                information should be carefully considered. If the workflow execution
+                contains large amounts of information and the requested detail level is
+                configured to return full detail information then this may cause high
+                CPU and memory load on the server and the client side and can lead
+                in extreme cases to out of memory situations. Thus this
+                operation should be combined for large workflow execution data with the "findPaths" operation and
+                a careful selection of the detail level.
+
+                Also note that the sub-workflow executions are not returned recursively.
+                Instead these can be retrieved with the recursive execution of this operation
+                for each sub-workflow ID.
+
+                If the workflow execution was successful then the response contains
+                the workflow execution result key. If the workflow execution ended with error, then the response
+                contains the error key. In this case the result key will be null.
+
+                System messages:
+
+                WORKFLOW/WORKFLOW_EXECUTION_NOT_FOUND
+                    Indicates that the workflow engine cannot find the given
+                    workflow execution.
+                    param1 = The ID of the workflow execution that was not found.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="archiveName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The name of the archive where to search. If not specified
+                        then the search will be done in the platform 
+                        storage. If the archive does not exist or can not be 
+                        opened then an error will be returned.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="workflowExecutionId" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The ID of the workflow execution.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="detailLevel" type="tns:detailLevelType">
+            <xs:annotation>
+              <xs:documentation>
+                        How much detail about the root execution path to return.
+                        Note that the child execution paths can be retrieved with
+                        the "findPaths" operation.
+
+                        If not specified then minimum details will be returned.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getWorkflowExecutionResponseType">
+        <xs:annotation>
+          <xs:documentation>
+                The response from retrieving information about a workflow execution.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="workflowExecution" type="tns:workflowExecutionType">
+            <xs:annotation>
+              <xs:documentation>
+                        Information about the workflow execution according to
+                        the detail level specified in the request.
+                        If the workflow execution is still running then the endTime as well as
+                        the resultKey, errorKey and the systemMessage are not returned.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findPathsRequestType">
+        <xs:annotation>
+          <xs:documentation>
+                Returns information about the execution paths of one workflow
+                matching the given criteria.
+
+                All passed filter criteria will be joined using the AND operator.
+                If a filter criterion is not set, it will be ignored.
+
+                Note that if the found execution paths
+                contain a large amount of information and the requested detail level is
+                configured to return detailed information then this may slow down
+                the server and the client and even can lead
+                to out of memory error. Therefore the filter and the detail level
+                should be specified with care.
+
+                Sub-workflow executions are not recursively returned.
+                Instead these can be retrieved with the getWorkflowExecution operation
+                supplying the sub-workflow execution ID.
+
+                System messages:
+
+                WORKFLOW/WORKFLOW_EXECUTION_NOT_FOUND
+                    Indicates that the workflow engine cannot find the
+                    workflow execution with the given ID.
+                    param1 = The ID of the workflow execution that was not found.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="archiveName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The name of the archive where to search. If not specified
+                        then the search will be done in the platform 
+                        storage. If the archive does not exist or can not be 
+                        opened then an error will be returned.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="workflowExecutionId" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The ID of the workflow execution for which to retrieve
+                        the execution paths.
+                        If only this field is specified then all paths of the workflow will be
+                        returned.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="pathId" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The ID of an execution path for which to retrieve information.
+
+                        If this criterion is specified then all other criteria are
+                        ignored.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="parentPathId" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The ID of the parent execution path - i.e. the ID
+                        of the path that contains the FORK node that
+                        started this path.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="parentNodeExecutionIndex" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>
+                        The zero-based index of the parent FORK node execution inside
+                        the parent path. This criterion is considered only if
+                        the "parentPathId" criterion is specified.
+                        If this criterion is not specified but the
+                        "parentPathId" criterion is specified then
+                        all child paths of the specified parent path will be
+                        returned.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="pathKey" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The transition key with which the path was created
+                        from the parent FORK node. This key is unique among the
+                        sibling paths started by the parent FORK node.
+                        This criterion is only considered if
+                        the "parentPathId" and the "parentNodeExecutionIndex"
+                        criteria are specified.
+                        If this criterion is not specified but the
+                        "parentPathId" and the "parentNodeExecutionIndex"
+                        criteria are specified then
+                        all child paths of the specified parent path at the specified
+                        parent node will be returned.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="detailLevel" type="tns:detailLevelType">
+            <xs:annotation>
+              <xs:documentation>
+                        How much detail on the execution path to return.
+
+                        If not specified then minimum details will be returned.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findPathsResponseType">
+        <xs:annotation>
+          <xs:documentation>
+                The response from retrieving information about an execution path.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="path" type="tns:pathType">
+            <xs:annotation>
+              <xs:documentation>
+                        List of the execution paths matching the specified filter criteria.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findWorkflowExecutionsRequestType">
+        <xs:annotation>
+          <xs:documentation>
+                Returns information about workflow executions matching the
+                given filter criteria.
+                All set filter criteria will be joined using the AND operator.
+                Empty filter criteria are ignored.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="archiveName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The name of the archive where to search. If not specified
+                        then the search will be done in the platform 
+                        storage. If the archive does not exist or can not be 
+                        opened then an error will be returned.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="workflowExecutionId" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        A list of workflow execution IDs to be returned.
+
+                        If this criterion is specified then all other criteria are
+                        ignored.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="workflowName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The name of the workflow. If this is a qualified workflow name then only the
+                        executions of the specified workflow version will be returned. If this is an
+                        unqualified workflow name then executions of all versions of the specified
+                        workflow will be returned.
+
+                        Note that the workflow does not need to be currently deployed.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="startedAfter" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>
+                        Only workflow executions started after or at the passed time are returned.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="startedBefore" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>
+                        Only workflow executions started before or at the passed time will be
+                        returned.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="state" type="tns:workflowExecutionStateType">
+            <xs:annotation>
+              <xs:documentation>
+                        Only workflow executions in the given state will be returned.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="subState" type="tns:workflowExecutionSubStateType">
+            <xs:annotation>
+              <xs:documentation>
+                        Only workflow executions in the given sub state will be returned.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="externalIdentifier" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        Only workflow executions having the given external identifier
+                        will be returned.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" default="false" name="returnSubWorkflowExecutions" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>
+                        If this flag is "true" then sub-workflow executions
+                        are included in the result.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="parentId" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        Only workflow executions with the given parent ID
+                        will be returned.
+
+                        Note that if this filter element is set then the filter
+                        element "returnSubWorkflowExecutions" is considered "true",
+                        i.e. any value specified in it is ignored.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="contentFilter" type="tns:contentFilterType">
+            <xs:annotation>
+              <xs:documentation>
+                        Specifies filter based on the workflow execution content.
+                        
+                        Only workflow executions satisfying this filter will
+                        be returned. If this filter is not specified then
+                        it will be ignored.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="sort" type="tns:sortType">
+            <xs:annotation>
+              <xs:documentation>
+                        Specifies the sort order of the returned workflow
+                        execution, ascending or descending by their start time.
+
+                        If this is not passed then the list is sorted descending
+                        by start time, i.e. the last workflow executions will be first.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="maxHits" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>
+                        Maximum number of records to return in the result.
+                        If this value is not set, the server threshold will
+                        be used. Note that this parameter must be handled with
+                        care. Extremely large values could slow down or even
+                        break the server functionality, as all records must be
+                        returned in one call.
+
+                        Note that this filter is applied on the sorted result set
+                        (see the "sort" field). For example if this filter is set
+                        to 100 and the sorting is descending then the last 100
+                        workflow executions will be returned.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="returnTotalResultCount" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>
+                        Whether to return the total number of workflow execution that
+                        match the specified filter. The field maxHits in
+                        the request doesn't affect this total count.
+
+                        If this flag is set to true then the totalResultCount in
+                        the response will be filled. Calculating this
+                        total is expensive and will slow down the server if the result
+                        set is large.
+
+                        If this flag is not set then the field totalResultCount
+                        will be not returned in the response.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="detailLevel" type="tns:detailLevelType">
+            <xs:annotation>
+              <xs:documentation>
+                        How much detail about the root execution path to return.
+                        Note that this operation may return many workflow executions.
+                        Returning a lot of detail for each workflow execution may
+                        slow down the server or even cause out of memory error.
+                        Therefore the detail level should be specified with care.
+
+                        If not specified then minimum details will be returned.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="contentFilterType">
+        <xs:annotation>
+          <xs:documentation>
+                Specifies filters on workflow executions based on 
+                their content.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="pathFilter" type="tns:pathFilterType">
+            <xs:annotation>
+              <xs:documentation>
+                        Set of path filters.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="pathFilterType">
+        <xs:annotation>
+          <xs:documentation>
+                Specifies filter on a data model path. E.g.: 
+                '/applicant/name' EQUALS 'Donald'.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="path" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The path that is tested in the filter. E.g. 
+                        '/applicant/name'.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="pathType" type="dm:builtInSimpleTypeType">
+            <xs:annotation>
+              <xs:documentation>
+                        The type of the path.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="operator" type="tns:operatorType">
+            <xs:annotation>
+              <xs:documentation>
+                        The operator for the filter condition. E.g. EQUALS.
+                        Note that the operators supported by the filter depend 
+                        on the path type.
+
+                        TODO (daskalot) Document the dependency details.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="operand" nillable="true" type="tns:abstractOperandType">
+            <xs:annotation>
+              <xs:documentation>
+                        The value operands for the condition operator. E.g. 
+                        'Donald'.
+                        
+                        Only the following types are supported as operands:
+                            inst:stringType
+                            inst:longType
+                            inst:doubleType
+                            inst:booleanType
+                            inst:dataTimeType
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="operatorType">
+        <xs:annotation>
+          <xs:documentation>
+                Enumeration of the supported conditional operators.
+                Their meaning is same as in the SQL. 
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="EQUAL" />
+          <xs:enumeration value="NOT_EQUAL" />
+          <xs:enumeration value="LIKE" />
+          <xs:enumeration value="NULL" />
+          <xs:enumeration value="NOT_NULL" />
+          <xs:enumeration value="LESS" />
+          <xs:enumeration value="LESS_OR_EQUAL" />
+          <xs:enumeration value="GREATER" />
+          <xs:enumeration value="GREATER_OR_EQUAL" />
+          <xs:enumeration value="IN" />
+          <xs:enumeration value="BETWEEN" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="abstractOperandType" abstract="true">
+        <xs:annotation>
+          <xs:documentation>
+                Base type for all operand types.
+            </xs:documentation>
+        </xs:annotation>
+      </xs:complexType>
+      <xs:complexType name="stringOperandType">
+        <xs:annotation>
+          <xs:documentation>
+                A string operand.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractOperandType">
+            <xs:sequence>
+              <xs:element name="value" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="longOperandType">
+        <xs:annotation>
+          <xs:documentation>
+                A long operand.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractOperandType">
+            <xs:sequence>
+              <xs:element name="value" nillable="true" type="xs:long" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="doubleOperandType">
+        <xs:annotation>
+          <xs:documentation>
+                A double operand.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractOperandType">
+            <xs:sequence>
+              <xs:element name="value" nillable="true" type="xs:double" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="booleanOperandType">
+        <xs:annotation>
+          <xs:documentation>
+                A boolean operand.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractOperandType">
+            <xs:sequence>
+              <xs:element name="value" nillable="true" type="xs:boolean" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="dateTimeOperandType">
+        <xs:annotation>
+          <xs:documentation>
+                A date-time operand.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:abstractOperandType">
+            <xs:sequence>
+              <xs:element name="value" nillable="true" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="findWorkflowExecutionsResponseType">
+        <xs:annotation>
+          <xs:documentation>
+                The response from finding workflow executions.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="workflowExecution" type="tns:workflowExecutionType">
+            <xs:annotation>
+              <xs:documentation>
+                        List of the workflow executions matching the filter criteria
+                        and the specified detail level passed in the request.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="moreHits" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>
+                        Whether more result records are available but
+                        were not returned because the maximum count of
+                        result records was reached (either the given
+                        maximum in the request was reached or the server
+                        threshold maximum was reached).
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="totalResultCount" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>
+                        The total number of workflowExecutions that match the filter
+                        given in the request.
+                        This field is only returned if the flag "totalResultCount" was
+                        set to 'true' in the request.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteWorkflowExecutionRequestType">
+        <xs:annotation>
+          <xs:documentation>
+                Deletes the workflow execution associated with the given ID
+                from the WorkflowEngine database.
+
+                Sub-workflows and the service execution related to
+                the given workflow execution will be deleted recursively.
+
+                The workflow execution can be in running or ended state.
+
+                System messages:
+
+                WORKFLOW/WORKFLOW_EXECUTION_NOT_FOUND
+                    Indicates that the workflow engine cannot find the given
+                    workflow execution.
+                    param1 = The unknown ID.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="workflowExecutionId" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The ID of the workflow execution to be deleted.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteWorkflowExecutionResponseType">
+        <xs:annotation>
+          <xs:documentation>
+                The response from deleting the workflow execution.
+                This response is empty on success. A system message is returned
+                in case of an error.
+            </xs:documentation>
+        </xs:annotation>
+      </xs:complexType>
+      <xs:complexType name="deleteWorkflowExecutionsRequestType">
+        <xs:annotation>
+          <xs:documentation>
+                Deletes the workflow executions specified with the given filter.
+
+                The filter specifies the root workflow executions to delete.
+                All sub-workflow executions and service executions are
+                deleted recursively.
+
+                All set filter criteria will be joined using the AND operator.
+                Empty filter criteria are ignored.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="workflowExecutionId" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        List of root workflow execution IDs that should be deleted.
+                        Mind that IDs that refer to non-root workflow executions
+                        (i.e. executions that have a parent) will be ignored. To delete
+                        sub-workflows use the deleteWorkflowExecution operation.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="workflowName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The name of the workflow. If this is a qualified workflow name then only the
+                        executions of the specified workflow version will be deleted. If this is
+                        an unqualified workflow name then the executions of all versions of the specified
+                        workflow are deleted.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="startedAfter" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>
+                        Only workflow executions started after or at this time will be deleted.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="startedBefore" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>
+                        Only workflow executions started before or at this time will be
+                        deleted.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="state" type="tns:workflowExecutionStateType">
+            <xs:annotation>
+              <xs:documentation>
+                        Only workflow executions in the given state will be deleted.
+                        Limiting this criterion to ended workflow executions will speed up the
+                        operation significantly.
+                   </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="subState" type="tns:workflowExecutionSubStateType">
+            <xs:annotation>
+              <xs:documentation>
+                        Only workflow executions in the given sub state will be deleted.
+                   </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="externalIdentifier" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        Only workflow executions with the given external identifier will
+                        be deleted.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="maxDeleteRootRecords" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>
+                        Specifies the maximum number of root workflow executions to be deleted.
+                        If this element is not set, then the data of all workflow executions is
+                        deleted.
+
+                        If the number of workflow executions to be deleted is very large, the
+                        operation can time out.
+
+                        This criterion allows to limit the execution time of the deletion.
+                        The invoker can repeatedly call this operation with a certain limit size
+                        until no more workflow executions need to be deleted (see the field
+                        deleteWorkflowExecutionsResponseType.numberOfDeletedRootWorkflowExecutions).
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteWorkflowExecutionsResponseType">
+        <xs:annotation>
+          <xs:documentation>
+                A response from deleting workflow executions.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="numberOfDeletedRootWorkflowExecutions" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>
+                        The number of deleted root workflow executions.
+
+                        If the user has specified 'maxDeleteRootRecords' in the request then
+                        the following cases have to be considered regarding the returned number:
+                        zero:
+                            No records matching the filter have been found.
+                        more than zero and less than 'maxDeleteRootRecords':
+                            All records matching the filter have been deleted.
+                        'maxDeleteRootRecords':
+                            There may be more records matching the filter in the system.
+                            Repeat the operation to delete the remaining records.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="workflowExecutionDataType">
+        <xs:annotation>
+          <xs:documentation>
+                The data needed to execute a workflow.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="workflowName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The qualified or unqualified name of a deployed workflow that
+                        has to be executed. If the given name is unqualified then the
+                        workflow engine will start the head version of the workflow.
+
+                        Note that this lookup imposes a slight overhead.
+                        for the workflow engine, therefore when maximum performance is required,
+                        the qualified workflow name should be supplied.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="requestStruct" type="inst:structType">
+            <xs:annotation>
+              <xs:documentation>
+                        The workflow input data. This data must be compatible with the workflow data
+                        model.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="externalIdentifier" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        An optional identifier that is forwarded to the service executions
+                        without modification.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="detailLevel" type="tns:detailLevelType">
+            <xs:annotation>
+              <xs:documentation>
+                        The level of detail on the workflow execution to return.
+                        If not specified then minimum details will be returned.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="detailLevelType">
+        <xs:annotation>
+          <xs:documentation>
+                Definition of the level of detail in the returned
+                execution information.
+
+                Note that the child execution paths will be not
+                returned, but can be retrieved by recursively calling
+                the "findPaths" operation.
+
+                To reduce system load prefer a lower detail level.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" default="false" name="returnRequestStruct" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>
+                        Whether to return the request struct of the execution path.
+                        This is the struct used when starting the path.
+                        For the root execution path this is also the request struct used to
+                        start the workflow.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" default="false" name="returnResponseStruct" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>
+                        Whether to return the response struct of the execution path.
+                        This is the final struct of an execution path. If the
+                        execution path is still running then no response struct
+                        is returned.
+
+                        The response struct of the root execution path is the struct of its
+                        last node execution. The responce struct of a non-root execution path
+                        is the struct of its last node execution before reaching the join node.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" default="false" name="returnSystemMessage" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>
+                        Whether to return the system message of the execution path.
+
+                        Only failed execution paths contain a system message.
+                        The system message informs about the reason for path failure.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" default="false" name="returnNodeExecutions" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>
+                        Whether to return the node executions in the execution path.
+                        Note that an execution path may contain many node executions.
+                        The range of the nodes to return can be restricted with the
+                        next two fields.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="fromNodeExecutionIndex" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>
+                        The zero-based index of the first node execution in the execution path to return.
+                        This field is taken into account only if "returnNodeExecutions" is true.
+                        If this field is not set then it is considered to be the index of the
+                        first node execution in the execution path, i.e. 0.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="toNodeExecutionIndex" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>
+                        The zero-based index of the last node execution in the execution path to return.
+                        This field is taken into account only if the "returnNodeExecutions" is true.
+                        If this field is not set then it is considered to be the index of the
+                        last node execution in the execution path.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" default="false" name="returnNodeExecutionStruct" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>
+                        Whether to return the struct of each node execution.
+                        This flag is taken into account only if node executions
+                        are returned.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" default="false" name="returnNodeExecutionSystemMessage" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>
+                        Whether to return the system message of each node execution.
+
+                        This flag is taken into account only if node executions
+                        are returned.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" default="false" name="returnNodeUser" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>
+                        Whether to return the name of the user that has executed each node.
+
+                        This flag is taken into account only if node executions
+                        are returned.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="workflowExecutionType">
+        <xs:annotation>
+          <xs:documentation>
+                Information on a workflow execution.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="workflowExecutionId" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The ID of the workflow execution.
+                        This ID is a string with length up to 32 characters.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="parentId" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The id of the parent workflow execution. This is set
+                        only when this workflow was executed as sub-workflow.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="username" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The qualified name of the user starting the workflow execution.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="externalIdentifier" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        An identifier that is forwarded through the node executions
+                        without modification.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="workflowName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The qualified workflow name.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="rootPath" type="tns:pathType">
+            <xs:annotation>
+              <xs:documentation>
+                        The root execution path.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="pathType">
+        <xs:annotation>
+          <xs:documentation>
+                Information about an execution path.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="pathId" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The ID of the execution path.
+                        This ID is unique among all execution paths of all workflow
+                        executions in the workflow engine.
+                        This ID is a string with length up to 32 characters.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="parentPathId" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The ID of the parent execution path, i.e. the ID
+                        of the path that contains the FORK node that
+                        started this path.
+                        For the root execution path this field is
+                        empty.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="parentNodeExecutionIndex" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>
+                        The index of the parent FORK node execution inside
+                        the parent execution path.
+                        For the root execution path this field is empty.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="pathKey" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The transition key with which the path was started
+                        from the parent FORK node. This key is unique among the
+                        sibling execution paths, i.e. the paths started by the parent
+                        FORK node.
+                        For the root execution path this field will
+                        be empty.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="startTime" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>
+                        The time when the execution path started.
+                        For the root execution path this is the
+                        time when workflow execution started.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="endTime" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>
+                        The time when the execution path ended. This is empty when
+                        path execution has not ended yet.
+                        For the root execution path this is the time when
+                        workflow execution ended.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="requestStruct" type="inst:structType">
+            <xs:annotation>
+              <xs:documentation>
+                        The request struct of the execution path.
+                        For the root execution path this is the request struct that
+                        started the workflow execution.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="responseStruct" type="inst:structType">
+            <xs:annotation>
+              <xs:documentation>
+                        The response struct of the execution path.
+                        If the path is still running or has ended with an error, then this
+                        field is not returned.
+                        For the root execution path this is the response of the workflow
+                        execution.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="resultKey" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The result key of the execution path. This is the unqualified name
+                        of the last node executed in the path.
+                        This element is set only if the path execution ended successfully.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="errorKey" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The qualified error code of the path execution.
+                        Example: WORKFLOW/AUTHENTICATION_FAILED.
+                        This element is set only if the path execution ended with error.
+                        It is equal to the error code of the systemMessage.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="systemMessage" type="gen:systemMessage2Type">
+            <xs:annotation>
+              <xs:documentation>
+                        The system message of the path execution.
+                        This element is set only if the path execution ended with error.
+
+                        If a node execution fails and the error cannot be mapped
+                        in the workflow, the system message MISSING_ERROR_TRANSITION
+                        will be set by the WorkflowEngine.
+                        This system message is the most common one.
+                        The original error can be found in the cause.
+
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="nodeExecutionsCount" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>
+                        The number of node executions in the path.
+                        If the path execution is still running then this is the number
+                        of the currently active node.
+                        If the path execution has ended then this is the total number of
+                        executed nodes.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="nodeExecutions" type="tns:nodeExecutionsType">
+            <xs:annotation>
+              <xs:documentation>
+                        List of the node executions of the path.
+
+                        Note that this list contains the node executions with indexes as
+                        specified in the detailLevel in the request. Note that depending on the node
+                        index range specified in the detailLevel, the node indexes in
+                        the list may not match the real position of the node execution in
+                        the path. The actual node index is stored in its respective "index" field.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="nodeExecutionsType">
+        <xs:annotation>
+          <xs:documentation>
+                List of node executions.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="nodeExecution" type="tns:nodeExecutionType">
+            <xs:annotation>
+              <xs:documentation>
+                        List of node executions.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="nodeExecutionType">
+        <xs:annotation>
+          <xs:documentation>
+                Information about a workflow node execution.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="index" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>
+                        The zero-based node execution index in the execution path.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="nodeId" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The ID of the workflow node as specified in the workflow definition.
+                        This ID is unique inside the workflow definition.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="serviceId" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The unique ID of the service that is executed at the node.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="flavourName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The name of the flavour executed at the node.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="startTime" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>
+                        The node execution start time. This is the time when the workflow engine
+                        has sent the request to the service.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="endTime" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>
+                        The node execution end time. This is the time when the workflow engine
+                        has processed the response from the service. Not available if the
+                        node is still in execution.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="serviceExecutionId" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The ID of the service execution performed at this node.
+                        Not available if the node is still in execution.
+                        This ID is a string with length up to 32 characters.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="resultKey" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The result key produced from the node execution. Not available when the
+                        node is still in execution or when the execution caused a system message.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="errorKey" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The qualified error code of the node execution.
+                        Example: WORKFLOW/AUTHENTICATION_FAILED.
+                        This element is set only if the node execution ended with error.
+                        It is equal to the error code of the systemMessage.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="systemMessage" type="gen:systemMessage2Type">
+            <xs:annotation>
+              <xs:documentation>
+                        The system message produced from the node execution. Not available when no
+                        system message was produced at the node execution.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="transitionKey" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The key of the transition taken from the workflow after the node
+                        execution. Not available when the node is still in execution.
+                        The transition key is defined in the workflow definition.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="errorTransition" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>
+                        Whether the transition taken after the node execution was an error
+                        transition. Not available when the node is still in execution.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="struct" type="inst:structType">
+            <xs:annotation>
+              <xs:documentation>
+                        The workflow execution data at the end of the node execution - after the
+                        response mappings have been performed. This
+                        is the data that is supplied to the next node.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="user" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The unqualified user name that has executed this node.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="workflowExecutionStateType">
+        <xs:annotation>
+          <xs:documentation>
+                Enumeration of possible states of a workflow execution.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="running">
+            <xs:annotation>
+              <xs:documentation>
+                        Indicates that the workflow execution is running.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ended">
+            <xs:annotation>
+              <xs:documentation>
+                        Indicates that the workflow execution has ended.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="workflowType">
+        <xs:annotation>
+          <xs:documentation>
+                Information about a deployed workflow.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="workflowName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        The qualified name of the deployed workflow.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="persisted" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>
+                        Whether the workflow executions will be persisted.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="alreadyDeployed" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>
+                        Indicates whether the workflow was already deployed.
+                        This flag makes sense only for the "deployWokflow" operation.
+                        For the "listDeployedWorkflows" operation this flag is always true.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="subWorkflow" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                        List of this workflow's sub-workflows. The list contains only the
+                        direct sub-workflows. If the workflow contains no sub-workflows then the
+                        list is empty.
+                        This list is filled by the "deployWorkflow" operation.
+                        It is not filled by the "listDeployedWorkflows" operation.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="sortType">
+        <xs:annotation>
+          <xs:documentation>
+                Enumeration of possible sorting directions.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="asc">
+            <xs:annotation>
+              <xs:documentation>
+                        Sort ascending.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="desc">
+            <xs:annotation>
+              <xs:documentation>
+                        Sort descending.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="workflowExecutionSubStateType">
+        <xs:annotation>
+          <xs:documentation>
+                Enumeration of possible sub states of a workflow execution.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ended_with_success">
+            <xs:annotation>
+              <xs:documentation>
+                        Workflow execution ended with success.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ended_with_error">
+            <xs:annotation>
+              <xs:documentation>
+                        Workflow execution ended with error.
+                    </xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="deployWorkflowRequest">
+    <wsdl:documentation>
+            The request message for deploying a workflow.
+        </wsdl:documentation>
+    <wsdl:part name="deployWorkflowRequest" element="types:deployWorkflowRequest" />
+  </wsdl:message>
+  <wsdl:message name="deployWorkflowResponse">
+    <wsdl:documentation>
+            The response message from deploying a workflow.
+        </wsdl:documentation>
+    <wsdl:part name="deployWorkflowResponse" element="types:deployWorkflowResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateDeployedWorkflowRequest">
+    <wsdl:documentation>
+            The request message for deploying a workflow.
+        </wsdl:documentation>
+    <wsdl:part name="updateDeployedWorkflowRequest" element="types:updateDeployedWorkflowRequest" />
+  </wsdl:message>
+  <wsdl:message name="updateDeployedWorkflowResponse">
+    <wsdl:documentation>
+            The response message from deploying a workflow.
+        </wsdl:documentation>
+    <wsdl:part name="updateDeployedWorkflowResponse" element="types:updateDeployedWorkflowResponse" />
+  </wsdl:message>
+  <wsdl:message name="listDeployedWorkflowsRequest">
+    <wsdl:documentation>
+            The request message for listing the deployed workflows.
+        </wsdl:documentation>
+    <wsdl:part name="listDeployedWorkflowsRequest" element="types:listDeployedWorkflowsRequest" />
+  </wsdl:message>
+  <wsdl:message name="listDeployedWorkflowsResponse">
+    <wsdl:documentation>
+            The response message from listing the deployed workflows.
+        </wsdl:documentation>
+    <wsdl:part name="listDeployedWorkflowsResponse" element="types:listDeployedWorkflowsResponse" />
+  </wsdl:message>
+  <wsdl:message name="listExecutedWorkflowsRequest">
+    <wsdl:documentation>
+            The request message for listing the executed workflows.
+        </wsdl:documentation>
+    <wsdl:part name="listExecutedWorkflowsRequest" element="types:listExecutedWorkflowsRequest" />
+  </wsdl:message>
+  <wsdl:message name="listExecutedWorkflowsResponse">
+    <wsdl:documentation>
+           The response message for listing the executed workflows.
+        </wsdl:documentation>
+    <wsdl:part name="listExecutedWorkflowsResponse" element="types:listExecutedWorkflowsResponse" />
+  </wsdl:message>
+  <wsdl:message name="undeployWorkflowRequest">
+    <wsdl:documentation>
+            The request message for undeploying a workflow.
+        </wsdl:documentation>
+    <wsdl:part name="undeployWorkflowRequest" element="types:undeployWorkflowRequest" />
+  </wsdl:message>
+  <wsdl:message name="undeployWorkflowResponse">
+    <wsdl:documentation>
+            The response message from undeploying a workflow.
+        </wsdl:documentation>
+    <wsdl:part name="undeployWorkflowResponse" element="types:undeployWorkflowResponse" />
+  </wsdl:message>
+  <wsdl:message name="executeWorkflowRequest">
+    <wsdl:documentation>
+            The request message for executing a workflow.
+        </wsdl:documentation>
+    <wsdl:part name="executeWorkflowRequest" element="types:executeWorkflowRequest" />
+  </wsdl:message>
+  <wsdl:message name="executeWorkflowResponse">
+    <wsdl:documentation>
+            The response message from executing a workflow.
+        </wsdl:documentation>
+    <wsdl:part name="executeWorkflowResponse" element="types:executeWorkflowResponse" />
+  </wsdl:message>
+  <wsdl:message name="startWorkflowRequest">
+    <wsdl:documentation>
+            The request message for starting a workflow.
+        </wsdl:documentation>
+    <wsdl:part name="startWorkflowRequest" element="types:startWorkflowRequest" />
+  </wsdl:message>
+  <wsdl:message name="startWorkflowResponse">
+    <wsdl:documentation>
+            The response message from starting a workflow.
+        </wsdl:documentation>
+    <wsdl:part name="startWorkflowResponse" element="types:startWorkflowResponse" />
+  </wsdl:message>
+  <wsdl:message name="hasWorkflowExecutionEndedRequest">
+    <wsdl:documentation>
+            The request message for checking if a workflow execution is ended.
+        </wsdl:documentation>
+    <wsdl:part name="hasWorkflowExecutionEndedRequest" element="types:hasWorkflowExecutionEndedRequest" />
+  </wsdl:message>
+  <wsdl:message name="hasWorkflowExecutionEndedResponse">
+    <wsdl:documentation>
+            The response message from checking if a workflow execution is ended.
+        </wsdl:documentation>
+    <wsdl:part name="hasWorkflowExecutionEndedResponse" element="types:hasWorkflowExecutionEndedResponse" />
+  </wsdl:message>
+  <wsdl:message name="getWorkflowExecutionRequest">
+    <wsdl:documentation>
+            The request message for reading a workflow execution.
+        </wsdl:documentation>
+    <wsdl:part name="getWorkflowExecutionRequest" element="types:getWorkflowExecutionRequest" />
+  </wsdl:message>
+  <wsdl:message name="getWorkflowExecutionResponse">
+    <wsdl:documentation>
+            The response message from reading a workflow execution.
+        </wsdl:documentation>
+    <wsdl:part name="getWorkflowExecutionResponse" element="types:getWorkflowExecutionResponse" />
+  </wsdl:message>
+  <wsdl:message name="findPathsRequest">
+    <wsdl:documentation>
+            The request message for finding execution paths in a workflow execution.
+        </wsdl:documentation>
+    <wsdl:part name="findPathsRequest" element="types:findPathsRequest" />
+  </wsdl:message>
+  <wsdl:message name="findPathsResponse">
+    <wsdl:documentation>
+            The response message from finding execution paths in a workflow execution.
+        </wsdl:documentation>
+    <wsdl:part name="findPathsResponse" element="types:findPathsResponse" />
+  </wsdl:message>
+  <wsdl:message name="findWorkflowExecutionsRequest">
+    <wsdl:documentation>
+            The request message for finding workflow executions.
+        </wsdl:documentation>
+    <wsdl:part name="findWorkflowExecutionsRequest" element="types:findWorkflowExecutionsRequest" />
+  </wsdl:message>
+  <wsdl:message name="findWorkflowExecutionsResponse">
+    <wsdl:documentation>
+            The response message from finding workflow execution.
+        </wsdl:documentation>
+    <wsdl:part name="findWorkflowExecutionsResponse" element="types:findWorkflowExecutionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteWorkflowExecutionRequest">
+    <wsdl:documentation>
+            The request message for deleting a workflow execution.
+        </wsdl:documentation>
+    <wsdl:part name="deleteWorkflowExecutionRequest" element="types:deleteWorkflowExecutionRequest" />
+  </wsdl:message>
+  <wsdl:message name="deleteWorkflowExecutionResponse">
+    <wsdl:documentation>
+            The response message from deleting a workflow execution.
+        </wsdl:documentation>
+    <wsdl:part name="deleteWorkflowExecutionResponse" element="types:deleteWorkflowExecutionResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteWorkflowExecutionsRequest">
+    <wsdl:documentation>
+            The request message for deleting workflow executions.
+        </wsdl:documentation>
+    <wsdl:part name="deleteWorkflowExecutionsRequest" element="types:deleteWorkflowExecutionsRequest" />
+  </wsdl:message>
+  <wsdl:message name="deleteWorkflowExecutionsResponse">
+    <wsdl:documentation>
+            The response message from deleting workflow executions.
+        </wsdl:documentation>
+    <wsdl:part name="deleteWorkflowExecutionsResponse" element="types:deleteWorkflowExecutionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="systemMessage">
+    <wsdl:documentation>
+            The system message that is returned in case an operation detects
+            an error.
+        </wsdl:documentation>
+    <wsdl:part name="systemMessage" element="types:systemMessage" />
+  </wsdl:message>
+  <wsdl:portType name="WorkflowEnginePortType">
+    <wsdl:operation name="deployWorkflow">
+      <wsdl:input name="deployWorkflowRequest" message="tns:deployWorkflowRequest" />
+      <wsdl:output name="deployWorkflowResponse" message="tns:deployWorkflowResponse" />
+      <wsdl:fault name="systemMessage" message="tns:systemMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateDeployedWorkflow">
+      <wsdl:input name="updateDeployedWorkflowRequest" message="tns:updateDeployedWorkflowRequest" />
+      <wsdl:output name="updateDeployedWorkflowResponse" message="tns:updateDeployedWorkflowResponse" />
+      <wsdl:fault name="systemMessage" message="tns:systemMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="listDeployedWorkflows">
+      <wsdl:input name="listDeployedWorkflowsRequest" message="tns:listDeployedWorkflowsRequest" />
+      <wsdl:output name="listDeployedWorkflowsResponse" message="tns:listDeployedWorkflowsResponse" />
+      <wsdl:fault name="systemMessage" message="tns:systemMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="listExecutedWorkflows">
+      <wsdl:input name="listExecutedWorkflowsRequest" message="tns:listExecutedWorkflowsRequest" />
+      <wsdl:output name="listExecutedWorkflowsResponse" message="tns:listExecutedWorkflowsResponse" />
+      <wsdl:fault name="systemMessage" message="tns:systemMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="undeployWorkflow">
+      <wsdl:input name="undeployWorkflowRequest" message="tns:undeployWorkflowRequest" />
+      <wsdl:output name="undeployWorkflowResponse" message="tns:undeployWorkflowResponse" />
+      <wsdl:fault name="systemMessage" message="tns:systemMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="executeWorkflow">
+      <wsdl:input name="executeWorkflowRequest" message="tns:executeWorkflowRequest" />
+      <wsdl:output name="executeWorkflowResponse" message="tns:executeWorkflowResponse" />
+      <wsdl:fault name="systemMessage" message="tns:systemMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="startWorkflow">
+      <wsdl:input name="startWorkflowRequest" message="tns:startWorkflowRequest" />
+      <wsdl:output name="startWorkflowResponse" message="tns:startWorkflowResponse" />
+      <wsdl:fault name="systemMessage" message="tns:systemMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="hasWorkflowExecutionEnded">
+      <wsdl:input name="hasWorkflowExecutionEndedRequest" message="tns:hasWorkflowExecutionEndedRequest" />
+      <wsdl:output name="hasWorkflowExecutionEndedResponse" message="tns:hasWorkflowExecutionEndedResponse" />
+      <wsdl:fault name="systemMessage" message="tns:systemMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getWorkflowExecution">
+      <wsdl:input name="getWorkflowExecutionRequest" message="tns:getWorkflowExecutionRequest" />
+      <wsdl:output name="getWorkflowExecutionResponse" message="tns:getWorkflowExecutionResponse" />
+      <wsdl:fault name="systemMessage" message="tns:systemMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="findPaths">
+      <wsdl:input name="findPathsRequest" message="tns:findPathsRequest" />
+      <wsdl:output name="findPathsResponse" message="tns:findPathsResponse" />
+      <wsdl:fault name="systemMessage" message="tns:systemMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="findWorkflowExecutions">
+      <wsdl:input name="findWorkflowExecutionsRequest" message="tns:findWorkflowExecutionsRequest" />
+      <wsdl:output name="findWorkflowExecutionsResponse" message="tns:findWorkflowExecutionsResponse" />
+      <wsdl:fault name="systemMessage" message="tns:systemMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteWorkflowExecution">
+      <wsdl:input name="deleteWorkflowExecutionRequest" message="tns:deleteWorkflowExecutionRequest" />
+      <wsdl:output name="deleteWorkflowExecutionResponse" message="tns:deleteWorkflowExecutionResponse" />
+      <wsdl:fault name="systemMessage" message="tns:systemMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteWorkflowExecutions">
+      <wsdl:input name="deleteWorkflowExecutionsRequest" message="tns:deleteWorkflowExecutionsRequest" />
+      <wsdl:output name="deleteWorkflowExecutionsResponse" message="tns:deleteWorkflowExecutionsResponse" />
+      <wsdl:fault name="systemMessage" message="tns:systemMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WorkflowEngineSoapBinding" type="tns:WorkflowEnginePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="deployWorkflow">
+      <soap:operation soapAction="http://guardean.net/workflow/engine/deployWorkflow" />
+      <wsdl:input name="deployWorkflowRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="deployWorkflowResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="systemMessage">
+        <soap:fault use="literal" name="systemMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateDeployedWorkflow">
+      <soap:operation soapAction="http://guardean.net/workflow/engine/updateDeployedWorkflow" />
+      <wsdl:input name="updateDeployedWorkflowRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateDeployedWorkflowResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="systemMessage">
+        <soap:fault use="literal" name="systemMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="listDeployedWorkflows">
+      <soap:operation soapAction="http://guardean.net/workflow/engine/listDeployedWorkflows" />
+      <wsdl:input name="listDeployedWorkflowsRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="listDeployedWorkflowsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="systemMessage">
+        <soap:fault use="literal" name="systemMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="listExecutedWorkflows">
+      <soap:operation soapAction="http://guardean.net/workflow/engine/listExecutedWorkflows" />
+      <wsdl:input name="listExecutedWorkflowsRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="listExecutedWorkflowsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="systemMessage">
+        <soap:fault use="literal" name="systemMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="undeployWorkflow">
+      <soap:operation soapAction="http://guardean.net/workflow/engine/undeployWorkflow" />
+      <wsdl:input name="undeployWorkflowRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="undeployWorkflowResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="systemMessage">
+        <soap:fault use="literal" name="systemMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="executeWorkflow">
+      <soap:operation soapAction="http://guardean.net/workflow/engine/executeWorkflow" />
+      <wsdl:input name="executeWorkflowRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="executeWorkflowResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="systemMessage">
+        <soap:fault use="literal" name="systemMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="startWorkflow">
+      <soap:operation soapAction="http://guardean.net/workflow/engine/startWorkflow" />
+      <wsdl:input name="startWorkflowRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="startWorkflowResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="systemMessage">
+        <soap:fault use="literal" name="systemMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hasWorkflowExecutionEnded">
+      <soap:operation soapAction="http://guardean.net/workflow/engine/hasWorkflowExecutionEnded" />
+      <wsdl:input name="hasWorkflowExecutionEndedRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="hasWorkflowExecutionEndedResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="systemMessage">
+        <soap:fault use="literal" name="systemMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkflowExecution">
+      <soap:operation soapAction="http://guardean.net/workflow/engine/getWorkflowExecution" />
+      <wsdl:input name="getWorkflowExecutionRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getWorkflowExecutionResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="systemMessage">
+        <soap:fault use="literal" name="systemMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findPaths">
+      <soap:operation soapAction="http://guardean.net/workflow/engine/findPaths" />
+      <wsdl:input name="findPathsRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="findPathsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="systemMessage">
+        <soap:fault use="literal" name="systemMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findWorkflowExecutions">
+      <soap:operation soapAction="http://guardean.net/workflow/engine/findWorkflowExecutions" />
+      <wsdl:input name="findWorkflowExecutionsRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="findWorkflowExecutionsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="systemMessage">
+        <soap:fault use="literal" name="systemMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteWorkflowExecution">
+      <soap:operation soapAction="http://guardean.net/workflow/engine/deleteWorkflowExecution" />
+      <wsdl:input name="deleteWorkflowExecutionRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="deleteWorkflowExecutionResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="systemMessage">
+        <soap:fault use="literal" name="systemMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteWorkflowExecutions">
+      <soap:operation soapAction="http://guardean.net/workflow/engine/deleteWorkflowExecutions" />
+      <wsdl:input name="deleteWorkflowExecutionsRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="deleteWorkflowExecutionsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="systemMessage">
+        <soap:fault use="literal" name="systemMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WorkflowEngine2">
+    <wsdl:port name="WorkflowEnginePort" binding="tns:WorkflowEngineSoapBinding">
+      <soap:address location="http://localhost:8080/workflow/services/WorkflowEngine2" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

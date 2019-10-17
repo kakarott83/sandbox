@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CIC.ASS.SearchService.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CIC.ASS.SearchService.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfSearchEntityResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchEntityResult" nillable="true" type="tns:SearchEntityResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchEntityResult" nillable="true" type="tns:ArrayOfSearchEntityResult" />
+  <xs:complexType name="SearchEntityResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="entity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="results" nillable="true" type="tns:ArrayOfSearchResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchEntityResult" nillable="true" type="tns:SearchEntityResult" />
+  <xs:complexType name="ArrayOfSearchResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchResult" nillable="true" type="tns:SearchResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchResult" nillable="true" type="tns:ArrayOfSearchResult" />
+  <xs:complexType name="SearchResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="area" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="description1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="description2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="description3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="entity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="indicator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchResult" nillable="true" type="tns:SearchResult" />
+</xs:schema>

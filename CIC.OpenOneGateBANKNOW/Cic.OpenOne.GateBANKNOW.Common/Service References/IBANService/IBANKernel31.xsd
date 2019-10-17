@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://cic-software.de/IBANKernel" elementFormDefault="qualified" targetNamespace="http://cic-software.de/IBANKernel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://dotnet3.cic-software.de/IBANKernel/IBANKernel.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/IBANKernel" />
+  <xs:element name="getIBANInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="kontoNummer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bcpcNummer" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getIBANInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/IBANKernel" minOccurs="0" name="getIBANInfoResult" nillable="true" type="q1:IBANInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

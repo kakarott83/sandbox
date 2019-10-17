@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://process.core.s1.crif.com" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="StrategyOneResponse">
+    <xs:sequence>
+      <xs:element name="errorCode" type="xs:int" />
+      <xs:element name="executionTime" type="xs:long" />
+      <xs:element name="log" nillable="true" type="xs:string" />
+      <xs:element name="message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

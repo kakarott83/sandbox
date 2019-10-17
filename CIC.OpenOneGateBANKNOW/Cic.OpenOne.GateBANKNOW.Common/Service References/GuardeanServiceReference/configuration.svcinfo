@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configurationSnapshot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-microsoft-com:xml-wcfconfigurationsnapshot">
+  <behaviors />
+  <bindings>
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;Wkf_Control_InterfaceSoapBinding&quot; /&gt;" bindingType="basicHttpBinding" name="Wkf_Control_InterfaceSoapBinding" />
+  </bindings>
+  <endpoints>
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://localhost:8080/Wkf_Control_Interface/services/Wkf_Control_Interface&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;Wkf_Control_InterfaceSoapBinding&quot; contract=&quot;GuardeanServiceReference.Wkf_Control_InterfacePortType&quot; name=&quot;Wkf_Control_InterfacePort&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://localhost:8080/Wkf_Control_Interface/services/Wkf_Control_Interface&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;Wkf_Control_InterfaceSoapBinding&quot; contract=&quot;GuardeanServiceReference.Wkf_Control_InterfacePortType&quot; name=&quot;Wkf_Control_InterfacePort&quot; /&gt;" contractName="GuardeanServiceReference.Wkf_Control_InterfacePortType" name="Wkf_Control_InterfacePort" />
+  </endpoints>
+</configurationSnapshot>

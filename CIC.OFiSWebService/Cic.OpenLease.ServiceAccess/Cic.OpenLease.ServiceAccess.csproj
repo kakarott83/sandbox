@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{43B2DBDF-298F-4449-89A3-CCFF60B11852}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cic.OpenLease.ServiceAccess</RootNamespace>
+    <AssemblyName>Cic.OpenLease.ServiceAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>Cic.OpenLease.ServiceAccess.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Debug\Cic.OpenLease.ServiceAccess.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <NoWarn>1591</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="_Framework\DdOl\_DataContracts\CalculationDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataContracts\FzConfiguration.cs" />
+    <Compile Include="_Framework\DdOl\_DataContracts\ProvisionDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataContracts\InsuranceParameterDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataContracts\PurchasePriceDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataContracts\TechnicalDataDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataContracts\InsuranceResultDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataContracts\ObjectContextDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataContracts\VTAssetsValueDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataContracts\VTSortData.cs" />
+    <Compile Include="_Framework\DdOl\_DataContracts\ANGKALKSearchData.cs" />
+    <Compile Include="_Framework\DdOl\_DataContracts\ANTRAGSortData.cs" />
+    <Compile Include="_Framework\DdOl\_DataContracts\PERSONSortData.cs" />
+    <Compile Include="_Framework\DdOl\_DataContracts\KONTOSearchData.cs" />
+    <Compile Include="_Framework\DdOl\_DataContracts\ADRESSESearchData.cs" />
+    <Compile Include="_Framework\DdOl\_DataContracts\ANTRAGDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataContracts\ANTRAGSearchData.cs" />
+    <Compile Include="_Framework\DdOl\_DataContracts\MYCALCSearchData.cs" />
+    <Compile Include="_Framework\DdOl\_DataContracts\PARTNERSearchData.cs" />
+    <Compile Include="_Framework\DdOl\_DataContracts\PERSONSearchData.cs" />
+    <Compile Include="_Framework\DdOl\_DataContracts\VTDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataContracts\VTSearchData.cs" />
+    <Compile Include="_Framework\DdOl\_DataContracts\_Enums.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\AbschlussProvisionDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\AnAbmeldePriceDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\Angebot2AntragStateDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\ANGEBOTDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\ANGEBOTSearchData.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\AngebotSessionDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\ANGEBOTShortDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\ANGEBOTSortData.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\ANGKALKShortDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\ANGOBAUSDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\ANGOBShortDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\ANTKALKShortDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\ANTOBShortDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\AntObSichDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\AntObSlDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\ANTRAGShortDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\ApprovalDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\BankdatenDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\BearbeitungsgebuhrProvisionDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\ITKNEDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\TiresAndRimsCalculationDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\BoniPosDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\BoniTaetDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\BRANDDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\BasicProvisionDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\ControlDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\AuflagenInfoDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\FlowDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\IBAN.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\PriceInformationDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\PrintDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\TireInfoDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\ValidationResultDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\VorgangDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\PrParamFilter.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\EinreichungDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\ErsatzfahrzeugPriceDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\FSTYPDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\GebuhrenDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\InsuranceDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\INTTYPEDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\PouvoirTriggerDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\ObArtZinsQuickDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\PRFSTDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\ListSessionDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\SubventionPosDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\SubventionDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\PRVSDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\MitfinanzierteBestandteileDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\PetrolLieferantDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\TransferVendorDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\ObSlDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\PROVTARIFDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\ManagementFeeDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\MehrMidnerKmDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\MitAntragStellerDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\PetrolPriceDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\PriceDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\RimsEurotaxDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\VorgaengeDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\VSTYPDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\VSARTDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\PrFldArtDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\ITShortDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\OBARTDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\OBKATDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\OBTYPDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\PERSONDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\PEROLEDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\ITDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\ITSearchData.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\ITSortData.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\MyCalcDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\PRPARAMDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\PRPRODUCTDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\RimDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\TireDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\TiresRimsDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\TiresEurotaxDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\VTShortDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\WRRateDto.cs" />
+    <Compile Include="_Framework\DdOl\_DataTransferObjects\ZugangProvisionDto.cs" />
+    <Compile Include="_Framework\DdOl\_Sources\IITDao.cs" />
+    <Compile Include="_Framework\DdOl\_Sources\IANTRAGDao.cs" />
+    <Compile Include="_Framework\DdOl\_Sources\IVTDao.cs" />
+    <Compile Include="_Framework\DdOl\_Sources\IANGEBOTDao.cs" />
+    <Compile Include="_Framework\DdOl\_Sources\SearchResult.cs" />
+    <Compile Include="_Framework\DdOw\_DataTransferObjects\EAIHotDto.cs" />
+    <Compile Include="_Framework\DdOw\_DataTransferObjects\EAIHotSortData.cs" />
+    <Compile Include="_Framework\DdOw\_DataTransferObjects\PUSERDto.cs" />
+    <Compile Include="_Framework\DdOw\_DataTransferObjects\WFUSERDto.cs" />
+    <Compile Include="_Framework\Merge\Dictionary\IDictionaryService.cs" />
+    <Compile Include="_Framework\Merge\Dictionary\_DataTransferObjects\DropListDto.cs" />
+    <Compile Include="_Framework\Merge\Dictionary\_DataTransferObjects\BERUFDto.cs" />
+    <Compile Include="_Framework\Merge\Dictionary\_DataTransferObjects\BRANCHEDto.cs" />
+    <Compile Include="_Framework\Merge\Dictionary\_DataTransferObjects\BLZDto.cs" />
+    <Compile Include="_Framework\Merge\Dictionary\_DataTransferObjects\DictionaryDto.cs" />
+    <Compile Include="_Framework\Merge\Dictionary\_DataTransferObjects\KDTYPDto.cs" />
+    <Compile Include="_Framework\Merge\Dictionary\_DataTransferObjects\PLZDto.cs" />
+    <Compile Include="_Framework\Merge\Dictionary\_DataTransferObjects\CTLANGDto.cs" />
+    <Compile Include="_Framework\Merge\Dictionary\_DataTransferObjects\LANDDto.cs" />
+    <Compile Include="_Framework\Merge\Dictionary\_DataTransferObjects\STAATDto.cs" />
+    <Compile Include="_Framework\Merge\MembershipProvider\IMembershipProvider.cs" />
+    <Compile Include="_Framework\Merge\MembershipProvider\_DataTransferObjects\MembershipUserValidationInfo.cs" />
+    <Compile Include="_Framework\Merge\MembershipProvider\_DataTransferObjects\RfgDto.cs" />
+    <Compile Include="_Framework\Merge\OlClient\_DataTransferObjects\DocumentListDto.cs" />
+    <Compile Include="_Framework\Merge\OlClient\_DataTransferObjects\DocumentUploadDto.cs" />
+    <Compile Include="_Framework\Merge\OlClient\_DataTransferObjects\DocumentDto.cs" />
+    <Compile Include="_Framework\Merge\OlClient\_DataTransferObjects\DocumentShortDto.cs" />
+    <Compile Include="_Framework\Merge\OlClient\_DataTransferObjects\EaiErrorDto.cs" />
+    <Compile Include="_Framework\Merge\OlClient\_DataTransferObjects\EaiHFileDto.cs" />
+    <Compile Include="_Framework\Merge\OlClient\_Enums.cs" />
+    <Compile Include="_Framework\Merge\OlClient\IOlClientService.cs" />
+    <Compile Include="_Framework\Merge\Prisma\IPrismaService.cs" />
+    <Compile Include="_Framework\Merge\Prisma\_DataContracts\InterestDto.cs" />
+    <Compile Include="_Framework\Merge\Prisma\_DataContracts\ProvisionDto.cs" />
+    <Compile Include="_Framework\Merge\Prisma\_DataContracts\_Enums.cs" />
+    <Compile Include="_Framework\Merge\ServicesState\DatabaseConnectionInfo.cs" />
+    <Compile Include="_Framework\Merge\ServicesState\DatabaseInstanceInfo.cs" />
+    <Compile Include="_Framework\Merge\ServicesState\IServicesStateService.cs" />
+    <Compile Include="_Framework\Merge\ServicesState\ServiceInformation.cs" />
+    <Compile Include="_Framework\Merge\ServicesState\ServiceState.cs" />
+    <Compile Include="_Framework\Merge\Recorder\IRecorderService.cs" />
+    <Compile Include="_Framework\_DataContracts\IassistantService.cs" />
+    <Compile Include="_Framework\_DataContracts\igetLogFileDto.cs" />
+    <Compile Include="_Framework\_DataContracts\ogetLogFileDefaultPid.cs" />
+    <Compile Include="_Framework\_DataContracts\ogetLogFileDto.cs" />
+    <Compile Include="_Framework\_DataContracts\ogetLogFilePidDto.cs" />
+    <Compile Include="_Framework\_DataContracts\RequestAndResponseDto.cs" />
+    <Compile Include="_Framework\_DataContracts\RequestDto.cs" />
+    <Compile Include="_Framework\_Sources\CurrencyFormatAttribute.cs" />
+    <Compile Include="_Framework\_Sources\MessageHeader.cs" />
+    <Compile Include="_Framework\_Sources\MessageHeaderHelper.cs" />
+    <Compile Include="_Framework\_Sources\SearchParameters.cs" />
+    <Compile Include="_Framework\_Sources\ServiceClient.cs" />
+    <Compile Include="_Framework\_Sources\_Enums.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cic.OpenLease.ServiceAccess.dll.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="app.config" />
+    <None Include="Cic.OpenLease.ServiceAccess.snk" />
+    <Content Include="Cic.OpenLease.ServiceAccess.user.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="_Framework\Merge\MembershipProvider\_DataTransferObjectsTestFixtures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Cic.Utils\Cic.One.Utils\Cic.One.Utils.csproj">
+      <Project>{d1f653f9-3d9e-4486-89cc-4b0044307750}</Project>
+      <Name>Cic.One.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CIC.OpenOne\Cic.OpenOne.Common\Cic.OpenOne.Common.csproj">
+      <Project>{fc4049ac-617c-4233-ba92-287674e30b35}</Project>
+      <Name>Cic.OpenOne.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

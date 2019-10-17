@@ -1,0 +1,405 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>   
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<link rel="icon" href="/One/favicon.ico" type="image/x-icon" />
+		<style type="text/css">
+		/* Reset */
+		html, body, div, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, font, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td
+		{
+			font-family: Arial, sans-serif;
+			margin: 0mm;
+			outline: 0mm;
+			padding: 0mm;
+		}
+
+
+		/* Basics Formatierungen */
+
+		body
+		{
+			color:black;
+			font-size: 10pt;
+			line-height: 14pt;
+			font-weight: normal;
+            padding: 0mm 10mm;
+		}
+
+		li {
+			margin-left:20mm;
+		}
+		h1, h2, h3, h4, h5 {
+			font-weight: bold;
+			line-height: 16pt;
+		}
+		hr {
+			border: 0;
+			border-bottom: solid 1px #7E8083;
+            margin: 5px 0px;
+		}
+		a, a:visited, a:active {
+			color: black;
+			text-decoration: none;
+		}
+
+
+        .header {
+            line-height: 13pt;
+            padding-left: 18mm;
+        }
+		.small {
+			font-size: 7pt;
+			line-height: 10pt;
+		}
+		.right {
+			align:right;
+			text-align:right;
+		}
+		.bold {
+			font-weight:bold;
+		}
+		.padding {
+			padding-left: 10mm;
+			padding-right: 10mm;
+		}
+		.grey {
+			color:#7E8083;
+		}
+		.bigger {
+			font-size:14pt;
+		}
+        .underline {
+            text-decoration: underline;
+        }
+        hr {color:#7E8083;}
+		table {
+			width:100%;
+		}
+
+		</style>
+		<title>Schnelldruck Kredit</title>
+	</head>
+
+
+
+	<body>
+
+
+		<!-- Header -->
+		<table class="header">
+			<tr>
+				<td rowspan="3" class="emty" width="50%">&nbsp;</td>
+				<td width="50%">
+					<img src="../pix/print/logo_{{$object.IMGSUFFIX}}.png" style="width:65mm; height:auto;" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+                Hyundai Capital Bank Europe GmbH <br />
+                Friedrich-Ebert-Anlage 35-37 <br />
+                60327 Frankfurt <br />
+					<br />
+				</td>
+			</tr>
+			<tr>
+				<td>
+                Vermittelnder Händler: {{$object.VKINFO.ABTEILUNG}} <br />
+                Ihr Verkäufer: {{$object.VKINFO.VORNAME}} {{$object.VKINFO.NAME}} <br />
+                Telefon: {{$object.VKINFO.TELEFON}} <br />
+                E-Mail: {{$object.VKINFO.EMAIL}} <br />
+                Datum: {{$object.HEUTE}} <br />
+					<br />
+				</td>
+			</tr>
+		</table>
+
+
+
+
+
+
+
+
+		<!-- Fahrzeug -->
+
+
+
+
+		<table border="0">
+			<tr>
+				<td colspan="2">
+					<h3>
+                Für Sie zum Überblick: <br /> Angebotsdaten für ein Darlehen 
+					</h3>
+					<br />
+				</td>
+			</tr>
+			<tr>
+				<td>
+                Fahrzeugart:
+				</td>
+				<td class="">
+                {{$object.FZART}}
+				</td>
+			</tr>
+			<tr>
+				<td>
+                Marke/Modell:
+				</td>
+				<td class="">
+                {{$object.BRANDINFO}} {{$object.angebot.ANGOBTYP}}
+				</td>
+			</tr>
+			<tr>
+				<td>
+                Ausgewählte Kondition:
+				</td>
+				<td class="">
+                {{$object.angebot.HIST_SYSPRPRODUCT}} 
+				</td>
+			</tr>  
+			<tr>
+				<td colspan="2">
+					<hr/>
+				</td>
+			</tr>       
+
+		</table>
+
+
+
+
+
+
+		<!-- Preis & Konditionen -->	
+
+		<table border="0">
+			<tr>
+				<td>
+                &nbsp;
+				</td>
+				<td class="right bold">
+                EUR brutto   <br />  
+				</td>
+			</tr>    
+			<tr>
+				<td>
+               Unverbindliche Preisempfehlung bzw. Kaufpreis:
+
+				</td>
+				<td class="right">
+                {{0$object.angebot.ANGOBGRUNDBRUTTO|0:n}}
+				</td>
+			</tr>
+			<tr>
+				<td>
+                Summe Sonderausstattung und Pakete:
+				</td>
+				<td class="right">
+                {{0$object.SAPAKETEBRUTTO|0:n}}
+				</td>
+			</tr>
+			<tr>
+				<td>
+                Summe Herstellerzubehör:
+				</td>
+				<td class="right">
+                 {{0$object.angebot.ANGOBHERZUBBRUTTO|0:n}}
+				</td>
+			</tr>  
+			<tr>
+				<td>
+               Summe Händlerzubehör:
+				</td>
+				<td class="right">
+                 {{0$object.angebot.ANGOBZUBEHOERBRUTTO|0:n}}
+				</td>
+			</tr> 
+			<tr>
+				<td>
+               Überführungs-/Zulassungskosten: 
+				</td>
+				<td class="right">
+                {{0$object.UEBZUL|0:n}}
+				</td>
+			</tr>                 
+			<tr>
+				<td colspan="2">
+					<hr />
+				</td>
+			</tr>       
+		</table>
+
+		<table border="0">
+			<tr>
+				<td>
+               Barzahlungspreis:
+				</td>
+				<td class="right">
+               {{0$object.angebot.ANGOBAHKBRUTTO|0:n}}
+				</td>
+			</tr>
+
+			
+			<tr>
+				<td>
+               abzüglich Anzahlung/Inzahlungnahme Kundenfahrzeug:
+				</td>
+				<td class="right">
+               {{0$object.angebot.ANGKALKSZBRUTTO|0:n}}
+				</td>
+			</tr>       
+			<!--if{{$object.angebot.ANGVSPARAM.Length.Operator(GT,0)}}--> 
+			<!-- Zusatzprodukte -->			
+			<tr>
+				<td>
+               Mitfinanziert werden
+				</td>
+				<td class="right">
+               &nbsp;
+				</td>
+			</tr>       
+
+
+			<!--each{{$object.angebot.ANGVSPARAM}}-->
+
+			<!--if{{$object.angebot.ANGVSPARAM.InsuranceParameter.CODEMETHOD.Operator(EQ,RSDV)}}--> 
+			<tr>
+				<td>
+					<span class="grey">&raquo;</span> {{$object.BRAND}} Ratenschutz bzw. {{$object.BRAND}} RatenschutzPLUS:*
+				</td>
+				<td class="right">
+						{{$object.angebot.ANGVSPARAM.InsuranceResult.Praemie|0:n}}
+				</td>
+			</tr>    
+			<!--end-->
+			<!--if{{$object.angebot.ANGVSPARAM.InsuranceParameter.CODEMETHOD.Operator(EQ,GAP)}}--> 		
+			<tr>
+				<td>
+					<span class="grey">&raquo;</span> {{$object.BRAND}} Kaufpreisschutz:*
+				</td>
+				<td class="right">
+					{{$object.angebot.ANGVSPARAM.InsuranceResult.Praemie|0:n}}
+				</td>
+			</tr>       
+			<!--end-->
+			<!--end-->
+			<!--end-->
+			<tr>
+				<td colspan="2">
+					<hr />
+				</td>
+			</tr>
+		</table>
+
+		<table border="0">
+			<tr>
+				<td>
+               Nettodarlehensbetrag
+				</td>
+				<td class="right">
+                {{0$object.angebot.ANGKALKBGINTERN|0:n}}
+				</td>
+			</tr>       
+			<tr>
+				<td>
+               Laufzeit in Monaten:
+				</td>
+				<td class="right">
+               {{0$object.angebot.ANGKALKLZ|0:0}}
+				</td>
+			</tr>       
+			<tr>
+				<td>
+               Monatliche Rate
+				</td>
+				<td class="right">
+               {{0$object.angebot.ANGKALKRATE|0:n}}
+				</td>
+			</tr>       
+			<tr>
+				<td>
+               Ballonrate
+				</td>
+				<td class="right">
+               {{0$object.angebot.ANGKALKRWKALKBRUTTO|0:n}}
+				</td>
+			</tr>       
+			<tr>
+				<td>
+               Sollzins p.a. %
+				</td>
+				<td class="right">
+               {{0$object.angebot.ANGKALKZINS|0:0.00}} %
+				</td>
+			</tr>       
+			<tr>
+				<td>
+               Gesamtbetrag
+				</td>
+				<td class="right underline">
+               {{0$object.angebot.ANGKALKGESAMTBRUTTO|0:n}}
+				</td>
+			</tr>       
+			<tr>
+				<td>
+               Effektiver Jahreszins %
+				</td>
+				<td class="right">
+                {{0$object.angebot.ANGKALKZINSEFF|0:0.00}} %
+				</td>
+			</tr>       
+
+			<tr>
+				<td colspan="2">
+					<hr />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="small">
+                *  inkl. VersSt.
+				</td>
+			</tr>        
+
+		</table>
+
+
+		<br />
+
+		<!-- fine print -->
+
+		<table>
+			<tr>
+				<td class="small">
+                Dies ist ein unverbindliches, freibleibendes Angebot der Hyundai Capital Bank Europe GmbH, welches auf den von Ihnen gewünschten Eckdaten basiert. Bonität vorausgesetzt. {{$object.BRAND}} Finance ist ein Geschäftsbereich der Hyundai Capital Bank Europe GmbH. 
+					<br />
+					<br />
+                Hinweis des vermittelnden Händlers: Wir sind im Rahmen der Finanzierungsvermittlung lediglich berechtigt, Ihre persönlichen Angaben zu erfassen und die Legitimationsprüfung durchzuführen. Ansonsten haben wir keinerlei Befugnisse, für die Bank zu handeln bzw. aufzutreten. 
+
+				</td>
+			</tr>
+		</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</body>
+</html>

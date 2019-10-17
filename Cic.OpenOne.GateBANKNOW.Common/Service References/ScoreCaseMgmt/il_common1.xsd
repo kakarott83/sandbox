@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:tns="http://www.bmw.com/integrationlayer/message/01.01" elementFormDefault="unqualified" targetNamespace="http://www.bmw.com/integrationlayer/message/01.01" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:annotation>
+    <xsd:documentation>
+			This schema file contains basic types required for the iDEAL Integration Layer.
+			It needs to be applied as part WSDL files for all document application services that
+			are exposed via the Integration Layer. For details see the WSDL
+			Guideline.
+		</xsd:documentation>
+  </xsd:annotation>
+  <xsd:simpleType name="IdentifierType">
+    <xsd:annotation>
+      <xsd:documentation>
+				String based identifier with limited length.
+			</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="5" />
+      <xsd:maxLength value="100" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="TenantType">
+    <xsd:annotation>
+      <xsd:documentation>
+				String based identifier for tenant with limited length.
+			</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1" />
+      <xsd:maxLength value="100" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ReplyToAddressType">
+    <xsd:annotation>
+      <xsd:documentation>
+				Type for a reply to address. This must be an URL.
+				Currently .
+			</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:anyURI" />
+  </xsd:simpleType>
+  <xsd:complexType name="IdentificationType">
+    <xsd:annotation>
+      <xsd:documentation>
+				Container for generic security tokens that can be used to identify end-users
+				if required, e.g. a KerberosToken. 
+				This information is only passed by the integration layer but not processed.
+			</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" processContents="skip" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="OptimisticLockingHeaderType">
+    <xsd:annotation>
+      <xsd:documentation>
+				The OptimisticLockingHeaderType defines the SOAP Header required for all 
+				SOAP messages that contain optimistic locking information.
+			</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="optimisticLockingTag" type="xsd:base64Binary" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MessageHeaderType">
+    <xsd:annotation>
+      <xsd:documentation>
+				The MessageHeaderType defines the SOAP Header required for all SOAP messages
+				exchanged by application services of the Integration Layer.
+			</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="correlationID" type="tns:IdentifierType" />
+      <xsd:element minOccurs="0" name="globalCorrelationID" type="tns:IdentifierType" />
+      <xsd:element minOccurs="0" name="tenant" type="tns:TenantType" />
+      <xsd:element minOccurs="0" name="replyTo" type="tns:ReplyToAddressType" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="messageExchangePattern" type="tns:LogicalMessageExchangePatternType" />
+      <xsd:element minOccurs="0" name="replyState" type="tns:ReplyStateType" />
+      <xsd:element minOccurs="0" name="individualUserIdentification" type="tns:IdentificationType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ReplyStateType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="10" name="entry">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="key" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="value" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="LogicalMessageExchangePatternType">
+    <xsd:annotation>
+      <xsd:documentation>
+				Logical message exchange patterns supported by the Integration Layer. This
+				field is mandatory for all messages.
+				Be aware that these are not physical message exchange patterns.
+			 	See WSDL Guideline for more information.
+			</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ONEWAY_WITH_ACKNOWLEDGE" />
+      <xsd:enumeration value="REQUEST_RESPONSE" />
+      <xsd:enumeration value="REQUEST_CALLBACK" />
+      <xsd:enumeration value="BROADCAST" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ErrorClassificationEnumType">
+    <xsd:annotation>
+      <xsd:documentation>
+				Classification of errors introduced by reference solution
+			</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="UNKNOWN" />
+      <xsd:enumeration value="LOGICAL" />
+      <xsd:enumeration value="COMMUNICATION" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element ibmSchExtn:docRoot="true" name="messageHeader" type="tns:MessageHeaderType" />
+  <xsd:complexType name="StatusEntryType">
+    <xsd:annotation>
+      <xsd:documentation>
+				This structure is part of an ResponseStatus.
+			</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="type" type="tns:SubStatusEnumType">
+        <xsd:annotation>
+          <xsd:documentation>
+						The type indicate the client which type of
+						status this code identify.
+					</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="classification" type="tns:ErrorClassificationEnumType">
+        <xsd:annotation>
+          <xsd:documentation>
+						The type indicate the client which type of
+						status this code identify.
+					</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="code" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>
+						The complete rendered status code containing of
+						the context and the code
+						part.
+					</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="location" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>
+						The context part define in which service context
+						this codes appeared.
+					</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="text" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>
+						The Code part is the code which defined the
+						occurred error.
+					</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="details" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="MainStatusEnumType">
+    <xsd:annotation>
+      <xsd:documentation>
+				Aggregated status of a service invocation.
+			</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="SUCCESS">
+        <xsd:annotation>
+          <xsd:documentation>The service has been called successfully.
+					</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="WARNING">
+        <xsd:annotation>
+          <xsd:documentation>The service has been called successfully, but
+						there are some further status
+						information in the sub status
+						entries.
+                    </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="SubStatusEnumType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="INFO">
+        <xsd:annotation>
+          <xsd:documentation>The status codes contain further information
+					</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SUCCESS">
+        <xsd:annotation>
+          <xsd:documentation>This status codes contain success information
+					</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ERROR">
+        <xsd:annotation>
+          <xsd:documentation>This status code indicates an technical error
+						caused by the service server.
+					</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="UNKNOWN">
+        <xsd:annotation>
+          <xsd:documentation>The type of the status code is unknown.
+					</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="ResponseStatusType">
+    <xsd:annotation>
+      <xsd:documentation>
+				A response status which should be used in oneway_with_acknowledgement 
+				to pass back a positive acknowledgement.  
+			</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="mainStatus" type="tns:MainStatusEnumType" />
+      <xsd:element minOccurs="0" maxOccurs="500" name="subStatus" type="tns:StatusEntryType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ErrorInformationType">
+    <xsd:annotation>
+      <xsd:documentation>
+				Information indicating an erorr. 
+				This is used by the integration layer to indicate technical errors in the integration layer.
+				It may also be used to pass back logical errors from the provider application or 
+				specific integration logic. 
+			</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="500" name="errorEntry" type="tns:StatusEntryType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="errorInformation" type="tns:ErrorInformationType" />
+</xsd:schema>

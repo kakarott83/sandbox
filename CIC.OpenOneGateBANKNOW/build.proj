@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="PrepareVersion;Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  
+	
+  <PropertyGroup>
+
+    <MSBuildCommunityTasksPath>..\libs</MSBuildCommunityTasksPath>
+
+	<MSBuildExtensionPackPath>$(MSBuildProjectDirectory)\Tools\MSBuild.ExtensionPack</MSBuildExtensionPackPath>
+	<ExtensionTasksPath>$(MSBuildExtensionPackPath)\Binaries\</ExtensionTasksPath>
+		
+    <!-- Default configuration -->
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+
+    <!-- Default platform -->
+    <Platform Condition=" '$(Platform)' == '' ">"Any CPU"</Platform>
+
+    <!-- Release folder \\w1\work\buildqueue\OpenOneGateBankNow\Service   -->
+    <ReleaseFolder Condition=" '$(ReleaseFolder)' == '' ">c:\temp\testbuild</ReleaseFolder>
+
+    <!-- Path to msdeploy.exe -->
+    <MSDeployPath Condition=" '$(MSDeployPath)' == '' ">.\Tools\MSDeploy\msdeploy.exe</MSDeployPath>
+
+    <!-- IIS deployment configuration -->
+    <DeployHost Condition=" '$(DeployHost)' == '' ">localhost</DeployHost>
+    <DeployUsername Condition=" '$(DeployUsername)' == '' "></DeployUsername>
+    <DeployUserPassword Condition=" '$(DeployUserPassword)' == '' "></DeployUserPassword>
+
+    
+    <!-- Build server variables -->
+    <BUILD_NUMBER Condition=" '$(BUILD_NUMBER)' == '' ">0</BUILD_NUMBER>
+    <GIT_BRANCH Condition=" '$(GIT_BRANCH)' == '' ">unknown</GIT_BRANCH>
+    <GIT_COMMIT Condition=" '$(GIT_COMMIT)' == '' ">unknown</GIT_COMMIT>
+	
+		
+	<!-- Eval documentation export data source-->
+	<EvalSrcDbService Condition="'$(EvalSrcDbService)' == ''" >BNR13DEV</EvalSrcDbService>
+	<EvalSrcDbUser Condition="'$(EvalSrcDbUser)' == ''">cic</EvalSrcDbUser>
+	<EvalSrcDbPasswordService Condition="'$(EvalSrcDbPasswordService)' == ''"></EvalSrcDbPasswordService>
+	<EvalSrcDbPassword Condition="'$(EvalSrcDbPassword)' == ''"></EvalSrcDbPassword>
+	<SOURCE_BUILD_NUMBER Condition="'$(SOURCE_BUILD_NUMBER)' == ''">$(BUILD_NUMBER)</SOURCE_BUILD_NUMBER>
+  </PropertyGroup>
+
+<!--  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />-->
+  <Import Project="..\libs\Microsoft.WebApplication.targets" />
+  <Import Project="..\libs\MSBuild.Community.Tasks.Targets" />
+	<Import Project="..\libs\MSBuild.ExtensionPack.tasks" />
+	
+	
+	
+  
+  <!-- Prepare AssemblyInfo versions -->
+  <Target Name="PrepareVersion">
+    <Time Format="yyyy">
+      <Output TaskParameter="FormattedTime" PropertyName="BuildYear" />
+    </Time>
+
+    <!-- Update all AssemblyInfo.cs files -->
+    <ItemGroup>
+      <AssemblyInfoFilesToUpdate Include="..\**\AssemblyInfo.cs"/>
+    </ItemGroup>
+	
+	<Exec Command="git rev-list HEAD --count" ConsoleToMSBuild="true">
+		 <Output TaskParameter="ConsoleOutput" PropertyName="GIT_NUMBER"/>
+	</Exec>
+	
+    <Attrib Files="@(AssemblyInfoFilesToUpdate)" Normal="true" />
+    <FileUpdate Files="@(AssemblyInfoFilesToUpdate)" Regex="AssemblyVersion\(&quot;(\d+).(\d+).(\d+).(\d+)&quot;\)" ReplacementText="AssemblyVersion(&quot;$1.$2.$3.$(BUILD_NUMBER)&quot;)" />
+    <FileUpdate Files="@(AssemblyInfoFilesToUpdate)" Regex="AssemblyFileVersion\(&quot;(\d+).(\d+).(\d+).(\d+)&quot;\)" ReplacementText="AssemblyFileVersion(&quot;$1.$2.$3.$(BUILD_NUMBER)&quot;)" />
+
+	<FileUpdate Files="@(AssemblyInfoFilesToUpdate)" Regex="AssemblyInformationalVersion\(&quot;.*&quot;\)"  ReplacementText="AssemblyInformationalVersion(&quot;$(BUILD_NUMBER).$(GIT_NUMBER).$(GIT_BRANCH)-$(GIT_COMMIT)&quot;)" />
+	<FileUpdate Files="@(AssemblyInfoFilesToUpdate)" Regex="AssemblyCopyright\(&quot;.*&quot;\)" ReplacementText="AssemblyCopyright(&quot;Copyright © C.I.C. Software GmbH $(BuildYear)&quot;)" />
+	
+    <!-- Write global info into GlobalAssemblyVersion.cs 
+    <FileUpdate Files="GlobalAssemblyVersion.cs" Regex="Copyright © C.I.C. Software GmbH \d+\d+\d+\d+" ReplacementText="Copyright © C.I.C. Software GmbH $(BuildYear)" />
+    <FileUpdate Files="GlobalAssemblyVersion.cs" Regex="Copyright © C.I.C. Software GmbH \d+\d+\d+\d+" ReplacementText="Copyright © C.I.C. Software GmbH $(BuildYear)" />
+    <FileUpdate Files="GlobalAssemblyVersion.cs" Regex="AssemblyInformationalVersion\(&quot;\d+.\d+.\d+.\d+&quot;\)" ReplacementText="AssemblyInformationalVersion(&quot;$(BUILD_NUMBER)-$(GIT_BRANCH)-$(GIT_COMMIT)&quot;)" />
+-->
+  <!--  <FileUpdate Files="Applications\CIC.Bas.Services.Setup\Product.wxs" Regex="Version=&quot;(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="Version=&quot;$1.$2.$3.$(BUILD_NUMBER)" />-->
+  </Target>
+
+  <!-- Solution build. -->
+  <Target Name="Build" >
+    <MSBuild
+			Targets="Build"
+			Projects="OpenOneGateBANKNOW.sln"
+			ContinueOnError="false"
+			Properties="Configuration=$(Configuration);RunCodeAnalysis=Never"/>
+
+		<!--Create Service Installers
+	 <Exec Command=".\Tools\WixSharp\cscs.exe .\BuildScripts\Installers\CIC.Bas.Automation\Package.cs" WorkingDirectory=".\" ContinueOnError="False" />
+	 -->
+    <!-- <Exec Command=".\Tools\WixSharp\cscs.exe .\BuildScripts\Installers\JobServer\Package.cs" WorkingDirectory=".\" ContinueOnError="False" /> -->
+    
+    <CallTarget Targets="AfterBuild"/>
+  </Target>
+  
+  <Target Name="AfterBuild">
+    <ItemGroup>
+      <!-- Ziel zum Kopieren für Revision $(ReleaseFolder)\$(BUILD_NUMBER) -->
+      <binDir Include="$(ReleaseFolder)\$(BUILD_NUMBER)\bin" />
+      <!-- Ziel zum Kopieren für Revision -->
+      <svcDir Include="$(ReleaseFolder)\$(BUILD_NUMBER)\" />
+	  
+	  
+      <BinFiles Include=".\Cic.OpenOne.GateBANKNOW.Service\bin\*.*" />
+      <!-- Aktueller Build-Ordner auf cicdbs13 jobs workspace -->
+      <SvcFiles Include=".\Cic.OpenOne.GateBANKNOW.Service\*.svc" />
+      <SvcFiles Include=".\Cic.OpenOne.GateBANKNOW.Service\*.asax" />
+      <SvcFiles Include=".\Cic.OpenOne.GateBANKNOW.Service\*.aspx" />
+    </ItemGroup>
+    <MakeDir Directories="@(binDir)" ContinueOnError="true" />
+    <Copy SourceFiles="@(BinFiles)" DestinationFolder="@(binDir)" />
+    <Copy SourceFiles="@(SvcFiles)" DestinationFolder="@(svcDir)" />
+  </Target>
+<!--
+  <Target Name="BuildAnalysis" >
+    <MSBuild
+			Targets="Clean;Rebuild"
+			Projects="${PROJECTNAME}.sln"
+			ContinueOnError="false"
+			Properties="Configuration=$(Configuration);RunCodeAnalysis=Never;DefineConstants=CODE_ANALYSIS"/>
+  </Target>
+   -->
+  <!-- Hygiene StyleCop code analysis 
+  <Target Name="RunStyleCop">
+	<CIC.CustomTasks.CustomStyleCop SolutionFilePath=".\CIC.sln" IgnoreProjectFiles="CIC.Bas.OpenOne.Interop.csproj;" />
+  </Target>
+-->
+  <!-- Static FXcop code analysis 
+  <Target Name="Analysis" >
+    <Exec Command=".\BuildScripts\ExecFxCop.cmd $(Configuration)" IgnoreExitCode="false" ContinueOnError="false">
+		<Output TaskParameter="ExitCode" ItemName="FxCopExitCode" />
+	</Exec>
+	<Error Text="Code analysis failed" Condition="@(FxCopExitCode) &lt; 0" />	   
+  </Target>
+  -->
+   <!--
+  <Target Name="NDepend">
+	
+    <Exec  Command="&quot;$(MSBuildProjectDirectory)\Tools\NDepend\NDepend.Console.exe&quot; &quot;$(MSBuildProjectDirectory)\Tools\NDepend\CIC.ndproj&quot; /Concurrent /OutDir &quot;$(MSBuildProjectDirectory)\Artifacts\NDepend&quot;" IgnoreExitCode="true" ContinueOnError="true"/>
+  </Target>
+-->
+  <!-- Tests 
+  <Target Name="Test">
+    <Exec IgnoreExitCode="False" Command=".\BuildScripts\RunTests.cmd $(Configuration)">
+      <Output TaskParameter="ExitCode" ItemName="TestsExitCode" />
+    </Exec>
+    <Error Text="Error while running tests" Condition="@(TestsExitCode) &lt; 0" />
+  </Target>
+-->
+ 
+  <!-- Remove unnecessary files from Interop build 
+  <Target Name="AfterBuild">
+    <Exec Command=".\BuildScripts\RemoveFiles.cmd $(Configuration)" IgnoreExitCode="true" ContinueOnError="true" />
+  </Target>
+-->
+  <!-- Deploy Bas.Services to the IIS web site using msdeploy -->
+  <!--To specify values that contains dots or spaces you must put it in apostrophes and quotes. It is important to have Web Deployment Agent Service and Web Management Service installed and turned on.  To check this run following commands at an administrative command prompt:
+        net stop msdepsvc & net start msdepsvc
+        net stop wmsvc & net start wmsvc-->
+		<!--
+  <Target Name="DeployServices">
+    <Exec Command = '$(MSDeployPath) -verb:sync -source:Package="Applications\CIC.Bas.Services\obj\$(Configuration)\Package\CIC.Bas.Services.zip" -dest:auto,computername=$(DeployHost),username=$(DeployUsername),password=$(DeployUserPassword) -setParam:name="IIS Web Application Name",value="$(ServicesApplicationName)"'/>
+  </Target>
+-->
+  <!-- Unziping file 
+  <Target Name="UnzipFile">
+    <Unzip TargetDirectory="$(DestinationFolder)" ZipFileName="$(ZipPath)"/>
+    
+   
+    <CreateItem Include="$(DestinationFolder)\Content\C_C\Jenkins\jobs\CIC.Bas\workspace\Applications\CIC.Bas.Services\obj\Release\Package\PackageTmp\bin\*.*">
+      <Output TaskParameter="Include" ItemName="BinFiles" />
+    </CreateItem>
+    
+    <Copy
+      SourceFiles="@(BinFiles)"
+      DestinationFiles="@(BinFiles->'$(DestinationFolder)\bin\%(Filename)%(Extension)')"/>
+    
+    
+    <CreateItem
+      Include="$(DestinationFolder)\Content\C_C\Jenkins\jobs\CIC.Bas\workspace\Applications\CIC.Bas.Services\obj\Release\Package\PackageTmp\*.*"
+      Exclude="$(DestinationFolder)\Content\C_C\Jenkins\jobs\CIC.Bas\workspace\Applications\CIC.Bas.Services\obj\Release\Package\PackageTmp\web.config;$(DestinationFolder)\Content\C_C\Jenkins\jobs\CIC.Bas\workspace\Applications\CIC.Bas.Services\obj\Release\Package\PackageTmp\log4net.config">
+      <Output TaskParameter="Include" ItemName="MainFolderFiles" />
+    </CreateItem>
+    
+    <Copy
+      SourceFiles="@(MainFolderFiles)"
+      DestinationFiles="@(MainFolderFiles->'$(DestinationFolder)\%(RecursiveDir)%(Filename)%(Extension)')"/>
+
+   
+    <ItemGroup>
+      <FilesToDelete Include="$(DestinationFolder)\archive.xml"/>
+      <FilesToDelete Include="$(DestinationFolder)\parameters.xml"/>
+      <FilesToDelete Include="$(DestinationFolder)\systemInfo.xml"/>
+    </ItemGroup>
+
+    <Delete Files="@(FilesToDelete)" />
+
+    <RemoveDir Directories="$(DestinationFolder)\Content" />
+  </Target>
+	-->
+	
+</Project>

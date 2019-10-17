@@ -1,0 +1,784 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Runtime>
+      <!-- Storage schema - SSDL -->
+      <edmx:StorageModels>
+        <Schema Namespace="Cic.OpenLease.Model.DdOiqueue.Store" Alias="Self" Provider="Devart.Data.Oracle" ProviderManifestToken="ORA" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+          <EntityContainer Name="CIC_OIQUEUE">
+          <EntitySet Name="CICLOGD" EntityType="Cic.OpenLease.Model.DdOiqueue.Store.CICLOGD" Schema="CIC" Table="CICLOGD" />
+          <EntitySet Name="CFG" EntityType="Cic.OpenLease.Model.DdOiqueue.Store.CFG" Schema="CIC" Table="CFG" />
+          <EntitySet Name="CFGSEC" EntityType="Cic.OpenLease.Model.DdOiqueue.Store.CFGSEC" Schema="CIC" Table="CFGSEC" />
+          <EntitySet Name="CFGVAR" EntityType="Cic.OpenLease.Model.DdOiqueue.Store.CFGVAR" Schema="CIC" Table="CFGVAR" />
+          <EntitySet Name="CICLOG" EntityType="Cic.OpenLease.Model.DdOiqueue.Store.CICLOG" Schema="CIC" Table="CICLOG" />
+          <EntitySet Name="DBVERS" EntityType="Cic.OpenLease.Model.DdOiqueue.Store.DBVERS" Schema="CIC" Table="DBVERS" />
+          <EntitySet Name="DBSCRIPT" EntityType="Cic.OpenLease.Model.DdOiqueue.Store.DBSCRIPT" Schema="CIC" Table="DBSCRIPT" />
+          <EntitySet Name="XMLSAVE" EntityType="Cic.OpenLease.Model.DdOiqueue.Store.XMLSAVE" Schema="CIC" Table="XMLSAVE" />
+          <EntitySet Name="XMLSAVEPOS" EntityType="Cic.OpenLease.Model.DdOiqueue.Store.XMLSAVEPOS" Schema="CIC" Table="XMLSAVEPOS" />
+          <AssociationSet Name="CFG_CFGSEC" Association="Cic.OpenLease.Model.DdOiqueue.Store.CFG_CFGSEC">
+            <End Role="CFG" EntitySet="CFG" />
+            <End Role="CFGSEC" EntitySet="CFGSEC" />
+          </AssociationSet>
+          <AssociationSet Name="CFGSEC_CFGVAR" Association="Cic.OpenLease.Model.DdOiqueue.Store.CFGSEC_CFGVAR">
+            <End Role="CFGSEC" EntitySet="CFGSEC" />
+            <End Role="CFGVAR" EntitySet="CFGVAR" />
+          </AssociationSet>
+          <AssociationSet Name="CICLOG_CICLOGD" Association="Cic.OpenLease.Model.DdOiqueue.Store.CICLOG_CICLOGD">
+            <End Role="CICLOG" EntitySet="CICLOG" />
+            <End Role="CICLOGD" EntitySet="CICLOGD" />
+          </AssociationSet>
+          <AssociationSet Name="DBVERS_DBSCRIPT" Association="Cic.OpenLease.Model.DdOiqueue.Store.DBVERS_DBSCRIPT">
+            <End Role="DBVERS" EntitySet="DBVERS" />
+            <End Role="DBSCRIPT" EntitySet="DBSCRIPT" />
+          </AssociationSet>
+          <AssociationSet Name="XMLSAVE_XMLSAVEPOS" Association="Cic.OpenLease.Model.DdOiqueue.Store.XMLSAVE_XMLSAVEPOS">
+            <End Role="XMLSAVE" EntitySet="XMLSAVE" />
+            <End Role="XMLSAVEPOS" EntitySet="XMLSAVEPOS" />
+          </AssociationSet>
+          </EntityContainer>  
+      <EntityType Name="CICLOGD">
+        <Key>
+          <PropertyRef Name="SYSCICLOGD" />
+        </Key>
+        <Property Name="SYSCICLOGD" Type="int64" Nullable="false" StoreGeneratedPattern="None" />
+        <Property Name="AKTION" Type="VARCHAR2" MaxLength="30" Nullable="true" />
+        <Property Name="DESCRIPTION" Type="VARCHAR2" MaxLength="128" Nullable="true" />
+        <Property Name="AKTIONDATE" Type="DATE" Nullable="true" />
+        <Property Name="SYSCICLOG" Type="int64" Nullable="true" />
+        <Property Name="CONFIRMED" Type="DATE" Nullable="true" />
+        <Property Name="CONFIRMEDBY" Type="VARCHAR2" MaxLength="20" Nullable="true" />
+        <Property Name="MSGTEXT" Type="VARCHAR2" MaxLength="3999" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CFG">
+        <Key>
+          <PropertyRef Name="SYSCFG" />
+        </Key>
+        <Property Name="SYSCFG" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="CODE" Type="VARCHAR2" MaxLength="30" Nullable="true" />
+        <Property Name="BEZEICHNUNG" Type="VARCHAR2" MaxLength="180" Nullable="true" />
+        <Property Name="OVERRIDEFLAG" Type="int" Nullable="true" />
+        <Property Name="SUPPLEMENTFLAG" Type="int" Nullable="true" />
+        <Property Name="ACTIVEFLAG" Type="int" Nullable="true" />
+        <Property Name="INIREPLACEMENT" Type="int" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CFGSEC">
+        <Key>
+          <PropertyRef Name="SYSCFGSEC" />
+        </Key>
+        <Property Name="SYSCFGSEC" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="SYSCFG" Type="int64" Nullable="true" />
+        <Property Name="CODE" Type="VARCHAR2" MaxLength="30" Nullable="true" />
+        <Property Name="BEZEICHNUNG" Type="VARCHAR2" MaxLength="180" Nullable="true" />
+        <Property Name="ACTIVEFLAG" Type="int" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CFGVAR">
+        <Key>
+          <PropertyRef Name="SYSCFGVAR" />
+        </Key>
+        <Property Name="SYSCFGVAR" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="SYSCFGSEC" Type="int64" Nullable="true" />
+        <Property Name="CODE" Type="VARCHAR2" MaxLength="30" Nullable="true" />
+        <Property Name="WERT" Type="VARCHAR2" MaxLength="512" Nullable="true" />
+        <Property Name="BEZEICHNUNG" Type="VARCHAR2" MaxLength="180" Nullable="true" />
+        <Property Name="OVERRIDEFLAG" Type="int" Nullable="true" />
+        <Property Name="FORCEOVERRIDEFLAG" Type="int" Nullable="true" />
+        <Property Name="NOTACTIVEFLAG" Type="int" Nullable="true" />
+        <Property Name="IGNORESPECCHARS" Type="int" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CICLOG">
+        <Key>
+          <PropertyRef Name="SYSCICLOG" />
+        </Key>
+        <Property Name="SYSCICLOG" Type="int64" Nullable="false" StoreGeneratedPattern="None" />
+        <Property Name="LOGINDATE" Type="DATE" Nullable="true" />
+        <Property Name="LOGOUTDATE" Type="DATE" Nullable="true" />
+        <Property Name="ORABENUTZER" Type="VARCHAR2" MaxLength="20" Nullable="true" />
+        <Property Name="CICBENUTZER" Type="VARCHAR2" MaxLength="20" Nullable="true" />
+        <Property Name="MASCHINE" Type="VARCHAR2" MaxLength="20" Nullable="true" />
+        <Property Name="ID" Type="int64" Nullable="true" />
+        <Property Name="SOURCE" Type="VARCHAR2" MaxLength="128" Nullable="true" />
+      </EntityType>
+      <EntityType Name="DBVERS">
+        <Key>
+          <PropertyRef Name="SYSDBVERS" />
+        </Key>
+        <Property Name="SYSDBVERS" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="VERMAJOR" Type="VARCHAR2" MaxLength="20" Nullable="true" />
+        <Property Name="VERMINOR" Type="VARCHAR2" MaxLength="20" Nullable="true" />
+        <Property Name="FIRSTDATE" Type="DATE" Nullable="true" />
+        <Property Name="FIRSTTIME" Type="int64" Nullable="true" />
+        <Property Name="LASTDATE" Type="DATE" Nullable="true" />
+        <Property Name="LASTTIME" Type="int64" Nullable="true" />
+        <Property Name="ACTIVEFLAG" Type="int" Nullable="true" />
+        <Property Name="DBUSER" Type="VARCHAR2" MaxLength="128" Nullable="true" />
+        <Property Name="OSUSER" Type="VARCHAR2" MaxLength="128" Nullable="true" />
+        <Property Name="CLIENTMACHINE" Type="VARCHAR2" MaxLength="128" Nullable="true" />
+      </EntityType>
+      <EntityType Name="DBSCRIPT">
+        <Key>
+          <PropertyRef Name="SYSDBSCRIPT" />
+        </Key>
+        <Property Name="SYSDBSCRIPT" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="EXECDATE" Type="DATE" Nullable="true" />
+        <Property Name="EXECTIME" Type="int64" Nullable="true" />
+        <Property Name="AREA" Type="VARCHAR2" MaxLength="25" Nullable="true" />
+        <Property Name="TYP" Type="VARCHAR2" MaxLength="25" Nullable="true" />
+        <Property Name="VERSION" Type="VARCHAR2" MaxLength="25" Nullable="true" />
+        <Property Name="CONTENTFILENAME" Type="VARCHAR2" MaxLength="255" Nullable="true" />
+        <Property Name="CONTENT" Type="CLOB" Nullable="true" />
+        <Property Name="LOGCONTENT" Type="CLOB" Nullable="true" />
+        <Property Name="LOGCONTENTFILENAME" Type="VARCHAR2" MaxLength="255" Nullable="true" />
+        <Property Name="SYSDBVERS" Type="int64" Nullable="true" />
+      </EntityType>
+      <EntityType Name="XMLSAVE">
+        <Key>
+          <PropertyRef Name="SYSXMLSAVE" />
+        </Key>
+        <Property Name="SYSXMLSAVE" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="AREA" Type="VARCHAR2" MaxLength="40" Nullable="true" />
+        <Property Name="SYSLEASE" Type="int64" Nullable="true" />
+        <Property Name="SYSWFUSER" Type="int64" Nullable="true" />
+        <Property Name="SYSPUSER" Type="int64" Nullable="true" />
+        <Property Name="SOURCE" Type="VARCHAR2" MaxLength="128" Nullable="true" />
+        <Property Name="STATUS" Type="VARCHAR2" MaxLength="80" Nullable="true" />
+        <Property Name="DESCRIPTION" Type="VARCHAR2" MaxLength="1024" Nullable="true" />
+        <Property Name="SAVEDATE" Type="DATE" Nullable="true" />
+        <Property Name="SAVETIME" Type="int64" Nullable="true" />
+      </EntityType>
+      <EntityType Name="XMLSAVEPOS">
+        <Key>
+          <PropertyRef Name="SYSXMLSAVEPOS" />
+        </Key>
+        <Property Name="SYSXMLSAVEPOS" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="SYSXMLSAVE" Type="int64" Nullable="true" />
+        <Property Name="DTNAME" Type="VARCHAR2" MaxLength="128" Nullable="true" />
+        <Property Name="DTVALUE" Type="CLOB" Nullable="true" />
+      </EntityType>
+            <Association Name="CFG_CFGSEC">
+              <End Role="CFG" Type="Cic.OpenLease.Model.DdOiqueue.Store.CFG" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="CFGSEC" Type="Cic.OpenLease.Model.DdOiqueue.Store.CFGSEC" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="CFG">
+                  <PropertyRef Name="SYSCFG" />
+                </Principal>
+                <Dependent Role="CFGSEC">
+                  <PropertyRef Name="SYSCFG" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="CFGSEC_CFGVAR">
+              <End Role="CFGSEC" Type="Cic.OpenLease.Model.DdOiqueue.Store.CFGSEC" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="CFGVAR" Type="Cic.OpenLease.Model.DdOiqueue.Store.CFGVAR" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="CFGSEC">
+                  <PropertyRef Name="SYSCFGSEC" />
+                </Principal>
+                <Dependent Role="CFGVAR">
+                  <PropertyRef Name="SYSCFGSEC" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="CICLOG_CICLOGD">
+              <End Role="CICLOG" Type="Cic.OpenLease.Model.DdOiqueue.Store.CICLOG" Multiplicity="0..1">
+              </End>
+              <End Role="CICLOGD" Type="Cic.OpenLease.Model.DdOiqueue.Store.CICLOGD" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="CICLOG">
+                  <PropertyRef Name="SYSCICLOG" />
+                </Principal>
+                <Dependent Role="CICLOGD">
+                  <PropertyRef Name="SYSCICLOG" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="DBVERS_DBSCRIPT">
+              <End Role="DBVERS" Type="Cic.OpenLease.Model.DdOiqueue.Store.DBVERS" Multiplicity="0..1">
+              </End>
+              <End Role="DBSCRIPT" Type="Cic.OpenLease.Model.DdOiqueue.Store.DBSCRIPT" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="DBVERS">
+                  <PropertyRef Name="SYSDBVERS" />
+                </Principal>
+                <Dependent Role="DBSCRIPT">
+                  <PropertyRef Name="SYSDBVERS" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="XMLSAVE_XMLSAVEPOS">
+              <End Role="XMLSAVE" Type="Cic.OpenLease.Model.DdOiqueue.Store.XMLSAVE" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="XMLSAVEPOS" Type="Cic.OpenLease.Model.DdOiqueue.Store.XMLSAVEPOS" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="XMLSAVE">
+                  <PropertyRef Name="SYSXMLSAVE" />
+                </Principal>
+                <Dependent Role="XMLSAVEPOS">
+                  <PropertyRef Name="SYSXMLSAVE" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+        </Schema>  
+      </edmx:StorageModels>
+      <!-- Conceptual schema - CSDL -->
+      <edmx:ConceptualModels>
+        <Schema Namespace="Cic.OpenLease.Model.DdOiqueue" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntityContainer Name="OiqueueEntities">
+          <EntitySet Name="CICLOGD" EntityType="Cic.OpenLease.Model.DdOiqueue.CICLOGD" />
+          <EntitySet Name="CFG" EntityType="Cic.OpenLease.Model.DdOiqueue.CFG" />
+          <EntitySet Name="CFGSEC" EntityType="Cic.OpenLease.Model.DdOiqueue.CFGSEC" />
+          <EntitySet Name="CFGVAR" EntityType="Cic.OpenLease.Model.DdOiqueue.CFGVAR" />
+          <EntitySet Name="CICLOG" EntityType="Cic.OpenLease.Model.DdOiqueue.CICLOG" />
+          <EntitySet Name="DBVERS" EntityType="Cic.OpenLease.Model.DdOiqueue.DBVERS" />
+          <EntitySet Name="DBSCRIPT" EntityType="Cic.OpenLease.Model.DdOiqueue.DBSCRIPT" />
+          <EntitySet Name="XMLSAVE" EntityType="Cic.OpenLease.Model.DdOiqueue.XMLSAVE" />
+          <EntitySet Name="XMLSAVEPOS" EntityType="Cic.OpenLease.Model.DdOiqueue.XMLSAVEPOS" />
+          <AssociationSet Name="CFGSEC_CFG" Association="Cic.OpenLease.Model.DdOiqueue.CFGSEC_CFG">
+            <End Role="CFG" EntitySet="CFG" />
+            <End Role="CFGSEC" EntitySet="CFGSEC" />
+          </AssociationSet>
+          <AssociationSet Name="CFGVAR_CFGSEC" Association="Cic.OpenLease.Model.DdOiqueue.CFGVAR_CFGSEC">
+            <End Role="CFGSEC" EntitySet="CFGSEC" />
+            <End Role="CFGVAR" EntitySet="CFGVAR" />
+          </AssociationSet>
+          <AssociationSet Name="CICLOGD_CICLOG" Association="Cic.OpenLease.Model.DdOiqueue.CICLOGD_CICLOG">
+            <End Role="CICLOG" EntitySet="CICLOG" />
+            <End Role="CICLOGD" EntitySet="CICLOGD" />
+          </AssociationSet>
+          <AssociationSet Name="DBSCRIPT_DBVERS" Association="Cic.OpenLease.Model.DdOiqueue.DBSCRIPT_DBVERS">
+            <End Role="DBVERS" EntitySet="DBVERS" />
+            <End Role="DBSCRIPT" EntitySet="DBSCRIPT" />
+          </AssociationSet>
+          <AssociationSet Name="XMLSAVEPOS_XMLSAVE" Association="Cic.OpenLease.Model.DdOiqueue.XMLSAVEPOS_XMLSAVE">
+            <End Role="XMLSAVE" EntitySet="XMLSAVE" />
+            <End Role="XMLSAVEPOS" EntitySet="XMLSAVEPOS" />
+          </AssociationSet>
+          </EntityContainer>
+      <EntityType Name="CICLOGD">
+        <Documentation><Summary>Renamed ciclogd</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCICLOGD" />
+        </Key>
+        <Property Name="SYSCICLOGD" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="AKTION" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="DESCRIPTION" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="AKTIONDATE" Type="DateTime" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="CONFIRMED" Type="DateTime" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="CONFIRMEDBY" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="MSGTEXT" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="CICLOG" Relationship="Cic.OpenLease.Model.DdOiqueue.CICLOGD_CICLOG" FromRole="CICLOGD" ToRole="CICLOG" />
+      </EntityType>
+      <EntityType Name="CFG">
+        <Documentation><Summary>Konfiguration (entspricht einer INI Datei)</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCFG" />
+        </Key>
+        <Property Name="SYSCFG" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="CODE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="BEZEICHNUNG" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="OVERRIDEFLAG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>cicGETINI (IniReplacement muss 1 sein): Wenn dieser Flag gesetzt ist so �berschreibt die INI Einstellung die CFG Einstellung (falls vorhanden)</Summary></Documentation>
+        </Property>
+        <Property Name="SUPPLEMENTFLAG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>cicGETINI (IniReplacement muss 1 sein): Alles was hier nicht vohanden ist wird aus der INI gezogen.  Wenn das Flag nicht gesetzt ist wird die INI komplett ignoriert</Summary></Documentation>
+        </Property>
+        <Property Name="ACTIVEFLAG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>cicGETINI und cicGETCFG: Diese Konfiguration ist aktiv oder nicht</Summary></Documentation>
+        </Property>
+        <Property Name="INIREPLACEMENT" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>cicGETINI: dient als Ersatz der INI Datei. In diesem Fall MUSS das Feld Code gleich dem INI Dateinamen sein. z.B: CIC.INI oder .\oltrans.ini</Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="CFGSECList" Relationship="Cic.OpenLease.Model.DdOiqueue.CFGSEC_CFG" FromRole="CFG" ToRole="CFGSEC" />
+      </EntityType>
+      <EntityType Name="CFGSEC">
+        <Documentation><Summary>Bereich (entspricht dem Bereich einer INI Datei)</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCFGSEC" />
+        </Key>
+        <Property Name="SYSCFGSEC" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="CODE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="BEZEICHNUNG" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="ACTIVEFLAG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>cicGETINI bzw. cicGETCFG: dieser Bereich ist aktiv oder nicht</Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="CFG" Relationship="Cic.OpenLease.Model.DdOiqueue.CFGSEC_CFG" FromRole="CFGSEC" ToRole="CFG" />
+        <NavigationProperty Name="CFGVARList" Relationship="Cic.OpenLease.Model.DdOiqueue.CFGVAR_CFGSEC" FromRole="CFGSEC" ToRole="CFGVAR" />
+      </EntityType>
+      <EntityType Name="CFGVAR">
+        <Documentation><Summary>Variable (entspricht der Variable aus der INI)</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCFGVAR" />
+        </Key>
+        <Property Name="SYSCFGVAR" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="CODE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="WERT" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="BEZEICHNUNG" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="OVERRIDEFLAG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>cicGETINI (CFG:IniReplacement und ForceOverrideFlag m�ssen 1 sein): �bersteuert das Verhalten des CFG:OverrideFlags (nur wenn ForceOverrideFlag gesetzt ist)</Summary></Documentation>
+        </Property>
+        <Property Name="FORCEOVERRIDEFLAG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>cicGETINI: dieses Flag macht nur Sinn wenn CFG:IniReplacement gesetzt ist und steuert die G�ltigkeit von CFGVAR:OverrideFlag</Summary></Documentation>
+        </Property>
+        <Property Name="NOTACTIVEFLAG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="IGNORESPECCHARS" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="CFGSEC" Relationship="Cic.OpenLease.Model.DdOiqueue.CFGVAR_CFGSEC" FromRole="CFGVAR" ToRole="CFGSEC" />
+      </EntityType>
+      <EntityType Name="CICLOG">
+        <Documentation><Summary>CICLOG</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCICLOG" />
+        </Key>
+        <Property Name="SYSCICLOG" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="LOGINDATE" Type="DateTime" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="LOGOUTDATE" Type="DateTime" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="ORABENUTZER" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="CICBENUTZER" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="MASCHINE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="ID" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="SOURCE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="CICLOGDList" Relationship="Cic.OpenLease.Model.DdOiqueue.CICLOGD_CICLOG" FromRole="CICLOG" ToRole="CICLOGD" />
+      </EntityType>
+      <EntityType Name="DBVERS">
+        <Documentation><Summary>DB-Version</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSDBVERS" />
+        </Key>
+        <Property Name="SYSDBVERS" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="VERMAJOR" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="VERMINOR" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="FIRSTDATE" Type="DateTime" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="FIRSTTIME" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="LASTDATE" Type="DateTime" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="LASTTIME" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="ACTIVEFLAG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="DBUSER" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="OSUSER" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="CLIENTMACHINE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="DBSCRIPTList" Relationship="Cic.OpenLease.Model.DdOiqueue.DBSCRIPT_DBVERS" FromRole="DBVERS" ToRole="DBSCRIPT" />
+      </EntityType>
+      <EntityType Name="DBSCRIPT">
+        <Documentation><Summary>DB-Version-Script</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSDBSCRIPT" />
+        </Key>
+        <Property Name="SYSDBSCRIPT" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="EXECDATE" Type="DateTime" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="EXECTIME" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="AREA" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="TYP" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="VERSION" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="CONTENTFILENAME" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="CONTENT" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="LOGCONTENT" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="LOGCONTENTFILENAME" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="DBVERS" Relationship="Cic.OpenLease.Model.DdOiqueue.DBSCRIPT_DBVERS" FromRole="DBSCRIPT" ToRole="DBVERS" />
+      </EntityType>
+      <EntityType Name="XMLSAVE">
+        <Documentation><Summary>XML temporary save</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSXMLSAVE" />
+        </Key>
+        <Property Name="SYSXMLSAVE" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary>System ID</Summary></Documentation>
+        </Property>
+        <Property Name="AREA" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="SYSLEASE" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Lease-ID (falls bereits existent)</Summary></Documentation>
+        </Property>
+        <Property Name="SYSWFUSER" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="SYSPUSER" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Optional  - falls man es im Web benutzen m�chte ...</Summary></Documentation>
+        </Property>
+        <Property Name="SOURCE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Herkunft (z.B. Vorgang Angebotsassistent, Inbox etc.)</Summary></Documentation>
+        </Property>
+        <Property Name="STATUS" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Status (aber auch z.B. f�r Tab-Nummer etc.)</Summary></Documentation>
+        </Property>
+        <Property Name="DESCRIPTION" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>z.B: f�r Hinweise zur Identifikation f�r den Benutzer</Summary></Documentation>
+        </Property>
+        <Property Name="SAVEDATE" Type="DateTime" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="SAVETIME" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="XMLSAVEPOSList" Relationship="Cic.OpenLease.Model.DdOiqueue.XMLSAVEPOS_XMLSAVE" FromRole="XMLSAVE" ToRole="XMLSAVEPOS" />
+      </EntityType>
+      <EntityType Name="XMLSAVEPOS">
+        <Documentation><Summary>XML temporary save pos</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSXMLSAVEPOS" />
+        </Key>
+        <Property Name="SYSXMLSAVEPOS" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary>System ID</Summary></Documentation>
+        </Property>
+        <Property Name="DTNAME" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Name datentyp (bei einer Queue z.B. qAngebot) oder Name Suchvorlage</Summary></Documentation>
+        </Property>
+        <Property Name="DTVALUE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>XML-String</Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="XMLSAVE" Relationship="Cic.OpenLease.Model.DdOiqueue.XMLSAVEPOS_XMLSAVE" FromRole="XMLSAVEPOS" ToRole="XMLSAVE" />
+      </EntityType>
+            <Association Name="CFGSEC_CFG">
+              <End Role="CFG" Type="Cic.OpenLease.Model.DdOiqueue.CFG" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>  
+              <End Role="CFGSEC" Type="Cic.OpenLease.Model.DdOiqueue.CFGSEC" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="CFGVAR_CFGSEC">
+              <End Role="CFGSEC" Type="Cic.OpenLease.Model.DdOiqueue.CFGSEC" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>  
+              <End Role="CFGVAR" Type="Cic.OpenLease.Model.DdOiqueue.CFGVAR" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="CICLOGD_CICLOG">
+              <End Role="CICLOG" Type="Cic.OpenLease.Model.DdOiqueue.CICLOG" Multiplicity="0..1">
+              </End>  
+              <End Role="CICLOGD" Type="Cic.OpenLease.Model.DdOiqueue.CICLOGD" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="DBSCRIPT_DBVERS">
+              <End Role="DBVERS" Type="Cic.OpenLease.Model.DdOiqueue.DBVERS" Multiplicity="0..1">
+              </End>  
+              <End Role="DBSCRIPT" Type="Cic.OpenLease.Model.DdOiqueue.DBSCRIPT" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="XMLSAVEPOS_XMLSAVE">
+              <End Role="XMLSAVE" Type="Cic.OpenLease.Model.DdOiqueue.XMLSAVE" Multiplicity="0..1">
+              </End>  
+              <End Role="XMLSAVEPOS" Type="Cic.OpenLease.Model.DdOiqueue.XMLSAVEPOS" Multiplicity="*">
+              </End>
+            </Association>
+        </Schema>
+      </edmx:ConceptualModels>
+      <!-- C-S mapping content -->
+      <edmx:Mappings>
+        <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">    
+          <EntityContainerMapping StorageEntityContainer="CIC_OIQUEUE" CdmEntityContainer="OiqueueEntities">
+          <EntitySetMapping Name="CICLOGD">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOiqueue.CICLOGD)">
+              <MappingFragment StoreEntitySet="CICLOGD">
+                 <ScalarProperty Name="SYSCICLOGD" ColumnName="SYSCICLOGD" />
+                 <ScalarProperty Name="AKTION" ColumnName="AKTION" />
+                 <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                 <ScalarProperty Name="AKTIONDATE" ColumnName="AKTIONDATE" />
+                 <ScalarProperty Name="CONFIRMED" ColumnName="CONFIRMED" />
+                 <ScalarProperty Name="CONFIRMEDBY" ColumnName="CONFIRMEDBY" />
+                 <ScalarProperty Name="MSGTEXT" ColumnName="MSGTEXT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CFG">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOiqueue.CFG)">
+              <MappingFragment StoreEntitySet="CFG">
+                 <ScalarProperty Name="SYSCFG" ColumnName="SYSCFG" />
+                 <ScalarProperty Name="CODE" ColumnName="CODE" />
+                 <ScalarProperty Name="BEZEICHNUNG" ColumnName="BEZEICHNUNG" />
+                 <ScalarProperty Name="OVERRIDEFLAG" ColumnName="OVERRIDEFLAG" />
+                 <ScalarProperty Name="SUPPLEMENTFLAG" ColumnName="SUPPLEMENTFLAG" />
+                 <ScalarProperty Name="ACTIVEFLAG" ColumnName="ACTIVEFLAG" />
+                 <ScalarProperty Name="INIREPLACEMENT" ColumnName="INIREPLACEMENT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CFGSEC">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOiqueue.CFGSEC)">
+              <MappingFragment StoreEntitySet="CFGSEC">
+                 <ScalarProperty Name="SYSCFGSEC" ColumnName="SYSCFGSEC" />
+                 <ScalarProperty Name="CODE" ColumnName="CODE" />
+                 <ScalarProperty Name="BEZEICHNUNG" ColumnName="BEZEICHNUNG" />
+                 <ScalarProperty Name="ACTIVEFLAG" ColumnName="ACTIVEFLAG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CFGVAR">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOiqueue.CFGVAR)">
+              <MappingFragment StoreEntitySet="CFGVAR">
+                 <ScalarProperty Name="SYSCFGVAR" ColumnName="SYSCFGVAR" />
+                 <ScalarProperty Name="CODE" ColumnName="CODE" />
+                 <ScalarProperty Name="WERT" ColumnName="WERT" />
+                 <ScalarProperty Name="BEZEICHNUNG" ColumnName="BEZEICHNUNG" />
+                 <ScalarProperty Name="OVERRIDEFLAG" ColumnName="OVERRIDEFLAG" />
+                 <ScalarProperty Name="FORCEOVERRIDEFLAG" ColumnName="FORCEOVERRIDEFLAG" />
+                 <ScalarProperty Name="NOTACTIVEFLAG" ColumnName="NOTACTIVEFLAG" />
+                 <ScalarProperty Name="IGNORESPECCHARS" ColumnName="IGNORESPECCHARS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CICLOG">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOiqueue.CICLOG)">
+              <MappingFragment StoreEntitySet="CICLOG">
+                 <ScalarProperty Name="SYSCICLOG" ColumnName="SYSCICLOG" />
+                 <ScalarProperty Name="LOGINDATE" ColumnName="LOGINDATE" />
+                 <ScalarProperty Name="LOGOUTDATE" ColumnName="LOGOUTDATE" />
+                 <ScalarProperty Name="ORABENUTZER" ColumnName="ORABENUTZER" />
+                 <ScalarProperty Name="CICBENUTZER" ColumnName="CICBENUTZER" />
+                 <ScalarProperty Name="MASCHINE" ColumnName="MASCHINE" />
+                 <ScalarProperty Name="ID" ColumnName="ID" />
+                 <ScalarProperty Name="SOURCE" ColumnName="SOURCE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DBVERS">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOiqueue.DBVERS)">
+              <MappingFragment StoreEntitySet="DBVERS">
+                 <ScalarProperty Name="SYSDBVERS" ColumnName="SYSDBVERS" />
+                 <ScalarProperty Name="VERMAJOR" ColumnName="VERMAJOR" />
+                 <ScalarProperty Name="VERMINOR" ColumnName="VERMINOR" />
+                 <ScalarProperty Name="FIRSTDATE" ColumnName="FIRSTDATE" />
+                 <ScalarProperty Name="FIRSTTIME" ColumnName="FIRSTTIME" />
+                 <ScalarProperty Name="LASTDATE" ColumnName="LASTDATE" />
+                 <ScalarProperty Name="LASTTIME" ColumnName="LASTTIME" />
+                 <ScalarProperty Name="ACTIVEFLAG" ColumnName="ACTIVEFLAG" />
+                 <ScalarProperty Name="DBUSER" ColumnName="DBUSER" />
+                 <ScalarProperty Name="OSUSER" ColumnName="OSUSER" />
+                 <ScalarProperty Name="CLIENTMACHINE" ColumnName="CLIENTMACHINE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DBSCRIPT">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOiqueue.DBSCRIPT)">
+              <MappingFragment StoreEntitySet="DBSCRIPT">
+                 <ScalarProperty Name="SYSDBSCRIPT" ColumnName="SYSDBSCRIPT" />
+                 <ScalarProperty Name="EXECDATE" ColumnName="EXECDATE" />
+                 <ScalarProperty Name="EXECTIME" ColumnName="EXECTIME" />
+                 <ScalarProperty Name="AREA" ColumnName="AREA" />
+                 <ScalarProperty Name="TYP" ColumnName="TYP" />
+                 <ScalarProperty Name="VERSION" ColumnName="VERSION" />
+                 <ScalarProperty Name="CONTENTFILENAME" ColumnName="CONTENTFILENAME" />
+                 <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+                 <ScalarProperty Name="LOGCONTENT" ColumnName="LOGCONTENT" />
+                 <ScalarProperty Name="LOGCONTENTFILENAME" ColumnName="LOGCONTENTFILENAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="XMLSAVE">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOiqueue.XMLSAVE)">
+              <MappingFragment StoreEntitySet="XMLSAVE">
+                 <ScalarProperty Name="SYSXMLSAVE" ColumnName="SYSXMLSAVE" />
+                 <ScalarProperty Name="AREA" ColumnName="AREA" />
+                 <ScalarProperty Name="SYSLEASE" ColumnName="SYSLEASE" />
+                 <ScalarProperty Name="SYSWFUSER" ColumnName="SYSWFUSER" />
+                 <ScalarProperty Name="SYSPUSER" ColumnName="SYSPUSER" />
+                 <ScalarProperty Name="SOURCE" ColumnName="SOURCE" />
+                 <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                 <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                 <ScalarProperty Name="SAVEDATE" ColumnName="SAVEDATE" />
+                 <ScalarProperty Name="SAVETIME" ColumnName="SAVETIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="XMLSAVEPOS">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOiqueue.XMLSAVEPOS)">
+              <MappingFragment StoreEntitySet="XMLSAVEPOS">
+                 <ScalarProperty Name="SYSXMLSAVEPOS" ColumnName="SYSXMLSAVEPOS" />
+                 <ScalarProperty Name="DTNAME" ColumnName="DTNAME" />
+                 <ScalarProperty Name="DTVALUE" ColumnName="DTVALUE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+            <AssociationSetMapping Name="CFGSEC_CFG" TypeName="Cic.OpenLease.Model.DdOiqueue.CFGSEC_CFG" StoreEntitySet="CFGSEC">
+              <EndProperty Name="CFG">
+                  <ScalarProperty Name="SYSCFG" ColumnName="SYSCFG" />
+                </EndProperty>
+                <EndProperty Name="CFGSEC">
+                <ScalarProperty Name="SYSCFGSEC" ColumnName="SYSCFGSEC" />
+                </EndProperty>
+                <Condition ColumnName="SYSCFG" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="CFGVAR_CFGSEC" TypeName="Cic.OpenLease.Model.DdOiqueue.CFGVAR_CFGSEC" StoreEntitySet="CFGVAR">
+              <EndProperty Name="CFGSEC">
+                  <ScalarProperty Name="SYSCFGSEC" ColumnName="SYSCFGSEC" />
+                </EndProperty>
+                <EndProperty Name="CFGVAR">
+                <ScalarProperty Name="SYSCFGVAR" ColumnName="SYSCFGVAR" />
+                </EndProperty>
+                <Condition ColumnName="SYSCFGSEC" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="CICLOGD_CICLOG" TypeName="Cic.OpenLease.Model.DdOiqueue.CICLOGD_CICLOG" StoreEntitySet="CICLOGD">
+              <EndProperty Name="CICLOG">
+                  <ScalarProperty Name="SYSCICLOG" ColumnName="SYSCICLOG" />
+                </EndProperty>
+                <EndProperty Name="CICLOGD">
+                <ScalarProperty Name="SYSCICLOGD" ColumnName="SYSCICLOGD" />
+                </EndProperty>
+                <Condition ColumnName="SYSCICLOG" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="DBSCRIPT_DBVERS" TypeName="Cic.OpenLease.Model.DdOiqueue.DBSCRIPT_DBVERS" StoreEntitySet="DBSCRIPT">
+              <EndProperty Name="DBVERS">
+                  <ScalarProperty Name="SYSDBVERS" ColumnName="SYSDBVERS" />
+                </EndProperty>
+                <EndProperty Name="DBSCRIPT">
+                <ScalarProperty Name="SYSDBSCRIPT" ColumnName="SYSDBSCRIPT" />
+                </EndProperty>
+                <Condition ColumnName="SYSDBVERS" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="XMLSAVEPOS_XMLSAVE" TypeName="Cic.OpenLease.Model.DdOiqueue.XMLSAVEPOS_XMLSAVE" StoreEntitySet="XMLSAVEPOS">
+              <EndProperty Name="XMLSAVE">
+                  <ScalarProperty Name="SYSXMLSAVE" ColumnName="SYSXMLSAVE" />
+                </EndProperty>
+                <EndProperty Name="XMLSAVEPOS">
+                <ScalarProperty Name="SYSXMLSAVEPOS" ColumnName="SYSXMLSAVEPOS" />
+                </EndProperty>
+                <Condition ColumnName="SYSXMLSAVE" IsNull="false" />
+              </AssociationSetMapping>
+          </EntityContainerMapping>
+        </Mapping>
+      </edmx:Mappings>
+    </edmx:Runtime>
+  <edmx:Designer>
+    <edmx:Connection>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+    </edmx:Options>
+    <edmx:Diagrams>
+      <Diagram Name="DdOiqueue" xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOiqueue.CICLOGD" Width="1.5" PointX="10" PointY="1" Height="2.5571907552083335" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOiqueue.CFG" Width="1.5" PointX="0.875" PointY="0.875" Height="2.5571907552083326" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOiqueue.CFGSEC" Width="1.5" PointX="3" PointY="1.25" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOiqueue.CFGVAR" Width="1.5" PointX="5.25" PointY="1" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOiqueue.CICLOG" Width="1.5" PointX="7.75" PointY="1" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOiqueue.DBVERS" Width="1.5" PointX="5.75" PointY="5" Height="3.3263964843749987" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOiqueue.DBSCRIPT" Width="1.5" PointX="8" PointY="5.125" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOiqueue.XMLSAVE" Width="1.5" PointX="0.75" PointY="5" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOiqueue.XMLSAVEPOS" Width="1.5" PointX="3" PointY="5.625" Height="1.7879850260416674" IsExpanded="true" />
+        <AssociationConnector Association="Cic.OpenLease.Model.DdOiqueue.CFGSEC_CFG" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.375" PointY="2.3362939453125" />
+          <ConnectorPoint PointX="3" PointY="2.3362939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="Cic.OpenLease.Model.DdOiqueue.CFGVAR_CFGSEC" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="2.3362939453125" />
+          <ConnectorPoint PointX="5.25" PointY="2.3362939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="Cic.OpenLease.Model.DdOiqueue.CICLOGD_CICLOG" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.25" PointY="2.2785953776041667" />
+          <ConnectorPoint PointX="10" PointY="2.2785953776041667" />
+        </AssociationConnector>
+        <AssociationConnector Association="Cic.OpenLease.Model.DdOiqueue.DBSCRIPT_DBVERS" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.25" PointY="6.6920475260416659" />
+          <ConnectorPoint PointX="8" PointY="6.6920475260416659" />
+        </AssociationConnector>
+        <AssociationConnector Association="Cic.OpenLease.Model.DdOiqueue.XMLSAVEPOS_XMLSAVE" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="6.5189925130208337" />
+          <ConnectorPoint PointX="3" PointY="6.5189925130208337" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+  </edmx:Edmx>

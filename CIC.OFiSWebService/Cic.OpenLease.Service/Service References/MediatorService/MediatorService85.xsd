@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CIC.OpenBPE.Storage.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CIC.OpenBPE.Storage.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://hcedev/BAS/MediatorService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/CIC.OpenBPE.Storage" />
+  <xs:complexType name="ArrayOfListenerModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ListenerModel" nillable="true" type="tns:ListenerModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfListenerModel" nillable="true" type="tns:ArrayOfListenerModel" />
+  <xs:complexType name="ListenerModel">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AreaId" type="xs:long" />
+          <xs:element minOccurs="0" name="AreaName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedAt" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EnablePersistence" type="xs:boolean" />
+          <xs:element minOccurs="0" name="EvaluateCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EventCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EventDefinitionCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExecutionHost" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FlowNodeId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="IsUserTask" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LaneName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ListenerDefinitionId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="ProcessDefinitionId" type="xs:long" />
+          <xs:element minOccurs="0" name="ProcessId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="ProcessInstanceChildId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="ProcessInstanceId" nillable="true" type="xs:long" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CIC.OpenBPE.Storage" minOccurs="0" name="Reasons" type="q1:ListenerReasons" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CIC.OpenBPE.Storage" minOccurs="0" name="State" nillable="true" type="q2:ListenerState" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CIC.OpenBPE.Storage" minOccurs="0" name="SupervisorTypes" nillable="true" type="q3:SupervisorTypes" />
+          <xs:element minOccurs="0" name="TokenId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListenerModel" nillable="true" type="tns:ListenerModel" />
+  <xs:complexType name="ModelBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ModelBase" nillable="true" type="tns:ModelBase" />
+  <xs:complexType name="ProcessInstanceModel">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AreaId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="AreaName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CaseId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="DeletedAt" nillable="true" type="xs:dateTime" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CIC.OpenBPE.Storage" minOccurs="0" name="ExecutionStatus" type="q4:ProcessInstanceState" />
+          <xs:element minOccurs="0" name="FlowNodeId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="IsDeleted" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsDepreciated" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ParentId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="ProcessDefinitionCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProcessDefinitionId" type="xs:long" />
+          <xs:element minOccurs="0" name="ProcessId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="ShouldBeKilled" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Timestamp" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessInstanceModel" nillable="true" type="tns:ProcessInstanceModel" />
+</xs:schema>

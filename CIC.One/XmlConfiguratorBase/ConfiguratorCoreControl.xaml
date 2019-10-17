@@ -1,0 +1,41 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+
+    xmlns:XmlConfiguratorBase="clr-namespace:XmlConfiguratorBase" 
+    xmlns:localDTO="clr-namespace:XmlConfiguratorBase.DTO"
+    xmlns:gui="clr-namespace:XmlConfiguratorBase.BO.GUI"
+    xmlns:DTO="clr-namespace:Cic.One.DTO;assembly=Cic.One.DTO" 
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" x:Name="window" x:Class="XmlConfiguratorBase.ConfiguratorCoreControl"
+    
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" 
+    d:DesignHeight="400" d:DesignWidth="800">
+
+    <Grid x:Name="WindowArea">
+        <TabControl SelectionChanged="OnTabSelectionChanged">
+            <TabItem Header="XML">
+                <gui:SourceControl x:Name="Source"/>
+            </TabItem>
+            <TabItem Header="Eigenschaften" IsSelected="True">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <xctk:PropertyGrid x:Name="SelectedPropertyGrid" Margin="5"/>
+                    </Grid>
+                    <TextBlock Grid.Row="1" Name="ErrorText" Margin="5"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Vorschau" IsEnabled="False">
+                <gui:VisualControl x:Name="Visual"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>
+

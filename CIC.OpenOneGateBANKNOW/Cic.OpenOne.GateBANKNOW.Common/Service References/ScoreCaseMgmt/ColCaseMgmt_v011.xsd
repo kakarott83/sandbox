@@ -1,0 +1,1475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.bmw.com/FinancialServices/RetailFinance/RetailCollections/ColCaseMgmt_v01.00/types" elementFormDefault="qualified" targetNamespace="http://www.bmw.com/FinancialServices/RetailFinance/RetailCollections/ColCaseMgmt_v01.00/types" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:documentation>
+	  Author: Benedikt Schmid
+      Underlying CaDM Version: 01.07.00
+	  Service Name: ColCaseMgmt
+      Version: 01.00
+    </xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="AbsoluteTimePeriodType">
+    <xs:annotation>
+      <xs:documentation>An absolute time period describes a time period between a start timestamp and an end timestamp. It can also be used for defining solely a start or an end timestamp, by not defining the other attribute.
+(complex datatype)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="startDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>start date of the period</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="endDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>end date of the period</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AdditionalPaymentPlanType">
+    <xs:annotation>
+      <xs:documentation>An Additional Payment Plan is a set of additional agreements related to one collection case, e.g. "Anerkenntnisse" and "Ratenzahlungsvereinbarung".</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="collectionCase" type="tns:CollectionCaseType">
+        <xs:annotation>
+          <xs:documentation>Collection case to that the additional payment plan belongs to.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="status" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>status of the additional payment arrangement. 
+e.g. broken, fulfilled, canceled etc.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="arrangementCancellationReason" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Note about reason for cancelling the arrangement.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validityPeriod" type="tns:AbsoluteTimePeriodType">
+        <xs:annotation>
+          <xs:documentation>Validity period of the additional payment agreement. 
+start and end date of that agreement</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrangementType">
+    <xs:annotation>
+      <xs:documentation>Arrangement is an abstraction of all kind of agreements, such as commercial and retail arrangements. This entity can be used if it is not clear whether a retail or commercial contract is transferred, e.g. if in the financial interest service</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BusinessInteractionType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="gracePeriod" type="tns:RelativeTimePeriodType">
+            <xs:annotation>
+              <xs:documentation>Grace period is the relative time at the end of the commercial or retail arrangement where the residual value or balloon rate are due but no interest is calculated for. 
+e.g. the first 2 weeks after contract end date no interest is calculated. so grace period is 2 weeks.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Version number of the arrangement</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="number" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Identifier number of the arrangement.
+(Quotation, Retail Application, Retail Contract, CommercialContract etc.)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="writeOff" type="tns:WriteOffCaseType">
+            <xs:annotation>
+              <xs:documentation>write off case of the specific arrangement.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="commission" type="tns:CommissionType">
+            <xs:annotation>
+              <xs:documentation>Commission in context of the agreement.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="collateral" type="tns:CollateralType">
+            <xs:annotation>
+              <xs:documentation>Collateral that secures this agreement.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="financedAsset" type="tns:AssetType">
+            <xs:annotation>
+              <xs:documentation>Asset that is financed in the arrangement.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="fee" type="tns:FeeType">
+            <xs:annotation>
+              <xs:documentation>Fee in context of the agreement.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="postings" type="tns:PostingType">
+            <xs:annotation>
+              <xs:documentation>Posting that occurred in the context of this retail agreement</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="transaction" type="tns:TransactionType">
+            <xs:annotation>
+              <xs:documentation>Transaction that occurred in the context of this retail agreement</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AssetType" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An asset describes some object or intellectual property.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="financedAssetInArrangement" type="tns:ArrangementType">
+        <xs:annotation>
+          <xs:documentation>arrangement (contract/application) that is used to finance the asset</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BankGuaranteeType">
+    <xs:annotation>
+      <xs:documentation>The bank guarantee is a unilateral obligatory contract. A Bank obligates towards the NFSC to be responsible for the settlement of the liabilities for a borrower or a lessee (global guarantee) respectively for a contract (contract related guarantee).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GuaranteeType">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BIPartnerRoleRelationshipType">
+    <xs:annotation>
+      <xs:documentation>Defines in what specific role (role relationship) , the partner role is used in a specific business interaction.ne.g. a contract has two customers, a main applicant and a 2nd applicant. Both applicants interact in their role customer, but in context of this special contract, one of them is the main and one of them is the co-customer.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="type" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Type of the role, e.g. MAIN_APPLICANT, FINANCIER, SUPPLIER (see reference data)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="interaction" type="tns:BusinessInteractionType">
+        <xs:annotation>
+          <xs:documentation>Interaction (contract/arrangement) in that the partner role is involved as defined in BiParterRoleRelationship</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="involvedPartnerRole" type="tns:PartnerRoleType">
+        <xs:annotation>
+          <xs:documentation>partner role that is involved in the business interaction</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BMWSFBrandType">
+    <xs:annotation>
+      <xs:documentation>BMW SF Brands
+1. BMW Financial Services
+2. MINI Financial Services
+3. BMW Motorrad Financial Services
+4. Rolls-Royce Motor Cars Financial Services
+5. BMWi Financial Services
+6. Alphera Financial Services/Multimake Financial Services
+7. up2drive
+8. Other Financial Services Brands/Partnerships/Joint Ventures</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="brandName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Readable name of BMW SF Brands</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BulkInvoiceType">
+    <xs:annotation>
+      <xs:documentation>A bulk invoice is an invoice considering multiple factura of one partner to one specific period. It can be related to an active contract or to several ordering item.
+It contains references to all summarized/considered invoices.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RetailInvoiceType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="bulkInvoiceId" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>ID of the bulk invoice</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BusinessInteractionType" abstract="true">
+    <xs:annotation>
+      <xs:documentation>Business Interaction is an artificial construct to apply the same pattern how BusinessPartners and Document are linked with any kind of interactions as commercial contracts, retail contracts, CRA notifications, etc.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="partnerRoleRelationship" type="tns:BIPartnerRoleRelationshipType">
+        <xs:annotation>
+          <xs:documentation>description of the relationship between the interaction (contract, arrangement) and the partner role</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="note" type="tns:NoteType">
+        <xs:annotation>
+          <xs:documentation>note in context of the business interaction, e.g. a free text node that is part of the contract</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ClientType" abstract="true">
+    <xs:annotation>
+      <xs:documentation>Client is a generic class for common attributes of prospects and customers</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ValueNetworkType">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CollateralType" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A collateral secures the total liabilities of a partner or the liabilities resulting from a single contract. Collaterals are held until the debt is fully paid. In the event of default the lender can exercise their rights against the collateral.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="number" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>identifier number for the collateral</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="amount" type="tns:MonetaryValueType">
+        <xs:annotation>
+          <xs:documentation>Value of the collateral.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validity" type="tns:AbsoluteTimePeriodType">
+        <xs:annotation>
+          <xs:documentation>defines the period the collateral is valid for the references arrangement</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="arrangement" type="tns:ArrangementType">
+        <xs:annotation>
+          <xs:documentation>Arrangement to that the collateral is assigned to.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CollectionCaseType">
+    <xs:annotation>
+      <xs:documentation>A collection case is a business interaction to collect money from a partner due to some arrears in some contract.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BusinessInteractionType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="collectionData" type="tns:CollectionDataType">
+            <xs:annotation>
+              <xs:documentation>Data that belongs to the collection case.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" maxOccurs="unbounded" name="additionalPaymentPlan" type="tns:AdditionalPaymentPlanType">
+            <xs:annotation>
+              <xs:documentation>Additional payment plan in addition to the normal leasing payment plan to pay the open arrears of the collection case.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="dunningActivities" type="tns:DunningActivitiesType">
+            <xs:annotation>
+              <xs:documentation>Activities that are related to one Collections Case</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="fee" type="tns:FeeType">
+            <xs:annotation>
+              <xs:documentation>Fee that is charged within the related collections case. 
+e.g. dunning fee</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>unique identifier of the collections case.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="status" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>status of the collections case</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="retailRecovery" type="tns:RetailRecoveryType">
+            <xs:annotation>
+              <xs:documentation>retailRecovery that is assigned / that happens in to / that specific collections case</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="lawyerHandling" type="tns:LawyerHandoverType">
+            <xs:annotation>
+              <xs:documentation>details regarding the handover of the respective collections case to the lawyer</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="remainingDebt" type="tns:MonetaryValueType">
+            <xs:annotation>
+              <xs:documentation>Remaing debt after vehicle has been sold</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="paymentBond" type="tns:PaymentBondType">
+            <xs:annotation>
+              <xs:documentation>promise to py that is given in the context of the respective collection case.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" maxOccurs="1" name="retailContract" type="tns:RetailContractType">
+            <xs:annotation>
+              <xs:documentation>Contract to that the collection case belongs to.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="gracePeriod" type="tns:AbsoluteTimePeriodType">
+            <xs:annotation>
+              <xs:documentation>Time Period in Collections when the customer??s contract is not handled as in arrears even if the contract??s balance is in arrears. nthis can happen when the customer announces upfront that he will miss the payment.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="isSpecialCase" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>defines if the collection case is based on a special termination case.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CollectionDataType">
+    <xs:annotation>
+      <xs:documentation>Additional data in the context of the collection case.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="arrears" type="tns:MonetaryValueType">
+        <xs:annotation>
+          <xs:documentation>Arrears that are handled in the collection case</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="additionalInterestRate" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Additional interest rate that must be payed in addition to the normal interest rate (according to the German law)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="date" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Date when the collections case has been created. From that date, the additional interest rate is added to the arrears amount.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="acceptanceDueDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Date until when the customer has to send back the acceptance letter for the collection case.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="arrearsInterestAmount" type="tns:MonetaryValueType">
+        <xs:annotation>
+          <xs:documentation>Sum of interest in the arrears balance</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="arrearsCalculationDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Date when the late interest has been (initially/updated) calculated</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CommissionType">
+    <xs:annotation>
+      <xs:documentation>Actual commission data for a concrete calculated commission.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="isPaid" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>defines/indicates if a commission is already paid to the dealer/salesperson</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomerType">
+    <xs:annotation>
+      <xs:documentation>Role representing a customer.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ClientType">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DepositType">
+    <xs:annotation>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CollateralType">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DetailedReturnInfoType">
+    <xs:annotation>
+      <xs:documentation>Detailed information regarding the return of the vehicle after contract termination/settlement</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="settlement" type="tns:SettlementType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isRepossessed" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>indicates if the vehicle has returned to dealer at contract end / within collections case</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="order" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Indicates that Repossession Order has been submitted in CMS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="followUpDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Follow-up date for checking the status of the Repossession Order.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="document" type="tns:DocumentType">
+        <xs:annotation>
+          <xs:documentation>document regarding return info at contract end (repossession order in collection case) that is send</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DocumentType">
+    <xs:annotation>
+      <xs:documentation>A document is an incoming or outgoing correspondence between BMW Bank and their customers, interested persons or third parties.nIf it is not known whether the document is an outgoing or incoming document, e.g. when retrieving some document from the document archive, this entity can be used instead of the more specified child entities.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="creationDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>date when the document has been created or scanned</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="invoice" type="tns:InvoiceType">
+        <xs:annotation>
+          <xs:documentation>invoice information that has been printed in the document</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="documentIdentifier" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Unique identifier generated by the document management system.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DunningActivitiesType">
+    <xs:annotation>
+      <xs:documentation>Dunning Activities are taken in Collections to handle/manage specific dunning related activities like printing letter, changing status etc</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="collectionCase" type="tns:CollectionCaseType">
+        <xs:annotation>
+          <xs:documentation>Collections Case for that dunning activites are taken for.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="lastAction" type="xs:date">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="dunningPeriod" type="tns:AbsoluteTimePeriodType">
+        <xs:annotation>
+          <xs:documentation>Period in that the dunning process is handled. 
+start and end date of the dunning process.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="numberOfActions" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Number of dedicated dunning actions taken in the related collections case. 
+e.g. 5 x Document Printed, 3 x phone calls ==&gt; numberOfActions = 8</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="contactStop" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>is there a contact stop with regards to that collections case</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="contactStopType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>the kind of contact stop that exists for that collections case. 
+e.g. call stop, letter stop etc.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="contactStopPeriod" type="tns:AbsoluteTimePeriodType">
+        <xs:annotation>
+          <xs:documentation>Period in that the contact stop is valid for. 
+start and end date of the contact stop.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="dunningLevel" type="tns:DunningLevelType">
+        <xs:annotation>
+          <xs:documentation>dunning level that reflects the specific dunning activities.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="dunningOnHold" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>indicates if the dunning is on hold or not.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DunningLevelType">
+    <xs:annotation>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="dunningLevelNr" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>ID / No. of the dunning level created by Collections System.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="dunningActivities" type="tns:DunningActivitiesType">
+        <xs:annotation>
+          <xs:documentation>dunning activities that create or change a dunning level.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EstimatedCurrentTradeValueType">
+    <xs:annotation>
+      <xs:documentation>The estimated current trade value  is an estimated value that describes the residual value of the vehicle. These values are normally calculated by external partners.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="estimatedValue" type="tns:MonetaryValueType">
+        <xs:annotation>
+          <xs:documentation>current estimated trade value amount without considering vehicle conditions.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="vehicle" type="tns:VehicleType">
+        <xs:annotation>
+          <xs:documentation>vehicle to that the estimated current trade value is assigned to. This can also be a virtual vehicle that does only exist theoretically.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExteriorColourType">
+    <xs:annotation>
+      <xs:documentation>The exterior colour is the colour of the autobody of a vehicle</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="colour" type="tns:I18nStringType">
+        <xs:annotation>
+          <xs:documentation>colour as human readable string</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FeeType">
+    <xs:annotation>
+      <xs:documentation>A concrete free that is attached to a contract because of some circumstances</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="amount" type="tns:MonetaryValueType">
+        <xs:annotation>
+          <xs:documentation>Amount that must be  payed as fee</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="percentage" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>percentage of the reference value (defined in the FeeSpecification) to define the amount of the fee</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="date" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Date when the fee has been created.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="collectionCase" type="tns:CollectionCaseType">
+        <xs:annotation>
+          <xs:documentation>related collections case the fee is charged for.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="arrangement" type="tns:ArrangementType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GuaranteeType">
+    <xs:annotation>
+      <xs:documentation>The guarantee is a unilateral obligatory contract through which the guarantor obligates towards the BMW Bank to be responsible for the settlement of the liabilities for a borrower or a lessee (global guarantee) respectively for a contract (contract related guarantee).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CollateralType">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="I18nStringType">
+    <xs:annotation>
+      <xs:documentation>Datatype for strings that need to be expressed in different languages.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Name in the langauage given in attribute langauageIsoCode</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="language" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>language of the string as ISO 639-1</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InvoiceType">
+    <xs:annotation>
+      <xs:documentation>"An 'Invoice' (synonym 'billing') is a document that contains a detailed statement on a claim for a delivery or any other service. It can be transmitted on paper or as an electronic document and contains information about the service (type, amount, date, price), payment (conditions of payment, bank account) and the issuer (company, address). Invoices shall be submitted on paper or electronically, subject to the consent of the recipient (?? 14 UStG I).
+A booking position is not necessarily connected with an invoice. 
+An Incoming invoice = account payable of BMW Bank GmbH (NFSC)
+An outgoing invoice = account receivable of BMW Bank GmbH (NFSC)"n(BOD0129)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="number" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>id of the invoice, e.g. invoice number</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="date" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>date when the invoice has been created</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="dueDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Date until the receiver of the invoice has to pay the invoice total amount. If the payment is overdue, then the receiver might be charged with an additional fee. For direct debit, this is the date when the direct debit will be processed.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="duePeriod" type="tns:RelativeTimePeriodType">
+        <xs:annotation>
+          <xs:documentation>Period until when the invoice receiver has to pay the amount (in case of credit transfer)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="totalAmount" type="tns:MonetaryValueType">
+        <xs:annotation>
+          <xs:documentation>amount of the total costs that are shown in the invoice</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="position" type="tns:InvoicePositionType">
+        <xs:annotation>
+          <xs:documentation>A position included in the invoice. Should only be used if the note is build up on free-text positions in the consumer application and the content does not represent other business data.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="document" type="tns:DocumentType">
+        <xs:annotation>
+          <xs:documentation>document that is the printed representation of the invoice</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InvoicePositionType">
+    <xs:annotation>
+      <xs:documentation>A single position on the invoice.nThis entity should only be used as exception. The business content of the invoice should normally be available as other CaDM entities. Only if the consumer allows to create free text invoices with no relevance to any business data, this entity should be used.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="amount" type="tns:MonetaryValueType">
+        <xs:annotation>
+          <xs:documentation>amount that hast to be payed by the invoice receiver</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>description of the positionne.g. Interest, (german: Vorf??lligkeitsentsch??digung / english: re-payment-penalty), legal costs, legal process costs (italy = stampa / bolli), book value / pay_off_amount, open_items</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="invoice" type="tns:InvoiceType">
+        <xs:annotation>
+          <xs:documentation>invoice to that the invoice position belongs to</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LawyerHandoverType">
+    <xs:annotation>
+      <xs:documentation>in special situations collections cases are handed over to lawyers for further actions. 
+LawyerHandover specifies the relevant information reg. this handover.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="collectionCase" type="tns:CollectionCaseType">
+        <xs:annotation>
+          <xs:documentation>collection case that is handed over to a lawyer</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="caseAtLawyer" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>indicates if the case is handed over to a lawyer or not</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="amount" type="tns:MonetaryValueType">
+        <xs:annotation>
+          <xs:documentation>Amount/Arrears balance which is included in the lawyer handover.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="handoverDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>date when the handover was executed.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="followUpDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Follow-up date for checking status of contract at solicitor</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LicencePlateType">
+    <xs:annotation>
+      <xs:documentation>A licence plate is a metal or plastic plate attached to a motor vehicle or trailer for official identification purposes.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="licence" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>content of the licence plate</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="vehicle" type="tns:VehicleType">
+        <xs:annotation>
+          <xs:documentation>vehicle to that the license plate belongs to</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MonetaryValueType">
+    <xs:annotation>
+      <xs:documentation>Representation of a monetary amount. Monetary value can be a net or gross monetary amount.nAdditionally, it is possible to add various tax information to a monetary value.
+(complex datatype)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="netValue" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>actual value that describes a net value for some monetary value</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="currency" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Code for the currency of the monetary value.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>actual value that describes a value that is neither gross nor net but just some monetary value</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="decimalisation" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Decimalization information of the given currency, e.g. CENT</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="grossValue" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>actual value that describes a gross value for some monetary value</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NoteType">
+    <xs:annotation>
+      <xs:documentation>Note that is relevant for the interaction. Can also be printed in documents related to the interaction.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="notetype" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>type description for the interaction note, e.g. ContractAdditionnThe interaction note can also be used for printing issues to send variable text passages that should be printed.nEnumeration needs to be defined.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="note" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Content of the note</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="interaction" type="tns:BusinessInteractionType">
+        <xs:annotation>
+          <xs:documentation>interaction where the note is captured.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartnerType">
+    <xs:annotation>
+      <xs:documentation>The partner entity represents some kind of business partner, either an individual or an organization.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="number" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Number identifier for the partner. nFor Germany the "Marktpartnernummer" since this number identifies a partner independently from its role.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="role" type="tns:PartnerRoleType">
+        <xs:annotation>
+          <xs:documentation>role of the partner</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartnerRoleType" abstract="true">
+    <xs:annotation>
+      <xs:documentation>Is an abstract concept to enable a partner to act in different roles. In each role they can have other addresses, contact details, or special attributes that are only required in this special role. A partner has different capabilities depending on the role he is acting on with respect to the actual context.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="partner" type="tns:PartnerType">
+        <xs:annotation>
+          <xs:documentation>partner this role belongs to</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="partnerRoleInvolvedInInteractionAs" type="tns:BIPartnerRoleRelationshipType">
+        <xs:annotation>
+          <xs:documentation>A partner (in a dedicated role) can be involved in different relationships in a business interaction. E.g. a Customer can be involved as first or second applicant in a leasing contract. The BIPartnerRoleRelationship describes this involvement in more detail.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PaymentType">
+    <xs:annotation>
+      <xs:documentation>A payment is a transaction in that a monetary amount is transferred from one bank account to another.
+e.g. SEPA direct debit</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="DDReturnCode" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Specifies why a Direct Debit Payment has been failed.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="paymentId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Identifies a payment uniquely in the respective context.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PaymentBondType">
+    <xs:annotation>
+      <xs:documentation>in case a customer is in arrears he/she can make a promise to pay. This PtP is always related to a concrete case and is normally the first measurement to handle a collection case.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="collectionCase" type="tns:CollectionCaseType">
+        <xs:annotation>
+          <xs:documentation>collections case the promise to pay relates on.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="promiseToPayCancellationReason" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Note about reason for cancelling the promise to pay agreement.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="brokenPtPCount" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>number/count of promise to pay that have been broken.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="status" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>status of the promise to pay</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="validityPeriod" type="tns:AbsoluteTimePeriodType">
+        <xs:annotation>
+          <xs:documentation>Validity period of the paymentBond. 
+start and end date of that agreement</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="typeOfBond" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>type of bond defines if it is a recent, future or old promise to pay</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PaymentHistoryType">
+    <xs:annotation>
+      <xs:documentation>payment history in context of a retail contract. reflects the payment behavior during contract life cycle.
+used e.g. for credit risk rating</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="maxDaysInArrears" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>max. number of days a contract has been in arrears.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="numberOfUnpaidInstallments" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Number of unpaid installments correlated to that contract</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="daysInArrears" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Number of Days the payment is in arrears.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="maxUnpaidAmount" type="tns:MonetaryValueType">
+        <xs:annotation>
+          <xs:documentation>max. amount of a payment related to a contract that has been in arrears.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="rating" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Status of payment for that contract (Good, Bad, Medium, List of value)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="lastMissedPayment" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Date of the last payment that was not payed</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="timesInArrears" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Number of times the correlated contract was in arrears.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="numberOfCollectedInstallments" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>number of installments collected for a contract</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="numberOfUnpaidInstallmentsRecovered" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Number of not paid installments that have been recovered.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="retailContract" type="tns:RetailContractType">
+        <xs:annotation>
+          <xs:documentation>contract the payment history belongs to.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PostingType">
+    <xs:annotation>
+      <xs:documentation>A 'Posting' is set to one or more debit/credit entries. The posting item always shows the affected account and the corresponding account or a set of corresponding accounts. A 'Posting' contains information about the amount, Tax ID, a unique document number, posting date, value date, document date and document item, cost center, WBS element (budget-bound book), business area, etc.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="postingType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>defines the type of posting, e.g. settlementInvoice, lateInterestFee, regularInstallment</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="amount" type="tns:MonetaryValueType">
+        <xs:annotation>
+          <xs:documentation>Amount of the posting</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RelativeTimePeriodType">
+    <xs:annotation>
+      <xs:documentation>A relative time period is a time period defined as duration. A concrete start or end timestamp is not given. It is flexible concerning time units (e.g. months, days, seconds)
+(complex datatype)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="unit" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>unit of the min/max values, e.g. days, hours, month, years</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>value of the time period, e.g. if the value is 30 and the unit is days then 30 days is the time period</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RetailAbstractAgreementType" abstract="true">
+    <xs:annotation>
+      <xs:documentation>Retail arrangement is the collective term for retail quotation, retail proposal, retail contract. Retail abstract agreement includes all common entities for the three sub-entities.n*outstandingAmount is covered by: RetailContract.collectionCase.collectionData.arrears.value</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ArrangementType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="bmwSFBrand" type="tns:BMWSFBrandType">
+            <xs:annotation>
+              <xs:documentation>The BMW SF brand under that the contract is sold</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="outstandingAmount" type="tns:MonetaryValueType">
+            <xs:annotation>
+              <xs:documentation>Amount that is currently outstanding for this contract.
+i.e. the remaining contract value to be paid + the arrears balance.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetailContractType">
+    <xs:annotation>
+      <xs:documentation>A retail contract is a contract between the NFSC and a customer about the finance or lease contract including services.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RetailAbstractAgreementType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="collectionCase" type="tns:CollectionCaseType">
+            <xs:annotation>
+              <xs:documentation>Collections case in the context of this contract.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="retailInvoice" type="tns:RetailInvoiceType">
+            <xs:annotation>
+              <xs:documentation>Invoice in the context of this retail contract.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="paymentHistory" type="tns:PaymentHistoryType">
+            <xs:annotation>
+              <xs:documentation>payment history for this contract</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetailInvoiceType">
+    <xs:annotation>
+      <xs:documentation>A retail invoice is an invoice in relationship with a retail contract.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:InvoiceType">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="retailContract" type="tns:RetailContractType">
+            <xs:annotation>
+              <xs:documentation>Retail contract that is referenced in the invoice.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Descriptive text that describes the purpose of the invoice.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetailRecoveryType">
+    <xs:annotation>
+      <xs:documentation>Recovery of vehicle occurring within a retail collections case.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="collectionCase" type="tns:CollectionCaseType">
+        <xs:annotation>
+          <xs:documentation>collections case a RetailRecovery has been realized in</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="estimatedRecoveryValue" type="tns:MonetaryValueType">
+        <xs:annotation>
+          <xs:documentation>currently estimated recovery value.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SettlementType">
+    <xs:annotation>
+      <xs:documentation>The customer can get a settlement quote for his loan contract at any time for a certain date from the dealer or the NSFC.
+The settlement quote contains the definite amount he has to pay if he wants to pay back his loan early at a certain point of time.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ArrangementType">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="settlementInvoice" type="tns:SettlementInvoiceType">
+            <xs:annotation>
+              <xs:documentation>Invoice for this settlement.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="validityPeriod" type="tns:RelativeTimePeriodType">
+            <xs:annotation>
+              <xs:documentation>Period within the quotation for the settlement is valid. If the period has been exceeded, the NFSC must not agree to the quotation any longer.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="payoffReasonCode" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Reason why the customer want to settle his contract as machine understandable code</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="terminationDate" type="xs:date">
+            <xs:annotation>
+              <xs:documentation>For Settlement Quotations, the termination date on that the settlement will be take place if this quotation will be accepted by the consumer.
+For actual settlements that day when the contract has been terminated.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="finalContractPeriod" type="tns:RelativeTimePeriodType">
+            <xs:annotation>
+              <xs:documentation>Final contract period from the contract start date until the termination date.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="returnDate" type="xs:date">
+            <xs:annotation>
+              <xs:documentation>Date when the vehicle has been returned to the dealer.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="residualValueDifference" type="tns:MonetaryValueType">
+            <xs:annotation>
+              <xs:documentation>Difference between the contracted residual value and the estimated current trade value when the contract will be settled.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="assetPrice" type="tns:MonetaryValueType">
+            <xs:annotation>
+              <xs:documentation>Price for that the customer of the contract can buy the vehicle. The calculation of the price depends on the contract, e.g. current estimated trade value, residual value, book value or some agreed value.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="finalAssetSettlementPurchasePrice" type="tns:MonetaryValueType">
+            <xs:annotation>
+              <xs:documentation>Final price for the vehicle for the dealer/buyer. With paying this amount of money, the ownership is transfered</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="settlementType" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Type of the retail contract settlement.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="thirdPartyPurchasingOption" type="tns:ThirdPartyPurchasingOptionType">
+            <xs:annotation>
+              <xs:documentation>Purchase option related to the specific settlement</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="detailedReturnInfo" type="tns:DetailedReturnInfoType">
+            <xs:annotation>
+              <xs:documentation>Information regarding the vehicle return at contract end.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="shortfall" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>if a contract is being terminated then it is also necessary (at least for DE) to request from CMS the Remaining Debt so that the customer receives a complete overview what he has to pay due to termination.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="contractClearancePaymentDate" type="xs:date">
+            <xs:annotation>
+              <xs:documentation>this date is the due date of the final payment at contract end. 
+it is defined as: contractEndDate + gracePeriod 
+It contains all outstanding fees, charges, finalAmount/residualValues/finalAssetSettlementPurchasePrice as clears the contract balance.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SettlementInvoiceType">
+    <xs:annotation>
+      <xs:documentation>The final invoice for a settlement quote of a Leasing contract. This invoice is used to bill the corresponding partner. (Called Final Invoice in ETP Glossary BOD0293)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RetailInvoiceType">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="settlement" type="tns:SettlementType">
+            <xs:annotation>
+              <xs:documentation>Settlement information that belongs to this printed invoice.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ShortVehicleAppraisalType">
+    <xs:annotation>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:VehicleAppraisalType">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ThirdPartyGuaranteeType">
+    <xs:annotation>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GuaranteeType">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ThirdPartyPurchasingOptionType">
+    <xs:annotation>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="settlement" type="tns:SettlementType">
+        <xs:annotation>
+          <xs:documentation>settlement the thirdPartyPurchaseOption belongs to.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="isOptionChoosen" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>indicates if the ThirdPartyPurchaseOption is realized and the car is sold to an other party</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimePeriodType">
+    <xs:annotation>
+      <xs:documentation>A time period can be either defined as an absolute time period or a relative time period or a combination of both.nE.g. there can be a startDateTime that defines the start point in time and a value of days defined in the relative time period.
+(complex datatype)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="absolutePeriod" type="tns:AbsoluteTimePeriodType">
+        <xs:annotation>
+          <xs:documentation>described as absolute time period</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="relativePeriod" type="tns:RelativeTimePeriodType">
+        <xs:annotation>
+          <xs:documentation>described as relative time period</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TransactionType">
+    <xs:annotation>
+      <xs:documentation>A transaction is the individual recording of accounting items, that have an impact and influence on 
+- Assets and liabilities
+- Profit and loss .
+This results either from ordinary business operations (e.g. contract activation, Financial Change, end of term) or requirements from accounting (e.g., initial and subsequent asset valuation, specific provisions).</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="payments" type="tns:PaymentType">
+        <xs:annotation>
+          <xs:documentation>Actual payments (booking from/or to a bank account) related to the transaction.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UsedVehicleSalesPricingType">
+    <xs:annotation>
+      <xs:documentation>used vehicle sales pricing describes the details a car has been sold / is sold for after contract termination in area of remarketing.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="salePrice" type="tns:MonetaryValueType">
+        <xs:annotation>
+          <xs:documentation>sales price is the realized price the dealer/seller sold the used vehicle for to the new owner.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="vehicle" type="tns:VehicleType">
+        <xs:annotation>
+          <xs:documentation>vehicle related to the sales price</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="dateOfSale" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>date when the used car has been sold</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ValueNetworkType" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A Value network is an abstract concept for roles that can act as some kind of a partner who receives financial products (customer but not only end customer) from the NFSC and therefore requires some special information attached, such as a credit line or credit limit</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PartnerRoleType">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VehicleType">
+    <xs:annotation>
+      <xs:documentation>This entity is a representation of a concrete vehicle. A vehicle can be a car, motorcycle, boat and all other kinds of vehicles. In the context of BMW, in most cases it will be a car or a motorbike.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AssetType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="licencePlate" type="tns:LicencePlateType">
+            <xs:annotation>
+              <xs:documentation>known license plates in context of this vehicle</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="vIN" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A vehicle identification number, commonly abbreviated to VIN, is a unique code including a serial number, used by the automotive industry to identify individual motor vehicles, towed vehicles, motorcycles, scooters and mopeds as defined in  ISO 3779.ne. g. WBABA91060AL04921</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="dateOfFirstRegistration" type="xs:date">
+            <xs:annotation>
+              <xs:documentation>Date when the vehicle has been registered the first time. If this is a new vehicle, then this can be the planned date of first registration.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="estimatedCurrentTradeValue" type="tns:EstimatedCurrentTradeValueType">
+            <xs:annotation>
+              <xs:documentation>The estimated current trade value is the current trade value if the vehicle is sold at the local market. It normally calculated by external partners.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" maxOccurs="unbounded" name="exteriorColour" type="tns:ExteriorColourType">
+            <xs:annotation>
+              <xs:documentation>exterior colour of the autobody</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" maxOccurs="1" name="model" type="tns:VehicleModelType">
+            <xs:annotation>
+              <xs:documentation>the model of the vehicle</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" maxOccurs="1" name="make" type="tns:VehicleMakeType">
+            <xs:annotation>
+              <xs:documentation>make name of the manufacturer who produced the vehicle</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="totalAmount" type="tns:MonetaryValueType">
+            <xs:annotation>
+              <xs:documentation>Total price of the vehicle with all options. The final price that the dealer requests for the vehicle including the discount.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="engineNumber" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Identifier of the engine (identifier hat has been pressed into the engine)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="residualValueSFBase" type="tns:MonetaryValueType">
+            <xs:annotation>
+              <xs:documentation>Actual value calculated with the VehicleModelVariant.resiualValueSFBasePercentage. This is the actual SFBase residual value amount for this specific vehicle.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="residualValueSFBasePercentage" type="xs:decimal">
+            <xs:annotation>
+              <xs:documentation>This is a concrete calculated sf base residual value for this vehicle. The value might differ from the VehicleModelVariant.residualValueSFBasePercentage due to calculation rules.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="vehicleAppraisal" type="tns:VehicleAppraisalType">
+            <xs:annotation>
+              <xs:documentation>Appraisal that is evaluated for that specific vehicle.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" maxOccurs="1" name="usedVehicleSalesPricing" type="tns:UsedVehicleSalesPricingType">
+            <xs:annotation>
+              <xs:documentation>details reg. sales pricing for that specific vehicle.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VehicleAppraisalType" abstract="true">
+    <xs:annotation>
+      <xs:documentation>In case of termination, collections or claims / accident an appraisal can or must be evaluated to determine the current vehicle value and update if necessary. 
+An appraisal can be done by internal repair shops of a dealership, by external independent repair shops or by an official certificated MOT, 
+e.g. DEKRA or T??V.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="vehicle" type="tns:VehicleType">
+        <xs:annotation>
+          <xs:documentation>Vehicle the related appraisal belongs to</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="status" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Status of a vehicle appraisal. 
+e.g. new, open, in progress, final, closed, re-assessment.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="dateOfAppraisal" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>date when the appraisal has been created.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="orderDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>date when the appraisal has been ordered.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="referenceID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>the reference ID creates a relation/reference from the appraisal to the specific business case/contract/.
+e.g. contract ID, collections case ID, claim ID,</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="document" type="tns:DocumentType">
+        <xs:annotation>
+          <xs:documentation>document of the vehicle appraisal</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="followUpDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Date when the status of the Expertise shall be checked again by the user.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VehicleAppraisalOnsiteType">
+    <xs:annotation>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:VehicleAppraisalType">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VehicleMakeType">
+    <xs:annotation>
+      <xs:documentation>A make is a brand under that the manufacturer sells a vehicle. BMW and MINI and are used as different makes.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="vehicle" type="tns:VehicleType">
+        <xs:annotation>
+          <xs:documentation>a vehicle of this make</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="name" type="tns:I18nStringType">
+        <xs:annotation>
+          <xs:documentation>Readable name of the make.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VehicleModelType">
+    <xs:annotation>
+      <xs:documentation>A vehicle series groups VehicleDefinitions to categories that represent a certain type concerning the size and shape of the vehicle. Normally only one version of the vehicle series will be sold simultaneously.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="code" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>identifier of the series, such as 1-series, Golf, A4 etc if a mapping between identifiers for the series information between the systems is necessary</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="name" type="tns:I18nStringType">
+        <xs:annotation>
+          <xs:documentation>A platform may have a set of series like e.g. VW-Golf as platform has series like "Golf" or "Jetta". Series is one of the preselections (.. to Make)  to determine the desired type on Vehicle search.
+It will be used to assign residual value tables, equipment etc. on series level.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="vehicle" type="tns:VehicleType">
+        <xs:annotation>
+          <xs:documentation>A concrete vehicle (instance) of this moidel</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WriteOffCaseType">
+    <xs:annotation>
+      <xs:documentation>A write-off is a reduction of the recognized value of something. In accounting, this is a recognition of the reduced or zero value of an asset</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="arrangement" type="tns:ArrangementType">
+        <xs:annotation>
+          <xs:documentation>arrangement the write off case belongs to.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="totalSum" type="tns:MonetaryValueType">
+        <xs:annotation>
+          <xs:documentation>total sum, that is written off.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="writeOffDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>date when the amount is written off.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="writeOffFollowUp" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>date when the case should be revisited.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

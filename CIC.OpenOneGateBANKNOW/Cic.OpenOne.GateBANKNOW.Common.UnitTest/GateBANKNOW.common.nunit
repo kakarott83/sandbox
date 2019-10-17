@@ -1,0 +1,9 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Debug" />
+  <Config name="Debug" binpathtype="Auto">
+    <assembly path="bin\Debug\Cic.OpenOne.GateBANKNOW.Common.UnitTest.dll" />
+  </Config>
+  <Config name="Release" binpathtype="Auto">
+    <assembly path="bin\Release\Cic.OpenOne.GateBANKNOW.Common.UnitTest.dll" />
+  </Config>
+</NUnitProject>

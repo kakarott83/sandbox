@@ -1,0 +1,1831 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Runtime>
+      <!-- Storage schema - SSDL -->
+      <edmx:StorageModels>
+        <Schema Namespace="Cic.OpenLease.Model.DdOd.Store" Alias="Self" Provider="Devart.Data.Oracle" ProviderManifestToken="ORA" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+          <EntityContainer Name="CIC_OD">
+          <EntitySet Name="DDKEYS2" EntityType="Cic.OpenLease.Model.DdOd.Store.DDKEYS2" Schema="CIC" Table="DDKEYS2" />
+          <EntitySet Name="NEDELETE" EntityType="Cic.OpenLease.Model.DdOd.Store.NEDELETE" Schema="CIC" Table="NEDELETE" />
+          <EntitySet Name="ODUSER" EntityType="Cic.OpenLease.Model.DdOd.Store.ODUSER" Schema="CIC" Table="ODUSER" />
+          <EntitySet Name="NEPROC" EntityType="Cic.OpenLease.Model.DdOd.Store.NEPROC" Schema="CIC" Table="NEPROC" />
+          <EntitySet Name="DDKEYS1" EntityType="Cic.OpenLease.Model.DdOd.Store.DDKEYS1" Schema="CIC" Table="DDKEYS1" />
+          <EntitySet Name="DDKEYS5" EntityType="Cic.OpenLease.Model.DdOd.Store.DDKEYS5" Schema="CIC" Table="DDKEYS5" />
+          <EntitySet Name="DDKEYS4" EntityType="Cic.OpenLease.Model.DdOd.Store.DDKEYS4" Schema="CIC" Table="DDKEYS4" />
+          <EntitySet Name="DDKEYS3" EntityType="Cic.OpenLease.Model.DdOd.Store.DDKEYS3" Schema="CIC" Table="DDKEYS3" />
+          <EntitySet Name="DD" EntityType="Cic.OpenLease.Model.DdOd.Store.DD" Schema="CIC" Table="DD" />
+          <EntitySet Name="DDKEY" EntityType="Cic.OpenLease.Model.DdOd.Store.DDKEY" Schema="CIC" Table="DDKEY" />
+          <EntitySet Name="DDLKPPOS" EntityType="Cic.OpenLease.Model.DdOd.Store.DDLKPPOS" Schema="CIC" Table="DDLKPPOS" />
+          <EntitySet Name="NEINSTANCE" EntityType="Cic.OpenLease.Model.DdOd.Store.NEINSTANCE" Schema="CIC" Table="NEINSTANCE" />
+          <EntitySet Name="NEPROPVAL" EntityType="Cic.OpenLease.Model.DdOd.Store.NEPROPVAL" Schema="CIC" Table="NEPROPVAL" />
+          <EntitySet Name="NEVOTUM" EntityType="Cic.OpenLease.Model.DdOd.Store.NEVOTUM" Schema="CIC" Table="NEVOTUM" />
+          <EntitySet Name="NEPROP" EntityType="Cic.OpenLease.Model.DdOd.Store.NEPROP" Schema="CIC" Table="NEPROP" />
+          <EntitySet Name="DDLKPART" EntityType="Cic.OpenLease.Model.DdOd.Store.DDLKPART" Schema="CIC" Table="DDLKPART" />
+          <AssociationSet Name="DDKEYS2_DDKEYS3" Association="Cic.OpenLease.Model.DdOd.Store.DDKEYS2_DDKEYS3">
+            <End Role="DDKEYS2" EntitySet="DDKEYS2" />
+            <End Role="DDKEYS3" EntitySet="DDKEYS3" />
+          </AssociationSet>
+          <AssociationSet Name="ODUSER_NEVOTUM" Association="Cic.OpenLease.Model.DdOd.Store.ODUSER_NEVOTUM">
+            <End Role="ODUSER" EntitySet="ODUSER" />
+            <End Role="NEVOTUM" EntitySet="NEVOTUM" />
+          </AssociationSet>
+          <AssociationSet Name="NEPROC_NEDELETE" Association="Cic.OpenLease.Model.DdOd.Store.NEPROC_NEDELETE">
+            <End Role="NEPROC" EntitySet="NEPROC" />
+            <End Role="NEDELETE" EntitySet="NEDELETE" />
+          </AssociationSet>
+          <AssociationSet Name="NEPROC_NEINSTANCE" Association="Cic.OpenLease.Model.DdOd.Store.NEPROC_NEINSTANCE">
+            <End Role="NEPROC" EntitySet="NEPROC" />
+            <End Role="NEINSTANCE" EntitySet="NEINSTANCE" />
+          </AssociationSet>
+          <AssociationSet Name="NEPROC_DD" Association="Cic.OpenLease.Model.DdOd.Store.NEPROC_DD">
+            <End Role="NEPROC" EntitySet="NEPROC" />
+            <End Role="DD" EntitySet="DD" />
+          </AssociationSet>
+          <AssociationSet Name="DDKEYS1_DDKEYS2" Association="Cic.OpenLease.Model.DdOd.Store.DDKEYS1_DDKEYS2">
+            <End Role="DDKEYS1" EntitySet="DDKEYS1" />
+            <End Role="DDKEYS2" EntitySet="DDKEYS2" />
+          </AssociationSet>
+          <AssociationSet Name="DDKEYS4_DDKEYS5" Association="Cic.OpenLease.Model.DdOd.Store.DDKEYS4_DDKEYS5">
+            <End Role="DDKEYS4" EntitySet="DDKEYS4" />
+            <End Role="DDKEYS5" EntitySet="DDKEYS5" />
+          </AssociationSet>
+          <AssociationSet Name="DDKEYS3_DDKEYS4" Association="Cic.OpenLease.Model.DdOd.Store.DDKEYS3_DDKEYS4">
+            <End Role="DDKEYS3" EntitySet="DDKEYS3" />
+            <End Role="DDKEYS4" EntitySet="DDKEYS4" />
+          </AssociationSet>
+          <AssociationSet Name="DD_NEPROPVAL" Association="Cic.OpenLease.Model.DdOd.Store.DD_NEPROPVAL">
+            <End Role="DD" EntitySet="DD" />
+            <End Role="NEPROPVAL" EntitySet="NEPROPVAL" />
+          </AssociationSet>
+          <AssociationSet Name="DDKEY_DDKEYS1" Association="Cic.OpenLease.Model.DdOd.Store.DDKEY_DDKEYS1">
+            <End Role="DDKEY" EntitySet="DDKEY" />
+            <End Role="DDKEYS1" EntitySet="DDKEYS1" />
+          </AssociationSet>
+          <AssociationSet Name="DDKEY_DD" Association="Cic.OpenLease.Model.DdOd.Store.DDKEY_DD">
+            <End Role="DDKEY" EntitySet="DDKEY" />
+            <End Role="DD" EntitySet="DD" />
+          </AssociationSet>
+          <AssociationSet Name="NEINSTANCE_NEVOTUM" Association="Cic.OpenLease.Model.DdOd.Store.NEINSTANCE_NEVOTUM">
+            <End Role="NEINSTANCE" EntitySet="NEINSTANCE" />
+            <End Role="NEVOTUM" EntitySet="NEVOTUM" />
+          </AssociationSet>
+          <AssociationSet Name="NEPROP_NEPROPVAL" Association="Cic.OpenLease.Model.DdOd.Store.NEPROP_NEPROPVAL">
+            <End Role="NEPROP" EntitySet="NEPROP" />
+            <End Role="NEPROPVAL" EntitySet="NEPROPVAL" />
+          </AssociationSet>
+          <AssociationSet Name="NEPROP_NEVOTUM" Association="Cic.OpenLease.Model.DdOd.Store.NEPROP_NEVOTUM">
+            <End Role="NEPROP" EntitySet="NEPROP" />
+            <End Role="NEVOTUM" EntitySet="NEVOTUM" />
+          </AssociationSet>
+          </EntityContainer>  
+      <EntityType Name="DDKEYS2">
+        <Key>
+          <PropertyRef Name="SYSDDKEYS2" />
+        </Key>
+        <Property Name="SYSDDKEYS2" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="DDKEYID" Type="int64" Nullable="true" />
+        <Property Name="RANG" Type="int" Nullable="true" />
+        <Property Name="KEY" Type="int" Nullable="true" />
+        <Property Name="VALUE" Type="VARCHAR2" MaxLength="60" Nullable="true" />
+        <Property Name="BEMERKUNG" Type="VARCHAR2" MaxLength="180" Nullable="true" />
+      </EntityType>
+      <EntityType Name="NEDELETE">
+        <Key>
+          <PropertyRef Name="SYSNEDELETE" />
+        </Key>
+        <Property Name="SYSNEDELETE" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="SYSNEPROC" Type="int64" Nullable="true" />
+        <Property Name="DBTABLE" Type="VARCHAR2" MaxLength="25" Nullable="true" />
+        <Property Name="ACTIVEFLAG" Type="int" Nullable="true" />
+        <Property Name="MSGCODEDELETE" Type="VARCHAR2" MaxLength="30" Nullable="true" />
+        <Property Name="MSGCODEUPDDEL" Type="VARCHAR2" MaxLength="30" Nullable="true" />
+        <Property Name="MSGCODEDELUPD" Type="VARCHAR2" MaxLength="30" Nullable="true" />
+        <Property Name="PRECONDITIONTRG" Type="VARCHAR2" MaxLength="1024" Nullable="true" />
+      </EntityType>
+      <EntityType Name="ODUSER">
+        <Key>
+          <PropertyRef Name="SYSWFUSER" />
+        </Key>
+        <Property Name="SYSWFUSER" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="SORTKZ" Type="VARCHAR2" MaxLength="8" Nullable="true" />
+        <Property Name="CODE" Type="VARCHAR2" MaxLength="15" Nullable="true" />
+        <Property Name="NAME" Type="VARCHAR2" MaxLength="30" Nullable="true" />
+        <Property Name="VORNAME" Type="VARCHAR2" MaxLength="30" Nullable="true" />
+        <Property Name="REMARK" Type="VARCHAR2" MaxLength="180" Nullable="true" />
+        <Property Name="KORRESPONDENZ" Type="VARCHAR2" MaxLength="8" Nullable="true" />
+        <Property Name="DURCHWAHL" Type="VARCHAR2" MaxLength="5" Nullable="true" />
+        <Property Name="ZEICHEN" Type="VARCHAR2" MaxLength="20" Nullable="true" />
+        <Property Name="GRUPPE" Type="int" Nullable="true" />
+        <Property Name="MASTER" Type="int" Nullable="true" />
+        <Property Name="SYSLAND" Type="int64" Nullable="true" />
+        <Property Name="SYSREGION" Type="int64" Nullable="true" />
+        <Property Name="TELEFON" Type="VARCHAR2" MaxLength="128" Nullable="true" />
+        <Property Name="MOBILE" Type="VARCHAR2" MaxLength="128" Nullable="true" />
+        <Property Name="FAX" Type="VARCHAR2" MaxLength="128" Nullable="true" />
+        <Property Name="TITEL" Type="VARCHAR2" MaxLength="128" Nullable="true" />
+        <Property Name="EMAIL" Type="VARCHAR2" MaxLength="128" Nullable="true" />
+        <Property Name="PLZ" Type="VARCHAR2" MaxLength="15" Nullable="true" />
+        <Property Name="ORT" Type="VARCHAR2" MaxLength="40" Nullable="true" />
+        <Property Name="STRASSE" Type="VARCHAR2" MaxLength="40" Nullable="true" />
+        <Property Name="LASTMANDANT" Type="VARCHAR2" MaxLength="40" Nullable="true" />
+        <Property Name="TELEFON2" Type="VARCHAR2" MaxLength="128" Nullable="true" />
+        <Property Name="SYSPERSON" Type="int64" Nullable="true" />
+        <Property Name="FLAGHIDE" Type="int" Nullable="true" />
+        <Property Name="IDENTNR" Type="VARCHAR2" MaxLength="40" Nullable="true" />
+        <Property Name="LOGINART" Type="int" Nullable="true" />
+        <Property Name="SYSCTLANG" Type="int64" Nullable="true" />
+        <Property Name="USERART" Type="int" Nullable="true" />
+      </EntityType>
+      <EntityType Name="NEPROC">
+        <Key>
+          <PropertyRef Name="SYSNEPROC" />
+        </Key>
+        <Property Name="SYSNEPROC" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="NAME" Type="VARCHAR2" MaxLength="80" Nullable="true" />
+        <Property Name="DESCRIPTION" Type="VARCHAR2" MaxLength="255" Nullable="true" />
+        <Property Name="ACTIVEFLAG" Type="int" Nullable="true" />
+        <Property Name="DELAYEDFLAG" Type="int" Nullable="true" />
+        <Property Name="SELFAPPROVALFLAG" Type="int" Nullable="true" />
+      </EntityType>
+      <EntityType Name="DDKEYS1">
+        <Key>
+          <PropertyRef Name="SYSDDKEYS1" />
+        </Key>
+        <Property Name="SYSDDKEYS1" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="DDKEYID" Type="int64" Nullable="true" />
+        <Property Name="RANG" Type="int" Nullable="true" />
+        <Property Name="KEY" Type="int" Nullable="true" />
+        <Property Name="VALUE" Type="VARCHAR2" MaxLength="60" Nullable="true" />
+        <Property Name="BEMERKUNG" Type="VARCHAR2" MaxLength="180" Nullable="true" />
+      </EntityType>
+      <EntityType Name="DDKEYS5">
+        <Key>
+          <PropertyRef Name="SYSDDKEYS5" />
+        </Key>
+        <Property Name="SYSDDKEYS5" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="DDKEYID" Type="int64" Nullable="true" />
+        <Property Name="RANG" Type="int" Nullable="true" />
+        <Property Name="KEY" Type="int" Nullable="true" />
+        <Property Name="VALUE" Type="VARCHAR2" MaxLength="60" Nullable="true" />
+        <Property Name="BEMERKUNG" Type="VARCHAR2" MaxLength="180" Nullable="true" />
+      </EntityType>
+      <EntityType Name="DDKEYS4">
+        <Key>
+          <PropertyRef Name="SYSDDKEYS4" />
+        </Key>
+        <Property Name="SYSDDKEYS4" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="DDKEYID" Type="int64" Nullable="true" />
+        <Property Name="RANG" Type="int" Nullable="true" />
+        <Property Name="KEY" Type="int" Nullable="true" />
+        <Property Name="VALUE" Type="VARCHAR2" MaxLength="60" Nullable="true" />
+        <Property Name="BEMERKUNG" Type="VARCHAR2" MaxLength="180" Nullable="true" />
+      </EntityType>
+      <EntityType Name="DDKEYS3">
+        <Key>
+          <PropertyRef Name="SYSDDKEYS3" />
+        </Key>
+        <Property Name="SYSDDKEYS3" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="DDKEYID" Type="int64" Nullable="true" />
+        <Property Name="RANG" Type="int" Nullable="true" />
+        <Property Name="KEY" Type="int" Nullable="true" />
+        <Property Name="VALUE" Type="VARCHAR2" MaxLength="60" Nullable="true" />
+        <Property Name="BEMERKUNG" Type="VARCHAR2" MaxLength="180" Nullable="true" />
+      </EntityType>
+      <EntityType Name="DD">
+        <Key>
+          <PropertyRef Name="SYSDD" />
+        </Key>
+        <Property Name="SYSDD" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="FIELD" Type="VARCHAR2" MaxLength="80" Nullable="true" />
+        <Property Name="AKTIVKZ" Type="VARCHAR2" MaxLength="20" Nullable="true" />
+        <Property Name="FIELDHLP" Type="int64" Nullable="true" />
+        <Property Name="FIELDKEY" Type="int64" Nullable="true" />
+        <Property Name="JUSTIFICATION" Type="VARCHAR2" MaxLength="1" Nullable="true" />
+        <Property Name="READONLY" Type="int" Nullable="true" />
+        <Property Name="ENTRYMODE" Type="int" Nullable="true" />
+        <Property Name="CASEMODE" Type="int" Nullable="true" />
+        <Property Name="FORMAT" Type="VARCHAR2" MaxLength="255" Nullable="true" />
+        <Property Name="HIDE" Type="int" Nullable="true" />
+        <Property Name="CHK" Type="VARCHAR2" MaxLength="255" Nullable="true" />
+        <Property Name="TIP" Type="VARCHAR2" MaxLength="255" Nullable="true" />
+        <Property Name="REQ" Type="int" Nullable="true" />
+        <Property Name="REQCOLORFG" Type="int64" Nullable="true" />
+        <Property Name="REQCOLORBG" Type="int64" Nullable="true" />
+        <Property Name="REQCOLORSFG" Type="int64" Nullable="true" />
+        <Property Name="REQCOLORSBG" Type="int64" Nullable="true" />
+        <Property Name="LOG" Type="int" Nullable="true" />
+        <Property Name="RANGE" Type="int" Nullable="true" />
+        <Property Name="MINVALUE" Type="int64" Nullable="true" />
+        <Property Name="MAXVALUE" Type="int64" Nullable="true" />
+        <Property Name="CAPITALIZE" Type="int" Nullable="true" />
+        <Property Name="SKIP" Type="int" Nullable="true" />
+        <Property Name="COLORFG" Type="int64" Nullable="true" />
+        <Property Name="COLORBG" Type="int64" Nullable="true" />
+        <Property Name="COLORSFG" Type="int64" Nullable="true" />
+        <Property Name="COLORSBG" Type="int64" Nullable="true" />
+        <Property Name="FONTSIZE" Type="int64" Nullable="true" />
+        <Property Name="TYPESIZE" Type="int64" Nullable="true" />
+        <Property Name="FONTSTYLE" Type="int64" Nullable="true" />
+        <Property Name="VORBELEGUNG" Type="VARCHAR2" MaxLength="255" Nullable="true" />
+        <Property Name="FIELDINIT" Type="VARCHAR2" MaxLength="255" Nullable="true" />
+        <Property Name="FIELDCHECK" Type="VARCHAR2" MaxLength="255" Nullable="true" />
+        <Property Name="STUFE" Type="int" Nullable="true" />
+        <Property Name="STUFEINSERT" Type="int" Nullable="true" />
+        <Property Name="STUFEEDIT" Type="int" Nullable="true" />
+        <Property Name="SYSRFN" Type="int64" Nullable="true" />
+        <Property Name="DISABLEFLAG" Type="int" Nullable="true" />
+        <Property Name="CHANGEFLAG" Type="int" Nullable="true" />
+        <Property Name="CODERFU" Type="VARCHAR2" MaxLength="80" Nullable="true" />
+        <Property Name="CODERMO" Type="VARCHAR2" MaxLength="80" Nullable="true" />
+        <Property Name="SYSNEPROC" Type="int64" Nullable="true" />
+        <Property Name="PRECONDITIONNEPROP" Type="VARCHAR2" MaxLength="512" Nullable="true" />
+        <Property Name="DBTABLE" Type="VARCHAR2" MaxLength="25" Nullable="true" />
+        <Property Name="DBFIELD" Type="VARCHAR2" MaxLength="80" Nullable="true" />
+        <Property Name="FIELDACCEPTED" Type="VARCHAR2" MaxLength="255" Nullable="true" />
+      </EntityType>
+      <EntityType Name="DDKEY">
+        <Key>
+          <PropertyRef Name="SYSDDKEY" />
+        </Key>
+        <Property Name="SYSDDKEY" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="DESCRIPTION" Type="VARCHAR2" MaxLength="60" Nullable="true" />
+        <Property Name="BEMERKUNG" Type="VARCHAR2" MaxLength="180" Nullable="true" />
+      </EntityType>
+      <EntityType Name="DDLKPPOS">
+        <Key>
+          <PropertyRef Name="SYSDDLKPPOS" />
+        </Key>
+        <Property Name="SYSDDLKPPOS" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="ID" Type="VARCHAR2" MaxLength="20" Nullable="true" />
+        <Property Name="CODE" Type="VARCHAR2" MaxLength="20" Nullable="true" />
+        <Property Name="DOMAINID" Type="VARCHAR2" MaxLength="20" Nullable="true" />
+        <Property Name="VALUE" Type="VARCHAR2" MaxLength="256" Nullable="true" />
+        <Property Name="TOOLTIP" Type="VARCHAR2" MaxLength="512" Nullable="true" />
+        <Property Name="RANK" Type="int" Nullable="true" />
+        <Property Name="ACTIVEFLAG" Type="int" Nullable="true" />
+      </EntityType>
+      <EntityType Name="NEINSTANCE">
+        <Key>
+          <PropertyRef Name="SYSNEINSTANCE" />
+        </Key>
+        <Property Name="SYSNEINSTANCE" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="NAME" Type="VARCHAR2" MaxLength="80" Nullable="true" />
+        <Property Name="DESCRIPTION" Type="VARCHAR2" MaxLength="255" Nullable="true" />
+        <Property Name="ACTIVEFLAG" Type="int" Nullable="true" />
+        <Property Name="WEIGHTAGE" Type="int" Nullable="true" />
+        <Property Name="MANDATORYFLAG" Type="int" Nullable="true" />
+        <Property Name="SYSNEPROC" Type="int64" Nullable="true" />
+        <Property Name="CODERMO" Type="VARCHAR2" MaxLength="80" Nullable="true" />
+        <Property Name="CODERFU" Type="VARCHAR2" MaxLength="80" Nullable="true" />
+      </EntityType>
+      <EntityType Name="NEPROPVAL">
+        <Key>
+          <PropertyRef Name="SYSNEPROPVAL" />
+        </Key>
+        <Property Name="SYSNEPROPVAL" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="OLDVALUE" Type="VARCHAR2" MaxLength="3999" Nullable="true" />
+        <Property Name="NEWVALUE" Type="VARCHAR2" MaxLength="3999" Nullable="true" />
+        <Property Name="AREA" Type="VARCHAR2" MaxLength="25" Nullable="true" />
+        <Property Name="SYSID" Type="int64" Nullable="true" />
+        <Property Name="SYSDD" Type="int64" Nullable="true" />
+        <Property Name="SYSNEPROP" Type="int64" Nullable="true" />
+      </EntityType>
+      <EntityType Name="NEVOTUM">
+        <Key>
+          <PropertyRef Name="SYSNEVOTUM" />
+        </Key>
+        <Property Name="SYSNEVOTUM" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="SYSNEPROP" Type="int64" Nullable="true" />
+        <Property Name="SYSNEINSTANCE" Type="int64" Nullable="true" />
+        <Property Name="VOTUMDATE" Type="DATE" Nullable="true" />
+        <Property Name="VOTUMTIME" Type="int64" Nullable="true" />
+        <Property Name="SYSVOTUMUSER" Type="int64" Nullable="true" />
+        <Property Name="VOTUM" Type="int" Nullable="true" />
+        <Property Name="VOTUMREM" Type="VARCHAR2" MaxLength="3999" Nullable="true" />
+      </EntityType>
+      <EntityType Name="NEPROP">
+        <Key>
+          <PropertyRef Name="SYSNEPROP" />
+        </Key>
+        <Property Name="SYSNEPROP" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="AREA" Type="VARCHAR2" MaxLength="25" Nullable="true" />
+        <Property Name="SYSID" Type="int64" Nullable="true" />
+        <Property Name="DESCRIPTION" Type="VARCHAR2" MaxLength="1024" Nullable="true" />
+        <Property Name="APPROVALSTATUS" Type="int" Nullable="true" />
+        <Property Name="CREATEDATE" Type="DATE" Nullable="true" />
+        <Property Name="CREATETIME" Type="int64" Nullable="true" />
+        <Property Name="SYSCREATEUSER" Type="int64" Nullable="true" />
+        <Property Name="DESIREDDATE" Type="DATE" Nullable="true" />
+        <Property Name="DECISIONDATE" Type="DATE" Nullable="true" />
+        <Property Name="DECISIONTIME" Type="int64" Nullable="true" />
+        <Property Name="DECISIONREM" Type="VARCHAR2" MaxLength="3999" Nullable="true" />
+        <Property Name="PROCESSEDDATE" Type="DATE" Nullable="true" />
+        <Property Name="PROCESSEDTIME" Type="int64" Nullable="true" />
+        <Property Name="SYSPROCESSEDUSER" Type="int64" Nullable="true" />
+        <Property Name="PROCESSEDFLAG" Type="int" Nullable="true" />
+        <Property Name="SYSNEPROC" Type="int64" Nullable="true" />
+        <Property Name="EXECAREA" Type="VARCHAR2" MaxLength="25" Nullable="true" />
+        <Property Name="SYSEXECAREA" Type="int64" Nullable="true" />
+        <Property Name="EXECART" Type="int" Nullable="true" />
+        <Property Name="SYSLS" Type="int64" Nullable="true" />
+      </EntityType>
+      <EntityType Name="DDLKPART">
+        <Key>
+          <PropertyRef Name="SYSDDLKPART" />
+        </Key>
+        <Property Name="SYSDDLKPART" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="CODE" Type="VARCHAR2" MaxLength="20" Nullable="true" />
+        <Property Name="READONLYFLAG" Type="int" Nullable="true" />
+        <Property Name="DESCRIPTION" Type="VARCHAR2" MaxLength="512" Nullable="true" />
+        <Property Name="VALUETYPE" Type="int" Nullable="true" />
+        <Property Name="VALUESOURCE" Type="int" Nullable="true" />
+        <Property Name="VALUEPICTURE" Type="VARCHAR2" MaxLength="80" Nullable="true" />
+        <Property Name="SAVESOURCE" Type="int" Nullable="true" />
+      </EntityType>
+            <Association Name="DDKEYS2_DDKEYS3">
+              <End Role="DDKEYS2" Type="Cic.OpenLease.Model.DdOd.Store.DDKEYS2" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="DDKEYS3" Type="Cic.OpenLease.Model.DdOd.Store.DDKEYS3" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="DDKEYS2">
+                  <PropertyRef Name="SYSDDKEYS2" />
+                </Principal>
+                <Dependent Role="DDKEYS3">
+                  <PropertyRef Name="DDKEYID" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="ODUSER_NEVOTUM">
+              <End Role="ODUSER" Type="Cic.OpenLease.Model.DdOd.Store.ODUSER" Multiplicity="0..1">
+              </End>
+              <End Role="NEVOTUM" Type="Cic.OpenLease.Model.DdOd.Store.NEVOTUM" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="ODUSER">
+                  <PropertyRef Name="SYSWFUSER" />
+                </Principal>
+                <Dependent Role="NEVOTUM">
+                  <PropertyRef Name="SYSVOTUMUSER" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="NEPROC_NEDELETE">
+              <End Role="NEPROC" Type="Cic.OpenLease.Model.DdOd.Store.NEPROC" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="NEDELETE" Type="Cic.OpenLease.Model.DdOd.Store.NEDELETE" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="NEPROC">
+                  <PropertyRef Name="SYSNEPROC" />
+                </Principal>
+                <Dependent Role="NEDELETE">
+                  <PropertyRef Name="SYSNEPROC" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="NEPROC_NEINSTANCE">
+              <End Role="NEPROC" Type="Cic.OpenLease.Model.DdOd.Store.NEPROC" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="NEINSTANCE" Type="Cic.OpenLease.Model.DdOd.Store.NEINSTANCE" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="NEPROC">
+                  <PropertyRef Name="SYSNEPROC" />
+                </Principal>
+                <Dependent Role="NEINSTANCE">
+                  <PropertyRef Name="SYSNEPROC" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="NEPROC_DD">
+              <End Role="NEPROC" Type="Cic.OpenLease.Model.DdOd.Store.NEPROC" Multiplicity="0..1">
+              </End>
+              <End Role="DD" Type="Cic.OpenLease.Model.DdOd.Store.DD" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="NEPROC">
+                  <PropertyRef Name="SYSNEPROC" />
+                </Principal>
+                <Dependent Role="DD">
+                  <PropertyRef Name="SYSNEPROC" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="DDKEYS1_DDKEYS2">
+              <End Role="DDKEYS1" Type="Cic.OpenLease.Model.DdOd.Store.DDKEYS1" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="DDKEYS2" Type="Cic.OpenLease.Model.DdOd.Store.DDKEYS2" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="DDKEYS1">
+                  <PropertyRef Name="SYSDDKEYS1" />
+                </Principal>
+                <Dependent Role="DDKEYS2">
+                  <PropertyRef Name="DDKEYID" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="DDKEYS4_DDKEYS5">
+              <End Role="DDKEYS4" Type="Cic.OpenLease.Model.DdOd.Store.DDKEYS4" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="DDKEYS5" Type="Cic.OpenLease.Model.DdOd.Store.DDKEYS5" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="DDKEYS4">
+                  <PropertyRef Name="SYSDDKEYS4" />
+                </Principal>
+                <Dependent Role="DDKEYS5">
+                  <PropertyRef Name="DDKEYID" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="DDKEYS3_DDKEYS4">
+              <End Role="DDKEYS3" Type="Cic.OpenLease.Model.DdOd.Store.DDKEYS3" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="DDKEYS4" Type="Cic.OpenLease.Model.DdOd.Store.DDKEYS4" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="DDKEYS3">
+                  <PropertyRef Name="SYSDDKEYS3" />
+                </Principal>
+                <Dependent Role="DDKEYS4">
+                  <PropertyRef Name="DDKEYID" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="DD_NEPROPVAL">
+              <End Role="DD" Type="Cic.OpenLease.Model.DdOd.Store.DD" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="NEPROPVAL" Type="Cic.OpenLease.Model.DdOd.Store.NEPROPVAL" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="DD">
+                  <PropertyRef Name="SYSDD" />
+                </Principal>
+                <Dependent Role="NEPROPVAL">
+                  <PropertyRef Name="SYSDD" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="DDKEY_DDKEYS1">
+              <End Role="DDKEY" Type="Cic.OpenLease.Model.DdOd.Store.DDKEY" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="DDKEYS1" Type="Cic.OpenLease.Model.DdOd.Store.DDKEYS1" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="DDKEY">
+                  <PropertyRef Name="SYSDDKEY" />
+                </Principal>
+                <Dependent Role="DDKEYS1">
+                  <PropertyRef Name="DDKEYID" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="DDKEY_DD">
+              <End Role="DDKEY" Type="Cic.OpenLease.Model.DdOd.Store.DDKEY" Multiplicity="0..1">
+              </End>
+              <End Role="DD" Type="Cic.OpenLease.Model.DdOd.Store.DD" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="DDKEY">
+                  <PropertyRef Name="SYSDDKEY" />
+                </Principal>
+                <Dependent Role="DD">
+                  <PropertyRef Name="FIELDKEY" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="NEINSTANCE_NEVOTUM">
+              <End Role="NEINSTANCE" Type="Cic.OpenLease.Model.DdOd.Store.NEINSTANCE" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="NEVOTUM" Type="Cic.OpenLease.Model.DdOd.Store.NEVOTUM" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="NEINSTANCE">
+                  <PropertyRef Name="SYSNEINSTANCE" />
+                </Principal>
+                <Dependent Role="NEVOTUM">
+                  <PropertyRef Name="SYSNEINSTANCE" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="NEPROP_NEPROPVAL">
+              <End Role="NEPROP" Type="Cic.OpenLease.Model.DdOd.Store.NEPROP" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="NEPROPVAL" Type="Cic.OpenLease.Model.DdOd.Store.NEPROPVAL" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="NEPROP">
+                  <PropertyRef Name="SYSNEPROP" />
+                </Principal>
+                <Dependent Role="NEPROPVAL">
+                  <PropertyRef Name="SYSNEPROP" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="NEPROP_NEVOTUM">
+              <End Role="NEPROP" Type="Cic.OpenLease.Model.DdOd.Store.NEPROP" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="NEVOTUM" Type="Cic.OpenLease.Model.DdOd.Store.NEVOTUM" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="NEPROP">
+                  <PropertyRef Name="SYSNEPROP" />
+                </Principal>
+                <Dependent Role="NEVOTUM">
+                  <PropertyRef Name="SYSNEPROP" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+        </Schema>  
+      </edmx:StorageModels>
+      <!-- Conceptual schema - CSDL -->
+      <edmx:ConceptualModels>
+        <Schema Namespace="Cic.OpenLease.Model.DdOd" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntityContainer Name="OdEntities">
+          <EntitySet Name="DDKEYS2" EntityType="Cic.OpenLease.Model.DdOd.DDKEYS2" />
+          <EntitySet Name="NEDELETE" EntityType="Cic.OpenLease.Model.DdOd.NEDELETE" />
+          <EntitySet Name="ODUSER" EntityType="Cic.OpenLease.Model.DdOd.ODUSER" />
+          <EntitySet Name="NEPROC" EntityType="Cic.OpenLease.Model.DdOd.NEPROC" />
+          <EntitySet Name="DDKEYS1" EntityType="Cic.OpenLease.Model.DdOd.DDKEYS1" />
+          <EntitySet Name="DDKEYS5" EntityType="Cic.OpenLease.Model.DdOd.DDKEYS5" />
+          <EntitySet Name="DDKEYS4" EntityType="Cic.OpenLease.Model.DdOd.DDKEYS4" />
+          <EntitySet Name="DDKEYS3" EntityType="Cic.OpenLease.Model.DdOd.DDKEYS3" />
+          <EntitySet Name="DD" EntityType="Cic.OpenLease.Model.DdOd.DD" />
+          <EntitySet Name="DDKEY" EntityType="Cic.OpenLease.Model.DdOd.DDKEY" />
+          <EntitySet Name="DDLKPPOS" EntityType="Cic.OpenLease.Model.DdOd.DDLKPPOS" />
+          <EntitySet Name="NEINSTANCE" EntityType="Cic.OpenLease.Model.DdOd.NEINSTANCE" />
+          <EntitySet Name="NEPROPVAL" EntityType="Cic.OpenLease.Model.DdOd.NEPROPVAL" />
+          <EntitySet Name="NEVOTUM" EntityType="Cic.OpenLease.Model.DdOd.NEVOTUM" />
+          <EntitySet Name="NEPROP" EntityType="Cic.OpenLease.Model.DdOd.NEPROP" />
+          <EntitySet Name="DDLKPART" EntityType="Cic.OpenLease.Model.DdOd.DDLKPART" />
+          <AssociationSet Name="DDKEYS3_DDKEYS2" Association="Cic.OpenLease.Model.DdOd.DDKEYS3_DDKEYS2">
+            <End Role="DDKEYS2" EntitySet="DDKEYS2" />
+            <End Role="DDKEYS3" EntitySet="DDKEYS3" />
+          </AssociationSet>
+          <AssociationSet Name="NEVOTUM_ODUSER" Association="Cic.OpenLease.Model.DdOd.NEVOTUM_ODUSER">
+            <End Role="ODUSER" EntitySet="ODUSER" />
+            <End Role="NEVOTUM" EntitySet="NEVOTUM" />
+          </AssociationSet>
+          <AssociationSet Name="NEDELETE_NEPROC" Association="Cic.OpenLease.Model.DdOd.NEDELETE_NEPROC">
+            <End Role="NEPROC" EntitySet="NEPROC" />
+            <End Role="NEDELETE" EntitySet="NEDELETE" />
+          </AssociationSet>
+          <AssociationSet Name="NEINSTANCE_NEPROC" Association="Cic.OpenLease.Model.DdOd.NEINSTANCE_NEPROC">
+            <End Role="NEPROC" EntitySet="NEPROC" />
+            <End Role="NEINSTANCE" EntitySet="NEINSTANCE" />
+          </AssociationSet>
+          <AssociationSet Name="DD_NEPROC" Association="Cic.OpenLease.Model.DdOd.DD_NEPROC">
+            <End Role="NEPROC" EntitySet="NEPROC" />
+            <End Role="DD" EntitySet="DD" />
+          </AssociationSet>
+          <AssociationSet Name="DDKEYS2_DDKEYS1" Association="Cic.OpenLease.Model.DdOd.DDKEYS2_DDKEYS1">
+            <End Role="DDKEYS1" EntitySet="DDKEYS1" />
+            <End Role="DDKEYS2" EntitySet="DDKEYS2" />
+          </AssociationSet>
+          <AssociationSet Name="DDKEYS5_DDKEYS4" Association="Cic.OpenLease.Model.DdOd.DDKEYS5_DDKEYS4">
+            <End Role="DDKEYS4" EntitySet="DDKEYS4" />
+            <End Role="DDKEYS5" EntitySet="DDKEYS5" />
+          </AssociationSet>
+          <AssociationSet Name="DDKEYS4_DDKEYS3" Association="Cic.OpenLease.Model.DdOd.DDKEYS4_DDKEYS3">
+            <End Role="DDKEYS3" EntitySet="DDKEYS3" />
+            <End Role="DDKEYS4" EntitySet="DDKEYS4" />
+          </AssociationSet>
+          <AssociationSet Name="NEPROPVAL_DD" Association="Cic.OpenLease.Model.DdOd.NEPROPVAL_DD">
+            <End Role="DD" EntitySet="DD" />
+            <End Role="NEPROPVAL" EntitySet="NEPROPVAL" />
+          </AssociationSet>
+          <AssociationSet Name="DDKEYS1_DDKEY" Association="Cic.OpenLease.Model.DdOd.DDKEYS1_DDKEY">
+            <End Role="DDKEY" EntitySet="DDKEY" />
+            <End Role="DDKEYS1" EntitySet="DDKEYS1" />
+          </AssociationSet>
+          <AssociationSet Name="DD_DDKEY" Association="Cic.OpenLease.Model.DdOd.DD_DDKEY">
+            <End Role="DDKEY" EntitySet="DDKEY" />
+            <End Role="DD" EntitySet="DD" />
+          </AssociationSet>
+          <AssociationSet Name="NEVOTUM_NEINSTANCE" Association="Cic.OpenLease.Model.DdOd.NEVOTUM_NEINSTANCE">
+            <End Role="NEINSTANCE" EntitySet="NEINSTANCE" />
+            <End Role="NEVOTUM" EntitySet="NEVOTUM" />
+          </AssociationSet>
+          <AssociationSet Name="NEPROPVAL_NEPROP" Association="Cic.OpenLease.Model.DdOd.NEPROPVAL_NEPROP">
+            <End Role="NEPROP" EntitySet="NEPROP" />
+            <End Role="NEPROPVAL" EntitySet="NEPROPVAL" />
+          </AssociationSet>
+          <AssociationSet Name="NEVOTUM_NEPROP" Association="Cic.OpenLease.Model.DdOd.NEVOTUM_NEPROP">
+            <End Role="NEPROP" EntitySet="NEPROP" />
+            <End Role="NEVOTUM" EntitySet="NEVOTUM" />
+          </AssociationSet>
+          </EntityContainer>
+      <EntityType Name="DDKEYS2">
+        <Documentation><Summary>Schl�ssel Stufe 2</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSDDKEYS2" />
+        </Key>
+        <Property Name="SYSDDKEYS2" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary>ID</Summary></Documentation>
+        </Property>
+        <Property Name="RANG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Rang</Summary></Documentation>
+        </Property>
+        <Property Name="KEY" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Schl�sselflag</Summary></Documentation>
+        </Property>
+        <Property Name="VALUE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Wert</Summary></Documentation>
+        </Property>
+        <Property Name="BEMERKUNG" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Bemerkung:</Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="DDKEYS3List" Relationship="Cic.OpenLease.Model.DdOd.DDKEYS3_DDKEYS2" FromRole="DDKEYS2" ToRole="DDKEYS3" />
+        <NavigationProperty Name="DDKEYS1" Relationship="Cic.OpenLease.Model.DdOd.DDKEYS2_DDKEYS1" FromRole="DDKEYS2" ToRole="DDKEYS1" />
+      </EntityType>
+      <EntityType Name="NEDELETE">
+        <Documentation><Summary>n-eyes delete action</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSNEDELETE" />
+        </Key>
+        <Property Name="SYSNEDELETE" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="DBTABLE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="ACTIVEFLAG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="MSGCODEDELETE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="MSGCODEUPDDEL" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="MSGCODEDELUPD" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="PRECONDITIONTRG" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="NEPROC" Relationship="Cic.OpenLease.Model.DdOd.NEDELETE_NEPROC" FromRole="NEDELETE" ToRole="NEPROC" />
+      </EntityType>
+      <EntityType Name="ODUSER">
+        <Documentation><Summary>Workflow-Benutzer !</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSWFUSER" />
+        </Key>
+        <Property Name="SYSWFUSER" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary>ID</Summary></Documentation>
+        </Property>
+        <Property Name="SORTKZ" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Sortierkennzeichen</Summary></Documentation>
+        </Property>
+        <Property Name="CODE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="NAME" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="VORNAME" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="REMARK" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Bemerkung</Summary></Documentation>
+        </Property>
+        <Property Name="KORRESPONDENZ" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="DURCHWAHL" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="ZEICHEN" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="GRUPPE" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="MASTER" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="SYSLAND" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="SYSREGION" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="TELEFON" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="MOBILE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="FAX" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="TITEL" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="EMAIL" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="PLZ" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="ORT" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="STRASSE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="LASTMANDANT" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="TELEFON2" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="SYSPERSON" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="FLAGHIDE" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="IDENTNR" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>identifikationsnummer</Summary></Documentation>
+        </Property>
+        <Property Name="LOGINART" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Login Art: 0 = both, 1 = only SSO, 2 = only Credentials</Summary></Documentation>
+        </Property>
+        <Property Name="SYSCTLANG" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Verweis auf die Sprache des Benutzers</Summary></Documentation>
+        </Property>
+        <Property Name="USERART" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>User art: 0 = standard, 1 = readonly</Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="NEVOTUMList" Relationship="Cic.OpenLease.Model.DdOd.NEVOTUM_ODUSER" FromRole="ODUSER" ToRole="NEVOTUM" />
+      </EntityType>
+      <EntityType Name="NEPROC">
+        <Documentation><Summary>n-eyes approval process</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSNEPROC" />
+        </Key>
+        <Property Name="SYSNEPROC" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary>Prim�rschl�ssel</Summary></Documentation>
+        </Property>
+        <Property Name="NAME" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Eindeutiger Name</Summary></Documentation>
+        </Property>
+        <Property Name="DESCRIPTION" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Beschreibung</Summary></Documentation>
+        </Property>
+        <Property Name="ACTIVEFLAG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>AktivFlag. Darf nur ge�ndert werden wenn keine pendenten Genehmigungen (NEPROP) vorliegen</Summary></Documentation>
+        </Property>
+        <Property Name="DELAYEDFLAG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>DelayedFlag. Verz�gerte Aktion nach Genehmigung.</Summary></Documentation>
+        </Property>
+        <Property Name="SELFAPPROVALFLAG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>SelfApprovalFlag. Derjenige der die Genehmigung anfordert darf es auch genehmigen (wenn er in der entsprechenden Rechtefunktionsgruppe ist)</Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="NEDELETEList" Relationship="Cic.OpenLease.Model.DdOd.NEDELETE_NEPROC" FromRole="NEPROC" ToRole="NEDELETE" />
+        <NavigationProperty Name="NEINSTANCEList" Relationship="Cic.OpenLease.Model.DdOd.NEINSTANCE_NEPROC" FromRole="NEPROC" ToRole="NEINSTANCE" />
+        <NavigationProperty Name="DDList" Relationship="Cic.OpenLease.Model.DdOd.DD_NEPROC" FromRole="NEPROC" ToRole="DD" />
+      </EntityType>
+      <EntityType Name="DDKEYS1">
+        <Documentation><Summary>Schl�ssel Stufe 1</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSDDKEYS1" />
+        </Key>
+        <Property Name="SYSDDKEYS1" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary>ID</Summary></Documentation>
+        </Property>
+        <Property Name="RANG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Rang</Summary></Documentation>
+        </Property>
+        <Property Name="KEY" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Schl�sselflag</Summary></Documentation>
+        </Property>
+        <Property Name="VALUE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Wert</Summary></Documentation>
+        </Property>
+        <Property Name="BEMERKUNG" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Bemerkung</Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="DDKEY" Relationship="Cic.OpenLease.Model.DdOd.DDKEYS1_DDKEY" FromRole="DDKEYS1" ToRole="DDKEY" />
+        <NavigationProperty Name="DDKEYS2List" Relationship="Cic.OpenLease.Model.DdOd.DDKEYS2_DDKEYS1" FromRole="DDKEYS1" ToRole="DDKEYS2" />
+      </EntityType>
+      <EntityType Name="DDKEYS5">
+        <Documentation><Summary>Schl�ssel Stufe 5</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSDDKEYS5" />
+        </Key>
+        <Property Name="SYSDDKEYS5" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary>ID</Summary></Documentation>
+        </Property>
+        <Property Name="RANG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Rang</Summary></Documentation>
+        </Property>
+        <Property Name="KEY" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Schl�sselflag</Summary></Documentation>
+        </Property>
+        <Property Name="VALUE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Wert</Summary></Documentation>
+        </Property>
+        <Property Name="BEMERKUNG" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Bemerkung</Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="DDKEYS4" Relationship="Cic.OpenLease.Model.DdOd.DDKEYS5_DDKEYS4" FromRole="DDKEYS5" ToRole="DDKEYS4" />
+      </EntityType>
+      <EntityType Name="DDKEYS4">
+        <Documentation><Summary>Schl�ssel Stufe 4</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSDDKEYS4" />
+        </Key>
+        <Property Name="SYSDDKEYS4" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary>ID</Summary></Documentation>
+        </Property>
+        <Property Name="RANG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Rang</Summary></Documentation>
+        </Property>
+        <Property Name="KEY" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Schl�sselflag</Summary></Documentation>
+        </Property>
+        <Property Name="VALUE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Wert</Summary></Documentation>
+        </Property>
+        <Property Name="BEMERKUNG" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Bemerkung</Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="DDKEYS5List" Relationship="Cic.OpenLease.Model.DdOd.DDKEYS5_DDKEYS4" FromRole="DDKEYS4" ToRole="DDKEYS5" />
+        <NavigationProperty Name="DDKEYS3" Relationship="Cic.OpenLease.Model.DdOd.DDKEYS4_DDKEYS3" FromRole="DDKEYS4" ToRole="DDKEYS3" />
+      </EntityType>
+      <EntityType Name="DDKEYS3">
+        <Documentation><Summary>Schl�ssel Stufe 3</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSDDKEYS3" />
+        </Key>
+        <Property Name="SYSDDKEYS3" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary>ID</Summary></Documentation>
+        </Property>
+        <Property Name="RANG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Rang</Summary></Documentation>
+        </Property>
+        <Property Name="KEY" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Schl�sselflag</Summary></Documentation>
+        </Property>
+        <Property Name="VALUE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Wert</Summary></Documentation>
+        </Property>
+        <Property Name="BEMERKUNG" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Bemerkung</Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="DDKEYS4List" Relationship="Cic.OpenLease.Model.DdOd.DDKEYS4_DDKEYS3" FromRole="DDKEYS3" ToRole="DDKEYS4" />
+        <NavigationProperty Name="DDKEYS2" Relationship="Cic.OpenLease.Model.DdOd.DDKEYS3_DDKEYS2" FromRole="DDKEYS3" ToRole="DDKEYS2" />
+      </EntityType>
+      <EntityType Name="DD">
+        <Documentation><Summary>Data Dictionary</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSDD" />
+        </Key>
+        <Property Name="SYSDD" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary>ID</Summary></Documentation>
+        </Property>
+        <Property Name="FIELD" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Feldname</Summary></Documentation>
+        </Property>
+        <Property Name="AKTIVKZ" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>aktiv</Summary></Documentation>
+        </Property>
+        <Property Name="JUSTIFICATION" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Ausrichtung</Summary></Documentation>
+        </Property>
+        <Property Name="READONLY" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Eingabesperre</Summary></Documentation>
+        </Property>
+        <Property Name="ENTRYMODE" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Eingabemodus</Summary></Documentation>
+        </Property>
+        <Property Name="CASEMODE" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Schreibmodus</Summary></Documentation>
+        </Property>
+        <Property Name="FORMAT" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="HIDE" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Hide</Summary></Documentation>
+        </Property>
+        <Property Name="CHK" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Pr�fung</Summary></Documentation>
+        </Property>
+        <Property Name="TIP" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Tip</Summary></Documentation>
+        </Property>
+        <Property Name="REQ" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Mu�feld</Summary></Documentation>
+        </Property>
+        <Property Name="REQCOLORFG" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="REQCOLORBG" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="REQCOLORSFG" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="REQCOLORSBG" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="LOG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="RANGE" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Bereich</Summary></Documentation>
+        </Property>
+        <Property Name="MINVALUE" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>minimaler Wert</Summary></Documentation>
+        </Property>
+        <Property Name="MAXVALUE" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>maximaler Wert</Summary></Documentation>
+        </Property>
+        <Property Name="CAPITALIZE" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Kapitalisierung</Summary></Documentation>
+        </Property>
+        <Property Name="SKIP" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Skip</Summary></Documentation>
+        </Property>
+        <Property Name="COLORFG" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="COLORBG" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="COLORSFG" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="COLORSBG" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="FONTSIZE" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="TYPESIZE" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="FONTSTYLE" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="VORBELEGUNG" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Vorbelegung</Summary></Documentation>
+        </Property>
+        <Property Name="FIELDINIT" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Initialisierung</Summary></Documentation>
+        </Property>
+        <Property Name="FIELDCHECK" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Pr�fung</Summary></Documentation>
+        </Property>
+        <Property Name="STUFE" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Berechtigungsstufe</Summary></Documentation>
+        </Property>
+        <Property Name="STUFEINSERT" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Berechtigungsstufe beim Einf�gen</Summary></Documentation>
+        </Property>
+        <Property Name="STUFEEDIT" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Berechtigungsstufe beim Bearbeiten</Summary></Documentation>
+        </Property>
+        <Property Name="DISABLEFLAG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="CHANGEFLAG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="PRECONDITIONNEPROP" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>SQL bedingung f�r das Generieren einer pendenten Genehmigung (NEPROP)</Summary></Documentation>
+        </Property>
+        <Property Name="DBTABLE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Oracle Tabellenname f�r das DataDictionary Feld (wichtig falls ein Alias)</Summary></Documentation>
+        </Property>
+        <Property Name="DBFIELD" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Oracle Feldname f�r das DataDictionary Feld (wichtig falls Alias)</Summary></Documentation>
+        </Property>
+        <Property Name="FIELDACCEPTED" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Dieses Feld wird nach dem Feld FieldCheck evaluiert</Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="NEPROPVALList" Relationship="Cic.OpenLease.Model.DdOd.NEPROPVAL_DD" FromRole="DD" ToRole="NEPROPVAL" />
+        <NavigationProperty Name="NEPROC" Relationship="Cic.OpenLease.Model.DdOd.DD_NEPROC" FromRole="DD" ToRole="NEPROC" />
+        <NavigationProperty Name="DDKEY" Relationship="Cic.OpenLease.Model.DdOd.DD_DDKEY" FromRole="DD" ToRole="DDKEY" />
+      </EntityType>
+      <EntityType Name="DDKEY">
+        <Documentation><Summary>Schl�sseltabelle</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSDDKEY" />
+        </Key>
+        <Property Name="SYSDDKEY" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary>ID</Summary></Documentation>
+        </Property>
+        <Property Name="DESCRIPTION" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Beschreibung</Summary></Documentation>
+        </Property>
+        <Property Name="BEMERKUNG" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Bemerkung</Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="DDKEYS1List" Relationship="Cic.OpenLease.Model.DdOd.DDKEYS1_DDKEY" FromRole="DDKEY" ToRole="DDKEYS1" />
+        <NavigationProperty Name="DDList" Relationship="Cic.OpenLease.Model.DdOd.DD_DDKEY" FromRole="DDKEY" ToRole="DD" />
+      </EntityType>
+      <EntityType Name="DDLKPPOS">
+        <Documentation><Summary>Lookup Values</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSDDLKPPOS" />
+        </Key>
+        <Property Name="SYSDDLKPPOS" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="ID" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="CODE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="DOMAINID" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="VALUE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="TOOLTIP" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="RANK" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="ACTIVEFLAG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Aktiveflag</Summary></Documentation>
+        </Property>
+      </EntityType>
+      <EntityType Name="NEINSTANCE">
+        <Documentation><Summary>n-eyes votum</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSNEINSTANCE" />
+        </Key>
+        <Property Name="SYSNEINSTANCE" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary>Prim�rschl�ssel</Summary></Documentation>
+        </Property>
+        <Property Name="NAME" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Eindeutiger Name (nur eindeutig zusammen mit SysNEPROC)</Summary></Documentation>
+        </Property>
+        <Property Name="DESCRIPTION" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Beschreibung</Summary></Documentation>
+        </Property>
+        <Property Name="ACTIVEFLAG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>AktivFlag. Darf nur ge�ndert werden wenn keine pendenten Genehmigungen (NEPROP) vorliegen</Summary></Documentation>
+        </Property>
+        <Property Name="WEIGHTAGE" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Gewichtung 1..99. Darf nur ge�ndert werden wenn keine abh�ngigen offenen Genehmigungen vorliegen</Summary></Documentation>
+        </Property>
+        <Property Name="MANDATORYFLAG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Mussflag. Das Votum muss auf jeden Fall abgegeben werden (auch wenn bereits �berstimmt)  - ansonsten gibt es keine Entscheidung</Summary></Documentation>
+        </Property>
+        <Property Name="CODERMO" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Teilverweis auf RFU (Part1 Rechtemodul)</Summary></Documentation>
+        </Property>
+        <Property Name="CODERFU" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Teilverweis auf RFU (Part2 Rechtefunktion)</Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="NEVOTUMList" Relationship="Cic.OpenLease.Model.DdOd.NEVOTUM_NEINSTANCE" FromRole="NEINSTANCE" ToRole="NEVOTUM" />
+        <NavigationProperty Name="NEPROC" Relationship="Cic.OpenLease.Model.DdOd.NEINSTANCE_NEPROC" FromRole="NEINSTANCE" ToRole="NEPROC" />
+      </EntityType>
+      <EntityType Name="NEPROPVAL">
+        <Documentation><Summary>n-eyes approval proposal fieldvalues</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSNEPROPVAL" />
+        </Key>
+        <Property Name="SYSNEPROPVAL" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary>Prim�rschl�ssel</Summary></Documentation>
+        </Property>
+        <Property Name="OLDVALUE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Alteer Feldwert</Summary></Documentation>
+        </Property>
+        <Property Name="NEWVALUE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Neuer Feldwert</Summary></Documentation>
+        </Property>
+        <Property Name="AREA" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Area (Gebiet) falls abweichend von NEPROP</Summary></Documentation>
+        </Property>
+        <Property Name="SYSID" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>SysID zur Area (Gebiet) falls abweichend von NEPROP</Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="DD" Relationship="Cic.OpenLease.Model.DdOd.NEPROPVAL_DD" FromRole="NEPROPVAL" ToRole="DD" />
+        <NavigationProperty Name="NEPROP" Relationship="Cic.OpenLease.Model.DdOd.NEPROPVAL_NEPROP" FromRole="NEPROPVAL" ToRole="NEPROP" />
+      </EntityType>
+      <EntityType Name="NEVOTUM">
+        <Documentation><Summary>n-eyes approval votum</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSNEVOTUM" />
+        </Key>
+        <Property Name="SYSNEVOTUM" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary>Prim�rschl�ssel</Summary></Documentation>
+        </Property>
+        <Property Name="VOTUMDATE" Type="DateTime" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Votum am</Summary></Documentation>
+        </Property>
+        <Property Name="VOTUMTIME" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Votum um</Summary></Documentation>
+        </Property>
+        <Property Name="VOTUM" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Votum. Werte: 0 = neutral, -1 = abgelehnt, 1 = genehmigt</Summary></Documentation>
+        </Property>
+        <Property Name="VOTUMREM" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Bemerkungen und Kommentare</Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="NEPROP" Relationship="Cic.OpenLease.Model.DdOd.NEVOTUM_NEPROP" FromRole="NEVOTUM" ToRole="NEPROP" />
+        <NavigationProperty Name="ODUSER" Relationship="Cic.OpenLease.Model.DdOd.NEVOTUM_ODUSER" FromRole="NEVOTUM" ToRole="ODUSER" />
+        <NavigationProperty Name="NEINSTANCE" Relationship="Cic.OpenLease.Model.DdOd.NEVOTUM_NEINSTANCE" FromRole="NEVOTUM" ToRole="NEINSTANCE" />
+      </EntityType>
+      <EntityType Name="NEPROP">
+        <Documentation><Summary>n-eyes approval proposal</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSNEPROP" />
+        </Key>
+        <Property Name="SYSNEPROP" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary>Prim�rschl�ssel</Summary></Documentation>
+        </Property>
+        <Property Name="AREA" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Gebiet (Area)</Summary></Documentation>
+        </Property>
+        <Property Name="SYSID" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>SysID zum Gebiet</Summary></Documentation>
+        </Property>
+        <Property Name="DESCRIPTION" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Kommentar oder Beschreibung</Summary></Documentation>
+        </Property>
+        <Property Name="APPROVALSTATUS" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Genehmigungszustand: 0 = offen, -1 = abgelehnt, 1 = genehmigt</Summary></Documentation>
+        </Property>
+        <Property Name="CREATEDATE" Type="DateTime" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Erstellt am</Summary></Documentation>
+        </Property>
+        <Property Name="CREATETIME" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Erstellt am</Summary></Documentation>
+        </Property>
+        <Property Name="SYSCREATEUSER" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Verweis auf Ersteller</Summary></Documentation>
+        </Property>
+        <Property Name="DESIREDDATE" Type="DateTime" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Wunschtermin</Summary></Documentation>
+        </Property>
+        <Property Name="DECISIONDATE" Type="DateTime" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Entschieden am</Summary></Documentation>
+        </Property>
+        <Property Name="DECISIONTIME" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Entschieden um</Summary></Documentation>
+        </Property>
+        <Property Name="DECISIONREM" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Bemerkungen zur Entscheidung bzw. Entscheidungsfindung</Summary></Documentation>
+        </Property>
+        <Property Name="PROCESSEDDATE" Type="DateTime" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Verarbeitet am</Summary></Documentation>
+        </Property>
+        <Property Name="PROCESSEDTIME" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Verarbeitet um</Summary></Documentation>
+        </Property>
+        <Property Name="SYSPROCESSEDUSER" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Verweis auf den Durchf�hrer</Summary></Documentation>
+        </Property>
+        <Property Name="PROCESSEDFLAG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Verarbeitet</Summary></Documentation>
+        </Property>
+        <Property Name="SYSNEPROC" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Verweis auf approval process</Summary></Documentation>
+        </Property>
+        <Property Name="EXECAREA" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>ExecArea: 'DD','WFTA','WFLVL1','WFLVL2','WFLVL3','WFLVL4','WFLVL5','WFJLVL1','WFJLVL2','WFJLVL3','WFJLVL4','WFJLVL5','JPOOL','WFTABLE'</Summary></Documentation>
+        </Property>
+        <Property Name="SYSEXECAREA" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>SysEXECAREA. ID von DD, WFTA, WFLVL1 bis WFLVL5, WFJLVL1 bis WFJLVL5 bzw. JPOOL abh�ngig von ExceArt</Summary></Documentation>
+        </Property>
+        <Property Name="EXECART" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>ExecArt. 0= Manuell/Verbal, 1= Feld�nderung, 2= Workflow,3=DoBox,4=JobBox, 5=Jobpool, 6=L�schung</Summary></Documentation>
+        </Property>
+        <Property Name="SYSLS" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Verweis auf Mandanten (lsadd.syslsadd)</Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="NEPROPVALList" Relationship="Cic.OpenLease.Model.DdOd.NEPROPVAL_NEPROP" FromRole="NEPROP" ToRole="NEPROPVAL" />
+        <NavigationProperty Name="NEVOTUMList" Relationship="Cic.OpenLease.Model.DdOd.NEVOTUM_NEPROP" FromRole="NEPROP" ToRole="NEVOTUM" />
+      </EntityType>
+      <EntityType Name="DDLKPART">
+        <Documentation><Summary>Lookup Art</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSDDLKPART" />
+        </Key>
+        <Property Name="SYSDDLKPART" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="CODE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="READONLYFLAG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="DESCRIPTION" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="VALUETYPE" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="VALUESOURCE" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="VALUEPICTURE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="SAVESOURCE" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+      </EntityType>
+            <Association Name="DDKEYS3_DDKEYS2">
+              <End Role="DDKEYS2" Type="Cic.OpenLease.Model.DdOd.DDKEYS2" Multiplicity="0..1">
+              </End>  
+              <End Role="DDKEYS3" Type="Cic.OpenLease.Model.DdOd.DDKEYS3" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="NEVOTUM_ODUSER">
+              <End Role="ODUSER" Type="Cic.OpenLease.Model.DdOd.ODUSER" Multiplicity="0..1">
+              </End>  
+              <End Role="NEVOTUM" Type="Cic.OpenLease.Model.DdOd.NEVOTUM" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="NEDELETE_NEPROC">
+              <End Role="NEPROC" Type="Cic.OpenLease.Model.DdOd.NEPROC" Multiplicity="0..1">
+              </End>  
+              <End Role="NEDELETE" Type="Cic.OpenLease.Model.DdOd.NEDELETE" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="NEINSTANCE_NEPROC">
+              <End Role="NEPROC" Type="Cic.OpenLease.Model.DdOd.NEPROC" Multiplicity="0..1">
+              </End>  
+              <End Role="NEINSTANCE" Type="Cic.OpenLease.Model.DdOd.NEINSTANCE" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="DD_NEPROC">
+              <End Role="NEPROC" Type="Cic.OpenLease.Model.DdOd.NEPROC" Multiplicity="0..1">
+              </End>  
+              <End Role="DD" Type="Cic.OpenLease.Model.DdOd.DD" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="DDKEYS2_DDKEYS1">
+              <End Role="DDKEYS1" Type="Cic.OpenLease.Model.DdOd.DDKEYS1" Multiplicity="0..1">
+              </End>  
+              <End Role="DDKEYS2" Type="Cic.OpenLease.Model.DdOd.DDKEYS2" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="DDKEYS5_DDKEYS4">
+              <End Role="DDKEYS4" Type="Cic.OpenLease.Model.DdOd.DDKEYS4" Multiplicity="0..1">
+              </End>  
+              <End Role="DDKEYS5" Type="Cic.OpenLease.Model.DdOd.DDKEYS5" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="DDKEYS4_DDKEYS3">
+              <End Role="DDKEYS3" Type="Cic.OpenLease.Model.DdOd.DDKEYS3" Multiplicity="0..1">
+              </End>  
+              <End Role="DDKEYS4" Type="Cic.OpenLease.Model.DdOd.DDKEYS4" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="NEPROPVAL_DD">
+              <End Role="DD" Type="Cic.OpenLease.Model.DdOd.DD" Multiplicity="0..1">
+              </End>  
+              <End Role="NEPROPVAL" Type="Cic.OpenLease.Model.DdOd.NEPROPVAL" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="DDKEYS1_DDKEY">
+              <End Role="DDKEY" Type="Cic.OpenLease.Model.DdOd.DDKEY" Multiplicity="0..1">
+              </End>  
+              <End Role="DDKEYS1" Type="Cic.OpenLease.Model.DdOd.DDKEYS1" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="DD_DDKEY">
+              <End Role="DDKEY" Type="Cic.OpenLease.Model.DdOd.DDKEY" Multiplicity="0..1">
+              </End>  
+              <End Role="DD" Type="Cic.OpenLease.Model.DdOd.DD" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="NEVOTUM_NEINSTANCE">
+              <End Role="NEINSTANCE" Type="Cic.OpenLease.Model.DdOd.NEINSTANCE" Multiplicity="0..1">
+              </End>  
+              <End Role="NEVOTUM" Type="Cic.OpenLease.Model.DdOd.NEVOTUM" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="NEPROPVAL_NEPROP">
+              <End Role="NEPROP" Type="Cic.OpenLease.Model.DdOd.NEPROP" Multiplicity="0..1">
+              </End>  
+              <End Role="NEPROPVAL" Type="Cic.OpenLease.Model.DdOd.NEPROPVAL" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="NEVOTUM_NEPROP">
+              <End Role="NEPROP" Type="Cic.OpenLease.Model.DdOd.NEPROP" Multiplicity="0..1">
+              </End>  
+              <End Role="NEVOTUM" Type="Cic.OpenLease.Model.DdOd.NEVOTUM" Multiplicity="*">
+              </End>
+            </Association>
+        </Schema>
+      </edmx:ConceptualModels>
+      <!-- C-S mapping content -->
+      <edmx:Mappings>
+        <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">    
+          <EntityContainerMapping StorageEntityContainer="CIC_OD" CdmEntityContainer="OdEntities">
+          <EntitySetMapping Name="DDKEYS2">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOd.DDKEYS2)">
+              <MappingFragment StoreEntitySet="DDKEYS2">
+                 <ScalarProperty Name="SYSDDKEYS2" ColumnName="SYSDDKEYS2" />
+                 <ScalarProperty Name="RANG" ColumnName="RANG" />
+                 <ScalarProperty Name="KEY" ColumnName="KEY" />
+                 <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+                 <ScalarProperty Name="BEMERKUNG" ColumnName="BEMERKUNG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NEDELETE">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOd.NEDELETE)">
+              <MappingFragment StoreEntitySet="NEDELETE">
+                 <ScalarProperty Name="SYSNEDELETE" ColumnName="SYSNEDELETE" />
+                 <ScalarProperty Name="DBTABLE" ColumnName="DBTABLE" />
+                 <ScalarProperty Name="ACTIVEFLAG" ColumnName="ACTIVEFLAG" />
+                 <ScalarProperty Name="MSGCODEDELETE" ColumnName="MSGCODEDELETE" />
+                 <ScalarProperty Name="MSGCODEUPDDEL" ColumnName="MSGCODEUPDDEL" />
+                 <ScalarProperty Name="MSGCODEDELUPD" ColumnName="MSGCODEDELUPD" />
+                 <ScalarProperty Name="PRECONDITIONTRG" ColumnName="PRECONDITIONTRG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ODUSER">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOd.ODUSER)">
+              <MappingFragment StoreEntitySet="ODUSER">
+                 <ScalarProperty Name="SYSWFUSER" ColumnName="SYSWFUSER" />
+                 <ScalarProperty Name="SORTKZ" ColumnName="SORTKZ" />
+                 <ScalarProperty Name="CODE" ColumnName="CODE" />
+                 <ScalarProperty Name="NAME" ColumnName="NAME" />
+                 <ScalarProperty Name="VORNAME" ColumnName="VORNAME" />
+                 <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                 <ScalarProperty Name="KORRESPONDENZ" ColumnName="KORRESPONDENZ" />
+                 <ScalarProperty Name="DURCHWAHL" ColumnName="DURCHWAHL" />
+                 <ScalarProperty Name="ZEICHEN" ColumnName="ZEICHEN" />
+                 <ScalarProperty Name="GRUPPE" ColumnName="GRUPPE" />
+                 <ScalarProperty Name="MASTER" ColumnName="MASTER" />
+                 <ScalarProperty Name="SYSLAND" ColumnName="SYSLAND" />
+                 <ScalarProperty Name="SYSREGION" ColumnName="SYSREGION" />
+                 <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+                 <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+                 <ScalarProperty Name="FAX" ColumnName="FAX" />
+                 <ScalarProperty Name="TITEL" ColumnName="TITEL" />
+                 <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                 <ScalarProperty Name="PLZ" ColumnName="PLZ" />
+                 <ScalarProperty Name="ORT" ColumnName="ORT" />
+                 <ScalarProperty Name="STRASSE" ColumnName="STRASSE" />
+                 <ScalarProperty Name="LASTMANDANT" ColumnName="LASTMANDANT" />
+                 <ScalarProperty Name="TELEFON2" ColumnName="TELEFON2" />
+                 <ScalarProperty Name="SYSPERSON" ColumnName="SYSPERSON" />
+                 <ScalarProperty Name="FLAGHIDE" ColumnName="FLAGHIDE" />
+                 <ScalarProperty Name="IDENTNR" ColumnName="IDENTNR" />
+                 <ScalarProperty Name="LOGINART" ColumnName="LOGINART" />
+                 <ScalarProperty Name="SYSCTLANG" ColumnName="SYSCTLANG" />
+                 <ScalarProperty Name="USERART" ColumnName="USERART" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NEPROC">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOd.NEPROC)">
+              <MappingFragment StoreEntitySet="NEPROC">
+                 <ScalarProperty Name="SYSNEPROC" ColumnName="SYSNEPROC" />
+                 <ScalarProperty Name="NAME" ColumnName="NAME" />
+                 <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                 <ScalarProperty Name="ACTIVEFLAG" ColumnName="ACTIVEFLAG" />
+                 <ScalarProperty Name="DELAYEDFLAG" ColumnName="DELAYEDFLAG" />
+                 <ScalarProperty Name="SELFAPPROVALFLAG" ColumnName="SELFAPPROVALFLAG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DDKEYS1">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOd.DDKEYS1)">
+              <MappingFragment StoreEntitySet="DDKEYS1">
+                 <ScalarProperty Name="SYSDDKEYS1" ColumnName="SYSDDKEYS1" />
+                 <ScalarProperty Name="RANG" ColumnName="RANG" />
+                 <ScalarProperty Name="KEY" ColumnName="KEY" />
+                 <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+                 <ScalarProperty Name="BEMERKUNG" ColumnName="BEMERKUNG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DDKEYS5">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOd.DDKEYS5)">
+              <MappingFragment StoreEntitySet="DDKEYS5">
+                 <ScalarProperty Name="SYSDDKEYS5" ColumnName="SYSDDKEYS5" />
+                 <ScalarProperty Name="RANG" ColumnName="RANG" />
+                 <ScalarProperty Name="KEY" ColumnName="KEY" />
+                 <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+                 <ScalarProperty Name="BEMERKUNG" ColumnName="BEMERKUNG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DDKEYS4">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOd.DDKEYS4)">
+              <MappingFragment StoreEntitySet="DDKEYS4">
+                 <ScalarProperty Name="SYSDDKEYS4" ColumnName="SYSDDKEYS4" />
+                 <ScalarProperty Name="RANG" ColumnName="RANG" />
+                 <ScalarProperty Name="KEY" ColumnName="KEY" />
+                 <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+                 <ScalarProperty Name="BEMERKUNG" ColumnName="BEMERKUNG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DDKEYS3">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOd.DDKEYS3)">
+              <MappingFragment StoreEntitySet="DDKEYS3">
+                 <ScalarProperty Name="SYSDDKEYS3" ColumnName="SYSDDKEYS3" />
+                 <ScalarProperty Name="RANG" ColumnName="RANG" />
+                 <ScalarProperty Name="KEY" ColumnName="KEY" />
+                 <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+                 <ScalarProperty Name="BEMERKUNG" ColumnName="BEMERKUNG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DD">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOd.DD)">
+              <MappingFragment StoreEntitySet="DD">
+                 <ScalarProperty Name="SYSDD" ColumnName="SYSDD" />
+                 <ScalarProperty Name="FIELD" ColumnName="FIELD" />
+                 <ScalarProperty Name="AKTIVKZ" ColumnName="AKTIVKZ" />
+                 <ScalarProperty Name="JUSTIFICATION" ColumnName="JUSTIFICATION" />
+                 <ScalarProperty Name="READONLY" ColumnName="READONLY" />
+                 <ScalarProperty Name="ENTRYMODE" ColumnName="ENTRYMODE" />
+                 <ScalarProperty Name="CASEMODE" ColumnName="CASEMODE" />
+                 <ScalarProperty Name="FORMAT" ColumnName="FORMAT" />
+                 <ScalarProperty Name="HIDE" ColumnName="HIDE" />
+                 <ScalarProperty Name="CHK" ColumnName="CHK" />
+                 <ScalarProperty Name="TIP" ColumnName="TIP" />
+                 <ScalarProperty Name="REQ" ColumnName="REQ" />
+                 <ScalarProperty Name="REQCOLORFG" ColumnName="REQCOLORFG" />
+                 <ScalarProperty Name="REQCOLORBG" ColumnName="REQCOLORBG" />
+                 <ScalarProperty Name="REQCOLORSFG" ColumnName="REQCOLORSFG" />
+                 <ScalarProperty Name="REQCOLORSBG" ColumnName="REQCOLORSBG" />
+                 <ScalarProperty Name="LOG" ColumnName="LOG" />
+                 <ScalarProperty Name="RANGE" ColumnName="RANGE" />
+                 <ScalarProperty Name="MINVALUE" ColumnName="MINVALUE" />
+                 <ScalarProperty Name="MAXVALUE" ColumnName="MAXVALUE" />
+                 <ScalarProperty Name="CAPITALIZE" ColumnName="CAPITALIZE" />
+                 <ScalarProperty Name="SKIP" ColumnName="SKIP" />
+                 <ScalarProperty Name="COLORFG" ColumnName="COLORFG" />
+                 <ScalarProperty Name="COLORBG" ColumnName="COLORBG" />
+                 <ScalarProperty Name="COLORSFG" ColumnName="COLORSFG" />
+                 <ScalarProperty Name="COLORSBG" ColumnName="COLORSBG" />
+                 <ScalarProperty Name="FONTSIZE" ColumnName="FONTSIZE" />
+                 <ScalarProperty Name="TYPESIZE" ColumnName="TYPESIZE" />
+                 <ScalarProperty Name="FONTSTYLE" ColumnName="FONTSTYLE" />
+                 <ScalarProperty Name="VORBELEGUNG" ColumnName="VORBELEGUNG" />
+                 <ScalarProperty Name="FIELDINIT" ColumnName="FIELDINIT" />
+                 <ScalarProperty Name="FIELDCHECK" ColumnName="FIELDCHECK" />
+                 <ScalarProperty Name="STUFE" ColumnName="STUFE" />
+                 <ScalarProperty Name="STUFEINSERT" ColumnName="STUFEINSERT" />
+                 <ScalarProperty Name="STUFEEDIT" ColumnName="STUFEEDIT" />
+                 <ScalarProperty Name="DISABLEFLAG" ColumnName="DISABLEFLAG" />
+                 <ScalarProperty Name="CHANGEFLAG" ColumnName="CHANGEFLAG" />
+                 <ScalarProperty Name="PRECONDITIONNEPROP" ColumnName="PRECONDITIONNEPROP" />
+                 <ScalarProperty Name="DBTABLE" ColumnName="DBTABLE" />
+                 <ScalarProperty Name="DBFIELD" ColumnName="DBFIELD" />
+                 <ScalarProperty Name="FIELDACCEPTED" ColumnName="FIELDACCEPTED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DDKEY">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOd.DDKEY)">
+              <MappingFragment StoreEntitySet="DDKEY">
+                 <ScalarProperty Name="SYSDDKEY" ColumnName="SYSDDKEY" />
+                 <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                 <ScalarProperty Name="BEMERKUNG" ColumnName="BEMERKUNG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DDLKPPOS">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOd.DDLKPPOS)">
+              <MappingFragment StoreEntitySet="DDLKPPOS">
+                 <ScalarProperty Name="SYSDDLKPPOS" ColumnName="SYSDDLKPPOS" />
+                 <ScalarProperty Name="ID" ColumnName="ID" />
+                 <ScalarProperty Name="CODE" ColumnName="CODE" />
+                 <ScalarProperty Name="DOMAINID" ColumnName="DOMAINID" />
+                 <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+                 <ScalarProperty Name="TOOLTIP" ColumnName="TOOLTIP" />
+                 <ScalarProperty Name="RANK" ColumnName="RANK" />
+                 <ScalarProperty Name="ACTIVEFLAG" ColumnName="ACTIVEFLAG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NEINSTANCE">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOd.NEINSTANCE)">
+              <MappingFragment StoreEntitySet="NEINSTANCE">
+                 <ScalarProperty Name="SYSNEINSTANCE" ColumnName="SYSNEINSTANCE" />
+                 <ScalarProperty Name="NAME" ColumnName="NAME" />
+                 <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                 <ScalarProperty Name="ACTIVEFLAG" ColumnName="ACTIVEFLAG" />
+                 <ScalarProperty Name="WEIGHTAGE" ColumnName="WEIGHTAGE" />
+                 <ScalarProperty Name="MANDATORYFLAG" ColumnName="MANDATORYFLAG" />
+                 <ScalarProperty Name="CODERMO" ColumnName="CODERMO" />
+                 <ScalarProperty Name="CODERFU" ColumnName="CODERFU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NEPROPVAL">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOd.NEPROPVAL)">
+              <MappingFragment StoreEntitySet="NEPROPVAL">
+                 <ScalarProperty Name="SYSNEPROPVAL" ColumnName="SYSNEPROPVAL" />
+                 <ScalarProperty Name="OLDVALUE" ColumnName="OLDVALUE" />
+                 <ScalarProperty Name="NEWVALUE" ColumnName="NEWVALUE" />
+                 <ScalarProperty Name="AREA" ColumnName="AREA" />
+                 <ScalarProperty Name="SYSID" ColumnName="SYSID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NEVOTUM">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOd.NEVOTUM)">
+              <MappingFragment StoreEntitySet="NEVOTUM">
+                 <ScalarProperty Name="SYSNEVOTUM" ColumnName="SYSNEVOTUM" />
+                 <ScalarProperty Name="VOTUMDATE" ColumnName="VOTUMDATE" />
+                 <ScalarProperty Name="VOTUMTIME" ColumnName="VOTUMTIME" />
+                 <ScalarProperty Name="VOTUM" ColumnName="VOTUM" />
+                 <ScalarProperty Name="VOTUMREM" ColumnName="VOTUMREM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NEPROP">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOd.NEPROP)">
+              <MappingFragment StoreEntitySet="NEPROP">
+                 <ScalarProperty Name="SYSNEPROP" ColumnName="SYSNEPROP" />
+                 <ScalarProperty Name="AREA" ColumnName="AREA" />
+                 <ScalarProperty Name="SYSID" ColumnName="SYSID" />
+                 <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                 <ScalarProperty Name="APPROVALSTATUS" ColumnName="APPROVALSTATUS" />
+                 <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                 <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+                 <ScalarProperty Name="SYSCREATEUSER" ColumnName="SYSCREATEUSER" />
+                 <ScalarProperty Name="DESIREDDATE" ColumnName="DESIREDDATE" />
+                 <ScalarProperty Name="DECISIONDATE" ColumnName="DECISIONDATE" />
+                 <ScalarProperty Name="DECISIONTIME" ColumnName="DECISIONTIME" />
+                 <ScalarProperty Name="DECISIONREM" ColumnName="DECISIONREM" />
+                 <ScalarProperty Name="PROCESSEDDATE" ColumnName="PROCESSEDDATE" />
+                 <ScalarProperty Name="PROCESSEDTIME" ColumnName="PROCESSEDTIME" />
+                 <ScalarProperty Name="SYSPROCESSEDUSER" ColumnName="SYSPROCESSEDUSER" />
+                 <ScalarProperty Name="PROCESSEDFLAG" ColumnName="PROCESSEDFLAG" />
+                 <ScalarProperty Name="SYSNEPROC" ColumnName="SYSNEPROC" />
+                 <ScalarProperty Name="EXECAREA" ColumnName="EXECAREA" />
+                 <ScalarProperty Name="SYSEXECAREA" ColumnName="SYSEXECAREA" />
+                 <ScalarProperty Name="EXECART" ColumnName="EXECART" />
+                 <ScalarProperty Name="SYSLS" ColumnName="SYSLS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DDLKPART">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenLease.Model.DdOd.DDLKPART)">
+              <MappingFragment StoreEntitySet="DDLKPART">
+                 <ScalarProperty Name="SYSDDLKPART" ColumnName="SYSDDLKPART" />
+                 <ScalarProperty Name="CODE" ColumnName="CODE" />
+                 <ScalarProperty Name="READONLYFLAG" ColumnName="READONLYFLAG" />
+                 <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                 <ScalarProperty Name="VALUETYPE" ColumnName="VALUETYPE" />
+                 <ScalarProperty Name="VALUESOURCE" ColumnName="VALUESOURCE" />
+                 <ScalarProperty Name="VALUEPICTURE" ColumnName="VALUEPICTURE" />
+                 <ScalarProperty Name="SAVESOURCE" ColumnName="SAVESOURCE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+            <AssociationSetMapping Name="DDKEYS3_DDKEYS2" TypeName="Cic.OpenLease.Model.DdOd.DDKEYS3_DDKEYS2" StoreEntitySet="DDKEYS3">
+              <EndProperty Name="DDKEYS2">
+                  <ScalarProperty Name="SYSDDKEYS2" ColumnName="DDKEYID" />
+                </EndProperty>
+                <EndProperty Name="DDKEYS3">
+                <ScalarProperty Name="SYSDDKEYS3" ColumnName="SYSDDKEYS3" />
+                </EndProperty>
+                <Condition ColumnName="DDKEYID" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="NEVOTUM_ODUSER" TypeName="Cic.OpenLease.Model.DdOd.NEVOTUM_ODUSER" StoreEntitySet="NEVOTUM">
+              <EndProperty Name="ODUSER">
+                  <ScalarProperty Name="SYSWFUSER" ColumnName="SYSVOTUMUSER" />
+                </EndProperty>
+                <EndProperty Name="NEVOTUM">
+                <ScalarProperty Name="SYSNEVOTUM" ColumnName="SYSNEVOTUM" />
+                </EndProperty>
+                <Condition ColumnName="SYSVOTUMUSER" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="NEDELETE_NEPROC" TypeName="Cic.OpenLease.Model.DdOd.NEDELETE_NEPROC" StoreEntitySet="NEDELETE">
+              <EndProperty Name="NEPROC">
+                  <ScalarProperty Name="SYSNEPROC" ColumnName="SYSNEPROC" />
+                </EndProperty>
+                <EndProperty Name="NEDELETE">
+                <ScalarProperty Name="SYSNEDELETE" ColumnName="SYSNEDELETE" />
+                </EndProperty>
+                <Condition ColumnName="SYSNEPROC" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="NEINSTANCE_NEPROC" TypeName="Cic.OpenLease.Model.DdOd.NEINSTANCE_NEPROC" StoreEntitySet="NEINSTANCE">
+              <EndProperty Name="NEPROC">
+                  <ScalarProperty Name="SYSNEPROC" ColumnName="SYSNEPROC" />
+                </EndProperty>
+                <EndProperty Name="NEINSTANCE">
+                <ScalarProperty Name="SYSNEINSTANCE" ColumnName="SYSNEINSTANCE" />
+                </EndProperty>
+                <Condition ColumnName="SYSNEPROC" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="DD_NEPROC" TypeName="Cic.OpenLease.Model.DdOd.DD_NEPROC" StoreEntitySet="DD">
+              <EndProperty Name="NEPROC">
+                  <ScalarProperty Name="SYSNEPROC" ColumnName="SYSNEPROC" />
+                </EndProperty>
+                <EndProperty Name="DD">
+                <ScalarProperty Name="SYSDD" ColumnName="SYSDD" />
+                </EndProperty>
+                <Condition ColumnName="SYSNEPROC" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="DDKEYS2_DDKEYS1" TypeName="Cic.OpenLease.Model.DdOd.DDKEYS2_DDKEYS1" StoreEntitySet="DDKEYS2">
+              <EndProperty Name="DDKEYS1">
+                  <ScalarProperty Name="SYSDDKEYS1" ColumnName="DDKEYID" />
+                </EndProperty>
+                <EndProperty Name="DDKEYS2">
+                <ScalarProperty Name="SYSDDKEYS2" ColumnName="SYSDDKEYS2" />
+                </EndProperty>
+                <Condition ColumnName="DDKEYID" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="DDKEYS5_DDKEYS4" TypeName="Cic.OpenLease.Model.DdOd.DDKEYS5_DDKEYS4" StoreEntitySet="DDKEYS5">
+              <EndProperty Name="DDKEYS4">
+                  <ScalarProperty Name="SYSDDKEYS4" ColumnName="DDKEYID" />
+                </EndProperty>
+                <EndProperty Name="DDKEYS5">
+                <ScalarProperty Name="SYSDDKEYS5" ColumnName="SYSDDKEYS5" />
+                </EndProperty>
+                <Condition ColumnName="DDKEYID" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="DDKEYS4_DDKEYS3" TypeName="Cic.OpenLease.Model.DdOd.DDKEYS4_DDKEYS3" StoreEntitySet="DDKEYS4">
+              <EndProperty Name="DDKEYS3">
+                  <ScalarProperty Name="SYSDDKEYS3" ColumnName="DDKEYID" />
+                </EndProperty>
+                <EndProperty Name="DDKEYS4">
+                <ScalarProperty Name="SYSDDKEYS4" ColumnName="SYSDDKEYS4" />
+                </EndProperty>
+                <Condition ColumnName="DDKEYID" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="NEPROPVAL_DD" TypeName="Cic.OpenLease.Model.DdOd.NEPROPVAL_DD" StoreEntitySet="NEPROPVAL">
+              <EndProperty Name="DD">
+                  <ScalarProperty Name="SYSDD" ColumnName="SYSDD" />
+                </EndProperty>
+                <EndProperty Name="NEPROPVAL">
+                <ScalarProperty Name="SYSNEPROPVAL" ColumnName="SYSNEPROPVAL" />
+                </EndProperty>
+                <Condition ColumnName="SYSDD" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="DDKEYS1_DDKEY" TypeName="Cic.OpenLease.Model.DdOd.DDKEYS1_DDKEY" StoreEntitySet="DDKEYS1">
+              <EndProperty Name="DDKEY">
+                  <ScalarProperty Name="SYSDDKEY" ColumnName="DDKEYID" />
+                </EndProperty>
+                <EndProperty Name="DDKEYS1">
+                <ScalarProperty Name="SYSDDKEYS1" ColumnName="SYSDDKEYS1" />
+                </EndProperty>
+                <Condition ColumnName="DDKEYID" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="DD_DDKEY" TypeName="Cic.OpenLease.Model.DdOd.DD_DDKEY" StoreEntitySet="DD">
+              <EndProperty Name="DDKEY">
+                  <ScalarProperty Name="SYSDDKEY" ColumnName="FIELDKEY" />
+                </EndProperty>
+                <EndProperty Name="DD">
+                <ScalarProperty Name="SYSDD" ColumnName="SYSDD" />
+                </EndProperty>
+                <Condition ColumnName="FIELDKEY" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="NEVOTUM_NEINSTANCE" TypeName="Cic.OpenLease.Model.DdOd.NEVOTUM_NEINSTANCE" StoreEntitySet="NEVOTUM">
+              <EndProperty Name="NEINSTANCE">
+                  <ScalarProperty Name="SYSNEINSTANCE" ColumnName="SYSNEINSTANCE" />
+                </EndProperty>
+                <EndProperty Name="NEVOTUM">
+                <ScalarProperty Name="SYSNEVOTUM" ColumnName="SYSNEVOTUM" />
+                </EndProperty>
+                <Condition ColumnName="SYSNEINSTANCE" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="NEPROPVAL_NEPROP" TypeName="Cic.OpenLease.Model.DdOd.NEPROPVAL_NEPROP" StoreEntitySet="NEPROPVAL">
+              <EndProperty Name="NEPROP">
+                  <ScalarProperty Name="SYSNEPROP" ColumnName="SYSNEPROP" />
+                </EndProperty>
+                <EndProperty Name="NEPROPVAL">
+                <ScalarProperty Name="SYSNEPROPVAL" ColumnName="SYSNEPROPVAL" />
+                </EndProperty>
+                <Condition ColumnName="SYSNEPROP" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="NEVOTUM_NEPROP" TypeName="Cic.OpenLease.Model.DdOd.NEVOTUM_NEPROP" StoreEntitySet="NEVOTUM">
+              <EndProperty Name="NEPROP">
+                  <ScalarProperty Name="SYSNEPROP" ColumnName="SYSNEPROP" />
+                </EndProperty>
+                <EndProperty Name="NEVOTUM">
+                <ScalarProperty Name="SYSNEVOTUM" ColumnName="SYSNEVOTUM" />
+                </EndProperty>
+                <Condition ColumnName="SYSNEPROP" IsNull="false" />
+              </AssociationSetMapping>
+          </EntityContainerMapping>
+        </Mapping>
+      </edmx:Mappings>
+    </edmx:Runtime>
+  <edmx:Designer>
+    <edmx:Connection>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+    </edmx:Options>
+    <edmx:Diagrams>
+      <Diagram Name="DdOd" xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOd.DDKEYS2" Width="1.5" PointX="8.25" PointY="18.25" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOd.NEDELETE" Width="1.5" PointX="3" PointY="9.375" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOd.ODUSER" Width="1.5" PointX="3" PointY="27" Height="6.7878222656250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOd.NEPROC" Width="1.5" PointX="0.75" PointY="11.125" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOd.DDKEYS1" Width="1.5" PointX="6" PointY="18.25" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOd.DDKEYS5" Width="1.5" PointX="15" PointY="18.375" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOd.DDKEYS4" Width="1.5" PointX="12.75" PointY="18.25" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOd.DDKEYS3" Width="1.5" PointX="10.5" PointY="18.25" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOd.DD" Width="1.5" PointX="6" PointY="7.75" Height="9.4800423177083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOd.DDKEY" Width="1.5" PointX="3.75" PointY="13.5" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOd.DDLKPPOS" Width="1.5" PointX="1" PointY="2.75" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOd.NEINSTANCE" Width="1.5" PointX="3" PointY="22.875" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOd.NEPROPVAL" Width="1.5" PointX="8.25" PointY="11.25" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOd.NEVOTUM" Width="1.5" PointX="5.25" PointY="23.125" Height="2.5571907552083388" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOd.NEPROP" Width="1.5" PointX="6" PointY="0.75" Height="5.4417122395833388" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cic.OpenLease.Model.DdOd.DDLKPART" Width="1.5" PointX="2.75" PointY="3.375" Height="2.5571907552083388" IsExpanded="true" />
+        <AssociationConnector Association="Cic.OpenLease.Model.DdOd.DDKEYS3_DDKEYS2" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="19.432444661458334" />
+          <ConnectorPoint PointX="10.5" PointY="19.432444661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="Cic.OpenLease.Model.DdOd.NEVOTUM_ODUSER" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="30.3939111328125" />
+          <ConnectorPoint PointX="6" PointY="30.3939111328125" />
+          <ConnectorPoint PointX="6" PointY="25.682190755208339" />
+        </AssociationConnector>
+        <AssociationConnector Association="Cic.OpenLease.Model.DdOd.NEDELETE_NEPROC" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="11.528595377604166" />
+          <ConnectorPoint PointX="3" PointY="11.528595377604166" />
+        </AssociationConnector>
+        <AssociationConnector Association="Cic.OpenLease.Model.DdOd.NEINSTANCE_NEPROC" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="13.8744921875" />
+          <ConnectorPoint PointX="1.5" PointY="24.345896809895834" />
+          <ConnectorPoint PointX="3" PointY="24.345896809895834" />
+        </AssociationConnector>
+        <AssociationConnector Association="Cic.OpenLease.Model.DdOd.DD_NEPROC" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="12.716095377604166" />
+          <ConnectorPoint PointX="5.5416641666666671" PointY="12.716095377604166" />
+          <ConnectorPoint PointX="5.7083308333333331" PointY="12.716095377604166" />
+          <ConnectorPoint PointX="6" PointY="12.716095377604166" />
+        </AssociationConnector>
+        <AssociationConnector Association="Cic.OpenLease.Model.DdOd.DDKEYS2_DDKEYS1" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="19.432444661458334" />
+          <ConnectorPoint PointX="8.25" PointY="19.432444661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="Cic.OpenLease.Model.DdOd.DDKEYS5_DDKEYS4" ManuallyRouted="false">
+          <ConnectorPoint PointX="14.25" PointY="19.461293945312498" />
+          <ConnectorPoint PointX="15" PointY="19.461293945312498" />
+        </AssociationConnector>
+        <AssociationConnector Association="Cic.OpenLease.Model.DdOd.DDKEYS4_DDKEYS3" ManuallyRouted="false">
+          <ConnectorPoint PointX="12" PointY="19.432444661458334" />
+          <ConnectorPoint PointX="12.75" PointY="19.432444661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="Cic.OpenLease.Model.DdOd.NEPROPVAL_DD" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="12.432444661458334" />
+          <ConnectorPoint PointX="8.25" PointY="12.432444661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="Cic.OpenLease.Model.DdOd.DDKEYS1_DDKEY" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="15.480286458333332" />
+          <ConnectorPoint PointX="4.5" PointY="19.432444661458334" />
+          <ConnectorPoint PointX="5.5416641666666671" PointY="19.432444661458334" />
+          <ConnectorPoint PointX="5.7083308333333331" PointY="19.432444661458334" />
+          <ConnectorPoint PointX="6" PointY="19.432444661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="Cic.OpenLease.Model.DdOd.DD_DDKEY" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="14.490143229166666" />
+          <ConnectorPoint PointX="5.5416641666666671" PointY="14.490143229166666" />
+          <ConnectorPoint PointX="5.7083308333333331" PointY="14.490143229166666" />
+          <ConnectorPoint PointX="6" PointY="14.490143229166666" />
+        </AssociationConnector>
+        <AssociationConnector Association="Cic.OpenLease.Model.DdOd.NEVOTUM_NEINSTANCE" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="24.403595377604169" />
+          <ConnectorPoint PointX="5.25" PointY="24.403595377604169" />
+        </AssociationConnector>
+        <AssociationConnector Association="Cic.OpenLease.Model.DdOd.NEPROPVAL_NEPROP" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="3.4708561197916694" />
+          <ConnectorPoint PointX="9" PointY="3.4708561197916694" />
+          <ConnectorPoint PointX="9" PointY="11.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="Cic.OpenLease.Model.DdOd.NEVOTUM_NEPROP" ManuallyRouted="false">
+          <ConnectorPoint PointX="6" PointY="3.4708561197916694" />
+          <ConnectorPoint PointX="5.6249975" PointY="3.4708561197916694" />
+          <ConnectorPoint PointX="5.6249975" PointY="23.125" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+  </edmx:Edmx>

@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D1F653F9-3D9E-4486-89CC-4B0044307750}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cic.One.Utils</RootNamespace>
+    <AssemblyName>Cic.One.Utils</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>5</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=1.1.0.188, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\AutoMapper.1.1.0.118\lib\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Ciloci.Flee, Version=0.9.26.0, Culture=neutral, PublicKeyToken=c8526a021ef298ed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Ciloci.Flee.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BO\AbstractAppSettingsBo.cs" />
+    <Compile Include="BO\AbstractNkBuilder.cs" />
+    <Compile Include="BO\AbstractNotificationGatewayBo.cs" />
+    <Compile Include="BO\AbstractPermissionBo.cs" />
+    <Compile Include="BO\AbstractSampleBo.cs" />
+    <Compile Include="BO\CalculatorFacade.cs" />
+    <Compile Include="BO\CalcUtil.cs" />
+    <Compile Include="BO\IAppSettingsBo.cs" />
+    <Compile Include="BO\INkBuilder.cs" />
+    <Compile Include="BO\INotificationgatewayBo.cs" />
+    <Compile Include="BO\IPermissionBo.cs" />
+    <Compile Include="BO\ISampleBo.cs" />
+    <Compile Include="BO\Kalkulator.cs" />
+    <Compile Include="BO\PermissionBo.cs" />
+    <Compile Include="BO\RangeSplitter.cs" />
+    <Compile Include="BO\SampleBo.cs" />
+    <Compile Include="BO\StaffelKalkulator.cs" />
+    <Compile Include="BO\TranslationBo.cs" />
+    <Compile Include="DAO\IAppSettingsDao.cs" />
+    <Compile Include="DAO\INotificationGatewayDbDAO.cs" />
+    <Compile Include="DAO\INotificationGatewaySmtpDao.cs" />
+    <Compile Include="DAO\IPermissionDao.cs" />
+    <Compile Include="DAO\ISampleDao.cs" />
+    <Compile Include="DAO\ISmsDao.cs" />
+    <Compile Include="DAO\NotificationGatewaySmtpDao.cs" />
+    <Compile Include="DTO\CalculatorEnum.cs" />
+    <Compile Include="DTO\DropListDto.cs" />
+    <Compile Include="DTO\EaiNotificationAttachmentsDto.cs" />
+    <Compile Include="DTO\EaiNotificationDataDto.cs" />
+    <Compile Include="DTO\EntityDto.cs" />
+    <Compile Include="DTO\icreateOrUpdateAppSettingsItemDto.cs" />
+    <Compile Include="DTO\icreateOrUpdateAppSettingsItemsDto.cs" />
+    <Compile Include="DTO\igetAppSettingsItemsDto.cs" />
+    <Compile Include="DTO\iLoggedInLogPropertiesDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DTO\inotificationDto.cs" />
+    <Compile Include="DTO\inotificationFaxDto.cs" />
+    <Compile Include="DTO\iNotificationGatewayServerDto.cs" />
+    <Compile Include="DTO\inotificationMailDto.cs" />
+    <Compile Include="DTO\inotificationSmsDto.cs" />
+    <Compile Include="DTO\iSampleDto.cs" />
+    <Compile Include="DTO\Message.cs" />
+    <Compile Include="DTO\oBaseDto.cs" />
+    <Compile Include="DTO\ocreateOrUpdateAppSettingsItemDto.cs" />
+    <Compile Include="DTO\ogetAppSettingsItemsDto.cs" />
+    <Compile Include="DTO\oListDto.cs" />
+    <Compile Include="DTO\oNotifyGatewaySmtpSendDto.cs" />
+    <Compile Include="DTO\oNotifyGatewaySmtpStoreDto.cs" />
+    <Compile Include="DTO\oSampleDto.cs" />
+    <Compile Include="DTO\PairDto.cs" />
+    <Compile Include="DTO\PermissionDto.cs" />
+    <Compile Include="DTO\RegDto.cs" />
+    <Compile Include="DTO\RegSecDto.cs" />
+    <Compile Include="DTO\RegVarDto.cs" />
+    <Compile Include="DTO\RegVarPath.cs" />
+    <Compile Include="DTO\SoapXMLDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\Behaviour\FlatWsdl.cs" />
+    <Compile Include="Util\Behaviour\StringSurrogated.cs" />
+    <Compile Include="Util\Behaviour\ValidateMustUnderstandElement .cs" />
+    <Compile Include="Util\Behaviour\WsdlDocumentationAttribute.cs" />
+    <Compile Include="Util\Clarion\DateTimeHelper.cs" />
+    <Compile Include="Util\Clarion\Evaluator.cs" />
+    <Compile Include="Util\Clarion\EvaluatorFactory.cs" />
+    <Compile Include="Util\Clarion\IEvaluator.cs" />
+    <Compile Include="Util\Clarion\StringConversionHelper.cs" />
+    <Compile Include="Util\Collection\CacheDictionary.cs" />
+    <Compile Include="Util\Collection\CacheFactory.cs" />
+    <Compile Include="Util\Collection\CacheManager.cs" />
+    <Compile Include="Util\Collection\ICacheFactory.cs" />
+    <Compile Include="Util\Collection\ThreadSafeDictionary.cs" />
+    <Compile Include="Util\Config\ConfigUtil.cs" />
+    <Compile Include="Util\Config\DBSettings.cs" />
+    <Compile Include="Util\DateParser.cs" />
+    <Compile Include="Util\EnumUtil.cs" />
+    <Compile Include="Util\Exceptions\ExceptionUtil.cs" />
+    <Compile Include="Util\Exceptions\InterestOverflowException.cs" />
+    <Compile Include="Util\Exceptions\InterestUnderflowException.cs" />
+    <Compile Include="Util\Exceptions\ServiceBaseException.cs" />
+    <Compile Include="Util\ExpandoUtil.cs" />
+    <Compile Include="Util\Extension\Enum.cs" />
+    <Compile Include="Util\Extension\MailMessageExtension.cs" />
+    <Compile Include="Util\Extension\ObjectContextExtension.cs" />
+    <Compile Include="Util\Extension\TraceHeader.cs" />
+    <Compile Include="Util\FileUtils.cs" />
+    <Compile Include="Util\IO\AsyncLoadedDataStream.cs" />
+    <Compile Include="Util\IO\DelimitedStreamReader.cs" />
+    <Compile Include="Util\IO\ObjectCloner.cs" />
+    <Compile Include="Util\Linq\Dynamic.cs" />
+    <Compile Include="Util\Logging\ILog.cs" />
+    <Compile Include="Util\Logging\Log.cs" />
+    <Compile Include="Util\Mapper\DoubleDecimalConverter.cs" />
+    <Compile Include="Util\Mapper\DoubleToNullableDecimalMapper.cs" />
+    <Compile Include="Util\Mapper\GenericNullableConverter.cs" />
+    <Compile Include="Util\MimeUtil.cs" />
+    <Compile Include="Util\Reflection\ReflectionInfo.cs" />
+    <Compile Include="Util\Security\BlowFish.cs" />
+    <Compile Include="Util\Security\MembershipUserValidationInfo.cs" />
+    <Compile Include="Util\Security\RpwComparator.cs" />
+    <Compile Include="Util\Serialization\StringWriterEncoded.cs" />
+    <Compile Include="Util\Serialization\XMLDeserializer.cs" />
+    <Compile Include="Util\Serialization\XMLSerializer.cs" />
+    <Compile Include="Util\SOAP\Annotations\DataContractWithXsdAnnotationsSerializerOperationBehavior.cs" />
+    <Compile Include="Util\SOAP\Annotations\DataContractXsdAnnotationSurrogate.cs" />
+    <Compile Include="Util\SOAP\Annotations\DataMemberAnnotationAttribute.cs" />
+    <Compile Include="Util\SOAP\Annotations\ExportWsdlWithXsdAnnotationsOperationBehavior.cs" />
+    <Compile Include="Util\SOAP\DefaultMessageHeader.cs" />
+    <Compile Include="Util\SOAP\IMessageHeader.cs" />
+    <Compile Include="Util\SOAP\MessageHeader.cs" />
+    <Compile Include="Util\SQLDateUtil.cs" />
+    <Compile Include="Util\StringUtil.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\libs\MSBuild.Community.Tasks.Targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+	   -->
+  <Target Name="BeforeBuild" Condition="'$(HUDSON)'=='YESOFF'">
+    <FileUpdate Files="Properties\AssemblyInfo.cs" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.$(SVN_REVISION)" />
+  </Target>
+  <Target Name="AfterBuild" Condition="'$(HUDSON)'=='YESOFF'">
+    <ItemGroup>
+      <!-- Ziel zum Kopieren für Revision -->
+      <binDir Include="\\w1\work\buildqueue\Cic.One.Utils\$(SVN_REVISION)\$(Configuration)\bin" />
+      <BinFiles Include="$(OutputPath)\*.*" />
+    </ItemGroup>
+    <MakeDir Directories="@(binDir)" ContinueOnError="true" />
+    <Copy SourceFiles="@(BinFiles)" DestinationFolder="@(binDir)" />
+  </Target>
+</Project>

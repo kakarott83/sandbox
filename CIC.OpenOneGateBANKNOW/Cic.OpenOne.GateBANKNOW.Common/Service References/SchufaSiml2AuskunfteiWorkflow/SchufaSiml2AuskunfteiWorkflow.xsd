@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://guardean.net/webservices/workflow/SchufaSiml2AuskunfteiWorkflow/types" targetNamespace="http://guardean.net/webservices/workflow/SchufaSiml2AuskunfteiWorkflow/types" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="executeRequest" type="tns:executeRequest" />
+  <xs:element name="executeResponse" type="tns:executeResponse" />
+  <xs:element name="systemMessage" type="tns:systemMessageType" />
+  <xs:complexType name="systemMessageType">
+    <xs:annotation>
+      <xs:documentation>
+                Represents a message to the user.
+                This type is similar to systemMessageType but has additionally a cause chain.
+            </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="message" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+                        A text that can be displayed to an end user without any further
+                        processing.  The producer of this element is responsible for
+                        performing locale dependend processing, parameter replacements
+                        and so on.  The consumer has to use as is.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="code" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+                        A unique identification of the message.  This element is to be
+                        used for programmatic processing of a system message.  It is
+                        intended to be used as a key for message dependent processing.
+                        Systems that produce this element have to offer a list of
+                        possible error codes.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="parameter" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+                        An additional information that is part of this system message.
+                        Used in programmatic processing of the message.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="cause" type="tns:systemMessageType">
+        <xs:annotation>
+          <xs:documentation>
+                        The system message that caused this system message.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AbrufManuelleWeiterverarbeitungType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="abrufreferenz" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AbrufNachmeldungType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="produktinformationen" type="tns:ProduktinformationenType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AdressIdentCheckType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PLZ" type="tns:PLZIdentCheckType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="land" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ort" type="tns:OrtIdentCheckType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="strasse" type="tns:StrasseIdentCheckType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AdressType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PLZ" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="land" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ort" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="strasse" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AktionType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="abrufManuelleWeiterverarbeitung" type="tns:AbrufManuelleWeiterverarbeitungType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="abrufNachmeldung" type="tns:AbrufNachmeldungType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="anfrageAktualisierungKundenadressen" type="tns:AnfrageAktualisierungKundenadressenType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="anfrageBonitaetsauskunft" type="tns:AnfrageBonitaetsauskunftType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="anfrageIdentitaetsCheck" type="tns:AnfrageIdentCheckType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="anfragePfaendungsschutzkonto" type="tns:AnfragePfaendungsschutzkontoType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="korrekturAdresse" type="tns:KorrekturAdresseType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="korrekturVerbraucherdaten" type="tns:KorrekturVerbraucherType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="loeschungTodesfall" type="tns:MeldungTodesfallType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="meldungVertragsdaten" type="tns:MeldungVertragsdatenType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="neumeldungAdresse" type="tns:NeumeldungAdresseType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="neumeldungNachname" type="tns:NeumeldungNachnameType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="neumeldungTodesfall" type="tns:MeldungTodesfallType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="rueckgabeAktionsdaten" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="teilnehmerkennung" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="teilnehmerkennwort" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="teilnehmerreferenz" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AnfrageAktualisierungKundenadressenType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="kontonummer" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="produktinformationen" type="tns:ProduktinformationenType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="verbraucherdaten" type="tns:VerbraucherdatenType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AnfrageBonitaetsauskunftType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="abrufreferenz" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="anfragemerkmal" type="tns:AnfragemerkmalType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="verbraucherdaten" type="tns:VerbraucherdatenType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AnfrageIdentCheckType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="produktinformationen" type="tns:ProduktinformationenIdentCheckType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="verbraucherdaten" type="tns:VerbraucherdatenIdentCheckAktionType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AnfragePfaendungsschutzkontoType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="abrufreferenz" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="datum" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="kontonummer" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="verbraucherdaten" type="tns:VerbraucherdatenType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AnfragemerkmalType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="betrag" type="tns:BetragType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="datum" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="kontonummer" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="merkmalcode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ratenart" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ratenzahl" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AuskunftAktualisierungKundenadressenType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="verarbeitungsinformation" type="tns:VerarbeitungsinformationType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="verbraucherdaten" type="tns:VerbraucherdatenAuskunftType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AuskunftsmerkmalType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="merkmale" type="tns:AuskunftsmerkmalTypeConverterMerkmalElementType">
+        <xs:annotation>
+          <xs:documentation>
+                        Each element must have only one of the fields 'merkmal' or 'textmerkmal' set.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AuskunftsmerkmalTypeConverterMerkmalElementType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="merkmal" type="tns:MerkmalType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="textmerkmal" type="tns:TextmerkmalType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BetragType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="waehrung" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BonitaetsauskunftType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ausweisgepruefteIdentitaet" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="merkmale" type="tns:AuskunftsmerkmalType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="scoreinformationen" type="tns:ScoreinformationenType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="teilnehmerkennung" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="verarbeitungsinformation" type="tns:VerarbeitungsinformationType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="verbraucherdaten" type="tns:VerbraucherdatenAuskunftType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DataType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="aktion" type="tns:AktionType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="language" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="reaktion" type="tns:ReaktionType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DublettenNachmeldungType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="dublette" type="tns:DublettenNachmeldungTypeDublette" />
+      <xs:element minOccurs="0" maxOccurs="1" name="merkmale" type="tns:NachmeldemerkmalType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="scoreinformationen" type="tns:ScoreinformationenType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="teilnehmerkennung" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="verbraucherdaten" type="tns:VerbraucherdatenAuskunftType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DublettenNachmeldungTypeDublette">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SCHUFAID" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EmptyOrWhitespaceWithAttType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FachlicherFehlerType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="fehlercode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="fehlertext" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="feldname" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FehlermeldungType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="fehlermeldung" type="tns:FehlermeldungTypeConverterFehlermeldungElementType">
+        <xs:annotation>
+          <xs:documentation>
+                        Each element must have only one of the fields 'fachlicherFehler' or 'technischerFehler' set.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FehlermeldungTypeConverterFehlermeldungElementType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="fachlicherFehler" type="tns:FachlicherFehlerType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="technischerFehler" type="tns:TechnischerFehlerType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GeburtsdatumIdentCheckType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="einzeltrefferguete" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IdentitaetspruefungType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ausweisgepruefteIdentitaet" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="gefundenMitVoradresse" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="verarbeitungsinformation" type="tns:VerarbeitungsinformationType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="verbraucherdaten" type="tns:VerbraucherdatenIdentCheckType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KorrekturAdresseType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ansprechpartner" type="tns:SachbearbeiterType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="korrigierteAdresse" type="tns:AdressType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="verbraucherdaten" type="tns:VerbraucherdatenType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KorrekturVerbraucherType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ansprechpartner" type="tns:SachbearbeiterType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="korrigierteVerbraucherdaten" type="tns:KorrekturVerbraucherdatenType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="verbraucherdaten" type="tns:VerbraucherdatenType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KorrekturVerbraucherdatenType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="geburtsdatum" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="geburtsort" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="geschlecht" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="nachname" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="titel" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="vorname" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ManuelleWeiterverarbeitungType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="abrufreferenz" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MeldemerkmalType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="betrag" type="tns:BetragType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="datum" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="kontonummer" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="merkmalcode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ratenart" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ratenzahl" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MeldungTodesfallType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ansprechpartner" type="tns:SachbearbeiterType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="sterbedaten" type="tns:SterbedatenType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="verbraucherdaten" type="tns:VerbraucherdatenType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MeldungVertragsdatenType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ansprechpartner" type="tns:SachbearbeiterType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="meldeart" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="meldemerkmal" type="tns:MeldemerkmalType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="verbraucherdaten" type="tns:VerbraucherdatenType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="zusatzinformation" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MeldungsbestaetigungType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="text" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MerkmalNachmeldungType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="beschreibung" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="betrag" type="tns:BetragType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="datum" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="eigenesMerkmal" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="kontonummer" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="merkmalOhneGeburtsdatum" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="merkmalcode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="nachmeldegrund" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="nachmeldetyp" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ratenart" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ratenzahl" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="text" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="typ" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MerkmalType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="beschreibung" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="betrag" type="tns:BetragType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="datum" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="eigenesMerkmal" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="kontonummer" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="merkmalOhneGeburtsdatum" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="merkmalcode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ratenart" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ratenzahl" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="text" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="typ" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NachmeldemerkmalType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="merkmale" type="tns:NachmeldemerkmalTypeConverterMerkmalElementType">
+        <xs:annotation>
+          <xs:documentation>
+                        Each element must have only one of the fields 'merkmal' or 'textmerkmal' set.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NachmeldemerkmalTypeConverterMerkmalElementType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="merkmal" type="tns:MerkmalNachmeldungType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="textmerkmal" type="tns:TextmerkmalNachmeldungType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NachmeldungType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ausweisgepruefteIdentitaet" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="merkmale" type="tns:NachmeldemerkmalType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="scoreinformationen" type="tns:ScoreinformationenType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="teilnehmerkennung" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="verbraucherdaten" type="tns:VerbraucherdatenAuskunftType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NachnameIdentCheckType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="einzeltrefferguete" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NeumeldungAdresseType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ansprechpartner" type="tns:SachbearbeiterType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="neueAdresse" type="tns:AdressType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="verbraucherdaten" type="tns:VerbraucherdatenType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NeumeldungNachnameType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ansprechpartner" type="tns:SachbearbeiterType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="neuerNachname" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="verbraucherdaten" type="tns:VerbraucherdatenType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OnlineServiceProtocolType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="confirm" type="tns:OrderIDType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="confirmResponse" type="tns:OrderIDType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="request" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="response" type="tns:OrderIDType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OrderIDType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="orderID" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OrtIdentCheckType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="einzeltrefferguete" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PLZIdentCheckType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="einzeltrefferguete" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PfaendungsschutzkontoAuskunftType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="merkmale" type="tns:AuskunftsmerkmalType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="teilnehmerkennung" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="verarbeitungsinformation" type="tns:VerarbeitungsinformationType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="verbraucherdaten" type="tns:VerbraucherdatenAuskunftType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProduktinformationenIdentCheckType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="identitaetsCheckVariante" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProduktinformationenType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="abrufverfahren" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="auftragsart" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ReaktionType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="aktionsdaten" type="tns:AktionType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="auskunftAktualisierungKundenadressen" type="tns:AuskunftAktualisierungKundenadressenType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="auskunftIdentitaetsCheck" type="tns:IdentitaetspruefungType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="auskunftPfaendungsschutzkonto" type="tns:PfaendungsschutzkontoAuskunftType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="bonitaetsauskunft" type="tns:BonitaetsauskunftType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="elektronischeAuskunftNichtMoeglich" type="tns:EmptyOrWhitespaceWithAttType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="fehlermeldung" type="tns:FehlermeldungType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="keineNachrichtenVerfuegbar" type="tns:EmptyOrWhitespaceWithAttType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="manuelleWeiterverarbeitung" type="tns:ManuelleWeiterverarbeitungType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="manuelleWeiterverarbeitungNichtGewuenscht" type="tns:EmptyOrWhitespaceWithAttType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="manuelleWeiterverarbeitungNochNichtErfolgt" type="tns:EmptyOrWhitespaceWithAttType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="meldungseingangsbestaetigung" type="tns:MeldungsbestaetigungType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="nachmeldung" type="tns:NachmeldungType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="nachmeldungDublettenzusammenfuehrung" type="tns:DublettenNachmeldungType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="schufaReferenz" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="teilnehmerreferenz" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SachbearbeiterType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="EMailAdresse" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="abteilung" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="faxnummer" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="sachbearbeiter" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="telefonnummer" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SchufaSiml2Request">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="data" type="tns:DataType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="fileDigest" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="service" type="tns:ServiceType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SchufaSiml2Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="data" type="tns:DataType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="fileDigest" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="service" type="tns:ServiceType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="version" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ScoreinformationenType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="beschreibung" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="risikoquote" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="scorebereich" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="scorefehler" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="scoreinfotext" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="scoretext" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="scorewert" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ServiceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="executionId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="resultKey" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="systemMessage" type="tns:SystemMessage" />
+      <xs:element minOccurs="0" maxOccurs="1" name="trace" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ServiceType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="error" type="tns:SimpleErrorResponseType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="online" type="tns:OnlineServiceProtocolType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="timestamp" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SimpleErrorResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="errorcode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="errormessage" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SterbedatenType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="sterbedatum" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="sterbeurkundennummer" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StrasseIdentCheckType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="einzeltrefferguete" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SystemMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="code" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="message" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="parameters" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SystemMessageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="serviceResponse" type="tns:ServiceResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TechnischerFehlerType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="fehlercode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="fehlertext" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TextmerkmalNachmeldungType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="beschreibung" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="eigenesMerkmal" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="merkmalOhneGeburtsdatum" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="merkmalcode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="nachmeldegrund" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="nachmeldetyp" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="text" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="typ" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TextmerkmalType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="beschreibung" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="eigenesMerkmal" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="merkmalOhneGeburtsdatum" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="merkmalcode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="text" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="typ" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VerarbeitungsinformationType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ergebnistyp" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="text" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VerbraucherdatenAuskunftType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SCHUFAID" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="aktuelleAdresse" type="tns:AdressType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="geburtsdatum" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="geburtsort" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="geschlecht" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="identitaetsvorbehaltAdresse" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="identitaetsvorbehaltPerson" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="nachname" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="personOhneGeburtsdatum" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="titel" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="voradresse" type="tns:AdressType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="vorname" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VerbraucherdatenIdentCheckAktionType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="aktuelleAdresse" type="tns:AdressType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="geburtsdatum" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="geschlecht" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="nachname" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="titel" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="vorname" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VerbraucherdatenIdentCheckType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SCHUFAID" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="aktuelleAdresse" type="tns:AdressIdentCheckType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="geburtsdatum" type="tns:GeburtsdatumIdentCheckType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="gesamttrefferguete" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="geschlecht" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="nachname" type="tns:NachnameIdentCheckType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="titel" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="vorname" type="tns:VornameIdentCheckType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VerbraucherdatenType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SCHUFAID" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="aktuelleAdresse" type="tns:AdressType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="geburtsdatum" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="geburtsort" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="geschlecht" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="nachname" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="schufaKlauselDatum" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="titel" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="voradresse" type="tns:AdressType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="vorname" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VornameIdentCheckType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="einzeltrefferguete" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="executeRequest">
+    <xs:annotation>
+      <xs:documentation>
+                Workflow request
+            </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="schufaSiml2Request" type="tns:SchufaSiml2Request" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="executeResponse">
+    <xs:annotation>
+      <xs:documentation>
+                Workflow response
+            </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="schufaSiml2Response" type="tns:SchufaSiml2Response" />
+      <xs:element minOccurs="0" maxOccurs="1" name="systemMessageResponse" type="tns:SystemMessageResponse">
+        <xs:annotation>
+          <xs:documentation>
+                        Contains the KSV connectors system message.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="trace" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

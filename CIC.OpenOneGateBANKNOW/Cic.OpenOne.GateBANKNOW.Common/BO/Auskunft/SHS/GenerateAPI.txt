@@ -1,0 +1,11 @@
+﻿"C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.7 Tools\xsd.exe" "CIC_SHS_001.1.xsd" /classes /enableDatabinding /namespace:"Cic.OpenOne.GateBANKNOW.Common.BO.Auskunft.SHS.W002"
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\xsd.exe" "CIC_SHS_001.1.xsd" /classes /enableDatabinding /namespace:"Cic.OpenOne.GateBANKNOW.Common.BO.Auskunft.SHS.W002"
+
+
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\xsd.exe" "Temp_INT_VI.xsd" /classes /enableDatabinding /namespace:"Cic.OpenOne.GateBANKNOW.Common.BO.Auskunft.SHS.W006"
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\xsd.exe" "Temp_INT_VII.xsd" /classes /enableDatabinding /namespace:"Cic.OpenOne.GateBANKNOW.Common.BO.Auskunft.SHS.W007"
+
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\xsd.exe" "SHS_CIC_006.1.xsd" /classes /enableDatabinding /namespace:"Cic.OpenOne.GateBANKNOW.Common.BO.Auskunft.SHS.W006"
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\xsd.exe" "SHS_CIC_007.1.xsd" /classes /enableDatabinding /namespace:"Cic.OpenOne.GateBANKNOW.Common.BO.Auskunft.SHS.W007"
+
+Danach muss noch die Basisklasse auf ValidatableDataContract geändert werden und das INotifyPropertyChanged aus jeder Klasse entfernt werden.

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CIC.Bas.Modules.CASClient" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CIC.Bas.Modules.CASClient" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://hcedev/BAS/MediatorService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CIC.Bas.Extensibility" />
+  <xs:import schemaLocation="http://hcedev/BAS/MediatorService.svc?xsd=xsd8" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="EvaluateRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/CIC.Bas.Extensibility" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Area" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AreaId" type="xs:long" />
+          <xs:element minOccurs="0" name="Expressions" nillable="true" type="tns:ArrayOfEvaluateRequestExpression" />
+          <xs:element minOccurs="0" name="UserId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EvaluateRequest" nillable="true" type="tns:EvaluateRequest" />
+  <xs:complexType name="ArrayOfEvaluateRequestExpression">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EvaluateRequestExpression" nillable="true" type="tns:EvaluateRequestExpression" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEvaluateRequestExpression" nillable="true" type="tns:ArrayOfEvaluateRequestExpression" />
+  <xs:complexType name="EvaluateRequestExpression">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EvaluateRequestExpression" nillable="true" type="tns:EvaluateRequestExpression" />
+  <xs:complexType name="EvaluateResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/CIC.Bas.Extensibility" base="q2:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Results" nillable="true" type="q3:ArrayOfstring" />
+          <xs:element minOccurs="0" name="ReturnCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReturnMessage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TransactionId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EvaluateResponse" nillable="true" type="tns:EvaluateResponse" />
+</xs:schema>

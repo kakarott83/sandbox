@@ -1,0 +1,508 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C50E4898-5A07-475F-AE79-137611353F51}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cic.OpenOne.CarConfigurator</RootNamespace>
+    <AssemblyName>Cic.OpenOne.CarConfigurator</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>3014</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CIC.Database.OL.EF4, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Database.OL.EF4.4.430.136.221\lib\net45\CIC.Database.OL.EF4.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data, Version=5.0.1095.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Oracle, Version=8.4.303.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Devart.Data.Oracle.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqKit">
+      <HintPath>..\..\libs\LinqKit.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\libs\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BO\ConfigurationManagerUtilities.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\AdapterLoaderHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\CatalogItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\CommonToWebConvertHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\ConfigurationComponent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\ConfigurationPackage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\ConfigurationTreeNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\DeliverServiceVersionWebMethodHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\EmbeddedConfigurationManagerAdapterLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\ExeConfigurationHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\ICarConfigurator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\ICatalogItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\IComponent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\IComponentDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\IConfigurationComponent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\IConfigurationPackage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\IConfigurationTreeNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\IDataSourceInformation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\IInputData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\ILevel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\IParameter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\IPicture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\IServiceState.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\ISetting.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\ITreeNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\ITreeNodeDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ConfigurationManager\WebToCommonConvertHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\DataProviderService\AdapterLoaderHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\DataProviderService\CheckComponentExpression.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\DataProviderService\CheckComponentResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\DataProviderService\CommonToWebConvertHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\DataProviderService\ConflictCheckComponentExpression.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\DataProviderService\DeliverDataSourceInformationWebMethodHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\DataProviderService\DeliverServiceStateWebMethodHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\DataProviderService\DiscountCheckComponentExpression.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\DataProviderService\EmbeddedDataProviderAdapterLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\DataProviderService\ExpressionDataTransferObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\DataProviderService\ICheckComponentResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\DataProviderService\ITreeInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\DataProviderService\NewPriceCheckComponentExpression.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\DataProviderService\QueryData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\DataProviderService\RequirementCheckComponentExpression.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\DataProviderService\TreeInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\DataProviderService\WebToCommonConvertHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\DataProviderService\_Enums.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\DataProviderUtilities.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\EurotaxDataProvider\EurotaxData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\EurotaxDataProvider\EurotaxDataProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\EurotaxDataProvider\EurotaxGlobalization.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\EurotaxDataProvider\EurotaxKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\EurotaxDataProvider\EurotaxSimpleSearchKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ExpressionParser\Lexem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ExpressionParser\Lexemizer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ExpressionParser\Parser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ExpressionParser\ParserException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ExpressionParser\_Enums.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\MembershipFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\MergeDataProvider\DataProviderAdapterLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\MergeDataProvider\DualAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\MergeDataProvider\DualKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\MergeDataProvider\EmbeddedDualAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\MergeDataProvider\IDualAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\MergeDataProvider\MergeDataProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\MergeDataProvider\MultipleAdaptersHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\MergeDataProvider\_Enums.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\MessageHeader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ObTypDataProvider\ObTypDataProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ObTypDataProvider\ObTypKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ObTypDataProvider\TreeNodeHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ObViewDataProvider\ObViewDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ObViewDataProvider\ObViewDataProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\ObViewDataProvider\ObViewKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\OracleConfigurationManager\CancelConfigurationIdentifierReservationHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\OracleConfigurationManager\CatalogConfigurationPackagesHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\OracleConfigurationManager\CatalogItemsHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\OracleConfigurationManager\ConfigurationGroupsHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\OracleConfigurationManager\ConfigurationIdentifiersHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\OracleConfigurationManager\ConfigurationPackagesHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\OracleConfigurationManager\CopyConfigurationHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\OracleConfigurationManager\CountConfigurationsHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\OracleConfigurationManager\DataContextHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\OracleConfigurationManager\DataSourcesHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\OracleConfigurationManager\DataSourceVersionsHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\OracleConfigurationManager\DeleteConfigurationHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\OracleConfigurationManager\DeliverAdapterStateHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\OracleConfigurationManager\LoadConfigurationHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\OracleConfigurationManager\LoadConfigurationsHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\OracleConfigurationManager\LockConfigurationHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\OracleConfigurationManager\MoveConfigurationHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\OracleConfigurationManager\OracleConfigurationManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\OracleConfigurationManager\PublishConfigurationHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\OracleConfigurationManager\RenameConfigurationHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\OracleConfigurationManager\ReserveConfigurationIdentifierHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\OracleConfigurationManager\SaveConfigurationHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\OracleConfigurationManager\SqlCompactToCommonConvertHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\OracleConfigurationManager\UsersHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\EaiParDao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\VinSearch\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Util\CultureHelper.cs" />
+    <Compile Include="Util\Expressions\AndExpression.cs" />
+    <Compile Include="Util\Expressions\ConvertHelper.cs" />
+    <Compile Include="Util\Expressions\Expression.cs" />
+    <Compile Include="Util\Expressions\NotExpression.cs" />
+    <Compile Include="Util\Expressions\OrExpression.cs" />
+    <Compile Include="Util\Expressions\ValueExpression.cs" />
+    <Compile Include="Util\Expressions\XorExpression.cs" />
+    <Compile Include="Util\P000001\ConfigurationManager\_Interfaces\IAdapter.cs" />
+    <Compile Include="Util\P000001\ConfigurationManager\_Interfaces\ICatalogItem.cs" />
+    <Compile Include="Util\P000001\ConfigurationManager\_Interfaces\ICatalogItemBase.cs" />
+    <Compile Include="Util\P000001\ConfigurationManager\_Interfaces\IConfigurationComponent.cs" />
+    <Compile Include="Util\P000001\ConfigurationManager\_Interfaces\IConfigurationComponentBase.cs" />
+    <Compile Include="Util\P000001\ConfigurationManager\_Interfaces\IConfigurationPackage.cs" />
+    <Compile Include="Util\P000001\ConfigurationManager\_Interfaces\IConfigurationPackageBase.cs" />
+    <Compile Include="Util\P000001\ConfigurationManager\_Interfaces\IConfigurationTreeNode.cs" />
+    <Compile Include="Util\P000001\ConfigurationManager\_Interfaces\IConfigurationTreeNodeBase.cs" />
+    <Compile Include="Util\P000001\ConfigurationManager\_Sources\CatalogItem.cs" />
+    <Compile Include="Util\P000001\ConfigurationManager\_Sources\ConfigurationComponent.cs" />
+    <Compile Include="Util\P000001\ConfigurationManager\_Sources\ConfigurationPackage.cs" />
+    <Compile Include="Util\P000001\ConfigurationManager\_Sources\ConfigurationTreeNode.cs" />
+    <Compile Include="Util\P000001\DataProvider\_Abstracts\CheckComponentExpression.cs" />
+    <Compile Include="Util\P000001\DataProvider\_Abstracts\GenericCheckComponentExpression.cs" />
+    <Compile Include="Util\P000001\DataProvider\_ComponentExpressions\ConflictCheckComponentExpression.cs" />
+    <Compile Include="Util\P000001\DataProvider\_ComponentExpressions\DiscountCheckComponentExpression.cs" />
+    <Compile Include="Util\P000001\DataProvider\_ComponentExpressions\NewPriceCheckComponentExpression.cs" />
+    <Compile Include="Util\P000001\DataProvider\_ComponentExpressions\RequirementCheckComponentExpression.cs" />
+    <Compile Include="Util\P000001\DataProvider\_Interfaces\IAdapter.cs" />
+    <Compile Include="Util\P000001\DataProvider\_Interfaces\ICheckComponentResult.cs" />
+    <Compile Include="Util\P000001\DataProvider\_Interfaces\ICheckComponentResultBase.cs" />
+    <Compile Include="Util\P000001\DataProvider\_Interfaces\ITreeInfo.cs" />
+    <Compile Include="Util\P000001\DataProvider\_Interfaces\ITreeInfoBase.cs" />
+    <Compile Include="Util\P000001\DataProvider\_Sources\CheckComponentResult.cs" />
+    <Compile Include="Util\P000001\DataProvider\_Sources\TreeInfo.cs" />
+    <Compile Include="Util\P000001\DataProvider\_Sources\_Enums.cs" />
+    <Compile Include="Util\P000001\_Interfaces\IAdapter.cs" />
+    <Compile Include="Util\P000001\_Interfaces\IAdapterState.cs" />
+    <Compile Include="Util\P000001\_Interfaces\IAdapterStateBase.cs" />
+    <Compile Include="Util\P000001\_Interfaces\IComponent.cs" />
+    <Compile Include="Util\P000001\_Interfaces\IComponentBase.cs" />
+    <Compile Include="Util\P000001\_Interfaces\IComponentDetail.cs" />
+    <Compile Include="Util\P000001\_Interfaces\IComponentDetailBase.cs" />
+    <Compile Include="Util\P000001\_Interfaces\IDataSourceInformation.cs" />
+    <Compile Include="Util\P000001\_Interfaces\IDataSourceInformationBase.cs" />
+    <Compile Include="Util\P000001\_Interfaces\IFilterParam.cs" />
+    <Compile Include="Util\P000001\_Interfaces\ILevel.cs" />
+    <Compile Include="Util\P000001\_Interfaces\ILevelBase.cs" />
+    <Compile Include="Util\P000001\_Interfaces\IParameter.cs" />
+    <Compile Include="Util\P000001\_Interfaces\IParameterBase.cs" />
+    <Compile Include="Util\P000001\_Interfaces\IPicture.cs" />
+    <Compile Include="Util\P000001\_Interfaces\IPictureBase.cs" />
+    <Compile Include="Util\P000001\_Interfaces\ISearchParam.cs" />
+    <Compile Include="Util\P000001\_Interfaces\IServiceState.cs" />
+    <Compile Include="Util\P000001\_Interfaces\IServiceStateBase.cs" />
+    <Compile Include="Util\P000001\_Interfaces\ISetting.cs" />
+    <Compile Include="Util\P000001\_Interfaces\ISettingBase.cs" />
+    <Compile Include="Util\P000001\_Interfaces\ITreeNode.cs" />
+    <Compile Include="Util\P000001\_Interfaces\ITreeNodeBase.cs" />
+    <Compile Include="Util\P000001\_Interfaces\ITreeNodeDetail.cs" />
+    <Compile Include="Util\P000001\_Interfaces\ITreeNodeDetailBase.cs" />
+    <Compile Include="Util\P000001\_Sources\AdapterState.cs" />
+    <Compile Include="Util\P000001\_Sources\Component.cs" />
+    <Compile Include="Util\P000001\_Sources\ComponentDetail.cs" />
+    <Compile Include="Util\P000001\_Sources\DataSourceInformation.cs" />
+    <Compile Include="Util\P000001\_Sources\FilterParam.cs" />
+    <Compile Include="Util\P000001\_Sources\Level.cs" />
+    <Compile Include="Util\P000001\_Sources\MessageHeader.cs" />
+    <Compile Include="Util\P000001\_Sources\MessageID.cs" />
+    <Compile Include="Util\P000001\_Sources\ObViewDto.cs" />
+    <Compile Include="Util\P000001\_Sources\Parameter.cs" />
+    <Compile Include="Util\P000001\_Sources\Picture.cs" />
+    <Compile Include="Util\P000001\_Sources\Search.cs" />
+    <Compile Include="Util\P000001\_Sources\SearchParam.cs" />
+    <Compile Include="Util\P000001\_Sources\ServiceState.cs" />
+    <Compile Include="Util\P000001\_Sources\Setting.cs" />
+    <Compile Include="Util\P000001\_Sources\SimpleSearchParam.cs" />
+    <Compile Include="Util\P000001\_Sources\TreeNode.cs" />
+    <Compile Include="Util\P000001\_Sources\TreeNodeDetail.cs" />
+    <Compile Include="Util\P000001\_Sources\_Enums.cs" />
+    <Compile Include="Util\Reflection\AdapterLoaderHelper.cs" />
+    <Compile Include="Util\Reflection\AssemblyHelper.cs" />
+    <Compile Include="Util\Reflection\IAdapter.cs" />
+    <Compile Include="Util\Reflection\IReconstructable.cs" />
+    <Compile Include="Util\StringHelper.cs" />
+    <Compile Include="Util\Xml\SerializationHelper.cs" />
+    <Compile Include="Util\Xml\XmlTextWriterFormattedNoDeclaration.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Service References\VinSearch\item1.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\VinSearch\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\VinSearch\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\VinSearch\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\VinSearch\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CIC.OpenOne\Cic.OpenOne.Common.Model\Cic.OpenOne.Common.Model.csproj">
+      <Project>{1fef8f25-bbaa-453c-a249-f1733bbb0b3c}</Project>
+      <Name>Cic.OpenOne.Common.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CIC.OpenOne\Cic.OpenOne.Common\Cic.OpenOne.Common.csproj">
+      <Project>{fc4049ac-617c-4233-ba92-287674e30b35}</Project>
+      <Name>Cic.OpenOne.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Cic.Utils\Cic.One.Utils\Cic.One.Utils.csproj">
+      <Project>{d1f653f9-3d9e-4486-89cc-4b0044307750}</Project>
+      <Name>Cic.One.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\libs\MSBuild.Community.Tasks.Targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets. -->
+  <Target Name="BeforeBuild" Condition="'$(HUDSON)'=='YESOFF'">
+    <FileUpdate Files="Properties\AssemblyInfo.cs" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.$(SVN_REVISION)" />
+  </Target>
+  <!--
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

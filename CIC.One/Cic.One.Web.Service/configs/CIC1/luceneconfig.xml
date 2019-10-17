@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LuceneConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <tables>
+    <IndexedTable>
+      <id>OPPO</id>
+      <query>select oppo.sysoppo id,oppo.name title,oppo.description description1,OPPOTP.NAME description2, PERSON.NAME description3, (SELECT rtrim(xmlagg(xmlelement(e,sysparent,',').extract('//text()') order by sysparent).GetClobVal(),',') FROM peuni, perolecache WHERE area = 'OPPO' AND peuni.sysperole = perolecache.syschild AND sysid=oppo.sysoppo) peuni, (SELECT listagg (sysidchild, ' ') WITHIN GROUP ( ORDER BY sysidchild) FROM crmnm WHERE crmnm.parentarea='OPPO' AND crmnm.childarea   ='PERSON' AND crmnm.sysidparent  =oppo.sysoppo ) sysidchildoppo from CIC.OPPO OPPO, CIC.OPPOTP OPPOTP, CIC.PERSON PERSON where  OPPO.SYSOPPOTP = OPPOTP.SYSOPPOTP(+) and OPPO.SYSPERSON = PERSON.SYSPERSON (+) </query>
+      <keyField>sysoppo</keyField>
+      <peroleFilter>false</peroleFilter>
+	  <indexid>OPPO</indexid>
+    </IndexedTable>
+    <!--<IndexedTable>
+      <id>MAILMSG</id>
+      <query>select mailmsg.sysmailmsg id,mailmsg.subject title,mailmsg.recvfrom||' '||mailmsg.sentto description1,person.name description2,mailmsg.content description3, (SELECT rtrim(xmlagg(xmlelement(e,sysparent,',').extract('//text()') order by sysparent).GetClobVal(),',') FROM peuni, perolecache WHERE area = 'MAILMSG' AND peuni.sysperole = perolecache.syschild AND sysid=mailmsg.sysmailmsg) peuni from CIC.MAILMSG MAILMSG, PERSON PERSON where  MAILMSG.SYSPERSON = PERSON.SYSPERSON (+) </query>
+      <keyField>sysmailmsg</keyField>
+      <peroleFilter>true</peroleFilter>
+	  <indexid>MAILMSG</indexid>
+    </IndexedTable>
+	<IndexedTable>
+      <id>CONTACT</id>
+      <query>select contact.syscontact id,contact.reason title,person.name description1,'' description2,contact.memo description3, (SELECT rtrim(xmlagg(xmlelement(e,sysparent,',').extract('//text()') order by sysparent).GetClobVal(),',') FROM peuni, perolecache WHERE area = 'CONTACT' AND peuni.sysperole = perolecache.syschild AND sysid=contact.sysptask) peuni from CIC.CONTACT CONTACT, PERSON PERSON where  CONTACT.SYSPERSON = PERSON.SYSPERSON (+) </query>
+      <keyField>syscontact</keyField>
+      <peroleFilter>true</peroleFilter>
+	  <indexid>CONTACT</indexid>
+    </IndexedTable>//-->
+	<IndexedTable>
+      <id>ACTIVITIES</id>
+      <query>select ACTIVITY.sysid id,ACTIVITY.TYP title,person.name description1,'' description2,ACTIVITY.aspname description3, (SELECT rtrim(xmlagg(xmlelement(e,sysparent,',').extract('//text()') order by sysparent).GetClobVal(),',') FROM peuni, perolecache WHERE area = ACTIVITY.AREA AND peuni.sysperole = perolecache.syschild AND sysid=activity.sysid) peuni from CIC.VC_ACTIVITIES ACTIVITY, PERSON PERSON where  ACTIVITY.SYSPERSON = PERSON.SYSPERSON (+) and ACTIVITY.AREA='MAILMSG'</query>
+      <keyField>sysid</keyField>
+      <peroleFilter>false</peroleFilter>
+	  <indexid>ACTIVITYMAILMSG</indexid>
+    </IndexedTable>
+	<IndexedTable>
+      <id>ACTIVITIES</id>
+      <query>select ACTIVITY.sysid id,ACTIVITY.TYP title,person.name description1,'' description2,ACTIVITY.aspname description3, (SELECT rtrim(xmlagg(xmlelement(e,sysparent,',').extract('//text()') order by sysparent).GetClobVal(),',') FROM peuni, perolecache WHERE area = ACTIVITY.AREA AND peuni.sysperole = perolecache.syschild AND sysid=activity.sysid) peuni from CIC.VC_ACTIVITIES ACTIVITY, PERSON PERSON where  ACTIVITY.SYSPERSON = PERSON.SYSPERSON (+) and ACTIVITY.AREA='OPPO'</query>
+      <keyField>sysid</keyField>
+      <peroleFilter>false</peroleFilter>
+	  <indexid>ACTIVITYOPPO</indexid>
+    </IndexedTable>
+	<IndexedTable>
+      <id>ACTIVITIES</id>
+      <query>select ACTIVITY.sysid id,ACTIVITY.TYP title,person.name description1,'' description2,ACTIVITY.aspname description3, (SELECT rtrim(xmlagg(xmlelement(e,sysparent,',').extract('//text()') order by sysparent).GetClobVal(),',') FROM peuni, perolecache WHERE area = ACTIVITY.AREA AND peuni.sysperole = perolecache.syschild AND sysid=activity.sysid) peuni from CIC.VC_ACTIVITIES ACTIVITY, PERSON PERSON where  ACTIVITY.SYSPERSON = PERSON.SYSPERSON (+) and ACTIVITY.AREA='PTASK'</query>
+      <keyField>sysid</keyField>
+      <peroleFilter>false</peroleFilter>
+	  <indexid>ACTIVITYPTASK</indexid>
+    </IndexedTable>
+	<IndexedTable>
+      <id>ACTIVITIES</id>
+      <query>select ACTIVITY.sysid id,ACTIVITY.TYP title,person.name description1,'' description2,ACTIVITY.aspname description3, (SELECT rtrim(xmlagg(xmlelement(e,sysparent,',').extract('//text()') order by sysparent).GetClobVal(),',') FROM peuni, perolecache WHERE area = ACTIVITY.AREA AND peuni.sysperole = perolecache.syschild AND sysid=activity.sysid) peuni from CIC.VC_ACTIVITIES ACTIVITY, PERSON PERSON where  ACTIVITY.SYSPERSON = PERSON.SYSPERSON (+) and ACTIVITY.AREA='APPTMT'</query>
+      <keyField>sysid</keyField>
+      <peroleFilter>false</peroleFilter>
+	  <indexid>ACTIVITYAPPTMT</indexid>
+    </IndexedTable>
+	<IndexedTable>
+      <id>ACTIVITIES</id>
+      <query>select ACTIVITY.sysid id,ACTIVITY.TYP title,person.name description1,'' description2,ACTIVITY.aspname description3, (SELECT rtrim(xmlagg(xmlelement(e,sysparent,',').extract('//text()') order by sysparent).GetClobVal(),',') FROM peuni, perolecache WHERE area = ACTIVITY.AREA AND peuni.sysperole = perolecache.syschild AND sysid=activity.sysid) peuni from CIC.VC_ACTIVITIES ACTIVITY, PERSON PERSON where  ACTIVITY.SYSPERSON = PERSON.SYSPERSON (+) and ACTIVITY.AREA='ANTRAG'</query>
+      <keyField>sysid</keyField>
+      <peroleFilter>false</peroleFilter>
+	  <indexid>ACTIVITYANTRAG</indexid>
+    </IndexedTable>	
+	<IndexedTable>
+      <id>ACTIVITIES</id>
+      <query>select ACTIVITY.sysid id,ACTIVITY.TYP title,person.name description1,'' description2,ACTIVITY.aspname description3, (SELECT rtrim(xmlagg(xmlelement(e,sysparent,',').extract('//text()') order by sysparent).GetClobVal(),',') FROM peuni, perolecache WHERE area = ACTIVITY.AREA AND peuni.sysperole = perolecache.syschild AND sysid=activity.sysid) peuni from CIC.VC_ACTIVITIES ACTIVITY, PERSON PERSON where  ACTIVITY.SYSPERSON = PERSON.SYSPERSON (+) and ACTIVITY.AREA='CONTACT'</query>
+      <keyField>sysid</keyField>
+      <peroleFilter>false</peroleFilter>
+	  <indexid>ACTIVITYCONTACT</indexid>
+    </IndexedTable>
+	<IndexedTable>
+      <id>ACTIVITIES</id>
+      <query>select ACTIVITY.sysid id,ACTIVITY.TYP title,person.name description1,'' description2,ACTIVITY.aspname description3, (SELECT rtrim(xmlagg(xmlelement(e,sysparent,',').extract('//text()') order by sysparent).GetClobVal(),',') FROM peuni, perolecache WHERE area = ACTIVITY.AREA AND peuni.sysperole = perolecache.syschild AND sysid=activity.sysid) peuni from CIC.VC_ACTIVITIES ACTIVITY, PERSON PERSON where  ACTIVITY.SYSPERSON = PERSON.SYSPERSON (+) and ACTIVITY.AREA='VT'</query>
+      <keyField>sysid</keyField>
+      <peroleFilter>false</peroleFilter>
+	  <indexid>ACTIVITYVT</indexid>
+    </IndexedTable>
+		<IndexedTable>
+      <id>ACTIVITIES</id>
+      <query>select ACTIVITY.sysid id,ACTIVITY.TYP title,person.name description1,'' description2,ACTIVITY.aspname description3, (SELECT rtrim(xmlagg(xmlelement(e,sysparent,',').extract('//text()') order by sysparent).GetClobVal(),',') FROM peuni, perolecache WHERE area = ACTIVITY.AREA AND peuni.sysperole = perolecache.syschild AND sysid=activity.sysid) peuni from CIC.VC_ACTIVITIES ACTIVITY, PERSON PERSON where  ACTIVITY.SYSPERSON = PERSON.SYSPERSON (+) and ACTIVITY.AREA='ANGEBOT'</query>
+      <keyField>sysid</keyField>
+      <peroleFilter>false</peroleFilter>
+	  <indexid>ACTIVITYANGEBOT</indexid>
+    </IndexedTable>
+	
+    <IndexedTable>
+      <id>PTASK</id>
+      <query>select ptask.sysptask id,ptask.subject title,person.name description1,'' description2,ptask.content description3, (SELECT rtrim(xmlagg(xmlelement(e,sysparent,',').extract('//text()') order by sysparent).GetClobVal(),',') FROM peuni, perolecache WHERE area = 'PTASK' AND peuni.sysperole = perolecache.syschild AND sysid=ptask.sysptask) peuni from CIC.PTASK PTASK, PERSON PERSON where  PTASK.SYSPERSON = PERSON.SYSPERSON (+) </query>
+      <keyField>sysptask</keyField>
+      <peroleFilter>false</peroleFilter>
+	  <indexid>PTASK</indexid>
+    </IndexedTable>
+    <IndexedTable>
+      <id>APPTMT</id>
+      <query>select  apptmt.sysapptmt id,apptmt.subject title,person.name description1,apptmt.startdate description2,apptmt.content description3, (SELECT rtrim(xmlagg(xmlelement(e,sysparent,',').extract('//text()') order by sysparent).GetClobVal(),',') FROM peuni, perolecache WHERE area = 'APPTMT' AND peuni.sysperole = perolecache.syschild AND sysid=apptmt.sysapptmt) peuni from CIC.APPTMT APPTMT, PERSON PERSON where  APPTMT.SYSPERSON = PERSON.SYSPERSON (+) </query>
+      <keyField>sysapptmt</keyField>
+      <peroleFilter>false</peroleFilter>
+	  <indexid>APPTMT</indexid>
+    </IndexedTable>
+    <IndexedTable>
+      <id>PERSON</id>
+      <query>select sysperson id,name||' '||vorname title,strasse description1, plz||' '||ort description2, telefon description3, (SELECT rtrim(xmlagg(xmlelement(e,sysparent,',').extract('//text()') order by sysparent).GetClobVal(),',') FROM peuni, perolecache WHERE area = 'PERSON' AND peuni.sysperole = perolecache.syschild AND sysid=person.sysperson) peuni, (SELECT listagg (sysperson1, ' ') WITHIN GROUP (ORDER BY sysptrelate) FROM ptrelate WHERE sysperson2=person.sysperson) sysperson1, (SELECT listagg (sysidparent, ' ') WITHIN GROUP ( ORDER BY sysidparent) FROM crmnm WHERE crmnm.parentarea='OPPO' and crmnm.childarea='PERSON' and crmnm.sysidchild=person.sysperson ) sysidparentoppo from person where 1=1 </query>
+      <keyField>sysperson</keyField>
+      <peroleFilter>false</peroleFilter>
+	  <indexid>PERSON</indexid>
+    </IndexedTable>
+	
+	
+	<IndexedTable>
+			<id>ANGEBOT</id>
+			<query>select  angebot.sysid id,angebot.angebot title,angebot.objektvt description1, angebot.zustand description2, kd.vorname || kd.name description3,'' peuni from angebot, CIC.PERSON KD, CIC.IT IT, CIC.LSADD LSADD, CIC.RVT RAHMEN where ANGEBOT.SYSKD=KD.SYSPERSON(+) and ANGEBOT.SYSIT=IT.SYSIT(+) and ANGEBOT.SYSLS=LSADD.SYSLSADD(+) and ANGEBOT.SYSRVT=RAHMEN.SYSRVT and angebot.sysls=3 </query>
+			<keyField>sysid</keyField>
+			<indexid>ANGEBOT</indexid>
+			<positiveId>true</positiveId>
+			<peroleFilter>false</peroleFilter>
+		</IndexedTable>
+		<IndexedTable>
+			<id>VERTRAG</id>
+			<query>select  vt.sysid id,vt.vertrag title,vt.fabrikat description1, vt.vart ||' '||vt.zustand description2, kd.vorname || kd.name description3,'' peuni from vt, CIC.PERSON KD where VT.SYSKD=KD.SYSPERSON(+) and syskd&gt;0 and vt.sysls=3</query>
+			<keyField>sysid</keyField>
+			<indexid>VERTRAG</indexid>
+			<positiveId>true</positiveId>
+			<peroleFilter>false</peroleFilter>
+		</IndexedTable>
+		<IndexedTable>
+			<id>INT</id>
+			<query>select  sysit id,name||' '||vorname title,strasse description1, plz||' '||ort description2, telefon description3, '' peuni from it where 1=1</query>
+			<keyField>sysit</keyField>
+			<indexid>INT</indexid>
+			<positiveId>true</positiveId>
+			<peroleFilter>false</peroleFilter>
+		</IndexedTable>
+   
+   
+  </tables>
+</LuceneConfig>

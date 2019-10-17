@@ -1,0 +1,456 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <!-- The configuration and platform will be used to determine which
+         assemblies to include from solution and project documentation
+         sources -->
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0095b072-878c-41b6-b2e7-d151b72bb21f}</ProjectGuid>
+    <SHFBSchemaVersion>1.8.0.3</SHFBSchemaVersion>
+    <!-- AssemblyName, Name, and RootNamespace are not used by SHFB but Visual
+         Studio adds them anyway -->
+    <AssemblyName>Documentation</AssemblyName>
+    <RootNamespace>Documentation</RootNamespace>
+    <Name>Documentation</Name>
+    <!-- SHFB properties -->
+    <OutputPath>.\Documentation\OFiSWebServices.Documentation\</OutputPath>
+    <HtmlHelpName>Documentation</HtmlHelpName>
+    <ApiFilter>
+      <Filter entryType="Namespace" fullName="Cic.Basic" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Banking.Sic" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Collections" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Configuration" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Configuration.Install" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Controls" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Data" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Data.Common" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Data.Objects" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Data.Objects.Property" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Data.Sql" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Drawing" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Expressions" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Globalization" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Job" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Logging" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Logging.Log4Net" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Math" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.OpenLease" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.OpenLease.CalculationCore" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.OpenLease.CalculationCore.Test" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Reflection.Assembly" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Reflection.Assembly.Property" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Security" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.ServiceProcess" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Text.RegularExpressions" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Validation" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Web" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Web.HttpContext" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Web.Services" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Web.Services.Protocols" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Web.SessionState" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.Basic.Xml.Serialization" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.Common" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.Common.Test" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.Linq.Dynamic" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.Model" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.Model.DdDnas" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.Model.DdOiqueue" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.Model.DdOl" isExposed="False">
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.ADRESSE" filterName="ADRESSE" isExposed="True">
+          <Filter entryType="Constructor" fullName="Cic.OpenLease.Model.DdOl.ADRESSE.#ctor" filterName=".ctor" isExposed="False" />
+          <Filter entryType="Method" fullName="Cic.OpenLease.Model.DdOl.ADRESSE.CreateADRESSE" filterName="CreateADRESSE" isExposed="False" />
+          <Filter entryType="Method" fullName="Cic.OpenLease.Model.DdOl.ADRESSE.DeliverInfoPackageDictionary" filterName="DeliverInfoPackageDictionary" isExposed="False" />
+          <Filter entryType="Property" fullName="Cic.OpenLease.Model.DdOl.ADRESSE.IsActive" filterName="IsActive" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.ANGEBOT" filterName="ANGEBOT" isExposed="True">
+          <Filter entryType="Constructor" fullName="Cic.OpenLease.Model.DdOl.ANGEBOT.#ctor" filterName=".ctor" isExposed="False" />
+          <Filter entryType="Method" fullName="Cic.OpenLease.Model.DdOl.ANGEBOT.CreateANGEBOT" filterName="CreateANGEBOT" isExposed="False" />
+          <Filter entryType="Method" fullName="Cic.OpenLease.Model.DdOl.ANGEBOT.DeliverInfoPackageDictionary" filterName="DeliverInfoPackageDictionary" isExposed="False" />
+          <Filter entryType="Property" fullName="Cic.OpenLease.Model.DdOl.ANGEBOT.ADMADDReference" filterName="ADMADDReference" isExposed="False" />
+          <Filter entryType="Property" fullName="Cic.OpenLease.Model.DdOl.ANGEBOT.CustomerReference" filterName="CustomerReference" isExposed="False" />
+          <Filter entryType="Property" fullName="Cic.OpenLease.Model.DdOl.ANGEBOT.IsActive" filterName="IsActive" isExposed="False" />
+          <Filter entryType="Property" fullName="Cic.OpenLease.Model.DdOl.ANGEBOT.IsChecked" filterName="IsChecked" isExposed="False" />
+          <Filter entryType="Property" fullName="Cic.OpenLease.Model.DdOl.ANGEBOT.IsEnded" filterName="IsEnded" isExposed="False" />
+          <Filter entryType="Property" fullName="Cic.OpenLease.Model.DdOl.ANGEBOT.PARTNERReference" filterName="PARTNERReference" isExposed="False" />
+          <Filter entryType="Property" fullName="Cic.OpenLease.Model.DdOl.ANGEBOT.PERSONReference" filterName="PERSONReference" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.ANGKALK" filterName="ANGKALK" isExposed="True">
+          <Filter entryType="Constructor" fullName="Cic.OpenLease.Model.DdOl.ANGKALK.#ctor" filterName=".ctor" isExposed="False" />
+          <Filter entryType="Method" fullName="Cic.OpenLease.Model.DdOl.ANGKALK.CreateANGKALK" filterName="CreateANGKALK" isExposed="False" />
+          <Filter entryType="Method" fullName="Cic.OpenLease.Model.DdOl.ANGKALK.DeliverInfoPackageDictionary" filterName="DeliverInfoPackageDictionary" isExposed="False" />
+          <Filter entryType="Property" fullName="Cic.OpenLease.Model.DdOl.ANGKALK.ANGOBReference" filterName="ANGOBReference" isExposed="False" />
+          <Filter entryType="Property" fullName="Cic.OpenLease.Model.DdOl.ANGKALK.CaseOfDeathInsurance" filterName="CaseOfDeathInsurance" isExposed="False" />
+          <Filter entryType="Property" fullName="Cic.OpenLease.Model.DdOl.ANGKALK.ProvisionSeller" filterName="ProvisionSeller" isExposed="False" />
+          <Filter entryType="Property" fullName="Cic.OpenLease.Model.DdOl.ANGKALK.ProvisionSellerInPercent" filterName="ProvisionSellerInPercent" isExposed="False" />
+          <Filter entryType="Property" fullName="Cic.OpenLease.Model.DdOl.ANGKALK.RateInPercent" filterName="RateInPercent" isExposed="False" />
+          <Filter entryType="Property" fullName="Cic.OpenLease.Model.DdOl.ANGKALK.UnemploymentInsurance" filterName="UnemploymentInsurance" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.ANGOB" filterName="ANGOB" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.ANGOBAUST" filterName="ANGOBAUST" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.ANGOBINI" filterName="ANGOBINI" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.ANGVAR" filterName="ANGVAR" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.ANTKALK" filterName="ANTKALK" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.ANTOB" filterName="ANTOB" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.ANTOBAUST" filterName="ANTOBAUST" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.ANTOBINI" filterName="ANTOBINI" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.ANTRAG" filterName="ANTRAG" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.BLZ" filterName="BLZ" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.BRANCHE" filterName="BRANCHE" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.HOBBY" filterName="HOBBY" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.IT" filterName="IT" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.KALK" filterName="KALK" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.KALKTYP" filterName="KALKTYP" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.KONTO" filterName="KONTO" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.KONZERN" filterName="KONZERN" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.LAND" filterName="LAND" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.MYCALC" filterName="MYCALC" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.MYCALCAUST" filterName="MYCALCAUST" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.OB" filterName="OB" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.OBAUST" filterName="OBAUST" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.OBINI" filterName="OBINI" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.OBTYP" filterName="OBTYP" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.PARTNER" filterName="PARTNER" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.PERSON" filterName="PERSON" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.RN" filterName="RN" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.STAAT" filterName="STAAT" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.UKZ" filterName="UKZ" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.VART" filterName="VART" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.VT" filterName="VT" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.VTTYP" filterName="VTTYP" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOl.WAEHRUNG" filterName="WAEHRUNG" isExposed="True" />
+      </Filter>
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.Model.DdOl.Test" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.Model.DdOw" isExposed="False">
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOw.DE" filterName="DE" isExposed="True" />
+        <Filter entryType="Structure" fullName="Cic.OpenLease.Model.DdOw.DE.FieldNames" filterName="DE.FieldNames" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOw.DECON" filterName="DECON" isExposed="True" />
+        <Filter entryType="Structure" fullName="Cic.OpenLease.Model.DdOw.DECON.FieldNames" filterName="DECON.FieldNames" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOw.DECONHelper" filterName="DECONHelper" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOw.DEDEFCON" filterName="DEDEFCON" isExposed="True" />
+        <Filter entryType="Structure" fullName="Cic.OpenLease.Model.DdOw.DEDEFCON.FieldNames" filterName="DEDEFCON.FieldNames" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOw.DEDEFCONTXT" filterName="DEDEFCONTXT" isExposed="True" />
+        <Filter entryType="Structure" fullName="Cic.OpenLease.Model.DdOw.DEDEFCONTXT.FieldNames" filterName="DEDEFCONTXT.FieldNames" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOw.DEDEFRUL" filterName="DEDEFRUL" isExposed="True" />
+        <Filter entryType="Structure" fullName="Cic.OpenLease.Model.DdOw.DEDEFRUL.FieldNames" filterName="DEDEFRUL.FieldNames" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOw.DEDEFRULCON" filterName="DEDEFRULCON" isExposed="True" />
+        <Filter entryType="Structure" fullName="Cic.OpenLease.Model.DdOw.DEDEFRULCON.FieldNames" filterName="DEDEFRULCON.FieldNames" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOw.DEDEFRULTXT" filterName="DEDEFRULTXT" isExposed="True" />
+        <Filter entryType="Structure" fullName="Cic.OpenLease.Model.DdOw.DEDEFRULTXT.FieldNames" filterName="DEDEFRULTXT.FieldNames" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOw.DERUL" filterName="DERUL" isExposed="True" />
+        <Filter entryType="Structure" fullName="Cic.OpenLease.Model.DdOw.DERUL.FieldNames" filterName="DERUL.FieldNames" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Model.DdOw.DERULCON" filterName="DERULCON" isExposed="True" />
+        <Filter entryType="Structure" fullName="Cic.OpenLease.Model.DdOw.DERULCON.FieldNames" filterName="DERULCON.FieldNames" isExposed="True" />
+      </Filter>
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.Model.DdOw.Tests" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.Service" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.Service.DdDnas" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.Service.DdOiqueue" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.Service.DdOl" isExposed="False">
+        <Filter entryType="Class" fullName="Cic.OpenLease.Service.DdOl.ADRESSEDao" filterName="ADRESSEDao" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Service.DdOl.ANGEBOTDao" filterName="ANGEBOTDao" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Service.DdOl.ANGKALKDao" filterName="ANGKALKDao" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Service.DdOl.ANTRAGDao" filterName="ANTRAGDao" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Service.DdOl.ITDao" filterName="ITDao" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Service.DdOl.KONTODao" filterName="KONTODao" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Service.DdOl.MYCALCDao" filterName="MYCALCDao" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Service.DdOl.PARTNERDao" filterName="PARTNERDao" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Service.DdOl.PERSONDao" filterName="PERSONDao" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Service.DdOl.RNDao" filterName="RNDao" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.Service.DdOl.VTDao" filterName="VTDao" isExposed="True" />
+      </Filter>
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.Service.DdOl.Test" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.Service.DdOw" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.Service.Merge.Recorder" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.Service.Merge.Vlm" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.Service.Services.Test" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.ServiceAccess" isExposed="False">
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.MessageHeader" filterName="MessageHeader" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.SearchParameters" filterName="SearchParameters" isExposed="True" />
+        <Filter entryType="Enumeration" fullName="Cic.OpenLease.ServiceAccess.ServiceExceptionCodes" filterName="ServiceExceptionCodes" isExposed="True" />
+        <Filter entryType="Enumeration" fullName="Cic.OpenLease.ServiceAccess.SortOrderConstants" filterName="SortOrderConstants" isExposed="True" />
+      </Filter>
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.ServiceAccess.DdDnas" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.ServiceAccess.DdOiqueue" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.ServiceAccess.DdOl" isExposed="False">
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.ADRESSEDto" filterName="ADRESSEDto" isExposed="True">
+          <Filter entryType="Constructor" fullName="Cic.OpenLease.ServiceAccess.DdOl.ADRESSEDto.#ctor" filterName=".ctor" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.ADRESSESearchData" filterName="ADRESSESearchData" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.ANGEBOTDto" filterName="ANGEBOTDto" isExposed="True">
+          <Filter entryType="Constructor" fullName="Cic.OpenLease.ServiceAccess.DdOl.ANGEBOTDto.#ctor" filterName=".ctor" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.ANGEBOTSearchData" filterName="ANGEBOTSearchData" isExposed="True">
+          <Filter entryType="Constructor" fullName="Cic.OpenLease.ServiceAccess.DdOl.ANGEBOTSearchData.#ctor" filterName=".ctor" isExposed="False" />
+          <Filter entryType="Method" fullName="Cic.OpenLease.ServiceAccess.DdOl.ANGEBOTSearchData.AdoptValues" filterName="AdoptValues" isExposed="False" />
+          <Filter entryType="Method" fullName="Cic.OpenLease.ServiceAccess.DdOl.ANGEBOTSearchData.ResetValues" filterName="ResetValues" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.ANGEBOTSortData" filterName="ANGEBOTSortData" isExposed="True" />
+        <Filter entryType="Enumeration" fullName="Cic.OpenLease.ServiceAccess.DdOl.ANGEBOTSortData.SortDataConstants" filterName="ANGEBOTSortData.SortDataConstants" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.ANGKALKDto" filterName="ANGKALKDto" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.ANGKALKSearchData" filterName="ANGKALKSearchData" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.ANTRAGDto" filterName="ANTRAGDto" isExposed="True">
+          <Filter entryType="Constructor" fullName="Cic.OpenLease.ServiceAccess.DdOl.ANTRAGDto.#ctor" filterName=".ctor" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.ANTRAGSearchData" filterName="ANTRAGSearchData" isExposed="True">
+          <Filter entryType="Constructor" fullName="Cic.OpenLease.ServiceAccess.DdOl.ANTRAGSearchData.#ctor" filterName=".ctor" isExposed="False" />
+          <Filter entryType="Method" fullName="Cic.OpenLease.ServiceAccess.DdOl.ANTRAGSearchData.AdoptValues" filterName="AdoptValues" isExposed="False" />
+          <Filter entryType="Method" fullName="Cic.OpenLease.ServiceAccess.DdOl.ANTRAGSearchData.ResetValues" filterName="ResetValues" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.ANTRAGSortData" filterName="ANTRAGSortData" isExposed="True" />
+        <Filter entryType="Enumeration" fullName="Cic.OpenLease.ServiceAccess.DdOl.ANTRAGSortData.SortDataConstants" filterName="ANTRAGSortData.SortDataConstants" isExposed="True" />
+        <Filter entryType="Interface" fullName="Cic.OpenLease.ServiceAccess.DdOl.IADRESSEDao" filterName="IADRESSEDao" isExposed="True" />
+        <Filter entryType="Interface" fullName="Cic.OpenLease.ServiceAccess.DdOl.IANGEBOTDao" filterName="IANGEBOTDao" isExposed="True" />
+        <Filter entryType="Interface" fullName="Cic.OpenLease.ServiceAccess.DdOl.IANGKALKDao" filterName="IANGKALKDao" isExposed="True" />
+        <Filter entryType="Interface" fullName="Cic.OpenLease.ServiceAccess.DdOl.IANTRAGDao" filterName="IANTRAGDao" isExposed="True" />
+        <Filter entryType="Interface" fullName="Cic.OpenLease.ServiceAccess.DdOl.IITDao" filterName="IITDao" isExposed="True" />
+        <Filter entryType="Interface" fullName="Cic.OpenLease.ServiceAccess.DdOl.IKONTODao" filterName="IKONTODao" isExposed="True" />
+        <Filter entryType="Interface" fullName="Cic.OpenLease.ServiceAccess.DdOl.IMYCALCDao" filterName="IMYCALCDao" isExposed="True" />
+        <Filter entryType="Interface" fullName="Cic.OpenLease.ServiceAccess.DdOl.IPARTNERDao" filterName="IPARTNERDao" isExposed="True" />
+        <Filter entryType="Interface" fullName="Cic.OpenLease.ServiceAccess.DdOl.IPERSONDao" filterName="IPERSONDao" isExposed="True" />
+        <Filter entryType="Interface" fullName="Cic.OpenLease.ServiceAccess.DdOl.IRNDao" filterName="IRNDao" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.ITDto" filterName="ITDto" isExposed="True">
+          <Filter entryType="Constructor" fullName="Cic.OpenLease.ServiceAccess.DdOl.ITDto.#ctor" filterName=".ctor" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.ITSearchData" filterName="ITSearchData" isExposed="True">
+          <Filter entryType="Constructor" fullName="Cic.OpenLease.ServiceAccess.DdOl.ITSearchData.#ctor" filterName=".ctor" isExposed="False" />
+          <Filter entryType="Method" fullName="Cic.OpenLease.ServiceAccess.DdOl.ITSearchData.AdoptValues" filterName="AdoptValues" isExposed="False" />
+          <Filter entryType="Method" fullName="Cic.OpenLease.ServiceAccess.DdOl.ITSearchData.ResetValues" filterName="ResetValues" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.ITSortData" filterName="ITSortData" isExposed="True" />
+        <Filter entryType="Enumeration" fullName="Cic.OpenLease.ServiceAccess.DdOl.ITSortData.SortDataConstants" filterName="ITSortData.SortDataConstants" isExposed="True" />
+        <Filter entryType="Interface" fullName="Cic.OpenLease.ServiceAccess.DdOl.IVTDao" filterName="IVTDao" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.KONTODto" filterName="KONTODto" isExposed="True">
+          <Filter entryType="Constructor" fullName="Cic.OpenLease.ServiceAccess.DdOl.KONTODto.#ctor" filterName=".ctor" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.KONTOSearchData" filterName="KONTOSearchData" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.MYCALCDto" filterName="MYCALCDto" isExposed="True">
+          <Filter entryType="Constructor" fullName="Cic.OpenLease.ServiceAccess.DdOl.MYCALCDto.#ctor" filterName=".ctor" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.MYCALCSearchData" filterName="MYCALCSearchData" isExposed="True">
+          <Filter entryType="Constructor" fullName="Cic.OpenLease.ServiceAccess.DdOl.MYCALCSearchData.#ctor" filterName=".ctor" isExposed="False" />
+          <Filter entryType="Method" fullName="Cic.OpenLease.ServiceAccess.DdOl.MYCALCSearchData.AdoptValues" filterName="AdoptValues" isExposed="False" />
+          <Filter entryType="Method" fullName="Cic.OpenLease.ServiceAccess.DdOl.MYCALCSearchData.ResetValues" filterName="ResetValues" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.PARTNERDto" filterName="PARTNERDto" isExposed="True">
+          <Filter entryType="Constructor" fullName="Cic.OpenLease.ServiceAccess.DdOl.PARTNERDto.#ctor" filterName=".ctor" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.PARTNERSearchData" filterName="PARTNERSearchData" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.PERSONDto" filterName="PERSONDto" isExposed="True">
+          <Filter entryType="Constructor" fullName="Cic.OpenLease.ServiceAccess.DdOl.PERSONDto.#ctor" filterName=".ctor" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.PERSONSearchData" filterName="PERSONSearchData" isExposed="True">
+          <Filter entryType="Constructor" fullName="Cic.OpenLease.ServiceAccess.DdOl.PERSONSearchData.#ctor" filterName=".ctor" isExposed="False" />
+          <Filter entryType="Method" fullName="Cic.OpenLease.ServiceAccess.DdOl.PERSONSearchData.AdoptValues" filterName="AdoptValues" isExposed="False" />
+          <Filter entryType="Method" fullName="Cic.OpenLease.ServiceAccess.DdOl.PERSONSearchData.ResetValues" filterName="ResetValues" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.PERSONSortData" filterName="PERSONSortData" isExposed="True" />
+        <Filter entryType="Enumeration" fullName="Cic.OpenLease.ServiceAccess.DdOl.PERSONSortData.SortDataConstants" filterName="PERSONSortData.SortDataConstants" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.RNDto" filterName="RNDto" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.RNSearchData" filterName="RNSearchData" isExposed="True">
+          <Filter entryType="Constructor" fullName="Cic.OpenLease.ServiceAccess.DdOl.RNSearchData.#ctor" filterName=".ctor" isExposed="False" />
+          <Filter entryType="Method" fullName="Cic.OpenLease.ServiceAccess.DdOl.RNSearchData.AdoptValues" filterName="AdoptValues" isExposed="False" />
+          <Filter entryType="Method" fullName="Cic.OpenLease.ServiceAccess.DdOl.RNSearchData.ResetValues" filterName="ResetValues" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.VTAssetsValueDto" filterName="VTAssetsValueDto" isExposed="True" />
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.VTDto" filterName="VTDto" isExposed="True">
+          <Filter entryType="Constructor" fullName="Cic.OpenLease.ServiceAccess.DdOl.VTDto.#ctor" filterName=".ctor" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.VTSearchData" filterName="VTSearchData" isExposed="True">
+          <Filter entryType="Constructor" fullName="Cic.OpenLease.ServiceAccess.DdOl.VTSearchData.#ctor" filterName=".ctor" isExposed="False" />
+          <Filter entryType="Method" fullName="Cic.OpenLease.ServiceAccess.DdOl.VTSearchData.AdoptValues" filterName="AdoptValues" isExposed="False" />
+          <Filter entryType="Method" fullName="Cic.OpenLease.ServiceAccess.DdOl.VTSearchData.ResetValues" filterName="ResetValues" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="Cic.OpenLease.ServiceAccess.DdOl.VTSortData" filterName="VTSortData" isExposed="True" />
+        <Filter entryType="Enumeration" fullName="Cic.OpenLease.ServiceAccess.DdOl.VTSortData.SortDataConstants" filterName="VTSortData.SortDataConstants" isExposed="True" />
+      </Filter>
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.ServiceAccess.DdOw" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.ServiceAccess.Merge.OlClient" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.ServiceAccess.Merge.Recorder" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.ServiceAccess.Merge.Vlm" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Cic.OpenLease.Test" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic.Collections" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic.Collections.Specialized" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic.Controls" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic.Data.Objects.Property" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic.Data.Sql" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic.Data.Sql.Enums" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic.DateHelper" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic.EnumHelper" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic.Guid.GuidHelper" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic.Logging" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic.OpenLease.BooleanHelper" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic.OpenLease.DateTimeHelper" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic.Reflection.Assembly" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic.Security" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic.StringHelper" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic.Text.RegularExpressions.RegexHelper" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic.Validation" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic.Web.HttpContext" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic.Web.HttpContext.SimulationHelper" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic.Web.HttpHelper" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic.Web.Services.Protocols" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic.Web.Services.Protocols.Enums" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic.Web.Services.Protocols.SoapExceptionHelper" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.Basic.Web.SessionState" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.OpenLease.Common" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.OpenLease.Model" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.OpenLease.Model.DdOl" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.OpenLease.Model.DdOw" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.OpenLease.Model.DdOw.WorkflowAreaHelper" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.OpenLease.Service" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.OpenLease.Service.Services" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.OpenLease.ServiceAccess" isExposed="False" />
+      <Filter entryType="Namespace" fullName="CicTest.OpenLease.ServiceAccess.DdOl" isExposed="False" />
+      <Filter entryType="Namespace" fullName="log4net" isExposed="False" />
+      <Filter entryType="Namespace" fullName="log4net.Appender" isExposed="False" />
+      <Filter entryType="Namespace" fullName="log4net.Config" isExposed="False" />
+      <Filter entryType="Namespace" fullName="log4net.Core" isExposed="False" />
+      <Filter entryType="Namespace" fullName="log4net.DateFormatter" isExposed="False" />
+      <Filter entryType="Namespace" fullName="log4net.Filter" isExposed="False" />
+      <Filter entryType="Namespace" fullName="log4net.Layout" isExposed="False" />
+      <Filter entryType="Namespace" fullName="log4net.Layout.Pattern" isExposed="False" />
+      <Filter entryType="Namespace" fullName="log4net.ObjectRenderer" isExposed="False" />
+      <Filter entryType="Namespace" fullName="log4net.Plugin" isExposed="False" />
+      <Filter entryType="Namespace" fullName="log4net.Repository" isExposed="False" />
+      <Filter entryType="Namespace" fullName="log4net.Repository.Hierarchy" isExposed="False" />
+      <Filter entryType="Namespace" fullName="log4net.Util" isExposed="False" />
+      <Filter entryType="Namespace" fullName="log4net.Util.TypeConverters" isExposed="False" />
+      <Filter entryType="Namespace" fullName="NUnit.Framework" isExposed="False" />
+      <Filter entryType="Namespace" fullName="NUnit.Framework.Constraints" isExposed="False" />
+      <Filter entryType="Namespace" fullName="NUnit.Framework.SyntaxHelpers" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Oracle.DataAccess.Client" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Oracle.DataAccess.Server.Internal" isExposed="False" />
+      <Filter entryType="Namespace" fullName="Oracle.DataAccess.Types" isExposed="False" />
+    </ApiFilter>
+    <ProjectSummary>
+    </ProjectSummary>
+    <MissingTags>None</MissingTags>
+    <VisibleItems>None</VisibleItems>
+    <HtmlHelp1xCompilerPath>
+    </HtmlHelp1xCompilerPath>
+    <HtmlHelp2xCompilerPath>
+    </HtmlHelp2xCompilerPath>
+    <SandcastlePath>lib\Sandcastle\</SandcastlePath>
+    <WorkingPath>
+    </WorkingPath>
+    <BuildLogFile>
+    </BuildLogFile>
+    <HelpFileFormat>Website</HelpFileFormat>
+    <FrameworkVersion>4.0.30128</FrameworkVersion>
+    <Preliminary>False</Preliminary>
+    <HelpTitle>OFiSWebServices</HelpTitle>
+    <Language>de-DE</Language>
+    <CopyrightText>Copyright &amp;#169%3b C.I.C. Software GmbH 2008 - 2009</CopyrightText>
+    <FeedbackEMailAddress>helpdesk%40cic-software.de</FeedbackEMailAddress>
+    <HeaderText>OFiS-Web WCF-Dienste</HeaderText>
+    <FooterText>OFiS-Web WCF-Dienste Dokumentation</FooterText>
+    <PresentationStyle>Prototype</PresentationStyle>
+    <SyntaxFilters>CSharp</SyntaxFilters>
+    <DocumentationSources>
+      <DocumentationSource sourceFile="Cic.OpenLease.Service\Bin\Cic.Basic.dll" />
+      <DocumentationSource sourceFile="Cic.OpenLease.Common\bin\Debug\Cic.OpenLease.Common.dll" />
+      <DocumentationSource sourceFile="Cic.OpenLease.Model\bin\Debug\Cic.OpenLease.Model.dll" />
+      <DocumentationSource sourceFile="Cic.OpenLease.Model\bin\Debug\Cic.OpenLease.Model.xml" />
+      <DocumentationSource sourceFile="Cic.OpenLease.Service\Bin\Cic.OpenLease.Service.dll" />
+      <DocumentationSource sourceFile="Cic.OpenLease.Service\bin\Cic.OpenLease.Service.XML" />
+      <DocumentationSource sourceFile="Cic.OpenLease.ServiceAccess\bin\Debug\Cic.OpenLease.ServiceAccess.dll" />
+      <DocumentationSource sourceFile="Cic.OpenLease.ServiceAccess\bin\Debug\Cic.OpenLease.ServiceAccess.xml" />
+      <DocumentationSource sourceFile="lib\log4net\log4net.dll" />
+      <DocumentationSource sourceFile="lib\NUnit\nunit.framework.dll" />
+      <DocumentationSource sourceFile="lib\Oracle\Oracle.DataAccess.dll" />
+    </DocumentationSources>
+    <NamespaceSummaries>
+      <NamespaceSummaryItem name="(global)" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Banking.Sic" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Collections" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Configuration" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Configuration.Install" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Data" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Data.Common" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Data.Objects" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Data.Objects.Property" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Data.OpenLease4147" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Data.OracleClient10G" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Data.Sql" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Drawing" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Expressions" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Globalization" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Job" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Logging" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Logging.Log4Net" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Math" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.OpenLease" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Reflection.Assembly" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Security" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.ServiceProcess" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Validation" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Web.HttpContext" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Web.Services.Protocols" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Web.SessionState" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.Basic.Xml.Serialization" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.OpenLease.Linq.Dynamic" isDocumented="False" />
+      <NamespaceSummaryItem name="CicTest.Basic" isDocumented="False" />
+      <NamespaceSummaryItem name="CicTest.Basic.Collections" isDocumented="False" />
+      <NamespaceSummaryItem name="CicTest.Basic.Collections.Specialized" isDocumented="False" />
+      <NamespaceSummaryItem name="CicTest.Basic.Data.Objects.Property" isDocumented="False" />
+      <NamespaceSummaryItem name="CicTest.Basic.Data.Sql" isDocumented="False" />
+      <NamespaceSummaryItem name="CicTest.Basic.Data.Sql.Enums" isDocumented="False" />
+      <NamespaceSummaryItem name="CicTest.Basic.EnumHelper" isDocumented="False" />
+      <NamespaceSummaryItem name="CicTest.Basic.Guid.GuidHelper" isDocumented="False" />
+      <NamespaceSummaryItem name="CicTest.Basic.Logging" isDocumented="False" />
+      <NamespaceSummaryItem name="CicTest.Basic.Reflection.Assembly" isDocumented="False" />
+      <NamespaceSummaryItem name="CicTest.Basic.Security" isDocumented="False" />
+      <NamespaceSummaryItem name="CicTest.Basic.StringHelper" isDocumented="False" />
+      <NamespaceSummaryItem name="CicTest.Basic.Text.RegularExpressions.RegexHelper" isDocumented="False" />
+      <NamespaceSummaryItem name="CicTest.Basic.Validation" isDocumented="False" />
+      <NamespaceSummaryItem name="CicTest.Basic.Web.HttpContext" isDocumented="False" />
+      <NamespaceSummaryItem name="CicTest.Basic.Web.HttpContext.SimulationHelper" isDocumented="False" />
+      <NamespaceSummaryItem name="CicTest.Basic.Web.Services.Protocols" isDocumented="False" />
+      <NamespaceSummaryItem name="CicTest.Basic.Web.Services.Protocols.Enums" isDocumented="False" />
+      <NamespaceSummaryItem name="CicTest.Basic.Web.Services.Protocols.SoapExceptionHelper" isDocumented="False" />
+      <NamespaceSummaryItem name="CicTest.Basic.Web.SessionState" isDocumented="False" />
+      <NamespaceSummaryItem name="log4net" isDocumented="False" />
+      <NamespaceSummaryItem name="log4net.Appender" isDocumented="False" />
+      <NamespaceSummaryItem name="log4net.Config" isDocumented="False" />
+      <NamespaceSummaryItem name="log4net.Core" isDocumented="False" />
+      <NamespaceSummaryItem name="log4net.DateFormatter" isDocumented="False" />
+      <NamespaceSummaryItem name="log4net.Filter" isDocumented="False" />
+      <NamespaceSummaryItem name="log4net.Layout" isDocumented="False" />
+      <NamespaceSummaryItem name="log4net.Layout.Pattern" isDocumented="False" />
+      <NamespaceSummaryItem name="log4net.ObjectRenderer" isDocumented="False" />
+      <NamespaceSummaryItem name="log4net.Plugin" isDocumented="False" />
+      <NamespaceSummaryItem name="log4net.Repository" isDocumented="False" />
+      <NamespaceSummaryItem name="log4net.Repository.Hierarchy" isDocumented="False" />
+      <NamespaceSummaryItem name="log4net.Util" isDocumented="False" />
+      <NamespaceSummaryItem name="log4net.Util.TypeConverters" isDocumented="False" />
+      <NamespaceSummaryItem name="NUnit.Framework" isDocumented="False" />
+      <NamespaceSummaryItem name="NUnit.Framework.Constraints" isDocumented="False" />
+      <NamespaceSummaryItem name="NUnit.Framework.SyntaxHelpers" isDocumented="False" />
+      <NamespaceSummaryItem name="Oracle.DataAccess.Client" isDocumented="False" />
+      <NamespaceSummaryItem name="Oracle.DataAccess.Server.Internal" isDocumented="False" />
+      <NamespaceSummaryItem name="Oracle.DataAccess.Types" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.OpenLease.Service" isDocumented="True" />
+      <NamespaceSummaryItem name="Cic.OpenLease.Service.DdDnas" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.OpenLease.Service.DdOl.Test" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.OpenLease.Service.DdOw" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.OpenLease.Service.Merge.Recorder" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.OpenLease.Service.Merge.Vlm" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.OpenLease.Service.Services.Test" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.OpenLease.Test" isDocumented="False" />
+      <NamespaceSummaryItem name="CicTest.OpenLease.Service" isDocumented="False" />
+      <NamespaceSummaryItem name="Cic.OpenLease.Service.DdOiqueue" isDocumented="False" />
+    </NamespaceSummaries>
+    <NamingMethod>MemberName</NamingMethod>
+  </PropertyGroup>
+  <!-- There are no properties for these two groups but they need to appear in
+       order for Visual Studio to perform the build. -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  </PropertyGroup>
+  <!-- Import the SHFB build targets -->
+  <Import Project="lib\Sandcastle\SandcastleHelpFileBuilder.targets" />
+</Project>

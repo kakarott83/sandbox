@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:com="http://www.bmw.com/integrationlayer/message/01.01" xmlns:tns="http://www.bmw.com/FinancialServices/RetailFinance/RetailCollections/ColCaseMgmt_v01.00" xmlns:types="http://www.bmw.com/FinancialServices/RetailFinance/RetailCollections/ColCaseMgmt_v01.00/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ColCaseMgmt" targetNamespace="http://www.bmw.com/FinancialServices/RetailFinance/RetailCollections/ColCaseMgmt_v01.00" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+		Author: Harshit Raikar
+		Date: 2017-07-04
+		Version:01.00.000
+	</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" targetNamespace="http://www.bmw.com/FinancialServices/RetailFinance/RetailCollections/ColCaseMgmt_v01.00">
+      <xsd:import schemaLocation="il_common.xsd" namespace="http://www.bmw.com/integrationlayer/message/01.01" />
+      <xsd:import schemaLocation="ColCaseMgmt_v01.00.xsd" namespace="http://www.bmw.com/FinancialServices/RetailFinance/RetailCollections/ColCaseMgmt_v01.00/types" />
+      <xsd:element name="createColCase">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="retailContract" type="types:RetailContractType" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createColCaseResponse">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="createColCaseFault">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="com:errorInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateColCase">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="retailContract" type="types:RetailContractType" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateColCaseResponse">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="updateColCaseFault">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="com:errorInformation" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="messageHeader">
+    <wsdl:part name="messageHeader" element="com:messageHeader" />
+  </wsdl:message>
+  <wsdl:message name="createColCaseRequest">
+    <wsdl:part name="parameters" element="tns:createColCase" />
+  </wsdl:message>
+  <wsdl:message name="createColCaseResponse">
+    <wsdl:part name="parameters" element="tns:createColCaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="createColCaseFault">
+    <wsdl:part name="parameters" element="tns:createColCaseFault" />
+  </wsdl:message>
+  <wsdl:message name="updateColCaseRequest">
+    <wsdl:part name="parameters" element="tns:updateColCase" />
+  </wsdl:message>
+  <wsdl:message name="updateColCaseResponse">
+    <wsdl:part name="parameters" element="tns:updateColCaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateColCaseFault">
+    <wsdl:part name="parameters" element="tns:updateColCaseFault" />
+  </wsdl:message>
+  <wsdl:portType name="ColCaseMgmt">
+    <wsdl:operation name="createColCase">
+      <wsdl:input message="tns:createColCaseRequest" />
+      <wsdl:output message="tns:createColCaseResponse" />
+      <wsdl:fault name="fault" message="tns:createColCaseFault" />
+    </wsdl:operation>
+    <wsdl:operation name="updateColCase">
+      <wsdl:input message="tns:updateColCaseRequest" />
+      <wsdl:output message="tns:updateColCaseResponse" />
+      <wsdl:fault name="fault" message="tns:updateColCaseFault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ColCaseMgmtSOAP" type="tns:ColCaseMgmt">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="createColCase">
+      <soap:operation soapAction="http://www.bmw.com/FinancialServices/RetailFinance/RetailCollections/ColCaseMgmt_v01.00/createColCase" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:messageHeader" part="messageHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:messageHeader" part="messageHeader" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateColCase">
+      <soap:operation soapAction="http://www.bmw.com/FinancialServices/RetailFinance/RetailCollections/ColCaseMgmt_v01.00/updateColCase" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:messageHeader" part="messageHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:messageHeader" part="messageHeader" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ColCaseMgmtService">
+    <wsdl:port name="ColCaseMgmtSOAP" binding="tns:ColCaseMgmtSOAP">
+      <soap:address location="http://host:port/FinancialServices/RetailFinance/RetailCollections/ColCaseMgmt_v01.00" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

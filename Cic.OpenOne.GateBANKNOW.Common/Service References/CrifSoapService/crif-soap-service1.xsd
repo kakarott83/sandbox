@@ -1,0 +1,1888 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.crif-online.ch/webservices/crifsoapservice/v1.00" xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.crif-online.ch/webservices/crifsoapservice/v1.00" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="identifyAddressRequest" type="tns:TypeIdentifyAddressRequest">
+    <xs:annotation>
+      <xs:documentation>IdentifyAddress request</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="identifyAddressResponse" type="tns:TypeIdentifyAddressResponse">
+    <xs:annotation>
+      <xs:documentation>IdentifyAddress response</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="TypeIdentifyAddressRequest">
+    <xs:annotation>
+      <xs:documentation>IdentifyAddressRequest request root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBaseRequest">
+        <xs:sequence>
+          <xs:element name="searchedAddress" type="tns:AddressDescription" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalInput" type="tns:KeyValuePair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TypeIdentifyAddressResponse">
+    <xs:annotation>
+      <xs:documentation>IdentifyAddressResponse root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBaseResponse">
+        <xs:sequence>
+          <xs:element name="addressMatchResult" type="tns:AddressMatchResult" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalOutput" type="tns:KeyValuePair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="addressInvestigationRequest" type="tns:TypeAddressInvestigationRequest">
+    <xs:annotation>
+      <xs:documentation>AddressInvestigation request</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="addressInvestigationResponse" type="tns:TypeAddressInvestigationResponse">
+    <xs:annotation>
+      <xs:documentation>AddressInvestigation response</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="TypeAddressInvestigationRequest">
+    <xs:annotation>
+      <xs:documentation>AddressInvestigationRequest request root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="identifier" type="tns:Identifier" />
+          <xs:element minOccurs="0" name="searchedAddress" type="tns:AddressDescription" />
+          <xs:element minOccurs="0" name="targetReportFormat" type="tns:TargetReportFormat" />
+          <xs:element minOccurs="0" name="requestHighestDeliverableAddress" type="xs:boolean" />
+          <xs:element minOccurs="0" name="requestHouseholdAddresses" type="xs:boolean" />
+          <xs:element minOccurs="0" name="requestKnownAddresses" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalInput" type="tns:KeyValuePair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TypeAddressInvestigationResponse">
+    <xs:annotation>
+      <xs:documentation>AddressInvestigationResponse root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBaseResponse">
+        <xs:sequence>
+          <xs:element name="addressMatchResult" type="tns:AddressMatchResult" />
+          <xs:element name="searchedAddressDeliverability" type="tns:Deliverability" />
+          <xs:element minOccurs="0" name="highestDeliverableAddress" type="tns:AddressWithDeliverability" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="knownAddresses" type="tns:AddressWithDeliverability" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="householdAddresses" type="tns:AddressWithDeliverability" />
+          <xs:element minOccurs="0" name="report" type="xs:string" />
+          <xs:element minOccurs="0" name="deceasedDate" type="xs:string" />
+          <xs:element minOccurs="0" name="personStatus" type="tns:PersonStatus" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalOutput" type="tns:KeyValuePair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="getReportRequest" type="tns:TypeGetReportRequest">
+    <xs:annotation>
+      <xs:documentation>GetReport request</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="getReportResponse" type="tns:TypeGetReportResponse">
+    <xs:annotation>
+      <xs:documentation>GetReport response</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="TypeGetReportRequest">
+    <xs:annotation>
+      <xs:documentation>GetReport request root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="searchedAddress" type="tns:AddressDescription" />
+          <xs:element minOccurs="0" name="identifier" type="tns:Identifier" />
+          <xs:element name="reportType" type="xs:string" />
+          <xs:element minOccurs="0" name="targetReportFormat" type="tns:TargetReportFormat" />
+          <xs:element minOccurs="0" name="idVerificationRequestData" type="tns:IdVerificationRequestData" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalInput" type="tns:KeyValuePair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TypeGetReportResponse">
+    <xs:annotation>
+      <xs:documentation>GetReport root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="decisionMatrix" type="tns:DecisionMatrix" />
+          <xs:element minOccurs="0" name="addressMatchResult" type="tns:AddressMatchResult" />
+          <xs:element minOccurs="0" name="reportDetails" type="tns:ReportDetails" />
+          <xs:element minOccurs="0" name="report" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalOutput" type="tns:KeyValuePair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="getArchivedReportRequest" type="tns:TypeGetArchivedReportRequest">
+    <xs:annotation>
+      <xs:documentation>GetArchivedReport request</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="getArchivedReportResponse" type="tns:TypeGetArchivedReportResponse">
+    <xs:annotation>
+      <xs:documentation>GetArchivedReport response</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="TypeGetArchivedReportRequest">
+    <xs:annotation>
+      <xs:documentation>GetArchivedReport request root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBaseRequest">
+        <xs:sequence>
+          <xs:element name="archivingId" type="xs:long" />
+          <xs:element name="targetFormat" type="tns:TargetReportFormat" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalInput" type="tns:KeyValuePair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TypeGetArchivedReportResponse">
+    <xs:annotation>
+      <xs:documentation>GetArchivedReport root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="report" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalOutput" type="tns:KeyValuePair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="getDebtDetailsRequest" type="tns:TypeGetDebtDetailsRequest">
+    <xs:annotation>
+      <xs:documentation>GetDebtDetails request</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="getDebtDetailsResponse" type="tns:TypeGetDebtDetailsResponse">
+    <xs:annotation>
+      <xs:documentation>GetDebtDetails response</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="TypeGetDebtDetailsRequest">
+    <xs:annotation>
+      <xs:documentation>GetDebtDetailsRequest request root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBaseRequest">
+        <xs:sequence>
+          <xs:element name="identifier" type="tns:Identifier" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalInput" type="tns:KeyValuePair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TypeGetDebtDetailsResponse">
+    <xs:annotation>
+      <xs:documentation>GetDebtDetailsResponse root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="debts" type="tns:DebtEntry" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalOutput" type="tns:KeyValuePair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="orderOfflineReportRequest" type="tns:TypeOrderOfflineReportRequest">
+    <xs:annotation>
+      <xs:documentation>OrderOfflineReport request</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="orderOfflineReportResponse" type="tns:TypeOrderOfflineReportResponse">
+    <xs:annotation>
+      <xs:documentation>OrderOfflineReport response</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="TypeOrderOfflineReportRequest">
+    <xs:annotation>
+      <xs:documentation>TypeOrderOfflineReportRequest request root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="orderAddress" type="tns:AddressDescription" />
+          <xs:element minOccurs="0" name="identifier" type="tns:Identifier" />
+          <xs:element name="offlineReportType" type="xs:string" />
+          <xs:element minOccurs="0" name="binaryPOI" type="xs:string" />
+          <xs:element minOccurs="0" name="binaryPOIType" type="tns:PoiType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalInput" type="tns:KeyValuePair" />
+          <xs:element minOccurs="0" name="contactMail" type="xs:string" />
+          <xs:element minOccurs="0" name="contactPhone" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TypeOrderOfflineReportResponse">
+    <xs:annotation>
+      <xs:documentation>tns:TypeOrderOfflineReportResponse root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBaseResponse">
+        <xs:sequence>
+          <xs:element name="orderReferenceNumber" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalOutput" type="tns:KeyValuePair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="getListOfReadyOfflineReportsRequest" type="tns:TypeGetListOfReadyOfflineReportsRequest">
+    <xs:annotation>
+      <xs:documentation>GetListOfReadyOfflineReports request</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="getListOfReadyOfflineReportsResponse" type="tns:TypeGetListOfReadyOfflineReportsResponse">
+    <xs:annotation>
+      <xs:documentation>GetListOfReadyOfflineReports response</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="TypeGetListOfReadyOfflineReportsRequest">
+    <xs:annotation>
+      <xs:documentation>TypeGetListOfReadyOfflineReportsRequest request root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalInput" type="tns:KeyValuePair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TypeGetListOfReadyOfflineReportsResponse">
+    <xs:annotation>
+      <xs:documentation>TypeGetListOfReadyOfflineReportsResponse root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="offlineReportIdentifiers" type="tns:OfflineReportIdentifier" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalOutput" type="tns:KeyValuePair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="pollOfflineReportResponseRequest" type="tns:TypePollOfflineReportResponseRequest">
+    <xs:annotation>
+      <xs:documentation>PollOfflineReportResponse request</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="pollOfflineReportResponseResponse" type="tns:TypePollOfflineReportResponseResponse">
+    <xs:annotation>
+      <xs:documentation>PollOfflineReportResponse response</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="TypePollOfflineReportResponseRequest">
+    <xs:annotation>
+      <xs:documentation>TypePollOfflineReportResponseRequest request root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBaseRequest">
+        <xs:sequence>
+          <xs:element name="orderReferenceNumber" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalInput" type="tns:KeyValuePair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TypePollOfflineReportResponseResponse">
+    <xs:annotation>
+      <xs:documentation>TypePollOfflineReportResponseResponse root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="offlineReportStatus" type="tns:OfflineReportStatus" />
+          <xs:element minOccurs="0" name="report" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="debts" type="tns:DebtEntry" />
+          <xs:element minOccurs="0" name="offlineReportIdentifier" type="tns:OfflineReportIdentifier" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalOutput" type="tns:KeyValuePair" />
+          <xs:element minOccurs="0" name="rejectionReason" type="tns:OfflineReportRejectionReason" />
+          <xs:element minOccurs="0" name="numberOfOriginalDocuments" type="xs:integer" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="idVerificationRequest" type="tns:TypeIdVerificationRequest">
+    <xs:annotation>
+      <xs:documentation>IdVerification request</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="idVerificationResponse" type="tns:TypeIdVerificationResponse">
+    <xs:annotation>
+      <xs:documentation>IdVerification response</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="TypeIdVerificationRequest">
+    <xs:annotation>
+      <xs:documentation>TypeIdVerificationRequest request root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="idVerificationRequestData" type="tns:IdVerificationRequestData" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalInput" type="tns:KeyValuePair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TypeIdVerificationResponse">
+    <xs:annotation>
+      <xs:documentation>TypeIdVerificationResponse root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="idVerificationResponseData" type="tns:IdVerificationResponseData" />
+          <xs:element minOccurs="0" name="decisionMatrix" type="tns:DecisionMatrix" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalOutput" type="tns:KeyValuePair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="submitDataIssueRequest" type="tns:TypeSubmitDataIssueRequest">
+    <xs:annotation>
+      <xs:documentation>SubmitDataIssue request</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="submitDataIssueResponse" type="tns:TypeSubmitDataIssueResponse">
+    <xs:annotation>
+      <xs:documentation>SubmitDataIssue response</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="TypeSubmitDataIssueRequest">
+    <xs:annotation>
+      <xs:documentation>TypeSubmitDataIssueRequest request root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="title" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="description" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="identifier" type="tns:Identifier" />
+          <xs:element minOccurs="0" maxOccurs="1" name="archiveId" type="xs:integer" />
+          <xs:element minOccurs="0" maxOccurs="1" name="contactFullName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="contactMail" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="contactPhone" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalInput" type="tns:KeyValuePair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TypeSubmitDataIssueResponse">
+    <xs:annotation>
+      <xs:documentation>TypeSubmitDataIssueResponse root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="issueReference" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalOutput" type="tns:KeyValuePair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="cancelDataIssueRequest" type="tns:TypeCancelDataIssueRequest">
+    <xs:annotation>
+      <xs:documentation>CancelDataIssue request</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="cancelDataIssueResponse" type="tns:TypeCancelDataIssueResponse">
+    <xs:annotation>
+      <xs:documentation>CancelDataIssue response</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="TypeCancelDataIssueRequest">
+    <xs:annotation>
+      <xs:documentation>TypeCancelDataIssueRequest request root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="issueReference" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalInput" type="tns:KeyValuePair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TypeCancelDataIssueResponse">
+    <xs:annotation>
+      <xs:documentation>TypeCancelDataIssueResponse root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalOutput" type="tns:KeyValuePair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="getDataIssueStatusRequest" type="tns:TypeGetDataIssueStatusRequest">
+    <xs:annotation>
+      <xs:documentation>GetDataIssueStatus request</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="getDataIssueStatusResponse" type="tns:TypeGetDataIssueStatusResponse">
+    <xs:annotation>
+      <xs:documentation>GetDataIssueStatus response</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="TypeGetDataIssueStatusRequest">
+    <xs:annotation>
+      <xs:documentation>TypeGetDataIssueStatusRequest request root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="issueReference" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalInput" type="tns:KeyValuePair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TypeGetDataIssueStatusResponse">
+    <xs:annotation>
+      <xs:documentation>TypeGetDataIssueStatusResponse root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="identifier" type="tns:Identifier" />
+          <xs:element minOccurs="1" maxOccurs="1" name="dataIssueStatus" type="tns:DataIssueStatus" />
+          <xs:element minOccurs="0" maxOccurs="1" name="comment" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalOutput" type="tns:KeyValuePair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="error" type="tns:Error" />
+  <xs:complexType name="Error">
+    <xs:annotation>
+      <xs:documentation>Error structure definition</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="code" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>
+						100 Login Error 200 Authorization Error 400 Invalid Field 500 Server Error
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="messageText" type="xs:string" />
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="TypeBaseRequest">
+    <xs:annotation>
+      <xs:documentation>GetReport request root element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="control" type="tns:Control" />
+      <xs:element name="identityDescriptor" type="tns:IdentityDescriptor" />
+      <xs:element minOccurs="0" name="referenceNumber" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TypeBaseResponse">
+    <xs:annotation>
+      <xs:documentation>GetReport request root element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="archivingId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Control">
+    <xs:annotation>
+      <xs:documentation>Control element</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="majorVersion" type="xs:int" />
+      <xs:element name="minorVersion" type="xs:int" />
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="AddressWithDeliverability">
+    <xs:annotation>
+      <xs:documentation>AddressWithDeliverability element</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="address" type="tns:AddressDescription" />
+      <xs:element name="deliverability" type="tns:Deliverability" />
+      <xs:element name="addressInputDate" type="xs:string" />
+      <xs:element name="addressId" type="tns:Identifier" />
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="IdentityDescriptor">
+    <xs:annotation>
+      <xs:documentation>IdentityDescriptor element</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="userName" type="xs:string" />
+      <xs:element name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="endUserId" type="xs:string" />
+      <xs:element minOccurs="0" name="costGroupId" type="xs:string" />
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="KeyValuePair">
+    <xs:annotation>
+      <xs:documentation>IdentityDescriptor element</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="key" type="xs:string" />
+      <xs:element name="value" type="xs:string" />
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="AddressDescription" abstract="true">
+    <xs:annotation>
+      <xs:documentation>AddressDescription element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="location" type="tns:Location" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="contactItems" type="tns:ContactItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PersonAddressDescription">
+    <xs:annotation>
+      <xs:documentation>PersonAddressDescription element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AddressDescription">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="firstName" type="xs:string" />
+          <xs:element minOccurs="0" name="lastName" type="xs:string" />
+          <xs:element minOccurs="0" name="maidenName" type="xs:string" />
+          <xs:element minOccurs="0" name="middleName" type="xs:string" />
+          <xs:element minOccurs="0" name="coName" type="xs:string" />
+          <xs:element minOccurs="0" name="sex" type="tns:Sex" />
+          <xs:element minOccurs="0" name="birthDate" type="xs:string" />
+          <xs:element minOccurs="0" name="nationality" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CompanyAddressDescription">
+    <xs:annotation>
+      <xs:documentation>CompanyAddressDescription element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AddressDescription">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="companyName" type="xs:string" />
+          <xs:element minOccurs="0" name="coName" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Identifier">
+    <xs:annotation>
+      <xs:documentation>Identifier element</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="identifierText" type="xs:string" />
+      <xs:element name="identifierType" type="tns:IdentifierType" />
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="Location">
+    <xs:annotation>
+      <xs:documentation>Location element</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element minOccurs="0" name="street" type="xs:string" />
+      <xs:element minOccurs="0" name="houseNumber" type="xs:string" />
+      <xs:element minOccurs="0" name="apartment" type="xs:string" />
+      <xs:element minOccurs="0" name="zip" type="xs:string" />
+      <xs:element minOccurs="0" name="city" type="xs:string" />
+      <xs:element minOccurs="0" name="regionCode" type="xs:string" />
+      <xs:element minOccurs="0" name="subRegionCode" type="xs:string" />
+      <xs:element minOccurs="0" name="country" type="xs:string" />
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="ContactItem">
+    <xs:annotation>
+      <xs:documentation>ContactItem element</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element minOccurs="0" name="contactText" type="xs:string" />
+      <xs:element minOccurs="0" name="contactType" type="tns:ContactType" />
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="AddressMatchResult">
+    <xs:annotation>
+      <xs:documentation>AddressMatchResult element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="addressMatchResultType" type="tns:AddressMatchResultType" />
+      <xs:element minOccurs="0" name="locationIdentification" type="tns:LocationIdentification" />
+      <xs:element minOccurs="0" name="nameHint" type="tns:NameHint" />
+      <xs:element minOccurs="0" name="foundAddress" type="tns:MatchedAddress" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="candidates" type="tns:Candidate" />
+      <xs:element minOccurs="0" maxOccurs="1" name="character" type="tns:CharacterType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Candidate">
+    <xs:annotation>
+      <xs:documentation>Candidate element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="address" type="tns:AddressDescription" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="identifiers" type="tns:Identifier" />
+      <xs:element name="candidateRank" type="xs:int" />
+      <xs:element name="groupId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MatchedAddress">
+    <xs:annotation>
+      <xs:documentation>MatchedAddress element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="address" type="tns:AddressDescription" />
+      <xs:element name="identificationType" type="tns:IdentificationType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="identifiers" type="tns:Identifier" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LocationIdentification">
+    <xs:annotation>
+      <xs:documentation>LocationIdentification element</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="locationIdentificationType" type="tns:LocationIdentificationType" />
+      <xs:element minOccurs="0" name="houseType" type="xs:string" />
+      <xs:element minOccurs="0" name="requestLocationNormalized" type="tns:Location" />
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="DecisionMatrix">
+    <xs:annotation>
+      <xs:documentation>DecisionMatrix element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="decision" type="tns:Decision" />
+      <xs:element name="decisionText" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="subdecisions" type="tns:Subdecision" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ratings" type="tns:Rating" />
+      <xs:element minOccurs="0" name="creditLimit" type="xs:integer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Subdecision">
+    <xs:annotation>
+      <xs:documentation>Subdecision element</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="type" type="xs:string" />
+      <xs:element name="decision" type="tns:Decision" />
+      <xs:element name="value" type="xs:string" />
+      <xs:element minOccurs="0" name="infoText" type="xs:string" />
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="Rating">
+    <xs:annotation>
+      <xs:documentation>Rating element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ratingType" type="xs:string" />
+      <xs:element name="rating" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DebtEntry">
+    <xs:annotation>
+      <xs:documentation>DebtEntry element</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="riskClass" type="tns:RiskClass" />
+      <xs:element name="dateOpen" type="xs:string" />
+      <xs:element minOccurs="0" name="dateClose" type="xs:string" />
+      <xs:element minOccurs="0" name="amount" type="tns:Amount" />
+      <xs:element minOccurs="0" name="amountOpen" type="tns:Amount" />
+      <xs:element name="debtType" type="tns:DebtType" />
+      <xs:element name="paymentStatus" type="tns:PaymentStatus" />
+      <xs:element name="paymentStatusText" type="xs:string" />
+      <xs:element minOccurs="0" name="origin" type="xs:string" />
+      <xs:element minOccurs="0" name="text" type="xs:string" />
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="Amount">
+    <xs:annotation>
+      <xs:documentation>Amount element</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="amount" type="xs:double" />
+      <xs:element name="currency" type="xs:string" />
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="OfflineReportIdentifier">
+    <xs:annotation>
+      <xs:documentation>OfflineReportIdentifier element</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="orderReferenceNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="referenceNumber" type="xs:string" />
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="ReportDetails">
+    <xs:annotation>
+      <xs:documentation>Report detailed structure</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="debts" type="tns:DebtEntry" />
+      <xs:element minOccurs="0" name="companyBaseData" type="tns:CompanyBaseData" />
+      <xs:element minOccurs="0" name="paymentDelay" type="tns:PaymentDelay" />
+      <xs:element minOccurs="0" name="organizationPositionList" type="tns:OrganizationPositionList" />
+      <xs:element minOccurs="0" name="whoOwnsWhom" type="tns:WhoOwnsWhom" />
+      <xs:element minOccurs="0" name="furtherRelations" type="tns:FurtherRelations" />
+      <xs:element minOccurs="0" name="publicationList" type="tns:PublicationList" />
+      <xs:element minOccurs="0" name="branchOfficeList" type="tns:BranchOfficeList" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="financialStatements" type="tns:FinancialStatement" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="financialStatementsGroup" type="tns:FinancialStatement" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="addressHistory" type="tns:AddressWithDeliverability" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="businessIndustryLicenses" type="tns:BusinessIndustryLicense" />
+      <xs:element minOccurs="0" name="scoreAnalysis" type="tns:ScoreAnalysis" />
+      <xs:element minOccurs="0" name="complianceCheckResult" type="tns:ComplianceCheckResult" />
+      <xs:element minOccurs="0" name="idVerificationResponseData" type="tns:IdVerificationResponseData" />
+      <xs:element minOccurs="0" name="schufaResponseData" type="tns:SchufaResponseData" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="controlPersons" type="tns:AddressDescription" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="controlPersonsExt" type="tns:ControlPerson" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ControlPerson">
+    <xs:annotation>
+      <xs:documentation>ControlPerson element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" name="controlPersonAddress" type="tns:AddressDescription" />
+      <xs:element minOccurs="1" name="controlPersonType" type="tns:ControlPersonType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ComplianceCheckResult">
+    <xs:annotation>
+      <xs:documentation>ComplianceCheckResult element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="checkedEntity" type="tns:ComplianceCheckedEntity" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="listDescriptions" type="tns:ComplianceListDescription" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ComplianceCheckedEntity">
+    <xs:annotation>
+      <xs:documentation>ComplianceCheckedEntity element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" name="checkedAddress" type="tns:AddressDescription" />
+      <xs:element minOccurs="1" name="relationType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="foundEntities" type="tns:ComplianceFoundEntity" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="checkedEntities" type="tns:ComplianceCheckedEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ComplianceFoundEntity">
+    <xs:annotation>
+      <xs:documentation>ComplianceFoundEntity element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" name="listDescription" type="tns:ComplianceListDescription" />
+      <xs:element minOccurs="1" name="matchInformation" type="tns:ComplianceMatchInformation" />
+      <xs:element minOccurs="1" name="crifRefId" type="xs:int" />
+      <xs:element minOccurs="1" name="primaryName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="furtherNames" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="birthdates" type="xs:string" />
+      <xs:element minOccurs="0" name="age" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="titles" type="xs:string" />
+      <xs:element minOccurs="0" name="country" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="furtherCountries" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="birthplaces" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="passportsOrIds" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="knownAddresses" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="keywords" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="additionalInformations" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ComplianceListDescription">
+    <xs:annotation>
+      <xs:documentation>ComplianceListDescription element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" name="category" type="xs:string" />
+      <xs:element minOccurs="1" name="name" type="xs:string" />
+      <xs:element minOccurs="1" name="publishingOrganization" type="xs:string" />
+      <xs:element minOccurs="0" name="dateLastUpdated" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ComplianceMatchInformation">
+    <xs:annotation>
+      <xs:documentation>ComplianceMatchInformation element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" name="confidenceName" type="xs:int" />
+      <xs:element minOccurs="1" name="confidenceBirthdate" type="xs:int" />
+      <xs:element minOccurs="0" name="matchedName" type="xs:string" />
+      <xs:element minOccurs="0" name="matchedBirthdate" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ScoreAnalysis">
+    <xs:annotation>
+      <xs:documentation>ScoreAnalysis element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="scoreScaleRange" type="tns:Range" />
+      <xs:element name="score" type="xs:int" />
+      <xs:element minOccurs="0" name="averageScoreIndustry" type="xs:integer" />
+      <xs:element minOccurs="0" name="averageScoreAll" type="xs:integer" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="scoreDecisionRanges" type="tns:ScoreDecisionRange" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ScoreDecisionRange">
+    <xs:annotation>
+      <xs:documentation>ScoreDecisionRange element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="scoreRange" type="tns:Range" />
+      <xs:element name="decision" type="tns:Decision" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BusinessIndustryLicense">
+    <xs:annotation>
+      <xs:documentation>BusinessIndustryLicense element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="industryName" type="xs:string" />
+      <xs:element minOccurs="0" name="industryCode" type="tns:IndustryCode" />
+      <xs:element minOccurs="0" name="issuedTo" type="xs:string" />
+      <xs:element minOccurs="0" name="period" type="tns:Period" />
+      <xs:element name="status" type="tns:BusinessIndustryLicenseStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IndustryCode">
+    <xs:annotation>
+      <xs:documentation>IndustryCode element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="type" type="xs:string" />
+      <xs:element name="code" type="xs:string" />
+      <xs:element minOccurs="0" name="codeDescription" type="xs:string" />
+      <xs:element minOccurs="0" name="isMainIndustryCode" type="tns:NullableBoolean" />
+      <xs:element minOccurs="0" name="period" type="tns:Period" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FinancialStatement">
+    <xs:annotation>
+      <xs:documentation>FinancialBalance element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="financialReportingStandard" type="xs:string" />
+      <xs:element name="companyName" type="xs:string" />
+      <xs:element name="currencyCode" type="xs:string" />
+      <xs:element name="period" type="tns:Period" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="balanceSheet" type="tns:FinancialStatementElement" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="profitAndLoss" type="tns:FinancialStatementElement" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cashFlow" type="tns:FinancialStatementElement" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="furtherFigures" type="tns:FinancialStatementElement" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="creditRatios" type="tns:CreditRatio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FinancialStatementElement">
+    <xs:annotation>
+      <xs:documentation>FinancialStatementElement element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="parentId" type="xs:integer" />
+      <xs:element name="identifier" type="xs:string" />
+      <xs:element name="identifierText" type="xs:string" />
+      <xs:element minOccurs="0" name="value" type="xs:decimal" />
+      <xs:element name="position" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreditRatio">
+    <xs:annotation>
+      <xs:documentation>CreditRatio element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="creditRatioIdentifier" type="xs:string" />
+      <xs:element name="value" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BranchOfficeList">
+    <xs:annotation>
+      <xs:documentation>BranchOfficeList element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="branchOffices" type="tns:BranchOfficeListItem" />
+      <xs:element name="isTruncated" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BranchOfficeListItem">
+    <xs:annotation>
+      <xs:documentation>BranchOfficeListItem element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="address" type="tns:CompanyAddressDescription" />
+      <xs:element minOccurs="0" name="description" type="xs:string" />
+      <xs:element minOccurs="0" name="period" type="tns:Period" />
+      <xs:element minOccurs="0" name="registered" type="tns:NullableBoolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PublicationList">
+    <xs:annotation>
+      <xs:documentation>PublicationList element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="publications" type="tns:Publication" />
+      <xs:element name="isTruncated" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Publication">
+    <xs:annotation>
+      <xs:documentation>Publication element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="publicationDate" type="xs:string" />
+      <xs:element minOccurs="0" name="publicationCategoryOriginal" type="xs:string" />
+      <xs:element name="publicationCategory" type="tns:PublicationCategory" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="publicationLabels" type="xs:string" />
+      <xs:element minOccurs="0" name="language" type="xs:string" />
+      <xs:element minOccurs="0" name="publicationRegion" type="xs:string" />
+      <xs:element minOccurs="0" name="text" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FurtherRelations">
+    <xs:annotation>
+      <xs:documentation>FurtherRelations element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="obviousRelations" type="tns:CompanyBaseData" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="probableRelations" type="tns:CompanyBaseData" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="samePhoneNumber" type="tns:CompanyBaseData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WhoOwnsWhom">
+    <xs:annotation>
+      <xs:documentation>WhoOwnsWhom element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="wowAddresses" type="tns:WowAddress" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="wowRelations" type="tns:WowRelation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WowAddress">
+    <xs:annotation>
+      <xs:documentation>WowAddress element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="id" type="xs:int" />
+      <xs:element name="address" type="tns:AddressDescription" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="identifiers" type="tns:Identifier" />
+      <xs:element minOccurs="0" name="hasDebts" type="tns:HasDebts" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WowRelation">
+    <xs:annotation>
+      <xs:documentation>WowRelation element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="owner" type="xs:int" />
+      <xs:element name="ownedSubject" type="xs:int" />
+      <xs:element name="isMajorityOwner" type="xs:boolean" />
+      <xs:element minOccurs="0" name="capitalShare" type="xs:decimal" />
+      <xs:element minOccurs="0" name="voteShare" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OrganizationPositionList">
+    <xs:annotation>
+      <xs:documentation>OrganizationPositionList element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="organizationPositions" type="tns:OrganizationPosition" />
+      <xs:element name="isTruncated" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OrganizationPosition">
+    <xs:annotation>
+      <xs:documentation>OrganizationPosition element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="firstName" type="xs:string" />
+      <xs:element name="name" type="xs:string" />
+      <xs:element minOccurs="0" name="nationality" type="xs:string" />
+      <xs:element minOccurs="0" name="homeTown" type="xs:string" />
+      <xs:element minOccurs="0" name="city" type="xs:string" />
+      <xs:element name="highestFunction" type="tns:OrganizationPositionFunction" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="furtherFunctions" type="tns:OrganizationPositionFunction" />
+      <xs:element minOccurs="0" name="share" type="xs:decimal" />
+      <xs:element minOccurs="0" name="signatureType" type="tns:SignatureType" />
+      <xs:element minOccurs="0" name="signatureOriginal" type="xs:string" />
+      <xs:element name="period" type="tns:Period" />
+      <xs:element minOccurs="0" name="addressId" type="tns:Identifier" />
+      <xs:element minOccurs="0" name="hasDebts" type="tns:HasDebts" />
+      <xs:element minOccurs="0" name="nrOfPositions" type="xs:integer" />
+      <xs:element minOccurs="0" name="nrOfPositionsBankrupt" type="xs:integer" />
+      <xs:element minOccurs="0" name="birthDate" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="organizationPositions" type="tns:OrganizationPosition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OrganizationPositionFunction">
+    <xs:annotation>
+      <xs:documentation>OrganizationPositionFunction element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="functionType" type="tns:FunctionType" />
+      <xs:element minOccurs="0" name="functionTypeOriginal" type="xs:string" />
+      <xs:element minOccurs="0" name="functionPriority" type="xs:integer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PaymentDelay">
+    <xs:annotation>
+      <xs:documentation>PaymentDelay structure</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="inTimeRatio" type="xs:decimal" />
+      <xs:element minOccurs="0" name="avgDelayShortTerm" type="xs:integer" />
+      <xs:element minOccurs="0" name="avgDelayLongTerm" type="xs:integer" />
+      <xs:element minOccurs="0" name="paymentType" type="xs:string" />
+      <xs:element minOccurs="0" name="paymentExpectedType" type="tns:PaymentExpectedType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CompanyBaseData">
+    <xs:annotation>
+      <xs:documentation>CompanyInfo element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="mainAddress" type="tns:CompanyAddressDescription" />
+      <xs:element minOccurs="0" name="companyRegistrationData" type="tns:CompanyRegistrationData" />
+      <xs:element minOccurs="0" name="companyDetailData" type="tns:CompanyDetailData" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="companyHistoryItems" type="tns:CompanyHistoryItem" />
+      <xs:element name="registryType" type="tns:RegistryType" />
+      <xs:element name="activityStatus" type="tns:ActivityStatus" />
+      <xs:element minOccurs="0" name="activityStatusOriginal" type="xs:string" />
+      <xs:element name="legalFormType" type="tns:LegalFormType" />
+      <xs:element minOccurs="0" name="legalFormTypeOriginal" type="xs:string" />
+      <xs:element minOccurs="0" name="legalFormText" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="identifiers" type="tns:Identifier" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CompanyHistoryItem">
+    <xs:annotation>
+      <xs:documentation>CompanyHistoryItem element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="type" type="tns:CompanyHistoryItemType" />
+      <xs:element name="period" type="tns:Period" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CompanyHistoryItemActivityStatus">
+    <xs:annotation>
+      <xs:documentation>CompanyHistoryItemActivityStatus element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CompanyHistoryItem">
+        <xs:sequence>
+          <xs:element name="activityStatus" type="tns:ActivityStatus" />
+          <xs:element minOccurs="0" name="activityStatusOriginal" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CompanyHistoryItemAddress">
+    <xs:annotation>
+      <xs:documentation>CompanyHistoryItemAddress element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CompanyHistoryItem">
+        <xs:sequence>
+          <xs:element name="address" type="tns:AddressDescription" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CompanyHistoryItemAmount">
+    <xs:annotation>
+      <xs:documentation>CompanyHistoryItemAmount element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CompanyHistoryItem">
+        <xs:sequence>
+          <xs:element name="amount" type="tns:Amount" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CompanyHistoryItemLegalForm">
+    <xs:annotation>
+      <xs:documentation>CompanyHistoryItemLegalForm element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CompanyHistoryItem">
+        <xs:sequence>
+          <xs:element name="legalFormType" type="tns:LegalFormType" />
+          <xs:element minOccurs="0" name="legalFormTypeOriginal" type="xs:string" />
+          <xs:element minOccurs="0" name="legalFormText" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CompanyHistoryItemLocation">
+    <xs:annotation>
+      <xs:documentation>CompanyHistoryItemLocation element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CompanyHistoryItem">
+        <xs:sequence>
+          <xs:element name="location" type="tns:Location" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CompanyHistoryItemText">
+    <xs:annotation>
+      <xs:documentation>CompanyHistoryItemText element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CompanyHistoryItem">
+        <xs:sequence>
+          <xs:element name="text" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CompanyRegistrationData">
+    <xs:annotation>
+      <xs:documentation>CompanyRegistrationData element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="registeredOfficeCity" type="xs:string" />
+      <xs:element minOccurs="0" name="foundingDate" type="xs:string" />
+      <xs:element minOccurs="0" name="capital" type="tns:Amount" />
+      <xs:element minOccurs="0" name="capitalPayed" type="tns:Amount" />
+      <xs:element minOccurs="0" name="capitalInKind" type="tns:NullableBoolean" />
+      <xs:element minOccurs="0" name="auditingCompany" type="tns:CompanyBaseData" />
+      <xs:element minOccurs="0" name="hasAuditingCompany" type="tns:AuditingCompanyStatus" />
+      <xs:element minOccurs="0" name="purpose" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CompanyDetailData">
+    <xs:annotation>
+      <xs:documentation>CompanyDetailData element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ultimateMotherCompany" type="tns:CompanyBaseData" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="industryCodes" type="tns:IndustryCode" />
+      <xs:element minOccurs="0" name="nrOfEmployees" type="tns:Range" />
+      <xs:element minOccurs="0" name="sizeClass" type="tns:CompanySizeClass" />
+      <xs:element minOccurs="0" name="turnoverCurrency" type="xs:string" />
+      <xs:element minOccurs="0" name="turnoverRange" type="tns:Range" />
+      <xs:element minOccurs="0" name="turnoverInExport" type="tns:NullableBoolean" />
+      <xs:element minOccurs="0" name="activityIndex" type="tns:ActivityIndex" />
+      <xs:element minOccurs="0" name="knownSince" type="xs:string" />
+      <xs:element minOccurs="0" name="dateFinancialStatement" type="xs:string" />
+      <xs:element minOccurs="0" name="dateFinancialStatementHandedIn" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="bankAccounts" type="tns:BankAccount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Range">
+    <xs:annotation>
+      <xs:documentation>Range element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="from" type="xs:decimal" />
+      <xs:element minOccurs="0" name="to" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Period">
+    <xs:annotation>
+      <xs:documentation>Period element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="startDate" type="xs:string" />
+      <xs:element minOccurs="0" name="endDate" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BankAccount">
+    <xs:annotation>
+      <xs:documentation>BankAccount element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bank" type="tns:CompanyAddressDescription" />
+      <xs:element minOccurs="0" name="bankDescription" type="xs:string" />
+      <xs:element minOccurs="0" name="localAccountNr" type="xs:string" />
+      <xs:element minOccurs="0" name="iban" type="xs:string" />
+      <xs:element minOccurs="0" name="swiftCode" type="xs:string" />
+      <xs:element minOccurs="0" name="currency" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IdVerificationRequestData">
+    <xs:annotation>
+      <xs:documentation>IdVerificationRequestData element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="documentImage" type="xs:string" />
+      <xs:element minOccurs="0" name="document" type="tns:IdVerificationDocument" />
+      <xs:element minOccurs="0" name="person" type="tns:IdVerificationPerson" />
+      <xs:element minOccurs="0" name="documentType" type="tns:IdVerificationDocumentType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IdVerificationDocument">
+    <xs:annotation>
+      <xs:documentation>IdVerificationDocument element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="documentNumber" type="xs:string" />
+      <xs:element minOccurs="0" name="documentType" type="tns:IdVerificationDocumentType" />
+      <xs:element minOccurs="0" name="documentDescription" type="xs:string" />
+      <xs:element minOccurs="0" name="issuingStateOrOrganization" type="xs:string" />
+      <xs:element minOccurs="0" name="issuingDate" type="xs:string" />
+      <xs:element minOccurs="0" name="expirationDate" type="xs:string" />
+      <xs:element minOccurs="0" name="validityFromDate" type="xs:string" />
+      <xs:element minOccurs="0" name="signDate" type="xs:string" />
+      <xs:element minOccurs="0" name="mrz1" type="xs:string" />
+      <xs:element minOccurs="0" name="mrz2" type="xs:string" />
+      <xs:element minOccurs="0" name="mrz3" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IdVerificationPerson">
+    <xs:annotation>
+      <xs:documentation>IdVerificationPerson element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="address" type="tns:PersonAddressDescription" />
+      <xs:element minOccurs="0" name="address1" type="xs:string" />
+      <xs:element minOccurs="0" name="address2" type="xs:string" />
+      <xs:element minOccurs="0" name="nationalIdentificationNumber" type="xs:string" />
+      <xs:element minOccurs="0" name="placeOfBirth" type="xs:string" />
+      <xs:element minOccurs="0" name="nationality" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IdVerificationResponseData">
+    <xs:annotation>
+      <xs:documentation>IdVerificationResponseData element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="content" type="tns:IdVerificationContent" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="comparisonElements" type="tns:IdVerificationComparisonElement" />
+      <xs:element name="processingResult" type="tns:IdVerificationProcessingResult" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="warnings" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="rejectionReasons" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IdVerificationContent">
+    <xs:annotation>
+      <xs:documentation>IdVerificationContent element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="document" type="tns:IdVerificationDocument" />
+      <xs:element minOccurs="0" name="person" type="tns:IdVerificationPerson" />
+      <xs:element minOccurs="0" name="checks" type="tns:IdVerificationChecks" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="documentImages" type="tns:BinaryData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BinaryData">
+    <xs:annotation>
+      <xs:documentation>BinaryData element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="data" type="xs:string" />
+      <xs:element name="mimeType" type="xs:string" />
+      <xs:element minOccurs="0" name="dataClassification" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IdVerificationChecks">
+    <xs:annotation>
+      <xs:documentation>IdVerificationChecks element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="isValid" type="tns:NullableBoolean" />
+      <xs:element minOccurs="0" name="isComplete" type="tns:NullableBoolean" />
+      <xs:element minOccurs="0" name="isCompositeCheckDigitVerified" type="tns:NullableBoolean" />
+      <xs:element minOccurs="0" name="isBirthDateVerified" type="tns:NullableBoolean" />
+      <xs:element minOccurs="0" name="isExpirationDateVerified" type="tns:NullableBoolean" />
+      <xs:element minOccurs="0" name="isDocumentNumberVerified" type="tns:NullableBoolean" />
+      <xs:element minOccurs="0" name="isIssuingStateOrOrganizationVerified" type="tns:NullableBoolean" />
+      <xs:element minOccurs="0" name="isNationalIdentificationNumberVerified" type="tns:NullableBoolean" />
+      <xs:element minOccurs="0" name="isNationalityVerified" type="tns:NullableBoolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IdVerificationComparisonElement">
+    <xs:annotation>
+      <xs:documentation>IdVerificationComparisonElement element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="fieldName" type="xs:string" />
+      <xs:element minOccurs="0" name="providedValue" type="xs:string" />
+      <xs:element minOccurs="0" name="documentValue" type="xs:string" />
+      <xs:element minOccurs="0" name="percentage" type="xs:integer" />
+      <xs:element minOccurs="0" name="mrzValue" type="xs:string" />
+      <xs:element minOccurs="0" name="providedVsDocumentSimilarity" type="xs:integer" />
+      <xs:element minOccurs="0" name="providedVsMrzSimilarity" type="xs:integer" />
+      <xs:element minOccurs="0" name="documentVsMrzSimilarity" type="xs:integer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SchufaResponseData">
+    <xs:annotation>
+      <xs:documentation>SchufaResponseData element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="schufaIdentification" type="tns:SchufaIdentification" />
+      <xs:element minOccurs="0" name="schufaScore" type="tns:SchufaScore" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="schufaFeatures" type="tns:SchufaBaseFeature" />
+      <xs:element minOccurs="0" name="schufaPersonData" type="tns:SchufaPersonData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SchufaPersonData">
+    <xs:annotation>
+      <xs:documentation>SchufaPersonData element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="title" type="xs:string" />
+      <xs:element minOccurs="0" name="placeOfBirth" type="xs:string" />
+      <xs:element minOccurs="0" name="previousAddress" type="tns:Location" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SchufaIdentification">
+    <xs:annotation>
+      <xs:documentation>SchufaIdentification element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="identityReservationPerson" type="xs:boolean" />
+      <xs:element name="identityReservationAddress" type="xs:boolean" />
+      <xs:element name="personWithoutBirthdate" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SchufaScore">
+    <xs:annotation>
+      <xs:documentation>SchufaScore element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="description" type="xs:string" />
+      <xs:element minOccurs="0" name="scoreValue" type="xs:integer" />
+      <xs:element minOccurs="0" name="riskQuota" type="xs:decimal" />
+      <xs:element minOccurs="0" name="scoreCategory" type="xs:string" />
+      <xs:element minOccurs="0" name="scoreText" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="scoreInfoText" type="xs:string" />
+      <xs:element minOccurs="0" name="scoreError" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SchufaBaseFeature">
+    <xs:annotation>
+      <xs:documentation>SchufaBaseFeature element</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="type" type="xs:string" />
+      <xs:element minOccurs="0" name="featureWithoutBirthdate" type="tns:NullableBoolean" />
+      <xs:element minOccurs="0" name="ownFeature" type="tns:NullableBoolean" />
+      <xs:element minOccurs="0" name="featureCode" type="xs:string" />
+      <xs:element minOccurs="0" name="description" type="xs:string" />
+      <xs:element minOccurs="0" name="text" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SchufaFeature">
+    <xs:annotation>
+      <xs:documentation>SchufaFeature element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SchufaBaseFeature">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="date" type="xs:string" />
+          <xs:element minOccurs="0" name="accountNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="amount" type="tns:Amount" />
+          <xs:element minOccurs="0" name="numberOfInstallments" type="xs:integer" />
+          <xs:element minOccurs="0" name="installmentType" type="xs:integer" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SchufaTextFeature">
+    <xs:annotation>
+      <xs:documentation>SchufaTextFeature element</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SchufaBaseFeature" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="Sex">
+    <xs:annotation>
+      <xs:documentation>Sex enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MALE" />
+      <xs:enumeration value="FEMALE" />
+      <xs:enumeration value="UNKNOWN" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="LocationIdentificationType">
+    <xs:annotation>
+      <xs:documentation>LocationIdentificationType enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="HOUSE_CONFIRMED" />
+      <xs:enumeration value="STREET_CONFIRMED_HOUSE_NOT_PROVIDED" />
+      <xs:enumeration value="STREET_CONFIRMED_HOUSE_NOT_IDENTIFIED" />
+      <xs:enumeration value="CITY_CONFIRMED_STREET_NOT_PROVIDED" />
+      <xs:enumeration value="CITY_CONFIRMED_STREET_NOT_IDENTIFIED" />
+      <xs:enumeration value="NOT_CONFIRMED" />
+      <xs:enumeration value="NOT_PROVIDED" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="IdentifierType">
+    <xs:annotation>
+      <xs:documentation>IdentifierType enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ADDRESS_ID" />
+      <xs:enumeration value="UNIT_ID" />
+      <xs:enumeration value="LIABLE_ID" />
+      <xs:enumeration value="CH_NUMBER" />
+      <xs:enumeration value="CH_UID" />
+      <xs:enumeration value="AT_FIRMENBUCHNUMMER" />
+      <xs:enumeration value="CH_LEGACY_ADDRESS_ID" />
+      <xs:enumeration value="CH_UID_VAT" />
+      <xs:enumeration value="AT_UID" />
+      <xs:enumeration value="AT_OENB" />
+      <xs:enumeration value="AT_DVR_NR" />
+      <xs:enumeration value="SCHUFA_ID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CharacterType">
+    <xs:annotation>
+      <xs:documentation>CharacterType enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IDENTITY" />
+      <xs:enumeration value="IDENTITY_WITH_CONFLICTING_HOUSE" />
+      <xs:enumeration value="IDENTITY_WITH_CONFLICTING_STREET" />
+      <xs:enumeration value="IDENTITY_WITH_CONFLICTING_CITY" />
+      <xs:enumeration value="LAST_NAME_IN_HOUSE" />
+      <xs:enumeration value="HOUSE_CONFIRMED" />
+      <xs:enumeration value="STREET_CONFIRMED" />
+      <xs:enumeration value="CITY_CONFIRMED" />
+      <xs:enumeration value="NOT_CONFIRMED" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ContactType">
+    <xs:annotation>
+      <xs:documentation>ContactType enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PHONE" />
+      <xs:enumeration value="MOBILE" />
+      <xs:enumeration value="FAX" />
+      <xs:enumeration value="EMAIL" />
+      <xs:enumeration value="WEB" />
+      <xs:enumeration value="OTHER" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="NameHint">
+    <xs:annotation>
+      <xs:documentation>NameHint enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EMPTY" />
+      <xs:enumeration value="CONFIRMED" />
+      <xs:enumeration value="TYPO" />
+      <xs:enumeration value="PARTIAL" />
+      <xs:enumeration value="INCOMPLETE" />
+      <xs:enumeration value="PROMINENT" />
+      <xs:enumeration value="FICTIONAL" />
+      <xs:enumeration value="INVALID" />
+      <xs:enumeration value="NO_HINT" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="IdentificationType">
+    <xs:annotation>
+      <xs:documentation>IdentificationType enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IDENTITY_IN_HOUSE" />
+      <xs:enumeration value="IDENTITY_IN_STREET" />
+      <xs:enumeration value="IDENTITY_IN_CITY" />
+      <xs:enumeration value="IDENTITY_IN_UNIVERSE" />
+      <xs:enumeration value="OWNER" />
+      <xs:enumeration value="LASTNAME_IN_HOUSE" />
+      <xs:enumeration value="COMPANY_GROUP" />
+      <xs:enumeration value="NOT_IDENTIFIED" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Decision">
+    <xs:annotation>
+      <xs:documentation>Decision enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LIGHT_GREEN" />
+      <xs:enumeration value="GREEN" />
+      <xs:enumeration value="YELLOW_GREEN" />
+      <xs:enumeration value="YELLOW" />
+      <xs:enumeration value="ORANGE" />
+      <xs:enumeration value="RED" />
+      <xs:enumeration value="DARK_RED" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TargetReportFormat">
+    <xs:annotation>
+      <xs:documentation>TargetReportFormat enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PDF" />
+      <xs:enumeration value="URL" />
+      <xs:enumeration value="NONE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PoiType">
+    <xs:annotation>
+      <xs:documentation>PoiType enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PDF" />
+      <xs:enumeration value="JPG" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="RiskClass">
+    <xs:annotation>
+      <xs:documentation>RiskClass enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NO_NEGATIVE" />
+      <xs:enumeration value="PRE_LEGAL" />
+      <xs:enumeration value="LEGAL_INITIAL" />
+      <xs:enumeration value="LEGAL_ESCALATION" />
+      <xs:enumeration value="LEGAL_DEFAULTED" />
+      <xs:enumeration value="UNKNOWN" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="DebtType">
+    <xs:annotation>
+      <xs:documentation>DebtType enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INFORMATION" />
+      <xs:enumeration value="COLLECTION" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PaymentStatus">
+    <xs:annotation>
+      <xs:documentation>PaymentStatus enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IN_PROCESS" />
+      <xs:enumeration value="WRITTEN_OFF" />
+      <xs:enumeration value="PAID" />
+      <xs:enumeration value="UNKNOWN" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TeledataConsumerScore">
+    <xs:annotation>
+      <xs:documentation>TeledataConsumerScore enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="A" />
+      <xs:enumeration value="B" />
+      <xs:enumeration value="C" />
+      <xs:enumeration value="D" />
+      <xs:enumeration value="E" />
+      <xs:enumeration value="TNI" />
+      <xs:enumeration value="UNKNOWN" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PersonStatus">
+    <xs:annotation>
+      <xs:documentation>PersonStatus enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACTIVE" />
+      <xs:enumeration value="UNDERAGE" />
+      <xs:enumeration value="DECEASED" />
+      <xs:enumeration value="LEGAL_GUARDIANSHIP" />
+      <xs:enumeration value="ACTIVE_BD_UNKNOWN" />
+      <xs:enumeration value="ACTIVE_BD_PARTIALLY_UNKNOWN" />
+      <xs:enumeration value="UNKNOWN" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AddressMatchResultType">
+    <xs:annotation>
+      <xs:documentation>AddressMatchResultType enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MATCH" />
+      <xs:enumeration value="CANDIDATES" />
+      <xs:enumeration value="NO_MATCH" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="OfflineReportStatus">
+    <xs:annotation>
+      <xs:documentation>OfflineReportStatus enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PENDING" />
+      <xs:enumeration value="PROCESSED" />
+      <xs:enumeration value="UNKNOWN" />
+      <xs:enumeration value="MERGED" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="OfflineReportRejectionReason">
+    <xs:annotation>
+      <xs:documentation>OfflineReportRejectionReason enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ADDRESS_IS_BUSINESS_ADDRESS" />
+      <xs:enumeration value="ADDRESS_IS_SECONDARY_ADDRES" />
+      <xs:enumeration value="CROSS_BORDER_COMMUTER" />
+      <xs:enumeration value="DATA_PRIVACY_PROTECTION" />
+      <xs:enumeration value="DISCLOSURE_REJECTED" />
+      <xs:enumeration value="LEGAENTY_ADDRESS_UNKNOWN" />
+      <xs:enumeration value="LEGAENTY_DECEASED" />
+      <xs:enumeration value="LEGAENTY_UNKNOWN" />
+      <xs:enumeration value="OFFICE_REQUIRES_EXACT_BIRTHDATE" />
+      <xs:enumeration value="OTHER" />
+      <xs:enumeration value="PROOF_OF_BUSINESS_RELATIONSHIP_MISSING" />
+      <xs:enumeration value="PROOF_OF_INTEREST_MISSING" />
+      <xs:enumeration value="PROOF_OF_INTEREST_UNSIGNED" />
+      <xs:enumeration value="REGISTRATION_PENDING" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Deliverability">
+    <xs:annotation>
+      <xs:documentation>Deliverability enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SMALL" />
+      <xs:enumeration value="MEDIUM" />
+      <xs:enumeration value="HIGH" />
+      <xs:enumeration value="UNKNOWN" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AuditingCompanyStatus">
+    <xs:annotation>
+      <xs:documentation>AuditingCompanyStatus enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="YES" />
+      <xs:enumeration value="NO_AUDITOR_NOT_MANDATORY" />
+      <xs:enumeration value="NO_AUDITOR_RESIGNED" />
+      <xs:enumeration value="UNKNOWN" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CompanySizeClass">
+    <xs:annotation>
+      <xs:documentation>CompanySizeClass enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="S" />
+      <xs:enumeration value="M" />
+      <xs:enumeration value="L" />
+      <xs:enumeration value="XL" />
+      <xs:enumeration value="UNKNOWN" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ActivityIndex">
+    <xs:annotation>
+      <xs:documentation>ActivityIndex enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DELETED" />
+      <xs:enumeration value="HIGH" />
+      <xs:enumeration value="LOW" />
+      <xs:enumeration value="MEDIUM" />
+      <xs:enumeration value="VERY_HIGH" />
+      <xs:enumeration value="UNKNOWN" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ActivityStatus">
+    <xs:annotation>
+      <xs:documentation>ActivityStatus enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACTIVE" />
+      <xs:enumeration value="INACTIVE" />
+      <xs:enumeration value="INSOLVENT" />
+      <xs:enumeration value="IN_LIQUIDATION" />
+      <xs:enumeration value="COMPOSITION_AGREEMENT" />
+      <xs:enumeration value="DELETED" />
+      <xs:enumeration value="UNKNOWN" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="LegalFormType">
+    <xs:annotation>
+      <xs:documentation>LegalFormType enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SINGLE_PERSON_COMPANY" />
+      <xs:enumeration value="MULTI_PERSON_COMPANY" />
+      <xs:enumeration value="LIMITED_COMPANY" />
+      <xs:enumeration value="PUBLIC" />
+      <xs:enumeration value="OTHER" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="RegistryType">
+    <xs:annotation>
+      <xs:documentation>RegistryType enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="REGISTRY_OF_COMMERCE" />
+      <xs:enumeration value="REGISTER_OF_ASSOCIATIONS" />
+      <xs:enumeration value="TRADE_LICENCE" />
+      <xs:enumeration value="UNREGISTERED" />
+      <xs:enumeration value="UNKNOWN" />
+      <xs:enumeration value="OTHER" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PaymentExpectedType">
+    <xs:annotation>
+      <xs:documentation>PaymentExpectedType enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IN_TIME" />
+      <xs:enumeration value="DELAYED_MINOR" />
+      <xs:enumeration value="DELAYED_MAJOR" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="SignatureType">
+    <xs:annotation>
+      <xs:documentation>SignatureType enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ALONE" />
+      <xs:enumeration value="COLLECTIVE_TWO" />
+      <xs:enumeration value="COLLECTIVE_THREE" />
+      <xs:enumeration value="COLLECTIVE_FOUR" />
+      <xs:enumeration value="WITHOUT" />
+      <xs:enumeration value="UNKNOWN" />
+      <xs:enumeration value="COMPLEX" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HasDebts">
+    <xs:annotation>
+      <xs:documentation>HasDebts enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TRUE" />
+      <xs:enumeration value="FALSE" />
+      <xs:enumeration value="BANKRUPT" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FunctionType">
+    <xs:annotation>
+      <xs:documentation>FunctionType enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MANAGEMENT" />
+      <xs:enumeration value="SUPERVISORY_BOARD" />
+      <xs:enumeration value="SHAREHOLDERS" />
+      <xs:enumeration value="PROXIES" />
+      <xs:enumeration value="RECEIVERSHIP" />
+      <xs:enumeration value="OTHER" />
+      <xs:enumeration value="UNKNOWN" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="BusinessIndustryLicenseStatus">
+    <xs:annotation>
+      <xs:documentation>BusinessIndustryLicenseStatus enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACTIVE" />
+      <xs:enumeration value="INACTIVE" />
+      <xs:enumeration value="DELETED" />
+      <xs:enumeration value="UNKNOWN" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PublicationCategory">
+    <xs:annotation>
+      <xs:documentation>PublicationCategory enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NOT_CLASSIFIED" />
+      <xs:enumeration value="DELETION" />
+      <xs:enumeration value="CHANGE" />
+      <xs:enumeration value="NEW_REGISTRATION" />
+      <xs:enumeration value="CORRECTION" />
+      <xs:enumeration value="LIQUIDATION" />
+      <xs:enumeration value="PROCLAMATION" />
+      <xs:enumeration value="INSOLVENCY" />
+      <xs:enumeration value="REVOCATION" />
+      <xs:enumeration value="SHAREHOLDER" />
+      <xs:enumeration value="ANNUAL_BALANCE_SHEET" />
+      <xs:enumeration value="NOTICE_TO_CREDITORS" />
+      <xs:enumeration value="COMPOSITION_AGREEMENT" />
+      <xs:enumeration value="LEGAL_COLLECTION" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CompanyHistoryItemType">
+    <xs:annotation>
+      <xs:documentation>CompanyHistoryItemType enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACTIVITY_STATUS" />
+      <xs:enumeration value="AUDITING_COMPANY" />
+      <xs:enumeration value="CAPITAL" />
+      <xs:enumeration value="CAPITAL_PAYED" />
+      <xs:enumeration value="DOMICIL" />
+      <xs:enumeration value="LEGAL_FORM" />
+      <xs:enumeration value="NAME" />
+      <xs:enumeration value="REGISTERED_OFFICE_CITY" />
+      <xs:enumeration value="RESOLUTION" />
+      <xs:enumeration value="PURPOSE" />
+      <xs:enumeration value="OTHER" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="IdVerificationDocumentType">
+    <xs:annotation>
+      <xs:documentation>IdVerificationDocumentType enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DRIVING_LICENCE" />
+      <xs:enumeration value="IDENTITY_CARD" />
+      <xs:enumeration value="PASSPORT" />
+      <xs:enumeration value="RESIDENCE_PERMIT" />
+      <xs:enumeration value="UTILITY_BILL" />
+      <xs:enumeration value="UNDETERMINED" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="IdVerificationProcessingResult">
+    <xs:annotation>
+      <xs:documentation>IdVerificationProcessingResult enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="REJECTED" />
+      <xs:enumeration value="AUTOMATICLY_APPROVED" />
+      <xs:enumeration value="MANUALY_APPROVED" />
+      <xs:enumeration value="UNDETETERMINED" />
+      <xs:enumeration value="PROCESSING_FAILED" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="NullableBoolean">
+    <xs:annotation>
+      <xs:documentation>NullableBoolean enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="true" />
+      <xs:enumeration value="false" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="DataIssueStatus">
+    <xs:annotation>
+      <xs:documentation>DataIssueStatus enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OPEN" />
+      <xs:enumeration value="FIXED_NOT_AVAILABLE" />
+      <xs:enumeration value="FIXED_AVAILABLE" />
+      <xs:enumeration value="WONT_FIX" />
+      <xs:enumeration value="CANCELED" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ControlPersonType">
+    <xs:annotation>
+      <xs:documentation>ControlPersonType enumeration</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CEO" />
+      <xs:enumeration value="HIGHEST_DECISION_MAKER" />
+      <xs:enumeration value="PARTICIPATION" />
+      <xs:enumeration value="OTHER" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

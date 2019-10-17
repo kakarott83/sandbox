@@ -1,0 +1,914 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CIC.Database.CT.EF4</name>
+    </assembly>
+    <members>
+        <member name="T:CIC.Database.CT.EF4.Model.CTContext">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTContext.#ctor">
+            <summary>
+            Initializes a new CTContext object using the connection string found in the 'CTContext' section of the application configuration file.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTContext.#ctor(System.String)">
+            <summary>
+            Initialize a new CTContext object.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTContext.#ctor(System.Data.EntityClient.EntityConnection)">
+            <summary>
+            Initialize a new CTContext object.
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTContext.CTSTATEDEF">
+            <summary>
+            Table: CTSTATEDEF&#xA;Description: Definition für interne und oder externe Stati bzw. Zustände
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTContext.CTATTRIBUTDEF">
+            <summary>
+            Table: CTATTRIBUTDEF&#xA;Description: Attribut-Definitionen (eigentlich aus ow.dct)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTContext.CTTXTBS">
+            <summary>
+            Table: CTTXTBS&#xA;Description: Textbaustein-Definition mit Defaultwerten
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTContext.CTLANG">
+            <summary>
+            Table: CTLANG&#xA;Aliases: LANGGLBL, LANGCTRL, LANGWIN, LANGHCTRL, LANGMSG, LANGAPP, LANGMENU
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTContext.CTMESSAGE">
+            <summary>
+            Table: CTMESSAGE&#xA;Description: Messages and errors&#xA;Aliases: CTMESSAGELKP
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTContext.CTTFOID">
+            <summary>
+            Table: CTTFOID&#xA;Description: Frontoffice items
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTContext.CTTMESSAGE">
+            <summary>
+            Table: CTTMESSAGE&#xA;Description: Translated messages and errors
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTContext.CTWEB">
+            <summary>
+            Table: CTWEB
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTContext.CTLOCL">
+            <summary>
+            Table: CTLOCL&#xA;Description: Tabelle für Seitenbezogenen Übersetzungen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTContext.CTTSTATEDEF">
+            <summary>
+            Table: CTTSTATEDEF&#xA;Description: Übersetzungen für Status bzw. Zustand-Definitionen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTContext.CTFOID">
+            <summary>
+            Table: CTFOID&#xA;Description: Frontoffice items
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTContext.CTCTXMESSAGE">
+            <summary>
+            Table: CTCTXMESSAGE&#xA;Description: Message in context of use
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTContext.CTTWEB">
+            <summary>
+            Table: CTTWEB
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTContext.CTTATTRIBUTDEF">
+            <summary>
+            Table: CTTATTRIBUTDEF&#xA;Description: Übersetzungen für Attribut-Definitionen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTContext.CTTTXTBS">
+            <summary>
+            Table: CTTTXTBS&#xA;Description: Textbaustein-Definition mit Defaultwerten
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTContext.CTTLOCL">
+            <summary>
+            Table: CTTLOCL&#xA;Description: Page bzw. Maskenbezogene Übersetzungen (übersteuern die globalen Übersetzungen)
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTContext.AddToCTSTATEDEF(CIC.Database.CT.EF4.Model.CTSTATEDEF)">
+            <summary>
+            Deprecated Method for adding a new object to the CTSTATEDEF EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTContext.AddToCTATTRIBUTDEF(CIC.Database.CT.EF4.Model.CTATTRIBUTDEF)">
+            <summary>
+            Deprecated Method for adding a new object to the CTATTRIBUTDEF EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTContext.AddToCTTXTBS(CIC.Database.CT.EF4.Model.CTTXTBS)">
+            <summary>
+            Deprecated Method for adding a new object to the CTTXTBS EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTContext.AddToCTLANG(CIC.Database.CT.EF4.Model.CTLANG)">
+            <summary>
+            Deprecated Method for adding a new object to the CTLANG EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTContext.AddToCTMESSAGE(CIC.Database.CT.EF4.Model.CTMESSAGE)">
+            <summary>
+            Deprecated Method for adding a new object to the CTMESSAGE EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTContext.AddToCTTFOID(CIC.Database.CT.EF4.Model.CTTFOID)">
+            <summary>
+            Deprecated Method for adding a new object to the CTTFOID EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTContext.AddToCTTMESSAGE(CIC.Database.CT.EF4.Model.CTTMESSAGE)">
+            <summary>
+            Deprecated Method for adding a new object to the CTTMESSAGE EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTContext.AddToCTWEB(CIC.Database.CT.EF4.Model.CTWEB)">
+            <summary>
+            Deprecated Method for adding a new object to the CTWEB EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTContext.AddToCTLOCL(CIC.Database.CT.EF4.Model.CTLOCL)">
+            <summary>
+            Deprecated Method for adding a new object to the CTLOCL EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTContext.AddToCTTSTATEDEF(CIC.Database.CT.EF4.Model.CTTSTATEDEF)">
+            <summary>
+            Deprecated Method for adding a new object to the CTTSTATEDEF EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTContext.AddToCTFOID(CIC.Database.CT.EF4.Model.CTFOID)">
+            <summary>
+            Deprecated Method for adding a new object to the CTFOID EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTContext.AddToCTCTXMESSAGE(CIC.Database.CT.EF4.Model.CTCTXMESSAGE)">
+            <summary>
+            Deprecated Method for adding a new object to the CTCTXMESSAGE EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTContext.AddToCTTWEB(CIC.Database.CT.EF4.Model.CTTWEB)">
+            <summary>
+            Deprecated Method for adding a new object to the CTTWEB EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTContext.AddToCTTATTRIBUTDEF(CIC.Database.CT.EF4.Model.CTTATTRIBUTDEF)">
+            <summary>
+            Deprecated Method for adding a new object to the CTTATTRIBUTDEF EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTContext.AddToCTTTXTBS(CIC.Database.CT.EF4.Model.CTTTXTBS)">
+            <summary>
+            Deprecated Method for adding a new object to the CTTTXTBS EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTContext.AddToCTTLOCL(CIC.Database.CT.EF4.Model.CTTLOCL)">
+            <summary>
+            Deprecated Method for adding a new object to the CTTLOCL EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CT.EF4.Model.CTATTRIBUTDEF">
+            <summary>
+            Table: CTATTRIBUTDEF&#xA;Description: Attribut-Definitionen (eigentlich aus ow.dct)
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTATTRIBUTDEF.CreateCTATTRIBUTDEF(System.Int64)">
+            <summary>
+            Create a new CTATTRIBUTDEF object.
+            </summary>
+            <param name="sYSATTRIBUTDEF">Initial value of the SYSATTRIBUTDEF property.</param>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTATTRIBUTDEF.SYSATTRIBUTDEF">
+            <summary>
+            Primary Key: True&#xA;Description: System ID
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTATTRIBUTDEF.ATTRIBUT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTATTRIBUTDEF.BESCHREIBUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTATTRIBUTDEF.CTTATTRIBUTDEFList">
+            <summary>
+            Refers to table|alias: &apos;CTTATTRIBUTDEF&apos;, PK Columns: SYSATTRIBUTDEF
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CT.EF4.Model.CTCTXMESSAGE">
+            <summary>
+            Table: CTCTXMESSAGE&#xA;Description: Message in context of use
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTCTXMESSAGE.CreateCTCTXMESSAGE(System.Int64)">
+            <summary>
+            Create a new CTCTXMESSAGE object.
+            </summary>
+            <param name="sYSCTTMESSAGE">Initial value of the SYSCTTMESSAGE property.</param>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTCTXMESSAGE.SYSCTTMESSAGE">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTCTXMESSAGE.MESSAGECODE">
+            <summary>
+            Description: Unique Message Identifier
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTCTXMESSAGE.MESSAGEAREA">
+            <summary>
+            Description: Area of the message
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTCTXMESSAGE.SYSLOGDUMP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTCTXMESSAGE.SYSWFLOG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CT.EF4.Model.CTFOID">
+            <summary>
+            Table: CTFOID&#xA;Description: Frontoffice items
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTFOID.CreateCTFOID(System.Int64)">
+            <summary>
+            Create a new CTFOID object.
+            </summary>
+            <param name="sYSCTFOID">Initial value of the SYSCTFOID property.</param>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTFOID.SYSCTFOID">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTFOID.FRONTID">
+            <summary>
+            Description: Unique FO identifier
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTFOID.TYP">
+            <summary>
+            Description: Standardlabel or Blob&#xA;Enum values: &apos;Standard&apos; = &apos;0&apos;|&apos;Blob&apos; = &apos;1&apos;
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTFOID.VERBALDESCRIPTION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CT.EF4.Model.CTLANG">
+            <summary>
+            Table: CTLANG&#xA;Aliases: LANGGLBL, LANGCTRL, LANGWIN, LANGHCTRL, LANGMSG, LANGAPP, LANGMENU
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTLANG.CreateCTLANG(System.Int64)">
+            <summary>
+            Create a new CTLANG object.
+            </summary>
+            <param name="sYSCTLANG">Initial value of the SYSCTLANG property.</param>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTLANG.SYSCTLANG">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTLANG.LANGUAGENAME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTLANG.ISOCODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTLANG.FLAGTRANSLATE">
+            <summary>
+            Description: Wird zum Übersetzen benutzt
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTLANG.ACTIVEFLAG">
+            <summary>
+            Description: Aktivflag
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTLANG.CTTATTRIBUTDEFList">
+            <summary>
+            Refers to table|alias: &apos;CTTATTRIBUTDEF&apos;, PK Columns: SYSCTLANG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTLANG.CTTFOIDList">
+            <summary>
+            Refers to table|alias: &apos;CTTFOID&apos;, PK Columns: SYSCTLANG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTLANG.CTTLOCLList">
+            <summary>
+            Refers to table|alias: &apos;CTTLOCL&apos;, PK Columns: SYSCTLANG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTLANG.CTTMESSAGEList">
+            <summary>
+            Refers to table|alias: &apos;CTTMESSAGE&apos;, PK Columns: SYSCTLANG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTLANG.CTTSTATEDEFList">
+            <summary>
+            Refers to table|alias: &apos;CTTSTATEDEF&apos;, PK Columns: SYSCTLANG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTLANG.CTTWEBList">
+            <summary>
+            Refers to table|alias: &apos;CTTWEB&apos;, PK Columns: SYSCTLANG
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CT.EF4.Model.CTLOCL">
+            <summary>
+            Table: CTLOCL&#xA;Description: Tabelle für Seitenbezogenen Übersetzungen
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTLOCL.CreateCTLOCL(System.Int64)">
+            <summary>
+            Create a new CTLOCL object.
+            </summary>
+            <param name="sYSCTLOCL">Initial value of the SYSCTLOCL property.</param>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTLOCL.SYSCTLOCL">
+            <summary>
+            Primary Key: True&#xA;Description: Primäre ID
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTLOCL.ORIGTERM">
+            <summary>
+            Description: Enthält Übersetzungen zum Feld CTLOCL.FRONTID
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTLOCL.CTRLTYPE">
+            <summary>
+            Description: Gruppierungsmöglichkeit der Front Ids (z.B. Überschriften, Text etc.)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTLOCL.WINNAME">
+            <summary>
+            Description: Bezeichner für Fenstername/Maske
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTLOCL.FRONTID">
+            <summary>
+            Description: Front Office ID. Bezeichner für den zu übersetzenden begriff
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTLOCL.ORIGTOOLTIP">
+            <summary>
+            Description: Enthält Tooltip zur Front ID
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CT.EF4.Model.CTMESSAGE">
+            <summary>
+            Table: CTMESSAGE&#xA;Description: Messages and errors&#xA;Aliases: CTMESSAGELKP
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTMESSAGE.CreateCTMESSAGE(System.Int64)">
+            <summary>
+            Create a new CTMESSAGE object.
+            </summary>
+            <param name="sYSCTMESSAGE">Initial value of the SYSCTMESSAGE property.</param>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTMESSAGE.SYSCTMESSAGE">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTMESSAGE.MESSAGECODE">
+            <summary>
+            Description: Message Identifier (unique with messageArea)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTMESSAGE.MESSAGEAREA">
+            <summary>
+            Description: Message area (unique with messageCode)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTMESSAGE.MESSAGETYP">
+            <summary>
+            Description: Art der Message&#xA;Enum values: &apos;Error&apos; = &apos;0&apos;|&apos;Warning&apos; = &apos;1&apos;|&apos;Information&apos; = &apos;2&apos;|&apos;Question&apos; = &apos;3&apos;
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTMESSAGE.MESSAGETEXT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTMESSAGE.MESSAGETITLE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTMESSAGE.VERBALDESCRIPTION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CT.EF4.Model.CTSTATEDEF">
+            <summary>
+            Table: CTSTATEDEF&#xA;Description: Definition für interne und oder externe Stati bzw. Zustände
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTSTATEDEF.CreateCTSTATEDEF(System.Int64)">
+            <summary>
+            Create a new CTSTATEDEF object.
+            </summary>
+            <param name="sYSSTATEDEF">Initial value of the SYSSTATEDEF property.</param>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTSTATEDEF.SYSSTATEDEF">
+            <summary>
+            Primary Key: True&#xA;Description: System ID
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTSTATEDEF.ZUSTAND">
+            <summary>
+            Description: Zustand kommt in angebot, antrag und vt vor
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTSTATEDEF.BESCHREIBUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTSTATEDEF.ART">
+            <summary>
+            Description: 0 = intern, 1 = extern, 2 = beides&#xA;Enum values: &apos;Intern&apos; = &apos;0&apos;|&apos;Extern&apos; = &apos;1&apos;|&apos;Beides&apos; = &apos;2&apos;
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTSTATEDEF.CTTSTATEDEFList">
+            <summary>
+            Refers to table|alias: &apos;CTTSTATEDEF&apos;, PK Columns: SYSSTATEDEF
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CT.EF4.Model.CTTATTRIBUTDEF">
+            <summary>
+            Table: CTTATTRIBUTDEF&#xA;Description: Übersetzungen für Attribut-Definitionen
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTTATTRIBUTDEF.CreateCTTATTRIBUTDEF(System.Int64)">
+            <summary>
+            Create a new CTTATTRIBUTDEF object.
+            </summary>
+            <param name="sYSCTTATTRIBUTDEF">Initial value of the SYSCTTATTRIBUTDEF property.</param>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTATTRIBUTDEF.SYSCTTATTRIBUTDEF">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTATTRIBUTDEF.SYSATTRIBUTDEF">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CTATTRIBUTDEF
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTATTRIBUTDEF.SYSCTLANG">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CTLANG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTATTRIBUTDEF.REPLACEATTRIBUT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTATTRIBUTDEF.REPLACEBESCHREIBUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTATTRIBUTDEF.CTATTRIBUTDEF">
+            <summary>
+            Refers to table|alias: CTATTRIBUTDEF, FK Columns: SYSATTRIBUTDEF
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTATTRIBUTDEF.CTATTRIBUTDEFReference">
+            <summary>
+            Refers to table|alias: CTATTRIBUTDEF, FK Columns: SYSATTRIBUTDEF
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTATTRIBUTDEF.CTLANG">
+            <summary>
+            Refers to table|alias: CTLANG, FK Columns: SYSCTLANG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTATTRIBUTDEF.CTLANGReference">
+            <summary>
+            Refers to table|alias: CTLANG, FK Columns: SYSCTLANG
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CT.EF4.Model.CTTFOID">
+            <summary>
+            Table: CTTFOID&#xA;Description: Frontoffice items
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTTFOID.CreateCTTFOID(System.Int64)">
+            <summary>
+            Create a new CTTFOID object.
+            </summary>
+            <param name="sYSCTTFOID">Initial value of the SYSCTTFOID property.</param>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTFOID.SYSCTTFOID">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTFOID.FRONTID">
+            <summary>
+            Description: Unique FO identifier
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTFOID.REPLACETERM">
+            <summary>
+            Description: Standard text up to 4000 characters&#xA;Enum values: &apos;Standard&apos; = &apos;0&apos;|&apos;Blob&apos; = &apos;1&apos;
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTFOID.SYSCTLANG">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CTLANG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTFOID.CTLANG">
+            <summary>
+            Refers to table|alias: CTLANG, FK Columns: SYSCTLANG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTFOID.CTLANGReference">
+            <summary>
+            Refers to table|alias: CTLANG, FK Columns: SYSCTLANG
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CT.EF4.Model.CTTLOCL">
+            <summary>
+            Table: CTTLOCL&#xA;Description: Page bzw. Maskenbezogene Übersetzungen (übersteuern die globalen Übersetzungen)
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTTLOCL.CreateCTTLOCL(System.Int64)">
+            <summary>
+            Create a new CTTLOCL object.
+            </summary>
+            <param name="sYSCTTLOCL">Initial value of the SYSCTTLOCL property.</param>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTLOCL.SYSCTTLOCL">
+            <summary>
+            Primary Key: True&#xA;Description: Primäre ID
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTLOCL.SYSCTLANG">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CTLANG&#xA;Description: Verweis auf Sprache
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTLOCL.WINNAME">
+            <summary>
+            Description: Bezeichner für Fenstername/Maske
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTLOCL.FRONTID">
+            <summary>
+            Description: Front Office ID. Bezeichner für den zu übersetzenden begriff
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTLOCL.REPLACETERM">
+            <summary>
+            Description: Übersetzter Begriff
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTLOCL.REPLACETOOLTIP">
+            <summary>
+            Description: Übersetzter Tooltip
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTLOCL.CTLANG">
+            <summary>
+            Refers to table|alias: CTLANG, FK Columns: SYSCTLANG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTLOCL.CTLANGReference">
+            <summary>
+            Refers to table|alias: CTLANG, FK Columns: SYSCTLANG
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CT.EF4.Model.CTTMESSAGE">
+            <summary>
+            Table: CTTMESSAGE&#xA;Description: Translated messages and errors
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTTMESSAGE.CreateCTTMESSAGE(System.Int64)">
+            <summary>
+            Create a new CTTMESSAGE object.
+            </summary>
+            <param name="sYSCTTMESSAGE">Initial value of the SYSCTTMESSAGE property.</param>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTMESSAGE.SYSCTTMESSAGE">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTMESSAGE.MESSAGECODE">
+            <summary>
+            Description: Unique Message Identifier together with MessageArea and SysCTLANG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTMESSAGE.MESSAGEAREA">
+            <summary>
+            Description: Area of the message
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTMESSAGE.REPLACEMESSAGETEXT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTMESSAGE.REPLACEMESSAGETITLE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTMESSAGE.SYSCTLANG">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CTLANG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTMESSAGE.CTLANG">
+            <summary>
+            Refers to table|alias: CTLANG, FK Columns: SYSCTLANG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTMESSAGE.CTLANGReference">
+            <summary>
+            Refers to table|alias: CTLANG, FK Columns: SYSCTLANG
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CT.EF4.Model.CTTSTATEDEF">
+            <summary>
+            Table: CTTSTATEDEF&#xA;Description: Übersetzungen für Status bzw. Zustand-Definitionen
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTTSTATEDEF.CreateCTTSTATEDEF(System.Int64)">
+            <summary>
+            Create a new CTTSTATEDEF object.
+            </summary>
+            <param name="sYSCTTSTATEDEF">Initial value of the SYSCTTSTATEDEF property.</param>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTSTATEDEF.SYSCTTSTATEDEF">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTSTATEDEF.SYSSTATEDEF">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CTSTATEDEF
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTSTATEDEF.SYSCTLANG">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CTLANG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTSTATEDEF.REPLACEZUSTAND">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTSTATEDEF.REPLACEBESCHREIBUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTSTATEDEF.CTLANG">
+            <summary>
+            Refers to table|alias: CTLANG, FK Columns: SYSCTLANG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTSTATEDEF.CTLANGReference">
+            <summary>
+            Refers to table|alias: CTLANG, FK Columns: SYSCTLANG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTSTATEDEF.CTSTATEDEF">
+            <summary>
+            Refers to table|alias: CTSTATEDEF, FK Columns: SYSSTATEDEF
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTSTATEDEF.CTSTATEDEFReference">
+            <summary>
+            Refers to table|alias: CTSTATEDEF, FK Columns: SYSSTATEDEF
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CT.EF4.Model.CTTTXTBS">
+            <summary>
+            Table: CTTTXTBS&#xA;Description: Textbaustein-Definition mit Defaultwerten
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTTTXTBS.CreateCTTTXTBS(System.Int64)">
+            <summary>
+            Create a new CTTTXTBS object.
+            </summary>
+            <param name="sYSCTTTXTBS">Initial value of the SYSCTTTXTBS property.</param>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTTXTBS.SYSCTTTXTBS">
+            <summary>
+            Primary Key: True&#xA;Description: Primärschlüssel der Tabelle CTTTXTBS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTTXTBS.SYSTXTBS">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CTTXTBS&#xA;Description: Fremdschlüssel mit Verweis auf TXTBS.SYSTXTBS - Die Verknüpfung zwischen den Tabellen TXTBS/CTTTXTBS soll über Ids laufen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTTXTBS.REPLACETEXT">
+            <summary>
+            Description: Text
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTTXTBS.CTTXTBS">
+            <summary>
+            Refers to table|alias: CTTXTBS, FK Columns: SYSTXTBS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTTXTBS.CTTXTBSReference">
+            <summary>
+            Refers to table|alias: CTTXTBS, FK Columns: SYSTXTBS
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CT.EF4.Model.CTTWEB">
+            <summary>
+            Table: CTTWEB
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTTWEB.CreateCTTWEB(System.Int64)">
+            <summary>
+            Create a new CTTWEB object.
+            </summary>
+            <param name="sYSCTTWEB">Initial value of the SYSCTTWEB property.</param>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTWEB.SYSCTTWEB">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTWEB.SYSCTWEB">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CTWEB
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTWEB.SYSCTLANG">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CTLANG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTWEB.REPLACETERM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTWEB.REPLACETOOLTIP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTWEB.CTLANG">
+            <summary>
+            Refers to table|alias: CTLANG, FK Columns: SYSCTLANG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTWEB.CTLANGReference">
+            <summary>
+            Refers to table|alias: CTLANG, FK Columns: SYSCTLANG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTWEB.CTWEB">
+            <summary>
+            Refers to table|alias: CTWEB, FK Columns: SYSCTWEB
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTWEB.CTWEBReference">
+            <summary>
+            Refers to table|alias: CTWEB, FK Columns: SYSCTWEB
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CT.EF4.Model.CTTXTBS">
+            <summary>
+            Table: CTTXTBS&#xA;Description: Textbaustein-Definition mit Defaultwerten
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTTXTBS.CreateCTTXTBS(System.Int64)">
+            <summary>
+            Create a new CTTXTBS object.
+            </summary>
+            <param name="sYSTXTBS">Initial value of the SYSTXTBS property.</param>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTXTBS.SYSTXTBS">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTXTBS.SYSTXTBSTYP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTXTBS.CODE">
+            <summary>
+            Description: Uunique zusammen mit SysTXTBSTYP
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTXTBS.TEXT">
+            <summary>
+            Description: Text
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTXTBS.ZEILENUMBRUCH">
+            <summary>
+            Description: Zeilenumbruch
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTXTBS.DATUM">
+            <summary>
+            Description: Datum
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTXTBS.BETRAG">
+            <summary>
+            Description: Betrag
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTXTBS.PROZENT">
+            <summary>
+            Description: Prozent Feld
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTXTBS.FLAG">
+            <summary>
+            Description: Flag Feld
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTTXTBS.CTTTXTBSList">
+            <summary>
+            Refers to table|alias: &apos;CTTTXTBS&apos;, PK Columns: SYSTXTBS
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CT.EF4.Model.CTWEB">
+            <summary>
+            Table: CTWEB
+            </summary>
+        </member>
+        <member name="M:CIC.Database.CT.EF4.Model.CTWEB.CreateCTWEB(System.Int64)">
+            <summary>
+            Create a new CTWEB object.
+            </summary>
+            <param name="sYSCTWEB">Initial value of the SYSCTWEB property.</param>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTWEB.SYSCTWEB">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTWEB.ORIGTERM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTWEB.CTRLTYPE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CT.EF4.Model.CTWEB.CTTWEBList">
+            <summary>
+            Refers to table|alias: &apos;CTTWEB&apos;, PK Columns: SYSCTWEB
+            </summary>
+        </member>
+    </members>
+</doc>

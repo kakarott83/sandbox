@@ -1,0 +1,1063 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Runtime>
+      <!-- Storage schema - SSDL -->
+      <edmx:StorageModels>
+        <Schema Namespace="Cic.OpenOne.Common.Model.DdCt.Store" Alias="Self" Provider="Devart.Data.Oracle" ProviderManifestToken="ORA" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+          <EntityContainer Name="CIC_CT">
+          <EntitySet Name="CTSTATEDEF" EntityType="Cic.OpenOne.Common.Model.DdCt.Store.CTSTATEDEF" Schema="CIC" Table="STATEDEF" />
+          <EntitySet Name="CTATTRIBUTDEF" EntityType="Cic.OpenOne.Common.Model.DdCt.Store.CTATTRIBUTDEF" Schema="CIC" Table="ATTRIBUTDEF" />
+          <EntitySet Name="CTTXTBS" EntityType="Cic.OpenOne.Common.Model.DdCt.Store.CTTXTBS" Schema="CIC" Table="TXTBS" />
+          <EntitySet Name="CTLANG" EntityType="Cic.OpenOne.Common.Model.DdCt.Store.CTLANG" Schema="CIC" Table="CTLANG" />
+          <EntitySet Name="CTMESSAGE" EntityType="Cic.OpenOne.Common.Model.DdCt.Store.CTMESSAGE" Schema="CIC" Table="CTMESSAGE" />
+          <EntitySet Name="CTTFOID" EntityType="Cic.OpenOne.Common.Model.DdCt.Store.CTTFOID" Schema="CIC" Table="CTTFOID" />
+          <EntitySet Name="CTTMESSAGE" EntityType="Cic.OpenOne.Common.Model.DdCt.Store.CTTMESSAGE" Schema="CIC" Table="CTTMESSAGE" />
+          <EntitySet Name="CTWEB" EntityType="Cic.OpenOne.Common.Model.DdCt.Store.CTWEB" Schema="CIC" Table="CTWEB" />
+          <EntitySet Name="CTLOCL" EntityType="Cic.OpenOne.Common.Model.DdCt.Store.CTLOCL" Schema="CIC" Table="CTLOCL" />
+          <EntitySet Name="CTTSTATEDEF" EntityType="Cic.OpenOne.Common.Model.DdCt.Store.CTTSTATEDEF" Schema="CIC" Table="CTTSTATEDEF" />
+          <EntitySet Name="CTFOID" EntityType="Cic.OpenOne.Common.Model.DdCt.Store.CTFOID" Schema="CIC" Table="CTFOID" />
+          <EntitySet Name="CTCTXMESSAGE" EntityType="Cic.OpenOne.Common.Model.DdCt.Store.CTCTXMESSAGE" Schema="CIC" Table="CTCTXMESSAGE" />
+          <EntitySet Name="CTTWEB" EntityType="Cic.OpenOne.Common.Model.DdCt.Store.CTTWEB" Schema="CIC" Table="CTTWEB" />
+          <EntitySet Name="CTTATTRIBUTDEF" EntityType="Cic.OpenOne.Common.Model.DdCt.Store.CTTATTRIBUTDEF" Schema="CIC" Table="CTTATTRIBUTDEF" />
+          <EntitySet Name="CTTTXTBS" EntityType="Cic.OpenOne.Common.Model.DdCt.Store.CTTTXTBS" Schema="CIC" Table="CTTTXTBS" />
+          <EntitySet Name="CTTLOCL" EntityType="Cic.OpenOne.Common.Model.DdCt.Store.CTTLOCL" Schema="CIC" Table="CTTLOCL" />
+          <AssociationSet Name="CTSTATEDEF_CTTSTATEDEF" Association="Cic.OpenOne.Common.Model.DdCt.Store.CTSTATEDEF_CTTSTATEDEF">
+            <End Role="CTSTATEDEF" EntitySet="CTSTATEDEF" />
+            <End Role="CTTSTATEDEF" EntitySet="CTTSTATEDEF" />
+          </AssociationSet>
+          <AssociationSet Name="CTATTRIBUTDEF_CTTATTRIBUTDEF" Association="Cic.OpenOne.Common.Model.DdCt.Store.CTATTRIBUTDEF_CTTATTRIBUTDEF">
+            <End Role="CTATTRIBUTDEF" EntitySet="CTATTRIBUTDEF" />
+            <End Role="CTTATTRIBUTDEF" EntitySet="CTTATTRIBUTDEF" />
+          </AssociationSet>
+          <AssociationSet Name="CTLANG_CTTSTATEDEF" Association="Cic.OpenOne.Common.Model.DdCt.Store.CTLANG_CTTSTATEDEF">
+            <End Role="CTLANG" EntitySet="CTLANG" />
+            <End Role="CTTSTATEDEF" EntitySet="CTTSTATEDEF" />
+          </AssociationSet>
+          <AssociationSet Name="CTLANG_CTTATTRIBUTDEF" Association="Cic.OpenOne.Common.Model.DdCt.Store.CTLANG_CTTATTRIBUTDEF">
+            <End Role="CTLANG" EntitySet="CTLANG" />
+            <End Role="CTTATTRIBUTDEF" EntitySet="CTTATTRIBUTDEF" />
+          </AssociationSet>
+          <AssociationSet Name="CTLANG_CTTMESSAGE" Association="Cic.OpenOne.Common.Model.DdCt.Store.CTLANG_CTTMESSAGE">
+            <End Role="CTLANG" EntitySet="CTLANG" />
+            <End Role="CTTMESSAGE" EntitySet="CTTMESSAGE" />
+          </AssociationSet>
+          <AssociationSet Name="CTLANG_CTTFOID" Association="Cic.OpenOne.Common.Model.DdCt.Store.CTLANG_CTTFOID">
+            <End Role="CTLANG" EntitySet="CTLANG" />
+            <End Role="CTTFOID" EntitySet="CTTFOID" />
+          </AssociationSet>
+          <AssociationSet Name="CTLANG_CTTWEB" Association="Cic.OpenOne.Common.Model.DdCt.Store.CTLANG_CTTWEB">
+            <End Role="CTLANG" EntitySet="CTLANG" />
+            <End Role="CTTWEB" EntitySet="CTTWEB" />
+          </AssociationSet>
+          <AssociationSet Name="CTWEB_CTTWEB" Association="Cic.OpenOne.Common.Model.DdCt.Store.CTWEB_CTTWEB">
+            <End Role="CTWEB" EntitySet="CTWEB" />
+            <End Role="CTTWEB" EntitySet="CTTWEB" />
+          </AssociationSet>
+          </EntityContainer>  
+      <EntityType Name="CTSTATEDEF">
+        <Key>
+          <PropertyRef Name="SYSSTATEDEF" />
+        </Key>
+        <Property Name="SYSSTATEDEF" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="ZUSTAND" Type="VARCHAR2" MaxLength="25" Nullable="true" />
+        <Property Name="BESCHREIBUNG" Type="VARCHAR2" MaxLength="255" Nullable="true" />
+        <Property Name="ART" Type="int" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CTATTRIBUTDEF">
+        <Key>
+          <PropertyRef Name="SYSATTRIBUTDEF" />
+        </Key>
+        <Property Name="SYSATTRIBUTDEF" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="ATTRIBUT" Type="VARCHAR2" MaxLength="40" Nullable="true" />
+        <Property Name="BESCHREIBUNG" Type="VARCHAR2" MaxLength="255" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CTTXTBS">
+        <Key>
+          <PropertyRef Name="SYSTXTBS" />
+        </Key>
+        <Property Name="SYSTXTBS" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="SYSTXTBSTYP" Type="int64" Nullable="true" />
+        <Property Name="CODE" Type="VARCHAR2" MaxLength="25" Nullable="true" />
+        <Property Name="TEXT" Type="VARCHAR2" MaxLength="4000" Nullable="true" />
+        <Property Name="ZEILENUMBRUCH" Type="int" Nullable="true" />
+        <Property Name="DATUM" Type="DATE" Nullable="true" />
+        <Property Name="BETRAG" Type="decimal" Nullable="true" />
+        <Property Name="PROZENT" Type="decimal" Nullable="true" />
+        <Property Name="FLAG" Type="int" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CTLANG">
+        <Key>
+          <PropertyRef Name="SYSCTLANG" />
+        </Key>
+        <Property Name="SYSCTLANG" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="LANGUAGENAME" Type="VARCHAR2" MaxLength="100" Nullable="true" />
+        <Property Name="ISOCODE" Type="VARCHAR2" MaxLength="5" Nullable="true" />
+        <Property Name="FLAGTRANSLATE" Type="int" Nullable="true" />
+        <Property Name="ACTIVEFLAG" Type="int" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CTMESSAGE">
+        <Key>
+          <PropertyRef Name="SYSCTMESSAGE" />
+        </Key>
+        <Property Name="SYSCTMESSAGE" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="MESSAGECODE" Type="VARCHAR2" MaxLength="30" Nullable="true" />
+        <Property Name="MESSAGEAREA" Type="VARCHAR2" MaxLength="30" Nullable="true" />
+        <Property Name="MESSAGETYP" Type="int" Nullable="true" />
+        <Property Name="MESSAGETEXT" Type="VARCHAR2" MaxLength="1024" Nullable="true" />
+        <Property Name="MESSAGETITLE" Type="VARCHAR2" MaxLength="128" Nullable="true" />
+        <Property Name="VERBALDESCRIPTION" Type="VARCHAR2" MaxLength="255" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CTTFOID">
+        <Key>
+          <PropertyRef Name="SYSCTTFOID" />
+        </Key>
+        <Property Name="REPLACEBLOB" Type="BLOB" Nullable="true" />
+        <Property Name="SYSCTTFOID" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="FRONTID" Type="VARCHAR2" MaxLength="80" Nullable="true" />
+        <Property Name="REPLACETERM" Type="VARCHAR2" MaxLength="4000" Nullable="true" />
+        <Property Name="SYSCTLANG" Type="int64" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CTTMESSAGE">
+        <Key>
+          <PropertyRef Name="SYSCTTMESSAGE" />
+        </Key>
+        <Property Name="SYSCTTMESSAGE" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="MESSAGECODE" Type="VARCHAR2" MaxLength="30" Nullable="true" />
+        <Property Name="MESSAGEAREA" Type="VARCHAR2" MaxLength="30" Nullable="true" />
+        <Property Name="REPLACEMESSAGETEXT" Type="VARCHAR2" MaxLength="1024" Nullable="true" />
+        <Property Name="REPLACEMESSAGETITLE" Type="VARCHAR2" MaxLength="128" Nullable="true" />
+        <Property Name="SYSCTLANG" Type="int64" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CTWEB">
+        <Key>
+          <PropertyRef Name="SYSCTWEB" />
+        </Key>
+        <Property Name="SYSCTWEB" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="ORIGTERM" Type="VARCHAR2" MaxLength="100" Nullable="true" />
+        <Property Name="CTRLTYPE" Type="int" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CTLOCL">
+        <Key>
+          <PropertyRef Name="SYSCTLOCL" />
+        </Key>
+        <Property Name="SYSCTLOCL" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="ORIGTERM" Type="VARCHAR2" MaxLength="100" Nullable="true" />
+        <Property Name="CTRLTYPE" Type="int" Nullable="true" />
+        <Property Name="WINNAME" Type="VARCHAR2" MaxLength="200" Nullable="false" />
+        <Property Name="FRONTID" Type="VARCHAR2" MaxLength="80" Nullable="false" />
+        <Property Name="ORIGTOOLTIP" Type="VARCHAR2" MaxLength="255" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CTTSTATEDEF">
+        <Key>
+          <PropertyRef Name="SYSCTTSTATEDEF" />
+        </Key>
+        <Property Name="SYSCTTSTATEDEF" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="SYSSTATEDEF" Type="int64" Nullable="true" />
+        <Property Name="SYSCTLANG" Type="int64" Nullable="true" />
+        <Property Name="REPLACEZUSTAND" Type="VARCHAR2" MaxLength="20" Nullable="true" />
+        <Property Name="REPLACEBESCHREIBUNG" Type="VARCHAR2" MaxLength="255" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CTFOID">
+        <Key>
+          <PropertyRef Name="SYSCTFOID" />
+        </Key>
+        <Property Name="SYSCTFOID" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="FRONTID" Type="VARCHAR2" MaxLength="80" Nullable="true" />
+        <Property Name="TYP" Type="int" Nullable="true" />
+        <Property Name="VERBALDESCRIPTION" Type="VARCHAR2" MaxLength="255" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CTCTXMESSAGE">
+        <Key>
+          <PropertyRef Name="SYSCTTMESSAGE" />
+        </Key>
+        <Property Name="SYSCTTMESSAGE" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="MESSAGECODE" Type="VARCHAR2" MaxLength="30" Nullable="true" />
+        <Property Name="MESSAGEAREA" Type="VARCHAR2" MaxLength="30" Nullable="true" />
+        <Property Name="SYSLOGDUMP" Type="int64" Nullable="true" />
+        <Property Name="SYSWFLOG" Type="int64" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CTTWEB">
+        <Key>
+          <PropertyRef Name="SYSCTTWEB" />
+        </Key>
+        <Property Name="SYSCTTWEB" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="SYSCTWEB" Type="int64" Nullable="true" />
+        <Property Name="SYSCTLANG" Type="int64" Nullable="true" />
+        <Property Name="REPLACETERM" Type="VARCHAR2" MaxLength="100" Nullable="true" />
+        <Property Name="REPLACETOOLTIP" Type="VARCHAR2" MaxLength="255" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CTTATTRIBUTDEF">
+        <Key>
+          <PropertyRef Name="SYSCTTATTRIBUTDEF" />
+        </Key>
+        <Property Name="SYSCTTATTRIBUTDEF" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="SYSATTRIBUTDEF" Type="int64" Nullable="true" />
+        <Property Name="SYSCTLANG" Type="int64" Nullable="true" />
+        <Property Name="REPLACEATTRIBUT" Type="VARCHAR2" MaxLength="40" Nullable="true" />
+        <Property Name="REPLACEBESCHREIBUNG" Type="VARCHAR2" MaxLength="255" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CTTTXTBS">
+        <Key>
+          <PropertyRef Name="SYSCTTTXTBS" />
+        </Key>
+        <Property Name="SYSCTTTXTBS" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="SYSTXTBS" Type="int64" Nullable="true" />
+        <Property Name="REPLACETEXT" Type="VARCHAR2" MaxLength="4000" Nullable="true" />
+      </EntityType>
+      <EntityType Name="CTTLOCL">
+        <Key>
+          <PropertyRef Name="SYSCTTLOCL" />
+        </Key>
+        <Property Name="SYSCTTLOCL" Type="int64" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="SYSCTLANG" Type="int64" Nullable="true" />
+        <Property Name="WINNAME" Type="VARCHAR2" MaxLength="200" Nullable="true" />
+        <Property Name="FRONTID" Type="VARCHAR2" MaxLength="80" Nullable="true" />
+        <Property Name="REPLACETERM" Type="VARCHAR2" MaxLength="100" Nullable="true" />
+        <Property Name="REPLACETOOLTIP" Type="VARCHAR2" MaxLength="255" Nullable="true" />
+      </EntityType>
+            <Association Name="CTSTATEDEF_CTTSTATEDEF">
+              <End Role="CTSTATEDEF" Type="Cic.OpenOne.Common.Model.DdCt.Store.CTSTATEDEF" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="CTTSTATEDEF" Type="Cic.OpenOne.Common.Model.DdCt.Store.CTTSTATEDEF" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="CTSTATEDEF">
+                  <PropertyRef Name="SYSSTATEDEF" />
+                </Principal>
+                <Dependent Role="CTTSTATEDEF">
+                  <PropertyRef Name="SYSSTATEDEF" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="CTATTRIBUTDEF_CTTATTRIBUTDEF">
+              <End Role="CTATTRIBUTDEF" Type="Cic.OpenOne.Common.Model.DdCt.Store.CTATTRIBUTDEF" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="CTTATTRIBUTDEF" Type="Cic.OpenOne.Common.Model.DdCt.Store.CTTATTRIBUTDEF" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="CTATTRIBUTDEF">
+                  <PropertyRef Name="SYSATTRIBUTDEF" />
+                </Principal>
+                <Dependent Role="CTTATTRIBUTDEF">
+                  <PropertyRef Name="SYSATTRIBUTDEF" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="CTLANG_CTTSTATEDEF">
+              <End Role="CTLANG" Type="Cic.OpenOne.Common.Model.DdCt.Store.CTLANG" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="CTTSTATEDEF" Type="Cic.OpenOne.Common.Model.DdCt.Store.CTTSTATEDEF" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="CTLANG">
+                  <PropertyRef Name="SYSCTLANG" />
+                </Principal>
+                <Dependent Role="CTTSTATEDEF">
+                  <PropertyRef Name="SYSCTLANG" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="CTLANG_CTTATTRIBUTDEF">
+              <End Role="CTLANG" Type="Cic.OpenOne.Common.Model.DdCt.Store.CTLANG" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="CTTATTRIBUTDEF" Type="Cic.OpenOne.Common.Model.DdCt.Store.CTTATTRIBUTDEF" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="CTLANG">
+                  <PropertyRef Name="SYSCTLANG" />
+                </Principal>
+                <Dependent Role="CTTATTRIBUTDEF">
+                  <PropertyRef Name="SYSCTLANG" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="CTLANG_CTTMESSAGE">
+              <End Role="CTLANG" Type="Cic.OpenOne.Common.Model.DdCt.Store.CTLANG" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="CTTMESSAGE" Type="Cic.OpenOne.Common.Model.DdCt.Store.CTTMESSAGE" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="CTLANG">
+                  <PropertyRef Name="SYSCTLANG" />
+                </Principal>
+                <Dependent Role="CTTMESSAGE">
+                  <PropertyRef Name="SYSCTLANG" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="CTLANG_CTTFOID">
+              <End Role="CTLANG" Type="Cic.OpenOne.Common.Model.DdCt.Store.CTLANG" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="CTTFOID" Type="Cic.OpenOne.Common.Model.DdCt.Store.CTTFOID" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="CTLANG">
+                  <PropertyRef Name="SYSCTLANG" />
+                </Principal>
+                <Dependent Role="CTTFOID">
+                  <PropertyRef Name="SYSCTLANG" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="CTLANG_CTTWEB">
+              <End Role="CTLANG" Type="Cic.OpenOne.Common.Model.DdCt.Store.CTLANG" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="CTTWEB" Type="Cic.OpenOne.Common.Model.DdCt.Store.CTTWEB" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="CTLANG">
+                  <PropertyRef Name="SYSCTLANG" />
+                </Principal>
+                <Dependent Role="CTTWEB">
+                  <PropertyRef Name="SYSCTLANG" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+            <Association Name="CTWEB_CTTWEB">
+              <End Role="CTWEB" Type="Cic.OpenOne.Common.Model.DdCt.Store.CTWEB" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>
+              <End Role="CTTWEB" Type="Cic.OpenOne.Common.Model.DdCt.Store.CTTWEB" Multiplicity="*">
+              </End>
+              <ReferentialConstraint>
+                <Principal Role="CTWEB">
+                  <PropertyRef Name="SYSCTWEB" />
+                </Principal>
+                <Dependent Role="CTTWEB">
+                  <PropertyRef Name="SYSCTWEB" />
+                </Dependent>
+              </ReferentialConstraint>
+            </Association>
+        </Schema>  
+      </edmx:StorageModels>
+      <!-- Conceptual schema - CSDL -->
+      <edmx:ConceptualModels>
+        <Schema Namespace="Cic.OpenOne.Common.Model.DdCt" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntityContainer Name="CtEntities">
+          <EntitySet Name="CTSTATEDEF" EntityType="Cic.OpenOne.Common.Model.DdCt.CTSTATEDEF" />
+          <EntitySet Name="CTATTRIBUTDEF" EntityType="Cic.OpenOne.Common.Model.DdCt.CTATTRIBUTDEF" />
+          <EntitySet Name="CTTXTBS" EntityType="Cic.OpenOne.Common.Model.DdCt.CTTXTBS" />
+          <EntitySet Name="CTLANG" EntityType="Cic.OpenOne.Common.Model.DdCt.CTLANG" />
+          <EntitySet Name="CTMESSAGE" EntityType="Cic.OpenOne.Common.Model.DdCt.CTMESSAGE" />
+          <EntitySet Name="CTTFOID" EntityType="Cic.OpenOne.Common.Model.DdCt.CTTFOID" />
+          <EntitySet Name="CTTMESSAGE" EntityType="Cic.OpenOne.Common.Model.DdCt.CTTMESSAGE" />
+          <EntitySet Name="CTWEB" EntityType="Cic.OpenOne.Common.Model.DdCt.CTWEB" />
+          <EntitySet Name="CTLOCL" EntityType="Cic.OpenOne.Common.Model.DdCt.CTLOCL" />
+          <EntitySet Name="CTTSTATEDEF" EntityType="Cic.OpenOne.Common.Model.DdCt.CTTSTATEDEF" />
+          <EntitySet Name="CTFOID" EntityType="Cic.OpenOne.Common.Model.DdCt.CTFOID" />
+          <EntitySet Name="CTCTXMESSAGE" EntityType="Cic.OpenOne.Common.Model.DdCt.CTCTXMESSAGE" />
+          <EntitySet Name="CTTWEB" EntityType="Cic.OpenOne.Common.Model.DdCt.CTTWEB" />
+          <EntitySet Name="CTTATTRIBUTDEF" EntityType="Cic.OpenOne.Common.Model.DdCt.CTTATTRIBUTDEF" />
+          <EntitySet Name="CTTTXTBS" EntityType="Cic.OpenOne.Common.Model.DdCt.CTTTXTBS" />
+          <EntitySet Name="CTTLOCL" EntityType="Cic.OpenOne.Common.Model.DdCt.CTTLOCL" />
+          <AssociationSet Name="CTTSTATEDEF_CTSTATEDEF" Association="Cic.OpenOne.Common.Model.DdCt.CTTSTATEDEF_CTSTATEDEF">
+            <End Role="CTSTATEDEF" EntitySet="CTSTATEDEF" />
+            <End Role="CTTSTATEDEF" EntitySet="CTTSTATEDEF" />
+          </AssociationSet>
+          <AssociationSet Name="CTTATTRIBUTDEF_CTATTRIBUTDEF" Association="Cic.OpenOne.Common.Model.DdCt.CTTATTRIBUTDEF_CTATTRIBUTDEF">
+            <End Role="CTATTRIBUTDEF" EntitySet="CTATTRIBUTDEF" />
+            <End Role="CTTATTRIBUTDEF" EntitySet="CTTATTRIBUTDEF" />
+          </AssociationSet>
+          <AssociationSet Name="CTTSTATEDEF_CTLANG" Association="Cic.OpenOne.Common.Model.DdCt.CTTSTATEDEF_CTLANG">
+            <End Role="CTLANG" EntitySet="CTLANG" />
+            <End Role="CTTSTATEDEF" EntitySet="CTTSTATEDEF" />
+          </AssociationSet>
+          <AssociationSet Name="CTTATTRIBUTDEF_CTLANG" Association="Cic.OpenOne.Common.Model.DdCt.CTTATTRIBUTDEF_CTLANG">
+            <End Role="CTLANG" EntitySet="CTLANG" />
+            <End Role="CTTATTRIBUTDEF" EntitySet="CTTATTRIBUTDEF" />
+          </AssociationSet>
+          <AssociationSet Name="CTTMESSAGE_CTLANG" Association="Cic.OpenOne.Common.Model.DdCt.CTTMESSAGE_CTLANG">
+            <End Role="CTLANG" EntitySet="CTLANG" />
+            <End Role="CTTMESSAGE" EntitySet="CTTMESSAGE" />
+          </AssociationSet>
+          <AssociationSet Name="CTTFOID_CTLANG" Association="Cic.OpenOne.Common.Model.DdCt.CTTFOID_CTLANG">
+            <End Role="CTLANG" EntitySet="CTLANG" />
+            <End Role="CTTFOID" EntitySet="CTTFOID" />
+          </AssociationSet>
+          <AssociationSet Name="CTTWEB_CTLANG" Association="Cic.OpenOne.Common.Model.DdCt.CTTWEB_CTLANG">
+            <End Role="CTLANG" EntitySet="CTLANG" />
+            <End Role="CTTWEB" EntitySet="CTTWEB" />
+          </AssociationSet>
+          <AssociationSet Name="CTTWEB_CTWEB" Association="Cic.OpenOne.Common.Model.DdCt.CTTWEB_CTWEB">
+            <End Role="CTWEB" EntitySet="CTWEB" />
+            <End Role="CTTWEB" EntitySet="CTTWEB" />
+          </AssociationSet>
+          </EntityContainer>
+      <EntityType Name="CTSTATEDEF">
+        <Documentation><Summary>Definition f�r interne und oder externe Stati bzw. Zust�nde</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSSTATEDEF" />
+        </Key>
+        <Property Name="SYSSTATEDEF" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary>System ID</Summary></Documentation>
+        </Property>
+        <Property Name="ZUSTAND" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Zustand kommt in angebot, antrag und vt vor</Summary></Documentation>
+        </Property>
+        <Property Name="BESCHREIBUNG" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="ART" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>0 = intern, 1 = extern, 2 = beides</Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="CTTSTATEDEFList" Relationship="Cic.OpenOne.Common.Model.DdCt.CTTSTATEDEF_CTSTATEDEF" FromRole="CTSTATEDEF" ToRole="CTTSTATEDEF" />
+      </EntityType>
+      <EntityType Name="CTATTRIBUTDEF">
+        <Documentation><Summary>Attribut-Definitionen (eigentlich aus ow.dct)</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSATTRIBUTDEF" />
+        </Key>
+        <Property Name="SYSATTRIBUTDEF" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary>System ID</Summary></Documentation>
+        </Property>
+        <Property Name="ATTRIBUT" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="BESCHREIBUNG" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="CTTATTRIBUTDEFList" Relationship="Cic.OpenOne.Common.Model.DdCt.CTTATTRIBUTDEF_CTATTRIBUTDEF" FromRole="CTATTRIBUTDEF" ToRole="CTTATTRIBUTDEF" />
+      </EntityType>
+      <EntityType Name="CTTXTBS">
+        <Documentation><Summary>Textbaustein-Definition mit Defaultwerten</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSTXTBS" />
+        </Key>
+        <Property Name="SYSTXTBS" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="SYSTXTBSTYP" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="CODE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Uunique zusammen mit SysTXTBSTYP</Summary></Documentation>
+        </Property>
+        <Property Name="TEXT" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Text</Summary></Documentation>
+        </Property>
+        <Property Name="ZEILENUMBRUCH" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Zeilenumbruch</Summary></Documentation>
+        </Property>
+        <Property Name="DATUM" Type="DateTime" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Datum</Summary></Documentation>
+        </Property>
+        <Property Name="BETRAG" Type="Decimal" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Betrag</Summary></Documentation>
+        </Property>
+        <Property Name="PROZENT" Type="Decimal" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Prozent Feld</Summary></Documentation>
+        </Property>
+        <Property Name="FLAG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Flag Feld</Summary></Documentation>
+        </Property>
+      </EntityType>
+      <EntityType Name="CTLANG">
+        <Documentation><Summary></Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCTLANG" />
+        </Key>
+        <Property Name="SYSCTLANG" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="LANGUAGENAME" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="ISOCODE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="FLAGTRANSLATE" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Wird zum �bersetzen benutzt</Summary></Documentation>
+        </Property>
+        <Property Name="ACTIVEFLAG" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Aktivflag</Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="CTTSTATEDEFList" Relationship="Cic.OpenOne.Common.Model.DdCt.CTTSTATEDEF_CTLANG" FromRole="CTLANG" ToRole="CTTSTATEDEF" />
+        <NavigationProperty Name="CTTATTRIBUTDEFList" Relationship="Cic.OpenOne.Common.Model.DdCt.CTTATTRIBUTDEF_CTLANG" FromRole="CTLANG" ToRole="CTTATTRIBUTDEF" />
+        <NavigationProperty Name="CTTMESSAGEList" Relationship="Cic.OpenOne.Common.Model.DdCt.CTTMESSAGE_CTLANG" FromRole="CTLANG" ToRole="CTTMESSAGE" />
+        <NavigationProperty Name="CTTFOIDList" Relationship="Cic.OpenOne.Common.Model.DdCt.CTTFOID_CTLANG" FromRole="CTLANG" ToRole="CTTFOID" />
+        <NavigationProperty Name="CTTWEBList" Relationship="Cic.OpenOne.Common.Model.DdCt.CTTWEB_CTLANG" FromRole="CTLANG" ToRole="CTTWEB" />
+      </EntityType>
+      <EntityType Name="CTMESSAGE">
+        <Documentation><Summary>Messages and errors</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCTMESSAGE" />
+        </Key>
+        <Property Name="SYSCTMESSAGE" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="MESSAGECODE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Message Identifier (unique with messageArea)</Summary></Documentation>
+        </Property>
+        <Property Name="MESSAGEAREA" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Message area (unique with messageCode)</Summary></Documentation>
+        </Property>
+        <Property Name="MESSAGETYP" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Art der Message</Summary></Documentation>
+        </Property>
+        <Property Name="MESSAGETEXT" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="MESSAGETITLE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="VERBALDESCRIPTION" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+      </EntityType>
+      <EntityType Name="CTTFOID">
+        <Documentation><Summary>Frontoffice items</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCTTFOID" />
+        </Key>
+        <Property Name="REPLACEBLOB" Type="Binary" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>For huge text or even binary contents</Summary></Documentation>
+        </Property>
+        <Property Name="SYSCTTFOID" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="FRONTID" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Unique FO identifier</Summary></Documentation>
+        </Property>
+        <Property Name="REPLACETERM" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Standard text up to 4000 characters</Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="CTLANG" Relationship="Cic.OpenOne.Common.Model.DdCt.CTTFOID_CTLANG" FromRole="CTTFOID" ToRole="CTLANG" />
+      </EntityType>
+      <EntityType Name="CTTMESSAGE">
+        <Documentation><Summary>Translated messages and errors</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCTTMESSAGE" />
+        </Key>
+        <Property Name="SYSCTTMESSAGE" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="MESSAGECODE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Unique Message Identifier together with MessageArea and SysCTLANG</Summary></Documentation>
+        </Property>
+        <Property Name="MESSAGEAREA" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Area of the message</Summary></Documentation>
+        </Property>
+        <Property Name="REPLACEMESSAGETEXT" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="REPLACEMESSAGETITLE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="CTLANG" Relationship="Cic.OpenOne.Common.Model.DdCt.CTTMESSAGE_CTLANG" FromRole="CTTMESSAGE" ToRole="CTLANG" />
+      </EntityType>
+      <EntityType Name="CTWEB">
+        <Documentation><Summary></Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCTWEB" />
+        </Key>
+        <Property Name="SYSCTWEB" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="ORIGTERM" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="CTRLTYPE" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="CTTWEBList" Relationship="Cic.OpenOne.Common.Model.DdCt.CTTWEB_CTWEB" FromRole="CTWEB" ToRole="CTTWEB" />
+      </EntityType>
+      <EntityType Name="CTLOCL">
+        <Documentation><Summary>Tabelle f�r Seitenbezogenen �bersetzungen</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCTLOCL" />
+        </Key>
+        <Property Name="SYSCTLOCL" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary>Prim�re ID</Summary></Documentation>
+        </Property>
+        <Property Name="ORIGTERM" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Enth�lt �bersetzungen zum Feld CTLOCL.FRONTID</Summary></Documentation>
+        </Property>
+        <Property Name="CTRLTYPE" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Gruppierungsm�glichkeit der Front Ids (z.B. �berschriften, Text etc.)</Summary></Documentation>
+        </Property>
+        <Property Name="WINNAME" Type="String" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary>Bezeichner f�r Fenstername/Maske</Summary></Documentation>
+        </Property>
+        <Property Name="FRONTID" Type="String" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary>Front Office ID. Bezeichner f�r den zu �bersetzenden begriff</Summary></Documentation>
+        </Property>
+        <Property Name="ORIGTOOLTIP" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Enth�lt Tooltip zur Front ID</Summary></Documentation>
+        </Property>
+      </EntityType>
+      <EntityType Name="CTTSTATEDEF">
+        <Documentation><Summary>�bersetzungen f�r Status bzw. Zustand-Definitionen</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCTTSTATEDEF" />
+        </Key>
+        <Property Name="SYSCTTSTATEDEF" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="REPLACEZUSTAND" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="REPLACEBESCHREIBUNG" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="CTLANG" Relationship="Cic.OpenOne.Common.Model.DdCt.CTTSTATEDEF_CTLANG" FromRole="CTTSTATEDEF" ToRole="CTLANG" />
+        <NavigationProperty Name="CTSTATEDEF" Relationship="Cic.OpenOne.Common.Model.DdCt.CTTSTATEDEF_CTSTATEDEF" FromRole="CTTSTATEDEF" ToRole="CTSTATEDEF" />
+      </EntityType>
+      <EntityType Name="CTFOID">
+        <Documentation><Summary>Frontoffice items</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCTFOID" />
+        </Key>
+        <Property Name="SYSCTFOID" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="FRONTID" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Unique FO identifier</Summary></Documentation>
+        </Property>
+        <Property Name="TYP" Type="Int32" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Standardlabel or Blob</Summary></Documentation>
+        </Property>
+        <Property Name="VERBALDESCRIPTION" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+      </EntityType>
+      <EntityType Name="CTCTXMESSAGE">
+        <Documentation><Summary>Message in context of use</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCTTMESSAGE" />
+        </Key>
+        <Property Name="SYSCTTMESSAGE" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="MESSAGECODE" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Unique Message Identifier</Summary></Documentation>
+        </Property>
+        <Property Name="MESSAGEAREA" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Area of the message</Summary></Documentation>
+        </Property>
+        <Property Name="SYSLOGDUMP" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="SYSWFLOG" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+      </EntityType>
+      <EntityType Name="CTTWEB">
+        <Documentation><Summary></Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCTTWEB" />
+        </Key>
+        <Property Name="SYSCTTWEB" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="REPLACETERM" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="REPLACETOOLTIP" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="CTWEB" Relationship="Cic.OpenOne.Common.Model.DdCt.CTTWEB_CTWEB" FromRole="CTTWEB" ToRole="CTWEB" />
+        <NavigationProperty Name="CTLANG" Relationship="Cic.OpenOne.Common.Model.DdCt.CTTWEB_CTLANG" FromRole="CTTWEB" ToRole="CTLANG" />
+      </EntityType>
+      <EntityType Name="CTTATTRIBUTDEF">
+        <Documentation><Summary>�bersetzungen f�r Attribut-Definitionen</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCTTATTRIBUTDEF" />
+        </Key>
+        <Property Name="SYSCTTATTRIBUTDEF" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="REPLACEATTRIBUT" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <Property Name="REPLACEBESCHREIBUNG" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary></Summary></Documentation>
+        </Property>
+        <NavigationProperty Name="CTLANG" Relationship="Cic.OpenOne.Common.Model.DdCt.CTTATTRIBUTDEF_CTLANG" FromRole="CTTATTRIBUTDEF" ToRole="CTLANG" />
+        <NavigationProperty Name="CTATTRIBUTDEF" Relationship="Cic.OpenOne.Common.Model.DdCt.CTTATTRIBUTDEF_CTATTRIBUTDEF" FromRole="CTTATTRIBUTDEF" ToRole="CTATTRIBUTDEF" />
+      </EntityType>
+      <EntityType Name="CTTTXTBS">
+        <Documentation><Summary>Textbaustein-Definition mit Defaultwerten</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCTTTXTBS" />
+        </Key>
+        <Property Name="SYSCTTTXTBS" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary>Prim�rschl�ssel der Tabelle CTTTXTBS</Summary></Documentation>
+        </Property>
+        <Property Name="SYSTXTBS" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Fremdschl�ssel mit Verweis auf TXTBS.SYSTXTBS - Die Verkn�pfung zwischen den Tabellen TXTBS/CTTTXTBS soll �ber Ids laufen</Summary></Documentation>
+        </Property>
+        <Property Name="REPLACETEXT" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Text</Summary></Documentation>
+        </Property>
+      </EntityType>
+      <EntityType Name="CTTLOCL">
+        <Documentation><Summary>Page bzw. Maskenbezogene �bersetzungen (�bersteuern die globalen �bersetzungen)</Summary></Documentation>
+        <Key>
+          <PropertyRef Name="SYSCTTLOCL" />
+        </Key>
+        <Property Name="SYSCTTLOCL" Type="Int64" Nullable="false" ConcurrencyMode="None">
+          <Documentation><Summary>Prim�re ID</Summary></Documentation>
+        </Property>
+        <Property Name="SYSCTLANG" Type="Int64" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Verweis auf Sprache</Summary></Documentation>
+        </Property>
+        <Property Name="WINNAME" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Bezeichner f�r Fenstername/Maske</Summary></Documentation>
+        </Property>
+        <Property Name="FRONTID" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>Front Office ID. Bezeichner f�r den zu �bersetzenden begriff</Summary></Documentation>
+        </Property>
+        <Property Name="REPLACETERM" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>�bersetzter Begriff</Summary></Documentation>
+        </Property>
+        <Property Name="REPLACETOOLTIP" Type="String" Nullable="true" ConcurrencyMode="None">
+          <Documentation><Summary>�bersetzter Tooltip</Summary></Documentation>
+        </Property>
+      </EntityType>
+            <Association Name="CTTSTATEDEF_CTSTATEDEF">
+              <End Role="CTSTATEDEF" Type="Cic.OpenOne.Common.Model.DdCt.CTSTATEDEF" Multiplicity="0..1">
+              </End>  
+              <End Role="CTTSTATEDEF" Type="Cic.OpenOne.Common.Model.DdCt.CTTSTATEDEF" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="CTTATTRIBUTDEF_CTATTRIBUTDEF">
+              <End Role="CTATTRIBUTDEF" Type="Cic.OpenOne.Common.Model.DdCt.CTATTRIBUTDEF" Multiplicity="0..1">
+              </End>  
+              <End Role="CTTATTRIBUTDEF" Type="Cic.OpenOne.Common.Model.DdCt.CTTATTRIBUTDEF" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="CTTSTATEDEF_CTLANG">
+              <End Role="CTLANG" Type="Cic.OpenOne.Common.Model.DdCt.CTLANG" Multiplicity="0..1">
+              </End>  
+              <End Role="CTTSTATEDEF" Type="Cic.OpenOne.Common.Model.DdCt.CTTSTATEDEF" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="CTTATTRIBUTDEF_CTLANG">
+              <End Role="CTLANG" Type="Cic.OpenOne.Common.Model.DdCt.CTLANG" Multiplicity="0..1">
+              </End>  
+              <End Role="CTTATTRIBUTDEF" Type="Cic.OpenOne.Common.Model.DdCt.CTTATTRIBUTDEF" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="CTTMESSAGE_CTLANG">
+              <End Role="CTLANG" Type="Cic.OpenOne.Common.Model.DdCt.CTLANG" Multiplicity="0..1">
+              </End>  
+              <End Role="CTTMESSAGE" Type="Cic.OpenOne.Common.Model.DdCt.CTTMESSAGE" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="CTTFOID_CTLANG">
+              <End Role="CTLANG" Type="Cic.OpenOne.Common.Model.DdCt.CTLANG" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>  
+              <End Role="CTTFOID" Type="Cic.OpenOne.Common.Model.DdCt.CTTFOID" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="CTTWEB_CTLANG">
+              <End Role="CTLANG" Type="Cic.OpenOne.Common.Model.DdCt.CTLANG" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>  
+              <End Role="CTTWEB" Type="Cic.OpenOne.Common.Model.DdCt.CTTWEB" Multiplicity="*">
+              </End>
+            </Association>
+            <Association Name="CTTWEB_CTWEB">
+              <End Role="CTWEB" Type="Cic.OpenOne.Common.Model.DdCt.CTWEB" Multiplicity="0..1">
+                <OnDelete Action="Cascade" />
+              </End>  
+              <End Role="CTTWEB" Type="Cic.OpenOne.Common.Model.DdCt.CTTWEB" Multiplicity="*">
+              </End>
+            </Association>
+        </Schema>
+      </edmx:ConceptualModels>
+      <!-- C-S mapping content -->
+      <edmx:Mappings>
+        <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">    
+          <EntityContainerMapping StorageEntityContainer="CIC_CT" CdmEntityContainer="CtEntities">
+          <EntitySetMapping Name="CTSTATEDEF">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenOne.Common.Model.DdCt.CTSTATEDEF)">
+              <MappingFragment StoreEntitySet="CTSTATEDEF">
+                 <ScalarProperty Name="SYSSTATEDEF" ColumnName="SYSSTATEDEF" />
+                 <ScalarProperty Name="ZUSTAND" ColumnName="ZUSTAND" />
+                 <ScalarProperty Name="BESCHREIBUNG" ColumnName="BESCHREIBUNG" />
+                 <ScalarProperty Name="ART" ColumnName="ART" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CTATTRIBUTDEF">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenOne.Common.Model.DdCt.CTATTRIBUTDEF)">
+              <MappingFragment StoreEntitySet="CTATTRIBUTDEF">
+                 <ScalarProperty Name="SYSATTRIBUTDEF" ColumnName="SYSATTRIBUTDEF" />
+                 <ScalarProperty Name="ATTRIBUT" ColumnName="ATTRIBUT" />
+                 <ScalarProperty Name="BESCHREIBUNG" ColumnName="BESCHREIBUNG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CTTXTBS">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenOne.Common.Model.DdCt.CTTXTBS)">
+              <MappingFragment StoreEntitySet="CTTXTBS">
+                 <ScalarProperty Name="SYSTXTBS" ColumnName="SYSTXTBS" />
+                 <ScalarProperty Name="SYSTXTBSTYP" ColumnName="SYSTXTBSTYP" />
+                 <ScalarProperty Name="CODE" ColumnName="CODE" />
+                 <ScalarProperty Name="TEXT" ColumnName="TEXT" />
+                 <ScalarProperty Name="ZEILENUMBRUCH" ColumnName="ZEILENUMBRUCH" />
+                 <ScalarProperty Name="DATUM" ColumnName="DATUM" />
+                 <ScalarProperty Name="BETRAG" ColumnName="BETRAG" />
+                 <ScalarProperty Name="PROZENT" ColumnName="PROZENT" />
+                 <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CTLANG">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenOne.Common.Model.DdCt.CTLANG)">
+              <MappingFragment StoreEntitySet="CTLANG">
+                 <ScalarProperty Name="SYSCTLANG" ColumnName="SYSCTLANG" />
+                 <ScalarProperty Name="LANGUAGENAME" ColumnName="LANGUAGENAME" />
+                 <ScalarProperty Name="ISOCODE" ColumnName="ISOCODE" />
+                 <ScalarProperty Name="FLAGTRANSLATE" ColumnName="FLAGTRANSLATE" />
+                 <ScalarProperty Name="ACTIVEFLAG" ColumnName="ACTIVEFLAG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CTMESSAGE">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenOne.Common.Model.DdCt.CTMESSAGE)">
+              <MappingFragment StoreEntitySet="CTMESSAGE">
+                 <ScalarProperty Name="SYSCTMESSAGE" ColumnName="SYSCTMESSAGE" />
+                 <ScalarProperty Name="MESSAGECODE" ColumnName="MESSAGECODE" />
+                 <ScalarProperty Name="MESSAGEAREA" ColumnName="MESSAGEAREA" />
+                 <ScalarProperty Name="MESSAGETYP" ColumnName="MESSAGETYP" />
+                 <ScalarProperty Name="MESSAGETEXT" ColumnName="MESSAGETEXT" />
+                 <ScalarProperty Name="MESSAGETITLE" ColumnName="MESSAGETITLE" />
+                 <ScalarProperty Name="VERBALDESCRIPTION" ColumnName="VERBALDESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CTTFOID">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenOne.Common.Model.DdCt.CTTFOID)">
+              <MappingFragment StoreEntitySet="CTTFOID">
+                 <ScalarProperty Name="REPLACEBLOB" ColumnName="REPLACEBLOB" />
+                 <ScalarProperty Name="SYSCTTFOID" ColumnName="SYSCTTFOID" />
+                 <ScalarProperty Name="FRONTID" ColumnName="FRONTID" />
+                 <ScalarProperty Name="REPLACETERM" ColumnName="REPLACETERM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CTTMESSAGE">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenOne.Common.Model.DdCt.CTTMESSAGE)">
+              <MappingFragment StoreEntitySet="CTTMESSAGE">
+                 <ScalarProperty Name="SYSCTTMESSAGE" ColumnName="SYSCTTMESSAGE" />
+                 <ScalarProperty Name="MESSAGECODE" ColumnName="MESSAGECODE" />
+                 <ScalarProperty Name="MESSAGEAREA" ColumnName="MESSAGEAREA" />
+                 <ScalarProperty Name="REPLACEMESSAGETEXT" ColumnName="REPLACEMESSAGETEXT" />
+                 <ScalarProperty Name="REPLACEMESSAGETITLE" ColumnName="REPLACEMESSAGETITLE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CTWEB">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenOne.Common.Model.DdCt.CTWEB)">
+              <MappingFragment StoreEntitySet="CTWEB">
+                 <ScalarProperty Name="SYSCTWEB" ColumnName="SYSCTWEB" />
+                 <ScalarProperty Name="ORIGTERM" ColumnName="ORIGTERM" />
+                 <ScalarProperty Name="CTRLTYPE" ColumnName="CTRLTYPE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CTLOCL">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenOne.Common.Model.DdCt.CTLOCL)">
+              <MappingFragment StoreEntitySet="CTLOCL">
+                 <ScalarProperty Name="SYSCTLOCL" ColumnName="SYSCTLOCL" />
+                 <ScalarProperty Name="ORIGTERM" ColumnName="ORIGTERM" />
+                 <ScalarProperty Name="CTRLTYPE" ColumnName="CTRLTYPE" />
+                 <ScalarProperty Name="WINNAME" ColumnName="WINNAME" />
+                 <ScalarProperty Name="FRONTID" ColumnName="FRONTID" />
+                 <ScalarProperty Name="ORIGTOOLTIP" ColumnName="ORIGTOOLTIP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CTTSTATEDEF">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenOne.Common.Model.DdCt.CTTSTATEDEF)">
+              <MappingFragment StoreEntitySet="CTTSTATEDEF">
+                 <ScalarProperty Name="SYSCTTSTATEDEF" ColumnName="SYSCTTSTATEDEF" />
+                 <ScalarProperty Name="REPLACEZUSTAND" ColumnName="REPLACEZUSTAND" />
+                 <ScalarProperty Name="REPLACEBESCHREIBUNG" ColumnName="REPLACEBESCHREIBUNG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CTFOID">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenOne.Common.Model.DdCt.CTFOID)">
+              <MappingFragment StoreEntitySet="CTFOID">
+                 <ScalarProperty Name="SYSCTFOID" ColumnName="SYSCTFOID" />
+                 <ScalarProperty Name="FRONTID" ColumnName="FRONTID" />
+                 <ScalarProperty Name="TYP" ColumnName="TYP" />
+                 <ScalarProperty Name="VERBALDESCRIPTION" ColumnName="VERBALDESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CTCTXMESSAGE">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenOne.Common.Model.DdCt.CTCTXMESSAGE)">
+              <MappingFragment StoreEntitySet="CTCTXMESSAGE">
+                 <ScalarProperty Name="SYSCTTMESSAGE" ColumnName="SYSCTTMESSAGE" />
+                 <ScalarProperty Name="MESSAGECODE" ColumnName="MESSAGECODE" />
+                 <ScalarProperty Name="MESSAGEAREA" ColumnName="MESSAGEAREA" />
+                 <ScalarProperty Name="SYSLOGDUMP" ColumnName="SYSLOGDUMP" />
+                 <ScalarProperty Name="SYSWFLOG" ColumnName="SYSWFLOG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CTTWEB">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenOne.Common.Model.DdCt.CTTWEB)">
+              <MappingFragment StoreEntitySet="CTTWEB">
+                 <ScalarProperty Name="SYSCTTWEB" ColumnName="SYSCTTWEB" />
+                 <ScalarProperty Name="REPLACETERM" ColumnName="REPLACETERM" />
+                 <ScalarProperty Name="REPLACETOOLTIP" ColumnName="REPLACETOOLTIP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CTTATTRIBUTDEF">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenOne.Common.Model.DdCt.CTTATTRIBUTDEF)">
+              <MappingFragment StoreEntitySet="CTTATTRIBUTDEF">
+                 <ScalarProperty Name="SYSCTTATTRIBUTDEF" ColumnName="SYSCTTATTRIBUTDEF" />
+                 <ScalarProperty Name="REPLACEATTRIBUT" ColumnName="REPLACEATTRIBUT" />
+                 <ScalarProperty Name="REPLACEBESCHREIBUNG" ColumnName="REPLACEBESCHREIBUNG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CTTTXTBS">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenOne.Common.Model.DdCt.CTTTXTBS)">
+              <MappingFragment StoreEntitySet="CTTTXTBS">
+                 <ScalarProperty Name="SYSCTTTXTBS" ColumnName="SYSCTTTXTBS" />
+                 <ScalarProperty Name="SYSTXTBS" ColumnName="SYSTXTBS" />
+                 <ScalarProperty Name="REPLACETEXT" ColumnName="REPLACETEXT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CTTLOCL">
+            <EntityTypeMapping TypeName="IsTypeOf(Cic.OpenOne.Common.Model.DdCt.CTTLOCL)">
+              <MappingFragment StoreEntitySet="CTTLOCL">
+                 <ScalarProperty Name="SYSCTTLOCL" ColumnName="SYSCTTLOCL" />
+                 <ScalarProperty Name="SYSCTLANG" ColumnName="SYSCTLANG" />
+                 <ScalarProperty Name="WINNAME" ColumnName="WINNAME" />
+                 <ScalarProperty Name="FRONTID" ColumnName="FRONTID" />
+                 <ScalarProperty Name="REPLACETERM" ColumnName="REPLACETERM" />
+                 <ScalarProperty Name="REPLACETOOLTIP" ColumnName="REPLACETOOLTIP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+            <AssociationSetMapping Name="CTTSTATEDEF_CTSTATEDEF" TypeName="Cic.OpenOne.Common.Model.DdCt.CTTSTATEDEF_CTSTATEDEF" StoreEntitySet="CTTSTATEDEF">
+              <EndProperty Name="CTSTATEDEF">
+                  <ScalarProperty Name="SYSSTATEDEF" ColumnName="SYSSTATEDEF" />
+                </EndProperty>
+                <EndProperty Name="CTTSTATEDEF">
+                <ScalarProperty Name="SYSCTTSTATEDEF" ColumnName="SYSCTTSTATEDEF" />
+                </EndProperty>
+                <Condition ColumnName="SYSSTATEDEF" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="CTTATTRIBUTDEF_CTATTRIBUTDEF" TypeName="Cic.OpenOne.Common.Model.DdCt.CTTATTRIBUTDEF_CTATTRIBUTDEF" StoreEntitySet="CTTATTRIBUTDEF">
+              <EndProperty Name="CTATTRIBUTDEF">
+                  <ScalarProperty Name="SYSATTRIBUTDEF" ColumnName="SYSATTRIBUTDEF" />
+                </EndProperty>
+                <EndProperty Name="CTTATTRIBUTDEF">
+                <ScalarProperty Name="SYSCTTATTRIBUTDEF" ColumnName="SYSCTTATTRIBUTDEF" />
+                </EndProperty>
+                <Condition ColumnName="SYSATTRIBUTDEF" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="CTTSTATEDEF_CTLANG" TypeName="Cic.OpenOne.Common.Model.DdCt.CTTSTATEDEF_CTLANG" StoreEntitySet="CTTSTATEDEF">
+              <EndProperty Name="CTLANG">
+                  <ScalarProperty Name="SYSCTLANG" ColumnName="SYSCTLANG" />
+                </EndProperty>
+                <EndProperty Name="CTTSTATEDEF">
+                <ScalarProperty Name="SYSCTTSTATEDEF" ColumnName="SYSCTTSTATEDEF" />
+                </EndProperty>
+                <Condition ColumnName="SYSCTLANG" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="CTTATTRIBUTDEF_CTLANG" TypeName="Cic.OpenOne.Common.Model.DdCt.CTTATTRIBUTDEF_CTLANG" StoreEntitySet="CTTATTRIBUTDEF">
+              <EndProperty Name="CTLANG">
+                  <ScalarProperty Name="SYSCTLANG" ColumnName="SYSCTLANG" />
+                </EndProperty>
+                <EndProperty Name="CTTATTRIBUTDEF">
+                <ScalarProperty Name="SYSCTTATTRIBUTDEF" ColumnName="SYSCTTATTRIBUTDEF" />
+                </EndProperty>
+                <Condition ColumnName="SYSCTLANG" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="CTTMESSAGE_CTLANG" TypeName="Cic.OpenOne.Common.Model.DdCt.CTTMESSAGE_CTLANG" StoreEntitySet="CTTMESSAGE">
+              <EndProperty Name="CTLANG">
+                  <ScalarProperty Name="SYSCTLANG" ColumnName="SYSCTLANG" />
+                </EndProperty>
+                <EndProperty Name="CTTMESSAGE">
+                <ScalarProperty Name="SYSCTTMESSAGE" ColumnName="SYSCTTMESSAGE" />
+                </EndProperty>
+                <Condition ColumnName="SYSCTLANG" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="CTTFOID_CTLANG" TypeName="Cic.OpenOne.Common.Model.DdCt.CTTFOID_CTLANG" StoreEntitySet="CTTFOID">
+              <EndProperty Name="CTLANG">
+                  <ScalarProperty Name="SYSCTLANG" ColumnName="SYSCTLANG" />
+                </EndProperty>
+                <EndProperty Name="CTTFOID">
+                <ScalarProperty Name="SYSCTTFOID" ColumnName="SYSCTTFOID" />
+                </EndProperty>
+                <Condition ColumnName="SYSCTLANG" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="CTTWEB_CTLANG" TypeName="Cic.OpenOne.Common.Model.DdCt.CTTWEB_CTLANG" StoreEntitySet="CTTWEB">
+              <EndProperty Name="CTLANG">
+                  <ScalarProperty Name="SYSCTLANG" ColumnName="SYSCTLANG" />
+                </EndProperty>
+                <EndProperty Name="CTTWEB">
+                <ScalarProperty Name="SYSCTTWEB" ColumnName="SYSCTTWEB" />
+                </EndProperty>
+                <Condition ColumnName="SYSCTLANG" IsNull="false" />
+              </AssociationSetMapping>
+            <AssociationSetMapping Name="CTTWEB_CTWEB" TypeName="Cic.OpenOne.Common.Model.DdCt.CTTWEB_CTWEB" StoreEntitySet="CTTWEB">
+              <EndProperty Name="CTWEB">
+                  <ScalarProperty Name="SYSCTWEB" ColumnName="SYSCTWEB" />
+                </EndProperty>
+                <EndProperty Name="CTTWEB">
+                <ScalarProperty Name="SYSCTTWEB" ColumnName="SYSCTTWEB" />
+                </EndProperty>
+                <Condition ColumnName="SYSCTWEB" IsNull="false" />
+              </AssociationSetMapping>
+          </EntityContainerMapping>
+        </Mapping>
+      </edmx:Mappings>
+    </edmx:Runtime>
+  <edmx:Designer>
+    <edmx:Connection>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+    </edmx:Options>
+    <edmx:Diagrams>
+      <edmx:Diagram DiagramId="31fd8b2019ae49d5aad62c38cbb91aa0" Name="Diagram1">
+        <edmx:EntityTypeShape EntityType="Cic.OpenOne.Common.Model.DdCt.CTSTATEDEF" Width="1.5" PointX="3.75" PointY="12" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="Cic.OpenOne.Common.Model.DdCt.CTATTRIBUTDEF" Width="1.5" PointX="3.75" PointY="15.125" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="Cic.OpenOne.Common.Model.DdCt.CTTXTBS" Width="1.5" PointX="1" PointY="0.5" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="Cic.OpenOne.Common.Model.DdCt.CTLANG" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="Cic.OpenOne.Common.Model.DdCt.CTMESSAGE" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="Cic.OpenOne.Common.Model.DdCt.CTTFOID" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="Cic.OpenOne.Common.Model.DdCt.CTTMESSAGE" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="Cic.OpenOne.Common.Model.DdCt.CTWEB" Width="1.5" PointX="3.75" PointY="2.125" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="Cic.OpenOne.Common.Model.DdCt.CTLOCL" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="Cic.OpenOne.Common.Model.DdCt.CTTSTATEDEF" Width="1.5" PointX="6" PointY="7" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="Cic.OpenOne.Common.Model.DdCt.CTFOID" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="Cic.OpenOne.Common.Model.DdCt.CTCTXMESSAGE" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="Cic.OpenOne.Common.Model.DdCt.CTTWEB" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="Cic.OpenOne.Common.Model.DdCt.CTTATTRIBUTDEF" Width="1.5" PointX="6" PointY="10" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="Cic.OpenOne.Common.Model.DdCt.CTTTXTBS" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="Cic.OpenOne.Common.Model.DdCt.CTTLOCL" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <edmx:AssociationConnector Association="Cic.OpenOne.Common.Model.DdCt.CTTSTATEDEF_CTSTATEDEF" ManuallyRouted="false" />
+        <edmx:AssociationConnector Association="Cic.OpenOne.Common.Model.DdCt.CTTATTRIBUTDEF_CTATTRIBUTDEF" ManuallyRouted="false" />
+        <edmx:AssociationConnector Association="Cic.OpenOne.Common.Model.DdCt.CTTSTATEDEF_CTLANG" ManuallyRouted="false" />
+        <edmx:AssociationConnector Association="Cic.OpenOne.Common.Model.DdCt.CTTATTRIBUTDEF_CTLANG" ManuallyRouted="false" />
+        <edmx:AssociationConnector Association="Cic.OpenOne.Common.Model.DdCt.CTTMESSAGE_CTLANG" ManuallyRouted="false" />
+        <edmx:AssociationConnector Association="Cic.OpenOne.Common.Model.DdCt.CTTFOID_CTLANG" ManuallyRouted="false" />
+        <edmx:AssociationConnector Association="Cic.OpenOne.Common.Model.DdCt.CTTWEB_CTLANG" ManuallyRouted="false" />
+        <edmx:AssociationConnector Association="Cic.OpenOne.Common.Model.DdCt.CTTWEB_CTWEB" ManuallyRouted="false" />
+      </edmx:Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+  </edmx:Edmx>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LuceneConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<tables>
+
+		<IndexedTable>
+			<id>ANGEBOT</id>
+			<query>select  angebot.sysid id,angebot.angebot title,angebot.objektvt description1, angebot.zustand description2, kd.vorname||it.vorname||' '|| kd.name||it.name description3,'' peuni from angebot, CIC.PERSON KD, CIC.IT IT, CIC.LSADD LSADD, CIC.RVT RAHMEN where ANGEBOT.SYSKD=KD.SYSPERSON(+) and ANGEBOT.SYSIT=IT.SYSIT(+) and ANGEBOT.SYSLS=LSADD.SYSLSADD(+) and ANGEBOT.SYSRVT=RAHMEN.SYSRVT and angebot.sysls=3 </query>
+			<keyField>sysid</keyField>
+			<peroleFilter>false</peroleFilter>
+			<indexid>ANGEBOT</indexid>
+		</IndexedTable>
+		<IndexedTable>
+			<id>VERTRAG</id>
+			<query>select  vt.sysid id,vt.vertrag title,vt.fabrikat description1, vt.vart ||' '||vt.zustand description2, kd.vorname || kd.name description3,'' peuni from vt, CIC.PERSON KD where VT.SYSKD=KD.SYSPERSON(+) and syskd&gt;0 and vt.sysls=3</query>
+			<keyField>sysid</keyField>
+			<peroleFilter>false</peroleFilter>
+			<indexid>VERTRAG</indexid>
+		</IndexedTable>
+		<IndexedTable>
+			<id>WKTACCOUNT</id>
+			<query>select  wktid id,name||' '||vorname title,strasse description1, plz||' '||ort description2, telefon description3, '' peuni from wkt_person_view where sysperson>0 and wktid>0</query>
+			<keyField>wktid</keyField>
+			<peroleFilter>false</peroleFilter>
+			<indexid>WKTACCOUNTP</indexid>
+		</IndexedTable>
+		<IndexedTable>
+			<id>WKTACCOUNT</id>
+			<query>select  wktid id,name||' '||vorname title,strasse description1, plz||' '||ort description2, telefon description3, '' peuni from wkt_person_view where sysit>0</query>
+			<updatequery>select case when it.sysit>0 then 0 else 1 end remove,'WKTACCOUNT' entity, -1*syslease id,name||' '||vorname title,strasse description1, plz||' '||ort description2, telefon description3, '' peuni  
+from (select distinct syslease from cictlog where cictlog.olarea='IT' and to_timestamp(TO_CHAR(cictlog.changedate,'yyyy-mm-dd HH24:MI:SS'),'YYYY-MM-DD HH24:MI:SS') >( to_timestamp(TO_CHAR(sysdate,'yyyy-mm-dd HH24:MI:SS'),'YYYY-MM-DD HH24:MI:SS') - interval '{0}'  MINUTE) </updatequery>
+			<keyField>wktid</keyField>
+			<peroleFilter>false</peroleFilter>
+			<indexid>WKTACCOUNTIT</indexid>
+			<positiveId>false</positiveId>
+		</IndexedTable>
+		 <IndexedTable>
+			  <id>PERSON</id>
+			  <query>select sysperson id,name||' '||vorname title,strasse description1, plz||' '||ort description2, telefon description3, (SELECT rtrim(xmlagg(xmlelement(e,sysparent,',').extract('//text()') order by sysparent).GetClobVal(),',') FROM peuni, perolecache WHERE area = 'PERSON' AND peuni.sysperole = perolecache.syschild AND sysid=person.sysperson) peuni, (SELECT listagg (sysperson1, ' ') WITHIN GROUP (ORDER BY sysptrelate) FROM ptrelate WHERE sysperson2=person.sysperson) sysperson1, (SELECT listagg (sysidparent, ' ') WITHIN GROUP ( ORDER BY sysidparent) FROM crmnm WHERE crmnm.parentarea='OPPO' and crmnm.childarea='PERSON' and crmnm.sysidchild=person.sysperson ) sysidparentoppo from person where 1=1 </query>
+			  <keyField>sysperson</keyField>
+			  <peroleFilter>false</peroleFilter>
+			  <indexid>PERSON</indexid>
+		</IndexedTable>
+	</tables>
+</LuceneConfig>

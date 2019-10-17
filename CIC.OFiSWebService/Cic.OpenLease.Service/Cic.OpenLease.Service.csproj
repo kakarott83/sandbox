@@ -1,0 +1,580 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{19124676-E402-4B2B-9C50-532F6A642347}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cic.OpenLease.Service</RootNamespace>
+    <AssemblyName>Cic.OpenLease.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>Cic.OpenLease.Service.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress>true</Use64BitIISExpress>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Cic.OpenLease.Service.XML</DocumentationFile>
+    <NoWarn>1591,3001,3002,0168,0436,0219,1573,1572,1570,0642,3003,3008</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
+    <PublishDatabases>false</PublishDatabases>
+    <ExcludeApp_Data>true</ExcludeApp_Data>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
+    <NoWarn>1591,3001,3002,0168,0436,0219,1573,1572,1570,0642,3003,3008</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Bas.Infrastructure, Version=1.1.0.4296, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\CIC.Bas.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Database.CT.EF6, Version=4.479.226.388, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Database.CT.EF6.4.479.226.388\lib\net45\CIC.Database.CT.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Database.ET.EF6, Version=4.479.226.388, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Database.ET.EF6.4.479.226.388\lib\net45\CIC.Database.ET.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Database.OIQUEUE.EF6, Version=4.479.226.388, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Database.OIQUEUE.EF6.4.479.226.388\lib\net45\CIC.Database.OIQUEUE.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Database.OL.EF6, Version=4.479.226.388, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Database.OL.EF6.4.479.226.388\lib\net45\CIC.Database.OL.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Database.OW.EF6, Version=4.479.226.388, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Database.OW.EF6.4.479.226.388\lib\net45\CIC.Database.OW.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Database.PRISMA.EF6, Version=4.479.226.388, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Database.PRISMA.EF6.4.479.226.388\lib\net45\CIC.Database.PRISMA.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Monitoring, Version=1.0.1.999, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Monitoring.1.0.2\lib\net46\CIC.Monitoring.dll</HintPath>
+    </Reference>
+    <Reference Include="CIC.Unity.DatabaseConnection, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Unity.DatabaseConnection.2.9.8.838\lib\net46\CIC.Unity.DatabaseConnection.dll</HintPath>
+    </Reference>
+    <Reference Include="Ciloci.Flee, Version=0.9.26.0, Culture=neutral, PublicKeyToken=c8526a021ef298ed, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\Trove.FLEE.0.9.26.0\lib\net20\Ciloci.Flee.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\Dapper.1.50.2\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data, Version=5.0.2262.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Unity.DatabaseConnection.2.9.8.838\lib\net46\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Oracle, Version=9.8.838.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Unity.DatabaseConnection.2.9.8.838\lib\net46\Devart.Data.Oracle.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Oracle.Entity.EF6, Version=9.8.838.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\CIC.Unity.DatabaseConnection.2.9.8.838\lib\net46\Devart.Data.Oracle.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net.Ext.Json, Version=1.2.15.4228, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\log4net.Ext.Json.1.2.15.14586\lib\net45-full\log4net.Ext.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Nancy, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\Nancy.1.4.1\lib\net40\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Hosting.Self, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\Nancy.Hosting.Self.1.4.1\lib\net40\Nancy.Hosting.Self.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\CIC.One\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="log4net.Ext.Json.LICENSE.txt" />
+    <Content Include="log4net.Ext.Json.README.txt" />
+    <Content Include="resources\template_kredit_raten.html" />
+    <Content Include="resources\template_leasing_restwert.html" />
+    <Content Include="resources\template_leasing_kilometer.html" />
+    <Content Include="resources\template_kredit_ballon.html" />
+    <Content Include="resources\template_kredit_3wegefin.html" />
+    <Content Include="resources\template_vertragsuebersicht.html" />
+    <Content Include="Service References\MediatorService\Cic.OpenLease.Service.MediatorService.ResponseBase.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Service References\MediatorService\configuration91.svcinfo" />
+    <None Include="Service References\MediatorService\configuration.svcinfo" />
+    <None Include="Service References\MediatorService\MediatorService1.wsdl" />
+    <None Include="Service References\MediatorService\MediatorService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediatorService\MediatorService81.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediatorService\MediatorService82.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediatorService\MediatorService83.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediatorService\MediatorService84.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediatorService\MediatorService85.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediatorService\MediatorService86.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediatorService\MediatorService87.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediatorService\MediatorService88.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediatorService\MediatorService89.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MediatorService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\MediatorService\MediatorService1.disco" />
+    <Content Include="Services\DdOl\ANGEBOTDao.svc" />
+    <Content Include="Services\DdOl\ANTRAGDao.svc" />
+    <Content Include="Services\DdOl\HtmlReportService.svc" />
+    <Content Include="Services\DdOl\VTDao.svc" />
+    <Content Include="Services\Merge\assistantService.svc" />
+    <Content Include="Services\Merge\CarConfigurator.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <EmbeddedResource Include="licenses.licx" />
+    <EmbeddedResource Include="Properties\ExceptionMessages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\ExceptionMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\MediatorService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Services\DdEurotax\ETGTYPEHelper.cs" />
+    <Compile Include="Services\DdOl\ADJDto.cs" />
+    <Compile Include="Services\DdOl\AngebotBinaryDao.cs" />
+    <Compile Include="Services\DdOl\ANGEBOTDao.svc.cs">
+      <DependentUpon>ANGEBOTDao.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\DdOl\AngebotSubmitDao.cs" />
+    <Compile Include="Services\DdOl\ANTRAGDao.svc.cs">
+      <DependentUpon>ANTRAGDao.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\DdOl\BankdatenDao.cs" />
+    <Compile Include="Services\DdOl\DAO\AngebotVARTTemplateDao.cs" />
+    <Compile Include="Services\DdOl\DTO\VsTypPosDto.cs" />
+    <Compile Include="Services\DdOl\FlowDao.cs" />
+    <Compile Include="Services\DdOl\BO\AbstractHtmlReportBo.cs" />
+    <Compile Include="Services\DdOl\BO\HtmlExpanderBo.cs" />
+    <Compile Include="Services\DdOl\BO\HtmlReportBo.cs" />
+    <Compile Include="Services\DdOl\BO\IHtmlReportbo.cs" />
+    <Compile Include="Services\DdOl\BO\ReflectionInfoBo.cs" />
+    <Compile Include="Services\DdOl\BO\XMLToObjectBo.cs" />
+    <Compile Include="Services\DdOl\CalculationDao.cs" />
+    <Compile Include="Services\DdOl\ContractExtensionDao.cs" />
+    <Compile Include="Services\DdOl\Contract\IHtmlReportService.cs" />
+    <Compile Include="Services\DdOl\DAO\VartAngebotTemplateDao.cs" />
+    <Compile Include="Services\DdOl\DAO\IHtmlTemplateDao.cs" />
+    <Compile Include="Services\DdOl\DAO\AngebotTemplateDao.cs" />
+    <Compile Include="Services\DdOl\DAO\ResourceTemplateDao.cs" />
+    <Compile Include="Services\DdOl\DAO\TestHtmlTemplateDao.cs" />
+    <Compile Include="Services\DdOl\DictionaryDao.cs" />
+    <Compile Include="Services\DdOl\DTO\icreateHtmlReportDto.cs" />
+    <Compile Include="Services\DdOl\DTO\ocreateHtmlReportDto.cs" />
+    <Compile Include="Services\DdOl\DTO\TestDto.cs" />
+    <Compile Include="Services\DdOl\GebuehrDao.cs" />
+    <Compile Include="Services\DdOl\HtmlReportService.svc.cs">
+      <DependentUpon>HtmlReportService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\DdOl\LsAddDao.cs" />
+    <Compile Include="Services\DdOl\PouvoirDao.cs" />
+    <Compile Include="Services\DdOl\Prisma\ConditionLink.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services\DdOl\Prisma\ConditionLinkType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services\DdOl\Prisma\IObTypDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services\DdOl\Prisma\ObTypDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services\DdOl\PRParamDao.cs" />
+    <Compile Include="Services\DdOl\Tires.cs" />
+    <Compile Include="Services\DdOl\VehicleDao.cs" />
+    <Compile Include="Services\DdOl\VendorDao.cs" />
+    <Compile Include="Services\DdOl\PROVDao.cs" />
+    <Compile Include="Services\DdOl\Subvention.cs" />
+    <Compile Include="Services\DdOl\VSTYPDao.cs" />
+    <Compile Include="Services\DdOl\VSPERSONDao.cs" />
+    <Compile Include="Services\DdOl\VSARTDao.cs" />
+    <Compile Include="Services\DdOl\WRRate.cs" />
+    <Compile Include="Services\DdOl\ITDao.svc.cs">
+      <DependentUpon>ITDao.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\DdOl\KORREKTURDao.cs" />
+    <Compile Include="Services\DdOl\NoVA.cs" />
+    <Compile Include="Services\DdOl\QUOTEDao.cs" />
+    <Compile Include="Services\DdOl\RVSuggest.cs" />
+    <Compile Include="Services\DdOl\VGADJDao.cs" />
+    <Compile Include="Services\DdOl\VGDao.cs" />
+    <Compile Include="Services\DdOl\VTDao.svc.cs">
+      <DependentUpon>VTDao.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Merge\assistantService.svc.cs">
+      <DependentUpon>assistantService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Merge\assistantServiceBo.cs" />
+    <Compile Include="Services\Merge\CarConfigurator.svc.cs">
+      <DependentUpon>CarConfigurator.svc</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services\Merge\DictionaryService.svc.cs">
+      <DependentUpon>DictionaryService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Merge\MembershipProvider.svc.cs">
+      <DependentUpon>MembershipProvider.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Merge\OlClientService.svc.cs">
+      <DependentUpon>OlClientService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Merge\PrismaService.svc.cs">
+      <DependentUpon>PrismaService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Merge\ServicesStateService.svc.cs">
+      <DependentUpon>ServicesStateService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="_Framework\_DtoAssemblers\_Helpers\DateTimeHelper.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Helpers\DtoAssemblerHelper.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\AntobSichAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\AntObSlAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\ANTRAGVorgangMapper.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\ANGEBOTVorgangMapper.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\OBARTAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\OBKATAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\VTVorgangMapper.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\DocumentShortAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\GenericAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Interfaces\IDtoAssemblerAntrag.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Interfaces\IDtoAssemblerShortAntrag.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Interfaces\IDtoAssemblerAngebot.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Interfaces\IDtoAssemblerShortAngebot.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Interfaces\IDtoAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Interfaces\IDtoAssemblerShortVT.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Interfaces\IDtoMapper.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\ANGEBOTAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\ANGOBAUSTAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\ANGOBSICHAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\ANTRAGAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\BRANDAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\BRANCHEAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\BLZAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\ANGEBOTShortAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\ANTRAGShortAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\ETGRIMSAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\ETGTYRESAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\FELGENAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\KDTYPAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\ITShortAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\ObSlAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\OBTYPAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\PLZAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\CTLANGAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\PRFLDARTAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\PROVTARIFMapper.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\PRPARAMAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\RfgAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\STAATAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\PEROLEAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\PERSONAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\VTAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\VTShortAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\WFUSERAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\PUSERAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\ITAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\LANDAssembler.cs" />
+    <Compile Include="_Framework\_DtoAssemblers\_Sources\WRRateAssembler.cs" />
+    <Compile Include="_Framework\_Helpers\AngebotDtoHelper.cs" />
+    <Compile Include="_Framework\_Helpers\ANGEBOTHelper.cs" />
+    <Compile Include="_Framework\_Helpers\ANGKALKHelper.cs" />
+    <Compile Include="_Framework\_Helpers\ANGOBHelper.cs" />
+    <Compile Include="_Framework\_Helpers\ANGOBSLHelper.cs" />
+    <Compile Include="_Framework\_Helpers\ConfigHelper.cs" />
+    <Compile Include="_Framework\_Helpers\ConfigurationManagerHelper.cs" />
+    <Compile Include="_Framework\_Helpers\CodeHelper.cs" />
+    <Compile Include="_Framework\_Helpers\CTTWEBHelper.cs" />
+    <Compile Include="_Framework\_Helpers\DocumentsHelper.cs" />
+    <Compile Include="_Framework\_Helpers\EaiHotHelper.cs" />
+    <Compile Include="_Framework\_Helpers\FsPreisHelper.cs" />
+    <Compile Include="_Framework\_Helpers\EurotaxNumberHelper.cs" />
+    <Compile Include="_Framework\_Helpers\IBANValidator.cs" />
+    <Compile Include="_Framework\_Helpers\KalkulationHelper.cs" />
+    <Compile Include="_Framework\_Helpers\LogHelper.cs" />
+    <Compile Include="_Framework\_Helpers\LsAddHelper.cs" />
+    <Compile Include="_Framework\_Helpers\NovaType.cs" />
+    <Compile Include="_Framework\_Helpers\OBARTHelper.cs" />
+    <Compile Include="_Framework\_Helpers\PeroleHelper.cs" />
+    <Compile Include="_Framework\_Helpers\PEUNIHelper.cs" />
+    <Compile Include="_Framework\_Helpers\PlausibilityCheck.cs" />
+    <Compile Include="_Framework\_Helpers\PRPRODUCTHelper.cs" />
+    <Compile Include="_Framework\_Helpers\RestOfTheHelpers.cs" />
+    <Compile Include="_Framework\_Helpers\RgGebHelper.cs" />
+    <Compile Include="_Framework\_Helpers\Sa3Helper.cs" />
+    <Compile Include="_Framework\_Helpers\ServiceValidator.cs" />
+    <Compile Include="_Framework\_Helpers\MembershipProviderHelper.cs" />
+    <Compile Include="_Framework\_Helpers\ServiceParametersHelper.cs" />
+    <Compile Include="_Framework\_Helpers\SICHTYPHelper.cs" />
+    <Compile Include="_Framework\_Helpers\SQL.cs" />
+    <Compile Include="_Framework\_Helpers\WFMKATHelper.cs" />
+    <Compile Include="_Framework\_Helpers\WFMMEMOHelper.cs" />
+    <Compile Include="_Framework\_Helpers\WFTABLEHelper.cs" />
+    <Compile Include="_Framework\_Helpers\ZinsHelper.cs" />
+    <Compile Include="_Framework\_Helpers\ConfigurationPackageSerializer.cs" />
+    <Compile Include="_Framework\_Helpers\ZustandHelper.cs" />
+    <Compile Include="_Framework\_Source\DualKey.cs" />
+    <Compile Include="_Framework\_Source\EaiParameter.cs" />
+    <Compile Include="_Framework\_Source\ITConfiguration.cs" />
+    <Compile Include="_Framework\_Source\MappingProfile.cs" />
+    <Compile Include="_Framework\_Source\MwStFacade.cs" />
+    <Compile Include="_Framework\_Source\ObTypKey.cs" />
+    <Compile Include="_Framework\_Source\ObtypMapInfo.cs" />
+    <Compile Include="_Framework\_Source\Provision\GAPProvisionCalculator.cs" />
+    <Compile Include="_Framework\_Source\Provision\AbstractProvisionCalculator.cs" />
+    <Compile Include="_Framework\_Source\Provision\GebuehrProvisionCalculator.cs" />
+    <Compile Include="_Framework\_Source\Provision\RestschuldProvisionCalculator.cs" />
+    <Compile Include="_Framework\_Source\Provision\HaftpflichtProvisionCalculator.cs" />
+    <Compile Include="_Framework\_Source\Provision\KaskoProvisionCalculator.cs" />
+    <Compile Include="_Framework\_Source\Provision\WartungProvisionCalculator.cs" />
+    <Compile Include="_Framework\_Source\Provision\IProvisionCalculator.cs" />
+    <Compile Include="_Framework\_Source\Provision\AbschlussProvisionCalculator.cs" />
+    <Compile Include="_Framework\_Source\Provision\ProvisionCalcFactory.cs" />
+    <Compile Include="_Framework\_Source\Provision\_Enums.cs" />
+    <Compile Include="_Framework\_Source\RoundingFacade.cs" />
+    <Compile Include="_Framework\_Source\VehicleOptionData.cs" />
+    <Compile Include="_Framework\_Source\Versicherung\AbstractVSCalculator.cs" />
+    <Compile Include="_Framework\_Source\Versicherung\DefaultCalculator.cs" />
+    <Compile Include="_Framework\_Source\Versicherung\HaftpflichtCalculator.cs" />
+    <Compile Include="_Framework\_Source\Versicherung\GAPCalculator.cs" />
+    <Compile Include="_Framework\_Source\Versicherung\InsassenUVCalculator.cs" />
+    <Compile Include="_Framework\_Source\Versicherung\IVSCalculator.cs" />
+    <Compile Include="_Framework\_Source\Versicherung\KaskoCalculator.cs" />
+    <Compile Include="_Framework\_Source\Versicherung\RechtsschutzCalculator.cs" />
+    <Compile Include="_Framework\_Source\Versicherung\RestschuldCalculator.cs" />
+    <Compile Include="_Framework\_Source\Versicherung\VSCalcFactory.cs" />
+    <Compile Include="_Framework\_Source\_Enums.cs" />
+    <Compile Include="_Framework\_Source\OfferConfiguration.cs" />
+    <Compile Include="_Framework\_Source\VehicleData.cs" />
+    <Compile Include="_Framework\_Source\FakeObjectHelper.cs" />
+    <Compile Include="_Framework\_Source\MembershipProvider.cs" />
+    <Compile Include="_Framework\_Source\PdfThumbnailHelper.cs" />
+    <Compile Include="_Framework\_Source\PrProdStoredParams.cs" />
+    <Compile Include="_Framework\_Source\ServiceException.cs" />
+    <Compile Include="_Framework\_Source\ServiceFactory.cs" />
+    <Compile Include="_Framework\_Source\ServiceHost.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cic.OpenLease.Service.user.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Cic.OpenLease.Service.snk" />
+    <Content Include="Default.aspx" />
+    <Content Include="Services\DdOl\ITDao.svc" />
+    <Content Include="Services\Merge\DictionaryService.svc" />
+    <Content Include="Services\Merge\MembershipProvider.svc" />
+    <Content Include="Services\Merge\OlClientService.svc" />
+    <Content Include="Services\Merge\PrismaService.svc" />
+    <Content Include="Services\Merge\ServicesStateService.svc" />
+    <Content Include="Cic.OpenLease.Service.dll.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="log4net.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\DdEurotax\Generic\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\MediatorService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CIC.One\Cic.One.DTO\Cic.One.DTO.csproj">
+      <Project>{0fdcc4e9-cfde-486f-9d93-58049a1f8325}</Project>
+      <Name>Cic.One.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Cic.Utils\Cic.One.Utils\Cic.One.Utils.csproj">
+      <Project>{d1f653f9-3d9e-4486-89cc-4b0044307750}</Project>
+      <Name>Cic.One.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CIC.One\Cic.One.Workflow\Cic.One.Workflow.csproj">
+      <Project>{b62e8091-2667-4ca4-8197-a67dafab5139}</Project>
+      <Name>Cic.One.Workflow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CIC.OpenOneCarConfigurator\Cic.OpenOne.CarConfigurator\Cic.OpenOne.CarConfigurator.csproj">
+      <Project>{c50e4898-5a07-475f-ae79-137611353f51}</Project>
+      <Name>Cic.OpenOne.CarConfigurator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CIC.OpenOne\Cic.OpenOne.Common\Cic.OpenOne.Common.csproj">
+      <Project>{fc4049ac-617c-4233-ba92-287674e30b35}</Project>
+      <Name>Cic.OpenOne.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CIC.OpenOneGateBANKNOW\Cic.OpenOne.GateBANKNOW.Common\Cic.OpenOne.GateBANKNOW.Common.csproj">
+      <Project>{9db4a50f-0651-4299-a6b8-b43c0b37b6b8}</Project>
+      <Name>Cic.OpenOne.GateBANKNOW.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cic.OpenLease.ServiceAccess\Cic.OpenLease.ServiceAccess.csproj">
+      <Project>{43b2dbdf-298f-4449-89a3-ccff60b11852}</Project>
+      <Name>Cic.OpenLease.ServiceAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Import Project="..\..\libs\Microsoft.WebApplication.targets" Condition="'$(HUDSON)' == 'YES'" />
+  <Import Project="..\..\libs\MSBuild.Community.Tasks.Targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>62811</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/Cic.OpenLease.Service</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="BeforeBuild" Condition="'$(HUDSON)'=='YESOFF'">
+    <FileUpdate Files="Properties\AssemblyInfo.cs" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.$(SVN_REVISION)" />
+  </Target>
+  <Target Name="AfterBuild" Condition="'$(HUDSON)'=='YESOFF'">
+    <ItemGroup>
+      <!-- Ziel zum Kopieren für Revision -->
+      <binDir Include="\\w1\work\buildqueue\HCE.OFiSWebServicesB2B\Service\$(SVN_REVISION)\bin" />
+      <resDir Include="\\w1\work\buildqueue\HCE.OFiSWebServicesB2B\Service\$(SVN_REVISION)\resources" />
+      <serviceDir Include="\\w1\work\buildqueue\HCE.OFiSWebServicesB2B\Service\$(SVN_REVISION)\Services\%(RecursiveDir)%(Filename)%(Extension)" />
+      <svcDir Include="\\w1\work\buildqueue\HCE.OFiSWebServicesB2B\Service\$(SVN_REVISION)\" />
+      <BinFiles Include="$(OutputPath)\*.*" />
+      <ResFiles Include="$(OutputPath)\..\resources\*.*" />
+      <ServiceFiles Include="$(OutputPath)\..\Services\*.svc" />
+      <SvcFiles Include="*.svc" />
+      <SvcFiles Include="*.asax" />
+      <SvcFiles Include="*.aspx" />
+    </ItemGroup>
+    <MakeDir Directories="@(binDir)" ContinueOnError="true" />
+    <MakeDir Directories="@(resDir)" ContinueOnError="true" />
+    <MakeDir Directories="@(serviceDir)" ContinueOnError="true" />
+    <Copy SourceFiles="@(BinFiles)" DestinationFolder="@(binDir)" />
+    <Copy SourceFiles="@(SvcFiles)" DestinationFolder="@(svcDir)" />
+    <Copy SourceFiles="@(ResFiles)" DestinationFolder="@(resDir)" />
+    <CreateItem Include="Services\**\*.*" Exclude="Services\**\.svn\**;Services\**\*.cs" AdditionalMetadata="ToDir=\\w1\work\buildqueue\HCE.OFiSWebServicesB2B\Service\$(SVN_REVISION)\Services">
+      <Output TaskParameter="Include" ItemName="ResourceFilesToDeploy" />
+    </CreateItem>
+    <Copy SourceFiles="@(ResourceFilesToDeploy)" DestinationFolder="%(ToDir)\%(RecursiveDir)" />
+  </Target>
+</Project>

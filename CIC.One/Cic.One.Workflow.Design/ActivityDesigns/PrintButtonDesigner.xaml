@@ -1,0 +1,25 @@
+﻿<sap:ActivityDesigner x:Class="Cic.One.Workflow.Design.ActivityDesigns.PrintButtonDesigner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:co="clr-namespace:Cic.One.Workflow.Design.Converter"
+    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+    xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" MinWidth="50" Height="100" Width="216">
+
+
+    <sap:ActivityDesigner.Resources>
+        <ResourceDictionary>
+            <co:ComboBoxItemConverter x:Key="comboBoxItemConverter"/>
+        </ResourceDictionary>
+    </sap:ActivityDesigner.Resources>
+    
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="120" />
+           
+        </Grid.ColumnDefinitions>
+
+        <ComboBox Grid.Column="1"  SelectedValue="{Binding Path=ModelItem.docarea, Mode=TwoWay, Converter={StaticResource comboBoxItemConverter}}" Name="viewBox1" Height="23" HorizontalAlignment="Left" Margin="0,1,0,0" VerticalAlignment="Top" Width="120" />
+        <Label  Grid.Column="0" Content="{Binding Path=ModelItem.DisplayName, Mode=TwoWay}" Height="24" HorizontalAlignment="Left" Name="label1" VerticalAlignment="Top" Margin="0,0,0,0" Width="80" />
+    </Grid>
+</sap:ActivityDesigner>

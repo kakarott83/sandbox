@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="23f1488e-1f2a-4724-ac04-e5bb23a855bb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8732/luceneConfigService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="luceneConfigService.xsd" MetadataType="Schema" ID="04ce4fbb-083c-45f8-bc03-b3ba91c895d6" SourceId="1" SourceUrl="http://localhost:8732/luceneConfigService.svc?xsd=xsd1" />
+    <MetadataFile FileName="luceneConfigService.wsdl" MetadataType="Wsdl" ID="60d0531d-59dc-495f-82bf-ec7e768a4bec" SourceId="1" SourceUrl="http://localhost:8732/luceneConfigService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="luceneConfigService1.wsdl" MetadataType="Wsdl" ID="83a798fb-0f59-4f8a-8f81-c7b8c2a98714" SourceId="1" SourceUrl="http://localhost:8732/luceneConfigService.svc?wsdl" />
+    <MetadataFile FileName="luceneConfigService1.xsd" MetadataType="Schema" ID="10ba6a67-b45a-4e9e-9c9a-82484727aa6c" SourceId="1" SourceUrl="http://localhost:8732/luceneConfigService.svc?xsd=xsd0" />
+    <MetadataFile FileName="luceneConfigService31.xsd" MetadataType="Schema" ID="bad032e9-0424-4dcf-b200-5c2cd590082d" SourceId="1" SourceUrl="http://localhost:8732/luceneConfigService.svc?xsd=xsd3" />
+    <MetadataFile FileName="luceneConfigService2.xsd" MetadataType="Schema" ID="61504594-6924-4b62-8b41-67bfbcd20e6e" SourceId="1" SourceUrl="http://localhost:8732/luceneConfigService.svc?xsd=xsd2" />
+    <MetadataFile FileName="luceneConfigService32.xsd" MetadataType="Schema" ID="8d74adad-70ae-4237-91a8-1561dd369c1a" SourceId="1" SourceUrl="http://localhost:8732/luceneConfigService.svc?xsd=xsd5" />
+    <MetadataFile FileName="luceneConfigService33.xsd" MetadataType="Schema" ID="110ea4b6-d774-4d95-80ed-6deebd57f000" SourceId="1" SourceUrl="http://localhost:8732/luceneConfigService.svc?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

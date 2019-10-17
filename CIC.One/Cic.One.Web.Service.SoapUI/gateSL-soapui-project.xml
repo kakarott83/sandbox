@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="f7f4aa97-b404-4e22-8e0d-82d786d9c2f8" activeEnvironment="Default" name="GateSL" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="de3a043d-55f6-4e89-8146-ac102b910877" wsaVersion="200508" name="WSHttpBinding_IslService" type="wsdl" bindingName="{http://cic-software.de/GateSL}WSHttpBinding_IslService" soapVersion="1_2" anonymous="optional" definition="http://localhost:60272/slService.svc?singleWsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:60272/slService.svc?singleWsdl"><con:part><con:url>http://localhost:60272/slService.svc?singleWsdl</con:url><con:content><![CDATA[<wsdl:definitions name="slService" targetNamespace="http://cic-software.de/GateSL" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://cic-software.de/GateSL" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+  <wsp:Policy wsu:Id="WSHttpBinding_IslService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://cic-software.de/GateSL" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/Cic.OpenOne.GateSL.Service.DTO"/>
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/Cic.One.GateSL.Service"/>
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/Cic.OpenOne.Common.DTO"/>
+      <xs:element name="recalculateOffer">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="sysId" type="xs:long"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="recalculateOfferResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="recalculateOfferResult" nillable="true" type="q1:orecalculateOfferDto" xmlns:q1="http://schemas.datacontract.org/2004/07/Cic.OpenOne.GateSL.Service.DTO"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="recalcOffer">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="input" nillable="true" type="q2:recalcInput" xmlns:q2="http://schemas.datacontract.org/2004/07/Cic.One.GateSL.Service"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="recalcOfferResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="recalcOfferResult" nillable="true" type="q3:oBaseDto" xmlns:q3="http://schemas.datacontract.org/2004/07/Cic.OpenOne.Common.DTO"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+      <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+      <xs:element name="byte" nillable="true" type="xs:byte"/>
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+      <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+      <xs:element name="double" nillable="true" type="xs:double"/>
+      <xs:element name="float" nillable="true" type="xs:float"/>
+      <xs:element name="int" nillable="true" type="xs:int"/>
+      <xs:element name="long" nillable="true" type="xs:long"/>
+      <xs:element name="QName" nillable="true" type="xs:QName"/>
+      <xs:element name="short" nillable="true" type="xs:short"/>
+      <xs:element name="string" nillable="true" type="xs:string"/>
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+      <xs:element name="char" nillable="true" type="tns:char"/>
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int"/>
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration"/>
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid"/>
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName"/>
+      <xs:attribute name="Id" type="xs:ID"/>
+      <xs:attribute name="Ref" type="xs:IDREF"/>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cic.OpenOne.GateSL.Service.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Cic.OpenOne.GateSL.Service.DTO">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/Cic.OpenOne.Common.DTO"/>
+      <xs:complexType name="orecalculateOfferDto">
+        <xs:complexContent mixed="false">
+          <xs:extension base="q1:oBaseDto" xmlns:q1="http://schemas.datacontract.org/2004/07/Cic.OpenOne.Common.DTO">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="orecalculateOfferDto" nillable="true" type="tns:orecalculateOfferDto"/>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cic.OpenOne.Common.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Cic.OpenOne.Common.DTO">
+      <xs:complexType name="oBaseDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" nillable="true" type="tns:Message"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="oBaseDto" nillable="true" type="tns:oBaseDto"/>
+      <xs:complexType name="Message">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="detail" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="duration" type="xs:long"/>
+          <xs:element minOccurs="0" name="message" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="stacktrace" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="type" type="tns:MessageType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Message" nillable="true" type="tns:Message"/>
+      <xs:simpleType name="MessageType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="None"/>
+          <xs:enumeration value="Debug"/>
+          <xs:enumeration value="Info"/>
+          <xs:enumeration value="Warn"/>
+          <xs:enumeration value="Error"/>
+          <xs:enumeration value="Fatal"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="MessageType" nillable="true" type="tns:MessageType"/>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cic.One.GateSL.Service" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Cic.One.GateSL.Service">
+      <xs:complexType name="recalcInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="info" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="nummer" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="recalcInput" nillable="true" type="tns:recalcInput"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IslService_recalculateOffer_InputMessage">
+    <wsdl:part name="parameters" element="tns:recalculateOffer"/>
+  </wsdl:message>
+  <wsdl:message name="IslService_recalculateOffer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:recalculateOfferResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IslService_recalcOffer_InputMessage">
+    <wsdl:part name="parameters" element="tns:recalcOffer"/>
+  </wsdl:message>
+  <wsdl:message name="IslService_recalcOffer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:recalcOfferResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IslService">
+    <wsdl:operation name="recalculateOffer">
+      <wsdl:input wsaw:Action="http://cic-software.de/GateSL/IslService/recalculateOffer" message="tns:IslService_recalculateOffer_InputMessage"/>
+      <wsdl:output wsaw:Action="http://cic-software.de/GateSL/IslService/recalculateOfferResponse" message="tns:IslService_recalculateOffer_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="recalcOffer">
+      <wsdl:input wsaw:Action="http://cic-software.de/GateSL/IslService/recalcOffer" message="tns:IslService_recalcOffer_InputMessage"/>
+      <wsdl:output wsaw:Action="http://cic-software.de/GateSL/IslService/recalcOfferResponse" message="tns:IslService_recalcOffer_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IslService" type="tns:IslService">
+    <wsp:PolicyReference URI="#WSHttpBinding_IslService_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="recalculateOffer">
+      <soap12:operation soapAction="http://cic-software.de/GateSL/IslService/recalculateOffer" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="recalcOffer">
+      <soap12:operation soapAction="http://cic-software.de/GateSL/IslService/recalcOffer" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="slService">
+    <wsdl:port name="WSHttpBinding_IslService" binding="tns:WSHttpBinding_IslService">
+      <soap12:address location="http://localhost:60272/slService.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:60272/slService.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:60272/slService.svc</con:endpoint></con:endpoints><con:operation id="420a621b-d48c-486b-9514-1ec1d039079e" isOneWay="false" action="http://cic-software.de/GateSL/IslService/recalculateOffer" name="recalculateOffer" bindingOperationName="recalculateOffer" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6ff2257a-444d-40a3-90aa-c87a45425b5f" name="Request 2" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:60272/slService.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:gat="http://cic-software.de/GateSL">\r
+   
+    <soap:Header>
+   <DefaultMessageHeader xmlns="http://cic-software.de/MessageHeader">
+      <ISOLanguageCode xmlns="http://schemas.datacontract.org/2004/07/Cic.OpenOne.Common.Util.SOAP">de-DE</ISOLanguageCode>
+      <Password xmlns="http://schemas.datacontract.org/2004/07/Cic.OpenOne.Common.Util.SOAP">XAKLOP901ASDDDA</Password>
+      <SysBRAND xmlns="http://schemas.datacontract.org/2004/07/Cic.OpenOne.Common.Util.SOAP">1</SysBRAND>
+      <SysPEROLE xmlns="http://schemas.datacontract.org/2004/07/Cic.OpenOne.Common.Util.SOAP">76</SysPEROLE>
+      <UserName xmlns="http://schemas.datacontract.org/2004/07/Cic.OpenOne.Common.Util.SOAP">OSTERU</UserName>
+      <UserType xmlns="http://schemas.datacontract.org/2004/07/Cic.OpenOne.Common.Util.SOAP">1</UserType>
+    </DefaultMessageHeader>
+   </soap:Header>
+
+   <soap:Body>\r
+      <gat:recalculateOffer>\r
+         <!--Optional:-->\r
+         <gat:sysId>5555</gat:sysId>\r
+      </gat:recalculateOffer>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://cic-software.de/GateSL/IslService/recalculateOffer" addDefaultTo="true" addDefaultAction="true"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="e9f48dd5-b360-4567-b9bb-d488533ac7df" isOneWay="false" action="http://cic-software.de/GateSL/IslService/recalcOffer" name="recalcOffer" bindingOperationName="recalcOffer" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ca281ccd-6ecd-422d-be7a-3532508772bc" name="Request 2" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:60272/slService.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:gat="http://cic-software.de/GateSL" xmlns:cic="http://schemas.datacontract.org/2004/07/Cic.One.GateSL.Service">\r
+   <soap:Header>\r
+    <DefaultMessageHeader xmlns="http://cic-software.de/MessageHeader">
+      <ISOLanguageCode xmlns="http://schemas.datacontract.org/2004/07/Cic.OpenOne.Common.Util.SOAP">de-DE</ISOLanguageCode>
+      <Password xmlns="http://schemas.datacontract.org/2004/07/Cic.OpenOne.Common.Util.SOAP">XAKLOP901ASDDDA</Password>
+      <SysBRAND xmlns="http://schemas.datacontract.org/2004/07/Cic.OpenOne.Common.Util.SOAP">1</SysBRAND>
+      <SysPEROLE xmlns="http://schemas.datacontract.org/2004/07/Cic.OpenOne.Common.Util.SOAP">76</SysPEROLE>
+      <UserName xmlns="http://schemas.datacontract.org/2004/07/Cic.OpenOne.Common.Util.SOAP">OSTERU</UserName>
+      <UserType xmlns="http://schemas.datacontract.org/2004/07/Cic.OpenOne.Common.Util.SOAP">1</UserType>
+    </DefaultMessageHeader>
+   </soap:Header>
+   <soap:Body>\r
+      <gat:recalcOffer>\r
+         <!--Optional:-->\r
+         <gat:input>\r
+            <!--Optional:-->\r
+            <cic:info>xxx</cic:info>\r
+            <!--Optional:-->\r
+            <cic:nummer>1234</cic:nummer>\r
+         </gat:input>\r
+      </gat:recalcOffer>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://cic-software.de/GateSL/IslService/recalcOffer" addDefaultAction="true" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

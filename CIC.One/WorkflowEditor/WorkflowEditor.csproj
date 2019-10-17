@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D69FDE53-1607-444E-B333-C5F687E0CD09}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Workflows</RootNamespace>
+    <AssemblyName>WorkflowEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Workflows.App</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Cic.One.Utils, Version=1.0.0.7, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Cic.One.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Cic.OpenOne.Common">
+      <HintPath>..\..\libs\Cic.OpenOne.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Cic.OpenOne.Common.Model, Version=1.0.43381.316, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Cic.OpenOne.Common.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data, Version=5.0.1095.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Oracle, Version=8.4.303.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Devart.Data.Oracle.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Windows.Shell, Version=3.5.41019.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Microsoft.Windows.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="RibbonControlsLibrary, Version=4.0.0.11019, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\RibbonControlsLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Core.Presentation" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Workflow.Runtime" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ExpressionEditor\ComparerName.cs" />
+    <Compile Include="BO\ExpressionEditor\EditorInstance.cs" />
+    <Compile Include="BO\ExpressionEditor\EditorService.cs" />
+    <Compile Include="BO\ExpressionEditor\HilightTextBox.cs" />
+    <Compile Include="BO\ExpressionEditor\IntelliScan.cs" />
+    <Compile Include="BO\ExpressionEditor\IntelliSensePopup.xaml.cs">
+      <DependentUpon>IntelliSensePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ExpressionEditor\TreeNodes.cs" />
+    <Compile Include="BO\ExpressionEditor\TypeImageConverter.cs" />
+    <Compile Include="BO\ToolboxItemSource.cs" />
+    <Compile Include="BO\ToolboxSource.cs" />
+    <Compile Include="BO\WorklfowDesignerExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RehostingWfDesigner.xaml.cs">
+      <DependentUpon>RehostingWfDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cic.One.DTO\Cic.One.DTO.csproj">
+      <Project>{0FDCC4E9-CFDE-486F-9D93-58049A1F8325}</Project>
+      <Name>Cic.One.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cic.One.Web.Service\Cic.One.Web.Service.csproj">
+      <Project>{1EB55903-97FB-42CD-89A5-1B4568047979}</Project>
+      <Name>Cic.One.Web.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cic.One.Workflow.Design\Cic.One.Workflow.Design.csproj">
+      <Project>{F1997812-0317-413D-B616-69519116E9B2}</Project>
+      <Name>Cic.One.Workflow.Design</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cic.One.Workflow\Cic.One.Workflow.csproj">
+      <Project>{B62E8091-2667-4CA4-8197-A67DAFAB5139}</Project>
+      <Name>Cic.One.Workflow</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="BO\ExpressionEditor\IntelliSensePopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RehostingWfDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Activity\book_notebook.png" />
+    <Resource Include="Images\Activity\commentout.png" />
+    <Resource Include="Images\Activity\console_readkey.png" />
+    <Resource Include="Images\Activity\DateStrings.png" />
+    <Resource Include="Images\Activity\messagebox.png" />
+    <Resource Include="Images\Activity\TimeStrings.png" />
+    <Resource Include="Images\Activity\zippedfile.png" />
+    <Resource Include="Images\Execute\play.png" />
+    <Resource Include="Images\Execute\stop.png" />
+    <Resource Include="Images\Intellisense\VSObject_Class.png" />
+    <Resource Include="Images\Intellisense\VSObject_Delegate.png" />
+    <Resource Include="Images\Intellisense\VSObject_Enum.png" />
+    <Resource Include="Images\Intellisense\VSObject_Event.png" />
+    <Resource Include="Images\Intellisense\VSObject_Field.png" />
+    <Resource Include="Images\Intellisense\VSObject_Interface.png" />
+    <Resource Include="Images\Intellisense\VSObject_Method.png" />
+    <Resource Include="Images\Intellisense\VSObject_Namespace.png" />
+    <Resource Include="Images\Intellisense\VSObject_Properties.png" />
+    <Resource Include="Images\Intellisense\VSObject_Structure.png" />
+    <Resource Include="Images\L\add_library.png" />
+    <Resource Include="Images\L\base_floppydisk_32.png" />
+    <Resource Include="Images\L\del_library.png" />
+    <Resource Include="Images\L\FolderOpen_32x32_72.png" />
+    <Resource Include="Images\L\NewDocument_32x32.png" />
+    <Resource Include="Images\L\persist_setting.png" />
+    <Resource Include="Images\L\xaml_file.png" />
+    <Resource Include="Images\L\ZoomIn.png" />
+    <Resource Include="Images\L\ZoomOut.png" />
+    <Resource Include="Images\S\112_ArrowReturnLeft_Blue_16x16_72.png" />
+    <Resource Include="Images\S\112_ArrowReturnRight_Blue_16x16_72.png" />
+    <Resource Include="Images\S\CopyHS.png" />
+    <Resource Include="Images\S\CutHS.png" />
+    <Resource Include="Images\S\PasteHS.png" />
+    <Resource Include="Images\Workflow\NewFlowchart.png" />
+    <Resource Include="Images\Workflow\NewSequence.png" />
+    <Resource Include="Images\Workflow\NewStateMachine.png" />
+    <Resource Include="Images\Workflow\NewWorkflowService.png" />
+    <Resource Include="Readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

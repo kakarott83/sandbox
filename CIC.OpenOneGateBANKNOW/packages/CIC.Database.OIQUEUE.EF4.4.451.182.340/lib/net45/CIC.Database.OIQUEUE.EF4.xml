@@ -1,0 +1,1444 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CIC.Database.OIQUEUE.EF4</name>
+    </assembly>
+    <members>
+        <member name="T:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.#ctor">
+            <summary>
+            Initializes a new OIQUEUEContext object using the connection string found in the 'OIQUEUEContext' section of the application configuration file.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.#ctor(System.String)">
+            <summary>
+            Initialize a new OIQUEUEContext object.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.#ctor(System.Data.EntityClient.EntityConnection)">
+            <summary>
+            Initialize a new OIQUEUEContext object.
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.EAIHOT">
+            <summary>
+            Table: EAIHOT&#xA;Description: EAI Hot füt Aufrufe aus dem Portal (Soap und Socket)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.USRCFG">
+            <summary>
+            Table: USRCFG&#xA;Description: Customizing Konfiguration
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.USRCFGSEC">
+            <summary>
+            Table: USRCFGSEC&#xA;Description: User-Konfigurationsbereich für Customizing
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.USRCFGVAR">
+            <summary>
+            Table: USRCFGVAR&#xA;Description: User-Konfigurationsvariablen
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.CICLOGD">
+            <summary>
+            Table: CICLOGD&#xA;Description: Renamed ciclogd
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.CFG">
+            <summary>
+            Table: CFG&#xA;Description: Konfiguration (entspricht einer INI Datei)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.CFGSEC">
+            <summary>
+            Table: CFGSEC&#xA;Description: Bereich (entspricht dem Bereich einer INI Datei)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.CFGVAR">
+            <summary>
+            Table: CFGVAR&#xA;Description: Variable (entspricht der Variable aus der INI)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.CICLOG">
+            <summary>
+            Table: CICLOG&#xA;Description: CICLOG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.DBVERS">
+            <summary>
+            Table: DBVERS&#xA;Description: DB-Version
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.EAIART">
+            <summary>
+            Table: EAIART&#xA;Description: EAI Arten für z.B. Passwörter und Accounts des C:D. Gilt für EAIHOT und EAIJOB
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.EAIHFILE">
+            <summary>
+            Table: EAIHFILE&#xA;Description: EAI Dateien mit BLOB. Hier hängen die PDF drinnen ...
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.DBSCRIPT">
+            <summary>
+            Table: DBSCRIPT&#xA;Description: DB-Version-Script
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.XMLSAVE">
+            <summary>
+            Table: XMLSAVE&#xA;Description: XML temporary save
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.XMLSAVEPOS">
+            <summary>
+            Table: XMLSAVEPOS&#xA;Description: XML temporary save pos
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.CICCHNGLOG">
+            <summary>
+            Table: CICCHNGLOG&#xA;Description: record change log
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.AddToEAIHOT(CIC.Database.OIQUEUE.EF4.Model.EAIHOT)">
+            <summary>
+            Deprecated Method for adding a new object to the EAIHOT EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.AddToUSRCFG(CIC.Database.OIQUEUE.EF4.Model.USRCFG)">
+            <summary>
+            Deprecated Method for adding a new object to the USRCFG EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.AddToUSRCFGSEC(CIC.Database.OIQUEUE.EF4.Model.USRCFGSEC)">
+            <summary>
+            Deprecated Method for adding a new object to the USRCFGSEC EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.AddToUSRCFGVAR(CIC.Database.OIQUEUE.EF4.Model.USRCFGVAR)">
+            <summary>
+            Deprecated Method for adding a new object to the USRCFGVAR EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.AddToCICLOGD(CIC.Database.OIQUEUE.EF4.Model.CICLOGD)">
+            <summary>
+            Deprecated Method for adding a new object to the CICLOGD EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.AddToCFG(CIC.Database.OIQUEUE.EF4.Model.CFG)">
+            <summary>
+            Deprecated Method for adding a new object to the CFG EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.AddToCFGSEC(CIC.Database.OIQUEUE.EF4.Model.CFGSEC)">
+            <summary>
+            Deprecated Method for adding a new object to the CFGSEC EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.AddToCFGVAR(CIC.Database.OIQUEUE.EF4.Model.CFGVAR)">
+            <summary>
+            Deprecated Method for adding a new object to the CFGVAR EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.AddToCICLOG(CIC.Database.OIQUEUE.EF4.Model.CICLOG)">
+            <summary>
+            Deprecated Method for adding a new object to the CICLOG EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.AddToDBVERS(CIC.Database.OIQUEUE.EF4.Model.DBVERS)">
+            <summary>
+            Deprecated Method for adding a new object to the DBVERS EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.AddToEAIART(CIC.Database.OIQUEUE.EF4.Model.EAIART)">
+            <summary>
+            Deprecated Method for adding a new object to the EAIART EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.AddToEAIHFILE(CIC.Database.OIQUEUE.EF4.Model.EAIHFILE)">
+            <summary>
+            Deprecated Method for adding a new object to the EAIHFILE EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.AddToDBSCRIPT(CIC.Database.OIQUEUE.EF4.Model.DBSCRIPT)">
+            <summary>
+            Deprecated Method for adding a new object to the DBSCRIPT EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.AddToXMLSAVE(CIC.Database.OIQUEUE.EF4.Model.XMLSAVE)">
+            <summary>
+            Deprecated Method for adding a new object to the XMLSAVE EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.AddToXMLSAVEPOS(CIC.Database.OIQUEUE.EF4.Model.XMLSAVEPOS)">
+            <summary>
+            Deprecated Method for adding a new object to the XMLSAVEPOS EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.OIQUEUEContext.AddToCICCHNGLOG(CIC.Database.OIQUEUE.EF4.Model.CICCHNGLOG)">
+            <summary>
+            Deprecated Method for adding a new object to the CICCHNGLOG EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF4.Model.CFG">
+            <summary>
+            Table: CFG&#xA;Description: Konfiguration (entspricht einer INI Datei)
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.CFG.CreateCFG(System.Int64)">
+            <summary>
+            Create a new CFG object.
+            </summary>
+            <param name="sYSCFG">Initial value of the SYSCFG property.</param>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFG.SYSCFG">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFG.CODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFG.BEZEICHNUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFG.OVERRIDEFLAG">
+            <summary>
+            Description: cicGETINI (IniReplacement muss 1 sein): Wenn dieser Flag gesetzt ist so überschreibt die INI Einstellung die CFG Einstellung (falls vorhanden)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFG.SUPPLEMENTFLAG">
+            <summary>
+            Description: cicGETINI (IniReplacement muss 1 sein): Alles was hier nicht vohanden ist wird aus der INI gezogen.  Wenn das Flag nicht gesetzt ist wird die INI komplett ignoriert
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFG.ACTIVEFLAG">
+            <summary>
+            Description: cicGETINI und cicGETCFG: Diese Konfiguration ist aktiv oder nicht
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFG.INIREPLACEMENT">
+            <summary>
+            Description: cicGETINI: dient als Ersatz der INI Datei. In diesem Fall MUSS das Feld Code gleich dem INI Dateinamen sein. z.B: CIC.INI oder .\oltrans.ini
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFG.CFGSECList">
+            <summary>
+            Refers to table|alias: &apos;CFGSEC&apos;, PK Columns: SYSCFG
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF4.Model.CFGSEC">
+            <summary>
+            Table: CFGSEC&#xA;Description: Bereich (entspricht dem Bereich einer INI Datei)
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.CFGSEC.CreateCFGSEC(System.Int64)">
+            <summary>
+            Create a new CFGSEC object.
+            </summary>
+            <param name="sYSCFGSEC">Initial value of the SYSCFGSEC property.</param>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFGSEC.SYSCFGSEC">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFGSEC.SYSCFG">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFGSEC.CODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFGSEC.BEZEICHNUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFGSEC.ACTIVEFLAG">
+            <summary>
+            Description: cicGETINI bzw. cicGETCFG: dieser Bereich ist aktiv oder nicht
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFGSEC.CFG">
+            <summary>
+            Refers to table|alias: CFG, FK Columns: SYSCFG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFGSEC.CFGReference">
+            <summary>
+            Refers to table|alias: CFG, FK Columns: SYSCFG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFGSEC.CFGVARList">
+            <summary>
+            Refers to table|alias: &apos;CFGVAR&apos;, PK Columns: SYSCFGSEC
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF4.Model.CFGVAR">
+            <summary>
+            Table: CFGVAR&#xA;Description: Variable (entspricht der Variable aus der INI)
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.CFGVAR.CreateCFGVAR(System.Int64)">
+            <summary>
+            Create a new CFGVAR object.
+            </summary>
+            <param name="sYSCFGVAR">Initial value of the SYSCFGVAR property.</param>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFGVAR.SYSCFGVAR">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFGVAR.SYSCFGSEC">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CFGSEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFGVAR.CODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFGVAR.WERT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFGVAR.BEZEICHNUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFGVAR.OVERRIDEFLAG">
+            <summary>
+            Description: cicGETINI (CFG:IniReplacement und ForceOverrideFlag müssen 1 sein): Übersteuert das Verhalten des CFG:OverrideFlags (nur wenn ForceOverrideFlag gesetzt ist)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFGVAR.FORCEOVERRIDEFLAG">
+            <summary>
+            Description: cicGETINI: dieses Flag macht nur Sinn wenn CFG:IniReplacement gesetzt ist und steuert die Gültigkeit von CFGVAR:OverrideFlag
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFGVAR.NOTACTIVEFLAG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFGVAR.IGNORESPECCHARS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFGVAR.CFGSEC">
+            <summary>
+            Refers to table|alias: CFGSEC, FK Columns: SYSCFGSEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CFGVAR.CFGSECReference">
+            <summary>
+            Refers to table|alias: CFGSEC, FK Columns: SYSCFGSEC
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF4.Model.CICCHNGLOG">
+            <summary>
+            Table: CICCHNGLOG&#xA;Description: record change log
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.CICCHNGLOG.CreateCICCHNGLOG(System.Int64)">
+            <summary>
+            Create a new CICCHNGLOG object.
+            </summary>
+            <param name="sYSCICCHNGLOG">Initial value of the SYSCICCHNGLOG property.</param>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICCHNGLOG.SYSCICCHNGLOG">
+            <summary>
+            Primary Key: True&#xA;Description: Primary key
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICCHNGLOG.AREA">
+            <summary>
+            Description: Name of DB table
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICCHNGLOG.SYSAREA">
+            <summary>
+            Description: Primary key id within table
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICCHNGLOG.DATEOPERATION">
+            <summary>
+            Description: Timestamp of operation
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICCHNGLOG.OPERATION">
+            <summary>
+            Description: Type of operation (I=insert, U=update, D=delete)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICCHNGLOG.DBUSER">
+            <summary>
+            Description: Database user
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICCHNGLOG.CICUSER">
+            <summary>
+            Description: CIC user
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICCHNGLOG.OSUSER">
+            <summary>
+            Description: Operating system user
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICCHNGLOG.MACHINE">
+            <summary>
+            Description: Name of the host machine from which the client has connected.
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICCHNGLOG.APPLICATION">
+            <summary>
+            Description: The application name (module) set through the DBMS_APPLICATION_INFO package or OCI.
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICCHNGLOG.SYSCICLOG">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CICLOG&#xA;Description: DB relation to CICLOG for detailed login information
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICCHNGLOG.DATEREG">
+            <summary>
+            Description: Record insert timestamp used for partitioning the WFCHNGLOG table
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICCHNGLOG.CICLOG">
+            <summary>
+            Refers to table|alias: CICLOG, FK Columns: SYSCICLOG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICCHNGLOG.CICLOGReference">
+            <summary>
+            Refers to table|alias: CICLOG, FK Columns: SYSCICLOG
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF4.Model.CICLOG">
+            <summary>
+            Table: CICLOG&#xA;Description: CICLOG
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.CICLOG.CreateCICLOG(System.Int64)">
+            <summary>
+            Create a new CICLOG object.
+            </summary>
+            <param name="sYSCICLOG">Initial value of the SYSCICLOG property.</param>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICLOG.SYSCICLOG">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICLOG.LOGINDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICLOG.LOGOUTDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICLOG.ORABENUTZER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICLOG.CICBENUTZER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICLOG.MASCHINE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICLOG.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICLOG.SOURCE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICLOG.CICCHNGLOGList">
+            <summary>
+            Refers to table|alias: &apos;CICCHNGLOG&apos;, PK Columns: SYSCICLOG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICLOG.CICLOGDList">
+            <summary>
+            Refers to table|alias: &apos;CICLOGD&apos;, PK Columns: SYSCICLOG
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF4.Model.CICLOGD">
+            <summary>
+            Table: CICLOGD&#xA;Description: Renamed ciclogd
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.CICLOGD.CreateCICLOGD(System.Int64)">
+            <summary>
+            Create a new CICLOGD object.
+            </summary>
+            <param name="sYSCICLOGD">Initial value of the SYSCICLOGD property.</param>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICLOGD.SYSCICLOGD">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICLOGD.AKTION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICLOGD.DESCRIPTION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICLOGD.AKTIONDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICLOGD.SYSCICLOG">
+            <summary>
+            Foreign key: True&#xA;Navigation property: CICLOG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICLOGD.CONFIRMED">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICLOGD.CONFIRMEDBY">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICLOGD.MSGTEXT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICLOGD.CICLOG">
+            <summary>
+            Refers to table|alias: CICLOG, FK Columns: SYSCICLOG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.CICLOGD.CICLOGReference">
+            <summary>
+            Refers to table|alias: CICLOG, FK Columns: SYSCICLOG
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF4.Model.DBSCRIPT">
+            <summary>
+            Table: DBSCRIPT&#xA;Description: DB-Version-Script
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.DBSCRIPT.CreateDBSCRIPT(System.Int64)">
+            <summary>
+            Create a new DBSCRIPT object.
+            </summary>
+            <param name="sYSDBSCRIPT">Initial value of the SYSDBSCRIPT property.</param>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBSCRIPT.SYSDBSCRIPT">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBSCRIPT.EXECDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBSCRIPT.EXECTIME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBSCRIPT.AREA">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBSCRIPT.TYP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBSCRIPT.VERSION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBSCRIPT.CONTENTFILENAME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBSCRIPT.LOGCONTENTFILENAME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBSCRIPT.SYSDBVERS">
+            <summary>
+            Foreign key: True&#xA;Navigation property: DBVERS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBSCRIPT.CONTENT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBSCRIPT.LOGCONTENT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBSCRIPT.DBVERS">
+            <summary>
+            Refers to table|alias: DBVERS, FK Columns: SYSDBVERS
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBSCRIPT.DBVERSReference">
+            <summary>
+            Refers to table|alias: DBVERS, FK Columns: SYSDBVERS
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF4.Model.DBVERS">
+            <summary>
+            Table: DBVERS&#xA;Description: DB-Version
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.DBVERS.CreateDBVERS(System.Int64)">
+            <summary>
+            Create a new DBVERS object.
+            </summary>
+            <param name="sYSDBVERS">Initial value of the SYSDBVERS property.</param>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBVERS.SYSDBVERS">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBVERS.VERMAJOR">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBVERS.VERMINOR">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBVERS.FIRSTDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBVERS.FIRSTTIME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBVERS.LASTDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBVERS.LASTTIME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBVERS.ACTIVEFLAG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBVERS.DBUSER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBVERS.OSUSER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBVERS.CLIENTMACHINE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.DBVERS.DBSCRIPTList">
+            <summary>
+            Refers to table|alias: &apos;DBSCRIPT&apos;, PK Columns: SYSDBVERS
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF4.Model.EAIART">
+            <summary>
+            Table: EAIART&#xA;Description: EAI Arten für z.B. Passwörter und Accounts des C:D. Gilt für EAIHOT und EAIJOB
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.EAIART.CreateEAIART(System.Int64)">
+            <summary>
+            Create a new EAIART object.
+            </summary>
+            <param name="sYSEAIART">Initial value of the SYSEAIART property.</param>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.SYSEAIART">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.SYSEAIPAR">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.CODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.DESCRIPTION">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.FILEFLAG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.FIELDSPEC01">
+            <summary>
+            Description: Fieldname 01
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.FIELDVALUE01">
+            <summary>
+            Description: Fieldvalue 01
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.FIELDSPEC02">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.FIELDVALUE02">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.FIELDSPEC03">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.FIELDVALUE03">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.FIELDSPEC04">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.FIELDVALUE04">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.FIELDSPEC05">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.FIELDVALUE05">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.EVALEXPRESSION">
+            <summary>
+            Description: Exression - wird u.U. vom EAIHOT überschrieben ...
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.TRANSACTIONFLAG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.TYP">
+            <summary>
+            Description: Typ der EAIART 0 = standard, 1 = Inbox 2 = Inbox (pregenerated)&#xA;Enum values: &apos;Standard&apos; = &apos;0&apos;|&apos;Inbox&apos; = &apos;1&apos;|&apos;Inbox (pregenerated)&apos; = &apos;2&apos;
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.TIMEOUT">
+            <summary>
+            Description: Timeout pro EAIART
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.RETRYCOUNT">
+            <summary>
+            Description: Anzahl Wiederholungen pro EAIART
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.SERVERALIASNAME">
+            <summary>
+            Description: Serverzuweisung pro EAIART
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.PRIORITY">
+            <summary>
+            Description: Priorität pro EAIART
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.AVOIDPARALLELEXECUTION">
+            <summary>
+            Description: Der EventEngine Aftrag darf nicht im parallel-Modus durchgeführt werden
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.HOSTCOMPUTER">
+            <summary>
+            Description: Name des Host Computers (kann von EAIHOT:HostComputer übersteuert werden)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIART.EAIHOTList">
+            <summary>
+            Refers to table|alias: &apos;EAIHOT&apos;, PK Columns: SYSEAIART
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF4.Model.EAIHFILE">
+            <summary>
+            Table: EAIHFILE&#xA;Description: EAI Dateien mit BLOB. Hier hängen die PDF drinnen ...
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.EAIHFILE.CreateEAIHFILE(System.Int64)">
+            <summary>
+            Create a new EAIHFILE object.
+            </summary>
+            <param name="sYSEAIHFILE">Initial value of the SYSEAIHFILE property.</param>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHFILE.SYSEAIHFILE">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHFILE.CODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHFILE.SYSEAIHOT">
+            <summary>
+            Foreign key: True&#xA;Navigation property: EAIHOT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHFILE.INPUTFLAG">
+            <summary>
+            Description: Eventuell dafür um zu unterscheiden in welche Richtung diese Datei wandern soll
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHFILE.TARGETPATHSPEC">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHFILE.TARGETFILENAME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHFILE.SOURCEPATHSPEC">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHFILE.SOURCEFILENAME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHFILE.READFLAG">
+            <summary>
+            Description: Gelesen Flag
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHFILE.EAIHFILE1">
+            <summary>
+            Description: Binary Blob. Don&apos;t forget to create Fieldoption: BLOB
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHFILE.EAIHOT">
+            <summary>
+            Refers to table|alias: EAIHOT, FK Columns: SYSEAIHOT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHFILE.EAIHOTReference">
+            <summary>
+            Refers to table|alias: EAIHOT, FK Columns: SYSEAIHOT
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF4.Model.EAIHOT">
+            <summary>
+            Table: EAIHOT&#xA;Description: EAI Hot füt Aufrufe aus dem Portal (Soap und Socket)
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.CreateEAIHOT(System.Int64)">
+            <summary>
+            Create a new EAIHOT object.
+            </summary>
+            <param name="sYSEAIHOT">Initial value of the SYSEAIHOT property.</param>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.SYSEAIHOT">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.CODE">
+            <summary>
+            Description: Art des EAI Auftrags ...
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.OLTABLE">
+            <summary>
+            Description: Gebiet
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.SYSOLTABLE">
+            <summary>
+            Description: Gebiet ID
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.PROZESSSTATUS">
+            <summary>
+            Description: Verarbeitungsstatus: 0 = submitted, 1 = processing, 2 = finished, 99 = broken
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.SYSPORTAL">
+            <summary>
+            Description: ID des Portalusers (auch afb etc.)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.SYSEAIART">
+            <summary>
+            Foreign key: True&#xA;Navigation property: EAIART&#xA;Description: EAI Art   - hier können Anmeldedaten für Direct Link etc. hinetrlegt werden
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.FILEFLAGIN">
+            <summary>
+            Description: Im Bezug auf EAIQIN
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.FILEFLAGOUT">
+            <summary>
+            Description: Im Bezug auf EAIQOU
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.EXECPRIORITY">
+            <summary>
+            Description: 0 = Normal, 1 = Vorzug, 2 = High (eigener Thread)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.EVALEXPRESSION">
+            <summary>
+            Description: Wenn angegeben so wird der (eventuell vorhandene) Wert aus EAIART überschrieben
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.INPUTPARAMETER1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.INPUTPARAMETER2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.INPUTPARAMETER3">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.INPUTPARAMETER4">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.INPUTPARAMETER5">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.OUTPUTPARAMETER1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.OUTPUTPARAMETER2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.OUTPUTPARAMETER3">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.OUTPUTPARAMETER4">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.OUTPUTPARAMETER5">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.SUBMITDATE">
+            <summary>
+            Description: Sumbit Date (in Clarionformat)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.SUBMITTIME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.FINISHDATE">
+            <summary>
+            Description: Finish Date (in Clarionformat)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.FINISHTIME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.SYSWFUSER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.SYSWFEXEC">
+            <summary>
+            Description: Runtime ID mit der die Aufgabe erledigt wurde
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.WFERROR">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.RETURNPARAMETER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.GUILANGUAGE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.COMLANGUAGE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.EVE">
+            <summary>
+            Description: Wenn 1 dann ist dieser Satz für die Event-Engine bestimmt ...
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.COMPUTERNAME">
+            <summary>
+            Description: Name des Computers welcher diesen Auftrag verarbeitet (hat).
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.STARTDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.STARTTIME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.TRANSACTIONFLAG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.HOSTCOMPUTER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.CLIENTART">
+            <summary>
+            Description: Art of client to process the this eaihot record with...&#xA;Enum values: &apos;C6&apos; = &apos;0&apos;|&apos;C7&apos; = &apos;1&apos;|&apos;.net&apos; = &apos;2&apos;
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.EXECUTIONCOUNT">
+            <summary>
+            Description: Zähler der Wiederholungen pro EAIHOT (entspricht EAIART:RetryCount)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.TOTALEXECUTIONCOUNT">
+            <summary>
+            Description: Gesamtsumme der Wiederholungen pro EAIHOT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.EXECUTEDMANUALLY">
+            <summary>
+            Description: Ein Flag welcher anzeigt ob EAIHOT manuell verarbeitet wurde
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.SUPERVISORCODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.EVENTCODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.PROCESSDEFCODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.SYSBPPROCINST">
+            <summary>
+            Description: Verweis auf Prozessinstanz
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.SYSSUBMITTER">
+            <summary>
+            Description: Auftrags Ersteller bzw. Initiator
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.EAIHFILEList">
+            <summary>
+            Refers to table|alias: &apos;EAIHFILE&apos;, PK Columns: SYSEAIHOT
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.EAIART">
+            <summary>
+            Refers to table|alias: EAIART, FK Columns: SYSEAIART
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.EAIHOT.EAIARTReference">
+            <summary>
+            Refers to table|alias: EAIART, FK Columns: SYSEAIART
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF4.Model.USRCFG">
+            <summary>
+            Table: USRCFG&#xA;Description: Customizing Konfiguration
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.USRCFG.CreateUSRCFG(System.Int64)">
+            <summary>
+            Create a new USRCFG object.
+            </summary>
+            <param name="sYSUSRCFG">Initial value of the SYSUSRCFG property.</param>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFG.SYSUSRCFG">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFG.CODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFG.BEZEICHNUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFG.OVERRIDEFLAG">
+            <summary>
+            Description: cicGETINI (IniReplacement muss 1 sein): Wenn dieser Flag gesetzt ist so überschreibt die INI Einstellung die CFG Einstellung (falls vorhanden)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFG.SUPPLEMENTFLAG">
+            <summary>
+            Description: cicGETINI (IniReplacement muss 1 sein): Alles was hier nicht vohanden ist wird aus der INI gezogen.  Wenn das Flag nicht gesetzt ist wird die INI komplett ignoriert
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFG.ACTIVEFLAG">
+            <summary>
+            Description: cicGETINI und cicGETCFG: Diese Konfiguration ist aktiv oder nicht
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFG.INIREPLACEMENT">
+            <summary>
+            Description: cicGETINI: dient als Ersatz der INI Datei. In diesem Fall MUSS das Feld Code gleich dem INI Dateinamen sein. z.B: CIC.INI oder .\oltrans.ini
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFG.USRCFGSECList">
+            <summary>
+            Refers to table|alias: &apos;USRCFGSEC&apos;, PK Columns: SYSUSRCFG
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF4.Model.USRCFGSEC">
+            <summary>
+            Table: USRCFGSEC&#xA;Description: User-Konfigurationsbereich für Customizing
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.USRCFGSEC.CreateUSRCFGSEC(System.Int64)">
+            <summary>
+            Create a new USRCFGSEC object.
+            </summary>
+            <param name="sYSUSRCFGSEC">Initial value of the SYSUSRCFGSEC property.</param>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFGSEC.SYSUSRCFGSEC">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFGSEC.SYSUSRCFG">
+            <summary>
+            Foreign key: True&#xA;Navigation property: USRCFG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFGSEC.CODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFGSEC.BEZEICHNUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFGSEC.ACTIVEFLAG">
+            <summary>
+            Description: cicGETUSRINI bzw. cicGETUSRCFG: dieser Bereich ist aktiv oder nicht
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFGSEC.USRCFG">
+            <summary>
+            Refers to table|alias: USRCFG, FK Columns: SYSUSRCFG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFGSEC.USRCFGReference">
+            <summary>
+            Refers to table|alias: USRCFG, FK Columns: SYSUSRCFG
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFGSEC.USRCFGVARList">
+            <summary>
+            Refers to table|alias: &apos;USRCFGVAR&apos;, PK Columns: SYSUSRCFGSEC
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF4.Model.USRCFGVAR">
+            <summary>
+            Table: USRCFGVAR&#xA;Description: User-Konfigurationsvariablen
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.USRCFGVAR.CreateUSRCFGVAR(System.Int64)">
+            <summary>
+            Create a new USRCFGVAR object.
+            </summary>
+            <param name="sYSUSRCFGVAR">Initial value of the SYSUSRCFGVAR property.</param>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFGVAR.SYSUSRCFGVAR">
+            <summary>
+            Primary Key: True
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFGVAR.SYSUSRCFGSEC">
+            <summary>
+            Foreign key: True&#xA;Navigation property: USRCFGSEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFGVAR.CODE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFGVAR.WERT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFGVAR.BEZEICHNUNG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFGVAR.OVERRIDEFLAG">
+            <summary>
+            Description: cicGETUSRINI (USRCFG:IniReplacement und ForceOverrideFlag müssen 1 sein): Übersteuert das Verhalten des USRCFG:OverrideFlags (nur wenn ForceOverrideFlag gesetzt ist)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFGVAR.FORCEOVERRIDEFLAG">
+            <summary>
+            Description: cicGETUSRINI: dieses Flag macht nur Sinn wenn USRCFG:IniReplacement gesetzt ist und steuert die Gültigkeit von USRCFGVAR:OverrideFlag
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFGVAR.NOTACTIVEFLAG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFGVAR.IGNORESPECCHARS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFGVAR.USRCFGSEC">
+            <summary>
+            Refers to table|alias: USRCFGSEC, FK Columns: SYSUSRCFGSEC
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.USRCFGVAR.USRCFGSECReference">
+            <summary>
+            Refers to table|alias: USRCFGSEC, FK Columns: SYSUSRCFGSEC
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF4.Model.XMLSAVE">
+            <summary>
+            Table: XMLSAVE&#xA;Description: XML temporary save
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.XMLSAVE.CreateXMLSAVE(System.Int64)">
+            <summary>
+            Create a new XMLSAVE object.
+            </summary>
+            <param name="sYSXMLSAVE">Initial value of the SYSXMLSAVE property.</param>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.XMLSAVE.SYSXMLSAVE">
+            <summary>
+            Primary Key: True&#xA;Description: System ID
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.XMLSAVE.AREA">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.XMLSAVE.SYSLEASE">
+            <summary>
+            Description: Lease-ID (falls bereits existent)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.XMLSAVE.SYSWFUSER">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.XMLSAVE.SYSPUSER">
+            <summary>
+            Description: Optional  - falls man es im Web benutzen möchte ...
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.XMLSAVE.SOURCE">
+            <summary>
+            Description: Herkunft (z.B. Vorgang Angebotsassistent, Inbox etc.)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.XMLSAVE.STATUS">
+            <summary>
+            Description: Status (aber auch z.B. für Tab-Nummer etc.)
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.XMLSAVE.DESCRIPTION">
+            <summary>
+            Description: z.B: für Hinweise zur Identifikation für den Benutzer
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.XMLSAVE.SAVEDATE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.XMLSAVE.SAVETIME">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.XMLSAVE.XMLSAVEPOSList">
+            <summary>
+            Refers to table|alias: &apos;XMLSAVEPOS&apos;, PK Columns: SYSXMLSAVE
+            </summary>
+        </member>
+        <member name="T:CIC.Database.OIQUEUE.EF4.Model.XMLSAVEPOS">
+            <summary>
+            Table: XMLSAVEPOS&#xA;Description: XML temporary save pos
+            </summary>
+        </member>
+        <member name="M:CIC.Database.OIQUEUE.EF4.Model.XMLSAVEPOS.CreateXMLSAVEPOS(System.Int64)">
+            <summary>
+            Create a new XMLSAVEPOS object.
+            </summary>
+            <param name="sYSXMLSAVEPOS">Initial value of the SYSXMLSAVEPOS property.</param>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.XMLSAVEPOS.SYSXMLSAVEPOS">
+            <summary>
+            Primary Key: True&#xA;Description: System ID
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.XMLSAVEPOS.SYSXMLSAVE">
+            <summary>
+            Foreign key: True&#xA;Navigation property: XMLSAVE&#xA;Description: XMLSAVE  ID
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.XMLSAVEPOS.DTNAME">
+            <summary>
+            Description: Name datentyp (bei einer Queue z.B. qAngebot) oder Name Suchvorlage
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.XMLSAVEPOS.DTVALUE">
+            <summary>
+            Description: XML-String
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.XMLSAVEPOS.XMLSAVE">
+            <summary>
+            Refers to table|alias: XMLSAVE, FK Columns: SYSXMLSAVE
+            </summary>
+        </member>
+        <member name="P:CIC.Database.OIQUEUE.EF4.Model.XMLSAVEPOS.XMLSAVEReference">
+            <summary>
+            Refers to table|alias: XMLSAVE, FK Columns: SYSXMLSAVE
+            </summary>
+        </member>
+    </members>
+</doc>

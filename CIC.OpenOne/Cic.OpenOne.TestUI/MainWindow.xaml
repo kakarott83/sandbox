@@ -1,0 +1,11 @@
+﻿<Window x:Class="Cic.OpenOne.TestUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Button Content="Test Sample WS" Height="23" HorizontalAlignment="Left" Margin="6,12,0,0" Name="button1" VerticalAlignment="Top" Width="114" Click="button1_Click" />
+        <Label Content="Ergebnisanzeige..." Height="28" HorizontalAlignment="Left" Margin="150,12,0,0" Name="resultTxt" VerticalAlignment="Top" />
+        <Button Content="Log" Height="30" HorizontalAlignment="Left" Margin="6,41,0,0" Name="logBtn" VerticalAlignment="Top" Width="108" Click="logBtn_Click" />
+        <TextBlock Height="251" HorizontalAlignment="Left" Margin="150,48,0,0" Name="resultTxt2" Text="Ergebnisdetail..." VerticalAlignment="Top" Width="341" TextWrapping="Wrap" />
+    </Grid>
+</Window>

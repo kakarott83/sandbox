@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CIC.Clarion.Evaluate.OpenLease.BindProcedures.BusinessProcessing.Subscriptions.Dto" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CIC.Clarion.Evaluate.OpenLease.BindProcedures.BusinessProcessing.Subscriptions.Dto" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="SubscriptionsDataDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Queues" nillable="true" type="tns:ArrayOfQueueDto" />
+      <xs:element minOccurs="0" name="Subscriptions" nillable="true" type="tns:ArrayOfSubscriptionDto" />
+      <xs:element minOccurs="0" name="Variables" nillable="true" type="tns:ArrayOfLookupVariableDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SubscriptionsDataDto" nillable="true" type="tns:SubscriptionsDataDto" />
+  <xs:complexType name="ArrayOfQueueDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueueDto" nillable="true" type="tns:QueueDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQueueDto" nillable="true" type="tns:ArrayOfQueueDto" />
+  <xs:complexType name="QueueDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Records" nillable="true" type="tns:ArrayOfQueueRecordDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueueDto" nillable="true" type="tns:QueueDto" />
+  <xs:complexType name="ArrayOfQueueRecordDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueueRecordDto" nillable="true" type="tns:QueueRecordDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQueueRecordDto" nillable="true" type="tns:ArrayOfQueueRecordDto" />
+  <xs:complexType name="QueueRecordDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Values" nillable="true" type="tns:ArrayOfQueueRecordValueDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueueRecordDto" nillable="true" type="tns:QueueRecordDto" />
+  <xs:complexType name="ArrayOfQueueRecordValueDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueueRecordValueDto" nillable="true" type="tns:QueueRecordValueDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQueueRecordValueDto" nillable="true" type="tns:ArrayOfQueueRecordValueDto" />
+  <xs:complexType name="QueueRecordValueDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VariableName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueueRecordValueDto" nillable="true" type="tns:QueueRecordValueDto" />
+  <xs:complexType name="ArrayOfSubscriptionDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SubscriptionDto" nillable="true" type="tns:SubscriptionDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSubscriptionDto" nillable="true" type="tns:ArrayOfSubscriptionDto" />
+  <xs:complexType name="SubscriptionDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ObjectKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjectType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SubscriptionDto" nillable="true" type="tns:SubscriptionDto" />
+  <xs:complexType name="ArrayOfLookupVariableDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LookupVariableDto" nillable="true" type="tns:LookupVariableDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLookupVariableDto" nillable="true" type="tns:ArrayOfLookupVariableDto" />
+  <xs:complexType name="LookupVariableDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LookupVariableName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VariableName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LookupVariableDto" nillable="true" type="tns:LookupVariableDto" />
+</xs:schema>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:types="http://guardean.net/webservices/workflow/SchufaSiml2AuskunfteiWorkflow/types" xmlns:tns="http://guardean.net/webservices/workflow/SchufaSiml2AuskunfteiWorkflow" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="SchufaSiml2AuskunfteiWorkflow" targetNamespace="http://guardean.net/webservices/workflow/SchufaSiml2AuskunfteiWorkflow" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+        SchufaSiml2AuskunfteiWorkflow web service operations.
+    </wsdl:documentation>
+  <wsdl:types>
+    <xs:schema targetNamespace="http://guardean.net/webservices/workflow/SchufaSiml2AuskunfteiWorkflow/types/imported">
+      <xs:import schemaLocation="SchufaSiml2AuskunfteiWorkflow.xsd" namespace="http://guardean.net/webservices/workflow/SchufaSiml2AuskunfteiWorkflow/types" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="executeRequest">
+    <wsdl:part name="executeRequest" element="types:executeRequest" />
+  </wsdl:message>
+  <wsdl:message name="executeResponse">
+    <wsdl:part name="executeResponse" element="types:executeResponse" />
+  </wsdl:message>
+  <wsdl:message name="systemMessage">
+    <wsdl:part name="systemMessage" element="types:systemMessage" />
+  </wsdl:message>
+  <wsdl:portType name="SchufaSiml2AuskunfteiWorkflowPortType">
+    <wsdl:operation name="execute">
+      <wsdl:input name="executeRequest" message="tns:executeRequest" />
+      <wsdl:output name="executeResponse" message="tns:executeResponse" />
+      <wsdl:fault name="systemMessage" message="tns:systemMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SchufaSiml2AuskunfteiWorkflowSoapBinding" type="tns:SchufaSiml2AuskunfteiWorkflowPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="execute">
+      <soap:operation soapAction="http://guardean.net/webservices/workflow/SchufaSiml2AuskunfteiWorkflow/execute" />
+      <wsdl:input name="executeRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="executeResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="systemMessage">
+        <soap:fault use="literal" name="systemMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SchufaSiml2AuskunfteiWorkflow">
+    <wsdl:port name="SchufaSiml2AuskunfteiWorkflowPort" binding="tns:SchufaSiml2AuskunfteiWorkflowSoapBinding">
+      <soap:address location="http://localhost:8080/SchufaSiml2AuskunfteiWorkflow/services/SchufaSiml2AuskunfteiWorkflow" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

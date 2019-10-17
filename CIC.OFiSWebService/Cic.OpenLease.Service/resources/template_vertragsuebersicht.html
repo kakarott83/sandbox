@@ -1,0 +1,2090 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>   
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<link rel="icon" href="/One/favicon.ico" type="image/x-icon" />
+		<style type="text/css">
+		/*========================================================================
+        Main Elements
+========================================================================*/
+
+.pngFix { behavior: url(../js/iepngfix/iepngfix.htc); }
+table.angebotsUebersicht td.preis {
+    text-align: right;
+}
+body {
+    margin:0px;
+    padding:0px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:11px;
+    line-height:16px;
+}
+
+h1, h2, h3, h4, h5, div.reiterBox_buttonBox {
+    margin:0px;
+    padding:0px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+h1, div.reiterBox_buttonBox {
+    height:24px;
+    padding:6px 0px 0px 10px;
+    line-height:normal;
+    position:relative;
+    display:block;
+}
+
+h2 {
+    margin-bottom:1.45em;
+    color:#95288f;
+}
+
+h3 { color:#95288f; }
+
+
+div.reiterBox_buttonBox {
+    padding:0px;
+    height:30px;
+}
+
+div.reiterBox_button, div.reiterBox_buttonActive {
+    margin-top:1px;
+    padding:5px 10px 0px 10px;
+    height:22px;
+    float:left;
+    cursor:pointer;
+    border-right:solid 1px #b3d1e4;
+}
+
+div.reiterBox_buttonActive {
+    color:#FFFFFF;
+    
+}
+
+div.reiterBox_content {
+    overflow:hidden;
+    height:0px;
+    visibility:hidden;
+}
+
+.h1IconButton {
+    position:absolute;
+    top:6px;
+    right:10px;
+    display:block;
+    padding-left:20px;
+    z-index:3;
+    font-size:11px;
+    font-weight:normal;
+    
+}
+
+.h1IconButton:hover { color:#7E7E7E; }
+
+p {
+    margin:0px 0px 1.45em 0px;
+    padding:0px;
+}
+
+a {
+    text-decoration:none;
+    color:#95288f;
+}
+
+a:hover {
+    color:#CA93C7;
+}
+
+/*========================================================================
+        Infobox
+========================================================================*/
+div#infoBox {
+    position:absolute;
+    top:0px;
+    left:0px;	
+    z-index:2000;
+}
+
+div#infoBoxContent {
+    margin:0px;
+    padding:0px 7px;
+    
+    width:244px;
+}
+
+div#infoBoxContent p {
+    margin:0px;
+    padding:0px;
+    line-height:16px;
+}
+
+div#infoBoxContent p:first-line {
+    line-height:11px;
+}
+
+div.infoContent {
+    display:none;
+}
+
+img.info { 
+    display:block;
+    position:absolute;
+    margin-top:7px; margin-left:795px;
+    z-index: 10;
+}
+
+/*========================================================================
+        Navigation
+========================================================================*/
+
+/*
+        div#mainNavigation
+        div#subNavigation
+        a.naviNode
+        a.naviNodeActive
+        a.subNaviNode
+        a.subNaviNodeActive
+        
+        div#serviceNavigation
+*/
+
+div#navigation {
+    float:left;
+    width:156px;
+    margin:0px 10px 0px 7px;
+    display:inline;
+}
+
+div.navigationBackground {
+    padding:10px;
+    background-color:#f2e7f2;
+    margin-bottom:10px;
+}
+
+a.naviNode, a.naviNodeActive {
+    color:#000000;
+    display:block;
+}
+
+a.naviNode:hover, a.naviNodeActive {
+    color:#95288f;
+}
+div.dealerSelect {
+    width: 150px;
+    float: left;
+    margin: 0px;
+    position: relative;
+}
+
+/*========================================================================
+        Layout
+========================================================================*/
+
+/*
+        div#backgroundContainer
+        div#mainContainer 
+        div#mainContent
+        div#contentLeft
+        div#contentRight
+        div#header
+        div#logo, img#logo
+        div.slot1, div.slot2 ...
+*/
+
+div#mainContainer {
+    width:1000px;
+    margin:0px auto;
+}
+
+
+div#header2 {
+    position:relative;
+    height:291px;
+    margin-bottom:20px;
+    
+    background-repeat:no-repeat;
+}
+
+
+
+img#logo {
+    position:absolute;
+    top:33px;
+    left:29px;
+    z-index:2;
+}
+
+div#headerInfo,div#headerInfoText {
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    width:993px;
+    height:20px;
+    text-align:right;
+    padding:4px 7px 0px 0px;
+    line-height:normal;
+    color:#7e7e7e;
+    z-index:2;
+}
+
+div#headerInfo {
+    background-color:#f2e7f2;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+    opacity: .8;
+}
+
+div#content {
+    width:820px;
+    float:left;
+}
+
+div#footer {
+    position:relative;
+    height:99px;
+    margin-top:20px;
+
+    background-repeat:no-repeat;
+}
+
+.slot1,.slot2,.slot3,.slot4,.slot5,.slot6,.slot7,.slot8,.slot9,.slot10 {
+    float:left;
+    margin:0px 10px 10px 0px;
+}
+
+.slot1 { width:73px; }
+.slot2 { width:156px; }
+.slot3 { width:239px; }
+.slot4 { width:322px; }
+.slot5 { width:405px; }
+.slot6 { width:488px; }
+.slot7 { width:571px; }
+.slot8 { width:654px; }
+.slot9 { width:737px; }
+.slot10 {
+    width:820px;
+    float:none;
+    margin-right:0px;
+    clear:both;
+}
+
+.slotLast {
+    float:right;
+    margin-right:0px;
+}
+
+.slotText {
+    padding:6px 10px 10px 10px;
+}
+
+.slotWhite { background-color:#FFFFFF; }
+.slotWhite h1, .slotWhite div.reiterBox_buttonBox { background-color:#ca90c5; }
+.slotWhite .defaultInput, .slotWhite select { border-color:#CCCCCC; }
+.slotWhite table.defaultTable td { border-color:#CCCCCC; }
+.slotWhite .slotText {
+    border:solid 1px #CCCCCC;
+    border-top:none;
+    padding:6px 9px 9px 9px;
+}
+
+
+.slotRed { background-color:#e9d1e7; }
+.slotRed h1, .slotRed div.reiterBox_buttonBox { background-color:#ca90c5; }
+.slotRed .defaultInput, .slotRed select { border-color:#ca90c5; }
+.slotRed table.defaultTable td { border-color:#CA90C5; }
+
+.slotBlue { background-color:#d4e9f8; }
+.slotBlue h1, .slotBlue div.reiterBox_buttonBox { background-color:#92bdd9; }
+.slotBlue .defaultInput, .slotBlue select { border-color:#92bdd9; }
+.slotBlue table.defaultTable td { border-color:#92bdd9; }
+
+.slotYellow { background-color:#faf77f; }
+.slotYellow h1, .slotYellow div.reiterBox_buttonBox { background-color:#e2db00; }
+.slotYellow .defaultInput, .slotYellow select { border-color:#e2db00; }
+.slotYellow table.defaultTable td { border-color:#e2db00; }
+
+
+.coloredText { color:#95288f; }
+
+.iconButton {
+    position:relative;
+    float:right;
+    display:block;
+    background-repeat:no-repeat;
+    background-position:left;
+    padding-left:20px;
+    display:block;
+    vertical-align:middle;
+    height:16px;
+    margin-bottom:4px;
+}
+
+.iconButtonLeft {
+    float:left;
+    background-repeat:no-repeat;
+    background-position:left;
+    padding-left:20px;
+    display:block;
+    vertical-align:middle;
+    height:16px;
+}
+
+.iconLink {
+    background-image:url(../pix/icons/link.gif);
+    background-repeat:no-repeat;
+    padding-left:15px;
+}
+
+
+
+
+
+/*========================================================================
+        Default Elements
+========================================================================*/
+
+.clearBoth {
+    clear:both;
+    height:0px;
+    line-height:0px;
+    font-size:0px;
+}
+
+form {
+    margin:0px;
+    padding:0px;
+}
+
+.defaultInput, select {
+    margin:0px 0px 6px 0px;
+    padding:1px 0px 0px 0px;
+
+    border:solid 1px #ca90c5;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:11px;
+    line-height:normal;
+    height:16px;
+}
+
+select {
+    height:19px;
+    padding:0px;
+
+}
+
+input.defaultRadio, input.defaultCheckBox {
+    margin:0px 5px 0px 0px;
+    padding:0px;
+    vertical-align:middle;
+    height:16px;
+    width:16px;
+}
+
+.calculatorSelector_iframe {
+    border:none;
+    position:absolute;
+    right:10px;
+    top:24px;
+    width:150px;
+    height:150px;
+    display:none;
+    z-index:4;
+}
+
+.calculatorSelector_dropDown {
+    position:absolute;
+    top:24px;
+    right:10px;
+    padding:1px;
+    background-color:#dce68e;
+    z-index:5;
+    display:none;
+}
+
+table.defaultTable {
+    margin:0px;
+    padding:0px;
+}
+
+table.defaultTable td {
+    border-bottom:solid 1px #92bdd9;
+    padding:5px 0px;
+    vertical-align:top;
+}
+
+input.validate_false, textarea.validate_false, select.validate_false {
+    background-color:yellow;
+}
+
+label.validate_false {
+    background-color:yellow;
+}
+
+iframe#overlayIframe {
+    background-color:transparent;
+    position:absolute;
+    left:0px;
+    top:0px;
+    z-index:5000;
+    border:none;
+    display:none;
+    margin:0px;
+    padding:0px;
+    width:0px;
+    height:0px;
+}
+
+div#overlay {
+    background-color:#000000;
+    position:absolute;
+    left:0px;
+    top:0px;
+    z-index:5001;
+    display:none;
+}
+
+a.linkButton {
+    display:block;
+    text-align:right;
+}
+
+.formSlot, .formSlotLast {
+    width:204px;
+    margin-right:11px;
+    float:left;
+}
+
+.toolSlot {
+    float:right;
+    background:#efefef;
+    padding:5px 0px 5px 2px;
+}
+
+.formSlotLast {
+    float:right;
+    margin-right:0px;
+}
+
+.stepButtonBox {
+    position:absolute;
+    top:3px;
+    right:3px;
+    z-index:10;
+    font-size:12px;
+    color:#95288f;
+    line-height:normal;
+    font-weight:bold;
+}
+
+.stepButton, .stepButtonActive, .stepButtonSolved, .stepButtonSend {
+    width:24px;
+    height:20px;
+    padding-top:4px;
+    
+    background-repeat:no-repeat;
+    cursor:default;
+    text-align:center;
+    float:left;
+    cursor:pointer;
+    margin-left:1px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
+    opacity: .25;
+}
+
+.stepButtonActive, .stepButtonSendActive {
+    cursor:default;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+}
+.stepButtonSolved {
+    cursor:pointer;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+    opacity: .6;
+}
+
+.stepButtonSend, .stepButtonSendActive {
+    
+}
+
+div.messageBox {
+    position:absolute;
+    top:0px;
+    left:0px;
+    padding:10px;
+    background-color:#DCE68E;
+    border:solid 1px #000000;
+    z-index:6000;
+    width:300px;
+    display:none;
+}
+
+div#messageBox_info,div#messageBox_preloader {
+    text-align:center;
+}
+
+.messageBox_okButton {
+    display:block;
+    text-align:center;
+    font-weight:bold;
+    width:100px;
+    margin:10px auto 0px auto;
+    background-color:#95288f;
+    color:#FFFFFF;
+    padding:5px;
+    cursor:pointer;
+}
+
+.messageBox_okButton:hover {
+    background-color:#999999;
+}
+
+div#messageBox_title {
+    color:#95288f;
+    font-weight:bold;
+}
+
+.box_red {
+    background-color:#CA93C7;
+    background-color:#f2e7f2;
+    padding:5px;
+}
+
+div#backgroundContainer {
+    position:absolute;
+    top:0px;
+    left:0px;
+    overflow:hidden;
+    z-index:1;
+}
+
+img#backgroundContainerIMG {
+    display:block;
+    visibility:hidden;
+    z-index:1;
+    width:0px;
+    height:0px;
+}
+
+.smallForm {
+    float:left;
+    display:inline;
+    padding:10px;
+    width:45%;
+}
+
+.infoBoxImgTop {
+    
+    height:10px;
+    width:258px;
+}
+
+.infoBoxImgBottom {
+    
+    height:10px;
+    width:258px;
+}
+
+.tdcolor {
+    background:#f5edf5;
+}
+
+img.info {
+    width:16px;
+    height:16px;
+    
+    cursor:pointer;
+    border:none;
+}
+
+.headerCash {
+    position:absolute;
+    bottom:44px;
+    left:754px;
+    width:219px;
+    padding:10px;
+    background-color:#e9d1e7;
+    font-size:12px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.headerCashCHF {
+    font-size:20px;
+    color:#95288f;
+    margin:18px 0px;
+}
+
+.subNaviNode {
+    margin-left:10px;
+}
+
+
+
+
+
+/*========================================================================
+        Main Elements
+========================================================================*/
+
+.pngFix { behavior: url(/js/jawr/iepngfix/iepngfix.htc); }
+
+.clearBoth {
+    clear:both;
+    height:0px;
+    line-height:0px;
+    font-size:0px;
+}
+
+.displayInline {
+    display: inline;
+}
+
+.displayNone {
+    display: none;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+}
+
+form {
+    margin:0px;
+    padding:0px;
+}
+
+img {
+    margin:0px;
+    padding:0px;
+    display:block;
+}
+
+
+/*========================================================================
+        Layer
+========================================================================*/
+
+div#cm_mainPageContainer {
+    margin:0px auto;
+    position:relative;
+    width:990px;
+    height:auto;
+}
+
+div#cm_mainContainer {
+    width:977px;
+    position:relative;
+    float:right;
+}
+
+div#cm_footer {
+    margin:0px auto;
+    width:977px;
+    float:right;
+    border-top:1px solid #999;
+}
+
+div.frontLayerContent {
+    background:#FFFFFF; 
+    height:180px; 
+    width:172px; 
+    padding:10px 14px; 
+    float:left;
+}
+
+div#cm_calculation {
+    width:785px; 
+    float:left;
+	margin-top:20px;
+}
+
+div#cm_calculation.w977 {
+    width:977px;
+}
+
+div#cm_adresse {
+    float:right; 
+    width:172px;
+    
+}
+
+div.cm_adresse {
+    float:right; 
+    width:172px;
+    
+}
+
+div.cm_adressContent {
+    padding:3px 10px;
+    margin-bottom:10px;
+}
+
+div.cm_calcContent, div.cm_calcContentHidden {
+    position:relative;
+    
+    padding-bottom:0px;
+    border-bottom:1px solid #226cb0;
+    margin-bottom:8px;
+    padding-top:8px;
+    overflow:hidden;
+}
+
+div.cm_calcContentHidden {
+    overflow:hidden;
+}
+
+img.cm_headerPix {
+    margin-bottom:24px;
+}
+
+div.headerSmall {
+    
+    width:980px;
+    height:44px;
+}
+
+div.headerBig {
+    
+    width:990px;
+    height:88px;
+}
+
+div#konfigurator {
+    position:absolute; 
+    width:755px; 
+    height:650px; 
+    z-index:110; 
+    padding:10px; 
+    border:2px solid #999; 
+    background:#FFF; 
+    display:none;
+}
+
+.marginBottom16 {
+    margin-bottom:16px;
+}
+
+div.treffer {
+    float:left; 
+    width:442px; 
+    padding-left:12px; 
+    text-align:left;
+}
+
+div.dokumenteHeader,
+div.KalkulationenHeader {
+    text-align:center; 
+    padding:8px 0px; 
+    background:#eef3f9;
+}
+
+div.eintraege {
+    margin:auto; 
+    text-align:center; 
+    float:left;
+}
+
+div.trefferProSeite {
+    float:right; 
+    width:30%; 
+    padding-right:12px; 
+    text-align:right;
+}
+
+div.filterIcons {
+    text-align:center; 
+    margin-bottom:16px; 
+    padding:8px 0px; 
+    background:#eef3f9;
+}
+
+div.filterIconsContent {
+    width:115px; 
+    margin:0px auto;
+}
+
+div.nachOben {
+    float:right;
+}
+
+div.moodBig {
+    width:977px;
+    height:351px;
+    
+}
+
+div.moodInside {
+    width:977px;
+    height:173px;
+    
+    margin-bottom:24px;
+}
+
+div.moodInsideEmpty {
+    width:977px;
+    height:20px;
+    margin-bottom:24px;
+}
+
+div.startImages {
+    width:172px;
+    height:100px;
+    cursor:pointer;
+}
+
+div.startImages.kundenverwaltung {
+    
+}
+
+div.startImages.finanzdienstleistungen {
+    
+}
+
+div.startImages.info {
+    
+}
+
+div.fahrzeugBild {
+    width:352px;
+    height:216px;
+    
+    cursor:pointer;
+}
+
+/*========================================================================
+        Spalten/Breiten
+========================================================================*/
+
+div.spalte {
+    position:relative;
+    float:left;
+    padding:0px 6px;
+    padding-bottom:8px;
+    
+}
+
+div.spalte.noBackground {
+    background:none;
+}
+
+div.spalte.first {
+    padding:0px 6px 8px 0px;
+}
+
+div.spalte.last {
+    padding:0 0 8px 6px
+}
+
+div.spalte.border, div.border {
+    border-right:1px solid #226db0;
+}
+
+.slot1  { width:47px; }
+.slot2  { width:108px; }
+.slot3  { width:169px; }
+.slot4  { width:230px; }
+.slot5  { width:291px; }
+.slot6  { width:352px; }
+.slot7  { width:413px; }
+.slot8  { width:474px; }
+.slot9  { width:535px; }
+.slot10 { width:596px; }
+.slot11 { width:657px; }
+.slot12 { width:718px; }
+.slot13 { width:779px; }
+.slot14 { width:80px; }
+
+img.slider {
+    position:absolute;
+    top:0px;
+    right:0px;
+    cursor:pointer;
+}
+
+.marginBottom8Px {
+    margin-bottom:8px;
+}
+
+/*========================================================================
+        Tabellen
+========================================================================*/
+
+table td {
+    vertical-align:middle;
+    
+}
+h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+}
+table.angebotsUebersicht td {
+    vertical-align: top;
+}
+table.cm_calc {
+    
+    width:100%;
+}
+
+table.cm_calc td {
+    vertical-align:top;
+    text-align:left;
+}
+
+table.cm_calc td.euro, td.euro {
+    text-align:right;
+}
+
+table tr.dunkel {}
+
+table tr.hell {}
+
+table.cm_calcRight td {
+    text-align:right;
+    padding:0px 0px 11px;
+}
+
+table.cm_padded td {
+    padding:0px 0px 11px;
+}
+
+table.suchergebnis {
+    margin-bottom:11px;
+}
+
+table.suchergebnis td {
+    vertical-align:top;
+    border-bottom:1px solid #226db0;
+}
+
+table.suchergebnis tr.colored {
+    background:#edf3f9;
+}
+
+table.suchergebnis tr.angebot {
+    background:#efefef;
+}
+
+table.suchergebnis tr.angebot td {
+    border-bottom:1px solid #999;
+}
+
+table.tableAlignRight td {
+    text-align:right;
+}
+
+table.dokumente,
+table.Kalkulationen {
+    margin:0px 8px 8px 8px;
+    width:962px;
+    border-bottom:1px solid #226db0;
+    border-right:1px solid #226db0;
+}
+
+table.dokumente td,
+table.Kalkulationen td{
+    padding:0 0 0 8px;
+    vertical-align:top;
+    border-left:1px solid #226db0;
+}
+
+table.dokumente thead td,
+table.Kalkulationen thead td {
+    background:#226db0;
+    font-size:12px;
+    color:#FFF;
+    font-weight:bold;
+    padding:3px 0px 3px 8px;
+}
+
+
+table tr.colored {
+    background:#fff;
+}
+
+table.dokumente tbody tr:hover,
+table.Kalkulationen tbody tr:hover {
+    background:#d3e2ef;
+    cursor:pointer;
+}
+
+table.dokumente tbody td,
+table.Kalkulationen tbody td {
+    padding:4px 0px 4px 8px;
+}
+
+table.browsing {
+    margin-bottom:16px;
+    border-right:1px solid #c8daeb;
+}
+
+table.browsing td {
+    padding:2px;
+    font-size:10px;
+    line-height:15px;
+    vertical-align:top;
+
+    border-left:1px solid #c8daeb;
+    border-bottom:1px solid #226db0;
+}
+
+table.browsing td.icons {
+    border-left:none;
+}
+
+table.browsing tr.colored {
+    background:#eef3f9;
+}
+
+table.browsing tr.auflagen {
+    background:#ffd1d1;
+}
+
+table.browsing tbody tr:hover {
+    background:#d3e2ef;
+}
+
+table.browsing thead td {
+    background:#226db0;
+    color:#FFF;
+    font-weight:bold;
+    border-width:0px;
+    padding-left:4px;
+}
+
+table.browsing thead td.noBackground {
+    background:none; 
+    border-bottom-width:0px;
+}
+
+table.browsing td.icons img {
+    display:block;
+    margin:1px 1px 1px 0;
+    background:none;
+}
+
+table td.total {
+    border-top:1px solid #226db0; 
+    padding-top:5px;
+}
+
+/*========================================================================
+        Kalender
+========================================================================*/
+
+div.kalender {
+    position:absolute;
+    text-align:center; 
+    width:180px; 
+    background-color:#FFFFFF; 
+    padding:5px;
+    border:1px solid #666666;
+    top:50px;
+    left:50px;
+    display:none;
+    z-index:1001;
+}
+
+table.kalender {
+    border:1px solid #efefef;
+    border-bottom-width:0px;
+    margin-top:5px;
+}
+
+table.kalender td {
+    background-color:#fff;
+    color:#999;
+    width:20px;
+    text-align:center;
+    border-left:1px solid #efefef;
+    border-bottom:1px solid #efefef;
+}
+
+table.kalender td.heute {
+    color:#fff;
+    background:#226db0;
+    font-weight:bold;
+}
+
+table.kalender td.tag {
+    background-color:#f4f3eb;
+}
+
+/*========================================================================
+        Kundenverwaltung
+========================================================================*/
+
+img.close {
+    float:right;
+    cursor:pointer;
+}
+
+div.ergebnis {
+    float:left; 
+    width:184px; 
+    margin-left:8px; 
+    padding:4px 0px;
+}
+
+div.ergebnisButton {
+    float:right;
+    width:120px;
+    padding:4px 0px;
+    margin-right:7px;
+}
+
+div.colored {
+    background:#FFF;
+}
+
+div.borderBottom, table.borderBottom {
+    border-bottom:1px solid #226db0;
+    /*position:relative;*/
+}
+
+table.borderBottom {
+    margin-bottom:8px;
+}
+
+div.dokumente {
+    /* position:relative; */
+    border-top:1px solid #999;
+    background:#efefef;
+}
+
+/*========================================================================
+        Diverses
+========================================================================*/
+
+.euro {
+    display:block;
+    padding-top:2px;
+    padding-left:6px;
+    float:left;
+    text-align:right;
+}
+
+div#konfiguratorLink {
+    position:absolute; 
+    left:0px; 
+    top:-17px; 
+    width:137px; 
+    height:17px; 
+    background:url(../images/aida/upsideDownBlue.gif) top right no-repeat; color:#fff;
+    padding-left:17px; 
+    z-index:10;
+}
+
+img.filter {
+    display:block;
+    margin-right:8px;
+    float:left;
+} 
+
+table.browsing td.icons img.iconGreen {
+    margin-bottom:8px;
+}
+
+img.moodInside {
+    margin-bottom:24px;
+}
+
+/*========================================================================
+        PopUps
+========================================================================*/
+
+div.cm_popUp {
+    position:absolute; 
+    top:0px; 
+    left:0px;
+    background:url(../../pix/cm/main/gradientBlue.jpg) repeat-x bottom #eef3f9;
+    padding:10px;
+    width:605px; 
+    height:280px; 
+    border:2px solid #999; 
+    display:none; 
+    z-index:110;
+}
+
+div.cm_popUp div.leftSlot {
+    float:left;
+    width:291px;
+    padding-right:6px;
+}
+
+div.cm_popUp div.rightSlot {
+    float:right;
+    width:291px;
+    padding-left:6px;
+}
+
+div.cm_popUp div.doubleSlot {
+    width:605px;
+    padding-bottom:8px;
+    margin-bottom:8px;
+}
+
+div#kaskoversicherung.cm_popUp {
+    width: 780px;
+}
+
+div#kaskoversicherung.cm_popUp div.leftSlot {
+    width: 466px;
+}
+
+div#kaskoversicherung.cm_popUp div.doubleSlot {
+    width: 780px;
+}
+
+table.reifen td.borderTop {
+    border-top:1px solid #226db0;
+    padding-top:8px;
+}
+
+table.vergleich td {
+    border-bottom:1px solid #a4c7e5;
+    padding:5px 0;
+}
+
+table.vergleich td.first {
+    width:40%;
+}
+
+table.vergleich td.rest {
+    text-align:right;
+    width:20%;
+}
+
+div.borderTop {
+    border-top:1px solid #226db0;
+}
+
+table.Kalkulationen {
+    margin:0px 8px 8px 8px;
+    width:962px;
+    border-bottom:1px solid #226db0;
+    border-right:1px solid #226db0;
+}
+
+table.Kalkulationen td {
+    padding:0 0 0 8px;
+    vertical-align:top;
+    border-left:1px solid #226db0;
+}
+
+table.Kalkulationen thead td {
+    background:#226db0;
+    font-size:12px;
+    color:#FFF;
+    font-weight:bold;
+    padding:3px 0px 3px 8px;
+}
+
+
+table tr.colored {
+    background:#fff;
+}
+
+table.Kalkulationen tbody tr:hover {
+    background:#d3e2ef;
+    cursor:pointer;
+}
+
+table.Kalkulationen tbody td {
+    padding:4px 0px 4px 8px;
+}
+
+td.total input{
+    font-weight:bold;
+}
+
+a.h5 {
+    color:#FFFFFF;
+}
+
+div.lastInput {
+    float: right;
+    position: absolute;
+    bottom: 77px;
+    right: 69px;
+}
+
+
+
+
+a {
+    color:#226db0;
+    text-decoration:none;
+}
+
+a:hover {
+    text-decoration:none;
+    color:#999;
+}
+
+.button, .buttonBack {
+    padding:3px 5px;
+    background:url(../../pix/cm/main/arrow.gif) no-repeat #226db0;
+    color:#FFF;
+    padding-left:13px;
+    margin-bottom:5px;
+}
+
+.BlockButton {
+    padding:3px 5px;
+    background:url(../../pix/cm/main/arrow.gif) no-repeat #226db0;
+    color:#FFF;
+    display:inline;
+    padding-left:13px;
+    margin-bottom:5px;
+    cursor:pointer;
+}
+
+.buttonBack {
+    cursor:pointer;
+    background:url(../../pix/cm/main/arrowBack.gif) no-repeat #226db0;
+}
+
+a.fehler {
+    color:#F00;
+    font-weight:bold;
+}
+
+a.teasers {
+    border-bottom:1px solid #226db0; 
+    display:block; 
+    margin-bottom:1px;
+}
+
+div#cm_navigation {
+    margin:0px;
+    padding:0px 0 0 20px;
+    height:25px;
+    background:#d0d0d0;
+    margin-bottom:1px;
+}
+
+ul {
+    margin:0px;
+}
+
+/* ======================== Hauptnavigation */
+
+div#cm_navigation ul {
+    margin:0px;
+    padding:0px;
+    list-style:none;
+    margin-top:5px;
+}
+
+div#cm_navigation ul li {
+    display:inline;
+    margin-right:14px;
+    line-height:16px;
+}
+
+div#cm_navigation a {
+    text-decoration:none;
+    color:#464648;
+}
+
+div#cm_navigation a:hover {
+    color:#000000;
+}
+
+div#cm_navigation a.Aktiv {
+    font-weight:bold;
+}
+
+div#cm_navigation a.blue, a.blue {
+    color:#226db0;
+}
+
+div#cm_navigation a.blue:hover, a.blue:hover {
+    color:#000000;
+}
+
+div#dealer, div#kunden, div#finanzen, div#crm {
+    display:none;
+    position:absolute; 
+    top:22px; 
+    left:20px; 
+    background:#FFF; 
+    width:155px; 
+    border:1px solid #226db0; 
+    border-top-width:0px;
+    padding:5px 0px 0px;
+}
+
+div#kunden {
+    top:26px; 
+    left:240px; 
+    padding-top:0px;
+}
+
+div#finanzen {
+    top:26px;
+    left:340px;
+    padding-top:0px;
+}
+div#crm {
+    top:26px;
+    left:457px;
+    padding-top:0px;
+}
+
+div#dealer a, div#kunden a, div#finanzen a,div#crm a {
+    color:#226db0;
+    display:block;
+    margin-bottom:3px;
+}
+
+div#dealer a:hover, div#kunden a:hover, div#finanzen a:hover, div#crm a:hover  {
+    color:#464648;
+}
+
+div#dealer ul, div#kunden ul, div#finanzen ul, div#crm ul {
+    margin:0px;
+    padding:0px;
+    list-style:none;
+    display:block;
+    margin-bottom:12px;
+    border-bottom:1px solid #c8daeb;
+}
+
+div#kunden ul, div#finanzen ul, div#crm ul {
+    margin-bottom:0px;
+    border-bottom-width:0px;
+}
+
+div#dealer ul li, div#kunden ul li, div#finanzen ul li, div#crm ul li {
+    margin:0px;
+    display:block;
+
+}
+
+div#dealer ul li a, div#kunden ul li a, div#finanzen ul li a , div#crm ul li a{
+    padding:1px 0px 1px 15px;
+    display:block;
+}
+
+div#kunden ul li a, div#finanzen ul li a , div#crm ul li a{
+    padding-left:5px;
+}
+
+div#dealer ul li a:hover, div#kunden ul li a:hover, div#finanzen ul li a:hover, div#crm ul li a:hover {
+    background:#c8daeb;
+    color:#226db0;
+}
+
+/* ======================== Footernavigation */
+
+div#cm_footer ul {
+    margin:0px;
+    padding:0px;
+    list-style:none;
+    margin-top:0px;
+}
+
+div#cm_footer ul li {
+    display:inline;
+    margin-right:14px;
+}
+
+div#cm_footer a {
+    text-decoration:none;
+    color:#464648;
+}
+
+div#cm_footer a:hover {
+    color:#000000;
+}
+
+div#cm_navigation a.Aktiv {
+    font-weight:bold;
+}
+
+
+/* ======================== StepsNavigation */
+
+div#cm_steps {
+    position:absolute; 
+    top:183px; 
+    left:0px;
+    padding:0px;
+    padding-left:15px;
+    border-bottom:1px solid #669999;	
+    width:962px;
+
+}
+
+div.cm_stepsBlue {
+    position:relative;
+    
+    border-bottom:1px solid #226db0;	
+    /* margin-bottom:6px; */
+}
+
+div#cm_steps ul, div.cm_stepsBlue ul {
+    margin:0px;
+    padding:0px;
+    display:block;
+}
+
+div#cm_steps ul li, div.cm_stepsBlue ul li {
+    display:inline;
+    margin-right:3px;
+    font-size:11px;
+    padding-bottom:1px;
+    font-weight:600;
+}
+
+div#cm_steps ul li.inactive {
+    padding:2px 20px 1px 10px;
+    background:url(../images/aida/inactiveRight.gif) right top no-repeat;
+    border-left:1px solid #999;
+    color:#999;
+}
+
+div#cm_steps ul li.displayNone {
+    display:none;
+}
+
+div.cm_stepsBlue ul li.inactive {
+    padding: 2px 16px 1px 10px;
+    background:url(../images/aida/inactiveBlue.gif) right top no-repeat;
+    border-left:1px solid #226db0;
+    color:#226db0;
+}
+
+div#cm_steps ul li.selected {
+    padding:2px 20px 2px 10px;
+    background:url(../images/aida/currentBlue.gif) right top no-repeat;
+    color:#FFF;
+}
+
+div.cm_stepsBlue ul li.selected {
+    
+    background:url(../images/aida/currentBlue.gif) right top no-repeat;
+    color:black;
+	font-size:14px;
+    /*margin-bottom:15px;*/
+}
+
+div#cm_steps ul li.visited {
+    padding:2px 20px 2px 10px;
+    background:url(../images/aida/visitedRight.gif) right top no-repeat;
+    color:#FFF;
+}
+
+div#cm_steps ul li.inactive a {
+    color:#999;	
+}
+
+div.cm_stepsBlue ul li.inactive a {
+    color:#226db0;	
+}
+
+div#cm_steps ul li.selected a, div#cm_steps ul li.visited a {
+    color:#fff;
+}
+
+div.cm_stepsBlue ul li.selected a {
+    color:#FFF;	
+}
+
+img.topIcons {
+    position:absolute; 
+    top:-15px; 
+}
+
+div.bottomLinks {
+    text-align:right; 
+    margin-bottom:8px;
+}
+
+/* ======================== StepsNavigation */
+
+div.plusbutton, div.minus {
+    width:9px;
+    height:8px;
+    background:url(/aida/pix/page/carConfigurator/plus.png) no-repeat;
+    cursor:pointer;
+}
+
+div.minus {
+    background:url(/aida/pix/page/carConfigurator/minus.png) no-repeat;
+}
+
+
+li.carconf__tabs {
+    cursor: pointer;
+}
+
+
+
+
+/*Primefaces*/
+ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    background: none repeat scroll 0 0 white;
+    border: none;
+    color: #222222;
+    font-weight: normal;
+}
+.ui-datatable .ui-sortable-column {
+    background: none repeat scroll 0 0 #226db0;
+    cursor: pointer;
+    border-width: 0;
+    color: #fff;
+    font-weight: bold;
+    padding-left: 4px;
+    font-size:10px;
+}
+.ui-datatable th {
+    background: none repeat scroll 0 0 #226db0 !important;
+    cursor: pointer;
+    border-width: 0;
+    color: #fff !important;
+    font-weight: bold !important;
+    padding-left: 4px;
+    font-size:10px;
+    vertical-align:top;
+}
+.ui-datatable tbody td 
+{
+    border-bottom: 1px solid #226db0;
+    border-left: 1px solid #c8daeb;
+    border-color: #c8daeb!important;
+    font-size: 10px;
+    line-height: 15px;
+    padding: 2px;
+    vertical-align: top;
+    background: none repeat scroll 0 0 #eef3f9;
+}
+
+.ui-panel .ui-panel-content {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    padding: 0 0 0 0;
+}
+.ui-panel {
+    padding: 0 0 0 0;
+}
+.ui-widget-header {
+    background: none repeat scroll 0 0 #226db0;
+    border: 1px solid #222222;
+    color: #fcfcfc;
+    font-weight: bold;
+}
+.ui-widget-content  {
+    background: none repeat scroll 0 0 transparent;
+}
+tr.ui-widget-content{
+    border:0;
+}
+.ui-chkbox-box.ui-widget.ui-corner-all.ui-state-default.ui-state-active.ui-state-disabled {
+    background: none repeat scroll 0 0 #226db0;
+}
+.ui-panelgrid td{
+    padding:0px 0px 8px 0px;
+    border-width: 0px;
+}
+.detail_label_float {
+    font-weight: bold;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    display: block;
+    float:left;
+    color:#666;
+}
+.detail_input {
+    font-weight: bold;
+    color: black;
+    padding: 2px 20px 2px 20px!important;
+    text-align: right;
+}
+
+.cmsection legend{
+    padding:0px 16px 0px 10px !important;
+    background:url(../images/aida/currentBlue.gif) right top no-repeat !important;
+    color:#ffffff  !important;
+    font-weight: 600 !important;
+    font-size:11px;
+    /*margin-bottom:15px;*/
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    color: #000000 !important;
+}
+.ui-widget {
+    font-family: Arial,sans-serif;
+    font-size: 11px;
+}
+
+.ui-widget .ui-widget {
+    /*border-width: 0 !important;*/
+    font-size: 11px;
+}
+.cmdetailcolumn
+{
+    width: 50%; 
+    vertical-align: top; 
+    background: url("../images/aida/gradientBlue.jpg") repeat-x scroll center bottom #eef3f9;
+    padding: 0 6px 8px ! important;
+
+}
+
+.ui-inputfield.inputFieldROtrue {
+    background: none repeat scroll 0 0 transparent !important;
+    border: medium none !important;
+}
+.ui-inputfield.inputFieldROfalse {
+    background: white !important;
+    border: 1px solid #999 !important;
+}
+.ui-fieldset {
+    border-bottom: 1px solid #226db0 !important;
+    line-height: 16px;
+    padding:0;
+    margin:0;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {   font-weight: normal; color: #222222; }
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited { color: #222222; text-decoration: none; }
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {  background: inherit ; font-weight: normal; color: inherit; }
+.ui-state-hover a, .ui-state-hover a:hover, .ui-state-hover a:link, .ui-state-hover a:visited {  text-decoration: none; }
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { border: 1px solid black; background: #226db0 ; font-weight: normal;  }
+.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {  text-decoration: none; }
+
+.ui-panelmenu .ui-state-hover, .detail_input .ui-state-hover {
+    /*background-color: inherit !important;*/
+    color: inherit !important;
+}
+input.ui-state-hover {
+    background-color: inherit !important;
+    color:inherit!important;
+}
+
+.ui-widget { font-family: Arial,Helvetica,sans-serif; font-size: 11px; }
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Arial,Helvetica,sans-serif; font-size: 11px;
+                                                                              border:1px solid #999 !important;
+}
+
+.ui-datatable .ui-cell-editor-input {
+    /*display:block !important;*/
+}
+
+.ui-chkbox-box.ui-widget.ui-corner-all.ui-state-default.ui-state-disabled{
+    background:	#226db0;
+}
+
+.ui-widget-overlay {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.ui-dialog .ui-dialog-content {
+    background: none repeat scroll 0 0 white;
+}
+.ui-datepicker {
+    background: none repeat scroll 0 0 white !important;
+}
+.ui-selectcheckboxmenu-panel {
+    background: none repeat scroll 0 0 white !important;
+}
+.ui-selectonemenu-panel .ui-selectonemenu-items-wrapper {
+    background: none repeat scroll 0 0 white;
+}
+.phase0
+{ 
+    background: green !important;
+}
+.phase1
+{ 
+    background: orange !important;
+}
+.phase2
+{ 
+    background: red !important;
+}
+.phase3
+{ 
+    background: red !important;
+}
+.isvbtn
+{
+    float:right;
+    float: right;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+/* checkbox table row editing */
+.ui-datatable .ui-datatable-data tr.ui-row-editing td.ui-editable-column, .ui-datatable .ui-datatable-data td.ui-cell-editing {
+
+    padding:2px 2px !important
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    background: #eef3f9!important;
+}
+
+.ui-chkbox-box {
+    border: 1px solid gray!important;
+}
+
+.ui-selectcheckboxmenu-label,.ui-selectonemenu .ui-selectonemenu-label{
+    text-align: left;
+}
+
+.ui-selectcheckboxmenu , .ui-selectonemenu{
+    border: 1px solid #999 !important;
+}
+
+.ui-datepicker-trigger {
+    vertical-align: top;
+    margin-top: 0px;
+}
+
+OFFtable.tabfilter tr[role="row"] {
+    float: left;
+    width: 325px;
+}
+
+.filtercheck {
+    width:25px;
+}
+.filtername {
+    width:100px;
+    text-align: left;
+    font-weight: normal;
+}
+.filterinput {
+    width:200px;
+    text-align: left;
+}
+.filterrow td {
+    padding:2px;
+}
+select.dealerSelect {
+    background: none repeat scroll 0 0 rgb(255, 255, 255);
+    border: 1px solid rgb(34, 109, 176);
+    font-size: 10px;
+    margin: 0;
+    width: 150px;
+}
+
+.inputFieldROtrue input {
+    border: none!important;
+    background: transparent!important;
+}
+.hasDatepicker {
+width: 116px!important;
+ height: 14px!important; 
+}
+
+.ui-selectcheckboxmenu {
+    width: 151px!important;
+}
+.ui-autocomplete-multiple-container 
+{
+    width: 151px!important;
+}
+
+.ui-autocomplete-panel .ui-autocomplete-list {
+    background: none repeat scroll 0 0 white;
+}
+
+		</style>
+		<title>Vertragsübersicht</title>
+	</head>
+
+
+
+
+	<body>
+
+		 <div class="spalte slot6 noBackground">
+                        <div class="cm_stepsBlue" style="margin-left: 10px; margin-top: 20px;">
+                            <ul>
+                                <li class="selected">Vertragsübersicht {{$object.vtDto.VERTRAG}}</li>
+                            </ul>
+                    </div>
+					
+        <div id="cm_calculation">
+                    <div class="spalte slot6 noBackground">
+                        <div class="cm_stepsBlue">
+                            <ul>
+                                <li class="selected"><strong>Vertragsinformationen</strong></li>
+                            </ul>
+                        </div>
+                        <div class="spalte slot6" style="width:339px; padding-top:8px;">
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="angebotsUebersicht borderBottom">
+                                <tr>
+                                    <td width="60%"><p><strong>Vertragsbeginn</strong></p></td>
+                                    <td><p>{{$object.vtDto.VTBEGINN|0:dd/MM/yyyy}}</p></td>
+                                </tr>
+                                <tr>
+                                    <td width="60%"><p><strong>Laufzeit</strong></p></td>
+                                    <td><p>{{$object.vtDto.KalkLZ}}</p></td>
+                                </tr>
+                                <tr>
+                                    <td width="60%"><p><strong>Produktart</strong></p></td>
+                                    <td><p>{{$object.vtDto.VART}}</p></td>
+                                </tr>
+                                <tr>
+                                    <td width="60%"><p><strong>Anschaffungswert</strong></p></td>
+                                    <td><p>EUR {{$object.vtDto.KalkBGExtern|0:n}}</p></td>
+                                </tr>
+                                <!--if{{$object.vtDto.VART.Operator(EQ,Kredit)}}--> 
+								<!--if{{$object.vtDto.VART.Operator(EQ,kredit)}}--> 
+								  <tr>
+                                            <td width="60%"><p><strong>MVZ/Anzahlung</strong></p></td>
+                                            <td><p>EUR {{$object.vtDto.KalkAnzahlung|0:n}}</p></td>
+                                        </tr>
+								<!--end-->
+								<!--end-->
+								<!--if{{$object.vtDto.VART.Operator(NE,Kredit)}}--> 
+								<!--if{{$object.vtDto.VART.Operator(NE,kredit)}}--> 
+                                        <tr>
+                                            <td width="60%"><p><strong>MVZ/Anzahlung</strong></p></td>
+                                            <td><p>EUR {{$object.vtDto.KalkSZBRUTTO|0:n}}</p></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><p><strong>Depot</strong></p></td>
+                                            <td><p>EUR {{$object.vtDto.KalkDepot|0:n}}</p></td>
+                                        </tr>
+                                    <!--end-->
+								<!--end-->
+                                <tr>
+                                    <td width="60%"><p><strong>Zinsart</strong></p></td>
+                                    <td><p>{{$object.vtDto.ZINSTYP}}</p></td>
+                                </tr>
+                                <tr>
+                                    <td width="60%"><p><strong>Vertragsnummer</strong></p></td>
+                                    <td><p>{{$object.vtDto.VERTRAG}}</p></td>
+                                </tr>
+                                <tr>
+                                    <td width="60%"><p><strong>Vertragsende</strong></p></td>
+                                    <td><p>{{$object.vtDto.VTENDE|0:dd/MM/yyyy}}</p></td>
+                                </tr>
+                                <tr>
+                                    <td width="60%"><p><strong>Km p.A.</strong></p></td>
+                                    <td><p>{{$object.vtDto.ObJahresKM}}</p></td>
+                                </tr>
+                                <tr>
+                                    <td width="60%"><p><strong>Tarifkennzeichen</strong></p></td>
+                                    <td><p>{{$object.vtDto.KONSTELLATION}}</p></td>
+                                </tr>
+                                <tr>
+                                    <td width="60%"><p><strong>Restwert/Zielrate</strong></p></td>
+                                    <td><p>EUR {{$object.vtDto.KalkRW|0:n}}</p></td>
+                                </tr>
+                    
+                                <tr>
+                                    <td width="60%"><p><strong>Rate mtl.</strong></p></td>
+                                    <td><p>EUR {{$object.vtDto.RATE|0:n}}</p></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="spalte slot6 noBackground">
+                        <div class="cm_stepsBlue">
+                            <ul>
+                                <li class="selected"><strong>Kundendaten</strong></li>
+                            </ul>
+                        </div>
+                        <div class="spalte slot6" style="width:339px; padding-top:8px;">
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="angebotsUebersicht borderBottom">
+                            <tr>
+                                <td width="60%"><p><strong>Name</strong></p></td>
+                                
+                                        <td><p>{{$object.vtDto.PersonTitelVornameName}}</p></td>
+                                
+                            </tr>
+                            <tr>
+                                <td width="60%"><p><strong>Stra&szlig;e</strong></p></td>
+                                <td><p>{{$object.vtDto.PersonStrasse}}</p></td>
+                            </tr>
+                            <tr>
+                                <td width="60%"><p><strong>PLZ/Ort</strong></p></td>
+                                <td><p>{{$object.vtDto.PersonPlzOrt}}</p></td>
+                            </tr>
+                            <tr>
+                                <td width="60%"><p><strong>Telefonnummer</strong></p></td>
+                                <td><p>{{$object.vtDto.PersonPTelefon}}</p></td>
+                            </tr>
+                            <tr>
+                                <td width="60%"><p><strong>E-Mail</strong></p></td>
+                                <td><p>{{$object.vtDto.PersonEmail}}</p></td>
+                            </tr>
+                            <!--if{{$object.vtDto.AntObSich.Length.Operator(GT,0)}}--> 
+											
+												 <!--each{{$object.vtDto.AntObSich}}-->
+												<tr><td width="60%"><p><strong>Mitantragsteller </strong></p></td>
+												<td><p>{{$object.vtDto.AntObSich.PersonNameVornameGebDatum}}</p></td></tr>
+												<!--end-->
+												
+											
+						<!--end-->
+                        </table>
+                        </div>
+						
+						
+                        
+                        <div class="cm_stepsBlue">
+                            <ul>
+                                <li class="selected"><strong>Fahrzeugdaten</strong></li>
+                            </ul>
+                        </div>
+                        <div class="spalte slot6" style="width:339px; padding-top:8px;">
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="angebotsUebersicht borderBottom">
+                            <tr>
+                                <td width="60%"><p><strong>Marke/Modell</strong></p></td>
+                                <td><p>{{$object.vtDto.ObHersteller}} {{$object.vtDto.ObFabrikat}}</p></td>
+                            </tr>
+                            <tr>
+                                <td width="60%"><p><strong>Baureihe</strong></p></td>
+                                <td><p>{{$object.vtDto.BAUREIHE}}</p></td>
+                            </tr>
+                            <tr>
+                                <td width="60%"><p><strong>Fahrzeugart</strong></p></td>
+                                <td><p>{{$object.vtDto.ObFzArt}}</p></td>
+                            </tr>
+                            <tr>
+                                <td width="60%"><p><strong>Kennzeichen</strong></p></td>
+                                <td><p>{{$object.vtDto.KENNZEICHEN}}</p></td>
+                            </tr>
+                            <tr>
+                                <td width="60%"><p><strong>Eurotaxcode</strong></p></td>
+                                <td><p>{{$object.vtDto.SCHWACKE}}</p></td>
+                            </tr>
+                            <tr>
+                                <td width="60%"><p><strong>Fahrgestellnummer</strong></p></td>
+                                <td><p>{{$object.vtDto.SERIE}}</p></td>
+                            </tr>
+                            <tr>
+                                <td width="60%"><p><strong>Auslieferungsdatum</strong></p></td>
+                                <td><p>{{$object.vtDto.ObLieferung|0:dd/MM/yyyy}}</p></td>
+                            </tr>
+                            <tr>
+                                <td width="60%"><p><strong>Erstzulassungsdatum</strong></p></td>
+                                <td><p>{{$object.vtDto.ERSTZULASSUNG|0:dd/MM/yyyy}}</p></td>
+                            </tr>
+                            <tr>
+                                <td width="60%"><p><strong>km bei VT-Beginn</strong></p></td>
+                                <td><p>{{$object.vtDto.ObAbNahmeKm}}</p></td>
+                            </tr>
+                        </table>
+                        </div>
+                        
+                      
+						</div>
+						</div>
+	
+
+	</body>
+</html>

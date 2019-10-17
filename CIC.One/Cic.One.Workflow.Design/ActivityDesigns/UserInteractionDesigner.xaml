@@ -1,0 +1,23 @@
+﻿<sap:ActivityDesigner x:Class="Cic.One.Workflow.ActivityDesigns.UserInteractionDesigner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="clr-namespace:System;assembly=mscorlib"
+    xmlns:co="clr-namespace:Cic.One.Workflow.Design.Converter"
+    
+    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+    xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation"
+    xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation">
+
+    <sap:ActivityDesigner.Resources>
+        <ResourceDictionary>
+            <co:ComboBoxItemConverter x:Key="comboBoxItemConverter"/>
+        </ResourceDictionary>
+    </sap:ActivityDesigner.Resources>
+    <Grid Height="53" Width="190">
+        <ComboBox   SelectedValue="{Binding Path=ModelItem.workflowViewId, Mode=TwoWay, Converter={StaticResource comboBoxItemConverter}}" Height="23" HorizontalAlignment="Left" Margin="58,0,0,0" Name="viewBox" VerticalAlignment="Top" Width="120" >
+           
+        </ComboBox>
+        <Label Content="ViewId" Height="28" HorizontalAlignment="Left" Name="label1" VerticalAlignment="Top" />
+    </Grid>
+   
+</sap:ActivityDesigner>

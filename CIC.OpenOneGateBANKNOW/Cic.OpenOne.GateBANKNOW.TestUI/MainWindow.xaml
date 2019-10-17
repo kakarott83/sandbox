@@ -1,0 +1,186 @@
+﻿<Window x:Class="Cic.OpenOne.GateBANKNOW.TestUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Cic.OpenOne.GateBANKNOW.TestUI"
+        xmlns:uc="clr-namespace:Cic.OpenOne.GateBANKNOW.TestUI.UserControls"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+       Title="Auskunft TestClient" Height="551" Width="718" WindowState="Maximized" >
+
+
+    <Window.Resources>
+       
+    </Window.Resources>
+    
+    <DockPanel Background="Black">
+        <Grid DockPanel.Dock="Top" Height="50" Background="{StaticResource HeaderBackground}">
+            <StackPanel Margin="10 0" HorizontalAlignment="Left">
+                <TextBlock x:Name="txtHeading" Foreground="White" FontSize="22">
+				<Bold FontWeight="ExtraBold" Foreground="LightGray">
+					AUSKUNFT</Bold>
+                </TextBlock>
+
+            </StackPanel>
+        </Grid>
+        <Menu Background="Black" DockPanel.Dock="Top">
+            <Menu.Resources>
+                <Style TargetType="{x:Type Image}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type MenuItem}},Path=IsEnabled}" Value="False">
+                            <Setter Property="Opacity" Value="0.4"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Menu.Resources>
+            <MenuItem  Header="_File" Background="Black" Foreground="White">
+                <MenuItem Header="_Neue Liste" Command="ApplicationCommands.New">
+                    
+                </MenuItem>
+                <MenuItem Header="Liste ö_ffnen" Command="ApplicationCommands.Open">
+                    
+                </MenuItem>
+            </MenuItem>
+
+        </Menu>
+        <Rectangle DockPanel.Dock="Top" Fill="Gray" Height="2"/>
+   
+        <StatusBar  DockPanel.Dock="Bottom">
+       
+
+            <StatusBarItem Foreground="White">
+                <TextBlock Text="Version: "/>
+            </StatusBarItem>
+            <StatusBarItem >
+                <TextBlock Name="versionblock" Foreground="White" Text="{Binding VersionCode,UpdateSourceTrigger=PropertyChanged}"/>
+            </StatusBarItem>
+        </StatusBar>
+
+
+
+        <TabControl Name="tabcontrol"  Background="{StaticResource HeaderBackground}">
+            
+            <TabItem Header="Kremo" Height="30" TabIndex="0">
+
+                <TabItem.Content>
+                    <uc:KREMO/>
+                </TabItem.Content>
+            </TabItem>
+
+            <TabItem Header="Eurotax" Height="30" TabIndex="0">
+                <TabControl Name="tabcontrolEurotax"  Background="{StaticResource HeaderBackground}">
+
+                    
+                </TabControl>
+            </TabItem>
+
+            <TabItem Header="DecisionEngine" TabIndex="2">
+                <TabItem.Content>
+                    <uc:DecisionEngine/>
+                </TabItem.Content>
+            </TabItem>
+
+            <TabItem Header="Deltavista" Height="30" TabIndex="0">
+                <TabControl Name="tabcontrolDeltavista"  Background="{StaticResource HeaderBackground}">
+
+
+                </TabControl>
+            </TabItem>
+
+            <TabItem Header="ZEK EC 1-3" Height="30" TabIndex="0">
+                <TabControl Name="tabcontrolZEK"  Background="{StaticResource HeaderBackground}">
+
+
+                </TabControl>
+            </TabItem>
+
+            <TabItem Header="ZEK EC 4" Height="30" TabIndex="0">
+                <TabControl Name="tabcontrolZEKEC4"  Background="{StaticResource HeaderBackground}">
+
+
+                </TabControl>
+            </TabItem>
+
+            <TabItem Header="ZEK EC 5" Height="30" TabIndex="0">
+                <TabControl Name="tabcontrolZEKEC5"  Background="{StaticResource HeaderBackground}">
+
+
+                </TabControl>
+            </TabItem>
+
+            <TabItem Header="ZEK EC 6" Height="30" TabIndex="0">
+                <TabControl Name="tabcontrolZEKEC6"  Background="{StaticResource HeaderBackground}">
+
+
+                </TabControl>
+            </TabItem>
+
+            <TabItem Header="ZEK EC 7" Height="30" TabIndex="0">
+                <TabControl Name="tabcontrolZEKEC7"  Background="{StaticResource HeaderBackground}">
+
+
+                </TabControl>
+            </TabItem>
+
+            <TabItem Header="Notification" Height="30" TabIndex="0">
+                <TabControl Name="notification"  Background="{StaticResource HeaderBackground}" DataContext="{Binding}">
+
+
+                </TabControl>
+            </TabItem>
+
+            <TabItem Header="Aggregation" Height="30" TabIndex="0">
+                <TabControl Name="tabcontrolAggregation"  Background="{StaticResource HeaderBackground}" DataContext="{Binding}">
+
+
+                </TabControl>
+            </TabItem>
+
+
+            <TabItem Header="Ecode178" Height="30" TabIndex="0">
+                <TabControl Name="tabcontrolECode178"  Background="{StaticResource HeaderBackground}" DataContext="{Binding}">
+
+
+                </TabControl>
+            </TabItem>
+
+            <TabItem Header="GetARMs" Height="30" TabIndex="0">
+                <TabControl Name="tabcontrolZekGetARMs"  Background="{StaticResource HeaderBackground}" DataContext="{Binding}">
+
+
+                </TabControl>
+            </TabItem>
+
+            
+
+            <TabItem Header="InformativeabfrageOL" Height="30" TabIndex="0">
+                <TabControl Name="tabcontrolZekInformativeabfrageOL"  Background="{StaticResource HeaderBackground}" DataContext="{Binding}">
+
+
+                </TabControl>
+            </TabItem>
+
+            <!--<TabItem Header="Ang->Ant" Height="30" TabIndex="0">
+                <TabControl Name="angtoant" Background="{StaticResource HeaderBackground}" DataContext="{Binding}" />
+            </TabItem>-->
+
+            <TabItem Header="TransactionRisiko" Height="30" TabIndex="0">
+                <TabControl Name="tabcontrolTransactionRisiko" Background="{StaticResource HeaderBackground}" DataContext="{Binding}" />
+            </TabItem>
+
+            <TabItem Header="TransactionRisikoKunde" Height="30" TabIndex="0">
+                <TabControl Name="tabcontrolTransactionRisikoKunde" Background="{StaticResource HeaderBackground}" DataContext="{Binding}" />
+            </TabItem>
+
+            <TabItem Header="CreditLimit" Height="30" TabIndex="0">
+                <TabControl Name="tabcontrolCreditLimit" Background="{StaticResource HeaderBackground}" DataContext="{Binding}" />
+            </TabItem>
+
+        </TabControl>
+
+        
+        
+        
+        
+    </DockPanel>
+
+</Window>
+

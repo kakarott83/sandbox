@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Cic.OpenLease.Service.Services.DdOl.HtmlReportService" CodeBehind="HtmlReportService.svc.cs" %>

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Factory="Cic.OpenLease.Service.ServiceFactory" Service="Cic.OpenLease.Service.Merge.Prisma.PrismaService" CodeBehind="PrismaService.svc.cs" %>

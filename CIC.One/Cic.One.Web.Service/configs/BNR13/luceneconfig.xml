@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LuceneConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <tables>
+
+    <IndexedTable>
+      <id>PERSON</id>
+      <query>select sysid id,area,name||' '||vorname title,strasse ||' '||hsnr description1, plz||' '||ort description2, telefon description3, '' peuni, code||' '||sysreferenz||' '||sysid content from cic.vc_it_person p where  (p.MITARBEITERFLAG is null or 0>=p.MITARBEITERFLAG)</query>
+      <keyField>sysid</keyField>
+      <indexid>PERSON</indexid>
+      <positiveId>true</positiveId>
+      <peroleFilter>false</peroleFilter>
+      <areaField>area</areaField>
+	  <peuniFilter>IT</peuniFilter>
+    </IndexedTable>	
+    <IndexedTable>
+      <id>VERTRAG</id>
+      <query>select  vt.sysid id, vt.vertrag ||' '||vt.vertriebsweg title, kd.name||' '||kd.vorname description1, kd.plz||' '||kd.ort description2, vt.zustand  ||' '|| vt.attribut description3,'' peuni,kd.code||' '||kd.sysreferenz content from CIC.VT VT, cic.person kd where VT.SYSKD=KD.SYSPERSON(+) and (kd.MITARBEITERFLAG is null or 0>=kd.MITARBEITERFLAG)</query>
+      <keyField>sysid</keyField>
+      <peroleFilter>false</peroleFilter>
+      <indexid>VERTRAG</indexid>
+    </IndexedTable>
+    <IndexedTable>
+      <id>VORGANG</id>
+      <query>select aa.sysid id, aa.area, aa.nummer ||' '||aa.vertriebsweg title, case when aa.syskd>0 then kundename else itname end description1, case when aa.syskd>0 then kundeort else itort end description2, aa.zustand  ||' '|| aa.attribut description3,'' peuni, ABWICKLUNGSORT||' '||STAMMNUMMER||' '||FABRIKAT||' '||HERSTELLER||' '||SCHILD||' '||VIN||' '||BERATER||' '||KONTFIRMANAME||' '||KONTFIRMAVORNAME content from CIC.VC_ANGANT aa, CIC.PERSON, CIC.IT where aa.SYSKD=PERSON.SYSPERSON(+) and aa.SYSIT=IT.SYSIT(+) and (PERSON.MITARBEITERFLAG is null or 0>=PERSON.MITARBEITERFLAG) and (IT.MITARBEITERFLAG is null or 0>=IT.MITARBEITERFLAG)</query>
+      <keyField>sysid</keyField>
+      <peroleFilter>false</peroleFilter>
+      <indexid>ANGANT</indexid>
+      <areaField>area</areaField>
+    </IndexedTable>
+
+
+  </tables>
+</LuceneConfig>

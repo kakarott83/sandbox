@@ -1,0 +1,87 @@
+﻿<!-- Copyright (c) Microsoft Corporation. All rights reserved-->
+<Application x:Class="Workflows.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+              xmlns:app="clr-namespace:Workflows"
+             StartupUri="RehostingWfDesigner.xaml">
+    <Application.Resources>
+        <system:String x:Uid="MenuCreateName" x:Key="MenuCreateName">Neu</system:String>
+        <system:String x:Uid="MenuOpenName" x:Key="MenuOpenName">Öffnen...</system:String>
+        <system:String x:Uid="MenuSaveName" x:Key="MenuSaveName">Speichern</system:String>
+        <system:String x:Uid="MenuExitName" x:Key="MenuExitName">Ende</system:String>
+
+        <system:String x:Uid="WFSequenceName" x:Key="WFSequenceName">Sequenz</system:String>
+        <system:String x:Uid="WFFlowchartName" x:Key="WFFlowchartName">Flowchart</system:String>
+        <system:String x:Uid="WFStatemachineName" x:Key="WFStatemachineName">Statemachine</system:String>
+        <system:String x:Uid="WFServicesName" x:Key="WFServicesName">Service</system:String>
+        <system:String x:Uid="SetPersistSetting" x:Key="SetPersistSetting">Speicher-Einstellungen</system:String>
+
+
+        <system:String x:Uid="GroupWorkflowName" x:Key="GroupWorkflowName">Workflow</system:String>
+        <system:String x:Uid="GroupEditName" x:Key="GroupEditName">Ändern</system:String>
+        <system:String x:Uid="GroupExecuteName" x:Key="GroupExecuteName">Ausführen</system:String>
+        <system:String x:Uid="GroupLibraryName" x:Key="GroupLibraryName">Library</system:String>
+
+        
+        <system:String x:Uid="TabHomeName" x:Key="TabHomeName">Home</system:String>
+        <system:String x:Uid="TabPersistName" x:Key="TabPersistName">Speichern</system:String>
+        <system:String x:Uid="TabEtcName" x:Key="TabEtcName">Sonstiges</system:String>
+        <system:String x:Uid="EditUndoName" x:Key="EditUndoName">Undo</system:String>
+        <system:String x:Uid="EditRedoName" x:Key="EditRedoName">Redo</system:String>
+        <system:String x:Uid="EditCopyName" x:Key="EditCopyName">Copy</system:String>
+        <system:String x:Uid="EditPasteName" x:Key="EditPasteName">Paste</system:String>
+        <system:String x:Uid="EditCutName" x:Key="EditCutName">Cut</system:String>
+        
+        <system:String x:Uid="ExecuteRunName" x:Key="ExecuteRunName">Run</system:String>
+        <system:String x:Uid="ExecutePauseName" x:Key="ExecutePauseName">Pause</system:String>
+        <system:String x:Uid="ExecuteConsoleName" x:Key="ExecuteConsoleName">Console</system:String>
+        <system:String x:Uid="ExecutePersistName" x:Key="ExecutePersistName">Speichern</system:String>
+        <system:String x:Uid="ExecuteWaitName" x:Key="ExecuteWaitName">Wait</system:String>
+        <system:String x:Uid="ExecuteTraceName" x:Key="ExecuteTraceName">Trace</system:String>
+        <system:String x:Uid="ExecuteViewXaml" x:Key="ExecuteViewXaml">XAML</system:String>
+        <system:String x:Uid="ExecuteIISExpress" x:Key="ExecuteIISExpress">IIS Express</system:String>
+
+        <system:String x:Uid="FontSizeUp" x:Key="FontSizeUp">groesser</system:String>
+        <system:String x:Uid="FontSizeDown" x:Key="FontSizeDown">kleiner</system:String>
+        
+        <BitmapImage x:Key="IcoNewFlow" UriSource="Images/L/NewDocument_32x32.png" />
+        <BitmapImage x:Key="IcoOpenFlow" UriSource="Images/L/FolderOpen_32x32_72.png" />
+        <BitmapImage x:Key="IcoSaveFlow" UriSource="Images/L/base_floppydisk_32.png" />
+
+        <BitmapImage x:Key="IcoUndo" UriSource="Images/S/112_ArrowReturnLeft_Blue_16x16_72.png" />
+        <BitmapImage x:Key="IcoRedo" UriSource="Images/S/112_ArrowReturnRight_Blue_16x16_72.png" />
+        <BitmapImage x:Key="IcoCopy" UriSource="Images/S/CopyHS.png" />
+        <BitmapImage x:Key="IcoPaste" UriSource="Images/S/PasteHS.png" />
+        <BitmapImage x:Key="IcoCut" UriSource="Images/S/CutHS.png" />
+
+        <BitmapImage x:Key="IcoPlay" UriSource="Images/Execute/play.png" />
+        <BitmapImage x:Key="IcoStop" UriSource="Images/Execute/stop.png" />
+
+        <BitmapImage x:Key="IcoAddLibrary" UriSource="Images/L/add_library.png" />
+        <BitmapImage x:Key="IcoReleaseLibrary" UriSource="Images/L/del_library.png" />
+
+        <BitmapImage x:Key="IcoViewXaml" UriSource="Images/L/xaml_file.png" />
+
+        <BitmapImage x:Key="IcoWFSequence" UriSource="Images/Workflow/NewSequence.png" />
+        <BitmapImage x:Key="IcoWFFlowchart" UriSource="Images/Workflow/NewFlowchart.png" />
+        <BitmapImage x:Key="IcoWFStatemachine" UriSource="Images/Workflow/NewStateMachine.png" />
+        <BitmapImage x:Key="IcoWFWorkflowservice" UriSource="Images/Workflow/NewWorkflowService.png" />
+
+        <BitmapImage x:Key="IcoPersistSetting" UriSource="Images/L/persist_setting.png" />
+
+        <BitmapImage x:Key="IcoZoomIn" UriSource="Images/L/ZoomIn.png" />
+        <BitmapImage x:Key="IcoZoomOut" UriSource="Images/L/ZoomOut.png" />
+
+        <BitmapImage x:Key="ISClass" UriSource="Images/Intellisense/VSObject_Class.png" />
+        <BitmapImage x:Key="ISDelegate" UriSource="Images/Intellisense/VSObject_Delegate.png" />
+        <BitmapImage x:Key="ISEnum" UriSource="Images/Intellisense/VSObject_Enum.png" />
+        <BitmapImage x:Key="ISEvent" UriSource="Images/Intellisense/VSObject_Event.png" />
+        <BitmapImage x:Key="ISField" UriSource="Images/Intellisense/VSObject_Field.png" />
+        <BitmapImage x:Key="ISInterface" UriSource="Images/Intellisense/VSObject_Interface.png" />
+        <BitmapImage x:Key="ISMethod" UriSource="Images/Intellisense/VSObject_Method.png" />
+        <BitmapImage x:Key="ISNamespace" UriSource="Images/Intellisense/VSObject_Namespace.png" />
+        <BitmapImage x:Key="ISProperty" UriSource="Images/Intellisense/VSObject_Properties.png" />
+        <BitmapImage x:Key="ISStructure" UriSource="Images/Intellisense/VSObject_Structure.png" />
+    </Application.Resources>
+</Application>

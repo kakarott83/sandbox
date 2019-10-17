@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E34A3213-EB48-413B-AEB8-A005196D5203}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XmlConfiguratorBase</RootNamespace>
+    <AssemblyName>XmlConfiguratorBase</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>147af107</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=1.1.0.188, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.1.1.0.118\lib\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data, Version=5.0.1095.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Oracle, Version=8.4.303.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Devart.Data.Oracle.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.Oracle.Entity, Version=8.4.303.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Devart.Data.Oracle.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtraConstraints, Version=1.10.4.0, Culture=neutral, PublicKeyToken=8b9afd7f380a7d64, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExtraConstraints.Fody.1.10.4\Lib\portable-net4+sl5+wp8+win8+wpa81+MonoAndroid16+MonoTouch40\ExtraConstraints.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.AvalonEdit, Version=5.0.1.0, Culture=neutral, PublicKeyToken=9cc39be672370310, processorArchitecture=MSIL">
+      <HintPath>..\packages\AvalonEdit.5.0.2\lib\Net40\ICSharpCode.AvalonEdit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=2.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.5\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=2.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.5\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=2.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.5\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=2.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.5\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=2.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.5\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=2.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.5\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BO\ContentLogics\Configurator.cs" />
+    <Compile Include="BO\ContentLogics\ContentManager.cs" />
+    <Compile Include="BO\ContentLogics\CustomTypeDescriptionProvider.cs" />
+    <Compile Include="BO\ContentLogics\PropertyAttributeAdder.cs" />
+    <Compile Include="BO\ContentLogics\Quest.cs" />
+    <Compile Include="BO\GUI\CustomCommands.cs" />
+    <Compile Include="BO\GUI\EntrytypeItemsSource.cs" />
+    <Compile Include="BO\GUI\EnumStringItemsSource.cs" />
+    <Compile Include="BO\GUI\SourceControl.xaml.cs">
+      <DependentUpon>SourceControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BO\GUI\VisualControl.xaml.cs">
+      <DependentUpon>VisualControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConfiguratorButtonsLightControl.xaml.cs">
+      <DependentUpon>ConfiguratorButtonsLightControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConfiguratorButtonsControl.xaml.cs">
+      <DependentUpon>ConfiguratorButtonsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConfiguratorListControl.xaml.cs">
+      <DependentUpon>ConfiguratorListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConfiguratorMenuControl.xaml.cs">
+      <DependentUpon>ConfiguratorMenuControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\XmlDataManager.cs" />
+    <Compile Include="ICoreControl.cs" />
+    <Compile Include="BO\GUI\NewInstanceEditor.xaml.cs">
+      <DependentUpon>NewInstanceEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BO\GUI\SimpleBoolConverter.cs" />
+    <Compile Include="BO\GUI\StringArrayEditor.xaml.cs">
+      <DependentUpon>StringArrayEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BO\GUI\SyscodesItemsSource.cs" />
+    <Compile Include="BO\GUI\XmlObjectConverter.cs" />
+    <Compile Include="BO\LogDebug.cs" />
+    <Compile Include="ConfiguratorCoreControl.xaml.cs">
+      <DependentUpon>ConfiguratorCoreControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\DatabaseManager.cs" />
+    <Compile Include="DAO\DataManagerFactory.cs" />
+    <Compile Include="DAO\FileManager.cs" />
+    <Compile Include="DAO\IDataManager.cs" />
+    <Compile Include="DTO\ConstantsDto.cs" />
+    <Compile Include="DTO\Enums.cs" />
+    <Compile Include="DTO\iCASEvaluateDto.cs" />
+    <Compile Include="DTO\StringTree.cs" />
+    <Compile Include="DTO\WfvConfigEntryDto.cs" />
+    <Compile Include="IDependentControl.cs" />
+    <Compile Include="IListControl.cs" />
+    <Compile Include="ISettings.cs" />
+    <Compile Include="IStatusBar.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatusControl.xaml.cs">
+      <DependentUpon>StatusControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTreeInfoWindow.xaml.cs">
+      <DependentUpon>ViewTreeInfoWindow.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="BO\GUI\NewInstanceEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BO\GUI\SourceControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BO\GUI\StringArrayEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BO\GUI\VisualControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConfiguratorButtonsLightControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConfiguratorButtonsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConfiguratorCoreControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ConfiguratorListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConfiguratorMenuControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StatusControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewTreeInfoWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CIC.OpenOne\Cic.OpenOne.Common.Model\Cic.OpenOne.Common.Model.csproj">
+      <Project>{1fef8f25-bbaa-453c-a249-f1733bbb0b3c}</Project>
+      <Name>Cic.OpenOne.Common.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CIC.OpenOne\Cic.OpenOne.Common\Cic.OpenOne.Common.csproj">
+      <Project>{fc4049ac-617c-4233-ba92-287674e30b35}</Project>
+      <Name>Cic.OpenOne.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Cic.Utils\Cic.One.Utils\Cic.One.Utils.csproj">
+      <Project>{d1f653f9-3d9e-4486-89cc-4b0044307750}</Project>
+      <Name>Cic.One.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cic.One.DTO\Cic.One.DTO.csproj">
+      <Project>{0fdcc4e9-cfde-486f-9d93-58049a1f8325}</Project>
+      <Name>Cic.One.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cic.One.Web.Service\Cic.One.Web.Service.csproj">
+      <Project>{1eb55903-97fb-42cd-89a5-1b4568047979}</Project>
+      <Name>Cic.One.Web.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cic.One.Web\Cic.One.Web.csproj">
+      <Project>{b7f449b0-f29c-413e-8454-d77a9f725835}</Project>
+      <Name>Cic.One.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cic.One.Workflow\Cic.One.Workflow.csproj">
+      <Project>{b62e8091-2667-4ca4-8197-a67dafab5139}</Project>
+      <Name>Cic.One.Workflow</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Fody.1.28.3\build\Fody.targets" Condition="Exists('..\packages\Fody.1.28.3\build\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Fody.1.28.3\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.1.28.3\build\Fody.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CASKernel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CASKernel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="CASEvaluate">
+    <xs:sequence>
+      <xs:element name="mandant" type="xs:long" />
+      <xs:element name="sysWfuser" type="xs:long" />
+      <xs:element name="area" nillable="true" type="xs:string" />
+      <xs:element name="ExprList" nillable="true" type="tns:ArrayOfExpression" />
+      <xs:element name="IDList" nillable="true" type="tns:ArrayOfID" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CASEvaluate" nillable="true" type="tns:CASEvaluate" />
+  <xs:complexType name="ArrayOfExpression">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Expression" nillable="true" type="tns:Expression" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExpression" nillable="true" type="tns:ArrayOfExpression" />
+  <xs:complexType name="Expression">
+    <xs:sequence>
+      <xs:element name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Expression" nillable="true" type="tns:Expression" />
+  <xs:complexType name="ArrayOfID">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ID" nillable="true" type="tns:ID" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfID" nillable="true" type="tns:ArrayOfID" />
+  <xs:complexType name="ID">
+    <xs:sequence>
+      <xs:element name="sysID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ID" nillable="true" type="tns:ID" />
+  <xs:complexType name="CASEvaluateOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="returnMessage" nillable="true" type="tns:CASMessage" />
+      <xs:element minOccurs="0" name="area" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="execID" type="xs:long" />
+      <xs:element minOccurs="0" name="outputList" nillable="true" type="tns:ArrayOfResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CASEvaluateOutput" nillable="true" type="tns:CASEvaluateOutput" />
+  <xs:complexType name="CASMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="retCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="retMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CASMessage" nillable="true" type="tns:CASMessage" />
+  <xs:complexType name="ArrayOfResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Result" nillable="true" type="tns:Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResult" nillable="true" type="tns:ArrayOfResult" />
+  <xs:complexType name="Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sysID" type="xs:long" />
+      <xs:element minOccurs="0" name="resultList" nillable="true" type="tns:ArrayOfCASExpressionResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Result" nillable="true" type="tns:Result" />
+  <xs:complexType name="ArrayOfCASExpressionResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CASExpressionResult" nillable="true" type="tns:CASExpressionResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCASExpressionResult" nillable="true" type="tns:ArrayOfCASExpressionResult" />
+  <xs:complexType name="CASExpressionResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="clarionResult" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CASExpressionResult" nillable="true" type="tns:CASExpressionResult" />
+</xs:schema>

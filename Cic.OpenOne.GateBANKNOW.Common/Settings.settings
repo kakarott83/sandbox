@@ -1,0 +1,57 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Cic.OpenOne.GateBANKNOW.Common" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="NotificationGatewaySmtpServer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">80.146.230.3</Value>
+    </Setting>
+    <Setting Name="NotificationGatewaySmtpPort" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">25</Value>
+    </Setting>
+    <Setting Name="NotificationGatewaySmtpFaxConnector" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">cicsettingcommon.eu</Value>
+    </Setting>
+    <Setting Name="NotificationGatewaySmtpSmsConnector" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">cicsettingcommon.eu</Value>
+    </Setting>
+    <Setting Name="CacheLifetime" Type="System.Int64" Scope="Application">
+      <Value Profile="(Default)">3600000</Value>
+    </Setting>
+    <Setting Name="SQLRetryCount" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="ContextOverride" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">false</Value>
+    </Setting>
+    <Setting Name="NotificationGatewaySMSEnabled" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="NotificationGatewaySMSURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://messagingproxy.swisscom.ch:4300/rest/1.0.0/</Value>
+    </Setting>
+    <Setting Name="NotificationGatewaySMSAccountId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">50522</Value>
+    </Setting>
+    <Setting Name="NotificationGatewaySMSAccountName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">50522</Value>
+    </Setting>
+    <Setting Name="NotificationGatewaySMSAccountPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">aNS8pQz5</Value>
+    </Setting>
+    <Setting Name="NotificationGatewaySmtpSendAsEnabled" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="NotificationGatewaySmtpServiceAccount" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">TestUser</Value>
+    </Setting>
+    <Setting Name="NotificationGatewaySmtpServiceAccountPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">TestPW</Value>
+    </Setting>
+    <Setting Name="NotificationGatewaySmtpServiceAccountPlainPassword" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="NotificationGatewaySMSProxyUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

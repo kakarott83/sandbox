@@ -1,0 +1,3906 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CIC.Database.CRIF.EF6</name>
+    </assembly>
+    <members>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.AUSKUNFT">
+            <summary>               
+            Table: AUSKUNFT
+            Description: Auskunft 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.AUSKUNFTTYP">
+            <summary>               
+            Table: AUSKUNFTTYP
+            Description: Typ der Auskunft 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.AUSKUNFTCFG">
+            <summary>               
+            Table: AUSKUNFTCFG
+            Description: Konfiguration für Auskunft 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFADDRESS">
+            <summary>               
+            Table: CFADDRESS
+            Description: Personenadresse oder Firmenadresse 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFADDRESSHIST">
+            <summary>               
+            Table: CFADDRESSHIST
+            Description: Adresshistorie 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFADDRESSMATCH">
+            <summary>               
+            Table: CFADDRESSMATCH
+            Description: Addressergebnis 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFBANKACCOUNT">
+            <summary>               
+            Table: CFBANKACCOUNT
+            Description: Bankkonto 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFBRANCHOFFICE">
+            <summary>               
+            Table: CFBRANCHOFFICE
+            Description: Filiale 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFBUSINESSLIC">
+            <summary>               
+            Table: CFBUSINESSLIC
+            Description: Gewerbelizenz 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFCANDIDATE">
+            <summary>               
+            Table: CFCANDIDATE
+            Description: Kandidat 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFCOMPANY">
+            <summary>               
+            Table: CFCOMPANY
+            Description: Unternehmen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFCOMPLIANCE">
+            <summary>               
+            Table: CFCOMPLIANCE
+            Description: Compliance checked entity 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFCOMPLIANCEDE">
+            <summary>               
+            Table: CFCOMPLIANCEDE
+            Description: Trimmed: CFCOMPLIANCEDESCRIPTION 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFCREDITRATIO">
+            <summary>               
+            Table: CFCREDITRATIO
+            Description: Kreditverhältnisidentifizierer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFDEBT">
+            <summary>               
+            Table: CFDEBT
+            Description: Schulden 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFDECISION">
+            <summary>               
+            Table: CFDECISION
+            Description: Entscheidungsergebnis 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFDOCUMENT">
+            <summary>               
+            Table: CFDOCUMENT
+            Description: Dokument 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFDOCUMENTIMG">
+            <summary>               
+            Table: CFDOCUMENTIMG
+            Description: Art des Dokuments 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFFINELEMENT">
+            <summary>               
+            Table: CFFINELEMENT
+            Description: Financial Statement Element (Abschluss Element) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFFINSTATEMENT">
+            <summary>               
+            Table: CFFINSTATEMENT
+            Description: Abschluss 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFHEADER">
+            <summary>               
+            Table: CFHEADER
+            Description: Control und IdentityDescriptor CRIF 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFINPARCHDREP">
+            <summary>               
+            Table: CFINPARCHDREP
+            Description: Archivierten Bericht abrufen (Get archived report) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFINPDEBTDET">
+            <summary>               
+            Table: CFINPDEBTDET
+            Description: Trimmed: CFINPDEBTDETAILS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFINPGETREPORT">
+            <summary>               
+            Table: CFINPGETREPORT
+            Description: Bericht abrufen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFINPIDENTADDR">
+            <summary>               
+            Table: CFINPIDENTADDR
+            Description: Identifizierung der Adresse 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFINPLISTOFFRE">
+            <summary>               
+            Table: CFINPLISTOFFRE
+            Description: verfügbare Offline-Berichte abrufen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFINPORDEROFF">
+            <summary>               
+            Table: CFINPORDEROFF
+            Description: Offline-Bericht in Auftrag geben 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFINPPOLLOFF">
+            <summary>               
+            Table: CFINPPOLLOFF
+            Description: Offline-Bericht abrufen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFKEYPERIOD">
+            <summary>               
+            Table: CFKEYPERIOD
+            Description: Zeitraum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFKEYVALUE">
+            <summary>               
+            Table: CFKEYVALUE
+            Description: Schlüsselwert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFOFFLINEREPID">
+            <summary>               
+            Table: CFOFFLINEREPID
+            Description: Offline-Auftragsidentfikationsnummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFOUTARCHREP">
+            <summary>               
+            Table: CFOUTARCHREP
+            Description: Archivierungsbericht 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFOUTDEBTDET">
+            <summary>               
+            Table: CFOUTDEBTDET
+            Description: Schuldendetails 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFOUTGETREPORT">
+            <summary>               
+            Table: CFOUTGETREPORT
+            Description: Bericht 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFOUTIDENTADDR">
+            <summary>               
+            Table: CFOUTIDENTADDR
+            Description: Trimmed: CFOUTIDENTADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFOUTLISTOFFRE">
+            <summary>               
+            Table: CFOUTLISTOFFRE
+            Description: Offline-Berichtsliste 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFOUTORDEROFF">
+            <summary>               
+            Table: CFOUTORDEROFF
+            Description: Offline-Aufträge 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFOUTPOLLOFF">
+            <summary>               
+            Table: CFOUTPOLLOFF
+            Description: Offline-Abstimmung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFPERSON">
+            <summary>               
+            Table: CFPERSON
+            Description: Person 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFPOSITIONFUNC">
+            <summary>               
+            Table: CFPOSITIONFUNC
+            Description: Funktionen der Position 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFPUBLICATION">
+            <summary>               
+            Table: CFPUBLICATION
+            Description: Veröffentlichung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFSCHUFA">
+            <summary>               
+            Table: CFSCHUFA
+            Description: Schufa 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFSCHUFAFEAT">
+            <summary>               
+            Table: CFSCHUFAFEAT
+            Description: Schufa Feature 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFSCORE">
+            <summary>               
+            Table: CFSCORE
+            Description: Score 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFSCORERANGE">
+            <summary>               
+            Table: CFSCORERANGE
+            Description: Score-Bereich 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFSUBDECISION">
+            <summary>               
+            Table: CFSUBDECISION
+            Description: Unter-Entscheidung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFVERIFICATION">
+            <summary>               
+            Table: CFVERIFICATION
+            Description: Überprüfung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFVERIFICATCOM">
+            <summary>               
+            Table: CFVERIFICATCOM
+            Description: Überprüfung des Unternehmens 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFWOWADDRESS">
+            <summary>               
+            Table: CFWOWADDRESS
+            Description: Who owns whom Adresse 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFWOWRELATION">
+            <summary>               
+            Table: CFWOWRELATION
+            Description: Eigentum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFIDVERIFICAT">
+            <summary>               
+            Table: CFIDVERIFICAT
+            Description: ID Verifizierung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFORGAPOSITION">
+            <summary>               
+            Table: CFORGAPOSITION
+            Description: Firmenposition (CEO, CFO, etc.) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFCOMPHIST">
+            <summary>               
+            Table: CFCOMPHIST
+            Description: Unternehmenshistorie 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CRIFContext.CFERROR">
+            <summary>               
+            Table: CFERROR
+            Description: Fachliche Fehler der CRIF Schnittstelle 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.AUSKUNFT">
+            <summary>               
+            Table: AUSKUNFT
+            Description: Auskunft 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFT.SYSAUSKUNFT">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFT.SYSAUSKUNFTTYP">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFTTYP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFT.STATUSNUM">
+            <summary>           
+            Description: Status (technisch) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFT.AREA">
+            <summary>           
+            Description: Gebiet 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFT.SYSID">
+            <summary>           
+            Description: SysID zum gebiet 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFT.HOSTCOMPUTER">
+            <summary>           
+            Description: Host Computer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFT.AUSKUNFTTYP">
+            <summary>           
+            Refers to table|alias: AUSKUNFTTYP, FK Columns: SYSAUSKUNFTTYP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFT.CFERRORList">
+            <summary>           
+            Refers to table|alias: 'CFERROR', PK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFT.CFINPARCHDREPList">
+            <summary>           
+            Refers to table|alias: 'CFINPARCHDREP', PK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFT.CFINPDEBTDETList">
+            <summary>           
+            Refers to table|alias: 'CFINPDEBTDET', PK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFT.CFINPGETREPORTList">
+            <summary>           
+            Refers to table|alias: 'CFINPGETREPORT', PK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFT.CFINPIDENTADDRList">
+            <summary>           
+            Refers to table|alias: 'CFINPIDENTADDR', PK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFT.CFINPLISTOFFREList">
+            <summary>           
+            Refers to table|alias: 'CFINPLISTOFFRE', PK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFT.CFINPORDEROFFList">
+            <summary>           
+            Refers to table|alias: 'CFINPORDEROFF', PK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFT.CFINPPOLLOFFList">
+            <summary>           
+            Refers to table|alias: 'CFINPPOLLOFF', PK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFT.CFKEYVALUEList">
+            <summary>           
+            Refers to table|alias: 'CFKEYVALUE', PK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFT.CFOUTARCHREPList">
+            <summary>           
+            Refers to table|alias: 'CFOUTARCHREP', PK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFT.CFOUTDEBTDETList">
+            <summary>           
+            Refers to table|alias: 'CFOUTDEBTDET', PK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFT.CFOUTGETREPORTList">
+            <summary>           
+            Refers to table|alias: 'CFOUTGETREPORT', PK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFT.CFOUTIDENTADDRList">
+            <summary>           
+            Refers to table|alias: 'CFOUTIDENTADDR', PK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFT.CFOUTLISTOFFREList">
+            <summary>           
+            Refers to table|alias: 'CFOUTLISTOFFRE', PK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFT.CFOUTORDEROFFList">
+            <summary>           
+            Refers to table|alias: 'CFOUTORDEROFF', PK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFT.CFOUTPOLLOFFList">
+            <summary>           
+            Refers to table|alias: 'CFOUTPOLLOFF', PK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.AUSKUNFTCFG">
+            <summary>               
+            Table: AUSKUNFTCFG
+            Description: Konfiguration für Auskunft 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFTCFG.SYSAUSKUNFTCFG">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFTCFG.DATAOBJECT">
+            <summary>           
+            Description: Binary Blob. Don't forget to create Fieldoption: BLOB and set its value to BLOB 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFTCFG.AUSKUNFTTYPList">
+            <summary>           
+            Refers to table|alias: 'AUSKUNFTTYP', PK Columns: SYSAUSKUNFTCFG 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.AUSKUNFTTYP">
+            <summary>               
+            Table: AUSKUNFTTYP
+            Description: Typ der Auskunft 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFTTYP.SYSAUSKUNFTTYP">
+            <summary>           
+            Primary Key: True 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFTTYP.SYSAUSKUNFTCFG">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFTCFG 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFTTYP.METHODE">
+            <summary>           
+            Description: Methodes des aufgerufenen Webservices 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFTTYP.DEBUGFLAG">
+            <summary>           
+            Description: Dieser Flag signalisiert, dass die Abfrage von diesem Auskunfttypen in der Tabelle LOGDUMP geloggt werden sollen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFTTYP.AUSKUNFTList">
+            <summary>           
+            Refers to table|alias: 'AUSKUNFT', PK Columns: SYSAUSKUNFTTYP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.AUSKUNFTTYP.AUSKUNFTCFG">
+            <summary>           
+            Refers to table|alias: AUSKUNFTCFG, FK Columns: SYSAUSKUNFTCFG 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFADDRESS">
+            <summary>               
+            Table: CFADDRESS
+            Description: Personenadresse oder Firmenadresse 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.SYSCFADDRESS">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.STREET">
+            <summary>           
+            Description: Straße 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.HOUSENUMBER">
+            <summary>           
+            Description: Hausnummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.APARTMENT">
+            <summary>           
+            Description: Apartment 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.ZIP">
+            <summary>           
+            Description: PLZ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.CITY">
+            <summary>           
+            Description: Ort 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.REGIONCODE">
+            <summary>           
+            Description: Region (ISO-3166-2) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.SUBREGIONCODE">
+            <summary>           
+            Description: Subregion (ISO-3166-2) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.COUNTRY">
+            <summary>           
+            Description: Land (ISO-3166-1 3-alpha) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.IDENTIFICATIONTYPE">
+            <summary>           
+            Description: Identifikationstyp 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.COMPANYNAME">
+            <summary>           
+            Description: Firmenname 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.CONAME">
+            <summary>           
+            Description: Coname 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.FIRSTNAME">
+            <summary>           
+            Description: Vorname 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.LASTNAME">
+            <summary>           
+            Description: Nachname 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.MIDDLENAME">
+            <summary>           
+            Description: Zweiter Vorname 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.SEX">
+            <summary>           
+            Description: Geschlecht 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.BIRTHDATE">
+            <summary>           
+            Description: Geburtsdatum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.ISCOMPANY">
+            <summary>           
+            Description: 1 = Firmenadresse 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.SYSCFOUTGETREPORT">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFOUTGETREPORT
+            Description: Verweis auf CFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.NATIONALITY">
+            <summary>           
+            Description: Nationalität nach ISO-3166-1 3-alpha 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.CFOUTGETREPORT">
+            <summary>           
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.CFADDRESSHISTList">
+            <summary>           
+            Refers to table|alias: 'CFADDRESSHIST', PK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.CFADDRESSMATCHList">
+            <summary>           
+            Refers to table|alias: 'CFADDRESSMATCH', PK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.CFBANKACCOUNTList">
+            <summary>           
+            Refers to table|alias: 'CFBANKACCOUNT', PK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.CFBRANCHOFFICEList">
+            <summary>           
+            Refers to table|alias: 'CFBRANCHOFFICE', PK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.CFCANDIDATEList">
+            <summary>           
+            Refers to table|alias: 'CFCANDIDATE', PK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.CFCOMPANYList">
+            <summary>           
+            Refers to table|alias: 'CFCOMPANY', PK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.CFCOMPHISTList">
+            <summary>           
+            Refers to table|alias: 'CFCOMPHIST', PK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.CFCOMPLIANCEList">
+            <summary>           
+            Refers to table|alias: 'CFCOMPLIANCE', PK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.CFINPGETREPORTList">
+            <summary>           
+            Refers to table|alias: 'CFINPGETREPORT', PK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.CFINPIDENTADDRList">
+            <summary>           
+            Refers to table|alias: 'CFINPIDENTADDR', PK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.CFINPORDEROFFList">
+            <summary>           
+            Refers to table|alias: 'CFINPORDEROFF', PK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.CFPERSONList">
+            <summary>           
+            Refers to table|alias: 'CFPERSON', PK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESS.CFWOWADDRESSList">
+            <summary>           
+            Refers to table|alias: 'CFWOWADDRESS', PK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFADDRESSHIST">
+            <summary>               
+            Table: CFADDRESSHIST
+            Description: Adresshistorie 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESSHIST.SYSCFADDRESSHIST">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESSHIST.SYSCFOUTGETREPORT">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFOUTGETREPORT
+            Description: Referenz zu CFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESSHIST.SYSCFADDRESS">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFADDRESS
+            Description: Referenz zu CFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESSHIST.ADDRESSINPUTDATE">
+            <summary>           
+            Description: Adresseneingabedatum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESSHIST.ADDRESSID">
+            <summary>           
+            Description: Adressenidentifikationsnummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESSHIST.ADDRESSIDTYPE">
+            <summary>           
+            Description: Adresstyp 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESSHIST.DELIVERABILITY">
+            <summary>           
+            Description: Lieferbarkeit 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESSHIST.CFADDRESS">
+            <summary>           
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESSHIST.CFOUTGETREPORT">
+            <summary>           
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFADDRESSMATCH">
+            <summary>               
+            Table: CFADDRESSMATCH
+            Description: Addressergebnis 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESSMATCH.SYSCFADDRESSMATCH">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESSMATCH.SYSCFADDRESS">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFADDRESS
+            Description: Referenz zu CFADDRESS (foundAddress) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESSMATCH.NAMEHINT">
+            <summary>           
+            Description: Hinweis zum gefundenen Namen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESSMATCH.ADDRESSMATCHRESULTTYPE">
+            <summary>           
+            Description: Treffer, Kandidaten oder kein Treffer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESSMATCH.CHARACTER">
+            <summary>           
+            Description: Art des Treffers 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESSMATCH.LOCATIONIDENTIFICATIONTYPE">
+            <summary>           
+            Description: Adress Treffertyp 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESSMATCH.HOUSETYPE">
+            <summary>           
+            Description: Haustyp (Privat, Firma, etc.) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESSMATCH.SYSCFADDRESSNORM">
+            <summary>           
+            Description: Referenz zu CFADDRESS (locationIdentification.requestLocationNormalized) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESSMATCH.CFADDRESS">
+            <summary>           
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESSMATCH.CFCANDIDATEList">
+            <summary>           
+            Refers to table|alias: 'CFCANDIDATE', PK Columns: SYSCFADDRESSMATCH 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESSMATCH.CFOUTGETREPORTList">
+            <summary>           
+            Refers to table|alias: 'CFOUTGETREPORT', PK Columns: SYSCFADDRESSMATCH 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFADDRESSMATCH.CFOUTIDENTADDRList">
+            <summary>           
+            Refers to table|alias: 'CFOUTIDENTADDR', PK Columns: SYSCFADDRESSMATCH 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFBANKACCOUNT">
+            <summary>               
+            Table: CFBANKACCOUNT
+            Description: Bankkonto 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBANKACCOUNT.SYSCFBANKACCOUNT">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBANKACCOUNT.SYSCFCOMPANY">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFCOMPANY
+            Description: Referenz zu Firma (bankAccounts) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBANKACCOUNT.SYSCFADDRESS">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFADDRESS
+            Description: Referenz zu CFADDRESS (bank) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBANKACCOUNT.BANKDESCRIPTION">
+            <summary>           
+            Description: Bankbeschreibung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBANKACCOUNT.LOCALACCOUNTNR">
+            <summary>           
+            Description: Kontonummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBANKACCOUNT.IBAN">
+            <summary>           
+            Description: Internationale Bankkontonummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBANKACCOUNT.SWIFTCODE">
+            <summary>           
+            Description: Internationale Bankleitzahl (ISO 9362) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBANKACCOUNT.CURRENCY">
+            <summary>           
+            Description: Währung (ISO-4217) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBANKACCOUNT.CFADDRESS">
+            <summary>           
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBANKACCOUNT.CFCOMPANY">
+            <summary>           
+            Refers to table|alias: CFCOMPANY, FK Columns: SYSCFCOMPANY 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFBRANCHOFFICE">
+            <summary>               
+            Table: CFBRANCHOFFICE
+            Description: Filiale 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBRANCHOFFICE.SYSCFBRANCHOFFICE">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBRANCHOFFICE.SYSCFOUTGETREPORT">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFOUTGETREPORT
+            Description: Referenz zu CFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBRANCHOFFICE.SYSCFADDRESS">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFADDRESS
+            Description: Referenz zu CFADDRESS (address) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBRANCHOFFICE.DESCRIPTION">
+            <summary>           
+            Description: Beschreibung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBRANCHOFFICE.PERIODSTART">
+            <summary>           
+            Description: Periodenstart 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBRANCHOFFICE.PERIODEND">
+            <summary>           
+            Description: Periodenende 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBRANCHOFFICE.REGISTERED">
+            <summary>           
+            Description: Registrierungsart 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBRANCHOFFICE.CFADDRESS">
+            <summary>           
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBRANCHOFFICE.CFOUTGETREPORT">
+            <summary>           
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFBUSINESSLIC">
+            <summary>               
+            Table: CFBUSINESSLIC
+            Description: Gewerbelizenz 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBUSINESSLIC.SYSCFBUSINESSLIC">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBUSINESSLIC.SYSCFOUTGETREPORT">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFOUTGETREPORT
+            Description: Referenz für CFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBUSINESSLIC.INDUSTRYNAME">
+            <summary>           
+            Description: Industriesektor 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBUSINESSLIC.SYSCFKEYPERIOD">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFKEYPERIOD
+            Description: Referenz zu CFKEYPERIOD (industryCode 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBUSINESSLIC.ISSUEDTO">
+            <summary>           
+            Description: Ausgestellt an 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBUSINESSLIC.PERIODSTART">
+            <summary>           
+            Description: Periodenstart (period) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBUSINESSLIC.PERIODEND">
+            <summary>           
+            Description: Periodenende (period) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBUSINESSLIC.STATUS">
+            <summary>           
+            Description: Status 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBUSINESSLIC.CFKEYPERIOD">
+            <summary>           
+            Refers to table|alias: CFKEYPERIOD, FK Columns: SYSCFKEYPERIOD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFBUSINESSLIC.CFOUTGETREPORT">
+            <summary>           
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFCANDIDATE">
+            <summary>               
+            Table: CFCANDIDATE
+            Description: Kandidat 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCANDIDATE.SYSCFCANDIDATE">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCANDIDATE.SYSCFADDRESSMATCH">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFADDRESSMATCH
+            Description: Referenz zu CFADDRESSMATCH (candidates) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCANDIDATE.SYSCFADDRESS">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFADDRESS
+            Description: Referenz zu CFADDRESS (address) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCANDIDATE.CANDIDATERANK">
+            <summary>           
+            Description: Sortierung der Kandidatenlisten 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCANDIDATE.GROUPID">
+            <summary>           
+            Description: Gruppierung der Adressen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCANDIDATE.CFADDRESS">
+            <summary>           
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCANDIDATE.CFADDRESSMATCH">
+            <summary>           
+            Refers to table|alias: CFADDRESSMATCH, FK Columns: SYSCFADDRESSMATCH 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFCOMPANY">
+            <summary>               
+            Table: CFCOMPANY
+            Description: Unternehmen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.SYSCFCOMPANY">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.SYSCFADDRESS">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFADDRESS
+            Description: Referenz zu SYSCFADDRESS (mainAddress) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.REGISTEREDOFFICECITY">
+            <summary>           
+            Description: Stadt der Registrierung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.FOUNDINGDATE">
+            <summary>           
+            Description: Gründungsdatum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.CAPITALAMOUNT">
+            <summary>           
+            Description: Kapitalbetrag 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.CAPITALCURRENCY">
+            <summary>           
+            Description: Kapitalwährung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.CAPITALPAYEDAMOUNT">
+            <summary>           
+            Description: gezahlter Kapitalbetrag 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.CAPITALPAYEDCURRENCY">
+            <summary>           
+            Description: gezahlte Kapitalwährung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.CAPITALINKIND">
+            <summary>           
+            Description: Kapitaltyp 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.HASAUDITINGCOMPANY">
+            <summary>           
+            Description: Flag hat Auditor 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.SYSCFCOMPANYAUDITING">
+            <summary>           
+            Description: Referenz zu CFCOMPANYAUDITING (auditingCompany) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.REGISTRYTYPE">
+            <summary>           
+            Description: Registrierungstyp 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.ACTIVITYSTATUS">
+            <summary>           
+            Description: Aktivitätsstatus 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.ACTIVITYSTATUSORIGINAL">
+            <summary>           
+            Description: originaler Aktivitätsstatus 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.LEGALFORMTYPE">
+            <summary>           
+            Description: Rechtsform 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.LEGALFORMTYPEORIGINAL">
+            <summary>           
+            Description: originale Rechtsform 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.LEGALFORMTEXT">
+            <summary>           
+            Description: Übersetzung vom LEGALFORMTYPEORIGINAL 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.SYSCFCOMPANYMOTHER">
+            <summary>           
+            Description: Referenz zu CFCOMPANYMOTHER (ultimateMotherCompany) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.EMPLOYEESFROM">
+            <summary>           
+            Description: Mitarbeiter von 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.EMPLOYEESTO">
+            <summary>           
+            Description: Mitarbeiter bis 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.SIZECLASS">
+            <summary>           
+            Description: Unternehmensgröße 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.TURNOVERCURRENCY">
+            <summary>           
+            Description: Umsatzwährung (ISO-4217) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.TURNOVERFROM">
+            <summary>           
+            Description: Umsatz von 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.TURNOVERTO">
+            <summary>           
+            Description: Umsatz bis 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.TURNOVERINEXPORT">
+            <summary>           
+            Description: Flag ob Umsatz für Export ist 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.ACTIVITYINDEX">
+            <summary>           
+            Description: Aktivitätsindex 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.KNOWNSINCE">
+            <summary>           
+            Description: Bekannt seit 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.DATEFINANCIALSTATEMENT">
+            <summary>           
+            Description: Datum des Umsatzes 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.DATEFINANCIALSTATEMENTHANDEDIN">
+            <summary>           
+            Description: Einreichdatum des Umsatzes 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.SYSCFOUTGETREPORTOBVIOUS">
+            <summary>           
+            Description: Referenz zu CFOUTGETREPORTOBVIOUS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.SYSCFOUTGETREPORTPROBABLE">
+            <summary>           
+            Description: Referenz zu CFOUTGETREPORTPROBABLE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.SYSCFOUTGETREPORTSAMETEL">
+            <summary>           
+            Description: Referenz zu CFOUTGETREPORTSAMETEL 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.PURPOSE">
+            <summary>           
+            Description: Zweck 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.CFBANKACCOUNTList">
+            <summary>           
+            Refers to table|alias: 'CFBANKACCOUNT', PK Columns: SYSCFCOMPANY 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.CFADDRESS">
+            <summary>           
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.CFCOMPHISTList">
+            <summary>           
+            Refers to table|alias: 'CFCOMPHIST', PK Columns: SYSCFCOMPANY 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.CFKEYPERIODList">
+            <summary>           
+            Refers to table|alias: 'CFKEYPERIOD', PK Columns: SYSCFCOMPANY 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPANY.CFOUTGETREPORTList">
+            <summary>           
+            Refers to table|alias: 'CFOUTGETREPORT', PK Columns: SYSCFCOMPANY 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFCOMPHIST">
+            <summary>               
+            Table: CFCOMPHIST
+            Description: Unternehmenshistorie 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPHIST.SYSCFCOMPHIST">
+            <summary>           
+            Primary Key: True
+            Description: Primärschlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPHIST.SYSCFCOMPANY">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFCOMPANY
+            Description: Referenz zu SYSCFCOMPANY 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPHIST.TYPE">
+            <summary>           
+            Description: Codetyp 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPHIST.PERIODSTART">
+            <summary>           
+            Description: Periodenstart 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPHIST.PERIODEND">
+            <summary>           
+            Description: Periodenende 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPHIST.ACTIVITYSTATUS">
+            <summary>           
+            Description: Aktivitätenstatus 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPHIST.ACTIVITYSTATUSORIGINAL">
+            <summary>           
+            Description: orginaler Aktivitätenstatus 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPHIST.SYSCFADDRESS">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFADDRESS
+            Description: Referenz zu SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPHIST.AMOUNT">
+            <summary>           
+            Description: Betrag 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPHIST.AMOUNTCUR">
+            <summary>           
+            Description: Währungsbetrag 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPHIST.LEGALFORMTYPE">
+            <summary>           
+            Description: Rechtsform 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPHIST.LEGALFORMTYPEORIG">
+            <summary>           
+            Description: originale Rechtsform 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPHIST.LEGALFORMTEXT">
+            <summary>           
+            Description: Übersetzung vom LEGALFORMTYPEORIGINAL 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPHIST.SYSCFADDRESSLOCATION">
+            <summary>           
+            Description: Referenz zu CFADDRESSLOCATION 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPHIST.TEXT">
+            <summary>           
+            Description: Beschreibung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPHIST.CFADDRESS">
+            <summary>           
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPHIST.CFCOMPANY">
+            <summary>           
+            Refers to table|alias: CFCOMPANY, FK Columns: SYSCFCOMPANY 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCE">
+            <summary>               
+            Table: CFCOMPLIANCE
+            Description: Compliance checked entity 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCE.SYSCFCOMPLIANCE">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCE.RELATIONTYPE">
+            <summary>           
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCE.SYSCFADDRESS">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFADDRESS
+            Description: Referenz zu CFADDRESS (checkedAddress) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCE.SYSCFCOMPLIANCEFOUND">
+            <summary>           
+            Description: Referenz zu CFCOMPLIANCEFOUND (1:n foundEntities)vReferenz zu CFCOMPLIANCEFOUND (1:n foundEntities) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCE.SYSCFCOMPLIANCECHECKED">
+            <summary>           
+            Description: Referenz zu CFCOMPLIANCECHECKED (1:n checkedEntities) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCE.SYSCFCOMPLIANCEDE">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFCOMPLIANCEDE
+            Description: Referenz zu CFCOMPLIANCEDE (listDescription) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCE.CONFIDENCENAME">
+            <summary>           
+            Description: Konfidenz/Sicherheit des Namen (matchInformation.confidenceName) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCE.CONFIDENCEBIRTHDATE">
+            <summary>           
+            Description: Konfidenz/Sicherheit des Geburtstages (matchInformation.confidenceBirthdate) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCE.MATCHEDNAME">
+            <summary>           
+            Description: Gefundener Name (matchInformation.matchedName) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCE.MATCHEDBIRTHDATE">
+            <summary>           
+            Description: Gefundener Geburtstag (matchInformation.matchedBirthdate) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCE.CRIFREFID">
+            <summary>           
+            Description: CRIF interne Referenznummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCE.PRIMARYNAME">
+            <summary>           
+            Description: Primärer Name 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCE.AGE">
+            <summary>           
+            Description: Alter 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCE.COUNTRY">
+            <summary>           
+            Description: Land 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCE.CFADDRESS">
+            <summary>           
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCE.CFCOMPLIANCEDE">
+            <summary>           
+            Refers to table|alias: CFCOMPLIANCEDE, FK Columns: SYSCFCOMPLIANCEDE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCE.CFOUTGETREPORTList">
+            <summary>           
+            Refers to table|alias: 'CFOUTGETREPORT', PK Columns: SYSCFCOMPLIANCE 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCEDE">
+            <summary>               
+            Table: CFCOMPLIANCEDE
+            Description: Trimmed: CFCOMPLIANCEDESCRIPTION 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCEDE.SYSCFCOMPLIANCEDE">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCEDE.SYSCFOUTGETREPORT">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFOUTGETREPORT
+            Description: Referenz zu CFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCEDE.CATEGORY">
+            <summary>           
+            Description: Kategorie 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCEDE.NAME">
+            <summary>           
+            Description: Name 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCEDE.PUBLISHINGORGANIZATION">
+            <summary>           
+            Description: Herausgebende Organisation 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCEDE.DATELASTUPDATED">
+            <summary>           
+            Description: Aktualisierungsdatum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCEDE.CFCOMPLIANCEList">
+            <summary>           
+            Refers to table|alias: 'CFCOMPLIANCE', PK Columns: SYSCFCOMPLIANCEDE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCOMPLIANCEDE.CFOUTGETREPORT">
+            <summary>           
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFCREDITRATIO">
+            <summary>               
+            Table: CFCREDITRATIO
+            Description: Kreditverhältnisidentifizierer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCREDITRATIO.SYSCFCREDITRATIO">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCREDITRATIO.CREDITRATIOIDENTIFIER">
+            <summary>           
+            Description: Kreditverhältnisidentifizierer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCREDITRATIO.VALUE">
+            <summary>           
+            Description: Wert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCREDITRATIO.SYSCFFINSTATEMENT">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFFINSTATEMENT
+            Description: Referenz zu CFFINELEMENT (1:n creditRatios) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFCREDITRATIO.CFFINSTATEMENT">
+            <summary>           
+            Refers to table|alias: CFFINSTATEMENT, FK Columns: SYSCFFINSTATEMENT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFDEBT">
+            <summary>               
+            Table: CFDEBT
+            Description: Schulden 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDEBT.SYSCFDEBT">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDEBT.SYSCFOUTGETREPORT">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFOUTGETREPORT
+            Description: Referenz zu CFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDEBT.RISKCLASS">
+            <summary>           
+            Description: Risikoklassen(1,2,3,4) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDEBT.DATEOPEN">
+            <summary>           
+            Description: Öffnungsdatum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDEBT.DATECLOSE">
+            <summary>           
+            Description: Schließungsdatum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDEBT.AMOUNT">
+            <summary>           
+            Description: Betrag 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDEBT.AMOUNTCUR">
+            <summary>           
+            Description: Währungsbetrag 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDEBT.AMOUNTOPEN">
+            <summary>           
+            Description: Offener Betrag 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDEBT.AMOUNTOPENCUR">
+            <summary>           
+            Description: Offene Betrag in der Währung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDEBT.DEBTTYPE">
+            <summary>           
+            Description: Schuldenart 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDEBT.PAYMENTSTATUS">
+            <summary>           
+            Description: Status der Zahlung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDEBT.PAYMENTSTATUSTEXT">
+            <summary>           
+            Description: Text über den Status der Zahlung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDEBT.ORIGIN">
+            <summary>           
+            Description: Herkunft 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDEBT.TEXT">
+            <summary>           
+            Description: Beschreibung des falles (Optional) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDEBT.SYSCFOUTDEBTDET">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFOUTDEBTDET
+            Description: Referenz zu 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDEBT.SYSCFOUTPOLLOFF">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFOUTPOLLOFF
+            Description: Referenz zu 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDEBT.CFOUTDEBTDET">
+            <summary>           
+            Refers to table|alias: CFOUTDEBTDET, FK Columns: SYSCFOUTDEBTDET 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDEBT.CFOUTGETREPORT">
+            <summary>           
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDEBT.CFOUTPOLLOFF">
+            <summary>           
+            Refers to table|alias: CFOUTPOLLOFF, FK Columns: SYSCFOUTPOLLOFF 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFDECISION">
+            <summary>               
+            Table: CFDECISION
+            Description: Entscheidungsergebnis 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDECISION.SYSCFDECISION">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDECISION.DECISION">
+            <summary>           
+            Description: Entscheidung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDECISION.CREDITLIMIT">
+            <summary>           
+            Description: Kreditlimit 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDECISION.DECISIONTEXT">
+            <summary>           
+            Description: Text über die beschreibung der getroffenen Entscheidung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDECISION.CFOUTGETREPORTList">
+            <summary>           
+            Refers to table|alias: 'CFOUTGETREPORT', PK Columns: SYSCFDECISION 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDECISION.CFSUBDECISIONList">
+            <summary>           
+            Refers to table|alias: 'CFSUBDECISION', PK Columns: SYSCFDECISION 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFDOCUMENT">
+            <summary>               
+            Table: CFDOCUMENT
+            Description: Dokument 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDOCUMENT.SYSCFDOCUMENT">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDOCUMENT.DOCUMENTNUMBER">
+            <summary>           
+            Description: Dokumentennummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDOCUMENT.DOCUMENTTYPE">
+            <summary>           
+            Description: Dokumententyp 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDOCUMENT.DOCUMENTDESCRIPTION">
+            <summary>           
+            Description: Dokumentbeschreibung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDOCUMENT.ISSUINGSTATEORORGA">
+            <summary>           
+            Description: (ISO-3166-1) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDOCUMENT.ISSUINGDATE">
+            <summary>           
+            Description: Ausstellungsdatum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDOCUMENT.EXPIRATIONDATE">
+            <summary>           
+            Description: Verfallsdatum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDOCUMENT.VALIDITYFROMDATE">
+            <summary>           
+            Description: Gültig ab dem angegebenen Datum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDOCUMENT.SIGNDATE">
+            <summary>           
+            Description: Datum der Unterzeichnung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDOCUMENT.MRZ1">
+            <summary>           
+            Description: maschinenlesbare Zone 1 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDOCUMENT.MRZ2">
+            <summary>           
+            Description: maschinenlesbare Zone 2 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDOCUMENT.MRZ3">
+            <summary>           
+            Description: maschinenlesbare Zone 3 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDOCUMENT.CFVERIFICATIONList">
+            <summary>           
+            Refers to table|alias: 'CFVERIFICATION', PK Columns: SYSCFDOCUMENT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFDOCUMENTIMG">
+            <summary>               
+            Table: CFDOCUMENTIMG
+            Description: Art des Dokuments 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDOCUMENTIMG.SYSCFDOCUMENTIMG">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDOCUMENTIMG.SYSCFVERIFICATION">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFVERIFICATION
+            Description: Referenz zu CFVERIFICATION 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDOCUMENTIMG.MIMETYPE">
+            <summary>           
+            Description: MIME-Typ von der Datei 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDOCUMENTIMG.DATACLASSIFICATION">
+            <summary>           
+            Description: Datenklassifikation (Bild und/oder Signatur auf dem Dokument) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDOCUMENTIMG.DATA">
+            <summary>           
+            Description: BASE64-codierte Binärdaten 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFDOCUMENTIMG.CFVERIFICATION">
+            <summary>           
+            Refers to table|alias: CFVERIFICATION, FK Columns: SYSCFVERIFICATION 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFERROR">
+            <summary>               
+            Table: CFERROR
+            Description: Fachliche Fehler der CRIF Schnittstelle 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFERROR.SYSCFERROR">
+            <summary>           
+            Primary Key: True
+            Description: Referenz zu CFERROR (error) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFERROR.SYSAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT
+            Description: Referenz zu AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFERROR.CODE">
+            <summary>           
+            Description: Fehlercode 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFERROR.MESSAGETEXT">
+            <summary>           
+            Description: Fehlertext 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFERROR.FAULTCODE">
+            <summary>           
+            Description: Fehlercode 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFERROR.MESSAGE">
+            <summary>           
+            Description: Fehlermeldung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFERROR.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFFINELEMENT">
+            <summary>               
+            Table: CFFINELEMENT
+            Description: Financial Statement Element (Abschluss Element) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFFINELEMENT.SYSCFFINELEMENT">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFFINELEMENT.ID">
+            <summary>           
+            Description: Identifikationsnummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFFINELEMENT.PARENTID">
+            <summary>           
+            Description: Elternidentifikationsnummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFFINELEMENT.IDENTIFIER">
+            <summary>           
+            Description: Bezeichner 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFFINELEMENT.IDENTIFIERTEXT">
+            <summary>           
+            Description: Übersetzung Bezeichnername 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFFINELEMENT.VALUE">
+            <summary>           
+            Description: Wert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFFINELEMENT.POSITION">
+            <summary>           
+            Description: Position (zwischen Geschwister) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFFINELEMENT.SYSCFFINSTATEMENTBALANCE">
+            <summary>           
+            Description: Referenz zu CFFINSTATEMENTBALANCE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFFINELEMENT.SYSCFFINSTATEMENTPROFITLOSS">
+            <summary>           
+            Description: Referenz zu CFFINSTATEMENTPROFITLOSS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFFINELEMENT.SYSCFFINSTATEMENTCASHFLOW">
+            <summary>           
+            Description: Referenz zu CFFINSTATEMENTCASHFLOW 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFFINELEMENT.SYSCFFINSTATEMENTFURTHER">
+            <summary>           
+            Description: Referenz zu CFFINSTATEMENTFURTHER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFFINSTATEMENT">
+            <summary>               
+            Table: CFFINSTATEMENT
+            Description: Abschluss 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFFINSTATEMENT.SYSCFFINSTATEMENT">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFFINSTATEMENT.SYSCFOUTGETREPORT">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFOUTGETREPORT
+            Description: Referenz zu CFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFFINSTATEMENT.FINANCIALREPORTINGSTANDARD">
+            <summary>           
+            Description: Rechnungslegungsvorschriften (IFRS) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFFINSTATEMENT.COMPANYNAME">
+            <summary>           
+            Description: Firmenname 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFFINSTATEMENT.CURRENCYCODE">
+            <summary>           
+            Description: Währungscode (ISO 4217) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFFINSTATEMENT.PERIODSTART">
+            <summary>           
+            Description: Periodenstart 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFFINSTATEMENT.PERIODEND">
+            <summary>           
+            Description: Periodenende 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFFINSTATEMENT.SYSCFOUTGETREPORTGROUP">
+            <summary>           
+            Description: Referenz zu CFOUTGETREPORTGROUP 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFFINSTATEMENT.CFCREDITRATIOList">
+            <summary>           
+            Refers to table|alias: 'CFCREDITRATIO', PK Columns: SYSCFFINSTATEMENT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFFINSTATEMENT.CFOUTGETREPORT">
+            <summary>           
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFHEADER">
+            <summary>               
+            Table: CFHEADER
+            Description: Control und IdentityDescriptor CRIF 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFHEADER.SYSCFHEADER">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFHEADER.MAJORVERSION">
+            <summary>           
+            Description: Hauptversion 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFHEADER.MINORVERSION">
+            <summary>           
+            Description: Kleinere Version 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFHEADER.USERNAME">
+            <summary>           
+            Description: CRIF-Benutzername 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFHEADER.PASSWORD">
+            <summary>           
+            Description: CRIF-Passwort 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFHEADER.ENDUSERID">
+            <summary>           
+            Description: Benutzername der Abfrage für Datenschutzbestimmungen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFHEADER.COSTGROUPID">
+            <summary>           
+            Description: Benutzertoken für Kostenberechnung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFHEADER.REFERENCENUMBER">
+            <summary>           
+            Description: Benutzerreferenznummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFHEADER.CFINPARCHDREPList">
+            <summary>           
+            Refers to table|alias: 'CFINPARCHDREP', PK Columns: SYSCFHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFHEADER.CFINPDEBTDETList">
+            <summary>           
+            Refers to table|alias: 'CFINPDEBTDET', PK Columns: SYSCFHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFHEADER.CFINPGETREPORTList">
+            <summary>           
+            Refers to table|alias: 'CFINPGETREPORT', PK Columns: SYSCFHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFHEADER.CFINPIDENTADDRList">
+            <summary>           
+            Refers to table|alias: 'CFINPIDENTADDR', PK Columns: SYSCFHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFHEADER.CFINPLISTOFFREList">
+            <summary>           
+            Refers to table|alias: 'CFINPLISTOFFRE', PK Columns: SYSCFHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFHEADER.CFINPORDEROFFList">
+            <summary>           
+            Refers to table|alias: 'CFINPORDEROFF', PK Columns: SYSCFHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFHEADER.CFINPPOLLOFFList">
+            <summary>           
+            Refers to table|alias: 'CFINPPOLLOFF', PK Columns: SYSCFHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFIDVERIFICAT">
+            <summary>               
+            Table: CFIDVERIFICAT
+            Description: ID Verifizierung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFIDVERIFICAT.SYSCFIDVERIFICAT">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFIDVERIFICAT.DOCUMENTTYPE">
+            <summary>           
+            Description: Dokumententyp 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFIDVERIFICAT.DOCUMENTDESCRIPTION">
+            <summary>           
+            Description: Dokumentenbeschreibung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFIDVERIFICAT.ISSUINGSTATE">
+            <summary>           
+            Description: Ausstellungsbehörde 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFIDVERIFICAT.ISSUINGDATE">
+            <summary>           
+            Description: Ausstellungsdatum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFIDVERIFICAT.EXPIRATIONDATE">
+            <summary>           
+            Description: Verfallsdatum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFIDVERIFICAT.VALIDITYFROMDATE">
+            <summary>           
+            Description: Gültigkeit ab dem angegebenen Datum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFIDVERIFICAT.SIGNDATE">
+            <summary>           
+            Description: Unterzeichnungsdatum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFIDVERIFICAT.MRZ1">
+            <summary>           
+            Description: maschinenlesbaren Zone 1 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFIDVERIFICAT.MRZ2">
+            <summary>           
+            Description: maschinenlesbaren Zone 2 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFIDVERIFICAT.MRZ3">
+            <summary>           
+            Description: maschinenlesbaren Zone 3 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFIDVERIFICAT.SYSCFPERSON">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFPERSON
+            Description: Referenz zu CFPERSON 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFIDVERIFICAT.CFPERSON">
+            <summary>           
+            Refers to table|alias: CFPERSON, FK Columns: SYSCFPERSON 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFIDVERIFICAT.CFINPGETREPORTList">
+            <summary>           
+            Refers to table|alias: 'CFINPGETREPORT', PK Columns: SYSCFIDVERIFICAT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFINPARCHDREP">
+            <summary>               
+            Table: CFINPARCHDREP
+            Description: Archivierten Bericht abrufen (Get archived report) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPARCHDREP.SYSCFINPARCHDREP">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPARCHDREP.SYSAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT
+            Description: Referenz zu AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPARCHDREP.SYSCFHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFHEADER
+            Description: Referenz zu CFHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPARCHDREP.ARCHIVINGID">
+            <summary>           
+            Description: Anfragereferenz 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPARCHDREP.TARGETFORMAT">
+            <summary>           
+            Description: Zielformat (PDF,URL) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPARCHDREP.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPARCHDREP.CFHEADER">
+            <summary>           
+            Refers to table|alias: CFHEADER, FK Columns: SYSCFHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFINPDEBTDET">
+            <summary>               
+            Table: CFINPDEBTDET
+            Description: Trimmed: CFINPDEBTDETAILS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPDEBTDET.SYSCFINPDEBTDET">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPDEBTDET.SYSAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT
+            Description: Referenz zu AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPDEBTDET.SYSCFHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFHEADER
+            Description: Referenz zu CFHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPDEBTDET.IDENTIFIERTEXT">
+            <summary>           
+            Description: Übersetzter Kennung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPDEBTDET.IDENTIFIERTYPE">
+            <summary>           
+            Description: Bezeichnungstyp 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPDEBTDET.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPDEBTDET.CFHEADER">
+            <summary>           
+            Refers to table|alias: CFHEADER, FK Columns: SYSCFHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFINPGETREPORT">
+            <summary>               
+            Table: CFINPGETREPORT
+            Description: Bericht abrufen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPGETREPORT.SYSCFINPGETREPORT">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPGETREPORT.SYSAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT
+            Description: Referenz zu AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPGETREPORT.SYSCFHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFHEADER
+            Description: Referenz zu CFHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPGETREPORT.SYSCFADDRESS">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFADDRESS
+            Description: Referenz zu CFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPGETREPORT.REPORTTYPE">
+            <summary>           
+            Description: Berichtstyp 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPGETREPORT.TARGETREPORTFORMAT">
+            <summary>           
+            Description: Zielformat (PDF,URL, NONE) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPGETREPORT.SYSCFIDVERIFICAT">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFIDVERIFICAT
+            Description: Referenz zu CFIDVERIFICATION 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPGETREPORT.IDENTIFIERTEXT">
+            <summary>           
+            Description: Identifikationsname 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPGETREPORT.IDENTIFIERTYPE">
+            <summary>           
+            Description: Identifikationstyp (CH_NUMBER, CH_UID, ... ) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPGETREPORT.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPGETREPORT.CFADDRESS">
+            <summary>           
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPGETREPORT.CFHEADER">
+            <summary>           
+            Refers to table|alias: CFHEADER, FK Columns: SYSCFHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPGETREPORT.CFIDVERIFICAT">
+            <summary>           
+            Refers to table|alias: CFIDVERIFICAT, FK Columns: SYSCFIDVERIFICAT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFINPIDENTADDR">
+            <summary>               
+            Table: CFINPIDENTADDR
+            Description: Identifizierung der Adresse 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPIDENTADDR.SYSCFINPIDENTADDR">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPIDENTADDR.SYSCFADDRESS">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFADDRESS
+            Description: Referenz zu CFADDRESS (searchedAddress) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPIDENTADDR.SYSAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT
+            Description: Referenz zu Auskunft 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPIDENTADDR.SYSCFHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFHEADER
+            Description: Referenz zu CFHEADER (control, identityDescriptor) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPIDENTADDR.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPIDENTADDR.CFADDRESS">
+            <summary>           
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPIDENTADDR.CFHEADER">
+            <summary>           
+            Refers to table|alias: CFHEADER, FK Columns: SYSCFHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFINPLISTOFFRE">
+            <summary>               
+            Table: CFINPLISTOFFRE
+            Description: verfügbare Offline-Berichte abrufen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPLISTOFFRE.SYSCFINPLISTOFFRE">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPLISTOFFRE.SYSCFHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFHEADER
+            Description: Referenz zu CFHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPLISTOFFRE.SYSAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT
+            Description: Referenz zu AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPLISTOFFRE.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPLISTOFFRE.CFHEADER">
+            <summary>           
+            Refers to table|alias: CFHEADER, FK Columns: SYSCFHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFINPORDEROFF">
+            <summary>               
+            Table: CFINPORDEROFF
+            Description: Offline-Bericht in Auftrag geben 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPORDEROFF.SYSCFINPORDEROFF">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPORDEROFF.SYSAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT
+            Description: Referenz zu AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPORDEROFF.SYSCFHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFHEADER
+            Description: Referenz zu CFHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPORDEROFF.SYSCFADDRESS">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFADDRESS
+            Description: Referenz zu CFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPORDEROFF.IDENTIFIERTEXT">
+            <summary>           
+            Description: Übersetzter Identifikationsname 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPORDEROFF.IDENTIFIERTYPE">
+            <summary>           
+            Description: Identifikationstyp 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPORDEROFF.OFFLINEREPORTTYPE">
+            <summary>           
+            Description: Offline Berichtstyp 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPORDEROFF.BINARYPOITYPE">
+            <summary>           
+            Description: Interessensnachweistyp (PDF, JPG) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPORDEROFF.CONTACTMAIL">
+            <summary>           
+            Description: E-Mail 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPORDEROFF.CONTACTPHONE">
+            <summary>           
+            Description: Telefonnummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPORDEROFF.BINARYPOI">
+            <summary>           
+            Description: Interessensnachweis (Enthält BASE64 kodierte Binärdaten eines Bildes/Dokuments) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPORDEROFF.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPORDEROFF.CFADDRESS">
+            <summary>           
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPORDEROFF.CFHEADER">
+            <summary>           
+            Refers to table|alias: CFHEADER, FK Columns: SYSCFHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFINPPOLLOFF">
+            <summary>               
+            Table: CFINPPOLLOFF
+            Description: Offline-Bericht abrufen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPPOLLOFF.SYSCFINPPOLLOFF">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPPOLLOFF.SYSAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT
+            Description: Referenz zu AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPPOLLOFF.SYSCFHEADER">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFHEADER
+            Description: Referenz zu CFHEADER 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPPOLLOFF.ORDERREFERENCENUMBER">
+            <summary>           
+            Description: Auftragsnummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPPOLLOFF.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFINPPOLLOFF.CFHEADER">
+            <summary>           
+            Refers to table|alias: CFHEADER, FK Columns: SYSCFHEADER 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFKEYPERIOD">
+            <summary>               
+            Table: CFKEYPERIOD
+            Description: Zeitraum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFKEYPERIOD.SYSCFKEYPERIOD">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFKEYPERIOD.SYSCFCOMPANY">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFCOMPANY
+            Description: Referenz zu CFCOMPANY 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFKEYPERIOD.TYPE">
+            <summary>           
+            Description: Codetyp 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFKEYPERIOD.PERIODSTART">
+            <summary>           
+            Description: Periodenstart 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFKEYPERIOD.PERIODEND">
+            <summary>           
+            Description: Periodenende 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFKEYPERIOD.CODE">
+            <summary>           
+            Description: Code 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFKEYPERIOD.CODEDESCRIPTION">
+            <summary>           
+            Description: Periodenstart 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFKEYPERIOD.ISMAININDUSTRYCODE">
+            <summary>           
+            Description: Flag ob Mainindustrycode (Ja,Nein) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFKEYPERIOD.SYSCFCOMPANYINDUSTRY">
+            <summary>           
+            Description: Referenz zu CFCOMPANYINDUSTRY 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFKEYPERIOD.CFBUSINESSLICList">
+            <summary>           
+            Refers to table|alias: 'CFBUSINESSLIC', PK Columns: SYSCFKEYPERIOD 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFKEYPERIOD.CFCOMPANY">
+            <summary>           
+            Refers to table|alias: CFCOMPANY, FK Columns: SYSCFCOMPANY 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFKEYVALUE">
+            <summary>               
+            Table: CFKEYVALUE
+            Description: Schlüsselwert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFKEYVALUE.SYSCFKEYVALUE">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFKEYVALUE.SYSAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT
+            Description: Referenz zu AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFKEYVALUE.SYSID">
+            <summary>           
+            Description: id nummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFKEYVALUE.AREA">
+            <summary>           
+            Description: Bereich 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFKEYVALUE.CONTEXT">
+            <summary>           
+            Description: Kontext 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFKEYVALUE.KEYVAL">
+            <summary>           
+            Description: Schlüsselwert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFKEYVALUE.VALUE">
+            <summary>           
+            Description: Wert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFKEYVALUE.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFOFFLINEREPID">
+            <summary>               
+            Table: CFOFFLINEREPID
+            Description: Offline-Auftragsidentfikationsnummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOFFLINEREPID.SYSCFOFFLINEREPID">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOFFLINEREPID.SYSCFOUTLISTOFFRE">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFOUTLISTOFFRE
+            Description: Referenz zu CFOUTLISTOFFLINEREPORTS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOFFLINEREPID.ORDERREFERENCENUMBER">
+            <summary>           
+            Description: Auftragsnummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOFFLINEREPID.REFERENCENUMBER">
+            <summary>           
+            Description: Referenznummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOFFLINEREPID.CFOUTLISTOFFRE">
+            <summary>           
+            Refers to table|alias: CFOUTLISTOFFRE, FK Columns: SYSCFOUTLISTOFFRE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOFFLINEREPID.CFOUTPOLLOFFList">
+            <summary>           
+            Refers to table|alias: 'CFOUTPOLLOFF', PK Columns: SYSCFOFFLINEREPID 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFORGAPOSITION">
+            <summary>               
+            Table: CFORGAPOSITION
+            Description: Firmenposition (CEO, CFO, etc.) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFORGAPOSITION.SYSCFORGAPOSITION">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFORGAPOSITION.SYSCFOUTGETREPORT">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFOUTGETREPORT
+            Description: Referenz zu CFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFORGAPOSITION.FIRSTNAME">
+            <summary>           
+            Description: Vorname 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFORGAPOSITION.NAME">
+            <summary>           
+            Description: Personen/Unternehmensname 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFORGAPOSITION.NATIONALITY">
+            <summary>           
+            Description: Nationalität(ISO-3166-1) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFORGAPOSITION.HOMETOWN">
+            <summary>           
+            Description: Heimatstadt 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFORGAPOSITION.CITY">
+            <summary>           
+            Description: Stadt 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFORGAPOSITION.SYSCFPOSITIONFUNC">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFPOSITIONFUNC
+            Description: Referenz zu CFPOSITIONFUNCTION 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFORGAPOSITION.SHAREVALUE">
+            <summary>           
+            Description: Anteilswert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFORGAPOSITION.SIGNATURETYPE">
+            <summary>           
+            Description: Signaturtyp 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFORGAPOSITION.SIGNATUREORIGINAL">
+            <summary>           
+            Description: Unterschrift 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFORGAPOSITION.PERIODSTART">
+            <summary>           
+            Description: Periodenstart 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFORGAPOSITION.PERIODEND">
+            <summary>           
+            Description: Periodenende 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFORGAPOSITION.ADDRESSID">
+            <summary>           
+            Description: Adressenidentifikationsnummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFORGAPOSITION.ADDRESSIDTYPE">
+            <summary>           
+            Description: Typ der Adressenidentifikationsnummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFORGAPOSITION.HASDEBTS">
+            <summary>           
+            Description: Schulden(Ja,Nein) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFORGAPOSITION.NROFPOSITIONS">
+            <summary>           
+            Description: Anzahl der Positionen 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFORGAPOSITION.NROFPOSITIONSBANKRUPT">
+            <summary>           
+            Description: Anzahl der Positionen die Pleite sind 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFORGAPOSITION.BIRTHDATE">
+            <summary>           
+            Description: Geburtstagsdatum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFORGAPOSITION.SYSCFORGANIZATIONPOSITIONOTHER">
+            <summary>           
+            Description: Referenz zu CFORGANIZATIONPOSITION 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFORGAPOSITION.CFOUTGETREPORT">
+            <summary>           
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFORGAPOSITION.CFPOSITIONFUNC">
+            <summary>           
+            Refers to table|alias: CFPOSITIONFUNC, FK Columns: SYSCFPOSITIONFUNC 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFOUTARCHREP">
+            <summary>               
+            Table: CFOUTARCHREP
+            Description: Archivierungsbericht 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTARCHREP.SYSCFOUTARCHREP">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTARCHREP.SYSAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT
+            Description: Referenz zu AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTARCHREP.ARCHIVINGID">
+            <summary>           
+            Description: Referenz zur Anfrage 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTARCHREP.REPORT">
+            <summary>           
+            Description: Bericht 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTARCHREP.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFOUTDEBTDET">
+            <summary>               
+            Table: CFOUTDEBTDET
+            Description: Schuldendetails 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTDEBTDET.SYSCFOUTDEBTDET">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTDEBTDET.SYSAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT
+            Description: Referenz zu AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTDEBTDET.ARCHIVINGID">
+            <summary>           
+            Description: Referenz zur Anfrage 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTDEBTDET.CFDEBTList">
+            <summary>           
+            Refers to table|alias: 'CFDEBT', PK Columns: SYSCFOUTDEBTDET 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTDEBTDET.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT">
+            <summary>               
+            Table: CFOUTGETREPORT
+            Description: Bericht 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.SYSCFOUTGETREPORT">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.SYSAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT
+            Description: Referenz zu AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.ARCHIVINGID">
+            <summary>           
+            Description: Referenz zur Anfrage 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.SYSCFDECISION">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFDECISION
+            Description: Referenz zu CFDECISION 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.SYSCFADDRESSMATCH">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFADDRESSMATCH
+            Description: Referenz zu CFADDRESSMATCH 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.SYSCFCOMPANY">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFCOMPANY
+            Description: Referenz zu CFCOMPANY 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.INTIMERATIO">
+            <summary>           
+            Description: Zeitverhältnis 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.AVGDELAYSHORTTERM">
+            <summary>           
+            Description: Durchschnittliche Verzögerung (Kurzfristig) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.AVGDELAYLONGTERM">
+            <summary>           
+            Description: Durchschnittliche Verzögerung (Langfristige) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.PAYMENTTYPE">
+            <summary>           
+            Description: Zahlungsart 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.PAYMENTEXPECTEDTYPE">
+            <summary>           
+            Description: Erwartete Zahlungsart 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.POSITIONSTRUNCATED">
+            <summary>           
+            Description: Flag ob alle Positionen geliefert wurden (0 = alle) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.PUBLICATIONSTRUNCATED">
+            <summary>           
+            Description: Flag ob alle Publikationen geliefert wurden (0 = alle) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.BRANCHOFFICESTRUNCATED">
+            <summary>           
+            Description: Flag ob alle Zweigstellen geliefert wurden (0 = alle) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.SYSCFSCORE">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFSCORE
+            Description: Referenz zu CFSCORE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.SYSCFCOMPLIANCE">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFCOMPLIANCE
+            Description: Refrenz zu CFCOMPLIANCE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.SYSCFVERIFICATION">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFVERIFICATION
+            Description: Referenz zu CFVERIFICATION 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.SYSCFSCHUFA">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFSCHUFA
+            Description: Referenz zu CFSCHUFA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.REPORT">
+            <summary>           
+            Description: Bericht 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.CFADDRESSList">
+            <summary>           
+            Refers to table|alias: 'CFADDRESS', PK Columns: SYSCFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.CFADDRESSHISTList">
+            <summary>           
+            Refers to table|alias: 'CFADDRESSHIST', PK Columns: SYSCFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.CFBRANCHOFFICEList">
+            <summary>           
+            Refers to table|alias: 'CFBRANCHOFFICE', PK Columns: SYSCFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.CFBUSINESSLICList">
+            <summary>           
+            Refers to table|alias: 'CFBUSINESSLIC', PK Columns: SYSCFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.CFCOMPLIANCEDEList">
+            <summary>           
+            Refers to table|alias: 'CFCOMPLIANCEDE', PK Columns: SYSCFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.CFDEBTList">
+            <summary>           
+            Refers to table|alias: 'CFDEBT', PK Columns: SYSCFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.CFFINSTATEMENTList">
+            <summary>           
+            Refers to table|alias: 'CFFINSTATEMENT', PK Columns: SYSCFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.CFORGAPOSITIONList">
+            <summary>           
+            Refers to table|alias: 'CFORGAPOSITION', PK Columns: SYSCFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.CFADDRESSMATCH">
+            <summary>           
+            Refers to table|alias: CFADDRESSMATCH, FK Columns: SYSCFADDRESSMATCH 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.CFCOMPANY">
+            <summary>           
+            Refers to table|alias: CFCOMPANY, FK Columns: SYSCFCOMPANY 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.CFCOMPLIANCE">
+            <summary>           
+            Refers to table|alias: CFCOMPLIANCE, FK Columns: SYSCFCOMPLIANCE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.CFDECISION">
+            <summary>           
+            Refers to table|alias: CFDECISION, FK Columns: SYSCFDECISION 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.CFSCHUFA">
+            <summary>           
+            Refers to table|alias: CFSCHUFA, FK Columns: SYSCFSCHUFA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.CFSCORE">
+            <summary>           
+            Refers to table|alias: CFSCORE, FK Columns: SYSCFSCORE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.CFVERIFICATION">
+            <summary>           
+            Refers to table|alias: CFVERIFICATION, FK Columns: SYSCFVERIFICATION 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.CFPUBLICATIONList">
+            <summary>           
+            Refers to table|alias: 'CFPUBLICATION', PK Columns: SYSCFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.CFWOWADDRESSList">
+            <summary>           
+            Refers to table|alias: 'CFWOWADDRESS', PK Columns: SYSCFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTGETREPORT.CFWOWRELATIONList">
+            <summary>           
+            Refers to table|alias: 'CFWOWRELATION', PK Columns: SYSCFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFOUTIDENTADDR">
+            <summary>               
+            Table: CFOUTIDENTADDR
+            Description: Trimmed: CFOUTIDENTADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTIDENTADDR.SYSCFOUTIDENTADDR">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTIDENTADDR.ARCHIVINGID">
+            <summary>           
+            Description: Referenz zur Anfrage 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTIDENTADDR.SYSAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT
+            Description: Referenz zu AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTIDENTADDR.SYSCFADDRESSMATCH">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFADDRESSMATCH
+            Description: Referenz zu CFADDRESSMATCH (addressMatchResult) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTIDENTADDR.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTIDENTADDR.CFADDRESSMATCH">
+            <summary>           
+            Refers to table|alias: CFADDRESSMATCH, FK Columns: SYSCFADDRESSMATCH 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFOUTLISTOFFRE">
+            <summary>               
+            Table: CFOUTLISTOFFRE
+            Description: Offline-Berichtsliste 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTLISTOFFRE.SYSCFOUTLISTOFFRE">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTLISTOFFRE.SYSAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT
+            Description: Referenz zu AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTLISTOFFRE.ARCHIVINGID">
+            <summary>           
+            Description: Referenz zur Anfrage 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTLISTOFFRE.CFOFFLINEREPIDList">
+            <summary>           
+            Refers to table|alias: 'CFOFFLINEREPID', PK Columns: SYSCFOUTLISTOFFRE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTLISTOFFRE.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFOUTORDEROFF">
+            <summary>               
+            Table: CFOUTORDEROFF
+            Description: Offline-Aufträge 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTORDEROFF.SYSCFOUTORDEROFF">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTORDEROFF.SYSAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT
+            Description: Referenz zu AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTORDEROFF.ARCHIVINGID">
+            <summary>           
+            Description: Referenz zur Anfrage 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTORDEROFF.ORDERREFERENCENUMBER">
+            <summary>           
+            Description: Auftragsnummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTORDEROFF.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFOUTPOLLOFF">
+            <summary>               
+            Table: CFOUTPOLLOFF
+            Description: Offline-Abstimmung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTPOLLOFF.SYSCFOUTPOLLOFF">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTPOLLOFF.SYSAUSKUNFT">
+            <summary>           
+            Foreign key: True
+            Navigation property: AUSKUNFT
+            Description: Referenz zu AUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTPOLLOFF.OFFLINEREPORTSTATUS">
+            <summary>           
+            Description: Status der Auskunft (Offline) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTPOLLOFF.SYSCFOFFLINEREPID">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFOFFLINEREPID
+            Description: Referenz zu CFOFFLINEREPID 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTPOLLOFF.ARCHIVINGID">
+            <summary>           
+            Description: Referenz zur Anfrage 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTPOLLOFF.REJECTIONREASON">
+            <summary>           
+            Description: Ablehnungsgrund 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTPOLLOFF.REPORT">
+            <summary>           
+            Description: Auskunft 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTPOLLOFF.CFDEBTList">
+            <summary>           
+            Refers to table|alias: 'CFDEBT', PK Columns: SYSCFOUTPOLLOFF 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTPOLLOFF.AUSKUNFT">
+            <summary>           
+            Refers to table|alias: AUSKUNFT, FK Columns: SYSAUSKUNFT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFOUTPOLLOFF.CFOFFLINEREPID">
+            <summary>           
+            Refers to table|alias: CFOFFLINEREPID, FK Columns: SYSCFOFFLINEREPID 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFPERSON">
+            <summary>               
+            Table: CFPERSON
+            Description: Person 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPERSON.SYSCFPERSON">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPERSON.SYSCFADDRESS">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFADDRESS
+            Description: Referenz zu CFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPERSON.ADDRESS1">
+            <summary>           
+            Description: Zusätzliche Addresse 1 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPERSON.ADDRESS2">
+            <summary>           
+            Description: Zusätzliche Addresse 2 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPERSON.NATIONALID">
+            <summary>           
+            Description: Ausweisnummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPERSON.PLACEOFBIRTH">
+            <summary>           
+            Description: Geburtsort 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPERSON.NATIONALITY">
+            <summary>           
+            Description: Nationalität (ISO-3166-1) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPERSON.CFIDVERIFICATList">
+            <summary>           
+            Refers to table|alias: 'CFIDVERIFICAT', PK Columns: SYSCFPERSON 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPERSON.CFADDRESS">
+            <summary>           
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPERSON.CFVERIFICATIONList">
+            <summary>           
+            Refers to table|alias: 'CFVERIFICATION', PK Columns: SYSCFPERSON 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFPOSITIONFUNC">
+            <summary>               
+            Table: CFPOSITIONFUNC
+            Description: Funktionen der Position 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPOSITIONFUNC.SYSCFPOSITIONFUNC">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPOSITIONFUNC.FUNCTIONTYPE">
+            <summary>           
+            Description: Funktionstyp 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPOSITIONFUNC.FUNCTIONTYPEORIGINAL">
+            <summary>           
+            Description: Funktionstyp (Original) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPOSITIONFUNC.FUNCTIONPRIORITY">
+            <summary>           
+            Description: Funktionspriorität 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPOSITIONFUNC.SYSCFORGAPOSITION">
+            <summary>           
+            Description: Referenz zu CFORGAPOSITION 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPOSITIONFUNC.CFORGAPOSITIONList">
+            <summary>           
+            Refers to table|alias: 'CFORGAPOSITION', PK Columns: SYSCFPOSITIONFUNC 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFPUBLICATION">
+            <summary>               
+            Table: CFPUBLICATION
+            Description: Veröffentlichung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPUBLICATION.SYSCFPUBLICATION">
+            <summary>           
+            Primary Key: True
+            Description: Veröffentlichungsdatum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPUBLICATION.PUBLICATIONDATE">
+            <summary>           
+            Description: Veröffentlichungsdatum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPUBLICATION.PUBLICATIONCATEGORYORIGINAL">
+            <summary>           
+            Description: Länderspezifische Veröffentlichungsart 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPUBLICATION.PUBLICATIONCATEGORY">
+            <summary>           
+            Description: Veröffentlichungsart 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPUBLICATION.LANGUAGE">
+            <summary>           
+            Description: Sprache(ISO 639-1) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPUBLICATION.PUBLICATIONREGION">
+            <summary>           
+            Description: Veröffentlichungsort (ISO 3166-2) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPUBLICATION.TEXT">
+            <summary>           
+            Description: Veröffentlichungstext 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPUBLICATION.SYSCFOUTGETREPORT">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFOUTGETREPORT
+            Description: Referenz zu CFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFPUBLICATION.CFOUTGETREPORT">
+            <summary>           
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFSCHUFA">
+            <summary>               
+            Table: CFSCHUFA
+            Description: Schufa 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFA.SYSCFSCHUFA">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFA.IDENTITYRESERVATIONPERSON">
+            <summary>           
+            Description: identitätsvorbehaltPerson 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFA.IDENTITYRESERVATIONADDRESS">
+            <summary>           
+            Description: identitaetsvorbehaltAdresse 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFA.PERSONWITHOUTBIRTHDATE">
+            <summary>           
+            Description: person ohne Geburtsdatum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFA.DESCRIPTION">
+            <summary>           
+            Description: Beschreibung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFA.SCOREVALUE">
+            <summary>           
+            Description: Scorewert (Ergebniswert) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFA.RISKQUOTA">
+            <summary>           
+            Description: Risikoquote 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFA.SCORECATEGORY">
+            <summary>           
+            Description: Scorebereich 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFA.SCORETEXT">
+            <summary>           
+            Description: Scoretext 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFA.SCOREERROR">
+            <summary>           
+            Description: Scorefehler 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFA.TITLE">
+            <summary>           
+            Description: Titel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFA.PLACEOFBIRTH">
+            <summary>           
+            Description: Geburtsort 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFA.SYSCFADDRESSPREVIOUS">
+            <summary>           
+            Description: Referenz zu CFADDRESSPREVIOUS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFA.CFOUTGETREPORTList">
+            <summary>           
+            Refers to table|alias: 'CFOUTGETREPORT', PK Columns: SYSCFSCHUFA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFA.CFSCHUFAFEATList">
+            <summary>           
+            Refers to table|alias: 'CFSCHUFAFEAT', PK Columns: SYSCFSCHUFA 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFSCHUFAFEAT">
+            <summary>               
+            Table: CFSCHUFAFEAT
+            Description: Schufa Feature 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFAFEAT.SYSCFSCHUFAFEAT">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFAFEAT.SYSCFSCHUFA">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFSCHUFA
+            Description: Referenz zu CFSCHUFA 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFAFEAT.TYPE">
+            <summary>           
+            Description: Typ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFAFEAT.FEATUREWITHOUTBIRTHDATE">
+            <summary>           
+            Description: merkmal ohne Geburtsdatum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFAFEAT.OWNFEATURE">
+            <summary>           
+            Description: eigenes Merkmal 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFAFEAT.FEATURECODE">
+            <summary>           
+            Description: Merkmalcode 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFAFEAT.DESCRIPTION">
+            <summary>           
+            Description: Beschreibung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFAFEAT.TEXT">
+            <summary>           
+            Description: Text 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFAFEAT.DATUM">
+            <summary>           
+            Description: Datum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFAFEAT.ACCOUNTNUMBER">
+            <summary>           
+            Description: Kontonummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFAFEAT.AMOUNT">
+            <summary>           
+            Description: Betrag 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFAFEAT.AMOUNTCUR">
+            <summary>           
+            Description: Betrag Währung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFAFEAT.NUMBEROFINSTALLEMENTS">
+            <summary>           
+            Description: Ratenzahl 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFAFEAT.INSTALLMENTTYPE">
+            <summary>           
+            Description: Ratenart 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCHUFAFEAT.CFSCHUFA">
+            <summary>           
+            Refers to table|alias: CFSCHUFA, FK Columns: SYSCFSCHUFA 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFSCORE">
+            <summary>               
+            Table: CFSCORE
+            Description: Score 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCORE.SYSCFSCORE">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCORE.RANGEFROM">
+            <summary>           
+            Description: von 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCORE.RANGETO">
+            <summary>           
+            Description: bis 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCORE.SCORE">
+            <summary>           
+            Description: Score (Ergebnis) 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCORE.AVERAGESCOREINDUSTRY">
+            <summary>           
+            Description: Durchschnittlicher Industrie Ergebnis 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCORE.AVERAGESCOREALL">
+            <summary>           
+            Description: Durchschnittlicher Ergebnis Wert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCORE.CFOUTGETREPORTList">
+            <summary>           
+            Refers to table|alias: 'CFOUTGETREPORT', PK Columns: SYSCFSCORE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCORE.CFSCORERANGEList">
+            <summary>           
+            Refers to table|alias: 'CFSCORERANGE', PK Columns: SYSCFSCORE 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFSCORERANGE">
+            <summary>               
+            Table: CFSCORERANGE
+            Description: Score-Bereich 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCORERANGE.SYSCFSCORERANGE">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCORERANGE.SYSCFSCORE">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFSCORE
+            Description: Referenz zu CFSCORE 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCORERANGE.RANGEFROM">
+            <summary>           
+            Description: von 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCORERANGE.RANGETO">
+            <summary>           
+            Description: bis 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCORERANGE.DECISION">
+            <summary>           
+            Description: Entscheidung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSCORERANGE.CFSCORE">
+            <summary>           
+            Refers to table|alias: CFSCORE, FK Columns: SYSCFSCORE 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFSUBDECISION">
+            <summary>               
+            Table: CFSUBDECISION
+            Description: Unter-Entscheidung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSUBDECISION.SYSCFSUBDECISION">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSUBDECISION.SYSCFDECISION">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFDECISION
+            Description: Referenz zu CFDECISION 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSUBDECISION.TYPE">
+            <summary>           
+            Description: Typ 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSUBDECISION.DECISION">
+            <summary>           
+            Description: Entscheidung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSUBDECISION.VALUE">
+            <summary>           
+            Description: Wert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSUBDECISION.INFOTEXT">
+            <summary>           
+            Description: Infotext 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFSUBDECISION.CFDECISION">
+            <summary>           
+            Refers to table|alias: CFDECISION, FK Columns: SYSCFDECISION 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFVERIFICATCOM">
+            <summary>               
+            Table: CFVERIFICATCOM
+            Description: Überprüfung des Unternehmens 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATCOM.SYSCFVERIFICATCOM">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATCOM.SYSCFVERIFICATION">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFVERIFICATION
+            Description: Referenz zu CFVERIFICATION 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATCOM.FIELDNAME">
+            <summary>           
+            Description: Feldname 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATCOM.PROVIDEDVALUE">
+            <summary>           
+            Description: zu Verfügung gestellter Wert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATCOM.DOCUMENTVALUE">
+            <summary>           
+            Description: Dokumenteninhalt 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATCOM.PERCENTAGE">
+            <summary>           
+            Description: Prozentsatz 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATCOM.MRZVALUE">
+            <summary>           
+            Description:  Wert maschinenlesbare Zone 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATCOM.PROVIDEDVSDOCSIMILARITY">
+            <summary>           
+            Description: Vergleich 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATCOM.PROVIDEDVSMRZSIMILARITY">
+            <summary>           
+            Description: Vergleich 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATCOM.DOCUMENTVSMRZSIMILARITY">
+            <summary>           
+            Description: Vergleich 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATCOM.CFVERIFICATION">
+            <summary>           
+            Refers to table|alias: CFVERIFICATION, FK Columns: SYSCFVERIFICATION 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFVERIFICATION">
+            <summary>               
+            Table: CFVERIFICATION
+            Description: Überprüfung 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATION.SYSCFVERIFICATION">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATION.SYSCFDOCUMENT">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFDOCUMENT
+            Description: Referenz zu CFDOCUMENT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATION.SYSCFPERSON">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFPERSON
+            Description: Referenz zu CFPERSON 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATION.ISVALID">
+            <summary>           
+            Description: Gültig 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATION.ISCOMPLETE">
+            <summary>           
+            Description: Gibt an ob vollständig 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATION.ISCOMPOSITECHECKDIGITVERIFIED">
+            <summary>           
+            Description: Ist die Prüfsumme in der MLZ des Ausweises richtig 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATION.ISBIRTHDATEVERIFIED">
+            <summary>           
+            Description: Gibt an ob das Geburtsdatum verifiziert ist 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATION.ISEXPIRATIONDATEVERIFIED">
+            <summary>           
+            Description: Gibt an ob Verfallsdatums verifiziert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATION.ISDOCUMENTNUMBERVERIFIED">
+            <summary>           
+            Description: Gibt an ob Dokumentennummer verifiziert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATION.ISISSUINGSTATEORORGVERIFIED">
+            <summary>           
+            Description: Flag ob ausstellungsbehörde/organisation verifiziert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATION.ISNATIONALIDVERIFIED">
+            <summary>           
+            Description: Gibt an ob Nationalitätsidenfikationnummer verifiziert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATION.ISNATIONALITYVERIFIED">
+            <summary>           
+            Description: Gibt an ob Nationalität verifiziert 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATION.PROCESSINGRESULT">
+            <summary>           
+            Description: Verarbeitungsergebnis 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATION.CFDOCUMENTIMGList">
+            <summary>           
+            Refers to table|alias: 'CFDOCUMENTIMG', PK Columns: SYSCFVERIFICATION 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATION.CFOUTGETREPORTList">
+            <summary>           
+            Refers to table|alias: 'CFOUTGETREPORT', PK Columns: SYSCFVERIFICATION 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATION.CFVERIFICATCOMList">
+            <summary>           
+            Refers to table|alias: 'CFVERIFICATCOM', PK Columns: SYSCFVERIFICATION 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATION.CFDOCUMENT">
+            <summary>           
+            Refers to table|alias: CFDOCUMENT, FK Columns: SYSCFDOCUMENT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFVERIFICATION.CFPERSON">
+            <summary>           
+            Refers to table|alias: CFPERSON, FK Columns: SYSCFPERSON 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFWOWADDRESS">
+            <summary>               
+            Table: CFWOWADDRESS
+            Description: Who owns whom Adresse 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFWOWADDRESS.SYSCFWOWADDRESS">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFWOWADDRESS.SYSCFOUTGETREPORT">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFOUTGETREPORT
+            Description: Referenz zu CFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFWOWADDRESS.ID">
+            <summary>           
+            Description: Identifikationnummer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFWOWADDRESS.HASDEBTS">
+            <summary>           
+            Description: Gibt an ob Schulden existieren 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFWOWADDRESS.SYSCFADDRESS">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFADDRESS
+            Description: Referenz zu CFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFWOWADDRESS.CFADDRESS">
+            <summary>           
+            Refers to table|alias: CFADDRESS, FK Columns: SYSCFADDRESS 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFWOWADDRESS.CFOUTGETREPORT">
+            <summary>           
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="T:CIC.Database.CRIF.EF6.Model.CFWOWRELATION">
+            <summary>               
+            Table: CFWOWRELATION
+            Description: Eigentum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFWOWRELATION.SYSCFWOWRELATION">
+            <summary>           
+            Primary Key: True
+            Description: Primärer Schlüssel 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFWOWRELATION.SYSCFOUTGETREPORT">
+            <summary>           
+            Foreign key: True
+            Navigation property: CFOUTGETREPORT
+            Description: Referenz zu CFOUTGETREPORT 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFWOWRELATION.OWNER">
+            <summary>           
+            Description: Eigentümer 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFWOWRELATION.OWNEDSUBJECT">
+            <summary>           
+            Description: Eigentum 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFWOWRELATION.ISMAJORITYOWNER">
+            <summary>           
+            Description: Mehrbesitz 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFWOWRELATION.CAPITALSHARE">
+            <summary>           
+            Description: Kapitalanteil 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFWOWRELATION.VOTESHARE">
+            <summary>           
+            Description: Stimmanteil 
+            </summary>
+        </member>
+        <member name="P:CIC.Database.CRIF.EF6.Model.CFWOWRELATION.CFOUTGETREPORT">
+            <summary>           
+            Refers to table|alias: CFOUTGETREPORT, FK Columns: SYSCFOUTGETREPORT 
+            </summary>
+        </member>
+    </members>
+</doc>

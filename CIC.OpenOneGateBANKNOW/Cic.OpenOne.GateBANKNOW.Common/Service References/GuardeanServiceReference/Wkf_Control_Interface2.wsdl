@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:types="http://guardean.net/webservices/workflow/wkf_control_interface/types" xmlns:tns="http://guardean.net/webservices/workflow/wkf_control_interface" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="Wkf_Control_Interface" targetNamespace="http://guardean.net/webservices/workflow/wkf_control_interface" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+        Wkf_Control_Interface web service operations.
+    </wsdl:documentation>
+  <wsdl:types>
+    <xs:schema targetNamespace="http://guardean.net/webservices/workflow/wkf_control_interface/types/imported">
+      <xs:import schemaLocation="CIC_SHS_W001.1.xsd" namespace="http://guardean.net/webservices/workflow/wkf_control_interface/types" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="executeRequest">
+    <wsdl:part name="executeRequest" element="types:executeRequest" />
+  </wsdl:message>
+  <wsdl:message name="executeResponse">
+    <wsdl:part name="executeResponse" element="types:executeResponse" />
+  </wsdl:message>
+  <wsdl:message name="systemMessage">
+    <wsdl:part name="systemMessage" element="types:systemMessage" />
+  </wsdl:message>
+  <wsdl:portType name="Wkf_Control_InterfacePortType">
+    <wsdl:operation name="execute">
+      <wsdl:input name="executeRequest" message="tns:executeRequest" />
+      <wsdl:output name="executeResponse" message="tns:executeResponse" />
+      <wsdl:fault name="systemMessage" message="tns:systemMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Wkf_Control_InterfaceSoapBinding" type="tns:Wkf_Control_InterfacePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="execute">
+      <soap:operation soapAction="http://guardean.net/webservices/workflow/wkf_control_interface/execute" />
+      <wsdl:input name="executeRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="executeResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="systemMessage">
+        <soap:fault use="literal" name="systemMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Wkf_Control_Interface">
+    <wsdl:port name="Wkf_Control_InterfacePort" binding="tns:Wkf_Control_InterfaceSoapBinding">
+      <soap:address location="http://localhost:8080/Wkf_Control_Interface/services/Wkf_Control_Interface" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

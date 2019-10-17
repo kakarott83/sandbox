@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Cic.One.Web.Service.searchService" CodeBehind="searchService.svc.cs" %>

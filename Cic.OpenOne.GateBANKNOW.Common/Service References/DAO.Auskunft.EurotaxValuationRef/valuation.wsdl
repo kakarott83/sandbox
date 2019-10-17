@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tns="http://www.eurotax.com/webservices/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.eurotax.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.eurotax.com/webservices/">
+      <xs:simpleType name="ISOcurrencyType">
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="AUD" />
+          <xs:enumeration value="CAD" />
+          <xs:enumeration value="CHF" />
+          <xs:enumeration value="CZK" />
+          <xs:enumeration value="DKK" />
+          <xs:enumeration value="EUR" />
+          <xs:enumeration value="GBP" />
+          <xs:enumeration value="HUF" />
+          <xs:enumeration value="JPY" />
+          <xs:enumeration value="NOK" />
+          <xs:enumeration value="NZD" />
+          <xs:enumeration value="PLN" />
+          <xs:enumeration value="SEK" />
+          <xs:enumeration value="SKK" />
+          <xs:enumeration value="USD" />
+          <xs:enumeration value="RON" />
+          <xs:enumeration value="TRY" />
+          <xs:enumeration value="CNY" />
+          <xs:enumeration value="INR" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ISOcountryType">
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="AT" />
+          <xs:enumeration value="BE" />
+          <xs:enumeration value="CZ" />
+          <xs:enumeration value="CH" />
+          <xs:enumeration value="DE" />
+          <xs:enumeration value="ES" />
+          <xs:enumeration value="FR" />
+          <xs:enumeration value="GR" />
+          <xs:enumeration value="HR" />
+          <xs:enumeration value="HU" />
+          <xs:enumeration value="IT" />
+          <xs:enumeration value="LU" />
+          <xs:enumeration value="NL" />
+          <xs:enumeration value="PL" />
+          <xs:enumeration value="PT" />
+          <xs:enumeration value="RU" />
+          <xs:enumeration value="SK" />
+          <xs:enumeration value="SI" />
+          <xs:enumeration value="UK">
+            <xs:annotation>
+              <xs:documentation>This enumeration with value "UK" is deprecated, and will be removed in future releases. Use enumeration with value "GB" instead.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="GB" />
+          <xs:enumeration value="NO" />
+          <xs:enumeration value="RO" />
+          <xs:enumeration value="TR" />
+          <xs:enumeration value="CN" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ISOlanguageType">
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="BG" />
+          <xs:enumeration value="CS" />
+          <xs:enumeration value="DA" />
+          <xs:enumeration value="DE" />
+          <xs:enumeration value="EL" />
+          <xs:enumeration value="EN" />
+          <xs:enumeration value="ES" />
+          <xs:enumeration value="ET" />
+          <xs:enumeration value="FI" />
+          <xs:enumeration value="FR" />
+          <xs:enumeration value="HR" />
+          <xs:enumeration value="HU" />
+          <xs:enumeration value="IT" />
+          <xs:enumeration value="LT" />
+          <xs:enumeration value="LV" />
+          <xs:enumeration value="NL" />
+          <xs:enumeration value="NO" />
+          <xs:enumeration value="PL" />
+          <xs:enumeration value="PT" />
+          <xs:enumeration value="RO" />
+          <xs:enumeration value="RU" />
+          <xs:enumeration value="SK" />
+          <xs:enumeration value="SL" />
+          <xs:enumeration value="SR" />
+          <xs:enumeration value="SV" />
+          <xs:enumeration value="TR" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ETGvehicleConditionType">
+        <xs:restriction base="xs:integer">
+          <xs:minInclusive value="1" />
+          <xs:maxInclusive value="5" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ETGcalculationModeType">
+        <xs:annotation>
+          <xs:documentation>This is an enumeration of all calculation rules, EurotaxGlass's intelligence module can apply during calculation of basic residual value, option calculation, etc. EurotaxGlass's may add other calculation mode at the end of the enumerated list in future release.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="STANDARD">
+            <xs:annotation>
+              <xs:documentation>EurotaxGlass's standard rules. It is equivalent to calculation mode "E" or "N" used internally by intelligence module.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="RESIDUAL">
+            <xs:annotation>
+              <xs:documentation>The value of the calculation depends on a residual value. It is equivalent to calculation mode "R" used internally by intelligence module. In the UK valuation module, it implies that the condition of the vehicle is rough or below the average condition..</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SPECIAL">
+            <xs:annotation>
+              <xs:documentation>Special rules was applied in addition to standard rules during evaluation of residual value. It is equivalent to calculation mode "L" used internally by intelligence module. An input instance document should not use this as a "CalculationMode" value</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="PROPRIETARY">
+            <xs:annotation>
+              <xs:documentation>Proprietary built-in rules was used during evaluation of residual value. This value is equivalent to calculation mode "V" used internally by intelligence module. An input instance document should not use this as a "CalculationMode" value</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="LOW_MILEAGE">
+            <xs:annotation>
+              <xs:documentation>Low mileage of the vehicle was used as a primary rule for valuation. It's exclusively reserved for intelligence module for UK. An input instance document should not use this as "CalculationMode" value</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="EXCELLENT">
+            <xs:annotation>
+              <xs:documentation>The excellent condition of the vehicle is consider during evaluation process. It's exclusively reserved for intelligence module for UK.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="AVERAGE">
+            <xs:annotation>
+              <xs:documentation>The average condition of the vehicle is consider during evaluation process. It's exclusively reserved for intelligence module for UK.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="PRIVATESALE">
+            <xs:annotation>
+              <xs:documentation>Private sale rules are applied during evaluation process. It's exclusively reserved for intelligence module for UK.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ETGvalueAddedCodeType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="*" />
+          <xs:enumeration value="R" />
+          <xs:enumeration value="A" />
+          <xs:enumeration value="1" />
+          <xs:enumeration value="2" />
+          <xs:enumeration value="3" />
+          <xs:enumeration value="4" />
+          <xs:enumeration value="0" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ETGdevaluationCodeType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="*" />
+          <xs:enumeration value="A" />
+          <xs:enumeration value="V" />
+          <xs:enumeration value="0" />
+          <xs:enumeration value="1" />
+          <xs:enumeration value="2" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="VersionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="1.0.8" />
+          <xs:enumeration value="1.0.9" />
+          <xs:enumeration value="1.0.10" />
+          <xs:enumeration value="1.1.0" />
+          <xs:enumeration value="1.1.1" />
+          <xs:enumeration value="1.1.2" />
+          <xs:enumeration value="1.1.3" />
+          <xs:enumeration value="1.1.4" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="regionalMarketAdjustmentRange">
+        <xs:restriction base="xs:integer">
+          <xs:minInclusive value="-15" />
+          <xs:maxInclusive value="15" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="internalMarketAdjustmentRange">
+        <xs:restriction base="xs:integer">
+          <xs:minInclusive value="-10" />
+          <xs:maxInclusive value="10" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ETGmessageSeverityLevelType">
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="INFORMATION" />
+          <xs:enumeration value="NOTICE" />
+          <xs:enumeration value="WARNING" />
+          <xs:enumeration value="CRITICAL" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="ETGpriceType">
+        <xs:sequence>
+          <xs:element default="0.00" name="Amount" type="xs:double" />
+          <xs:element name="ISOcurrencyCode" type="tns:ISOcurrencyType" />
+          <xs:element minOccurs="0" name="AmountDate" type="tns:ETGdateType" />
+          <xs:element minOccurs="0" name="Indicator" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ETGdateType">
+        <xs:annotation>
+          <xs:documentation>Common data type for date representation</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Day" type="xs:gDay">
+            <xs:annotation>
+              <xs:documentation>day of the month</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Month" type="xs:gMonth">
+            <xs:annotation>
+              <xs:documentation>month</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Year" type="xs:gYear">
+            <xs:annotation>
+              <xs:documentation>year</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ETGsettingType">
+        <xs:annotation>
+          <xs:documentation>Settings for country, language, response format etc.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="ISOcountryCode" type="tns:ISOcountryType">
+            <xs:annotation>
+              <xs:documentation>ISO country code</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" maxOccurs="1" name="ISOlanguageCode" type="tns:ISOlanguageType">
+            <xs:annotation>
+              <xs:documentation>ISO language code</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" maxOccurs="1" name="ISOcurrencyCode" type="tns:ISOcurrencyType">
+            <xs:annotation>
+              <xs:documentation>ISO currency code</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="LoginDataType">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>ETG-wide unique user name</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Password" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>User password</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ReturnSecurityToken" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>If set to true, SecurityToken and corresponding TimeToLive will be returned</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OriginatorType">
+        <xs:sequence>
+          <xs:element name="Signature" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>ETG-wide unique user ID / user signature</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:choice>
+            <xs:element name="LoginData" type="tns:LoginDataType">
+              <xs:annotation>
+                <xs:documentation>User authentication data</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="SecurityToken" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>Security token to be used instead of username/password pair</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:choice>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FailureType">
+        <xs:sequence>
+          <xs:element name="ETGError" type="tns:ETGStatus" />
+          <xs:element minOccurs="0" name="ETGWarning" type="tns:ETGStatus" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SuccessType">
+        <xs:sequence minOccurs="0">
+          <xs:element minOccurs="0" name="ETGWarning" type="tns:ETGStatus" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResponseType">
+        <xs:sequence>
+          <xs:element name="OrderID" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A unique ID that the ETG service has assigned to the order originated by the client request. In case of asynchronous request processing can be used by the client for related request identification.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="VersionResponse" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Version of global ETG services specification used to construct the response</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Statistics" type="tns:StatisticsType" />
+          <xs:element minOccurs="0" name="SecurityToken" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Reurned security token to be used instead of username/password pair for further calls</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TimeToLive" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>Validity period of the reurned security token</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:choice>
+            <xs:element name="Failure" type="tns:FailureType">
+              <xs:annotation>
+                <xs:documentation>Indicates that the processing of this request has failed, and provides error and optional warning messages that arose during the processing.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Success" type="tns:SuccessType">
+              <xs:annotation>
+                <xs:documentation>Indicates that the processing of this request has succeeded; may provide non-fatal warning messages that arose during the processing.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:choice>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatisticsType">
+        <xs:sequence>
+          <xs:element name="StartDateTime" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>Processing start timestamp</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EndDateTime" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>Processing finish timestamp</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ETGStatus">
+        <xs:annotation>
+          <xs:documentation>Placeholder for general status report. To be filled out before sending a response back to the originator.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Code" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>Top level error or warning code</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Description" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Top level error or warning description</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ExtCode" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>Extended error or warning code. Can be service specific</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ExtDescription" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Extended error or warning description.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ETGHeaderType">
+        <xs:sequence>
+          <xs:element name="VersionRequest" type="tns:VersionType" />
+          <xs:element name="Originator" type="tns:OriginatorType" />
+          <xs:element minOccurs="0" name="Response" type="tns:ResponseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ValuationAmountType">
+        <xs:sequence>
+          <xs:element minOccurs="0" default="0.00" name="TradeAmount" type="xs:double" />
+          <xs:element minOccurs="0" default="0.00" name="RetailAmount" type="xs:double" />
+          <xs:element minOccurs="0" default="0.0" name="B2Bamount" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ValuationType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="ETGdataVersion" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ETGkernelVersion" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="NationalVehicleCode" type="xs:long" />
+          <xs:element minOccurs="1" maxOccurs="1" name="RegistrationDate" type="tns:ETGdateType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ValuationDate" type="tns:ETGdateType" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Mileage" type="xs:positiveInteger" />
+          <xs:element minOccurs="0" maxOccurs="1" name="LPGIndicator" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="LowMileageIndicator" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CalculationMode" type="tns:ETGcalculationModeType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="BasicResidualValue" type="tns:ValuationAmountType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="MonthlyAdjustmentValue" type="tns:ValuationAmountType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="MileageAdjustmentValue" type="tns:ValuationAmountType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Adjustment" type="tns:AdjustmentType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="EquipmentList" type="tns:ArrayOfEquipment" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ValueAddedItemList" type="tns:ArrayOfValueAddedItem" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DevaluationItemList" type="tns:ArrayOfDevaluationItem" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ActualNewPrice" type="tns:ETGpriceType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AverageMileage" type="xs:unsignedInt" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ResidualValueAgeAdjusted" type="tns:ValuationAmountType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ResidualValueAgeMileageAdjusted" type="tns:ValuationAmountType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TotalRepairCost" type="tns:ValuationAmountType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TotalValuation" type="tns:ValuationAmountType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ConsumerValuation" type="tns:ConsumerValuationAmountType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Remarks" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Additional information whether special adjustment rules were applied during the valuation process. For example, TradeAmount and RetailAmount of "TotalValuation" might be limitted to certain predefined values. In such case, "Remarks" will included information about the special rules if applicable. </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="ETGdataIssuedOn" type="tns:ETGdateType">
+            <xs:annotation>
+              <xs:documentation>The exact date when the data was issued by EurotaxGlass's. Normally EurotaxGlass's issues valuation data monthly. That's why the month and the year are available in the ETGdataIssuedOn field. </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OptionType">
+        <xs:sequence>
+          <xs:element name="Code" type="xs:int" />
+          <xs:element name="NewPrice" type="xs:double" />
+          <xs:element name="MarketCode" type="xs:int" />
+          <xs:element minOccurs="0" name="GroupCode" type="xs:int" />
+          <xs:element minOccurs="0" name="Valuation" type="tns:ValuationAmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ValueAddedItemType">
+        <xs:sequence>
+          <xs:element name="CorrectionCode" type="tns:ETGvalueAddedCodeType" />
+          <xs:element name="NewPrice" type="xs:double" />
+          <xs:element minOccurs="0" name="InstallationDate" type="tns:ETGdateType" />
+          <xs:element minOccurs="0" name="Mileage" type="xs:positiveInteger" />
+          <xs:element minOccurs="0" name="Valuation" type="tns:ValuationAmountType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ItemID" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>This is an ID assigned by the client 
+     application to reference purposes.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DevaluationItemType">
+        <xs:sequence>
+          <xs:element name="CorrectionCode" type="tns:ETGdevaluationCodeType" />
+          <xs:element name="DevaluationAmount" type="xs:double" />
+          <xs:element minOccurs="0" default="true" name="SubtractInRetail" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Valuation" type="tns:ValuationAmountType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ItemID" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>This is an ID assigned by the client 
+     application to reference purposes.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConsumerValuationAmountType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ExcellentVehicleAmount" type="tns:ValuationAmountType" />
+          <xs:element minOccurs="0" name="AverageVehicleAmount" type="tns:ValuationAmountType" />
+          <xs:element minOccurs="0" name="RoughVehicleAmount" type="tns:ValuationAmountType" />
+          <xs:element minOccurs="0" name="PrivateConsumerAmount" type="tns:ValuationAmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalAdjustmentType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="Rationale" type="xs:string">
+            <xs:annotation>
+              <xs:documentation />
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" maxOccurs="1" name="Amount" type="xs:double">
+            <xs:annotation>
+              <xs:documentation />
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="Valuation" type="tns:ValuationAmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RoadTaxAdjustmentType">
+        <xs:annotation>
+          <xs:documentation>Tax for using or keeping a vehicle on public road. It has different names in different countries. For example, it is known as "RFL" (Road Fund License)/Car Tax in UK. It is a fixed amount depending on the vehicle and the country. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="Amount" type="xs:double">
+            <xs:annotation>
+              <xs:documentation />
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="Valuation" type="tns:ValuationAmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdjustmentType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="InternalMarket" type="tns:InternalMarketAdjustmentType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="RegionalMarket" type="tns:RegionalMarketAdjustmentType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PreviousOwner" type="tns:OwnerAdjustmentType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DeliveryDate" type="tns:DeliveryAdjustmentType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="VehicleCondition" type="tns:ConditionAdjustmentType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SpecialUsage" type="tns:UsageAdjustmentType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PreviousDamage" type="tns:DamageAdjustmentType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ColorAdjustment" type="tns:ColorAdjustmentType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ServiceHistory" type="tns:ServiceHistoryAdjustmentType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Tyre" type="tns:TyreAdjustmentType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Inspection" type="tns:InspectionAdjustmentType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Emission" type="tns:EmissionAdjustmentType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="RoadTax" type="tns:RoadTaxAdjustmentType">
+            <xs:annotation>
+              <xs:documentation>Tax for using or keeping a vehicle on public road. It has different names in different countries. For example, it is known as "RFL" (Road Fund License)/Car Tax in UK. It is a fixed amount depending on the vehicle and the country.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="DamageRepairCost" type="tns:DamageRepairCostAdjustmentType">
+            <xs:annotation>
+              <xs:documentation>Adjustment due to damage repair. </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalAdjustment" type="tns:AdditionalAdjustmentType">
+            <xs:annotation>
+              <xs:documentation />
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="TotalAdjustmentValuation" type="tns:ValuationAmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InternalMarketAdjustmentType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element default="0" name="Factor" type="tns:internalMarketAdjustmentRange" />
+          <xs:element minOccurs="0" name="Valuation" type="tns:ValuationAmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RegionalMarketAdjustmentType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element default="0" name="Factor" type="tns:regionalMarketAdjustmentRange" />
+          <xs:element minOccurs="0" name="Valuation" type="tns:ValuationAmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OwnerAdjustmentType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element default="0" name="Factor" type="xs:int" />
+          <xs:element minOccurs="0" name="Valuation" type="tns:ValuationAmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeliveryAdjustmentType">
+        <xs:sequence>
+          <xs:element name="DeliveryDate" type="tns:ETGdateType">
+            <xs:annotation>
+              <xs:documentation>The delivery date of the vehicle must be greater than the valuation date. For current date valuation, the delivery date must be a date in future.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Valuation" type="tns:ValuationAmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConditionAdjustmentType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:sequence>
+          <xs:choice>
+            <xs:element minOccurs="0" maxOccurs="1" name="ConditionCode" type="xs:int" />
+            <xs:element minOccurs="0" maxOccurs="1" name="Amount" type="xs:double" />
+          </xs:choice>
+          <xs:element minOccurs="0" maxOccurs="1" name="Valuation" type="tns:ValuationAmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DamageAdjustmentType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:sequence>
+          <xs:choice>
+            <xs:element default="0" name="Factor" type="xs:int" />
+            <xs:element name="Amount" type="xs:double" />
+          </xs:choice>
+          <xs:element minOccurs="0" name="Valuation" type="tns:ValuationAmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DamageRepairCostAdjustmentType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Amount" type="xs:double">
+            <xs:annotation>
+              <xs:documentation>This is an amount that has to be payed for damage 
+        repair before selling the vehicle. It has an impact on total trade and
+        B2B value, but not to the retail value.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Valuation" type="tns:ValuationAmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UsageAdjustmentType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:sequence>
+          <xs:choice>
+            <xs:element default="0" name="Factor" type="xs:int" />
+            <xs:element name="Amount" type="xs:double" />
+          </xs:choice>
+          <xs:element minOccurs="0" name="Valuation" type="tns:ValuationAmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TyreAdjustmentType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Amount" type="xs:double" />
+          <xs:element minOccurs="0" name="Valuation" type="tns:ValuationAmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InspectionAdjustmentType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Amount" type="xs:double" />
+          <xs:element minOccurs="0" name="Valuation" type="tns:ValuationAmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EmissionAdjustmentType">
+        <xs:annotation>
+          <xs:documentation>Adjustment factor related to emission. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Amount" type="xs:double" />
+          <xs:element minOccurs="0" name="Valuation" type="tns:ValuationAmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ServiceHistoryAdjustmentType">
+        <xs:sequence>
+          <xs:choice>
+            <xs:element name="Factor" type="xs:int" />
+            <xs:element name="Amount" type="xs:double" />
+          </xs:choice>
+          <xs:element minOccurs="0" name="Valuation" type="tns:ValuationAmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ColorAdjustmentType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:sequence>
+          <xs:choice>
+            <xs:element name="Factor" type="xs:int" />
+            <xs:element name="Amount" type="xs:double" />
+          </xs:choice>
+          <xs:element minOccurs="0" name="Valuation" type="tns:ValuationAmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfEquipment">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Equipment" type="tns:OptionType" />
+          <xs:element minOccurs="0" name="TotalEquipmentValuation" type="tns:ValuationAmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfValueAddedItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ValueAddedItem" type="tns:ValueAddedItemType" />
+          <xs:element minOccurs="0" name="TotalValueAddedItemValuation" type="tns:ValuationAmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfDevaluationItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DevaluationItem" type="tns:DevaluationItemType" />
+          <xs:element minOccurs="0" name="TotalDevaluationItemValuation" type="tns:ValuationAmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ETGversionInformationType">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="ServiceVersion" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="IntelligenceVersion" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="DataVersionDate" type="tns:ETGdateType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ErrorType">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Severity" type="tns:ETGmessageSeverityLevelType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ErrorDetail" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Error" type="tns:ErrorType" />
+      <xs:element name="ETGHeader" type="tns:ETGHeaderType" />
+      <xs:element name="GetValuation">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Settings" type="tns:ETGsettingType" />
+            <xs:element name="Valuation" type="tns:ValuationType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetVersion">
+        <xs:annotation>
+          <xs:documentation>GetVersion Contains mandatory Setting element in request</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="Settings" type="tns:ETGsettingType" />
+            <xs:element minOccurs="0" maxOccurs="1" name="VersionInformation" type="tns:ETGversionInformationType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetVersionResponse">
+        <xs:annotation>
+          <xs:documentation>GetVersion Contains mandatory Setting element in request</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="Settings" type="tns:ETGsettingType" />
+            <xs:element minOccurs="1" maxOccurs="1" name="VersionInformation" type="tns:ETGversionInformationType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetValuationResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Settings" type="tns:ETGsettingType" />
+            <xs:element name="Valuation" type="tns:ValuationType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ServiceHeader">
+    <wsdl:part name="etg_header" element="tns:ETGHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionMessage">
+    <wsdl:part name="parameters" element="tns:GetVersion" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionMessageResponse">
+    <wsdl:part name="parameters" element="tns:GetVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetValuationMessage">
+    <wsdl:part name="parameters" element="tns:GetValuation" />
+  </wsdl:message>
+  <wsdl:message name="GetValuationMessageResponse">
+    <wsdl:part name="parameters" element="tns:GetValuationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ValuationSoapPort">
+    <wsdl:operation name="GetVersion">
+      <wsdl:input message="tns:GetVersionMessage" />
+      <wsdl:output message="tns:GetVersionMessageResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValuation">
+      <wsdl:input message="tns:GetValuationMessage" />
+      <wsdl:output message="tns:GetValuationMessageResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ValuationBinding" type="tns:ValuationSoapPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetVersion">
+      <soap:operation soapAction="http://www.eurotax.com/GetVersion" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:ServiceHeader" part="etg_header" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="tns:ServiceHeader" part="etg_header" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValuation">
+      <soap:operation soapAction="http://www.eurotax.com/GetValuation" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:ServiceHeader" part="etg_header" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="tns:ServiceHeader" part="etg_header" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ValuationStub">
+    <wsdl:port name="ValuationService" binding="tns:ValuationBinding">
+      <documentation>The the value of the attribute "location" is for reference only. The consumer/client application should be able to change the value of the location on demand by the service provider (i.e., EurotaxGlass's International AG). This requirements is a part of client/consumer application acceptance criteria mentioned in the integration guidelines.</documentation>
+      <soap:address location="http://webservices.eurotaxglass.com/webservices/Valuation.wsa" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

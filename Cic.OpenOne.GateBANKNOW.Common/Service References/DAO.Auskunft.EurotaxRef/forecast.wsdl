@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:com:eurotaxglass:forecast" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:com:eurotaxglass:forecast" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:com:eurotaxglass:forecast">
+      <xs:simpleType name="ISOcurrencyType">
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="AUD" />
+          <xs:enumeration value="CAD" />
+          <xs:enumeration value="CHF" />
+          <xs:enumeration value="CZK" />
+          <xs:enumeration value="DKK" />
+          <xs:enumeration value="EUR" />
+          <xs:enumeration value="GBP" />
+          <xs:enumeration value="HUF" />
+          <xs:enumeration value="JPY" />
+          <xs:enumeration value="NOK" />
+          <xs:enumeration value="NZD" />
+          <xs:enumeration value="PLN" />
+          <xs:enumeration value="SEK" />
+          <xs:enumeration value="SKK" />
+          <xs:enumeration value="USD" />
+          <xs:enumeration value="RON" />
+          <xs:enumeration value="TRY" />
+          <xs:enumeration value="CNY" />
+          <xs:enumeration value="INR" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ISOcountryType">
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="AT" />
+          <xs:enumeration value="BE" />
+          <xs:enumeration value="CZ" />
+          <xs:enumeration value="CH" />
+          <xs:enumeration value="DE" />
+          <xs:enumeration value="ES" />
+          <xs:enumeration value="FR" />
+          <xs:enumeration value="GR" />
+          <xs:enumeration value="HR" />
+          <xs:enumeration value="HU" />
+          <xs:enumeration value="IT" />
+          <xs:enumeration value="LU" />
+          <xs:enumeration value="NL" />
+          <xs:enumeration value="PL" />
+          <xs:enumeration value="PT" />
+          <xs:enumeration value="RU" />
+          <xs:enumeration value="SK" />
+          <xs:enumeration value="SI" />
+          <xs:enumeration value="UK">
+            <xs:annotation>
+              <xs:documentation>This enumeration with value "UK" is deprecated, and will be removed in future releases. Use enumeration with value "GB" instead.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="GB" />
+          <xs:enumeration value="NO" />
+          <xs:enumeration value="RO" />
+          <xs:enumeration value="TR" />
+          <xs:enumeration value="CN" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ISOlanguageType">
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="BG" />
+          <xs:enumeration value="CS" />
+          <xs:enumeration value="DA" />
+          <xs:enumeration value="DE" />
+          <xs:enumeration value="EL" />
+          <xs:enumeration value="EN" />
+          <xs:enumeration value="ES" />
+          <xs:enumeration value="ET" />
+          <xs:enumeration value="FI" />
+          <xs:enumeration value="FR" />
+          <xs:enumeration value="HR" />
+          <xs:enumeration value="HU" />
+          <xs:enumeration value="IT" />
+          <xs:enumeration value="LT" />
+          <xs:enumeration value="LV" />
+          <xs:enumeration value="NL" />
+          <xs:enumeration value="NO" />
+          <xs:enumeration value="PL" />
+          <xs:enumeration value="PT" />
+          <xs:enumeration value="RO" />
+          <xs:enumeration value="RU" />
+          <xs:enumeration value="SK" />
+          <xs:enumeration value="SL" />
+          <xs:enumeration value="SR" />
+          <xs:enumeration value="SV" />
+          <xs:enumeration value="TR" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="VersionType">
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="1.0.0" />
+          <xs:enumeration value="1.0.1" />
+          <xs:enumeration value="1.0.2" />
+          <xs:enumeration value="1.0.3" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ETGdataSourceType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+        $Author: akh $ This enum indicates whether data in price history is from official
+            sources or provisional (not official yet )
+	  </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="OFFICIAL" />
+          <xs:enumeration value="PROVISIONAL" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ETGcalculationModeType">
+        <xs:annotation>
+          <xs:documentation>This is an enumeration of all calculation rules, EurotaxGlass's intelligence module can apply during calculation of basic residual value, option calculation, etc. EurotaxGlass's may add other calculation mode at the end of the enumerated list in future release.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="STANDARD">
+            <xs:annotation>
+              <xs:documentation>EurotaxGlass's standard rules. It is equivalent to calculation mode "E" or "N" used internally by intelligence module.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="RESIDUAL">
+            <xs:annotation>
+              <xs:documentation>The value of the calculation depends on a residual value. It is equivalent to calculation mode "R" used internally by intelligence module.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SPECIAL">
+            <xs:annotation>
+              <xs:documentation>Special rules was applied in addition to standard rules during evaluation of residual value. It is equivalent to calculation mode "L" used internally by intelligence module. An input instance document should not use this as a "CalculationMode" value</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="PROPRIETARY">
+            <xs:annotation>
+              <xs:documentation>Proprietary built-in rules was used during evaluation of residual value. This value is equivalent to calculation mode "V" used internally by intelligence module. An input instance document should not use this as a "CalculationMode" value</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="LOW_MILEAGE">
+            <xs:annotation>
+              <xs:documentation>Low mileage of the vehicle was used as a primary rule for valuation. It's exclusively reserved for intelligence module for UK. An input instance document should not use this as "CalculationMode" value</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ETGmileageUnitType">
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="mi" />
+          <xs:enumeration value="km" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ThirdPartyCodeType">
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="ETNL">
+            <xs:annotation>
+              <xs:documentation>
+              ETNL is an alternative code to national vehicle code used in automobile communities in NL
+            </xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ETNL2">
+            <xs:annotation>
+              <xs:documentation>
+              ETNL2 is an alternative code to national vehicle code used in automobile communities in NL
+            </xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ETNL3">
+            <xs:annotation>
+              <xs:documentation>
+              ETNL3 is an alternative code to national vehicle code used in automobile communities in NL
+            </xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ETGmessageSeverityLevelType">
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="INFORMATION" />
+          <xs:enumeration value="NOTICE" />
+          <xs:enumeration value="WARNING" />
+          <xs:enumeration value="CRITICAL" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="ETGdateType">
+        <xs:annotation>
+          <xs:documentation>Common data type for date representation</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Day" type="xs:gDay">
+            <xs:annotation>
+              <xs:documentation>day of the month</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Month" type="xs:gMonth">
+            <xs:annotation>
+              <xs:documentation>month</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Year" type="xs:gYear">
+            <xs:annotation>
+              <xs:documentation>year</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ETGsettingType">
+        <xs:annotation>
+          <xs:documentation>Settings for country, language, response format etc.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="ISOcountryCode" type="tns:ISOcountryType">
+            <xs:annotation>
+              <xs:documentation>ISO country code</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" maxOccurs="1" name="ISOlanguageCode" type="tns:ISOlanguageType">
+            <xs:annotation>
+              <xs:documentation>ISO language code</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" maxOccurs="1" name="ISOcurrencyCode" type="tns:ISOcurrencyType">
+            <xs:annotation>
+              <xs:documentation>ISO currency code</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EquipmentItemType">
+        <xs:sequence>
+          <xs:element name="Code" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>SACode</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" maxOccurs="1" default="0.00" name="NewPrice" type="xs:double" />
+          <xs:element minOccurs="0" maxOccurs="1" name="GroupCode" type="xs:short" />
+          <xs:element minOccurs="0" maxOccurs="1" default="0" name="MerchantCode" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>This element is known as market code or devaluation code</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="LoginDataType">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>ETG-wide unique user name</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Password" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>User password</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ReturnSecurityToken" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>If set to true, SecurityToken and corresponding TimeToLive will be returned</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OriginatorType">
+        <xs:sequence>
+          <xs:element name="Signature" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>ETG-wide unique user ID / user signature</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:choice>
+            <xs:element name="LoginData" type="tns:LoginDataType">
+              <xs:annotation>
+                <xs:documentation>User authentication data</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="SecurityToken" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>Security token to be used instead of username/password pair</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:choice>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FailureType">
+        <xs:sequence>
+          <xs:element name="ETGError" type="tns:ETGStatus" />
+          <xs:element minOccurs="0" name="ETGWarning" type="tns:ETGStatus" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SuccessType">
+        <xs:sequence minOccurs="0">
+          <xs:element minOccurs="0" name="ETGWarning" type="tns:ETGStatus" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResponseType">
+        <xs:sequence>
+          <xs:element name="OrderID" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A unique ID that the ETG service has assigned to the order originated by the client request. In case of asynchronous request processing can be used by the client for related request identification.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="VersionResponse" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Version of global ETG services specification used to construct the response</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Statistics" type="tns:StatisticsType" />
+          <xs:element minOccurs="0" name="SecurityToken" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Reurned security token to be used instead of username/password pair for further calls</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TimeToLive" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>Validity period of the reurned security token</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:choice>
+            <xs:element name="Failure" type="tns:FailureType">
+              <xs:annotation>
+                <xs:documentation>Indicates that the processing of this request has failed, and provides error and optional warning messages that arose during the processing.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Success" type="tns:SuccessType">
+              <xs:annotation>
+                <xs:documentation>Indicates that the processing of this request has succeeded; may provide non-fatal warning messages that arose during the processing.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:choice>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StatisticsType">
+        <xs:sequence>
+          <xs:element name="StartDateTime" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>Processing start timestamp</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EndDateTime" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>Processing finish timestamp</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ETGStatus">
+        <xs:annotation>
+          <xs:documentation>Placeholder for general status report. To be filled out before sending a response back to the originator.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Code" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>Top level error or warning code</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Description" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Top level error or warning description</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ExtCode" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>Extended error or warning code. Can be service specific</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ExtDescription" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Extended error or warning description.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ValuationAmountType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" default="0.00" name="TradeAmount" type="xs:double" />
+          <xs:element minOccurs="0" maxOccurs="1" default="0.00" name="RetailAmount" type="xs:double" />
+          <xs:element minOccurs="0" maxOccurs="1" default="0.00" name="TradeAmountInPercent" type="xs:double">
+            <xs:annotation>
+              <xs:documentation>Percentage (without the percentage sign) of the trade amount with respect to the total list price of the vehicle. </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" default="0.00" name="RetailAmountInPercent" type="xs:double">
+            <xs:annotation>
+              <xs:documentation>Percentage (without the percentage sign) of the trade amount with respect to the total list price of the vehicle. </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ColorAdjustmentType">
+        <xs:sequence>
+          <xs:choice>
+            <xs:element name="Factor" type="xs:int" />
+            <xs:element name="Amount" type="xs:double" />
+          </xs:choice>
+          <xs:element minOccurs="0" name="Valuation" type="tns:ValuationAmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ETGmileageType">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="Value" type="xs:unsignedInt" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Unit" type="tns:ETGmileageUnitType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ETGHeaderType">
+        <xs:sequence>
+          <xs:element name="VersionRequest" type="tns:VersionType" />
+          <xs:element name="Originator" type="tns:OriginatorType" />
+          <xs:element minOccurs="0" name="Response" type="tns:ResponseType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ETGforecastedValueType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="TradeAmount" type="xs:double" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TradeValueInPercentage" type="xs:double">
+            <xs:annotation>
+              <xs:documentation>Trade value in percentage without the percent sign with respect to the list price of the vehicle.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="RetailAmount" type="xs:double" />
+          <xs:element minOccurs="0" maxOccurs="1" name="RetailValueInPercentage" type="xs:double">
+            <xs:annotation>
+              <xs:documentation>Retail value in percentage without the percent sign with respect to the list price of the vehicle.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="TotalTradeAmountOfEquipment" type="xs:double">
+            <xs:annotation>
+              <xs:documentation>Total residual trade value of all optional equipment</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="TotalRetailAmountOfEquipment" type="xs:double">
+            <xs:annotation>
+              <xs:documentation>Total residual retail value of all optional equipment</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ETGforecastDataType">
+        <xs:sequence>
+          <xs:choice>
+            <xs:element minOccurs="1" maxOccurs="1" name="ForecastDate" type="tns:ETGdateType" />
+            <xs:element minOccurs="1" maxOccurs="1" name="ForecastPeriod" type="xs:positiveInteger" />
+          </xs:choice>
+          <xs:element minOccurs="0" maxOccurs="1" name="TotalMileage" type="tns:ETGmileageType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ForecastedValue" type="tns:ETGforecastedValueType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:group name="HistoricalForecastDateElementsType">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="ForecastStartDate" type="tns:ETGdateType" />
+          <xs:element minOccurs="1" maxOccurs="1" name="StepWidth" type="xs:positiveInteger" />
+          <xs:choice>
+            <xs:element name="ForecastPeriod" type="xs:positiveInteger" />
+            <xs:element name="ForecastEndDate" type="tns:ETGdateType" />
+          </xs:choice>
+        </xs:sequence>
+      </xs:group>
+      <xs:complexType name="ExtendedVehicleType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="NationalVehicleCode" type="xs:long" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CurrentMileage" type="tns:ETGmileageType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="EstimatedAnnualMileage" type="tns:ETGmileageType" />
+          <xs:element minOccurs="0" maxOccurs="1" default="true" name="ApplyLimits" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>By default, the system applies various limitation rules, e.g., minmum forecast period, max. and min. mileage, etc. If instance document sets the value of this element to "false", the system will ignore all limits.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="ListPrice" type="xs:double" />
+          <xs:choice>
+            <xs:element minOccurs="1" maxOccurs="unbounded" name="HistoricalForecastDate" type="tns:ETGdateType" />
+            <xs:group ref="tns:HistoricalForecastDateElementsType" />
+          </xs:choice>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ForecastData" type="tns:ETGforecastDataType">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">
+		 This element contains all important forecast data of a vehicle. 	      
+	   </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="VehicleType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+        Main data type for vehicle forecast service. 		
+       </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="ForecastDate" type="tns:ETGdateType">
+            <xs:annotation>
+              <xs:documentation>Date when the forecast was done. This element is filled and returned by the service.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="DataVersion" type="tns:ETGdateType">
+            <xs:annotation>
+              <xs:documentation>EurotaxGlass's data version. Currently, EurotaxGlass's deliver data on monthly basis. This element is filled by the service. </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="IntelligenceVersion" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Release number of the intelligence applied during calculation process</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:choice>
+            <xs:group ref="tns:ThirdPartyVehicleCodeGroup" />
+            <xs:element minOccurs="1" maxOccurs="1" name="NationalVehicleCode" type="xs:long" />
+          </xs:choice>
+          <xs:element minOccurs="0" maxOccurs="1" name="RegistrationDate" type="tns:ETGdateType">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A new vehicle may not have registration date. A Used vehicle should provide a first registration date. If the registration date is not provided, the web service will take the system date as the date of first registration. If exact registration date is not provided the current system date will be used as registration date.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="ListPrice" type="xs:double">
+            <xs:annotation>
+              <xs:documentation xml:lang="en"> ListPrice is the latest new price of the vehicle (without optional equipment). Note: Request XML document  should not contain this element, it is set by the server/service in response XML document.    
+	      </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="CurrentMileage" type="tns:ETGmileageType">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Mileage at current date.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="EstimatedAnnualMileage" type="tns:ETGmileageType" />
+          <xs:choice>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="Equipment" type="tns:EquipmentItemType" />
+            <xs:element minOccurs="0" maxOccurs="1" name="TotalListPriceOfEquipment" type="xs:double">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+				       Sum of the new prices of all optional equipment
+		   </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="1" name="FractionOfVehicleListPrice" type="xs:double">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">FractionOfVehicleListPrice = ((SumOfOptions* 100)/(ListPrice))
+	          </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:choice>
+          <xs:element minOccurs="0" maxOccurs="1" name="EquipmentCalculationMode" type="tns:ETGcalculationModeType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="MileageFactor" type="xs:double">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">This element is applicable only for AT.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="ColorAdjustment" type="tns:ColorAdjustmentType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Desirability" type="xs:double">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Desirability is market demand for the vehicle</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" default="true" name="ApplySeasonality" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>This feature is available only for the UK. </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" default="true" name="ApplyMileageCorrection" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>By default, the system applies mileage correction. If instance document sets the value of this element to "false", mileage correction will not be done.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" default="true" name="ApplyLimits" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>By default, the system applies various limitation rules, e.g., minmum forecast period, max. and min. mileage, etc. If instance document sets the value of this element to "false", the system will ignore all limits.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="1" maxOccurs="unbounded" name="ForecastData" type="tns:ETGforecastDataType">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">
+		 This element contains all important forecast data of a vehicle. 	      
+	        </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:group name="ThirdPartyVehicleCodeGroup">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="ThirdPartyVehicleCode" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="CodeName" type="tns:ThirdPartyCodeType" />
+        </xs:sequence>
+      </xs:group>
+      <xs:complexType name="ErrorType">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Severity" type="tns:ETGmessageSeverityLevelType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ErrorDetail" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ETGHeader" type="tns:ETGHeaderType" />
+      <xs:element name="Settings" type="tns:ETGsettingType" />
+      <xs:element name="Vehicle" type="tns:VehicleType" />
+      <xs:element name="Error" type="tns:ErrorType" />
+      <xs:element name="GetHistoricalForecast">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Settings" type="tns:ETGsettingType" />
+            <xs:element name="Vehicle" type="tns:ExtendedVehicleType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="HistoricalForecast">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Settings" type="tns:ETGsettingType" />
+            <xs:element name="Vehicle" type="tns:ExtendedVehicleType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </types>
+  <message name="ServiceHeader">
+    <part name="etg_header" element="tns:ETGHeader" />
+  </message>
+  <message name="GetForecastRequest">
+    <documentation> GetForecast RPC message (Input)</documentation>
+    <part name="Settings" type="tns:ETGsettingType" />
+    <part name="Vehicle" type="tns:VehicleType" />
+  </message>
+  <message name="GetForecastResponse">
+    <documentation> GetForecast RPC message (Output)</documentation>
+    <part name="Settings" type="tns:ETGsettingType" />
+    <part name="Vehicle" type="tns:VehicleType" />
+  </message>
+  <message name="GetHistoricalForecastRequest">
+    <documentation> GetForecast RPC message (Input)</documentation>
+    <part name="Settings" type="tns:ETGsettingType" />
+    <part name="Vehicle" type="tns:ExtendedVehicleType" />
+  </message>
+  <message name="GetHistoricalForecastResponse">
+    <documentation> GetForecast RPC message (Output)</documentation>
+    <part name="Settings" type="tns:ETGsettingType" />
+    <part name="Vehicle" type="tns:ExtendedVehicleType" />
+  </message>
+  <message name="GetForecastReq">
+    <documentation> GetForecast SOAP Document style message (Input)</documentation>
+    <part name="param1" element="tns:Settings" />
+    <part name="Param2" element="tns:Vehicle" />
+  </message>
+  <message name="GetForecastResp">
+    <documentation> GetForecast SOAP Document style message (Output)</documentation>
+    <part name="param1" element="tns:Settings" />
+    <part name="Param2" element="tns:Vehicle" />
+  </message>
+  <message name="GetHistoricalForecastReq">
+    <documentation> GetForecast SOAP Document style message (Input)</documentation>
+    <part name="param1" element="tns:GetHistoricalForecast" />
+  </message>
+  <message name="GetHistoricalForecastResp">
+    <documentation> GetForecast SOAP Document style message (Output)</documentation>
+    <part name="Param" element="tns:HistoricalForecast" />
+  </message>
+  <portType name="ForecastPortRPC">
+    <documentation>RPC port type. The follow of input and output is
+	      important. Here input message goes first.</documentation>
+    <operation name="GetForecast">
+      <input message="tns:GetForecastRequest" />
+      <output message="tns:GetForecastResponse" />
+    </operation>
+    <operation name="GetHistoricalForecast">
+      <input message="tns:GetHistoricalForecastRequest" />
+      <output message="tns:GetHistoricalForecastResponse" />
+    </operation>
+  </portType>
+  <portType name="ForecastPortDocument">
+    <operation name="GetForecast">
+      <input message="tns:GetForecastReq" />
+      <output message="tns:GetForecastResp" />
+    </operation>
+    <operation name="GetHistoricalForecast">
+      <input message="tns:GetHistoricalForecastReq" />
+      <output message="tns:GetHistoricalForecastResp" />
+    </operation>
+  </portType>
+  <binding name="ForecastBindingRPC" type="tns:ForecastPortRPC">
+    <documentation> SOAP RPC style binding</documentation>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="GetForecast">
+      <soap:operation soapAction="urn:com:eurotaxglass/GetForecast" style="rpc" />
+      <input>
+        <soap:header message="tns:ServiceHeader" part="etg_header" use="literal" />
+        <soap:body use="literal" namespace="urn:com:eurotaxglass:forecast" />
+      </input>
+      <output>
+        <soap:header message="tns:ServiceHeader" part="etg_header" use="literal" />
+        <soap:body use="literal" namespace="urn:com:eurotaxglass:forecast" />
+      </output>
+    </operation>
+    <operation name="GetHistoricalForecast">
+      <soap:operation soapAction="urn:com:eurotaxglass/GetForecast" style="rpc" />
+      <input>
+        <soap:header message="tns:ServiceHeader" part="etg_header" use="literal" />
+        <soap:body use="literal" namespace="urn:com:eurotaxglass:forecast" />
+      </input>
+      <output>
+        <soap:header message="tns:ServiceHeader" part="etg_header" use="literal" />
+        <soap:body use="literal" namespace="urn:com:eurotaxglass:forecast" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="ForecastBindingDoc" type="tns:ForecastPortDocument">
+    <documentation> SOAP Document Style Binding </documentation>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="GetForecast">
+      <soap:operation soapAction="urn:com:eurotaxglass/GetForecast" style="document" />
+      <input>
+        <soap:header message="tns:ServiceHeader" part="etg_header" use="literal" />
+        <soap:body use="literal" namespace="urn:com:eurotaxglass:forecast" />
+      </input>
+      <output>
+        <soap:header message="tns:ServiceHeader" part="etg_header" use="literal" />
+        <soap:body use="literal" namespace="urn:com:eurotaxglass:forecast" />
+      </output>
+    </operation>
+    <operation name="GetHistoricalForecast">
+      <soap:operation soapAction="urn:com:eurotaxglass/GetHistoricalForecast" style="document" />
+      <input>
+        <soap:header message="tns:ServiceHeader" part="etg_header" use="literal" />
+        <soap:body use="literal" namespace="urn:com:eurotaxglass:forecast" />
+      </input>
+      <output>
+        <soap:header message="tns:ServiceHeader" part="etg_header" use="literal" />
+        <soap:body use="literal" namespace="urn:com:eurotaxglass:forecast" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ForecastService">
+    <documentation> EurotaxGlass's Vehicle Forecast Service</documentation>
+    <port name="ForecastPortRPC" binding="tns:ForecastBindingRPC">
+      <soap:address location="http://webservices.eurotaxglass.com/webservices/forecast.wsa" />
+    </port>
+    <port name="ForecastPortDoc" binding="tns:ForecastBindingDoc">
+      <soap:address location="http://webservices.eurotaxglass.com/webservices/forecast.wsa" />
+    </port>
+  </service>
+</definitions>

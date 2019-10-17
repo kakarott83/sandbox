@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTarget="nUNitTest" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Reference Include="nunit.core, Version=2.5.5.10112, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(WORKSPACE)\lib\nunit.core.dll</HintPath>
+    </Reference>
+    <ResultXML Include="$(WORKSPACE)\nunit-result.xml"></ResultXML>
+     <DllConfig Include="$(WORKSPACE)\Cic.OpenOne.GateBANKNOW.Common.UnitTest\bin\Release\Cic.OpenOne.GateBANKNOW.Common.UnitTest.dll.config"></DllConfig>
+     <UnitTestDll Include="&quot;$(WORKSPACE)\Cic.OpenOne.GateBANKNOW.Common.UnitTest\bin\Release\Cic.OpenOne.GateBANKNOW.Common.UnitTest.dll&quot;"></UnitTestDll>
+     <Framework Include="net-4.0"></Framework>
+  </ItemGroup>
+  <Target Name="nUNitTest">
+    <Exec WorkingDirectory="$(WORKSPACE)\lib" Command="&quot;$(WORKSPACE)\lib\nunit-console.exe&quot; @(UnitTestDll) /xml=@(ResultXML) /config=@(DllConfig) /framework=@(Framework)" IgnoreExitCode="true" />
+  </Target>
+</Project>

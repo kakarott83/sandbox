@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="XmlConfiguratorBase.ConfiguratorButtonsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:gui="clr-namespace:XmlConfiguratorBase.BO.GUI"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="700">
+
+    <UserControl.CommandBindings>
+        <CommandBinding Command="Save" CanExecute="CanExecuteAlways" Executed="OnExecuteSave"/>
+        <CommandBinding Command="gui:CustomCommands.OpenFile" CanExecute="CanExecuteAlways" Executed="OnExecuteOpenFile"/>
+    </UserControl.CommandBindings>
+    
+    <Grid VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button VerticalAlignment="Center" Grid.Column="0" Margin="2" Command="gui:CustomCommands.OpenFile" Content="Datei öffnen"/>
+        <Button VerticalAlignment="Center" Grid.Column="1" Margin="2" Click="OnClickOpenDatabase" Content="Datenbank öffnen"/>
+        <Button VerticalAlignment="Center" Grid.Column="2" Margin="2" Click="OnClickOpenCustom" Content="Laden"/>
+        <Button VerticalAlignment="Center" Grid.Column="99" Margin="2" Command="Save" Content="Speichern"/>
+    </Grid>
+</UserControl>

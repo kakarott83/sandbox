@@ -1,0 +1,1879 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="WMGetWML_WebMethodCallLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMGetWML_WebMethodCallLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMGetWML_WebMethodCallLogResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMGetWME_WebMethodExecute">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMGetWME_WebMethodExecuteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMGetWME_WebMethodExecuteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMInsertWME_WebMethodExecute">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMInsertWME_WebMethodExecuteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMInsertWME_WebMethodExecuteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMCallWME_WebMethodExecute">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMCallWME_WebMethodExecuteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMCallWME_WebMethodExecuteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMCheckAnwendung">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAppKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bNeedZBVAppSetting" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMCheckAnwendungResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMCheckAnwendungResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAppKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMLoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMLoginInternalApp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAppKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sIPAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMLoginInternalAppResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMLoginInternalAppResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMLoginSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSession" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAppKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMLoginSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMLoginSessionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMLoginSessionInternalApp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSession" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAppKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sIPAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMLoginSessionInternalAppResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMLoginSessionInternalAppResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMLogout">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMLogoutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMLogoutResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMChangePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPasswordOld" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPasswordNew" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMChangePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMChangePasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMResetPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAppKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMResetPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMResetPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMResetPasswordInternalApp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAppKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sIPAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMResetPasswordInternalAppResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMResetPasswordInternalAppResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMPrepareAutoLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMPrepareAutoLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMPrepareAutoLoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMClearApplicationState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMClearApplicationStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMClearApplicationStateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMGetAppSetting">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMGetAppSettingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMGetAppSettingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMGetAppSettingAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMGetAppSettingAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMGetAppSettingAllResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMInsertAppSetting">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMInsertAppSettingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMInsertAppSettingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMUpdateAppSetting">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMUpdateAppSettingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMUpdateAppSettingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMDeleteAppSetting">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMDeleteAppSettingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMDeleteAppSettingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMGetAppSettingEvent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMGetAppSettingEventResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMGetAppSettingEventResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMInsertAppSettingEvent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMInsertAppSettingEventResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMInsertAppSettingEventResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMUpdateAppSettingEvent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMUpdateAppSettingEventResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMUpdateAppSettingEventResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMDeleteAppSettingEvent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMDeleteAppSettingEventResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMDeleteAppSettingEventResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMGetError">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMGetErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMGetErrorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMGetErrorAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMGetErrorAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMGetErrorAllResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMInsertError">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMInsertErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMInsertErrorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMUpdateError">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMUpdateErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMUpdateErrorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMDeleteError">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMDeleteErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMDeleteErrorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMGetFieldSettings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMGetFieldSettingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMGetFieldSettingsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMGetFieldSettingsAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMGetFieldSettingsAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMGetFieldSettingsAllResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMInsertFieldSettings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMInsertFieldSettingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMInsertFieldSettingsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMUpdateFieldSettings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMUpdateFieldSettingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMUpdateFieldSettingsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMDeleteFieldSettings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMDeleteFieldSettingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMDeleteFieldSettingsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMGetFieldSettingsEvent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMGetFieldSettingsEventResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMGetFieldSettingsEventResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMInsertFieldSettingsEvent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMInsertFieldSettingsEventResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMInsertFieldSettingsEventResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMUpdateFieldSettingsEvent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMUpdateFieldSettingsEventResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMUpdateFieldSettingsEventResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMDeleteFieldSettingsEvent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMDeleteFieldSettingsEventResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMDeleteFieldSettingsEventResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMGetSystemParameter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMGetSystemParameterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMGetSystemParameterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMGetSystemParameterAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMGetSystemParameterAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMGetSystemParameterAllResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMInsertSystemParameter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMInsertSystemParameterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMInsertSystemParameterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMUpdateSystemParameter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMUpdateSystemParameterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMUpdateSystemParameterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMDeleteSystemParameter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXmlInputDataSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WMDeleteSystemParameterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WMDeleteSystemParameterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WMGetWML_WebMethodCallLogSoapIn">
+    <wsdl:part name="parameters" element="tns:WMGetWML_WebMethodCallLog" />
+  </wsdl:message>
+  <wsdl:message name="WMGetWML_WebMethodCallLogSoapOut">
+    <wsdl:part name="parameters" element="tns:WMGetWML_WebMethodCallLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMGetWME_WebMethodExecuteSoapIn">
+    <wsdl:part name="parameters" element="tns:WMGetWME_WebMethodExecute" />
+  </wsdl:message>
+  <wsdl:message name="WMGetWME_WebMethodExecuteSoapOut">
+    <wsdl:part name="parameters" element="tns:WMGetWME_WebMethodExecuteResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMInsertWME_WebMethodExecuteSoapIn">
+    <wsdl:part name="parameters" element="tns:WMInsertWME_WebMethodExecute" />
+  </wsdl:message>
+  <wsdl:message name="WMInsertWME_WebMethodExecuteSoapOut">
+    <wsdl:part name="parameters" element="tns:WMInsertWME_WebMethodExecuteResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMCallWME_WebMethodExecuteSoapIn">
+    <wsdl:part name="parameters" element="tns:WMCallWME_WebMethodExecute" />
+  </wsdl:message>
+  <wsdl:message name="WMCallWME_WebMethodExecuteSoapOut">
+    <wsdl:part name="parameters" element="tns:WMCallWME_WebMethodExecuteResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMCheckAnwendungSoapIn">
+    <wsdl:part name="parameters" element="tns:WMCheckAnwendung" />
+  </wsdl:message>
+  <wsdl:message name="WMCheckAnwendungSoapOut">
+    <wsdl:part name="parameters" element="tns:WMCheckAnwendungResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:WMLogin" />
+  </wsdl:message>
+  <wsdl:message name="WMLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:WMLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMLoginInternalAppSoapIn">
+    <wsdl:part name="parameters" element="tns:WMLoginInternalApp" />
+  </wsdl:message>
+  <wsdl:message name="WMLoginInternalAppSoapOut">
+    <wsdl:part name="parameters" element="tns:WMLoginInternalAppResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMLoginSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:WMLoginSession" />
+  </wsdl:message>
+  <wsdl:message name="WMLoginSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:WMLoginSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMLoginSessionInternalAppSoapIn">
+    <wsdl:part name="parameters" element="tns:WMLoginSessionInternalApp" />
+  </wsdl:message>
+  <wsdl:message name="WMLoginSessionInternalAppSoapOut">
+    <wsdl:part name="parameters" element="tns:WMLoginSessionInternalAppResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMLogoutSoapIn">
+    <wsdl:part name="parameters" element="tns:WMLogout" />
+  </wsdl:message>
+  <wsdl:message name="WMLogoutSoapOut">
+    <wsdl:part name="parameters" element="tns:WMLogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMChangePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:WMChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="WMChangePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:WMChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMResetPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:WMResetPassword" />
+  </wsdl:message>
+  <wsdl:message name="WMResetPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:WMResetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMResetPasswordInternalAppSoapIn">
+    <wsdl:part name="parameters" element="tns:WMResetPasswordInternalApp" />
+  </wsdl:message>
+  <wsdl:message name="WMResetPasswordInternalAppSoapOut">
+    <wsdl:part name="parameters" element="tns:WMResetPasswordInternalAppResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMPrepareAutoLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:WMPrepareAutoLogin" />
+  </wsdl:message>
+  <wsdl:message name="WMPrepareAutoLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:WMPrepareAutoLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMClearApplicationStateSoapIn">
+    <wsdl:part name="parameters" element="tns:WMClearApplicationState" />
+  </wsdl:message>
+  <wsdl:message name="WMClearApplicationStateSoapOut">
+    <wsdl:part name="parameters" element="tns:WMClearApplicationStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMGetAppSettingSoapIn">
+    <wsdl:part name="parameters" element="tns:WMGetAppSetting" />
+  </wsdl:message>
+  <wsdl:message name="WMGetAppSettingSoapOut">
+    <wsdl:part name="parameters" element="tns:WMGetAppSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMGetAppSettingAllSoapIn">
+    <wsdl:part name="parameters" element="tns:WMGetAppSettingAll" />
+  </wsdl:message>
+  <wsdl:message name="WMGetAppSettingAllSoapOut">
+    <wsdl:part name="parameters" element="tns:WMGetAppSettingAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMInsertAppSettingSoapIn">
+    <wsdl:part name="parameters" element="tns:WMInsertAppSetting" />
+  </wsdl:message>
+  <wsdl:message name="WMInsertAppSettingSoapOut">
+    <wsdl:part name="parameters" element="tns:WMInsertAppSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMUpdateAppSettingSoapIn">
+    <wsdl:part name="parameters" element="tns:WMUpdateAppSetting" />
+  </wsdl:message>
+  <wsdl:message name="WMUpdateAppSettingSoapOut">
+    <wsdl:part name="parameters" element="tns:WMUpdateAppSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMDeleteAppSettingSoapIn">
+    <wsdl:part name="parameters" element="tns:WMDeleteAppSetting" />
+  </wsdl:message>
+  <wsdl:message name="WMDeleteAppSettingSoapOut">
+    <wsdl:part name="parameters" element="tns:WMDeleteAppSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMGetAppSettingEventSoapIn">
+    <wsdl:part name="parameters" element="tns:WMGetAppSettingEvent" />
+  </wsdl:message>
+  <wsdl:message name="WMGetAppSettingEventSoapOut">
+    <wsdl:part name="parameters" element="tns:WMGetAppSettingEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMInsertAppSettingEventSoapIn">
+    <wsdl:part name="parameters" element="tns:WMInsertAppSettingEvent" />
+  </wsdl:message>
+  <wsdl:message name="WMInsertAppSettingEventSoapOut">
+    <wsdl:part name="parameters" element="tns:WMInsertAppSettingEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMUpdateAppSettingEventSoapIn">
+    <wsdl:part name="parameters" element="tns:WMUpdateAppSettingEvent" />
+  </wsdl:message>
+  <wsdl:message name="WMUpdateAppSettingEventSoapOut">
+    <wsdl:part name="parameters" element="tns:WMUpdateAppSettingEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMDeleteAppSettingEventSoapIn">
+    <wsdl:part name="parameters" element="tns:WMDeleteAppSettingEvent" />
+  </wsdl:message>
+  <wsdl:message name="WMDeleteAppSettingEventSoapOut">
+    <wsdl:part name="parameters" element="tns:WMDeleteAppSettingEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMGetErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:WMGetError" />
+  </wsdl:message>
+  <wsdl:message name="WMGetErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:WMGetErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMGetErrorAllSoapIn">
+    <wsdl:part name="parameters" element="tns:WMGetErrorAll" />
+  </wsdl:message>
+  <wsdl:message name="WMGetErrorAllSoapOut">
+    <wsdl:part name="parameters" element="tns:WMGetErrorAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMInsertErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:WMInsertError" />
+  </wsdl:message>
+  <wsdl:message name="WMInsertErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:WMInsertErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMUpdateErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:WMUpdateError" />
+  </wsdl:message>
+  <wsdl:message name="WMUpdateErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:WMUpdateErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMDeleteErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:WMDeleteError" />
+  </wsdl:message>
+  <wsdl:message name="WMDeleteErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:WMDeleteErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMGetFieldSettingsSoapIn">
+    <wsdl:part name="parameters" element="tns:WMGetFieldSettings" />
+  </wsdl:message>
+  <wsdl:message name="WMGetFieldSettingsSoapOut">
+    <wsdl:part name="parameters" element="tns:WMGetFieldSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMGetFieldSettingsAllSoapIn">
+    <wsdl:part name="parameters" element="tns:WMGetFieldSettingsAll" />
+  </wsdl:message>
+  <wsdl:message name="WMGetFieldSettingsAllSoapOut">
+    <wsdl:part name="parameters" element="tns:WMGetFieldSettingsAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMInsertFieldSettingsSoapIn">
+    <wsdl:part name="parameters" element="tns:WMInsertFieldSettings" />
+  </wsdl:message>
+  <wsdl:message name="WMInsertFieldSettingsSoapOut">
+    <wsdl:part name="parameters" element="tns:WMInsertFieldSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMUpdateFieldSettingsSoapIn">
+    <wsdl:part name="parameters" element="tns:WMUpdateFieldSettings" />
+  </wsdl:message>
+  <wsdl:message name="WMUpdateFieldSettingsSoapOut">
+    <wsdl:part name="parameters" element="tns:WMUpdateFieldSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMDeleteFieldSettingsSoapIn">
+    <wsdl:part name="parameters" element="tns:WMDeleteFieldSettings" />
+  </wsdl:message>
+  <wsdl:message name="WMDeleteFieldSettingsSoapOut">
+    <wsdl:part name="parameters" element="tns:WMDeleteFieldSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMGetFieldSettingsEventSoapIn">
+    <wsdl:part name="parameters" element="tns:WMGetFieldSettingsEvent" />
+  </wsdl:message>
+  <wsdl:message name="WMGetFieldSettingsEventSoapOut">
+    <wsdl:part name="parameters" element="tns:WMGetFieldSettingsEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMInsertFieldSettingsEventSoapIn">
+    <wsdl:part name="parameters" element="tns:WMInsertFieldSettingsEvent" />
+  </wsdl:message>
+  <wsdl:message name="WMInsertFieldSettingsEventSoapOut">
+    <wsdl:part name="parameters" element="tns:WMInsertFieldSettingsEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMUpdateFieldSettingsEventSoapIn">
+    <wsdl:part name="parameters" element="tns:WMUpdateFieldSettingsEvent" />
+  </wsdl:message>
+  <wsdl:message name="WMUpdateFieldSettingsEventSoapOut">
+    <wsdl:part name="parameters" element="tns:WMUpdateFieldSettingsEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMDeleteFieldSettingsEventSoapIn">
+    <wsdl:part name="parameters" element="tns:WMDeleteFieldSettingsEvent" />
+  </wsdl:message>
+  <wsdl:message name="WMDeleteFieldSettingsEventSoapOut">
+    <wsdl:part name="parameters" element="tns:WMDeleteFieldSettingsEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMGetSystemParameterSoapIn">
+    <wsdl:part name="parameters" element="tns:WMGetSystemParameter" />
+  </wsdl:message>
+  <wsdl:message name="WMGetSystemParameterSoapOut">
+    <wsdl:part name="parameters" element="tns:WMGetSystemParameterResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMGetSystemParameterAllSoapIn">
+    <wsdl:part name="parameters" element="tns:WMGetSystemParameterAll" />
+  </wsdl:message>
+  <wsdl:message name="WMGetSystemParameterAllSoapOut">
+    <wsdl:part name="parameters" element="tns:WMGetSystemParameterAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMInsertSystemParameterSoapIn">
+    <wsdl:part name="parameters" element="tns:WMInsertSystemParameter" />
+  </wsdl:message>
+  <wsdl:message name="WMInsertSystemParameterSoapOut">
+    <wsdl:part name="parameters" element="tns:WMInsertSystemParameterResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMUpdateSystemParameterSoapIn">
+    <wsdl:part name="parameters" element="tns:WMUpdateSystemParameter" />
+  </wsdl:message>
+  <wsdl:message name="WMUpdateSystemParameterSoapOut">
+    <wsdl:part name="parameters" element="tns:WMUpdateSystemParameterResponse" />
+  </wsdl:message>
+  <wsdl:message name="WMDeleteSystemParameterSoapIn">
+    <wsdl:part name="parameters" element="tns:WMDeleteSystemParameter" />
+  </wsdl:message>
+  <wsdl:message name="WMDeleteSystemParameterSoapOut">
+    <wsdl:part name="parameters" element="tns:WMDeleteSystemParameterResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSLoginSoap">
+    <wsdl:operation name="WMGetWML_WebMethodCallLog">
+      <wsdl:input message="tns:WMGetWML_WebMethodCallLogSoapIn" />
+      <wsdl:output message="tns:WMGetWML_WebMethodCallLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMGetWME_WebMethodExecute">
+      <wsdl:input message="tns:WMGetWME_WebMethodExecuteSoapIn" />
+      <wsdl:output message="tns:WMGetWME_WebMethodExecuteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMInsertWME_WebMethodExecute">
+      <wsdl:input message="tns:WMInsertWME_WebMethodExecuteSoapIn" />
+      <wsdl:output message="tns:WMInsertWME_WebMethodExecuteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMCallWME_WebMethodExecute">
+      <wsdl:input message="tns:WMCallWME_WebMethodExecuteSoapIn" />
+      <wsdl:output message="tns:WMCallWME_WebMethodExecuteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMCheckAnwendung">
+      <wsdl:input message="tns:WMCheckAnwendungSoapIn" />
+      <wsdl:output message="tns:WMCheckAnwendungSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMLogin">
+      <wsdl:input message="tns:WMLoginSoapIn" />
+      <wsdl:output message="tns:WMLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMLoginInternalApp">
+      <wsdl:input message="tns:WMLoginInternalAppSoapIn" />
+      <wsdl:output message="tns:WMLoginInternalAppSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMLoginSession">
+      <wsdl:input message="tns:WMLoginSessionSoapIn" />
+      <wsdl:output message="tns:WMLoginSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMLoginSessionInternalApp">
+      <wsdl:input message="tns:WMLoginSessionInternalAppSoapIn" />
+      <wsdl:output message="tns:WMLoginSessionInternalAppSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMLogout">
+      <wsdl:input message="tns:WMLogoutSoapIn" />
+      <wsdl:output message="tns:WMLogoutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMChangePassword">
+      <wsdl:input message="tns:WMChangePasswordSoapIn" />
+      <wsdl:output message="tns:WMChangePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMResetPassword">
+      <wsdl:input message="tns:WMResetPasswordSoapIn" />
+      <wsdl:output message="tns:WMResetPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMResetPasswordInternalApp">
+      <wsdl:input message="tns:WMResetPasswordInternalAppSoapIn" />
+      <wsdl:output message="tns:WMResetPasswordInternalAppSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMPrepareAutoLogin">
+      <wsdl:input message="tns:WMPrepareAutoLoginSoapIn" />
+      <wsdl:output message="tns:WMPrepareAutoLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMClearApplicationState">
+      <wsdl:input message="tns:WMClearApplicationStateSoapIn" />
+      <wsdl:output message="tns:WMClearApplicationStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMGetAppSetting">
+      <wsdl:input message="tns:WMGetAppSettingSoapIn" />
+      <wsdl:output message="tns:WMGetAppSettingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMGetAppSettingAll">
+      <wsdl:input message="tns:WMGetAppSettingAllSoapIn" />
+      <wsdl:output message="tns:WMGetAppSettingAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMInsertAppSetting">
+      <wsdl:input message="tns:WMInsertAppSettingSoapIn" />
+      <wsdl:output message="tns:WMInsertAppSettingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMUpdateAppSetting">
+      <wsdl:input message="tns:WMUpdateAppSettingSoapIn" />
+      <wsdl:output message="tns:WMUpdateAppSettingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMDeleteAppSetting">
+      <wsdl:input message="tns:WMDeleteAppSettingSoapIn" />
+      <wsdl:output message="tns:WMDeleteAppSettingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMGetAppSettingEvent">
+      <wsdl:input message="tns:WMGetAppSettingEventSoapIn" />
+      <wsdl:output message="tns:WMGetAppSettingEventSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMInsertAppSettingEvent">
+      <wsdl:input message="tns:WMInsertAppSettingEventSoapIn" />
+      <wsdl:output message="tns:WMInsertAppSettingEventSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMUpdateAppSettingEvent">
+      <wsdl:input message="tns:WMUpdateAppSettingEventSoapIn" />
+      <wsdl:output message="tns:WMUpdateAppSettingEventSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMDeleteAppSettingEvent">
+      <wsdl:input message="tns:WMDeleteAppSettingEventSoapIn" />
+      <wsdl:output message="tns:WMDeleteAppSettingEventSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMGetError">
+      <wsdl:input message="tns:WMGetErrorSoapIn" />
+      <wsdl:output message="tns:WMGetErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMGetErrorAll">
+      <wsdl:input message="tns:WMGetErrorAllSoapIn" />
+      <wsdl:output message="tns:WMGetErrorAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMInsertError">
+      <wsdl:input message="tns:WMInsertErrorSoapIn" />
+      <wsdl:output message="tns:WMInsertErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMUpdateError">
+      <wsdl:input message="tns:WMUpdateErrorSoapIn" />
+      <wsdl:output message="tns:WMUpdateErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMDeleteError">
+      <wsdl:input message="tns:WMDeleteErrorSoapIn" />
+      <wsdl:output message="tns:WMDeleteErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMGetFieldSettings">
+      <wsdl:input message="tns:WMGetFieldSettingsSoapIn" />
+      <wsdl:output message="tns:WMGetFieldSettingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMGetFieldSettingsAll">
+      <wsdl:input message="tns:WMGetFieldSettingsAllSoapIn" />
+      <wsdl:output message="tns:WMGetFieldSettingsAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMInsertFieldSettings">
+      <wsdl:input message="tns:WMInsertFieldSettingsSoapIn" />
+      <wsdl:output message="tns:WMInsertFieldSettingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMUpdateFieldSettings">
+      <wsdl:input message="tns:WMUpdateFieldSettingsSoapIn" />
+      <wsdl:output message="tns:WMUpdateFieldSettingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMDeleteFieldSettings">
+      <wsdl:input message="tns:WMDeleteFieldSettingsSoapIn" />
+      <wsdl:output message="tns:WMDeleteFieldSettingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMGetFieldSettingsEvent">
+      <wsdl:input message="tns:WMGetFieldSettingsEventSoapIn" />
+      <wsdl:output message="tns:WMGetFieldSettingsEventSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMInsertFieldSettingsEvent">
+      <wsdl:input message="tns:WMInsertFieldSettingsEventSoapIn" />
+      <wsdl:output message="tns:WMInsertFieldSettingsEventSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMUpdateFieldSettingsEvent">
+      <wsdl:input message="tns:WMUpdateFieldSettingsEventSoapIn" />
+      <wsdl:output message="tns:WMUpdateFieldSettingsEventSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMDeleteFieldSettingsEvent">
+      <wsdl:input message="tns:WMDeleteFieldSettingsEventSoapIn" />
+      <wsdl:output message="tns:WMDeleteFieldSettingsEventSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMGetSystemParameter">
+      <wsdl:input message="tns:WMGetSystemParameterSoapIn" />
+      <wsdl:output message="tns:WMGetSystemParameterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMGetSystemParameterAll">
+      <wsdl:input message="tns:WMGetSystemParameterAllSoapIn" />
+      <wsdl:output message="tns:WMGetSystemParameterAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMInsertSystemParameter">
+      <wsdl:input message="tns:WMInsertSystemParameterSoapIn" />
+      <wsdl:output message="tns:WMInsertSystemParameterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMUpdateSystemParameter">
+      <wsdl:input message="tns:WMUpdateSystemParameterSoapIn" />
+      <wsdl:output message="tns:WMUpdateSystemParameterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WMDeleteSystemParameter">
+      <wsdl:input message="tns:WMDeleteSystemParameterSoapIn" />
+      <wsdl:output message="tns:WMDeleteSystemParameterSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSLoginSoap" type="tns:WSLoginSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WMGetWML_WebMethodCallLog">
+      <soap:operation soapAction="http://tempuri.org/WMGetWML_WebMethodCallLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMGetWME_WebMethodExecute">
+      <soap:operation soapAction="http://tempuri.org/WMGetWME_WebMethodExecute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMInsertWME_WebMethodExecute">
+      <soap:operation soapAction="http://tempuri.org/WMInsertWME_WebMethodExecute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMCallWME_WebMethodExecute">
+      <soap:operation soapAction="http://tempuri.org/WMCallWME_WebMethodExecute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMCheckAnwendung">
+      <soap:operation soapAction="http://tempuri.org/WMCheckAnwendung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMLogin">
+      <soap:operation soapAction="http://tempuri.org/WMLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMLoginInternalApp">
+      <soap:operation soapAction="http://tempuri.org/WMLoginInternalApp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMLoginSession">
+      <soap:operation soapAction="http://tempuri.org/WMLoginSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMLoginSessionInternalApp">
+      <soap:operation soapAction="http://tempuri.org/WMLoginSessionInternalApp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMLogout">
+      <soap:operation soapAction="http://tempuri.org/WMLogout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMChangePassword">
+      <soap:operation soapAction="http://tempuri.org/WMChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMResetPassword">
+      <soap:operation soapAction="http://tempuri.org/WMResetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMResetPasswordInternalApp">
+      <soap:operation soapAction="http://tempuri.org/WMResetPasswordInternalApp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMPrepareAutoLogin">
+      <soap:operation soapAction="http://tempuri.org/WMPrepareAutoLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMClearApplicationState">
+      <soap:operation soapAction="http://tempuri.org/WMClearApplicationState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMGetAppSetting">
+      <soap:operation soapAction="http://tempuri.org/WMGetAppSetting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMGetAppSettingAll">
+      <soap:operation soapAction="http://tempuri.org/WMGetAppSettingAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMInsertAppSetting">
+      <soap:operation soapAction="http://tempuri.org/WMInsertAppSetting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMUpdateAppSetting">
+      <soap:operation soapAction="http://tempuri.org/WMUpdateAppSetting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMDeleteAppSetting">
+      <soap:operation soapAction="http://tempuri.org/WMDeleteAppSetting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMGetAppSettingEvent">
+      <soap:operation soapAction="http://tempuri.org/WMGetAppSettingEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMInsertAppSettingEvent">
+      <soap:operation soapAction="http://tempuri.org/WMInsertAppSettingEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMUpdateAppSettingEvent">
+      <soap:operation soapAction="http://tempuri.org/WMUpdateAppSettingEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMDeleteAppSettingEvent">
+      <soap:operation soapAction="http://tempuri.org/WMDeleteAppSettingEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMGetError">
+      <soap:operation soapAction="http://tempuri.org/WMGetError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMGetErrorAll">
+      <soap:operation soapAction="http://tempuri.org/WMGetErrorAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMInsertError">
+      <soap:operation soapAction="http://tempuri.org/WMInsertError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMUpdateError">
+      <soap:operation soapAction="http://tempuri.org/WMUpdateError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMDeleteError">
+      <soap:operation soapAction="http://tempuri.org/WMDeleteError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMGetFieldSettings">
+      <soap:operation soapAction="http://tempuri.org/WMGetFieldSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMGetFieldSettingsAll">
+      <soap:operation soapAction="http://tempuri.org/WMGetFieldSettingsAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMInsertFieldSettings">
+      <soap:operation soapAction="http://tempuri.org/WMInsertFieldSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMUpdateFieldSettings">
+      <soap:operation soapAction="http://tempuri.org/WMUpdateFieldSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMDeleteFieldSettings">
+      <soap:operation soapAction="http://tempuri.org/WMDeleteFieldSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMGetFieldSettingsEvent">
+      <soap:operation soapAction="http://tempuri.org/WMGetFieldSettingsEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMInsertFieldSettingsEvent">
+      <soap:operation soapAction="http://tempuri.org/WMInsertFieldSettingsEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMUpdateFieldSettingsEvent">
+      <soap:operation soapAction="http://tempuri.org/WMUpdateFieldSettingsEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMDeleteFieldSettingsEvent">
+      <soap:operation soapAction="http://tempuri.org/WMDeleteFieldSettingsEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMGetSystemParameter">
+      <soap:operation soapAction="http://tempuri.org/WMGetSystemParameter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMGetSystemParameterAll">
+      <soap:operation soapAction="http://tempuri.org/WMGetSystemParameterAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMInsertSystemParameter">
+      <soap:operation soapAction="http://tempuri.org/WMInsertSystemParameter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMUpdateSystemParameter">
+      <soap:operation soapAction="http://tempuri.org/WMUpdateSystemParameter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMDeleteSystemParameter">
+      <soap:operation soapAction="http://tempuri.org/WMDeleteSystemParameter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSLoginSoap12" type="tns:WSLoginSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WMGetWML_WebMethodCallLog">
+      <soap12:operation soapAction="http://tempuri.org/WMGetWML_WebMethodCallLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMGetWME_WebMethodExecute">
+      <soap12:operation soapAction="http://tempuri.org/WMGetWME_WebMethodExecute" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMInsertWME_WebMethodExecute">
+      <soap12:operation soapAction="http://tempuri.org/WMInsertWME_WebMethodExecute" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMCallWME_WebMethodExecute">
+      <soap12:operation soapAction="http://tempuri.org/WMCallWME_WebMethodExecute" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMCheckAnwendung">
+      <soap12:operation soapAction="http://tempuri.org/WMCheckAnwendung" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMLogin">
+      <soap12:operation soapAction="http://tempuri.org/WMLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMLoginInternalApp">
+      <soap12:operation soapAction="http://tempuri.org/WMLoginInternalApp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMLoginSession">
+      <soap12:operation soapAction="http://tempuri.org/WMLoginSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMLoginSessionInternalApp">
+      <soap12:operation soapAction="http://tempuri.org/WMLoginSessionInternalApp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMLogout">
+      <soap12:operation soapAction="http://tempuri.org/WMLogout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMChangePassword">
+      <soap12:operation soapAction="http://tempuri.org/WMChangePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMResetPassword">
+      <soap12:operation soapAction="http://tempuri.org/WMResetPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMResetPasswordInternalApp">
+      <soap12:operation soapAction="http://tempuri.org/WMResetPasswordInternalApp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMPrepareAutoLogin">
+      <soap12:operation soapAction="http://tempuri.org/WMPrepareAutoLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMClearApplicationState">
+      <soap12:operation soapAction="http://tempuri.org/WMClearApplicationState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMGetAppSetting">
+      <soap12:operation soapAction="http://tempuri.org/WMGetAppSetting" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMGetAppSettingAll">
+      <soap12:operation soapAction="http://tempuri.org/WMGetAppSettingAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMInsertAppSetting">
+      <soap12:operation soapAction="http://tempuri.org/WMInsertAppSetting" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMUpdateAppSetting">
+      <soap12:operation soapAction="http://tempuri.org/WMUpdateAppSetting" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMDeleteAppSetting">
+      <soap12:operation soapAction="http://tempuri.org/WMDeleteAppSetting" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMGetAppSettingEvent">
+      <soap12:operation soapAction="http://tempuri.org/WMGetAppSettingEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMInsertAppSettingEvent">
+      <soap12:operation soapAction="http://tempuri.org/WMInsertAppSettingEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMUpdateAppSettingEvent">
+      <soap12:operation soapAction="http://tempuri.org/WMUpdateAppSettingEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMDeleteAppSettingEvent">
+      <soap12:operation soapAction="http://tempuri.org/WMDeleteAppSettingEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMGetError">
+      <soap12:operation soapAction="http://tempuri.org/WMGetError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMGetErrorAll">
+      <soap12:operation soapAction="http://tempuri.org/WMGetErrorAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMInsertError">
+      <soap12:operation soapAction="http://tempuri.org/WMInsertError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMUpdateError">
+      <soap12:operation soapAction="http://tempuri.org/WMUpdateError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMDeleteError">
+      <soap12:operation soapAction="http://tempuri.org/WMDeleteError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMGetFieldSettings">
+      <soap12:operation soapAction="http://tempuri.org/WMGetFieldSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMGetFieldSettingsAll">
+      <soap12:operation soapAction="http://tempuri.org/WMGetFieldSettingsAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMInsertFieldSettings">
+      <soap12:operation soapAction="http://tempuri.org/WMInsertFieldSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMUpdateFieldSettings">
+      <soap12:operation soapAction="http://tempuri.org/WMUpdateFieldSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMDeleteFieldSettings">
+      <soap12:operation soapAction="http://tempuri.org/WMDeleteFieldSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMGetFieldSettingsEvent">
+      <soap12:operation soapAction="http://tempuri.org/WMGetFieldSettingsEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMInsertFieldSettingsEvent">
+      <soap12:operation soapAction="http://tempuri.org/WMInsertFieldSettingsEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMUpdateFieldSettingsEvent">
+      <soap12:operation soapAction="http://tempuri.org/WMUpdateFieldSettingsEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMDeleteFieldSettingsEvent">
+      <soap12:operation soapAction="http://tempuri.org/WMDeleteFieldSettingsEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMGetSystemParameter">
+      <soap12:operation soapAction="http://tempuri.org/WMGetSystemParameter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMGetSystemParameterAll">
+      <soap12:operation soapAction="http://tempuri.org/WMGetSystemParameterAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMInsertSystemParameter">
+      <soap12:operation soapAction="http://tempuri.org/WMInsertSystemParameter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMUpdateSystemParameter">
+      <soap12:operation soapAction="http://tempuri.org/WMUpdateSystemParameter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WMDeleteSystemParameter">
+      <soap12:operation soapAction="http://tempuri.org/WMDeleteSystemParameter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSLogin">
+    <wsdl:port name="WSLoginSoap" binding="tns:WSLoginSoap">
+      <soap:address location="http://localhost/PSTeam.PSBase.PSCommonWS/WSLogin.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSLoginSoap12" binding="tns:WSLoginSoap12">
+      <soap12:address location="http://localhost/PSTeam.PSBase.PSCommonWS/WSLogin.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

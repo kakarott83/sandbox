@@ -1,0 +1,144 @@
+﻿<Activity  x:Class="Workflows.DefaultWorkflow"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:cod="clr-namespace:Cic.One.DTO;assembly=Cic.One.DTO"
+ xmlns:cowa="clr-namespace:Cic.One.Workflow.Activities;assembly=Cic.One.Workflow"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="input" Type="InOutArgument(cod:WorkflowContext)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Windows.Controls</x:String>
+      <x:String>System.Windows.Documents</x:String>
+      <x:String>System.Windows.Shapes</x:String>
+      <x:String>System.Windows.Shell</x:String>
+      <x:String>System.Windows.Navigation</x:String>
+      <x:String>System.Windows.Data</x:String>
+      <x:String>System.Windows</x:String>
+      <x:String>System.Windows.Controls.Primitives</x:String>
+      <x:String>System.Windows.Media.Animation</x:String>
+      <x:String>System.Windows.Input</x:String>
+      <x:String>System.Windows.Media</x:String>
+      <x:String>System.Windows.Media.Effects</x:String>
+      <x:String>System.Windows.Media.Imaging</x:String>
+      <x:String>System.Windows.Automation</x:String>
+      <x:String>System.Windows.Ink</x:String>
+      <x:String>System.Windows.Media.Media3D</x:String>
+      <x:String>System.Windows.Media.TextFormatting</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>Cic.OpenOne.Common.DTO</x:String>
+      <x:String>Cic.One.DTO</x:String>
+      <x:String>Cic.One.Workflow.Activities</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities.Debugger</x:String>
+      <x:String>System.Activities.Debugger.Symbol</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Windows.Markup</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Cic.One.Utils</AssemblyReference>
+      <AssemblyReference>Cic.One.DTO</AssemblyReference>
+      <AssemblyReference>Cic.One.Workflow</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Flowchart>
+    <Flowchart.StartNode>
+      <FlowStep x:Name="__ReferenceID0">
+        <cowa:WorkflowButton area="{x:Null}" areaid="{x:Null}" desc1="{x:Null}" desc2="{x:Null}" desc3="{x:Null}" icon="{x:Null}" test="{x:Null}" type="{x:Null}" DisplayName="Speichern" buttonType="COMMAND" command="SAVE" disabled="1" persist="0" wfcontext="[input]"  />
+        <FlowStep.Next>
+          <FlowStep x:Name="__ReferenceID1">
+            <cowa:UserInteraction endWorkflow="{x:Null}" Result="[input]" wfcontext="[input]" workflowViewId="[input.wfvid]" />
+            <FlowStep.Next>
+              <FlowSwitch x:TypeArguments="x:String" Default="{x:Reference __ReferenceID0}" x:Name="__ReferenceID2" Expression="[input.inputCommand]">
+                <FlowDecision x:Key="SAVE" x:Name="__ReferenceID4" Condition="[String.IsNullOrWhiteSpace(input.wfvforwardid)]">
+                  <FlowDecision.True>
+                    <FlowStep x:Name="__ReferenceID3">
+                      <Assign>
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[input.outputCommand]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">SAVECLIENT</InArgument>
+                        </Assign.Value>
+                      
+                      </Assign>
+                      <FlowStep.Next>
+                        <x:Reference>__ReferenceID0</x:Reference>
+                      </FlowStep.Next>
+                      
+                    </FlowStep>
+                  </FlowDecision.True>
+                  <FlowDecision.False>
+                    <FlowStep x:Name="__ReferenceID5">
+                      <Assign>
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[input.outputCommand]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">SAVECLIENT</InArgument>
+                        </Assign.Value>
+                       
+                      </Assign>
+                      <FlowStep.Next>
+                        <FlowStep x:Name="__ReferenceID6">
+                          <cowa:UserInteraction Result="[input]" endWorkflow="True" wfcontext="[input]" workflowViewId="[input.wfvforwardid]" />
+                       
+                        </FlowStep>
+                      </FlowStep.Next>
+                     
+                    </FlowStep>
+                  </FlowDecision.False>
+                
+                </FlowDecision>
+               
+              </FlowSwitch>
+            </FlowStep.Next>
+           
+          </FlowStep>
+        </FlowStep.Next>
+       
+      </FlowStep>
+    </Flowchart.StartNode>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID3</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID6</x:Reference>
+    
+  </Flowchart>
+  
+</Activity>

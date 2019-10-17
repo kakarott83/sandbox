@@ -1,0 +1,143 @@
+﻿<UserControl x:Class="Cic.OpenOne.GateBANKNOW.TestUI.UserControls.DecisionEngine"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <DockPanel>
+        <!-- To expand the Output Grid-->
+        <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" Panel.ZIndex="1">
+            <Button Margin="10,0,0,0" x:Name="btnShowOutputControlDecision" 
+            MouseEnter="HandleButtonExpMouseEnterDecision" >Decision Engine Output</Button>
+            <StackPanel.LayoutTransform>
+                <RotateTransform Angle="90"/>
+            </StackPanel.LayoutTransform>
+        </StackPanel>
+        <Grid IsSharedSizeScope="True">
+            <!-- LayerInput – Grid Input -->
+            <Grid x:Name="LayerInputDecision" MouseEnter="HandleLayerInputDecisionMouseEnter">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border Style="{StaticResource DetailsBorderStyle}">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <DockPanel SnapsToDevicePixels="True">
+                            <WrapPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                                <TextBlock DockPanel.Dock="Top" Margin="2" FontSize="12" FontWeight="Bold" Foreground="LightGray" Text="Auskunftsatz: "/>
+                                <TextBox Name="textBoxDecision"  VerticalAlignment="Top" Width="120" />
+                                <Button x:Name="btnShowOutputDecision" Click="HandleButtonDecisionClick">Decision</Button>
+                            </WrapPanel>
+                            <Rectangle DockPanel.Dock="Top" Fill="Black" Height="33"/>
+                            <WrapPanel  DockPanel.Dock="Top" Orientation="Vertical">
+                                <TextBlock DockPanel.Dock="Top" Margin="2" FontSize="12" FontWeight="Bold" Foreground="LightGray" Text="Daten für: "/>
+
+                                <RadioButton x:Name="vorpruefung" GroupName ="pruefung" Click="HandleButtonVorpruefungClick" Foreground="LightGray" >Vorpruefung</RadioButton>
+                                <RadioButton x:Name="bonitaetspruefung" GroupName ="pruefung" Click="HandleButtonBonitaetspruefungClick" Foreground="LightGray" >Bonitaetspruefung</RadioButton>
+                                <RadioButton x:Name="risikopruefung" GroupName ="pruefung" Click="HandleButtonRisikopruefungClick" Foreground="LightGray" >Risikopruefung</RadioButton>
+
+
+                            </WrapPanel>
+                            <StackPanel Name="stackPanelInput">
+
+
+                                <Border Name="borderHeaderDecision" Grid.Row="0" BorderBrush="Gray" 
+                         BorderThickness="3" CornerRadius="10" Margin="4,4,4,4">
+                                    <Grid Name="ObjectInputDecision" Background="Transparent" Margin="10" >
+                                      
+                                        <Grid.Resources>
+
+                                            <Style TargetType="{x:Type ComboBox}"  BasedOn="{StaticResource ComboBoxBaseStyle}">
+                                               <Style.Triggers>
+                                                   <DataTrigger Binding="{Binding _di}" Value="{x:Null}">
+                                                        <Setter Property="IsEnabled" Value="true"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                            <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource TextBoxBaseStyle}" >
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding _di}" Value="{x:Null}">
+                                                        <Setter Property="IsEnabled" Value="true"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Grid.Resources>
+
+                                    </Grid>
+
+                                </Border>
+
+
+
+                            </StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2"/>
+
+
+                                </Grid.ColumnDefinitions>
+
+                            </Grid>
+
+                        </DockPanel>
+                    </ScrollViewer>
+                </Border>
+            </Grid>
+            <!-- LayerOutput - Grid,  -->
+            <Grid x:Name="LayerOutputDecision" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="374*"/>
+                    <ColumnDefinition SharedSizeGroup="pinColDecision" Width="127"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RenderTransform>
+                    <TranslateTransform x:Name="LayerOutputTransDecision"/>
+                </Grid.RenderTransform>
+
+                <Border Grid.Column="1" Style="{StaticResource DetailsBorderStyle}">
+                    <DockPanel>
+                        <Grid DockPanel.Dock="Top">
+                            <TextBlock HorizontalAlignment="Left" Text="Decision Engine Output" Margin="0" FontSize="14" FontWeight="Bold" Foreground="LightGray"/>
+
+                            <ToggleButton x:Name="btnPinItDecision" Margin="0,0,5,0"
+                HorizontalAlignment="Right" Width="25" 
+                Height="25" Checked="HandlePinningDecision"
+                Unchecked="HandleUnpinningDecision" IsChecked="False">
+
+                                <Image x:Name="pinImageDecision" Source="..\Images\pin.png"/>
+                            </ToggleButton>
+
+                        </Grid>
+                        <StatusBar  DockPanel.Dock="Bottom">
+                            <StatusBarItem Foreground="White">
+                                <TextBlock Text="Status: "/>
+                            </StatusBarItem>
+                            <StatusBarItem >
+                                <TextBlock Name="statusblock" Foreground="White" Text="{Binding StatusCode,UpdateSourceTrigger=PropertyChanged}"/>
+                            </StatusBarItem>
+                        </StatusBar>
+                        <Border Grid.Column="1" Style="{StaticResource DetailsBorderStyle}">
+                            <Grid Background="Transparent" Margin="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition/>
+
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0" >
+                                    <TextBlock   x:Name="DecisionOutputObjektTitle" Margin="2" FontSize="12" FontWeight="Bold" Foreground="LightGray" Text="Output Objekt"/>
+                                    <TreeView  x:Name="OutputObjectDecision" Background="Transparent" Height="300"  ItemsSource="{Binding}"    VerticalAlignment="Top"  SelectedItemChanged="ObjectDecisionItemSelected_Click" />
+
+                                </StackPanel>
+                                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Grid.Column="2" >
+                                    <StackPanel Grid.Column="2">
+                                        <TextBlock  x:Name="DecisionOutputExplorerTitle"  Margin="2" FontSize="12" FontWeight="Bold" Foreground="LightGray" Text="{Binding}"/>
+                                        <DataGrid x:Name="ObjectExplorerDecision" Grid.Column="2" Background="Transparent"  ItemsSource="{Binding}" AutoGeneratingColumn="ObjectExplorer_AutoGeneratingColumn" IsReadOnly="True" IsEnabled="True" Style="{StaticResource GridTest}"/>
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </Grid>
+                        </Border>
+
+                    </DockPanel>
+                </Border>
+                <GridSplitter Grid.Column="1"  HorizontalAlignment="Left" Width="10" Background="Transparent"/>
+            </Grid>
+        </Grid>
+    </DockPanel>
+</UserControl>

@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intf="http://dvss.xml.prechku.sys:17180/dvss/services/DVSOAPService" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns2="http://bean.dvsoap.appl.ch" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns1="urn:DVSOAPService" xmlns:impl="http://dvss.xml.prechku.sys:17180/dvss/services/DVSOAPService" targetNamespace="http://dvss.xml.prechku.sys:17180/dvss/services/DVSOAPService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:DVSOAPService">
+      <xsd:import namespace="http://bean.dvsoap.appl.ch" />
+      <xsd:import namespace="http://dvss.xml.prechku.sys:17180/dvss/services/DVSOAPService" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="IdentityDescriptor">
+        <xsd:sequence>
+          <xsd:element name="name" nillable="true" type="xsd:string" />
+          <xsd:element name="password" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="AddressDescription">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:BusinessElement">
+            <xsd:sequence>
+              <xsd:element name="birthdate" nillable="true" type="xsd:string" />
+              <xsd:element name="city" nillable="true" type="xsd:string" />
+              <xsd:element name="country" nillable="true" type="xsd:string" />
+              <xsd:element name="fax" nillable="true" type="xsd:string" />
+              <xsd:element name="firstName" nillable="true" type="xsd:string" />
+              <xsd:element name="housenumber" nillable="true" type="xsd:string" />
+              <xsd:element name="legalForm" type="xsd:int" />
+              <xsd:element name="maidenName" nillable="true" type="xsd:string" />
+              <xsd:element name="mobile" nillable="true" type="xsd:string" />
+              <xsd:element name="name" nillable="true" type="xsd:string" />
+              <xsd:element name="sex" nillable="true" type="xsd:int" />
+              <xsd:element name="street" nillable="true" type="xsd:string" />
+              <xsd:element name="telephone" nillable="true" type="xsd:string" />
+              <xsd:element name="zip" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="AddressHistory">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:AddressDescription">
+            <xsd:sequence>
+              <xsd:element name="addressId" type="xsd:int" />
+              <xsd:element name="insertDate" nillable="true" type="xsd:string" />
+              <xsd:element name="status" type="xsd:int" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="TransactionError">
+        <xsd:sequence>
+          <xsd:element name="code" type="xsd:int" />
+          <xsd:element name="text" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BaseResponse" abstract="true">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:BusinessElement">
+            <xsd:sequence>
+              <xsd:element name="transactionError" nillable="true" type="tns1:TransactionError" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ScoreResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:BaseResponse">
+            <xsd:sequence>
+              <xsd:element name="decision" nillable="true" type="xsd:int" />
+              <xsd:element name="score" nillable="true" type="xsd:float" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="AddressCorrection">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:BusinessElement">
+            <xsd:sequence>
+              <xsd:element name="city" nillable="true" type="xsd:string" />
+              <xsd:element name="corrCity" type="xsd:int" />
+              <xsd:element name="corrHousenumber" type="xsd:int" />
+              <xsd:element name="corrStreet" type="xsd:int" />
+              <xsd:element name="corrZip" type="xsd:int" />
+              <xsd:element name="housenumber" nillable="true" type="xsd:string" />
+              <xsd:element name="street" nillable="true" type="xsd:string" />
+              <xsd:element name="zip" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="AddressMatch">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:BusinessElement">
+            <xsd:sequence>
+              <xsd:element name="address" nillable="true" type="tns1:AddressDescription" />
+              <xsd:element name="addressId" type="xsd:int" />
+              <xsd:element name="character" type="xsd:int" />
+              <xsd:element name="confidence" type="xsd:int" />
+              <xsd:element name="correction" nillable="true" type="tns1:AddressCorrection" />
+              <xsd:element name="difference" type="xsd:int" />
+              <xsd:element name="similarity" type="xsd:int" />
+              <xsd:element name="status" type="xsd:int" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="AddressIdentificationResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:BaseResponse">
+            <xsd:sequence>
+              <xsd:element name="candidateListe" nillable="true" type="impl:ArrayOf_tns1_AddressMatch" />
+              <xsd:element name="foundAddress" nillable="true" type="tns1:AddressMatch" />
+              <xsd:element name="verificationDecision" type="xsd:int" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="AddressHistoryResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:AddressIdentificationResponse">
+            <xsd:sequence>
+              <xsd:element name="addressHistory" nillable="true" type="impl:ArrayOf_tns1_AddressHistory" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ContactDescription">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:BusinessElement">
+            <xsd:sequence>
+              <xsd:element name="contactDetails" nillable="true" type="xsd:string" />
+              <xsd:element name="contactType" type="xsd:int" />
+              <xsd:element name="dateLastVerified" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="CompanyDetailsResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:BaseResponse">
+            <xsd:sequence>
+              <xsd:element name="auditingCompany" nillable="true" type="xsd:string" />
+              <xsd:element name="capital" type="xsd:int" />
+              <xsd:element name="capitalPayed" type="xsd:int" />
+              <xsd:element name="chNumber" nillable="true" type="xsd:string" />
+              <xsd:element name="companyStatus" type="xsd:int" />
+              <xsd:element name="contactList" nillable="true" type="impl:ArrayOf_tns1_ContactDescription" />
+              <xsd:element name="dateEntry" nillable="true" type="xsd:string" />
+              <xsd:element name="dateKnownSince" nillable="true" type="xsd:string" />
+              <xsd:element name="dateLastVerified" nillable="true" type="xsd:string" />
+              <xsd:element name="foundingDate" nillable="true" type="xsd:string" />
+              <xsd:element name="lastShabDate" nillable="true" type="xsd:string" />
+              <xsd:element name="lastShabPublication" nillable="true" type="xsd:string" />
+              <xsd:element name="leaderShipSize" type="xsd:int" />
+              <xsd:element name="leaderShipSizeNeg" type="xsd:int" />
+              <xsd:element name="managementSize" type="xsd:int" />
+              <xsd:element name="nogaCode" nillable="true" type="xsd:string" />
+              <xsd:element name="nogaDescription" nillable="true" type="xsd:string" />
+              <xsd:element name="numberOfEmployees" type="xsd:int" />
+              <xsd:element name="numberOfShares" type="xsd:int" />
+              <xsd:element name="purpose" nillable="true" type="xsd:string" />
+              <xsd:element name="samePhoneList" nillable="true" type="impl:ArrayOf_tns1_AddressDescription" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="DebtEntry">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:BusinessElement">
+            <xsd:sequence>
+              <xsd:element name="amount" type="xsd:int" />
+              <xsd:element name="amountOpen" type="xsd:int" />
+              <xsd:element name="dateClose" nillable="true" type="xsd:string" />
+              <xsd:element name="dateOpen" nillable="true" type="xsd:string" />
+              <xsd:element name="debtType" type="xsd:int" />
+              <xsd:element name="origin" nillable="true" type="xsd:string" />
+              <xsd:element name="riskClass" type="xsd:int" />
+              <xsd:element name="text" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="DebtDetailsResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:BaseResponse">
+            <xsd:sequence>
+              <xsd:element name="debtList" nillable="true" type="impl:ArrayOf_tns1_DebtEntry" />
+              <xsd:element name="returnCode" nillable="true" type="xsd:int" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="DebtSummary">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:BusinessElement">
+            <xsd:sequence>
+              <xsd:element name="dateLastNegEntry" nillable="true" type="xsd:string" />
+              <xsd:element name="dateLastPosEntry" nillable="true" type="xsd:string" />
+              <xsd:element name="decision" type="xsd:int" />
+              <xsd:element name="maxRiskClass" type="xsd:int" />
+              <xsd:element name="noOfNegEntries" type="xsd:int" />
+              <xsd:element name="noOfPosEntries" type="xsd:int" />
+              <xsd:element name="score" type="xsd:float" />
+              <xsd:element name="sumAmounts" type="xsd:int" />
+              <xsd:element name="sumOpenAmounts" type="xsd:int" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="DebtResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:BaseResponse">
+            <xsd:sequence>
+              <xsd:element name="debtSummary" nillable="true" type="tns1:DebtSummary" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ReportResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:BaseResponse">
+            <xsd:sequence>
+              <xsd:element name="report" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="CollectionCheckResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:ReportResponse">
+            <xsd:sequence>
+              <xsd:element name="likelyhood" nillable="true" type="xsd:float" />
+              <xsd:element name="limit" nillable="true" type="xsd:float" />
+              <xsd:element name="score" nillable="true" type="xsd:float" />
+              <xsd:element name="value" nillable="true" type="xsd:float" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="OrderDescriptor">
+        <xsd:sequence>
+          <xsd:element name="BAProductId" type="xsd:int" />
+          <xsd:element name="EWKProductId" type="xsd:int" />
+          <xsd:element name="cresuraReportId" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CresuraReportResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:BaseResponse">
+            <xsd:sequence>
+              <xsd:element name="referenceNumber" type="xsd:int" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="CompanyRelationDescription">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:BusinessElement">
+            <xsd:sequence>
+              <xsd:element name="addressId" type="xsd:int" />
+              <xsd:element name="company" nillable="true" type="tns1:AddressDescription" />
+              <xsd:element name="endDate" nillable="true" type="xsd:string" />
+              <xsd:element name="functionCode" type="xsd:int" />
+              <xsd:element name="negative" type="xsd:int" />
+              <xsd:element name="signatureCode" type="xsd:int" />
+              <xsd:element name="startDate" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="PersonDetailsResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:BaseResponse">
+            <xsd:sequence>
+              <xsd:element name="companyRelationList" nillable="true" type="impl:ArrayOf_tns1_CompanyRelationDescription" />
+              <xsd:element name="contactList" nillable="true" type="impl:ArrayOf_tns1_ContactDescription" />
+              <xsd:element name="dateEntry" nillable="true" type="xsd:string" />
+              <xsd:element name="dateKnownSince" nillable="true" type="xsd:string" />
+              <xsd:element name="dateLastVerified" nillable="true" type="xsd:string" />
+              <xsd:element name="familyList" nillable="true" type="impl:ArrayOf_tns1_AddressDescription" />
+              <xsd:element name="language" type="xsd:int" />
+              <xsd:element name="legalGuardShip" type="xsd:int" />
+              <xsd:element name="numberOfAddresses" type="xsd:int" />
+              <xsd:element name="numberOfNegRelations" type="xsd:int" />
+              <xsd:element name="numberOfRelations" type="xsd:int" />
+              <xsd:element name="profession" nillable="true" type="xsd:string" />
+              <xsd:element name="samePhoneList" nillable="true" type="impl:ArrayOf_tns1_AddressDescription" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ListMatch">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:BusinessElement">
+            <xsd:sequence>
+              <xsd:element name="confidence" type="xsd:int" />
+              <xsd:element name="dateLastUpdate" nillable="true" type="xsd:string" />
+              <xsd:element name="foundBirthdate" nillable="true" type="xsd:string" />
+              <xsd:element name="foundFirstname" nillable="true" type="xsd:string" />
+              <xsd:element name="foundName" nillable="true" type="xsd:string" />
+              <xsd:element name="foundNationality" nillable="true" type="xsd:string" />
+              <xsd:element name="id" nillable="true" type="xsd:string" />
+              <xsd:element name="listName" nillable="true" type="xsd:string" />
+              <xsd:element name="searchedBirthdate" nillable="true" type="xsd:string" />
+              <xsd:element name="searchedFirstname" nillable="true" type="xsd:string" />
+              <xsd:element name="searchedName" nillable="true" type="xsd:string" />
+              <xsd:element name="searchedRole" type="xsd:int" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="GWGCheckResponse">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:BaseResponse">
+            <xsd:sequence>
+              <xsd:element name="hitList" nillable="true" type="impl:ArrayOf_tns1_ListMatch" />
+              <xsd:element name="report" nillable="true" type="xsd:string" />
+              <xsd:element name="returnCode" nillable="true" type="xsd:int" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="CollectionInfo">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns2:BusinessElement">
+            <xsd:sequence>
+              <xsd:element name="amountOpen" nillable="true" type="xsd:float" />
+              <xsd:element name="amountTotal" nillable="true" type="xsd:float" />
+              <xsd:element name="caseStatus" nillable="true" type="xsd:int" />
+              <xsd:element name="dateBill" nillable="true" type="xsd:string" />
+              <xsd:element name="dateCase" nillable="true" type="xsd:string" />
+              <xsd:element name="idCre" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://bean.dvsoap.appl.ch">
+      <xsd:import namespace="urn:DVSOAPService" />
+      <xsd:import namespace="http://dvss.xml.prechku.sys:17180/dvss/services/DVSOAPService" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="BusinessElement" abstract="true">
+        <xsd:sequence />
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://dvss.xml.prechku.sys:17180/dvss/services/DVSOAPService">
+      <xsd:import namespace="http://bean.dvsoap.appl.ch" />
+      <xsd:import namespace="urn:DVSOAPService" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="ArrayOf_tns1_AddressMatch">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:AddressMatch[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_AddressHistory">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:AddressHistory[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_ContactDescription">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:ContactDescription[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_AddressDescription">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:AddressDescription[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_DebtEntry">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:DebtEntry[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_CompanyRelationDescription">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:CompanyRelationDescription[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_ListMatch">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:ListMatch[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getDebtDetailsByAddressIdResponse">
+    <wsdl:part name="getDebtDetailsByAddressIdReturn" type="tns1:DebtDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCollectionCheckResponse">
+    <wsdl:part name="getCollectionCheckReturn" type="tns1:CollectionCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCollectionCheckRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="addressDescription" type="tns1:AddressDescription" />
+    <wsdl:part name="addressId" type="xsd:int" />
+    <wsdl:part name="collectionInfo" type="tns1:CollectionInfo" />
+    <wsdl:part name="referenceNr" type="xsd:string" />
+    <wsdl:part name="targetFormat" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="orderCresuraReportResponse">
+    <wsdl:part name="orderCresuraReportReturn" type="tns1:CresuraReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAddressHistoryRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="addressDescription" type="tns1:AddressDescription" />
+    <wsdl:part name="addressId" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="getAddressHistoryResponse">
+    <wsdl:part name="getAddressHistoryReturn" type="tns1:AddressHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="getReportByDVIdRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="dvId" type="xsd:long" />
+    <wsdl:part name="reportId" type="xsd:int" />
+    <wsdl:part name="targetFormat" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getIdentifiedAddressResponse">
+    <wsdl:part name="getIdentifiedAddressReturn" type="tns1:AddressIdentificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPersonDetailsByAddressIdResponse">
+    <wsdl:part name="getPersonDetailsByAddressIdReturn" type="tns1:PersonDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getScoreRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="addressDescription" type="tns1:AddressDescription" />
+    <wsdl:part name="addressId" type="xsd:int" />
+    <wsdl:part name="scoreType" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getReportByAddressIdResponse">
+    <wsdl:part name="getReportByAddressIdReturn" type="tns1:ReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="getScoreResponse">
+    <wsdl:part name="getScoreReturn" type="tns1:ScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="getReportByDVIdResponse">
+    <wsdl:part name="getReportByDVIdReturn" type="tns1:ReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCompanyDetailsByAddressIdResponse">
+    <wsdl:part name="getCompanyDetailsByAddressIdReturn" type="tns1:CompanyDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDebtDetailsByAddressIdRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="addressId" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="getReportByAddressIdRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="addressId" type="xsd:int" />
+    <wsdl:part name="reportId" type="xsd:int" />
+    <wsdl:part name="targetFormat" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getDebtSummaryByAddressIdRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="addressId" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="getDebtSummaryByAddressIdResponse">
+    <wsdl:part name="getDebtSummaryByAddressIdReturn" type="tns1:DebtResponse" />
+  </wsdl:message>
+  <wsdl:message name="orderCresuraReportRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="addressDescription" type="tns1:AddressDescription" />
+    <wsdl:part name="orderDescriptor" type="tns1:OrderDescriptor" />
+    <wsdl:part name="refNo" type="xsd:string" />
+    <wsdl:part name="reason" type="xsd:string" />
+    <wsdl:part name="contactEmail" type="xsd:string" />
+    <wsdl:part name="contactFaxNr" type="xsd:string" />
+    <wsdl:part name="contactName" type="xsd:string" />
+    <wsdl:part name="contactTelDirect" type="xsd:string" />
+    <wsdl:part name="binaryPOI" type="xsd:string" />
+    <wsdl:part name="binaryPOItype" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getCompanyDetailsByAddressIdRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="addressId" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="getPersonDetailsByAddressIdRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="addressId" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="getIdentifiedAddressRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="addressDescription" type="tns1:AddressDescription" />
+  </wsdl:message>
+  <wsdl:message name="checkGWGListRequest">
+    <wsdl:part name="identityDescriptor" type="tns1:IdentityDescriptor" />
+    <wsdl:part name="addressDescription" type="tns1:AddressDescription" />
+    <wsdl:part name="addressId" type="xsd:int" />
+    <wsdl:part name="targetFormat" type="xsd:string" />
+    <wsdl:part name="listDescription" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="checkGWGListResponse">
+    <wsdl:part name="checkGWGListReturn" type="tns1:GWGCheckResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DVSoapService">
+    <wsdl:operation name="getScore" parameterOrder="identityDescriptor addressDescription addressId scoreType">
+      <wsdl:input name="getScoreRequest" message="impl:getScoreRequest" />
+      <wsdl:output name="getScoreResponse" message="impl:getScoreResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAddressHistory" parameterOrder="identityDescriptor addressDescription addressId">
+      <wsdl:input name="getAddressHistoryRequest" message="impl:getAddressHistoryRequest" />
+      <wsdl:output name="getAddressHistoryResponse" message="impl:getAddressHistoryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getIdentifiedAddress" parameterOrder="identityDescriptor addressDescription">
+      <wsdl:input name="getIdentifiedAddressRequest" message="impl:getIdentifiedAddressRequest" />
+      <wsdl:output name="getIdentifiedAddressResponse" message="impl:getIdentifiedAddressResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getCompanyDetailsByAddressId" parameterOrder="identityDescriptor addressId">
+      <wsdl:input name="getCompanyDetailsByAddressIdRequest" message="impl:getCompanyDetailsByAddressIdRequest" />
+      <wsdl:output name="getCompanyDetailsByAddressIdResponse" message="impl:getCompanyDetailsByAddressIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getDebtDetailsByAddressId" parameterOrder="identityDescriptor addressId">
+      <wsdl:input name="getDebtDetailsByAddressIdRequest" message="impl:getDebtDetailsByAddressIdRequest" />
+      <wsdl:output name="getDebtDetailsByAddressIdResponse" message="impl:getDebtDetailsByAddressIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getDebtSummaryByAddressId" parameterOrder="identityDescriptor addressId">
+      <wsdl:input name="getDebtSummaryByAddressIdRequest" message="impl:getDebtSummaryByAddressIdRequest" />
+      <wsdl:output name="getDebtSummaryByAddressIdResponse" message="impl:getDebtSummaryByAddressIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getReportByAddressId" parameterOrder="identityDescriptor addressId reportId targetFormat">
+      <wsdl:input name="getReportByAddressIdRequest" message="impl:getReportByAddressIdRequest" />
+      <wsdl:output name="getReportByAddressIdResponse" message="impl:getReportByAddressIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="orderCresuraReport" parameterOrder="identityDescriptor addressDescription orderDescriptor refNo reason contactEmail contactFaxNr contactName contactTelDirect binaryPOI binaryPOItype">
+      <wsdl:input name="orderCresuraReportRequest" message="impl:orderCresuraReportRequest" />
+      <wsdl:output name="orderCresuraReportResponse" message="impl:orderCresuraReportResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getPersonDetailsByAddressId" parameterOrder="identityDescriptor addressId">
+      <wsdl:input name="getPersonDetailsByAddressIdRequest" message="impl:getPersonDetailsByAddressIdRequest" />
+      <wsdl:output name="getPersonDetailsByAddressIdResponse" message="impl:getPersonDetailsByAddressIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="checkGWGList" parameterOrder="identityDescriptor addressDescription addressId targetFormat listDescription">
+      <wsdl:input name="checkGWGListRequest" message="impl:checkGWGListRequest" />
+      <wsdl:output name="checkGWGListResponse" message="impl:checkGWGListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getCollectionCheck" parameterOrder="identityDescriptor addressDescription addressId collectionInfo referenceNr targetFormat">
+      <wsdl:input name="getCollectionCheckRequest" message="impl:getCollectionCheckRequest" />
+      <wsdl:output name="getCollectionCheckResponse" message="impl:getCollectionCheckResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getReportByDVId" parameterOrder="identityDescriptor dvId reportId targetFormat">
+      <wsdl:input name="getReportByDVIdRequest" message="impl:getReportByDVIdRequest" />
+      <wsdl:output name="getReportByDVIdResponse" message="impl:getReportByDVIdResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DVSOAPServiceSoapBinding" type="impl:DVSoapService">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="getScore">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getScoreRequest">
+        <wsdlsoap:body use="encoded" namespace="http://soap.dvsoap.appl.ch" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getScoreResponse">
+        <wsdlsoap:body use="encoded" namespace="http://dvss.xml.prechku.sys:17180/dvss/services/DVSOAPService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAddressHistory">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAddressHistoryRequest">
+        <wsdlsoap:body use="encoded" namespace="http://soap.dvsoap.appl.ch" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getAddressHistoryResponse">
+        <wsdlsoap:body use="encoded" namespace="http://dvss.xml.prechku.sys:17180/dvss/services/DVSOAPService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getIdentifiedAddress">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getIdentifiedAddressRequest">
+        <wsdlsoap:body use="encoded" namespace="http://soap.dvsoap.appl.ch" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getIdentifiedAddressResponse">
+        <wsdlsoap:body use="encoded" namespace="http://dvss.xml.prechku.sys:17180/dvss/services/DVSOAPService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCompanyDetailsByAddressId">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getCompanyDetailsByAddressIdRequest">
+        <wsdlsoap:body use="encoded" namespace="http://soap.dvsoap.appl.ch" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getCompanyDetailsByAddressIdResponse">
+        <wsdlsoap:body use="encoded" namespace="http://dvss.xml.prechku.sys:17180/dvss/services/DVSOAPService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDebtDetailsByAddressId">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getDebtDetailsByAddressIdRequest">
+        <wsdlsoap:body use="encoded" namespace="http://soap.dvsoap.appl.ch" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getDebtDetailsByAddressIdResponse">
+        <wsdlsoap:body use="encoded" namespace="http://dvss.xml.prechku.sys:17180/dvss/services/DVSOAPService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDebtSummaryByAddressId">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getDebtSummaryByAddressIdRequest">
+        <wsdlsoap:body use="encoded" namespace="http://soap.dvsoap.appl.ch" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getDebtSummaryByAddressIdResponse">
+        <wsdlsoap:body use="encoded" namespace="http://dvss.xml.prechku.sys:17180/dvss/services/DVSOAPService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReportByAddressId">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getReportByAddressIdRequest">
+        <wsdlsoap:body use="encoded" namespace="http://soap.dvsoap.appl.ch" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getReportByAddressIdResponse">
+        <wsdlsoap:body use="encoded" namespace="http://dvss.xml.prechku.sys:17180/dvss/services/DVSOAPService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderCresuraReport">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="orderCresuraReportRequest">
+        <wsdlsoap:body use="encoded" namespace="http://soap.dvsoap.appl.ch" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="orderCresuraReportResponse">
+        <wsdlsoap:body use="encoded" namespace="http://dvss.xml.prechku.sys:17180/dvss/services/DVSOAPService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPersonDetailsByAddressId">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getPersonDetailsByAddressIdRequest">
+        <wsdlsoap:body use="encoded" namespace="http://soap.dvsoap.appl.ch" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getPersonDetailsByAddressIdResponse">
+        <wsdlsoap:body use="encoded" namespace="http://dvss.xml.prechku.sys:17180/dvss/services/DVSOAPService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkGWGList">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="checkGWGListRequest">
+        <wsdlsoap:body use="encoded" namespace="http://soap.dvsoap.appl.ch" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="checkGWGListResponse">
+        <wsdlsoap:body use="encoded" namespace="http://dvss.xml.prechku.sys:17180/dvss/services/DVSOAPService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCollectionCheck">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getCollectionCheckRequest">
+        <wsdlsoap:body use="encoded" namespace="http://soap.dvsoap.appl.ch" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getCollectionCheckResponse">
+        <wsdlsoap:body use="encoded" namespace="http://dvss.xml.prechku.sys:17180/dvss/services/DVSOAPService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReportByDVId">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getReportByDVIdRequest">
+        <wsdlsoap:body use="encoded" namespace="http://soap.dvsoap.appl.ch" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getReportByDVIdResponse">
+        <wsdlsoap:body use="encoded" namespace="http://dvss.xml.prechku.sys:17180/dvss/services/DVSOAPService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DVSoapServiceService">
+    <wsdl:port name="DVSOAPService" binding="impl:DVSOAPServiceSoapBinding">
+      <wsdlsoap:address location="http://dvss.xml.prechku.sys:17180/dvss/services/DVSOAPService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

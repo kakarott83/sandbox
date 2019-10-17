@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://cic-software.de/One" elementFormDefault="qualified" targetNamespace="http://cic-software.de/One" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8732/luceneConfigService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CIC.ASS.Common.DTO" />
+  <xs:import schemaLocation="http://localhost:8732/luceneConfigService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:8732/luceneConfigService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/CIC.ASS.SearchService.DTO" />
+  <xs:element name="queueForIndexUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="area" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="queueForIndexUpdateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="startIndexer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CIC.ASS.Common.DTO" minOccurs="0" name="config" nillable="true" type="q1:ArrayOfIndexedTable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="startIndexerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchEntities">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="query" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="perole" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="entities" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="additionalQuery" nillable="true" type="xs:string" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CIC.ASS.Common.DTO" minOccurs="0" name="preprocConfig" nillable="true" type="q2:QueryPreprocessorConfig" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="disabledperoles" nillable="true" type="q3:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchEntitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CIC.ASS.SearchService.DTO" minOccurs="0" name="searchEntitiesResult" nillable="true" type="q4:ArrayOfSearchEntityResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="suggest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="term" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="suggestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="suggestResult" nillable="true" type="q5:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
