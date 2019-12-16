@@ -23,7 +23,7 @@ export class ChildEinsComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.myFormGroup.value);
+    console.log(this.selected.startDate.date);
     this.userService.addUser(this.myFormGroup.value);
   }
 

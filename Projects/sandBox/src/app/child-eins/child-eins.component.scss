@@ -1,21 +1,13 @@
-p {
-    font-family: Lato;
-  }
-
-.container {
-    display: flex;
-    flex-direction: column;
-}
-
-.row {
-    justify-content: center;
-}
-
 .form-container {
     display: flex;
     flex-direction: column;
-  }
+    justify-content: center;
+}
   
-  .form-container > * {
-    width: 100%;
-  }
+.form-container > * {
+    width: 25%;
+}
+
+.form-full-width {
+    background-color: red;
+}

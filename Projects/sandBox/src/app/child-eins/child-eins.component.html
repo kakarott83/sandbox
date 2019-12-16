@@ -2,22 +2,18 @@
 <div class="container">
     <div class="row">
         <form class="form-container" [formGroup]="myFormGroup" (ngSubmit)="onSubmit()">
-
-            <mat-form-field class="example-full-width">
-                <input matInput placeholder="Name" type="text" formControlName="name">
-            </mat-form-field>
-
-            <mat-form-field class="example-full-width">
-                <input matInput placeholder="E-Mail" type="text" formControlName="email">
-            </mat-form-field>
-
-            <mat-form-field class="example-full-width">
+            <mat-form-field class="form-full-width">
                 <input placeholder="Kalender" matInput type="text" ngxDaterangepickerMd class="form-control date-input"
                     [(ngModel)]="selected"  [ngModelOptions]="{standalone: true}" [timePicker]="true" [timePickerIncrement]="15" [timePicker24Hour]="true"
                     [timePickerSeconds]="false" opens="right"
                     [locale]="{separator: ' bis ', applyLabel: 'ok', format: 'DD.MM.YYYY hh:mm', firstDay: 1}">
             </mat-form-field>
-
+            <mat-form-field class="form-full-width">
+                <input matInput placeholder="Name" type="text" formControlName="name">
+            </mat-form-field>
+            <mat-form-field class="form-full-width">
+                <input matInput placeholder="E-Mail" type="text" formControlName="email">
+            </mat-form-field>
             <button mat-button color="primary" type="submit">Speichern</button>
         </form>
     </div>
