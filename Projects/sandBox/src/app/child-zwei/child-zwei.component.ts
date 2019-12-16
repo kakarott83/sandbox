@@ -17,7 +17,8 @@ export class ChildZweiComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.users$ = this.userService.users$.pipe(debounceTime(10000));
+    // this.users$ = this.userService.users$.pipe(debounceTime(10000));
+    this.users$ = this.userService.users$;
   }
 
 

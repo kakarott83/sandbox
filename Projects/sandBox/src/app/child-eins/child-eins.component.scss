@@ -1,0 +1,21 @@
+p {
+    font-family: Lato;
+  }
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    justify-content: center;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-container > * {
+    width: 100%;
+  }
